@@ -3,194 +3,111 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>大府市交通局 | ホーム</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        a {
-            text-decoration: none;
-            color: #000;
-        }
-
-        /* ---------- ヘッダー ---------- */
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            background: #f8f8f8;
-            border-bottom: 1px solid #ddd;
-        }
-
-        header img {
-            height: 40px;
-        }
-
-        header .title {
-            flex-grow: 1;
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        /* ---------- メイン ---------- */
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* 運行情報 */
-        .service-info {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .info-box {
-            flex: 1;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            padding: 15px;
-            background: #fafafa;
-        }
-
-        .info-box h2 {
-            margin: 0 0 10px;
-            font-size: 18px;
-        }
-
-        .status-normal {
-            color: #007a33;
-            font-weight: bold;
-        }
-
-        /* 大ボタン */
-        .big-buttons {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 20px;
-            font-size: 22px;
-            font-weight: bold;
-            color: #fff;
-            border-radius: 6px;
-        }
-
-        .btn-bus {
-            background: #007acc;
-        }
-
-        .btn-subway {
-            background: #ff6600;
-        }
-
-        /* 下部リンク */
-        .link-list {
-            max-width: 400px;
-            margin: auto;
-            text-align: left;
-        }
-
-        .link-list a {
-            display: block;
-            padding: 12px;
-            margin-bottom: 10px;
-            background: #f1f1f1;
-            border-radius: 4px;
-            font-size: 18px;
-        }
-
-        /* ---------- フッター（スマホ） ---------- */
-        footer {
-            display: none;
-            padding: 10px;
-            background: #f8f8f8;
-            border-top: 1px solid #ddd;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        /* ---------- レスポンシブ ---------- */
-        @media (max-width: 760px) {
-            header {
-                display: none;
-            }
-
-            footer {
-                display: block;
-            }
-
-            .service-info {
-                flex-direction: column;
-            }
-
-            .big-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ヘッダー（PC） -->
+    <!-- ヘッダー（PC表示） -->
     <header>
-        <a href="https://www.city.obu.aichi.jp/">
-            <img src="obu-city-logo.png" alt="大府市ロゴ">
-        </a>
-        <div class="title">
-            <a href="index.html">大府市交通局</a>
+        <div class="header-top">
+            <a href="https://www.city.obu.aichi.jp/">
+                <img src="./image/tlogo.png" alt="大府市ロゴ">
+            </a>
+
+            <div class="title">
+                <a href="index.html">大府市交通局</a>
+            </div>
         </div>
+
+        <!-- 共通ナビゲーション -->
+        <nav class="header-nav">
+            <div>
+                <a href="#"><img class="icon" src="./image/subway-timeTable.png">地下鉄時刻表</a>
+            </div>
+            <div>
+                <a href="#"><img class="icon" src="./image/subway-routeMap.png">地下鉄路線図</a>
+            </div>
+            <div>
+                <a href="#" class="transfer"><img class="icon" src="./image/transfer.png">乗換案内</a>
+            </div>
+            <div>
+                <a href="#"><img class="icon" src="./image/bus-timeTable.png">バス時刻表</a>
+            </div>
+            <div>
+                <a href="#"><img class="icon" src="./image/bus-routeMap.png">バス路線図</a>
+            </div>
+        </nav>
     </header>
 
+    <!-- メイン -->
     <main>
 
         <!-- 運行情報 -->
         <div class="service-info">
             <div class="info-box">
-                <h2>バス 運行情報</h2>
+                <h2>地下鉄 運行情報</h2>
                 <p class="status-normal">現在、平常通り運行しています。</p>
             </div>
 
             <div class="info-box">
-                <h2>地下鉄 運行情報</h2>
+                <h2>バス 運行情報</h2>
                 <p class="status-normal">現在、平常通り運行しています。</p>
             </div>
         </div>
 
         <!-- 大きなボタン -->
         <div class="big-buttons">
-            <a href="#" class="btn btn-bus">バスに乗る</a>
             <a href="#" class="btn btn-subway">地下鉄に乗る</a>
+            <a href="#" class="btn btn-bus">バスに乗る</a>
         </div>
 
-        <!-- 下部リンク一覧 -->
+        <!-- 下部リンク -->
         <div class="link-list">
-            <a href="#">乗換案内</a>
-            <a href="#">地下鉄時刻表</a>
-            <a href="#">地下鉄路線図</a>
-            <a href="#">バス時刻表</a>
-            <a href="#">バス路線図</a>
+            <a href="#"><img class="icon" src="./image/transfer.png">乗換案内</a>
+            <a href="#"><img class="icon" src="./image/subway-timeTable.png">地下鉄時刻表</a>
+            <a href="#"><img class="icon" src="./image/subway-routeMap.png">地下鉄路線図</a>
+            <a href="#"><img class="icon" src="./image/bus-timeTable.png">バス時刻表</a>
+            <a href="#"><img class="icon" src="./image/bus-routeMap.png">バス路線図</a>
         </div>
 
     </main>
 
-    <!-- フッター（スマホ） -->
+    <!-- フッター（スマホ表示） -->
     <footer>
-        <a href="#">乗換案内</a> |
-        <a href="#">地下鉄時刻表</a> |
-        <a href="#">地下鉄路線図</a> |
-        <a href="#">バス時刻表</a> |
-        <a href="#">バス路線図</a>
+        <nav class="footer-nav">
+            <a href="#">地下鉄時刻表
+                <div>
+                    <img class="icon" src="./image/subway-timeTable.png">
+                </div>
+            </a>
+            <span>|</span>
+            <a href="#">地下鉄路線図
+                <div>
+                    <img class="icon" src="./image/subway-routeMap.png">
+                </div>
+            </a>
+            <span>|</span>
+            <a href="#"><strong>乗換案内</strong>
+                <div>
+                    <img class="icon" src="./image/transfer.png">
+                </div>
+            </a>
+            <span>|</span>
+            <a href="#">バス時刻表
+                <div>
+                    <img class="icon" src="./image/bus-timeTable.png">
+                </div>
+            </a>
+            <span>|</span>
+            <a href="#">バス路線図
+                <div>
+                    <img class="icon" src="./image/bus-routeMap.png">
+                </div>
+            </a>
+        </nav>
     </footer>
 
 </body>
