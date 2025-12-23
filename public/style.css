@@ -98,9 +98,26 @@ main {
     text-align: left;
 }
 
-.departure-card h3 {
+.departure-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.departure-card .card-header h3 {
     margin: 0 0 8px;
     font-size: 16px;
+}
+
+.departure-card .card-header a {
+    font-size: 14px;
+    padding: 1px 5px;
+    background: #eaeaea;
+    color: #000000;
+    border-radius: 4px;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
 .departure-card table {

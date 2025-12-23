@@ -1,12 +1,14 @@
 import React from 'react';
 
-const DepartureSection = () => {
+function DepartureSection() {
   return (
     <section className="departure-area">
       <h2>発車案内（マイ駅・停留所）</h2>
       <div className="departure-list">
         <div className="departure-card">
-          <h3>大府駅</h3>
+          <div className="card-header">
+            <h3>大府</h3><a>⇆ 方面切替</a>
+          </div>
           <table>
             <tbody>
               <tr>
@@ -25,7 +27,9 @@ const DepartureSection = () => {
         </div>
 
         <div className="departure-card">
-          <h3>中央市役所前</h3>
+          <div className="card-header">
+            <h3>大府駅前</h3><a>⇆ 方面切替</a>
+          </div>
           <table>
             <tbody>
               <tr>
@@ -44,7 +48,9 @@ const DepartureSection = () => {
         </div>
 
         <div className="departure-card">
-          <h3>共和駅前</h3>
+          <div className="card-header">
+            <h3>共和三丁目</h3><a>⇆ 方面切替</a>
+          </div>
           <table>
             <tbody>
               <tr>
