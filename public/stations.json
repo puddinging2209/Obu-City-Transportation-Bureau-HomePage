@@ -12,9 +12,9 @@
       "内田面線"
     ],
     "directions": [
-        "東新町",
-        "惣作",
-        "長久手市"
+        {"route": "内田面線","stationName": "東新町"},
+        {"route": "内田面線","stationName": "惣作"},
+        {"route": "長久手線","stationName": "長久手市"}
     ]
   },
   "北崎大島": {
@@ -28,8 +28,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "大脇": {
@@ -43,8 +43,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "琵琶々池": {
@@ -58,8 +58,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "高鴨": {
@@ -75,10 +75,10 @@
       "外環線"
     ],
     "directions": [
-        "長久手市",
-        "惣作",
-        "鳴海",
-        "知立"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"},
+        {"route": "外環線", "stationName": "名和"},
+        {"route": "外環線", "stationName": "知立"}
     ]
   },
   "豊明市": {
@@ -92,8 +92,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "中央公園": {
@@ -107,8 +107,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "十三塚": {
@@ -122,8 +122,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "沓掛町森前": {
@@ -137,8 +137,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "若王子川": {
@@ -152,8 +152,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "清水々根": {
@@ -167,8 +167,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "春木台": {
@@ -182,8 +182,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "猫池": {
@@ -197,8 +197,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "東郷": {
@@ -212,8 +212,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "白鳥": {
@@ -227,8 +227,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "日進": {
@@ -242,8 +242,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "折戸寺脇": {
@@ -257,8 +257,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "日進東山": {
@@ -272,8 +272,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "日進市": {
@@ -287,8 +287,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "日進白山": {
@@ -302,8 +302,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "岩崎城": {
@@ -317,8 +317,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "弁天池": {
@@ -332,8 +332,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "竹の山": {
@@ -347,8 +347,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "愛知学院大学前": {
@@ -362,8 +362,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "長久手": {
@@ -377,8 +377,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "香流川": {
@@ -392,8 +392,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "長久手市": {
@@ -407,8 +407,8 @@
       "長久手線"
     ],
     "directions": [
-        "長久手市",
-        "惣作"
+        {"route": "長久手線","stationName": "長久手市"},
+        {"route": "長久手線","stationName": "惣作"}
     ]
   },
   "刈谷": {
@@ -426,10 +426,10 @@
       "刈田川線"
     ],
     "directions": [
-        "太田川",
-        "栄町",
-        "知立",
-        "朝倉"
+        {"route": "刈田川線","stationName": "太田川"},
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "緒川線", "stationName": "知立"},
+        {"route": "緒川線", "stationName": "朝倉"}
     ]
   },
   "宝町": {
@@ -445,10 +445,10 @@
       "刈谷環状線"
     ],
     "directions": [
-        "刈谷",
-        "栄町",
-        "刈谷新栄町",
-        "日高"
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"},
+        {"route": "刈谷環状線", "stationName": "刈谷新栄町"},
+        {"route": "刈谷環状線", "stationName": "日高"}
     ]
   },
   "逢妻": {
@@ -462,8 +462,8 @@
       "大高線"
     ],
     "directions": [
-        "刈谷",
-        "栄町"
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
     ]
   },
   "朝日町": {
@@ -479,10 +479,10 @@
       "二ツ池線"
     ],
     "directions": [
-        "刈谷",
-        "栄町",
-        "東緒川",
-        "至学館大学前"
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"},
+        {"route": "二ツ池線", "stationName": "東緒川"},
+        {"route": "二ツ池線", "stationName": "至学館大学前"}
     ]
   },
   "若草": {
@@ -498,7 +498,10 @@
       "刈田川線"
     ],
     "directions": [
-        "刈谷"
+        {"route": "刈田川線", "stationName": "刈谷"},
+        {"route": "刈田川線", "stationName": "太田川"},
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
     ]
   },
   "大府市役所前": {
@@ -513,7 +516,12 @@
       "大高線",
       "大府環状線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大府環状線", "stationName": "至学館大学前"},
+        {"route": "大府環状線", "stationName": "大府"},
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "中央町": {
     "code": [
@@ -527,7 +535,12 @@
       "大高線",
       "東西線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"},
+        {"route": "東西線", "stationName": "沓掛"},
+        {"route": "東西線", "stationName": "荒尾下畑"}
+    ]
   },
   "追分町": {
     "code": [
@@ -541,7 +554,12 @@
       "大高線",
       "荒尾線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"},
+        {"route": "荒尾線", "stationName": "聚楽園"},
+        {"route": "荒尾線", "stationName": "至学館大学前"}
+    ]
   },
   "共和": {
     "code": [
@@ -555,7 +573,12 @@
       "大高線",
       "大府環状線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大府環状線", "stationName": "江端町"},
+        {"route": "大府環状線", "stationName": "至学館大学前"},
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "水主ヶ池": {
     "code": [
@@ -567,7 +590,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "南大高": {
     "code": [
@@ -579,7 +605,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "大高緑地西": {
     "code": [
@@ -593,7 +622,12 @@
       "大高線",
       "大府西線・八事線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"},
+        {"route": "大府西線・八事線", "stationName": "八事"},
+        {"route": "大府西線・八事線", "stationName": "八幡新田"}
+    ]
   },
   "大高": {
     "code": [
@@ -609,7 +643,13 @@
       "外環線",
       "南北線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"},
+        {"route": "南北線", "stationName": "緒川"},
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "上汐田": {
     "code": [
@@ -622,7 +662,11 @@
       "大高線",
       "鳴海連絡線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"},
+        {"route": "鳴海連絡線", "stationName": "鳴海"}
+    ]
   },
   "元鳴尾": {
     "code": [
@@ -634,7 +678,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "星崎": {
     "code": [
@@ -646,7 +693,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "南笠寺": {
     "code": [
@@ -658,7 +708,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "南区役所前": {
     "code": [
@@ -670,7 +723,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "新笠寺": {
     "code": [
@@ -682,7 +738,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "呼続": {
     "code": [
@@ -694,7 +753,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "汐田": {
     "code": [
@@ -706,7 +768,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "明前町": {
     "code": [
@@ -718,7 +783,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "堀田": {
     "code": [
@@ -730,7 +798,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "新開町": {
     "code": [
@@ -742,7 +813,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "牛巻": {
     "code": [
@@ -754,7 +828,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "高辻": {
     "code": [
@@ -766,7 +843,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "白金": {
     "code": [
@@ -778,7 +858,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "鶴舞": {
     "code": [
@@ -790,7 +873,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "千代田": {
     "code": [
@@ -802,7 +888,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "矢場町": {
     "code": [
@@ -814,7 +903,10 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "栄町"},
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "栄町": {
     "code": [
@@ -826,7 +918,9 @@
     "routes": [
       "大高線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大高線", "stationName": "刈谷"}
+    ]
   },
   "名和": {
     "code": [
@@ -840,7 +934,10 @@
       "外環線",
       "名和線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "名和線", "stationName": "八幡新田"},
+        {"route": "外環線", "stationName": "知立"}
+    ]
   },
   "大高丸ノ内": {
     "code": [
@@ -852,7 +949,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "鳴海": {
     "code": [
@@ -865,7 +965,11 @@
       "外環線",
       "鳴海連絡線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"},
+        {"route": "鳴海連絡線", "stationName": "上汐田"}
+    ]
   },
   "大高緑地口": {
     "code": [
@@ -879,7 +983,12 @@
       "外環線",
       "大府西線・八事線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大府西線・八事線", "stationName": "八事"},
+        {"route": "大府西線・八事線", "stationName": "八幡新田"},
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "鎌研": {
     "code": [
@@ -891,7 +1000,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "東陵": {
     "code": [
@@ -903,7 +1015,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "姥子山": {
     "code": [
@@ -915,7 +1030,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "鎌倉台": {
     "code": [
@@ -927,7 +1045,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "中京競馬北": {
     "code": [
@@ -939,7 +1060,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "間米町": {
     "code": [
@@ -951,7 +1075,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "二村台南": {
     "code": [
@@ -965,7 +1092,12 @@
       "外環線",
       "東西線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "東西線", "stationName": "沓掛"},
+        {"route": "東西線", "stationName": "荒尾下畑"},
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "三崎町": {
     "code": [
@@ -977,7 +1109,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "豊明新田": {
     "code": [
@@ -989,7 +1124,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "大久伝町": {
     "code": [
@@ -1001,7 +1139,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "西境本郷": {
     "code": [
@@ -1013,7 +1154,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "井ヶ谷町南": {
     "code": [
@@ -1025,7 +1169,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "丸岡": {
     "code": [
@@ -1037,7 +1184,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "西岡町": {
     "code": [
@@ -1049,7 +1199,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "石畑": {
     "code": [
@@ -1061,7 +1214,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"}
+    ]
   },
   "長土井": {
     "code": [
@@ -1075,7 +1231,11 @@
       "外環線",
       "豊田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和"},
+        {"route": "豊田線", "stationName": "三河渋谷"}
+    ]
   },
   "大島町": {
     "code": [
@@ -1087,7 +1247,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和・三河渋谷"}
+    ]
   },
   "中田古屋敷": {
     "code": [
@@ -1099,7 +1262,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和・三河渋谷"}
+    ]
   },
   "中田町": {
     "code": [
@@ -1111,7 +1277,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和・三河渋谷"}
+    ]
   },
   "中田日進": {
     "code": [
@@ -1123,7 +1292,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和・三河渋谷"}
+    ]
   },
   "駒新町": {
     "code": [
@@ -1135,7 +1307,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和・三河渋谷"}
+    ]
   },
   "三河金山": {
     "code": [
@@ -1147,7 +1322,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和・三河渋谷"}
+    ]
   },
   "駒場町西": {
     "code": [
@@ -1159,7 +1337,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和・三河渋谷"}
+    ]
   },
   "駒場橋": {
     "code": [
@@ -1171,7 +1352,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和・三河渋谷"}
+    ]
   },
   "宮腰": {
     "code": [
@@ -1183,7 +1367,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和・三河渋谷"}
+    ]
   },
   "桜木": {
     "code": [
@@ -1195,7 +1382,10 @@
     "routes": [
       "外環線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "外環線", "stationName": "知立"},
+        {"route": "外環線", "stationName": "名和・三河渋谷"}
+    ]
   },
   "知立": {
     "code": [
@@ -1211,7 +1401,11 @@
       "緒川線",
       "刈田川線知立支線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "緒川線", "stationName": "朝倉"},
+        {"route": "刈田川線知立支線", "stationName": "新富町"},
+        {"route": "外環線", "stationName": "名和・三河渋谷"}
+    ]
   },
   "大府": {
     "code": [
@@ -1227,7 +1421,13 @@
       "刈田川急行線",
       "大府環状線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "大府環状線", "stationName": "至学館大学前"},
+        {"route": "大府環状線", "stationName": "田面"},
+        {"route": "刈田川急行線", "stationName": "刈谷"},
+        {"route": "刈田川急行線", "stationName": "太田川"},
+        {"route": "半田線", "stationName": "半田市"}
+    ]
   },
   "大府森岡": {
     "code": [
@@ -1242,7 +1442,13 @@
       "刈田川線",
       "大峯連絡線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "刈田川線", "stationName": "刈谷"},
+        {"route": "刈田川線", "stationName": "太田川"},
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"},
+        {"route": "大峯連絡線", "stationName": "江端町"}
+    ]
   },
   "公園北": {
     "code": [
@@ -1254,7 +1460,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "医療センター": {
     "code": [
@@ -1266,7 +1475,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "公園南": {
     "code": [
@@ -1278,7 +1490,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "新池": {
     "code": [
@@ -1290,7 +1505,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "緒川相生": {
     "code": [
@@ -1304,7 +1522,13 @@
       "半田線",
       "緒川線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"},
+        {"route": "緒川線", "stationName": "朝倉"},
+        {"route": "緒川線", "stationName": "知立"}
+    
+    ]
   },
   "西石浜": {
     "code": [
@@ -1316,7 +1540,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "藤江": {
     "code": [
@@ -1328,7 +1555,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "緑ヶ丘": {
     "code": [
@@ -1340,7 +1570,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "生見町": {
     "code": [
@@ -1354,7 +1587,11 @@
       "半田線",
       "高浜線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"},
+        {"route": "高浜線", "stationName": "三河高浜"}
+    ]
   },
   "上池": {
     "code": [
@@ -1366,7 +1603,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "七本木池": {
     "code": [
@@ -1378,7 +1618,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "庚申町": {
     "code": [
@@ -1390,7 +1633,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "乙川畑田": {
     "code": [
@@ -1402,7 +1648,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "乙川薬師": {
     "code": [
@@ -1414,7 +1663,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "乙川": {
     "code": [
@@ -1427,7 +1679,11 @@
       "半田線",
       "半田線住吉支線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"},
+        {"route": "半田線住吉支線", "stationName": "清城"}
+    ]
   },
   "半田大橋": {
     "code": [
@@ -1439,7 +1695,10 @@
     "routes": [
       "半田線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線", "stationName": "半田市"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "半田市": {
     "code": [
@@ -1455,7 +1714,12 @@
       "半滑線・空港線",
       "師崎線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半滑線・空港線", "stationName": "中部国際空港"},
+        {"route": "半滑線・空港線", "stationName": "半田みなと"},
+        {"route": "師崎線", "stationName": "師崎港"},
+        {"route": "半田線", "stationName": "大府"}
+    ]
   },
   "半田赤レンガ": {
     "code": [
@@ -1467,7 +1731,10 @@
     "routes": [
       "半田線住吉支線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線住吉支線", "stationName": "清城"},
+        {"route": "半田線住吉支線", "stationName": "乙川"}
+    ]
   },
   "住吉町": {
     "code": [
@@ -1479,7 +1746,10 @@
     "routes": [
       "半田線住吉支線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半田線住吉支線", "stationName": "清城"},
+        {"route": "半田線住吉支線", "stationName": "乙川"}
+    ]
   },
   "清城": {
     "code": [
@@ -1493,7 +1763,11 @@
       "半田線住吉支線",
       "半滑線・空港線"
     ],
-    "directions": []
+    "directions": [
+        {"route": "半滑線・空港線", "stationName": "中部国際空港"},
+        {"route": "半滑線・空港線", "stationName": "半田みなと"},
+        {"route": "半田線住吉支線", "stationName": "乙川"}
+    ]
   },
   "至学館大学前": {
     "code": [

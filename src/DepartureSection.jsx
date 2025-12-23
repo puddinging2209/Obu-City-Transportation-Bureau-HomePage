@@ -1,6 +1,8 @@
 import React from 'react';
+import Select from 'react-select';
 
 import { dia } from './readOud.js';
+import stations from '/public/stations.json';
 
 function DepartureSection() {
     const [myStations, setMyStations] = React.useState(localStorage.getItem('myStations') ? JSON.parse(localStorage.getItem('myStations')) : ['大府']);
@@ -12,7 +14,15 @@ function DepartureSection() {
             {myStations.map((station) => (
               <div className="departure-card" key={station}>
                 <div className="card-header">
-                  <h3>{station}</h3><a>⇆ 方面切替</a>
+                        <h3>{station}</h3>
+                        <Select
+                            isSearchable={false}
+                            menuPortalTarget={document.body}
+                            styles={{
+                                menuPortal: base => ({ ...base, zIndex: 9999 })
+                            }}
+                            options={stations[station].directions.map((direction) => ({ value: direction, label: `${direction.stationName}方面` }))}
+                        />
                 </div>
                 <table>
                   <tbody>

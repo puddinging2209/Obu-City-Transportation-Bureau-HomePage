@@ -110,7 +110,7 @@ main {
     font-size: 16px;
 }
 
-.departure-card .card-header a {
+.departure-card .card-header Select {
     font-size: 14px;
     padding: 1px 5px;
     background: #eaeaea;
