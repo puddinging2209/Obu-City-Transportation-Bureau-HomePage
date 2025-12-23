@@ -185,6 +185,11 @@ main {
         scroll-snap-align: center;
         min-width: 85%;
     }
+
+    .add-card {
+        scroll-snap-align: center;
+        min-width: 85%;
+    }
 }
 
 
