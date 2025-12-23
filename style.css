@@ -10,6 +10,7 @@ a {
 
 /* ===== ヘッダー（PC） ===== */
 header {
+    width: 100%;
     background: #f8f8f8;
     border-bottom: 1px solid #ddd;
     padding: 10px;
@@ -60,7 +61,6 @@ header nav .icon {
 .header-nav .transfer {
     background: #ffcc00;
     font-weight: bold;
-    padding: 8px 25px;
 }
 
 /* ===== メイン ===== */
@@ -68,6 +68,81 @@ main {
     padding: 20px;
     text-align: center;
 }
+
+/* ===== 発車案内 ===== */
+.departure-area {
+    margin-bottom: 30px;
+}
+
+.departure-list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* 各駅カード */
+.departure-card {
+    margin: 0 auto;
+    min-width: 260px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: left;
+}
+
+.departure-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.departure-card table {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 12px;
+    border-spacing: 10px;
+}
+
+.departure-card table tr {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.departure-card table tr td a.type {
+    padding: 5px 10px;
+    background: #000000;
+    color: #ffffff;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.departure-card table tr td.time {
+    padding-left: auto;
+}
+
+.departure-card a.more-link {
+    padding: 8px 12px;
+    font-size: 14px;
+    background: #eaeaea;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+/* ===== スマホ：スナップスクロール ===== */
+@media (max-width: 760px) {
+    .departure-list {
+        scroll-snap-type: x mandatory;
+    }
+
+    .departure-card {
+        margin: 0 10px;
+        scroll-snap-align: center;
+        min-width: 85%;
+    }
+}
+
 
 /* 運行情報 */
 .service-info {
@@ -148,7 +223,7 @@ footer {
     border-top: 1px solid #ddd;
     font-size: 14px;
     position: sticky;
-    top: 0;
+    top: 100vh;
     z-index: 1000;
 }
 
