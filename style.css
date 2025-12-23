@@ -74,6 +74,12 @@ main {
     margin-bottom: 30px;
 }
 
+.departure-area h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
 .departure-list {
     display: flex;
     gap: 16px;
@@ -83,7 +89,7 @@ main {
 
 /* 各駅カード */
 .departure-card {
-    margin: 0 auto;
+    margin: 0 10px;
     min-width: 260px;
     background: #ffffff;
     border: 1px solid #ccc;
@@ -128,6 +134,27 @@ main {
     background: #eaeaea;
     border-radius: 4px;
     white-space: nowrap;
+}
+
+.add-card {
+    margin: 0 10px;
+    min-width: 260px;
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.add-card .icon-plus {
+    height: 80px;
+}
+
+.add-card p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
 }
 
 /* ===== スマホ：スナップスクロール ===== */
