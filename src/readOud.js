@@ -1,5 +1,7 @@
 import fs from 'fs';
 
+import { name_number, terminal, typeName } from './func.js';
+
 const correspondingRoute = {
     二ツ池線: 'FT',
     外環線: 'GK',
@@ -42,4 +44,29 @@ function dia(rosen) {
     return diagram;
 }
 
-export { dia };
+function searchDeparture(station, direction) {
+    const rosen = correspondingRoute[direction.routeCode];
+    const diagram = dia(rosen);
+    const stationIndex = diagram.railway.stations.findIndex((sta) => sta.name == name_number(station));
+    const numofStations = diagram.railway.stations.length;
+    const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == name_number(direction.stationName))) ? 0 : 1;
+    const departures = diagram.railway.diagrams[d].trains.filter((tra) => tra.timeTable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.stopType === 1);
+    departures.sort((a, b) => {
+        const timeA = a.timeTable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.time;
+        const timeB = b.timeTable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.time;
+        return timeA - timeB;
+    });
+    const result = departures.map((tra) => {
+        const time = tra.timeTable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.time;
+        const terminal = terminal(tra, diagram);
+        const typeName = typeName(tra, diagram);
+        return {
+            terminal,
+            typeName,
+            time,
+            train: tra
+        }
+    })
+    return departures;
+}
+export { searchDeparture };

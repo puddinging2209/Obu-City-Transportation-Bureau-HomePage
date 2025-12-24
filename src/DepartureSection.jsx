@@ -1,21 +1,32 @@
 import React from 'react';
 import Select from 'react-select';
 
-import { dia } from './readOud.js';
+import { toTimeString } from './func.js';
+import { searchDeparture } from './readOud.js';
 import stations from '/public/stations.json';
 
 function DepartureSection() {
     const [myStations, setMyStations] = React.useState(localStorage.getItem('myStations') ? JSON.parse(localStorage.getItem('myStations')) : ['大府']);
+    const [myDirections, setMyDirections] = React.useState(Array.from({length: myStations.length}, () => null))
+    const myDepartures = myStations.map((sta, i) => {
+        return searchDeparture(sta, myDirections[i])
+    })
 
   return (
     <section className="departure-area">
       <h2>発車案内（マイ駅・停留所）</h2>
           <div className="departure-list">
-            {myStations.map((station) => (
+            {myStations.map((station, i) => (
               <div className="departure-card" key={station}>
                 <div className="card-header">
                         <h3>{station}</h3>
                         <Select
+                            onChange={(e) => {
+                                setMyDirections(Array.from({
+                                    ...myDirections,
+                                    i: e.target.value
+                                }))
+                            }}
                             isSearchable={false}
                             menuPortalTarget={document.body}
                             styles={{
@@ -27,9 +38,9 @@ function DepartureSection() {
                 <table>
                   <tbody>
                     <tr>
-                      <td><a className="type" href="#">特急</a></td>
-                      <td>沓掛</td>
-                      <td className="time">10:12</td>
+                      <td><a className="type" href="#">{myDepartures[i][0].typeName}</a></td>
+                      <td>{myDepartures[i][0].terminal}</td>
+                      <td className="time">{toTimeString(myDepartures[i][0].time)}</td>
                     </tr>
                     <tr>
                       <td><a className="type" href="#">新快速</a></td>
