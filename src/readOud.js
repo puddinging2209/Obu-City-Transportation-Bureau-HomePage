@@ -16,7 +16,6 @@ function indexOfStation(diagram, station, rosen, direction) {
         { exc: { station: '日高', direction: { route: '刈谷環状線', stationName: '刈谷青山' } }, return: 17 }
     ];
 
-    console.log(JSON.stringify({ station, direction }));
     exceptions.forEach((e) => console.log(JSON.stringify(e.exc)));
     const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
     if (exception) {

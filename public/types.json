@@ -1,0 +1,47 @@
+{
+    "普通": {
+        "name": "普通",
+        "roma": "local",
+        "color": "#000"
+    },
+    "快速": {
+        "name": "快速",
+        "roma": "rapid",
+        "color": "#0000DC"
+    },
+    "準急": {
+        "name": "準急",
+        "roma": "semi-rapid",
+        "color": "#84C255"
+    },
+    "区間急行": {
+        "name": "区間急行",
+        "roma": "suburban-express",
+        "color": "#008C00"
+    },
+    "急行": {
+        "name": "急行",
+        "roma": "express",
+        "color": "#00CBD5"
+    },
+    "快速急行": {
+        "name": "快速急行",
+        "roma": "rapid-express",
+        "color": "#DC0000"
+    },
+    "通勤急行": {
+        "name": "通勤急行",
+        "roma": "commuter-express",
+        "color": "#FFDC00"
+    },
+    "特急": {
+        "name": "特急",
+        "roma": "limited-express",
+        "color": "#FF0000"
+    },
+    "ライナー": {
+        "name": "ライナー",
+        "roma": "liner",
+        "color": "#FF0000"
+    }
+}
