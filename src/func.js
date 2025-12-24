@@ -1,7 +1,9 @@
-import fs from 'fs';
+import stations from '/public/stations.json';
 
-const stations = JSON.parse(fs.readFileSync('/public/stations.json', 'utf-8'));
-const lines = JSON.parse(fs.readFileSync('/public/lines.json', 'utf-8'));
+function nowsecond() {
+    const now = new Date();
+    return now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+}
 
 function toTime(seconds) {
     const h = Math.floor(seconds / 3600);
@@ -17,8 +19,21 @@ function toTimeString(seconds) {
     return `${hStr}:${mStr}`;
 }
 
+function number_name(code) {
+    const result = Object.values(stations).find(station => station.code.includes(code))?.name;
+    return result ?? null;
+}
+
 function name_number(text) {
     return stations[text]?.code ?? null;
+}
+
+function name(text) {
+    if (number_name(text.slice(0, 4)) !== null) {
+        return number_name(text.slice(0, 4));
+    } else {
+        return text;
+    }
 }
 
 function terminal(train, diagram) {
@@ -54,4 +69,4 @@ function typeName(train, diagram) {
     return diagram.railway.trainTypes[train.type].name;
 }
 
-export { toTime, toTimeString, name_number, terminal, typeName };
+export { nowsecond, toTime, toTimeString, name, name_number, terminal, typeName };

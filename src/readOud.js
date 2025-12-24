@@ -1,72 +1,56 @@
-import fs from 'fs';
-
+import lines from '/public/lines.json';
 import { name_number, terminal, typeName } from './func.js';
 
-const correspondingRoute = {
-    二ツ池線: 'FT',
-    外環線: 'GK',
-    鳴海連絡線: 'GK',
-    半田線: 'HD',
-    半田線住吉支線: 'HD',
-    大峯連絡線: 'HD',
-    高浜線: 'HD',
-    半滑線・空港線: 'HK',
-    刈谷環状線: 'KL',
-    健康の森線: 'KM',
-    刈田川線: 'KT',
-    刈田川急行線: 'KT',
-    刈田川線知立支線: 'KTa',
-    師崎線: 'MR',
-    内海線: 'MR',
-    名東線: 'MT',
-    みよし線: 'MY',
-    南北線: 'NB',
-    長久手線: 'NK',
-    内田面線: 'UD',
-    名和線: 'NW',
-    大高線: 'OD',
-    緒川線: 'OG',
-    大府環状線: 'OL',
-    大府西線: 'ON',
-    '南港線(名港トリトンライン)': 'TR',
-    つつじが丘線: 'TT',
-    与五八デルタ線: 'TT',
-    豊田線: 'TY',
-    東西線: 'TZ',
-    惣作直通線: 'TZ',
-}
-
-function dia(rosen) {
-    if (correspondingRoute[rosen]) {
-        rosen = correspondingRoute[rosen];
+async function dia(rosen) {
+    if (lines[rosen]) {
+        rosen = lines[rosen].json;
     }
-    const diagram = JSON.parse(fs.readFileSync(`ouds\\${rosen}.json`, 'utf-8'));
+    const response = await fetch(`/oud/${rosen}.json`);
+    const diagram = await response.json();
     return diagram;
 }
 
-function searchDeparture(station, direction) {
-    const rosen = correspondingRoute[direction.routeCode];
-    const diagram = dia(rosen);
-    const stationIndex = diagram.railway.stations.findIndex((sta) => sta.name == name_number(station));
+function indexOfStation(diagram, station, rosen, direction) {
+    const exceptions = [
+        { exc: { station: '大府', direction: { route: '大府環状線', stationName: '江端町' } }, return: 12 },
+        { exc: { station: '日高', direction: { route: '刈谷環状線', stationName: '刈谷青山' } }, return: 17 }
+    ];
+
+    console.log(JSON.stringify({ station, direction }));
+    exceptions.forEach((e) => console.log(JSON.stringify(e.exc)));
+    const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
+    if (exception) {
+        return exception.return;
+    }
+
+    return diagram.railway.stations.findIndex((sta) => sta.name == name_number(station).find((value) => value.includes(rosen)));
+}
+
+async function searchDeparture(station, direction) {
+    const rosen = lines[direction.route].json;
+    const diagram = await dia(rosen);
+    const stationIndex = indexOfStation(diagram, station, rosen, direction);
+    const codeofStation = name_number(direction.stationName).find((value) => value.includes(rosen))
     const numofStations = diagram.railway.stations.length;
-    const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == name_number(direction.stationName))) ? 0 : 1;
-    const departures = diagram.railway.diagrams[d].trains.filter((tra) => tra.timeTable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.stopType === 1);
+    const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == codeofStation)) ? 0 : 1;
+    const departures = diagram.railway.diagrams[0].trains[d].filter((tra) =>
+        tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.stopType === 1 &&
+        tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure != null
+    );
     departures.sort((a, b) => {
-        const timeA = a.timeTable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.time;
-        const timeB = b.timeTable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.time;
+        const timeA = a.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure;
+        const timeB = b.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure;
         return timeA - timeB;
     });
     const result = departures.map((tra) => {
-        const time = tra.timeTable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.time;
-        const terminal = terminal(tra, diagram);
-        const typeName = typeName(tra, diagram);
+        const time = tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure;
         return {
-            terminal,
-            typeName,
+            terminal: terminal(tra, diagram),
+            typeName: typeName(tra, diagram),
             time,
             train: tra
         }
     })
-    return departures;
+    return result;
 }
 export { searchDeparture };

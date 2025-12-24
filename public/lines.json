@@ -2,6 +2,7 @@
   "長久手線": {
     "name": "長久手線",
     "code": "NK",
+    "json": "NK",
     "color": "#5D6CFF",
     "fastest_type": 3,
     "stations": [
@@ -37,6 +38,7 @@
   "大高線": {
     "name": "大高線",
     "code": "OD",
+    "json": "OD",
     "color": "#FF9000",
     "fastest_type": 3,
     "stations": [
@@ -76,6 +78,7 @@
   "外環線": {
     "name": "外環線",
     "code": "GK",
+    "json": "GK",
     "color": "#60A331",
     "fastest_type": 3,
     "stations": [
@@ -117,6 +120,7 @@
   "半田線": {
     "name": "半田線",
     "code": "HD",
+    "json": "HD",
     "color": "#FFD600",
     "fastest_type": 3,
     "stations": [
@@ -144,6 +148,7 @@
   "半田線住吉支線": {
     "name": "半田線住吉支線",
     "code": "HD",
+    "json": "HD",
     "color": "#FFD600",
     "fastest_type": 3,
     "stations": [
@@ -156,6 +161,7 @@
   "名東線": {
     "name": "名東線",
     "code": "MT",
+    "json": "MT",
     "color": "#9BEA81",
     "fastest_type": 3,
     "stations": [
@@ -196,6 +202,7 @@
   "二ツ池線": {
     "name": "二ツ池線",
     "code": "FT",
+    "json": "FT",
     "color": "#A86700",
     "fastest_type": 1,
     "stations": [
@@ -212,6 +219,7 @@
   "二ツ池線森岡支線": {
     "name": "二ツ池線森岡支線",
     "code": "FT",
+    "json": "FT",
     "color": "#A86700",
     "fastest_type": 1,
     "stations": [
@@ -226,6 +234,7 @@
   "内田面線": {
     "name": "内田面線",
     "code": "UD",
+    "json": "NK",
     "color": "#00E0FF",
     "fastest_type": 3,
     "stations": [
@@ -243,6 +252,7 @@
   "南北線": {
     "name": "南北線",
     "code": "NB",
+    "json": "NB",
     "color": "#FF0071",
     "fastest_type": 0,
     "stations": [
@@ -266,6 +276,7 @@
   "荒尾線": {
     "name": "荒尾線",
     "code": "AR",
+    "json": "AR",
     "color": "#EDA39C",
     "fastest_type": 0,
     "stations": [
@@ -289,6 +300,7 @@
   "みよし線": {
     "name": "みよし線",
     "code": "MY",
+    "json": "MY",
     "color": "#EA88FF",
     "fastest_type": 2,
     "stations": [
@@ -326,6 +338,7 @@
   "健康の森線": {
     "name": "健康の森線",
     "code": "KM",
+    "json": "KM",
     "color": "#FFEA00",
     "fastest_type": 0,
     "stations": [
@@ -344,6 +357,7 @@
   "南港線(名港トリトンライン)": {
     "name": "南港線(名港トリトンライン)",
     "code": "TR",
+    "json": "TR",
     "color": "#0097A7",
     "fastest_type": 3,
     "stations": [
@@ -359,6 +373,7 @@
   "高浜線": {
     "name": "高浜線",
     "code": "TM",
+    "json": "HD",
     "color": "#A700A7",
     "fastest_type": 0,
     "stations": [
@@ -373,6 +388,7 @@
   "大府西線・八事線": {
     "name": "大府西線・八事線",
     "code": "ON",
+    "json": "ON",
     "color": "#FF0101",
     "fastest_type": 3,
     "stations": [
@@ -410,6 +426,7 @@
   "緒川線": {
     "name": "緒川線",
     "code": "OG",
+    "json": "OG",
     "color": "#969696",
     "fastest_type": 3,
     "stations": [
@@ -449,6 +466,7 @@
   "半滑線・空港線": {
     "name": "半滑線・空港線",
     "code": "HK",
+    "json": "HK",
     "color": "#0288D1",
     "fastest_type": 3,
     "stations": [
@@ -485,6 +503,7 @@
   "豊田線": {
     "name": "豊田線",
     "code": "TY",
+    "json": "TY",
     "color": "#87CEAC",
     "fastest_type": 3,
     "stations": [
@@ -513,6 +532,7 @@
   "刈谷環状線": {
     "name": "刈谷環状線",
     "code": "KL",
+    "json": "KL",
     "color": "#FFC200",
     "fastest_type": 0,
     "stations": [
@@ -538,6 +558,7 @@
   "つつじが丘線": {
     "name": "つつじが丘線",
     "code": "TT",
+    "json": "TT",
     "color": "#018300",
     "fastest_type": 2,
     "stations": [
@@ -562,6 +583,7 @@
   "刈田川線": {
     "name": "刈田川線",
     "code": "KT",
+    "json": "KT",
     "color": "#003DFF",
     "fastest_type": 3,
     "stations": [
@@ -587,6 +609,7 @@
   "刈田川急行線": {
     "name": "刈田川急行線",
     "code": "KT",
+    "json": "KT",
     "color": "#003DFF",
     "fastest_type": 3,
     "stations": [
@@ -599,6 +622,7 @@
   "刈田川線知立支線": {
     "name": "刈田川線知立支線",
     "code": "KT",
+    "json": "KTa",
     "color": "#003DFF",
     "fastest_type": 3,
     "stations": [
@@ -613,6 +637,7 @@
   "大府環状線": {
     "name": "大府環状線",
     "code": "OL",
+    "json": "OL",
     "color": "#08FF00",
     "fastest_type": 3,
     "stations": [
@@ -633,6 +658,7 @@
   "師崎線": {
     "name": "師崎線",
     "code": "MR",
+    "json": "MR",
     "color": "#A1C2FA",
     "fastest_type": 3,
     "stations": [
@@ -674,6 +700,7 @@
   "名和線": {
     "name": "名和線",
     "code": "NW",
+    "json": "NW",
     "color": "#DE00FF",
     "fastest_type": 2,
     "stations": [
@@ -696,6 +723,7 @@
   "内海線": {
     "name": "内海線",
     "code": "UM",
+    "json": "MR",
     "color": "#FFFF8D",
     "fastest_type": 3,
     "stations": [
@@ -710,6 +738,7 @@
   "東西線": {
     "name": "東西線",
     "code": "TZ",
+    "json": "TZ",
     "color": "#FF66AE",
     "fastest_type": 0,
     "stations": [
@@ -739,6 +768,7 @@
   "惣作直通線": {
     "name": "惣作直通線",
     "code": "TZ",
+    "json": "TZ",
     "color": "#FF66AE",
     "fastest_type": 0,
     "stations": [
@@ -749,6 +779,7 @@
   "与五八デルタ線": {
     "name": "与五八デルタ線",
     "code": "TT",
+    "json": "TT",
     "color": "#018300",
     "fastest_type": 2,
     "stations": [
@@ -759,6 +790,7 @@
   "鳴海連絡線": {
     "name": "鳴海連絡線",
     "code": "OD",
+    "json": "GK",
     "color": "#FF9000",
     "fastest_type": 2,
     "stations": [
@@ -769,6 +801,7 @@
   "大峯連絡線": {
     "name": "大峯連絡線",
     "code": "HD",
+    "json": "HD",
     "color": "#FFD600",
     "fastest_type": 3,
     "stations": [

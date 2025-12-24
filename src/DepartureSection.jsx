@@ -1,16 +1,27 @@
 import React from 'react';
 import Select from 'react-select';
 
-import { toTimeString } from './func.js';
+import { nowsecond, toTimeString, name } from './func.js';
 import { searchDeparture } from './readOud.js';
 import stations from '/public/stations.json';
 
 function DepartureSection() {
     const [myStations, setMyStations] = React.useState(localStorage.getItem('myStations') ? JSON.parse(localStorage.getItem('myStations')) : ['大府']);
     const [myDirections, setMyDirections] = React.useState(Array.from({length: myStations.length}, () => null))
-    const myDepartures = myStations.map((sta, i) => {
-        return searchDeparture(sta, myDirections[i])
-    })
+    const [myDepartures, setMyDepartures] = React.useState([]);
+
+    React.useEffect(() => {
+        const fetchDepartures = async () => {
+            const departures = await Promise.all(myStations.map(async (sta, i) => {
+                if (myDirections[i]) {
+                    return await searchDeparture(sta, myDirections[i]);
+                }
+                return [];
+            }));
+            setMyDepartures(departures);
+        };
+        fetchDepartures();
+    }, [myStations, myDirections]);
 
   return (
     <section className="departure-area">
@@ -22,10 +33,9 @@ function DepartureSection() {
                         <h3>{station}</h3>
                         <Select
                             onChange={(e) => {
-                                setMyDirections(Array.from({
-                                    ...myDirections,
-                                    i: e.target.value
-                                }))
+                                const newDirections = [...myDirections];
+                                newDirections[i] = e.value;
+                                setMyDirections(newDirections);
                             }}
                             isSearchable={false}
                             menuPortalTarget={document.body}
@@ -37,18 +47,23 @@ function DepartureSection() {
                 </div>
                 <table>
                   <tbody>
-                    <tr>
-                      <td><a className="type" href="#">{myDepartures[i][0].typeName}</a></td>
-                      <td>{myDepartures[i][0].terminal}</td>
-                      <td className="time">{toTimeString(myDepartures[i][0].time)}</td>
-                    </tr>
-                    <tr>
-                      <td><a className="type" href="#">新快速</a></td>
-                      <td>刈谷</td>
-                      <td className="time">10:20</td>
-                    </tr>
+                    {[0, 1].map((j) => {
+                      const showDepartures = myDepartures.map((deps) => [deps.filter((d => d.time >= nowsecond()))[0] || null, deps.filter(d => d.time >= nowsecond())[1] || null]);
+                      const departure = showDepartures?.[i]?.[j];
+                      return departure ? (
+                        <tr key={j}>
+                          <td><a className="type" href="#">{departure.typeName}</a></td>
+                          <td>{name(departure.terminal)}</td>
+                          <td className="time">{toTimeString(departure.time)}</td>
+                        </tr>
+                      ) : (
+                        <tr key={j}>
+                          <td colSpan="3">データなし</td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
-          </table>
+                </table>
           <a href="#" className="more-link">もっと見る</a>
         </div>
         ))}
