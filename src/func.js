@@ -1,11 +1,12 @@
-import stations from '/public/stations.json';
+import stations from '/src/stations.json';
 
 function nowsecond() {
     const now = new Date();
-    return now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+    return adjustTime(now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds());
 }
 
 function toTime(seconds) {
+    if (seconds > 86400) seconds -= 86400;
     const h = Math.floor(seconds / 3600);
     const m = Math.floor((seconds % 3600) / 60);
     const s = seconds % 60;
@@ -17,6 +18,10 @@ function toTimeString(seconds) {
     const hStr = String(timeObj.h);
     const mStr = String(timeObj.m).padStart(2, '0');
     return `${hStr}:${mStr}`;
+}
+
+function adjustTime(seconds) {
+    return (seconds < 10800) ? seconds + 86400 : seconds;
 }
 
 function number_name(code) {
@@ -69,4 +74,4 @@ function typeName(train, diagram) {
     return diagram.railway.trainTypes[train.type].name;
 }
 
-export { nowsecond, toTime, toTimeString, name, name_number, terminal, typeName };
+export { nowsecond, toTime, toTimeString, adjustTime, name, name_number, terminal, typeName };

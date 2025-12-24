@@ -134,7 +134,7 @@ main {
     margin-bottom: 10px;
 }
 
-.departure-card table tr td a.type {
+a.type {
     padding: 5px 10px;
     background: #000000;
     color: #ffffff;
@@ -326,47 +326,6 @@ footer {
     }
 }
 
-/* ===== 検索モーダル ===== */
-.search-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-}
-
-.search-content {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 90%;
-    text-align: center;
-}
-
-.search-content h3 {
-    margin-top: 0;
-}
-
-.search-content button {
-    margin-top: 10px;
-    padding: 8px 16px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.search-content button:hover {
-    background: #0056b3;
-}
-
 /* 削除ボタン */
 .remove-btn {
     position: absolute;
@@ -381,4 +340,61 @@ footer {
     cursor: pointer;
     font-size: 20px;
     line-height: 1;
+}
+
+/* ===== モーダル ===== */
+.Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 50vw;
+    max-height: 90vh;
+    overflow: auto;
+    z-index: 10001;
+}
+
+.listModal {
+    width: fit-content;
+}
+
+.Modal table {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 12px;
+    border-spacing: 10px;
+    white-space: nowrap;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
+.modalClose {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 14px;
+    background: #eaeaea;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    color: #000;
+    border: none;
+}
+
+@media (max-width: 760px) {
+
+    .searchModal {
+        width: 80vw;
+    }
 }

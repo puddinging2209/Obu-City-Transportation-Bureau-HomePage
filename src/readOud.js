@@ -1,5 +1,5 @@
-import lines from '/public/lines.json';
-import { name_number, terminal, typeName } from './func.js';
+import lines from '/src/lines.json';
+import { adjustTime, name_number, terminal, typeName } from './func.js';
 
 async function dia(rosen) {
     if (lines[rosen]) {
@@ -42,10 +42,11 @@ async function searchDeparture(station, direction) {
     } else if (direction.route === '刈田川線' && direction.stationName.includes('若草')) {
         departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
     }
+    if (json === 'HD') debugger;
 
     departures.sort((a, b) => {
-        const timeA = a.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure;
-        const timeB = b.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure;
+        const timeA = adjustTime(a.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);
+        const timeB = adjustTime(b.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);
         return timeA - timeB;
     });
     const result = departures.map((tra) => {
@@ -53,7 +54,7 @@ async function searchDeparture(station, direction) {
         return {
             terminal: terminal(tra, diagram),
             typeName: typeName(tra, diagram),
-            time,
+            time: adjustTime(time),
             train: tra
         }
     })

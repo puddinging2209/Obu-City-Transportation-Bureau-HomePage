@@ -1,8 +1,13 @@
 import React from 'react';
 import DepartureSection from './DepartureSection';
 import './App.css';
+import ReactModal from 'react-modal';
 
 function App() {
+  React.useEffect(() => {
+    ReactModal.setAppElement('#root');
+  }, []);
+
   return (
     <div className="App">
       {/* ヘッダー（PC表示） */}

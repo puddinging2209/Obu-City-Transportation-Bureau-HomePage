@@ -9,6 +9,11 @@
         "roma": "local",
         "color": "#000"
     },
+    "環状運転": {
+        "name": "環状運転",
+        "roma": "local",
+        "color": "#000"
+    },
     "快速": {
         "name": "快速",
         "roma": "rapid",

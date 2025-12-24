@@ -3,8 +3,9 @@ import Select from 'react-select';
 
 import { nowsecond, toTimeString, name } from './func.js';
 import { searchDeparture } from './readOud.js';
-import stations from '/public/stations.json';
-import types from '/public/types.json';
+import stations from '/src/stations.json';
+import types from '/src/types.json';
+import ReactModal from 'react-modal';
 
 function DepartureSection() {
     const [myStations, setMyStations] = React.useState(localStorage.getItem('myStations') ? JSON.parse(localStorage.getItem('myStations')) : ['大府']);
@@ -12,6 +13,7 @@ function DepartureSection() {
     const [myDirections, setMyDirections] = React.useState(initialDirections)
     const [myDepartures, setMyDepartures] = React.useState([]);
     const [showSearch, setShowSearch] = React.useState(false);
+    const [showMore, setShowMore] = React.useState(false)
 
     function handleRemoveMyStation(index) {
         const newStations = myStations.filter((_, i) => i !== index);
@@ -65,21 +67,17 @@ function DepartureSection() {
                                   {[0, 1].map((j) => {
                                       const showDepartures = myDepartures.map((deps) => [deps.filter((d => d.time >= nowsecond()))[0] || null, deps.filter(d => d.time >= nowsecond())[1] || null]);
                                       const departure = showDepartures?.[i]?.[j];
-                                      return departure ? (
+                                      return departure && (
                                           <tr key={j}>
                                               <td><a className="type" style={{background: types[departure.typeName].color}}>{departure.typeName}</a></td>
                                               <td>{name(departure.terminal)}</td>
                                               <td className="time">{toTimeString(departure.time)}</td>
                                           </tr>
-                                      ) : (
-                                          <tr key={j}>
-                                              <td colSpan="3">データなし</td>
-                                          </tr>
                                       );
                                   })}
                               </tbody>
                           </table>
-                          <a href="#" className="more-link">もっと見る</a>
+                          <a className="more-link" onClick={() => setShowMore(i)}>もっと見る</a>
                           <button className="remove-btn" onClick={() => handleRemoveMyStation(i)}>×</button>
                       </div>
                   )
@@ -88,34 +86,70 @@ function DepartureSection() {
           <img className="icon-plus" src="/image/icon_add.png" alt="プラスアイコン" />
           <p>マイ駅・停留所を追加</p>
         </div>
-      </div>
-      {showSearch && (
-        <div className="search-modal">
-          <div className="search-content">
-            <h3>駅・停留所を追加</h3>
-            <Select
-              options={Object.keys(stations).filter(station => !myStations.includes(station)).sort((a, b) => stations[a].kana.localeCompare(stations[b].kana)).map(station => ({ value: station, label: station }))}
-              onChange={(selected) => {
-                if (selected) {
-                  const newStations = [...myStations, selected.value];
-                  setMyStations(newStations);
-                  localStorage.setItem('myStations', JSON.stringify(newStations));
-                  const newDirections = [...myDirections, stations[selected.value]?.directions?.[0] || null];
-                  setMyDirections(newDirections);
-                  setShowSearch(false);
-                }
-              }}
-              placeholder="駅・停留所を検索"
-              isSearchable={true}
-              menuPortalTarget={document.body}
-              styles={{
-                menuPortal: base => ({ ...base, zIndex: 10001 })
-              }}
-            />
-            <button onClick={() => setShowSearch(false)}>閉じる</button>
           </div>
-        </div>
-      )}
+          <ReactModal
+            isOpen={showSearch}
+            onRequestClose={() => setShowSearch(false)}
+            className="Modal searchModal"
+            overlayClassName="Overlay"
+          >
+              <div className="search-modal">
+                <div className="search-content">
+                    <h3>マイ駅・停留所を追加</h3>
+                    <Select
+                        options={Object.keys(stations).filter(station => !myStations.includes(station)).sort((a, b) => stations[a].kana.localeCompare(stations[b].kana)).map(station => ({ value: station, label: station }))}
+                        onChange={(selected) => {
+                            if (selected) {
+                            const newStations = [...myStations, selected.value];
+                            setMyStations(newStations);
+                            localStorage.setItem('myStations', JSON.stringify(newStations));
+                            const newDirections = [...myDirections, stations[selected.value]?.directions?.[0] || null];
+                            setMyDirections(newDirections);
+                            setShowSearch(false);
+                            }
+                        }}
+                        placeholder="駅・停留所を検索"
+                        isSearchable={true}
+                        menuPortalTarget={document.body}
+                        styles={{
+                            menuPortal: base => ({ ...base, zIndex: 10001 })
+                        }}
+                    />
+                    <a className='modalClose' onClick={() => setShowSearch(false)}>閉じる</a>
+                </div>
+              </div>
+          </ReactModal>
+          <ReactModal
+            isOpen={showMore !== false}
+            onRequestClose={() => setShowMore(false)}
+            className="Modal listModal"
+            overlayClassName="Overlay"
+          >
+              <div className="more-modal">
+                  <div className="more-content">
+                    <h3>{showMore !== false ? myStations[showMore] : ''}</h3>
+                          <table>
+                              <tbody>
+                                  {showMore !== false && myDepartures[showMore]?.map((train, i) => {
+                                      const departure = train;
+                                      return departure ? (
+                                          <tr key={`dep-${i}`}>
+                                              <td><a className="type" style={{background: types[departure.typeName].color}}>{departure.typeName}</a></td>
+                                              <td>{name(departure.terminal)}</td>
+                                              <td className="time">{toTimeString(departure.time)}</td>
+                                          </tr>
+                                      ) : (
+                                          <tr key={`dep-${i}`}>
+                                              <td colSpan="3">データなし</td>
+                                          </tr>
+                                      );
+                                  })}
+                              </tbody>
+                          </table>
+                    <a className='modalClose' onClick={() => setShowMore(false)}>閉じる</a>
+                </div>
+              </div>
+          </ReactModal>
     </section>
   );
 };
