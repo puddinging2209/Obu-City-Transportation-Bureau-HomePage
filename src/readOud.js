@@ -13,10 +13,10 @@ async function dia(rosen) {
 function indexOfStation(diagram, station, rosen, direction) {
     const exceptions = [
         { exc: { station: '大府', direction: { route: '大府環状線', stationName: '江端町' } }, return: 12 },
-        { exc: { station: '日高', direction: { route: '刈谷環状線', stationName: '刈谷青山' } }, return: 17 }
+        { exc: { station: '日高', direction: { route: '刈谷環状線', stationName: '刈谷青山' } }, return: 17 },
+        { exc: { station: '至学館大学前', direction: { route: '名東線', stationName: '藤が丘' } }, return: 0 },
     ];
 
-    exceptions.forEach((e) => console.log(JSON.stringify(e.exc)));
     const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
     if (exception) {
         return exception.return;
@@ -26,16 +26,23 @@ function indexOfStation(diagram, station, rosen, direction) {
 }
 
 async function searchDeparture(station, direction) {
-    const rosen = lines[direction.route].json;
-    const diagram = await dia(rosen);
+    const json = lines[direction.route].json;
+    const diagram = await dia(json);
+    const rosen = lines[direction.route].code;
     const stationIndex = indexOfStation(diagram, station, rosen, direction);
-    const codeofStation = name_number(direction.stationName).find((value) => value.includes(rosen))
+    const codeofStation = name_number(direction.stationName.split('・')[0]).find((value) => value.includes(rosen))
     const numofStations = diagram.railway.stations.length;
     const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == codeofStation)) ? 0 : 1;
-    const departures = diagram.railway.diagrams[0].trains[d].filter((tra) =>
+    let departures = diagram.railway.diagrams[0].trains[d].filter((tra) =>
         tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.stopType === 1 &&
         tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure != null
     );
+    if (direction.route === '刈田川急行線' && ['半月町', '大東町', '惣作'].includes(station)) {
+        departures = departures.filter((tra) => tra.timetable._data[9]?.stopType === 1);
+    } else if (direction.route === '刈田川線' && direction.stationName.includes('若草')) {
+        departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
+    }
+
     departures.sort((a, b) => {
         const timeA = a.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure;
         const timeB = b.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure;

@@ -2329,8 +2329,8 @@
     ],
     "directions": [
         {"route": "刈田川線", "stationName": "刈谷"},
-        {"route": "刈田川線", "stationName": "太田川"},
-        {"route": "刈田川急行線", "stationName": "太田川"},
+        {"route": "刈田川線", "stationName": "若草・太田川"},
+        {"route": "刈田川急行線", "stationName": "大府・太田川"},
         {"route": "二ツ池線", "stationName": "東緒川"},
         {"route": "二ツ池線森岡支線", "stationName": "於大公園西"},
         {"route": "二ツ池線", "stationName": "至学館大学前"}
@@ -2468,8 +2468,8 @@
     ],
     "directions": [
         {"route": "刈田川線", "stationName": "刈谷"},
-        {"route": "刈田川線", "stationName": "太田川"},
-        {"route": "刈田川急行線", "stationName": "太田川"},
+        {"route": "刈田川線", "stationName": "若草・太田川"},
+        {"route": "刈田川急行線", "stationName": "大府・太田川"},
         {"route": "内田面線", "stationName": "東新町・長久手市"},
         {"route": "惣作直通線", "stationName": "荒尾下畑"}
     ]
@@ -3469,9 +3469,9 @@
       "刈田川急行線"
     ],
     "directions": [
-        {"route": "刈田川線", "stationName": "刈谷"},
+        {"route": "刈田川線", "stationName": "若草・刈谷"},
         {"route": "刈田川線", "stationName": "太田川"},
-        {"route": "刈田川急行線", "stationName": "刈谷"},
+        {"route": "刈田川急行線", "stationName": "大府・刈谷"},
         {"route": "健康の森線", "stationName": "鰻池"},
         {"route": "健康の森線", "stationName": "上浜田"}
     ]

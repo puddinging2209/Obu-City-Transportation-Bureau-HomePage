@@ -11,6 +11,15 @@ function DepartureSection() {
     const initialDirections = myStations.map(station => stations[station]?.directions?.[0] || null);
     const [myDirections, setMyDirections] = React.useState(initialDirections)
     const [myDepartures, setMyDepartures] = React.useState([]);
+    const [showSearch, setShowSearch] = React.useState(false);
+
+    function handleRemoveMyStation(index) {
+        const newStations = myStations.filter((_, i) => i !== index);
+        setMyStations(newStations);
+        localStorage.setItem('myStations', JSON.stringify(newStations));
+        const newDirections = myDirections.filter((_, i) => i !== index);
+        setMyDirections(newDirections);
+    };
 
     React.useEffect(() => {
         const fetchDepartures = async () => {
@@ -71,14 +80,42 @@ function DepartureSection() {
                               </tbody>
                           </table>
                           <a href="#" className="more-link">もっと見る</a>
+                          <button className="remove-btn" onClick={() => handleRemoveMyStation(i)}>×</button>
                       </div>
                   )
               })}
-        <div className="add-card">
+        <div className="add-card" onClick={() => setShowSearch(true)}>
           <img className="icon-plus" src="/image/icon_add.png" alt="プラスアイコン" />
           <p>マイ駅・停留所を追加</p>
         </div>
       </div>
+      {showSearch && (
+        <div className="search-modal">
+          <div className="search-content">
+            <h3>駅・停留所を追加</h3>
+            <Select
+              options={Object.keys(stations).filter(station => !myStations.includes(station)).sort((a, b) => stations[a].kana.localeCompare(stations[b].kana)).map(station => ({ value: station, label: station }))}
+              onChange={(selected) => {
+                if (selected) {
+                  const newStations = [...myStations, selected.value];
+                  setMyStations(newStations);
+                  localStorage.setItem('myStations', JSON.stringify(newStations));
+                  const newDirections = [...myDirections, stations[selected.value]?.directions?.[0] || null];
+                  setMyDirections(newDirections);
+                  setShowSearch(false);
+                }
+              }}
+              placeholder="駅・停留所を検索"
+              isSearchable={true}
+              menuPortalTarget={document.body}
+              styles={{
+                menuPortal: base => ({ ...base, zIndex: 10001 })
+              }}
+            />
+            <button onClick={() => setShowSearch(false)}>閉じる</button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
