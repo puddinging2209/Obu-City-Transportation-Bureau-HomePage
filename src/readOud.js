@@ -15,6 +15,7 @@ function indexOfStation(diagram, station, rosen, direction) {
         { exc: { station: '大府', direction: { route: '大府環状線', stationName: '江端町' } }, return: 12 },
         { exc: { station: '日高', direction: { route: '刈谷環状線', stationName: '刈谷青山' } }, return: 17 },
         { exc: { station: '至学館大学前', direction: { route: '名東線', stationName: '藤が丘' } }, return: 0 },
+        { exc: { station: '大東町', direction: { route: '二ツ池線森岡支線', stationName: '於大公園西' } }, return: 8 },
     ];
 
     const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
@@ -30,9 +31,11 @@ async function searchDeparture(station, direction) {
     const diagram = await dia(json);
     const rosen = lines[direction.route].code;
     const stationIndex = indexOfStation(diagram, station, rosen, direction);
-    const codeofStation = name_number(direction.stationName.split('・')[0]).find((value) => value.includes(rosen))
+    const codeofToStation = (direction.route !== '半田線住吉支線' || direction.stationName !== '乙川') ?
+        name_number(direction.stationName.split('・')[0]).find((value) => value.includes(rosen)) :
+        'HD17a';
     const numofStations = diagram.railway.stations.length;
-    const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == codeofStation)) ? 0 : 1;
+    const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == codeofToStation)) ? 0 : 1;
     let departures = diagram.railway.diagrams[0].trains[d].filter((tra) =>
         tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.stopType === 1 &&
         tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure != null
@@ -42,7 +45,6 @@ async function searchDeparture(station, direction) {
     } else if (direction.route === '刈田川線' && direction.stationName.includes('若草')) {
         departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
     }
-    if (json === 'HD') debugger;
 
     departures.sort((a, b) => {
         const timeA = adjustTime(a.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);

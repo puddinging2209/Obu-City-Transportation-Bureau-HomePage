@@ -152,6 +152,7 @@ a.type {
     background: #eaeaea;
     border-radius: 4px;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .add-card {

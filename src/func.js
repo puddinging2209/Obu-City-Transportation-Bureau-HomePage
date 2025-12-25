@@ -30,6 +30,7 @@ function number_name(code) {
 }
 
 function name_number(text) {
+    if (text === '中部国際空港') return ['HK28'];
     return stations[text]?.code ?? null;
 }
 

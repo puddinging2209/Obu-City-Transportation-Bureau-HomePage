@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+import Marquee from 'react-fast-marquee';
 
 import { nowsecond, toTimeString, name } from './func.js';
 import { searchDeparture } from './readOud.js';
@@ -70,7 +71,18 @@ function DepartureSection() {
                                       return departure && (
                                           <tr key={j}>
                                               <td><a className="type" style={{background: types[departure.typeName].color}}>{departure.typeName}</a></td>
-                                              <td>{name(departure.terminal)}</td>
+                                              <td>
+                                                  {name(departure.terminal).length > 7 ? (
+                                                      <Marquee
+                                                          speed={20}
+                                                          delay={1}
+                                                          pauseOnHover={true}
+                                                          play={name(departure.terminal).length > 7}
+                                                      ><div style={{marginRight: '30px'}}>{name(departure.terminal)}</div></Marquee>
+                                                  ) : (
+                                                      name(departure.terminal)
+                                                  )}
+                                              </td>
                                               <td className="time">{toTimeString(departure.time)}</td>
                                           </tr>
                                       );
@@ -127,15 +139,27 @@ function DepartureSection() {
           >
               <div className="more-modal">
                   <div className="more-content">
-                    <h3>{showMore !== false ? myStations[showMore] : ''}</h3>
+                    <h3>{showMore !== false ? `${myStations[showMore]} ${myDirections[showMore]?.stationName}方面` : ''}</h3>
                           <table>
                               <tbody>
                                   {showMore !== false && myDepartures[showMore]?.map((train, i) => {
                                       const departure = train;
+                                      console.log(myDepartures[showMore], departure);
                                       return departure ? (
                                           <tr key={`dep-${i}`}>
                                               <td><a className="type" style={{background: types[departure.typeName].color}}>{departure.typeName}</a></td>
-                                              <td>{name(departure.terminal)}</td>
+                                              <td>
+                                                  {name(departure.terminal).length > 7 ? (
+                                                      <Marquee
+                                                          speed={20}
+                                                          delay={1}
+                                                          pauseOnHover={true}
+                                                          play={name(departure.terminal).length > 7}
+                                                      ><div style={{marginRight: '30px'}}>{name(departure.terminal)}</div></Marquee>
+                                                  ) : (
+                                                      name(departure.terminal)
+                                                  )}
+                                              </td>
                                               <td className="time">{toTimeString(departure.time)}</td>
                                           </tr>
                                       ) : (
