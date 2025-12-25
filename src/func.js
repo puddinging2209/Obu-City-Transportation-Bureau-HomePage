@@ -1,4 +1,4 @@
-import stations from '/src/stations.json';
+import stations from './stations.json';
 
 function nowsecond() {
     const now = new Date();
