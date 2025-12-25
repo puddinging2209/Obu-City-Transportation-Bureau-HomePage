@@ -9,10 +9,7 @@ function App() {
     function closeWarnModal() {
         setIsWarnOpen(false);
     }
-
-  React.useEffect(() => {
     ReactModal.setAppElement('#root');
-  }, []);
 
   return (
     <div className="App">
