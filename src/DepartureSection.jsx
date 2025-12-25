@@ -139,7 +139,7 @@ function DepartureSection() {
                   )
               })}
         <div className="add-card" onClick={() => setShowSearch(true)}>
-          <img className="icon-plus" src="../public/image/icon_add.png" alt="プラスアイコン" />
+          <img className="icon-plus" src="./image/icon_add.png" alt="プラスアイコン" />
           <p>マイ駅・停留所を追加</p>
         </div>
           </div>
