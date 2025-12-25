@@ -8,6 +8,11 @@ a {
     color: #000;
 }
 
+a.link {
+    text-decoration: underline;
+    color: blue;
+}
+
 /* ===== ヘッダー（PC） ===== */
 header {
     width: 100%;
@@ -90,7 +95,7 @@ main {
 /* 各駅カード */
 .departure-card {
     margin: 0 10px;
-    min-width: 260px;
+    width: 260px;
     background: #ffffff;
     border: 1px solid #ccc;
     border-radius: 8px;

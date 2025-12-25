@@ -19,9 +19,6 @@ function App() {
       {/* ヘッダー（PC表示） */}
       <header>
         <div className="header-top">
-          <a href="https://www.city.obu.aichi.jp/">
-            <img src="/image/tlogo.png" alt="大府市ロゴ" />
-          </a>
           <div className="title">
             <a href="index.html">大府市交通局</a>
           </div>
@@ -125,6 +122,7 @@ function App() {
               <h2>以下の事項に注意して閲覧してください</h2>
               <ul>
                   <li>このウェブサイトは大府市公式のものではありません。</li>
+                  <li>公式ホームページ→<a href="https://www.city.obu.aichi.jp/" className='link'>https://www.city.obu.aichi.jp/</a></li>
                   <li>架空の情報が含まれています。</li>
                   <li>大府市交通局という企業、団体は実在しません。</li>
                   <li>大府市営地下鉄は実在しません。掲載されている駅、列車、時刻は架空のもので実在しません。</li>
