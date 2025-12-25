@@ -1,11 +1,11 @@
-import lines from '/src/lines.json';
+import lines from './lines.json';
 import { adjustTime, name_number, terminal, typeName } from './func.js';
 
 async function dia(rosen) {
     if (lines[rosen]) {
         rosen = lines[rosen].json;
     }
-    const response = await fetch(`/oud/${rosen}.json`);
+    const response = await fetch(`../public/oud/${rosen}.json`);
     const diagram = await response.json();
     return diagram;
 }

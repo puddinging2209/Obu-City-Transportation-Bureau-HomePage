@@ -1,12 +1,12 @@
 import React from 'react';
+import ReactModal from 'react-modal';
 import Select from 'react-select';
 import Marquee from 'react-fast-marquee';
 
 import { nowsecond, toTimeString, name } from './func.js';
 import { searchDeparture } from './readOud.js';
-import stations from '/src/stations.json';
-import types from '/src/types.json';
-import ReactModal from 'react-modal';
+import stations from './stations.json';
+import types from './types.json';
 
 function DepartureSection() {
     const [myStations, setMyStations] = React.useState(localStorage.getItem('myStations') ? JSON.parse(localStorage.getItem('myStations')) : ['大府']);
