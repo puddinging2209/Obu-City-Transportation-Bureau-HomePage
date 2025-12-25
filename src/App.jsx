@@ -1,7 +1,7 @@
 import React from 'react';
+import ReactModal from 'react-modal';
 import DepartureSection from './DepartureSection';
 import './App.css';
-import ReactModal from 'react-modal';
 
 function App() {
 
