@@ -197,7 +197,7 @@ a.type {
 }
 
 /* ===== スマホ：スナップスクロール ===== */
-@media (max-width: 760px) {
+@media (max-width: 1400px) {
     .departure-list {
         scroll-snap-type: x mandatory;
     }
@@ -322,7 +322,7 @@ footer {
 }
 
 /* ===== レスポンシブ ===== */
-@media (max-width: 760px) {
+@media (max-width: 1400px) {
 
     /* ヘッダー全体は表示する */
     header {
@@ -432,7 +432,7 @@ footer {
     border: none;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1400px) {
 
     .searchModal {
         width: 80vw;
