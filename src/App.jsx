@@ -26,19 +26,19 @@ function App() {
         {/* 共通ナビゲーション */}
         <nav className="header-nav">
           <div>
-            <a href="#"><img className="icon" src="/image/subway-timeTable.png" alt="" />地下鉄時刻表</a>
+            <a href="#"><img className="icon" src="../public/image/subway-timeTable.png" alt="" />地下鉄時刻表</a>
           </div>
           <div>
-            <a href="#"><img className="icon" src="/image/subway-routeMap.png" alt="" />地下鉄路線図</a>
+            <a href="#"><img className="icon" src="../public/image/subway-routeMap.png" alt="" />地下鉄路線図</a>
           </div>
           <div>
-            <a href="#" className="transfer"><img className="icon" src="/image/transfer.png" alt="" />乗換案内</a>
+            <a href="#" className="transfer"><img className="icon" src="../public/image/transfer.png" alt="" />乗換案内</a>
           </div>
           <div>
-            <a href="#"><img className="icon" src="/image/bus-timeTable.png" alt="" />バス時刻表</a>
+            <a href="#"><img className="icon" src="../public/image/bus-timeTable.png" alt="" />バス時刻表</a>
           </div>
           <div>
-            <a href="#"><img className="icon" src="/image/bus-routeMap.png" alt="" />バス路線図</a>
+            <a href="#"><img className="icon" src="../public/image/bus-routeMap.png" alt="" />バス路線図</a>
           </div>
         </nav>
       </header>
@@ -67,11 +67,11 @@ function App() {
 
         {/* 下部リンク */}
         <div className="link-list">
-          <a href="#"><img className="icon" src="/image/transfer.png" alt="" />乗換案内</a>
-          <a href="#"><img className="icon" src="/image/subway-timeTable.png" alt="" />地下鉄時刻表</a>
-          <a href="#"><img className="icon" src="/image/subway-routeMap.png" alt="" />地下鉄路線図</a>
-          <a href="#"><img className="icon" src="/image/bus-timeTable.png" alt="" />バス時刻表</a>
-          <a href="#"><img className="icon" src="/image/bus-routeMap.png" alt="" />バス路線図</a>
+          <a href="#"><img className="icon" src="../public/image/transfer.png" alt="" />乗換案内</a>
+          <a href="#"><img className="icon" src="../public/image/subway-timeTable.png" alt="" />地下鉄時刻表</a>
+          <a href="#"><img className="icon" src="../public/image/subway-routeMap.png" alt="" />地下鉄路線図</a>
+          <a href="#"><img className="icon" src="../public/image/bus-timeTable.png" alt="" />バス時刻表</a>
+          <a href="#"><img className="icon" src="../public/image/bus-routeMap.png" alt="" />バス路線図</a>
         </div>
       </main>
 
@@ -80,31 +80,31 @@ function App() {
         <nav className="footer-nav">
           <a href="#">地下鉄時刻表
             <div>
-              <img className="icon" src="/image/subway-timeTable.png" alt="" />
+              <img className="icon" src="../public/image/subway-timeTable.png" alt="" />
             </div>
           </a>
           <span>|</span>
           <a href="#">地下鉄路線図
             <div>
-              <img className="icon" src="/image/subway-routeMap.png" alt="" />
+              <img className="icon" src="../public/image/subway-routeMap.png" alt="" />
             </div>
           </a>
           <span>|</span>
           <a href="#"><strong>乗換案内</strong>
             <div>
-              <img className="icon" src="/image/transfer.png" alt="" />
+              <img className="icon" src="../public/image/transfer.png" alt="" />
             </div>
           </a>
           <span>|</span>
           <a href="#">バス時刻表
             <div>
-              <img className="icon" src="/image/bus-timeTable.png" alt="" />
+              <img className="icon" src="../public/image/bus-timeTable.png" alt="" />
             </div>
           </a>
           <span>|</span>
           <a href="#">バス路線図
             <div>
-              <img className="icon" src="/image/bus-routeMap.png" alt="" />
+              <img className="icon" src="../public/image/bus-routeMap.png" alt="" />
             </div>
           </a>
         </nav>
