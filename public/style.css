@@ -373,6 +373,10 @@ footer {
     z-index: 10001;
 }
 
+.warnModal {
+    width: 80%;
+}
+
 .listModal {
     width: fit-content;
 }

@@ -4,6 +4,12 @@ import './App.css';
 import ReactModal from 'react-modal';
 
 function App() {
+
+    const [isWarnOpen, setIsWarnOpen] = React.useState(true);
+    function closeWarnModal() {
+        setIsWarnOpen(false);
+    }
+
   React.useEffect(() => {
     ReactModal.setAppElement('#root');
   }, []);
@@ -106,7 +112,33 @@ function App() {
             </div>
           </a>
         </nav>
-      </footer>
+          </footer>
+          
+          <ReactModal
+              isOpen={isWarnOpen}
+              onRequestClose={closeWarnModal}
+              contentLabel="Warning Modal"
+              className="Modal warnModal"
+              overlayClassName="Overlay"
+          >
+              <h1>このウェブサイトの内容は架空のもので実在しません</h1>
+              <h2>以下の事項に注意して閲覧してください</h2>
+              <ul>
+                  <li>このウェブサイトは大府市公式のものではありません。</li>
+                  <li>架空の情報が含まれています。</li>
+                  <li>大府市交通局という企業、団体は実在しません。</li>
+                  <li>大府市営地下鉄は実在しません。掲載されている駅、列車、時刻は架空のもので実在しません。</li>
+                  <li>大府市コミュニティバスふれあいバスは実在します。</li>
+                  <li>ふれあいバスに関する内容はできるだけ正しいものになるよう努力しますが、間違っている場合があります。</li>
+                  <li>このウェブサイトの内容に基づいて被ったいかなる損害についても、制作者は一切責任を負いません。</li>
+              </ul>
+              <h3>上記の内容が理解できない場合はページを閉じてください</h3>
+              <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+                <button onClick={window.close} className="modalClose" style={{marginRight: '20px'}}>ページを閉じる</button>
+                <button onClick={closeWarnModal} className="modalClose" style={{marginRight: '20px'}}>×</button>
+              </div>
+          </ReactModal>
+
     </div>
   );
 }
