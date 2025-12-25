@@ -97,6 +97,7 @@ main {
     padding: 12px;
     text-align: left;
     position: relative;
+    overflow: hidden;
 }
 
 .departure-card .card-header {
@@ -127,11 +128,25 @@ main {
     padding: 0;
     margin-bottom: 12px;
     border-spacing: 10px;
+    table-layout: fixed;
 }
 
 .departure-card table tr {
     font-size: 14px;
     margin-bottom: 10px;
+}
+
+.departure-card table tr td:nth-child(1) {
+    width: 80px;
+}
+
+.departure-card table tr td:nth-child(2) {
+    width: calc(100% - 110px);
+    overflow: hidden;
+}
+
+.departure-card table tr td:nth-child(3) {
+    width: 30px;
 }
 
 a.type {
@@ -368,6 +383,21 @@ footer {
     margin-bottom: 12px;
     border-spacing: 10px;
     white-space: nowrap;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.Modal table tr td:nth-child(1) {
+    width: 80px;
+}
+
+.Modal table tr td:nth-child(2) {
+    width: calc(100% - 110px);
+    overflow: hidden;
+}
+
+.Modal table tr td:nth-child(3) {
+    width: 30px;
 }
 
 .Overlay {

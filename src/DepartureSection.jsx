@@ -15,6 +15,10 @@ function DepartureSection() {
     const [myDepartures, setMyDepartures] = React.useState([]);
     const [showSearch, setShowSearch] = React.useState(false);
     const [showMore, setShowMore] = React.useState(false)
+    const textRefs = React.useRef([]);
+    const [overflows, setOverflows] = React.useState([]);
+    const moreTextRefs = React.useRef([]);
+    const [moreOverflows, setMoreOverflows] = React.useState([]);
 
     function handleRemoveMyStation(index) {
         const newStations = myStations.filter((_, i) => i !== index);
@@ -23,6 +27,46 @@ function DepartureSection() {
         const newDirections = myDirections.filter((_, i) => i !== index);
         setMyDirections(newDirections);
     };
+
+    React.useEffect(() => {
+        textRefs.current = myStations.map(() => [React.createRef(), React.createRef()]);
+        setOverflows(myStations.map(() => [false, false]));
+    }, [myStations]);
+
+    React.useLayoutEffect(() => {
+        const newOverflows = myStations.map(() => [false, false]);
+        myDepartures.forEach((deps, i) => {
+            if (deps) {
+                deps.forEach((dep, j) => {
+                    if (textRefs.current[i] && textRefs.current[i][j] && textRefs.current[i][j].current) {
+                        const el = textRefs.current[i][j].current;
+                        newOverflows[i][j] = el.scrollWidth > el.clientWidth;
+                    }
+                });
+            }
+        });
+        setOverflows(newOverflows);
+    }, [myDepartures]);
+
+    React.useEffect(() => {
+        if (showMore !== false) {
+            moreTextRefs.current = myDepartures[showMore]?.map(() => React.createRef()) || [];
+            setMoreOverflows(myDepartures[showMore]?.map(() => false) || []);
+        }
+    }, [showMore, myDepartures]);
+
+    React.useLayoutEffect(() => {
+        if (showMore !== false && myDepartures[showMore]) {
+            const newOverflows = myDepartures[showMore].map(() => false);
+            myDepartures[showMore].forEach((dep, idx) => {
+                if (moreTextRefs.current[idx] && moreTextRefs.current[idx].current) {
+                    const el = moreTextRefs.current[idx].current;
+                    newOverflows[idx] = el.scrollWidth > el.clientWidth;
+                }
+            });
+            setMoreOverflows(newOverflows);
+        }
+    }, [showMore, myDepartures]);
 
     React.useEffect(() => {
         const fetchDepartures = async () => {
@@ -71,13 +115,13 @@ function DepartureSection() {
                                       return departure && (
                                           <tr key={j}>
                                               <td><a className="type" style={{background: types[departure.typeName].color}}>{departure.typeName}</a></td>
-                                              <td>
-                                                  {name(departure.terminal).length > 7 ? (
+                                              <td ref={textRefs.current[i]?.[j]} style={overflows[i]?.[j] ? {overflow: 'visible', whiteSpace: 'nowrap'} : {overflow: 'hidden', whiteSpace: 'nowrap'}}>
+                                                  {overflows[i]?.[j] ? (
                                                       <Marquee
                                                           speed={20}
                                                           delay={1}
                                                           pauseOnHover={true}
-                                                          play={name(departure.terminal).length > 7}
+                                                          play={true}
                                                       ><div style={{marginRight: '30px'}}>{name(departure.terminal)}</div></Marquee>
                                                   ) : (
                                                       name(departure.terminal)
@@ -148,13 +192,13 @@ function DepartureSection() {
                                       return departure ? (
                                           <tr key={`dep-${i}`}>
                                               <td><a className="type" style={{background: types[departure.typeName].color}}>{departure.typeName}</a></td>
-                                              <td>
-                                                  {name(departure.terminal).length > 7 ? (
+                                              <td ref={moreTextRefs.current[i]} style={moreOverflows[i] ? {overflow: 'visible', whiteSpace: 'nowrap'} : {overflow: 'hidden', whiteSpace: 'nowrap'}}>
+                                                  {moreOverflows[i] ? (
                                                       <Marquee
                                                           speed={20}
                                                           delay={1}
                                                           pauseOnHover={true}
-                                                          play={name(departure.terminal).length > 7}
+                                                          play={true}
                                                       ><div style={{marginRight: '30px'}}>{name(departure.terminal)}</div></Marquee>
                                                   ) : (
                                                       name(departure.terminal)
