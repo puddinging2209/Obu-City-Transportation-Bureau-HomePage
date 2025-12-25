@@ -5,7 +5,7 @@ async function dia(rosen) {
     if (lines[rosen]) {
         rosen = lines[rosen].json;
     }
-    const response = await fetch(`../public/oud/${rosen}.json`);
+    const response = await fetch(`./oud/${rosen}.json`);
     const diagram = await response.json();
     return diagram;
 }
