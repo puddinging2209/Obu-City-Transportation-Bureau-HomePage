@@ -188,7 +188,6 @@ function DepartureSection() {
                               <tbody>
                                   {showMore !== false && myDepartures[showMore]?.map((train, i) => {
                                       const departure = train;
-                                      console.log(myDepartures[showMore], departure);
                                       return departure ? (
                                           <tr key={`dep-${i}`}>
                                               <td><a className="type" style={{background: types[departure.typeName].color}}>{departure.typeName}</a></td>
