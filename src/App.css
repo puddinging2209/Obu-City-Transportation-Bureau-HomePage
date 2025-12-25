@@ -434,6 +434,10 @@ footer {
 
 @media (max-width: 760px) {
 
+    .Modal {
+        width: fit-content;
+    }
+
     .searchModal {
         width: 80vw;
     }
