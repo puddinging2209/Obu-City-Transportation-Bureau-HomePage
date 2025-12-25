@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
+    base: '/Obu-City-Transportation-Bureau-HomePage/',
     plugins: [react()],
-    base: "/Obu-City-Transportation-Bureau-HomePage/"
+    build: {
+        outDir: 'docs',
+        emptyOutDir: true
+    }
 })
