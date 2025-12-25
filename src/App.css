@@ -8,6 +8,11 @@ a {
     color: #000;
 }
 
+a.link {
+    text-decoration: underline;
+    color: blue;
+}
+
 /* ===== ヘッダー（PC） ===== */
 header {
     width: 100%;
@@ -90,17 +95,36 @@ main {
 /* 各駅カード */
 .departure-card {
     margin: 0 10px;
-    min-width: 260px;
+    width: 260px;
     background: #ffffff;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 12px;
     text-align: left;
+    position: relative;
+    overflow: hidden;
 }
 
-.departure-card h3 {
+.departure-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.departure-card .card-header h3 {
     margin: 0 0 8px;
     font-size: 16px;
+}
+
+.departure-card .card-header Select {
+    font-size: 14px;
+    padding: 1px 5px;
+    background: #eaeaea;
+    color: #000000;
+    border-radius: 4px;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
 .departure-card table {
@@ -109,6 +133,7 @@ main {
     padding: 0;
     margin-bottom: 12px;
     border-spacing: 10px;
+    table-layout: fixed;
 }
 
 .departure-card table tr {
@@ -116,7 +141,20 @@ main {
     margin-bottom: 10px;
 }
 
-.departure-card table tr td a.type {
+.departure-card table tr td:nth-child(1) {
+    width: 80px;
+}
+
+.departure-card table tr td:nth-child(2) {
+    width: calc(100% - 110px);
+    overflow: hidden;
+}
+
+.departure-card table tr td:nth-child(3) {
+    width: 30px;
+}
+
+a.type {
     padding: 5px 10px;
     background: #000000;
     color: #ffffff;
@@ -134,6 +172,7 @@ main {
     background: #eaeaea;
     border-radius: 4px;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .add-card {
@@ -165,6 +204,11 @@ main {
 
     .departure-card {
         margin: 0 10px;
+        scroll-snap-align: center;
+        min-width: 85%;
+    }
+
+    .add-card {
         scroll-snap-align: center;
         min-width: 85%;
     }
@@ -300,5 +344,97 @@ footer {
 
     .big-buttons {
         flex-direction: column;
+    }
+}
+
+/* 削除ボタン */
+.remove-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #eaeaea;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    width: 40px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* ===== モーダル ===== */
+.Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 50vw;
+    max-height: 90vh;
+    overflow: auto;
+    z-index: 10001;
+}
+
+.warnModal {
+    width: 80%;
+}
+
+.listModal {
+    width: fit-content;
+}
+
+.Modal table {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 12px;
+    border-spacing: 10px;
+    white-space: nowrap;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.Modal table tr td:nth-child(1) {
+    width: 80px;
+}
+
+.Modal table tr td:nth-child(2) {
+    width: calc(100% - 110px);
+    overflow: hidden;
+}
+
+.Modal table tr td:nth-child(3) {
+    width: 30px;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
+.modalClose {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 14px;
+    background: #eaeaea;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    color: #000;
+    border: none;
+}
+
+@media (max-width: 760px) {
+
+    .searchModal {
+        width: 80vw;
     }
 }

@@ -5,11 +5,13 @@ import ReactModal from 'react-modal';
 
 function App() {
 
-    const [isWarnOpen, setIsWarnOpen] = React.useState(true);
+    const [isWarnOpen, setIsWarnOpen] = React.useState(false);
     function closeWarnModal() {
         setIsWarnOpen(false);
     }
-    ReactModal.setAppElement('#root');
+    React.useEffect(() => {
+        setIsWarnOpen(true);
+    }, []);
 
   return (
     <div className="App">
