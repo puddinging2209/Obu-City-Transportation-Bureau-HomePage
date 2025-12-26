@@ -6,8 +6,12 @@ import './App.css';
 function App() {
 
     const [isWarnOpen, setIsWarnOpen] = React.useState(false);
+    const [isShowWarn, setIsShowWarn] = React.useState(localStorage.getItem('isShowWarn') ? JSON.parse(localStorage.getItem('isShowWarn')) : true);
     function closeWarnModal() {
         setIsWarnOpen(false);
+        if (!isShowWarn) {
+            localStorage.setItem('isShowWarn', false);
+        }
     }
     React.useEffect(() => {
         setIsWarnOpen(true);
@@ -130,7 +134,13 @@ function App() {
                   <li>このウェブサイトの内容に基づいて被ったいかなる損害についても、制作者は一切責任を負いません。</li>
               </ul>
               <h3>上記の内容が理解できない場合はページを閉じてください</h3>
-              <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                  <div style={{marginRight: '20px'}}>
+                      <label>
+                          <input type="checkbox" checked={!isShowWarn} onChange={(e) => setIsShowWarn(!e.target.checked)} />
+                          今後この警告を表示しない
+                      </label>
+                  </div>
                 <button onClick={window.close} className="modalClose" style={{marginRight: '20px'}}>ページを閉じる</button>
                 <button onClick={closeWarnModal} className="modalClose" style={{marginRight: '20px'}}>×</button>
               </div>
