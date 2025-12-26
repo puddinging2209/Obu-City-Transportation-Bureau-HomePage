@@ -373,7 +373,8 @@ footer {
 }
 
 .listModal {
-    width: fit-content;
+    width: 350px;
+    max-width: 80vw;
 }
 
 .Modal table {
