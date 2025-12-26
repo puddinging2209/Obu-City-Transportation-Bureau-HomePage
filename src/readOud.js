@@ -28,8 +28,8 @@ function indexOfStation(diagram, station, rosen, direction) {
 
 function codeofToStation(station, direction, rosen) {
     const exceptions = [
-        { exc: { station: '江端町', direction: { route: '大府環状線', stationName: '大府' } }, return: 'OL12a' },
-        { exc: { station: '大峯', direction: { route: '大府環状線', stationName: '大府' } }, return: 'OL12a' },
+        { exc: { station: '江端町', direction: { route: '大府環状線', stationName: '大府' } }, return: 'OL01a' },
+        { exc: { station: '大峯', direction: { route: '大府環状線', stationName: '大府' } }, return: 'OL01a' },
         { exc: { station: '半田赤レンガ', direction: { route: '半田線住吉支線', stationName: '乙川' } }, return: 'HD17a' },
         { exc: { station: '住吉町', direction: { route: '半田線住吉支線', stationName: '乙川' } }, return: 'HD17a' },
         { exc: { station: '清城', direction: { route: '半田線住吉支線', stationName: '乙川' } }, return: 'HD17a' },
