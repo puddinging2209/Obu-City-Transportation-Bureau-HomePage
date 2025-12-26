@@ -133,7 +133,6 @@ function App() {
                   <li>ふれあいバスに関する内容はできるだけ正しいものになるよう努力しますが、間違っている場合があります。</li>
                   <li>このウェブサイトの内容に基づいて被ったいかなる損害についても、制作者は一切責任を負いません。</li>
               </ul>
-              <h3>上記の内容が理解できない場合はページを閉じてください</h3>
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                   <div style={{marginRight: '20px', alignSelf: 'center', cursor: 'pointer'}}>
                       <label>
