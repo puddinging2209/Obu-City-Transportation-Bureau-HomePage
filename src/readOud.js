@@ -26,7 +26,7 @@ function indexOfStation(diagram, station, rosen, direction) {
     return diagram.railway.stations.findIndex((sta) => sta.name == name_number(station).find((value) => value.includes(rosen)));
 }
 
-function codeofToStation(station, direction) {
+function codeofToStation(station, direction, rosen) {
     const exceptions = [
         { exc: { station: '江端町', direction: { route: '大府環状線', stationName: '大府' } }, return: 'OL12a' },
         { exc: { station: '大峯', direction: { route: '大府環状線', stationName: '大府' } }, return: 'OL12a' },
@@ -50,7 +50,7 @@ async function searchDeparture(station, direction) {
     const diagram = await dia(json);
     const rosen = lines[direction.route].code;
     const stationIndex = indexOfStation(diagram, station, rosen, direction);
-    const toCode = codeofToStation(station, direction);
+    const toCode = codeofToStation(station, direction, rosen);
     const numofStations = diagram.railway.stations.length;
     const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == toCode)) ? 0 : 1;
     let departures = diagram.railway.diagrams[0].trains[d].filter((tra) =>
