@@ -6,6 +6,7 @@ import Marquee from 'react-fast-marquee';
 import { nowsecond, toTimeString, name } from './func.js';
 import { searchDeparture } from './readOud.js';
 import stations from './stations.json';
+import lines from './lines.json';
 import types from './types.json';
 
 function DepartureSection() {
@@ -15,8 +16,8 @@ function DepartureSection() {
     const [myDepartures, setMyDepartures] = React.useState([]);
     const [showSearch, setShowSearch] = React.useState(false);
     const [showMore, setShowMore] = React.useState(false)
-    const textRefs = React.useRef([]);
-    const [overflows, setOverflows] = React.useState([]);
+    const textRefs = React.useRef({});
+    const [overflows, setOverflows] = React.useState({});
     const moreTextRefs = React.useRef([]);
     const [moreOverflows, setMoreOverflows] = React.useState([]);
 
@@ -29,24 +30,34 @@ function DepartureSection() {
     };
 
     React.useEffect(() => {
-        textRefs.current = myStations.map(() => [React.createRef(), React.createRef()]);
-        setOverflows(myStations.map(() => [false, false]));
+        textRefs.current = myStations.map(() => ({name: React.createRef(), line: React.createRef(), departure: [React.createRef(), React.createRef()]}));
+        setOverflows(myStations.map(() => ({ name: false, line: false, departure: [false, false] })));
     }, [myStations]);
 
     React.useLayoutEffect(() => {
-        const newOverflows = myStations.map(() => [false, false]);
+        const newOverflows = myStations.map(() => ({ name: false, line: false, departure: [false, false] }));
+        myStations.forEach((_, i) => {
+            if (textRefs.current[i]?.name?.current) {
+                const el = textRefs.current[i].name.current;
+                newOverflows[i].name = el.scrollWidth > el.clientWidth;
+            }
+            if (textRefs.current[i]?.line?.current) {
+                const el = textRefs.current[i].line.current;
+                newOverflows[i].line = el.scrollWidth > el.clientWidth;
+            }
+        });
         myDepartures.forEach((deps, i) => {
             if (deps) {
-                deps.forEach((dep, j) => {
-                    if (textRefs.current[i] && textRefs.current[i][j] && textRefs.current[i][j].current) {
-                        const el = textRefs.current[i][j].current;
-                        newOverflows[i][j] = el.scrollWidth > el.clientWidth;
+                deps.forEach((_, j) => {
+                    if (textRefs.current[i]?.departure[j]?.current) {
+                        const el = textRefs.current[i].departure[j].current;
+                        newOverflows[i].departure[j] = el.scrollWidth > el.clientWidth;
                     }
                 });
             }
         });
         setOverflows(newOverflows);
-    }, [myDepartures]);
+    }, [myDepartures, myDirections]);
 
     React.useEffect(() => {
         if (showMore !== false) {
@@ -95,15 +106,81 @@ function DepartureSection() {
                   return (
                       <div className="departure-card" key={station}>
                           <div className="card-header">
-                              <h3>{station}</h3>
+                              <div
+                                  style={{
+                                      width: `calc(100% - ${(myDirections[i]?.stationName.length + 2) * 13 + 32}px)`,
+                                      minWidth: `calc(100% - 136px)`,
+                                      paddingRight: '10px',
+                                  }}
+                              >
+                                  <h3
+                                  ref={textRefs.current[i]?.name}
+                                      style={{
+                                          width: '100%',
+                                          margin: 0,
+                                          whiteSpace: 'nowrap',
+                                          overflow: 'hidden',
+                                      }}
+                                  >{overflows[i]?.name ? (
+                                      <Marquee
+                                          speed={20}
+                                          pauseOnHover={true}
+                                          play={true}
+                                      ><div style={{ marginRight: '30px' }}>{station}</div></Marquee>
+                                  ) :
+                                    station
+                                    }
+                                  </h3>
+                                  <p
+                                      ref={textRefs.current[i]?.line}
+                                      style={{
+                                          width: '100%',
+                                          margin: 0,
+                                          whiteSpace: 'nowrap',
+                                          overflow: 'hidden',
+                                      }}
+                                  >{overflows[i]?.line ? (
+                                      <Marquee
+                                          speed={20}
+                                          pauseOnHover={true}
+                                          play={true}
+                                      ><div style={{ marginRight: '30px' }}>{lines[myDirections[i]?.route].show}</div></Marquee>
+                                  ) :
+                                    lines[myDirections[i]?.route].show
+                                      }
+                                  </p>
+                              </div>
                               <Select
                                   value={options.find(opt => opt.value === myDirections[i]) || null}
                                   onChange={(e) => handleDirectionChange(e)}
                                   isSearchable={false}
                                   menuPortalTarget={document.body}
                                   styles={{
-                                      menuPortal: base => ({ ...base, zIndex: 9999 })
+                                      control: (provided) => ({
+                                          ...provided,
+                                          width: 'fit-content',
+                                          maxWidth: '126px',
+                                      }),
+                                      menuPortal: (base) => ({
+                                          ...base,
+                                          zIndex: 9999
+                                      }),
+                                      // 選択された値の文字スタイル
+                                      singleValue: (provided) => ({
+                                          ...provided,
+                                          fontSize: '13px',
+                                          textAlign: 'right',
+                                      }),
+                                        // ドロップダウンリストの各項目の文字スタイル
+                                        option: (provided) => ({
+                                            ...provided,
+                                            fontSize: '13px',
+                                        }),
                                   }}
+                                  components={{
+                                    DropdownIndicator: () => null,
+                                    IndicatorSeparator: () => null,
+                                    }}
                                   options={options}
                               />
                           </div>
@@ -115,11 +192,10 @@ function DepartureSection() {
                                       return departure && (
                                           <tr key={j}>
                                               <td><a className="type" style={{background: types[departure.typeName].color}}>{departure.typeName}</a></td>
-                                              <td ref={textRefs.current[i]?.[j]} style={overflows[i]?.[j] ? {overflow: 'visible', whiteSpace: 'nowrap'} : {overflow: 'hidden', whiteSpace: 'nowrap'}}>
-                                                  {overflows[i]?.[j] ? (
+                                              <td ref={textRefs.current[i]?.departure[j]} style={overflows[i]?.departure[j] ? {overflow: 'visible', whiteSpace: 'nowrap'} : {overflow: 'hidden', whiteSpace: 'nowrap'}}>
+                                                  {overflows[i]?.departure[j] ? (
                                                       <Marquee
                                                           speed={20}
-                                                          delay={1}
                                                           pauseOnHover={true}
                                                           play={true}
                                                       ><div style={{marginRight: '30px'}}>{name(departure.terminal)}</div></Marquee>

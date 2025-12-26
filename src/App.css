@@ -88,14 +88,14 @@ main {
 .departure-list {
     display: flex;
     gap: 16px;
-    overflow-x: auto;
+    overflow-x: scroll;
     padding-bottom: 10px;
 }
 
 /* 各駅カード */
 .departure-card {
     margin: 0 10px;
-    width: 260px;
+    min-width: 260px;
     background: #ffffff;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -115,16 +115,6 @@ main {
 .departure-card .card-header h3 {
     margin: 0 0 8px;
     font-size: 16px;
-}
-
-.departure-card .card-header Select {
-    font-size: 14px;
-    padding: 1px 5px;
-    background: #eaeaea;
-    color: #000000;
-    border-radius: 4px;
-    white-space: nowrap;
-    cursor: pointer;
 }
 
 .departure-card table {
