@@ -16,6 +16,7 @@ function indexOfStation(diagram, station, rosen, direction) {
         { exc: { station: '日高', direction: { route: '刈谷環状線', stationName: '刈谷青山' } }, return: 17 },
         { exc: { station: '至学館大学前', direction: { route: '名東線', stationName: '藤が丘' } }, return: 0 },
         { exc: { station: '大東町', direction: { route: '二ツ池線森岡支線', stationName: '於大公園西' } }, return: 8 },
+        { exc: { station: '鳴海', direction: { route: '鳴海連絡線', stationName: '上汐田' } }, return: 1 },
     ];
 
     const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
@@ -38,7 +39,6 @@ function codeofToStation(station, direction, rosen) {
     ];
 
     const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
-    debugger;
     if (exception) {
         return exception.return;
     }
@@ -64,6 +64,7 @@ async function searchDeparture(station, direction) {
         departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
     }
 
+    debugger;
     departures.sort((a, b) => {
         const timeA = adjustTime(a.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);
         const timeB = adjustTime(b.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);
