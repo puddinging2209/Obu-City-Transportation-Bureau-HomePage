@@ -37,8 +37,8 @@ function codeofToStation(station, direction, rosen) {
         { exc: { station: '鳴海', direction: { route: '鳴海連絡線', stationName: '上汐田' } }, return: 'OD14a' },
     ];
 
-    debugger;
     const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
+    debugger;
     if (exception) {
         return exception.return;
     }
