@@ -70,7 +70,7 @@ function DepartureSection() {
         if (showMore !== false && myDepartures[showMore]) {
             const newOverflows = myDepartures[showMore].map(() => false);
             myDepartures[showMore].forEach((dep, idx) => {
-                if (moreTextRefs.current[idx] && moreTextRefs.current[idx].current) {
+                if (moreTextRefs.current[idx]?.current) {
                     const el = moreTextRefs.current[idx].current;
                     newOverflows[idx] = el.scrollWidth > el.clientWidth;
                 }
@@ -174,7 +174,7 @@ function DepartureSection() {
                                         // ドロップダウンリストの各項目の文字スタイル
                                         option: (provided) => ({
                                             ...provided,
-                                            fontSize: '13px',
+                                            fontSize: '11px',
                                         }),
                                   }}
                                   components={{
