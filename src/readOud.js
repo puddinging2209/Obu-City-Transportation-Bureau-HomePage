@@ -65,7 +65,6 @@ async function searchDeparture(station, direction) {
         departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
     }
 
-    debugger;
     departures.sort((a, b) => {
         const timeA = adjustTime(a.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);
         const timeB = adjustTime(b.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);
