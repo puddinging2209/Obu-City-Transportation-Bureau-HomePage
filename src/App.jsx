@@ -135,7 +135,7 @@ function App() {
               </ul>
               <h3>上記の内容が理解できない場合はページを閉じてください</h3>
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <div style={{marginRight: '20px'}}>
+                  <div style={{marginRight: '20px', alignSelf: 'center', cursor: 'pointer'}}>
                       <label>
                           <input type="checkbox" checked={!isShowWarn} onChange={(e) => setIsShowWarn(!e.target.checked)} />
                           今後この警告を表示しない
