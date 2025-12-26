@@ -26,16 +26,33 @@ function indexOfStation(diagram, station, rosen, direction) {
     return diagram.railway.stations.findIndex((sta) => sta.name == name_number(station).find((value) => value.includes(rosen)));
 }
 
+function codeofToStation(station, direction) {
+    const exceptions = [
+        { exc: { station: '江端町', direction: { route: '大府環状線', stationName: '大府' } }, return: 'OL12a' },
+        { exc: { station: '大峯', direction: { route: '大府環状線', stationName: '大府' } }, return: 'OL12a' },
+        { exc: { station: '半田赤レンガ', direction: { route: '半田線住吉支線', stationName: '乙川' } }, return: 'HD17a' },
+        { exc: { station: '住吉町', direction: { route: '半田線住吉支線', stationName: '乙川' } }, return: 'HD17a' },
+        { exc: { station: '清城', direction: { route: '半田線住吉支線', stationName: '乙川' } }, return: 'HD17a' },
+        { exc: { station: '上汐田', direction: { route: '鳴海連絡線', stationName: '鳴海' } }, return: 'GK04a' },
+        { exc: { station: '鳴海', direction: { route: '鳴海連絡線', stationName: '上汐田' } }, return: 'OD14a' },
+    ];
+
+    const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
+    if (exception) {
+        return exception.return;
+    }
+
+    return name_number(direction.stationName.split('・')[0]).find((value) => value.includes(rosen));
+}
+
 async function searchDeparture(station, direction) {
     const json = lines[direction.route].json;
     const diagram = await dia(json);
     const rosen = lines[direction.route].code;
     const stationIndex = indexOfStation(diagram, station, rosen, direction);
-    const codeofToStation = (direction.route !== '半田線住吉支線' || direction.stationName !== '乙川') ?
-        name_number(direction.stationName.split('・')[0]).find((value) => value.includes(rosen)) :
-        'HD17a';
+    const toCode = codeofToStation(station, direction);
     const numofStations = diagram.railway.stations.length;
-    const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == codeofToStation)) ? 0 : 1;
+    const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == toCode)) ? 0 : 1;
     let departures = diagram.railway.diagrams[0].trains[d].filter((tra) =>
         tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.stopType === 1 &&
         tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure != null
