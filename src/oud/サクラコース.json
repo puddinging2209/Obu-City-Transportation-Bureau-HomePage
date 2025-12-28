@@ -1,0 +1,4357 @@
+{
+  "fileType": "OuDia.1.07",
+  "fileTypeAppComment": "AOdia V3.0a.0",
+  "displayProperty": {
+    "timetableFont": [
+      {
+        "height": 9,
+        "family": "ＭＳ ゴシック",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "height": 9,
+        "family": "ＭＳ ゴシック",
+        "bold": true,
+        "italic": false
+      },
+      {
+        "height": 9,
+        "family": "ＭＳ ゴシックItaric",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "height": 9,
+        "family": "ＭＳ ゴシック",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "height": 9,
+        "family": "ＭＳ ゴシック",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "height": 9,
+        "family": "ＭＳ ゴシック",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "height": 9,
+        "family": "ＭＳ ゴシック",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "height": 9,
+        "family": "ＭＳ ゴシック",
+        "bold": false,
+        "italic": false
+      }
+    ],
+    "timetableVFont": {
+      "height": 9,
+      "family": "@ＭＳ ゴシック",
+      "bold": false,
+      "italic": false
+    },
+    "diagramStationFont": {
+      "height": 9,
+      "family": "ＭＳ ゴシック",
+      "bold": false,
+      "italic": false
+    },
+    "diagramTimeFont": {
+      "height": 9,
+      "family": "ＭＳ ゴシック",
+      "bold": false,
+      "italic": false
+    },
+    "commentFont": {
+      "height": 9,
+      "family": "ＭＳ ゴシック",
+      "bold": false,
+      "italic": false
+    },
+    "diagramTrainFont": {
+      "height": 9,
+      "family": "ＭＳ ゴシック",
+      "bold": false,
+      "italic": false
+    },
+    "diagramTextColor": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "diagramBackgroundColor": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    },
+    "diagramTrainColor": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "diagramAxisColor": {
+      "r": 192,
+      "g": 192,
+      "b": 192
+    },
+    "stdOpeTimeLowerColor": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "stdOpeTimeHigherColor": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "stdOpeTimeUndefColor": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "stdOpeTimeIllegalColor": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "stationNameLength": 6,
+    "timetableTrainWidth": 5,
+    "anySecondIncDec1": 15,
+    "anySecondIncDec2": 30,
+    "visibleTrainName": true,
+    "visibleOuterTerminalOriginSide": false,
+    "visibleOuterTerminalTerminalSide": false,
+    "visibleOuterTerminal": false
+  },
+  "railway": {
+    "name": "サクラコース",
+    "directionName": [
+      "下り",
+      "上り"
+    ],
+    "startTime": 10800,
+    "stationInterval": 60,
+    "enableOperation": false,
+    "comment": "",
+    "stations": [
+      {
+        "name": "大府駅東",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "大府市役所",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "中央町一丁目",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "ドミー大府店前",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "追分町六丁目",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "追分町三丁目",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "追分町一丁目",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "北山町三丁目",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "至学館大学",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "北山公民館",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "共和東保育園",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "マックスバリュ大府店南",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "共和駅東",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "共長公民館",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "長草公民館",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "アピタ大府店前",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "ウド(バス)",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "上荒田橋",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "吉田小学校前",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "吉田公民館",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "東半月生産組合",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "あいち健康の森公園西口",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "げんきの郷",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "あいち健康プラザ",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "長寿医療研究センター",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "あいち健康の森公園東口",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "森岡町四丁目",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "森岡公民館",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "石ヶ瀬こども幸齢者交流センター",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "大府市保健センター北",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "タウン柊山南",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "リソラ大府",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "大府市役所",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "name": "大府駅東",
+        "abbrName": "",
+        "brunchCoreIndex": null,
+        "timetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            true,
+            true
+          ]
+        },
+        "isMain": false,
+        "border": false,
+        "visibleDiagramInfo": [
+          "Origin",
+          "Origin"
+        ],
+        "mainTrack": [
+          0,
+          1
+        ],
+        "tracks": [
+          {
+            "name": "1番線",
+            "abbrName": [
+              "1",
+              ""
+            ]
+          },
+          {
+            "name": "2番線",
+            "abbrName": [
+              "2",
+              ""
+            ]
+          }
+        ],
+        "outerTerminal": null,
+        "brunchCoreStationIndex": null,
+        "isBrunchOpposite": false,
+        "loopOriginStationIndex": null,
+        "isLoopOpposite": false,
+        "visibleTimetableTrack": [
+          false,
+          false
+        ],
+        "visibleDiagramTrack": false,
+        "nextStaionDistance": null,
+        "timetableTrackOmit": false,
+        "operationLength": [
+          0,
+          0
+        ],
+        "customTimetableStyle": {
+          "arrival": [
+            false,
+            false
+          ],
+          "departure": [
+            false,
+            false
+          ],
+          "trainNumber": [
+            false,
+            false
+          ],
+          "operationNumber": [
+            false,
+            false
+          ],
+          "trainType": [
+            false,
+            false
+          ],
+          "trainName": [
+            false,
+            false
+          ]
+        }
+      }
+    ],
+    "trainTypes": [
+      {
+        "name": "左まわり",
+        "abbrName": "",
+        "textColor": {
+          "r": 0,
+          "g": 0,
+          "b": 0
+        },
+        "fontIndex": 0,
+        "backgroundColor": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        },
+        "strokeColor": {
+          "r": 0,
+          "g": 0,
+          "b": 0
+        },
+        "lineStyle": "Jissen",
+        "isBoldLine": false,
+        "stopMark": false,
+        "parentIndex": null
+      },
+      {
+        "name": "サクラコース",
+        "abbrName": "",
+        "textColor": {
+          "r": 0,
+          "g": 0,
+          "b": 0
+        },
+        "fontIndex": 0,
+        "backgroundColor": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        },
+        "strokeColor": {
+          "r": 0,
+          "g": 0,
+          "b": 0
+        },
+        "lineStyle": "Jissen",
+        "isBoldLine": false,
+        "stopMark": false,
+        "parentIndex": null
+      }
+    ],
+    "diagrams": [
+      {
+        "name": "平日",
+        "mainBackgroundColorIndex": 0,
+        "subBackgroundColorIndex": 0,
+        "backgroundPatternIndex": 0,
+        "trains": [
+          [
+            {
+              "direction": 0,
+              "type": 0,
+              "number": "",
+              "name": "",
+              "count": "",
+              "timetable": {
+                "firstStationIndex": 0,
+                "terminalStationIndex": 33,
+                "_data": [
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 24600,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 24840,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 24960,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 25020,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 25200,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 25260,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 25320,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 25440,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 25620,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 25680,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 25740,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 25860,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 26160,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 26520,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 26880,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 27240,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 27540,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 27660,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 27900,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 28140,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 28200,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 28260,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 28380,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 28620,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 28800,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 28920,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 28980,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 29040,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 29100,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 29280,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 29340,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 29460,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 29700,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": 30300,
+                    "departure": null,
+                    "track": 0
+                  }
+                ]
+              },
+              "note": null,
+              "operations": []
+            },
+            {
+              "direction": 0,
+              "type": 0,
+              "number": "",
+              "name": "",
+              "count": "",
+              "timetable": {
+                "firstStationIndex": 0,
+                "terminalStationIndex": 33,
+                "_data": [
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 37800,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 38040,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 38160,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 38220,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 38400,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 38460,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 38520,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 38640,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 38820,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 38880,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 38940,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 39060,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 39360,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 39720,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 40080,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 40440,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 40740,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 40860,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 41100,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 41340,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 41400,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 41460,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 41580,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 41820,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 42000,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 42120,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 42180,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 42240,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 42300,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 42480,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 42540,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 42660,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 42900,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": 43500,
+                    "departure": null,
+                    "track": 0
+                  }
+                ]
+              },
+              "note": null,
+              "operations": []
+            },
+            {
+              "direction": 0,
+              "type": 0,
+              "number": "",
+              "name": "",
+              "count": "",
+              "timetable": {
+                "firstStationIndex": 0,
+                "terminalStationIndex": 33,
+                "_data": [
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 51000,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 51240,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 51360,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 51420,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 51600,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 51660,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 51720,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 51840,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 52020,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 52080,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 52140,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 52260,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 52560,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 52920,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 53280,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 53640,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 53940,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 54060,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 54300,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 54540,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 54600,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 54660,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 54780,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 55020,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 55200,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 55320,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 55380,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 55440,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 55500,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 55680,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 55740,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 55860,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 56100,
+                    "track": 0
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": 56700,
+                    "departure": null,
+                    "track": 0
+                  }
+                ]
+              },
+              "note": null,
+              "operations": []
+            }
+          ],
+          [
+            {
+              "direction": 1,
+              "type": 1,
+              "number": "",
+              "name": "",
+              "count": "",
+              "timetable": {
+                "firstStationIndex": 0,
+                "terminalStationIndex": 33,
+                "_data": [
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 31200,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 31440,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 31800,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 31860,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 31920,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 32160,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 32220,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 32280,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 32340,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 32460,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 32640,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 32760,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 32880,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 32940,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 33000,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 33180,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 33360,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 33540,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 33840,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 34140,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 34380,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 34920,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 35100,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 35220,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 35280,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 35340,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 35460,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 35580,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 35640,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 35760,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 35880,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 35940,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 36060,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": 36900,
+                    "departure": null,
+                    "track": 1
+                  }
+                ]
+              },
+              "note": null,
+              "operations": []
+            },
+            {
+              "direction": 1,
+              "type": 1,
+              "number": "",
+              "name": "",
+              "count": "",
+              "timetable": {
+                "firstStationIndex": 0,
+                "terminalStationIndex": 33,
+                "_data": [
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 44400,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 44640,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 45000,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 45060,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 45120,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 45360,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 45420,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 45480,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 45540,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 45660,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 45840,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 45960,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 46080,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 46140,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 46200,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 46380,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 46560,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 46740,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 47040,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 47340,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 47580,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 48120,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 48300,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 48420,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 48480,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 48540,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 48660,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 48780,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 48840,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 48960,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 49080,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 49140,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 49260,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": 50100,
+                    "departure": null,
+                    "track": 1
+                  }
+                ]
+              },
+              "note": null,
+              "operations": []
+            },
+            {
+              "direction": 1,
+              "type": 1,
+              "number": "",
+              "name": "",
+              "count": "",
+              "timetable": {
+                "firstStationIndex": 0,
+                "terminalStationIndex": 33,
+                "_data": [
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 57600,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 57840,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 58200,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 58260,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 58320,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 58560,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 58620,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 58680,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 58740,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 58860,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 59040,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 59160,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 59280,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 59340,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 59400,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 59580,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 59760,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 59940,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 60240,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 60540,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 60780,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 61320,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 61500,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 61620,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 61680,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 61740,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 61860,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 61980,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 62040,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 62160,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 62280,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 62340,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": null,
+                    "departure": 62460,
+                    "track": 1
+                  },
+                  {
+                    "stopType": 1,
+                    "arrival": 63300,
+                    "departure": null,
+                    "track": 1
+                  }
+                ]
+              },
+              "note": null,
+              "operations": []
+            }
+          ]
+        ]
+      },
+      {
+        "name": "休日",
+        "mainBackgroundColorIndex": 0,
+        "subBackgroundColorIndex": 0,
+        "backgroundPatternIndex": 0,
+        "trains": [
+          [],
+          []
+        ]
+      }
+    ]
+  }
+}
