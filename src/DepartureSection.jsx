@@ -6,12 +6,13 @@ import Marquee from 'react-fast-marquee';
 import { nowsecond, toTimeString, name } from './func.js';
 import { searchDeparture } from './readOud.js';
 import stations from './stations.json';
+import busStops from './busStops.json';
 import lines from './lines.json';
 import types from './types.json';
 
 function DepartureSection() {
-    const [myStations, setMyStations] = React.useState(localStorage.getItem('myStations') ? JSON.parse(localStorage.getItem('myStations')) : ['大府']);
-    const initialDirections = myStations.map(station => stations[station]?.directions?.[0] || null);
+    const [myStations, setMyStations] = React.useState(localStorage.getItem('myStations') ? JSON.parse(localStorage.getItem('myStations')) : [{ name: '大府', role: 'station' }]);
+    const initialDirections = myStations.map(station => stations[station.name]?.directions?.[0] || null);
     const [myDirections, setMyDirections] = React.useState(initialDirections)
     const [myDepartures, setMyDepartures] = React.useState([]);
     const [showSearch, setShowSearch] = React.useState(false);
@@ -96,13 +97,16 @@ function DepartureSection() {
     <section className="departure-area">
       <h2>発車案内（マイ駅・停留所）</h2>
           <div className="departure-list">
-              {myStations.map((station, i) => {
+              {myStations.map((sta, i) => {
+                  const station = sta.name;
                   function handleDirectionChange(selectedOption) {
                       const newDirections = [...myDirections];
                       newDirections[i] = selectedOption.value;
                       setMyDirections(newDirections);
                   }
-                  const options = stations[station].directions.map((direction) => ({ value: direction, label: `${direction.stationName}方面` }))
+                  const options = sta.role === 'station' ?
+                      stations[station].directions.map((direction) => ({ value: direction, label: `${direction.stationName}方面` })) :
+                      busStops[station].directions.map((direction) => ({ value: direction, label: `${direction.stationName}方面` }));
                   return (
                       <div className="departure-card" key={station}>
                           <div className="card-header">
@@ -131,7 +135,7 @@ function DepartureSection() {
                                     station
                                     }
                                   </h3>
-                                  <p
+                                  <div
                                       ref={textRefs.current[i]?.line}
                                       style={{
                                           width: '100%',
@@ -144,11 +148,11 @@ function DepartureSection() {
                                           speed={20}
                                           pauseOnHover={true}
                                           play={true}
-                                      ><div style={{ marginRight: '30px' }}>{lines[myDirections[i]?.route].show}</div></Marquee>
+                                      ><div style={{ marginRight: '30px' }}><p>{lines[myDirections[i]?.route]?.show ?? myDirections[i]?.route}</p></div></Marquee>
                                   ) :
-                                    lines[myDirections[i]?.route].show
+                                    <p>{lines[myDirections[i]?.route]?.show ?? myDirections[i]?.route}</p>
                                       }
-                                  </p>
+                                  </div>
                               </div>
                               <Select
                                   value={options.find(opt => opt.value === myDirections[i]) || null}
@@ -229,10 +233,15 @@ function DepartureSection() {
                 <div className="search-content">
                     <h3>マイ駅・停留所を追加</h3>
                     <Select
-                        options={Object.keys(stations).filter(station => !myStations.includes(station)).sort((a, b) => stations[a].kana.localeCompare(stations[b].kana)).map(station => ({ value: station, label: station }))}
+                          options={
+                              [
+                                  ...Object.keys(stations).filter(station => !(myStations).map(station => station.name).includes(station)).map(station => ({ value: station, label: station, role: 'station', kana: stations[station].kana })),
+                                  ...Object.keys(busStops).filter(stop => !myStations.map(station => station.name).includes(stop)).sort((a, b) => busStops[a].kana.localeCompare(busStops[b].kana)).map(stop => ({ value: stop, label: stop, role: 'busStop', kana: busStops[stop].kana })),
+                              ].sort((a, b) => a.kana.localeCompare(b.kana))
+                          }
                         onChange={(selected) => {
                             if (selected) {
-                            const newStations = [...myStations, selected.value];
+                            const newStations = [...myStations, {name: selected.value, role: selected.role}];
                             setMyStations(newStations);
                             localStorage.setItem('myStations', JSON.stringify(newStations));
                             const newDirections = [...myDirections, stations[selected.value]?.directions?.[0] || null];
@@ -259,7 +268,7 @@ function DepartureSection() {
           >
               <div className="more-modal">
                   <div className="more-content">
-                    <h3>{showMore !== false ? `${myStations[showMore]} ${myDirections[showMore]?.stationName}方面` : ''}</h3>
+                    <h3>{showMore !== false ? `${myStations[showMore].name} ${myDirections[showMore]?.stationName}方面` : ''}</h3>
                           <table>
                               <tbody>
                                   {showMore !== false && myDepartures[showMore]?.map((train, i) => {

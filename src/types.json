@@ -53,5 +53,40 @@
         "name": "ライナー",
         "roma": "liner",
         "color": "#FF0000"
+    },
+    "東コース": {
+        "name": "東コース",
+        "roma": "Higashi course",
+        "color": "#000"
+    },
+    "西コース": {
+        "name": "西コース",
+        "roma": "Nishi course",
+        "color": "#000"
+    },
+    "南コース": {
+        "name": "南コース",
+        "roma": "Minami course",
+        "color": "#000"
+    },
+    "北コース": {
+        "name": "北コース",
+        "roma": "Kita course",
+        "color": "#000"
+    },
+    "中央コース": {
+        "name": "中央コース",
+        "roma": "Chuo course",
+        "color": "#000"
+    },
+    "サクラコース": {
+        "name": "サクラコース",
+        "roma": "Cherry Blossom course",
+        "color": "#000"
+    },
+    "ツツジコース": {
+        "name": "ツツジコース",
+        "roma": "Azalea course",
+        "color": "#000"
     }
 }

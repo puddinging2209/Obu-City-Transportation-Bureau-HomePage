@@ -1,3 +1,5 @@
+import stations from './stations.json';
+import busStops from './busStops.json';
 import lines from './lines.json';
 import { adjustTime, name_number, terminal, typeName } from './func.js';
 
@@ -47,38 +49,112 @@ function codeofToStation(station, direction, rosen) {
     return name_number(direction.stationName.split('・')[0]).find((value) => value.includes(rosen));
 }
 
-async function searchDeparture(station, direction) {
-    const json = lines[direction.route].json;
-    const diagram = await dia(json);
-    const rosen = lines[direction.route].code;
-    const stationIndex = indexOfStation(diagram, station, rosen, direction);
-    const toCode = codeofToStation(station, direction, rosen);
-    const numofStations = diagram.railway.stations.length;
-    const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == toCode)) ? 0 : 1;
-    let departures = diagram.railway.diagrams[0].trains[d].filter((tra) =>
-        tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.stopType === 1 &&
-        tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure != null
-    );
-    if (direction.route === '刈田川急行線' && ['半月町', '大東町', '惣作'].includes(station)) {
-        departures = departures.filter((tra) => tra.timetable._data[9]?.stopType === 1);
-    } else if (direction.route === '刈田川線' && direction.stationName.includes('若草')) {
-        departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
+function fromStop(diagram, busStop, direction) {
+    const exceptions = [
+        { exc: { busStop: '大府駅東', direction: { route: '東コース', stationName: 'メディアス体育館おおぶ・名鉄前後駅' } }, return: 2 },
+        { exc: { busStop: '大府駅東', direction: { route: '東コース', stationName: '追分町六丁目・名鉄前後駅' } }, return: 32 },
+    ];
+    const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ busStop, direction }));
+    if (exception) {
+        return exception.return;
+    }
+    return diagram.railway.stations.findIndex((stop) => stop.name == busStop);
+}
+
+function toStop(diagram, busStop, direction) {
+    return diagram.railway.stations.findIndex((stop) => stop.name == direction.stationName.split('・')[0]);
+}
+
+function busIndex(diagram, busStop, direction) {
+    const exceptions = [
+        { exc: { busStop: '大府駅東', direction: { route: '東コース', stationName: '長寿医療研究センター' } }, return: [{ from: 0, to: 1 }, { from: 2, to: 1 }] },
+        { exc: { busStop: '長寿医療研究センター', direction: { route: '東コース', stationName: '大府駅東' } }, return: [{ from: 1, to: 0 }, { from: 1, to: 2 }] },
+        { exc: { busStop: '大府駅東', direction: { route: '中央コース', stationName: '大府市役所' } }, return: [{ from: 0, to: 1 }, { from: 25, to: 24 }] },
+        { exc: { busStop: '大府市役所', direction: { route: '中央コース', stationName: '大府駅東' } }, return: [{ from: 1, to: 0 }, { from: 24, to: 25 }] },
+        { exc: { busStop: '大府駅東', direction: { route: 'サクラコース', stationName: '大府市役所' } }, return: [{ from: 0, to: 1 }, { from: 33, to: 32 }] },
+        { exc: { busStop: '大府市役所', direction: { route: 'サクラコース', stationName: '大府駅東' } }, return: [{ from: 1, to: 0 }, { from: 32, to: 33 }] },
+        { exc: { busStop: '北崎町一丁目', direction: { route: '東コース', stationName: '名鉄前後駅' } }, return: [{ from: 15, to: 18 }, { from: 21, to: 18 }] },
+        { exc: { busStop: '北崎町一丁目', direction: { route: '北コース', stationName: '名鉄前後駅' } }, return: [{ from: 14, to: 17 }, { from: 20, to: 17 }] },
+        { exc: { busStop: '大府みどり公園', direction: { route: '東コース', stationName: '名鉄前後駅' } }, return: [{ from: 16, to: 18 }, { from: 20, to: 18 }] },
+        { exc: { busStop: '大府みどり公園', direction: { route: '北コース', stationName: '名鉄前後駅' } }, return: [{ from: 15, to: 17 }, { from: 19, to: 17 }] },
+        { exc: { busStop: '星城高校北', direction: { route: '東コース', stationName: '名鉄前後駅' } }, return: [{ from: 17, to: 18 }, { from: 29, to: 18 }] },
+        { exc: { busStop: '星城高校北', direction: { route: '北コース', stationName: '名鉄前後駅' } }, return: [{ from: 16, to: 17 }, { from: 18, to: 17 }] },
+    ];
+    const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ busStop, direction }));
+    if (exception) {
+        return exception.return;
     }
 
-    departures.sort((a, b) => {
-        const timeA = adjustTime(a.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);
-        const timeB = adjustTime(b.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);
-        return timeA - timeB;
-    });
-    const result = departures.map((tra) => {
-        const time = tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure;
-        return {
-            terminal: terminal(tra, diagram),
-            typeName: typeName(tra, diagram),
-            time: adjustTime(time),
-            train: tra
+    let from = [fromStop(diagram, busStop, direction)];
+    let to = [toStop(diagram, busStop, direction)];
+    return from.map((_, i) => ({ from: from[i], to: to[i] }));
+}
+
+async function searchDeparture(sta, direction) {
+
+    const station = sta.name;
+    if (sta.role === 'station') {
+        const json = lines[direction.route].json;
+        const diagram = await dia(json);
+        const rosen = lines[direction.route].code;
+        const stationIndex = indexOfStation(diagram, station, rosen, direction);
+        const toCode = codeofToStation(station, direction, rosen);
+        const numofStations = diagram.railway.stations.length;
+        const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == toCode)) ? 0 : 1;
+        let departures = diagram.railway.diagrams[0].trains[d].filter((tra) =>
+            tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.stopType === 1 &&
+            tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure != null
+        );
+        if (direction.route === '刈田川急行線' && ['半月町', '大東町', '惣作'].includes(station)) {
+            departures = departures.filter((tra) => tra.timetable._data[9]?.stopType === 1);
+        } else if (direction.route === '刈田川線' && direction.stationName.includes('若草')) {
+            departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
         }
-    })
-    return result;
+
+        departures.sort((a, b) => {
+            const timeA = adjustTime(a.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);
+            const timeB = adjustTime(b.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);
+            return timeA - timeB;
+        });
+        return departures.map((tra) => {
+            const time = tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure;
+            return {
+                terminal: terminal(tra, diagram),
+                typeName: typeName(tra, diagram),
+                time: adjustTime(time),
+                train: tra
+            }
+        });
+    } else if (sta.role === 'busStop') {
+        const busStop = station.endsWith('(バス)') ? station.slice(0, -4) : station;
+        let routes = direction.route.split('/');
+        const directions = routes.map((route) => {
+            return { route: route, stationName: direction.stationName };
+        })
+        let departures = await Promise.all(routes.map(async (route, i) => {
+            const diagram = await dia(route);
+            const index = busIndex(diagram, busStop, directions[i]);
+            return index.map((index) => {
+                const d = (index.from < index.to) ? 0 : 1;
+                const numofStations = diagram.railway.stations.length;
+                const filtered = diagram.railway.diagrams[0].trains[d].filter((bus) =>
+                    bus.timetable._data[(d === 0) ? index.from : numofStations - 1 - index.from]?.stopType === 1 &&
+                    bus.timetable._data[(d === 0) ? index.from : numofStations - 1 - index.from]?.departure != null
+                );
+                return filtered.map((tra) => {
+                    const time = tra.timetable._data[(d === 0) ? index.from : numofStations - 1 - index.from]?.departure;
+                    return {
+                        terminal: terminal(tra, diagram),
+                        typeName: typeName(tra, diagram),
+                        time: adjustTime(time),
+                        train: tra
+                    }
+                });
+            }).flat();
+        }));
+
+        departures.sort((a, b) => a.time - b.time);
+        return departures.flat();
+    }
 }
 export { searchDeparture };
