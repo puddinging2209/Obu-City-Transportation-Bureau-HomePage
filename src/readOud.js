@@ -93,6 +93,7 @@ function busIndex(diagram, busStop, direction) {
 async function searchDeparture(sta, direction) {
 
     const station = sta.name;
+    console.log(sta);
     if (sta.role === 'station') {
         const json = lines[direction.route].json;
         const diagram = await dia(json);
@@ -126,7 +127,7 @@ async function searchDeparture(sta, direction) {
             }
         });
     } else if (sta.role === 'busStop') {
-        const busStop = station.endsWith('(バス)') ? station.slice(0, -4) : station;
+        const busStop = station;
         let routes = direction.route.split('/');
         const directions = routes.map((route) => {
             return { route: route, stationName: direction.stationName };
@@ -153,8 +154,8 @@ async function searchDeparture(sta, direction) {
             }).flat();
         }));
 
-        departures.sort((a, b) => a.time - b.time);
-        return departures.flat();
+        const result = departures.flat();
+        return result.sort((a, b) => a.time - b.time);
     }
 }
 export { searchDeparture };

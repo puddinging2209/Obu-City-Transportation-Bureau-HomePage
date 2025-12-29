@@ -1305,7 +1305,7 @@
         }
       },
       {
-        "name": "長根",
+        "name": "長根(バス)",
         "abbrName": "",
         "brunchCoreIndex": null,
         "timetableStyle": {
@@ -3050,7 +3050,7 @@
     ],
     "trainTypes": [
       {
-        "name": "左まわり",
+        "name": "ツツジコース",
         "abbrName": "",
         "textColor": {
           "r": 0,
