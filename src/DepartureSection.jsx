@@ -11,7 +11,7 @@ import lines from './lines.json';
 import types from './types.json';
 
 function DepartureSection() {
-    const [myStations, setMyStations] = React.useState(localStorage.getItem('myStations') ? JSON.parse(localStorage.getItem('myStations')) : [{ name: '大府', role: 'station' }]);
+    const [myStations, setMyStations] = React.useState(localStorage.getItem('myStations')?.[0]?.name ? JSON.parse(localStorage.getItem('myStations')) : [{ name: '大府', role: 'station' }]);
     const initialDirections = myStations.map(station => stations[station.name]?.directions?.[0] || null);
     const [myDirections, setMyDirections] = React.useState(initialDirections)
     const [myDepartures, setMyDepartures] = React.useState([]);
