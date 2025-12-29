@@ -11,8 +11,8 @@ import lines from './lines.json';
 import types from './types.json';
 
 function DepartureSection() {
-    const [myStations, setMyStations] = React.useState(localStorage.getItem('myStations')?.[0]?.name ? JSON.parse(localStorage.getItem('myStations')) : [{ name: '大府', role: 'station' }]);
-    const initialDirections = myStations.map(station => stations[station.name]?.directions?.[0] || null);
+    const [myStations, setMyStations] = React.useState(localStorage.getItem('myStations')?.match(/\[\{.*\}.*\]/) ? JSON.parse(localStorage.getItem('myStations')) : [{ name: '大府', role: 'station' }]);
+    const initialDirections = myStations.map(station => stations[station.name]?.directions?.[0] || busStops[station.name]?.directions?.[0] || null);
     const [myDirections, setMyDirections] = React.useState(initialDirections)
     const [myDepartures, setMyDepartures] = React.useState([]);
     const [showSearch, setShowSearch] = React.useState(false);
@@ -178,6 +178,8 @@ function DepartureSection() {
                                         // ドロップダウンリストの各項目の文字スタイル
                                         option: (provided) => ({
                                             ...provided,
+                                            width:'fit-content',
+                                            whiteSpace: 'nowrap',
                                             fontSize: '11px',
                                         }),
                                   }}
@@ -236,17 +238,17 @@ function DepartureSection() {
                           options={
                               [
                                   ...Object.keys(stations).filter(station => !(myStations).map(station => station.name).includes(station)).map(station => ({ value: station, label: station, role: 'station', kana: stations[station].kana })),
-                                  ...Object.keys(busStops).filter(stop => !myStations.map(station => station.name).includes(stop)).sort((a, b) => busStops[a].kana.localeCompare(busStops[b].kana)).map(stop => ({ value: stop, label: stop, role: 'busStop', kana: busStops[stop].kana })),
+                                  ...Object.keys(busStops).filter(stop => !myStations.map(station => station.name).includes(stop)).map(stop => ({ value: stop, label: stop, role: 'busStop', kana: busStops[stop].kana })),
                               ].sort((a, b) => a.kana.localeCompare(b.kana))
                           }
                         onChange={(selected) => {
                             if (selected) {
-                            const newStations = [...myStations, {name: selected.value, role: selected.role}];
-                            setMyStations(newStations);
-                            localStorage.setItem('myStations', JSON.stringify(newStations));
-                            const newDirections = [...myDirections, stations[selected.value]?.directions?.[0] || null];
-                            setMyDirections(newDirections);
-                            setShowSearch(false);
+                                const newStations = [...myStations, {name: selected.value, role: selected.role}];
+                                setMyStations(newStations);
+                                localStorage.setItem('myStations', JSON.stringify(newStations));
+                                const newDirections = [...myDirections, stations[selected.value]?.directions?.[0] || busStops[selected.value]?.directions?.[0] || null];
+                                setMyDirections(newDirections);
+                                setShowSearch(false);
                             }
                         }}
                         placeholder="駅・停留所を検索"
@@ -255,6 +257,12 @@ function DepartureSection() {
                         styles={{
                             menuPortal: base => ({ ...base, zIndex: 10001 })
                         }}
+                        formatOptionLabel={({ value, label, role }) => (
+                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                <div>{label}</div>
+                                <div style={{ fontSize: '12px', color: 'gray' }}>{role === 'station' ? '駅' : role === 'busStop' ? '停留所' : ''}</div>
+                            </div>
+                        )}
                     />
                     <a className='modalClose' onClick={() => setShowSearch(false)}>閉じる</a>
                 </div>
