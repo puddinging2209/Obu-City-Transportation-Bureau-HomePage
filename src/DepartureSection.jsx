@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import Select from 'react-select';
 import Marquee from 'react-fast-marquee';
@@ -22,6 +23,9 @@ function DepartureSection() {
     const moreTextRefs = React.useRef([]);
     const [moreOverflows, setMoreOverflows] = React.useState([]);
 
+    const location = useLocation();
+    const navigate = useNavigate();
+
     function handleRemoveMyStation(index) {
         const newStations = myStations.filter((_, i) => i !== index);
         setMyStations(newStations);
@@ -29,6 +33,12 @@ function DepartureSection() {
         const newDirections = myDirections.filter((_, i) => i !== index);
         setMyDirections(newDirections);
     };
+
+    React.useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        setShowSearch(params.get('modal') === 'addStation');
+        setShowMore(params.get('modal')?.startsWith('more-') ? Number(params.get('modal').replace('more-', '')) : false);
+    }, [location]);
 
     React.useEffect(() => {
         textRefs.current = myStations.map(() => ({name: React.createRef(), line: React.createRef(), departure: [React.createRef(), React.createRef()]}));
@@ -215,19 +225,28 @@ function DepartureSection() {
                                   })}
                               </tbody>
                           </table>
-                          <a className="more-link" onClick={() => setShowMore(i)}>もっと見る</a>
+                          <a className="more-link" onClick={() => {
+                              setShowMore(i);
+                              navigate(`?modal=more-${i}`);
+                          }}>もっと見る</a>
                           <button className="remove-btn" onClick={() => handleRemoveMyStation(i)}>×</button>
                       </div>
                   )
               })}
-        <div className="add-card" onClick={() => setShowSearch(true)}>
+              <div className="add-card" onClick={() => {
+                  navigate('?modal=addStation');
+                  setShowSearch(true);
+              }}>
           <img className="icon-plus" src="./image/icon_add.png" alt="プラスアイコン" />
           <p>マイ駅・停留所を追加</p>
         </div>
           </div>
           <ReactModal
             isOpen={showSearch}
-            onRequestClose={() => setShowSearch(false)}
+              onRequestClose={() => {
+                  setShowSearch(false);
+                  navigate('/');
+              }}
             className="Modal searchModal"
             overlayClassName="Overlay"
           >
@@ -264,13 +283,19 @@ function DepartureSection() {
                             </div>
                         )}
                     />
-                    <a className='modalClose' onClick={() => setShowSearch(false)}>閉じる</a>
+                      <a className='modalClose' onClick={() => {
+                          setShowSearch(false);
+                          navigate('/');
+                      }}>閉じる</a>
                 </div>
               </div>
           </ReactModal>
           <ReactModal
             isOpen={showMore !== false}
-            onRequestClose={() => setShowMore(false)}
+              onRequestClose={() => {
+                  setShowMore(false);
+                  navigate('/');
+              }}
             className="Modal listModal"
             overlayClassName="Overlay"
           >
@@ -306,7 +331,10 @@ function DepartureSection() {
                                   })}
                               </tbody>
                           </table>
-                    <a className='modalClose' onClick={() => setShowMore(false)}>閉じる</a>
+                      <a className='modalClose' onClick={() => {
+                          setShowMore(false)
+                          navigate('/');
+                      }}>閉じる</a>
                 </div>
               </div>
           </ReactModal>

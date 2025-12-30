@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import DepartureSection from './DepartureSection';
 import './App.css';
@@ -14,7 +15,7 @@ function App() {
         }
     }
     React.useEffect(() => {
-        setIsWarnOpen(true);
+        if (isShowWarn) setIsWarnOpen(true);
     }, []);
 
   return (
@@ -48,20 +49,10 @@ function App() {
       </header>
 
       {/* メイン */}
-      <main>
-        <DepartureSection />
-
-        {/* 運行情報 */}
-        <div className="service-info">
-          <div className="info-box">
-            <h2>地下鉄 運行情報</h2>
-            <p className="status-normal">現在、平常通り運行しています。</p>
-          </div>
-          <div className="info-box">
-            <h2>ふれあいバス 運行情報</h2>
-            <p className="status-normal">現在、平常通り運行しています。</p>
-          </div>
-        </div>
+          <main>
+              <BrowserRouter>
+                <DepartureSection />
+              </BrowserRouter>
 
         {/* 大きなボタン */}
         <div className="big-buttons">
@@ -81,36 +72,39 @@ function App() {
 
       {/* フッター（スマホ表示） */}
       <footer>
-        <nav className="footer-nav">
-          <a href="#">地下鉄時刻表
-            <div>
-              <img className="icon" src="./image/subway-timeTable.png" alt="" />
-            </div>
-          </a>
-          <span>|</span>
+              <nav className="footer-nav">
+                  <div>
+                    <a href="#">地下鉄時刻表
+                        <div>
+                        <img className="icon" src="./image/subway-timeTable.png" alt="" />
+                        </div>
+                      </a>
+                  </div>
+                  <div>
           <a href="#">地下鉄路線図
             <div>
               <img className="icon" src="./image/subway-routeMap.png" alt="" />
             </div>
-          </a>
-          <span>|</span>
+                      </a></div>
+                  <div>
           <a href="#"><strong>乗換案内</strong>
             <div>
               <img className="icon" src="./image/transfer.png" alt="" />
             </div>
-          </a>
-          <span>|</span>
+                      </a></div>
+                  <div>
           <a href="#">バス時刻表
             <div>
               <img className="icon" src="./image/bus-timeTable.png" alt="" />
             </div>
-          </a>
-          <span>|</span>
+                      </a></div>
+                  <div>
           <a href="#">バス路線図
             <div>
               <img className="icon" src="./image/bus-routeMap.png" alt="" />
             </div>
-          </a>
+                  </a>
+                    </div>
         </nav>
           </footer>
           
