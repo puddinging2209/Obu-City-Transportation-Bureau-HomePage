@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: 0 0 0 0;
     font-family: Arial, sans-serif;
 }
 
@@ -50,6 +50,7 @@ header nav .icon {
 .header-nav {
     margin-top: 10px;
     display: flex;
+    white-space: nowrap;
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
@@ -279,7 +280,8 @@ a.type {
 /* ===== フッター（スマホ） ===== */
 footer {
     display: none;
-    padding: 10px;
+    width: 100vw;
+    padding: 10px 0;
     background: #f8f8f8;
     border-top: 1px solid #ddd;
     font-size: 14px;
@@ -292,27 +294,39 @@ footer {
 .footer-nav {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 5%;
     white-space: nowrap;
 }
 
-.footer-nav a {
-    font-size: 13px;
+.footer-nav div {
+    width: 16%;
+    text-align: center;
+    padding: 1%;
 }
 
-.footer-nav a div {
+.footer-nav div a {
+    font-size: auto;
+    text-align: center;
+}
+
+.footer-nav div a div {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.footer-nav .icon {
+.footer-nav div .icon {
     height: 50px;
     margin-top: 5px;
 }
 
 /* ===== レスポンシブ ===== */
 @media (max-width: 760px) {
+
+    body {
+        padding-bottom: 110px;
+    }
 
     /* ヘッダー全体は表示する */
     header {
