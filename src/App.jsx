@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import DepartureSection from './DepartureSection';
 import './App.css';
@@ -48,17 +48,20 @@ function App() {
         </nav>
       </header>
 
+          <BrowserRouter>
+              <Routes>
+                  <Route
       {/* メイン */}
           <main>
-              <BrowserRouter>
-                <DepartureSection />
-              </BrowserRouter>
+            <DepartureSection />
 
         {/* 大きなボタン */}
         <div className="big-buttons">
           <a href="#" className="btn btn-subway">地下鉄に乗る</a>
           <a href="#" className="btn btn-bus">バスに乗る</a>
-        </div>
+                      </div>
+              </Routes>
+          </BrowserRouter>
 
         {/* 下部リンク */}
         <div className="link-list">
