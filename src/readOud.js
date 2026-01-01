@@ -79,6 +79,10 @@ function busIndex(diagram, busStop, direction) {
         { exc: { busStop: '大府みどり公園', direction: { route: '北コース', stationName: '名鉄前後駅' } }, return: [{ from: 15, to: 17 }, { from: 19, to: 17 }] },
         { exc: { busStop: '星城高校北', direction: { route: '東コース', stationName: '名鉄前後駅' } }, return: [{ from: 17, to: 18 }, { from: 29, to: 18 }] },
         { exc: { busStop: '星城高校北', direction: { route: '北コース', stationName: '名鉄前後駅' } }, return: [{ from: 16, to: 17 }, { from: 18, to: 17 }] },
+        { exc: { busStop: '星城高校東', direction: { route: '東コース', stationName: '追分町六丁目' } }, return: [{ from: 19, to: 29 }] },
+        { exc: { busStop: '星城高校東', direction: { route: '東コース', stationName: 'メディアス体育館おおぶ' } }, return: [{ from: 17, to: 7 }] },
+        { exc: { busStop: '星城高校東', direction: { route: '北コース', stationName: '口無大池' } }, return: [{ from: 18, to: 26 }] },
+        { exc: { busStop: '星城高校東', direction: { route: '北コース', stationName: '二ツ池セレトナ' } }, return: [{ from: 16, to: 13 }] },
     ];
     const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ busStop, direction }));
     if (exception) {
@@ -134,7 +138,7 @@ async function searchDeparture(sta, direction) {
         })
         let departures = await Promise.all(routes.map(async (route, i) => {
             const diagram = await dia(route);
-            const index = busIndex(diagram, busStop, directions[i]);
+            const index = busIndex(diagram, busStop, { ...directions[i], stationName: directions[i].stationName.split('・')[0] });
             return index.map((index) => {
                 const d = (index.from < index.to) ? 0 : 1;
                 const numofStations = diagram.railway.stations.length;
@@ -145,7 +149,7 @@ async function searchDeparture(sta, direction) {
                 return filtered.map((tra) => {
                     const time = tra.timetable._data[(d === 0) ? index.from : numofStations - 1 - index.from]?.departure;
                     return {
-                        terminal: terminal(tra, diagram),
+                        terminal: (d === 0) ? '左まわり' : '右まわり',
                         typeName: typeName(tra, diagram),
                         time: adjustTime(time),
                         train: tra
