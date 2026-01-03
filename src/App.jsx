@@ -1,8 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import ReactModal from 'react-modal';
-import DepartureSection from './DepartureSection';
+
 import './App.css';
+
+import Home from './pages/home/Home.jsx'
 
 function App() {
 
@@ -48,30 +51,14 @@ function App() {
         </nav>
       </header>
 
-          <BrowserRouter>
-              <Routes>
-                  <Route
       {/* メイン */}
           <main>
-            <DepartureSection />
-
-        {/* 大きなボタン */}
-        <div className="big-buttons">
-          <a href="#" className="btn btn-subway">地下鉄に乗る</a>
-          <a href="#" className="btn btn-bus">バスに乗る</a>
-                      </div>
-              </Routes>
-          </BrowserRouter>
-
-        {/* 下部リンク */}
-        <div className="link-list">
-          <a href="#"><img className="icon" src="./image/transfer.png" alt="" />乗換案内</a>
-          <a href="#"><img className="icon" src="./image/subway-timeTable.png" alt="" />地下鉄時刻表</a>
-          <a href="#"><img className="icon" src="./image/subway-routeMap.png" alt="" />地下鉄路線図</a>
-          <a href="#"><img className="icon" src="./image/bus-timeTable.png" alt="" />バス時刻表</a>
-          <a href="#"><img className="icon" src="./image/bus-routeMap.png" alt="" />バス路線図</a>
-        </div>
-      </main>
+            <HashRouter>
+                <Routes>
+                    <Route path='/' element={<Home />}></Route>
+                </Routes>
+            </HashRouter>
+          </main>
 
       {/* フッター（スマホ表示） */}
       <footer>
