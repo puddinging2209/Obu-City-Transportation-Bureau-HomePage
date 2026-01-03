@@ -5808,7 +5808,8 @@
     ],
     "directions": [
         {"route": "大府環状線", "stationName": "大府"},
-        {"route": "大府環状線", "stationName": "共和"}
+        {"route": "大府環状線", "stationName": "共和"},
+        {"route": "大峯連絡線", "stationName": "半田市"}
     ]
   },
   "大峯": {

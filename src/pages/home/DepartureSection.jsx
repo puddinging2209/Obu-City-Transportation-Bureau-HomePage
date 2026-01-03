@@ -14,9 +14,9 @@ import {
   DialogContent,
   DialogActions,
   Table,
+  TableBody,
   TableRow,
   TableCell,
-  TableContainer,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import Select from 'react-select';
@@ -76,7 +76,7 @@ export default function DepartureSection() {
     <Box>
       <Typography variant="h6" sx={{ mb: 2 }}>発車案内（マイ駅・停留所）</Typography>
 
-      <Stack direction="row" spacing={2} sx={{ overflowX: 'auto', pb: 1 }}>
+          <Stack direction="row" spacing={2} sx={{ overflowX: 'auto', whiteSpace: 'nowrap', flexWrap: 'nowrap', pb: 1, scrollSnapType: { xs: 'x mandatory', md: 'none'} }}>
         {myStations.map((sta, i) => {
           const options = (sta.role === 'station'
             ? stations[sta.name].directions
@@ -88,15 +88,11 @@ export default function DepartureSection() {
             .slice(0, 2) ?? [];
             
           return (
-            <Card key={sta.name} sx={{ width: 300, position: 'relative' }}>
+            <Card key={sta.name} sx={{ width: { xs: '90%', md: 300 }, position: 'relative', flexShrink: 0, scrollSnapAlign: { xs: 'center', md: 'none' } }}>
               <CardContent>
                 <Box sx={{ mb: 1 }}>
-                  <Typography variant="subtitle1" noWrap>
-                    {sta.name.length > 10 ? (
-                      <Marquee speed={20} pauseOnHover>
-                        <span style={{ marginRight: 32 }}>{sta.name}</span>
-                      </Marquee>
-                    ) : sta.name}
+                  <Typography variant="subtitle1" sx={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap'}} noWrap>
+                    <OverflowMarquee text={name(sta.name)} />
                   </Typography>
 
                   <Typography variant="body2" color="text.secondary" noWrap>
@@ -114,6 +110,7 @@ export default function DepartureSection() {
                     setMyDirections(d);
                   }}
                   isSearchable={false}
+                  menuPortalTarget={document.body}
                   styles={{ container: b => ({ ...b, marginBottom: 8 }) }}
                 />
 
@@ -167,7 +164,10 @@ export default function DepartureSection() {
                   ))}
                 </Stack>
 
-                <Button size="small" sx={{ mt: 1 }} onClick={() => navigate(`?modal=more-${i}`)}>
+                      <Button size="small" sx={{ mt: 1 }} onClick={() => {
+                          setShowMore(i);
+                          navigate(`?modal=more-${i}`)
+                      }}>
                   もっと見る
                 </Button>
 
@@ -182,7 +182,7 @@ export default function DepartureSection() {
             </Card>
           );
         })}
-            <Card sx={{ width: 300 }} variant="outlined">
+            <Card sx={{ width: 300, flexShrink: 0, scrollSnapAlign: { xs: 'center', md: 'none' } }} variant="outlined">
                   <CardActionArea onClick={
                       () => {
                           setShowSearch(true);
@@ -249,15 +249,20 @@ export default function DepartureSection() {
 
       <Dialog
         open={showMore !== null}
-        onClose={() => navigate('/')}
+              onClose={() => {
+                  setShowMore(false);
+                  navigate('/')
+              }}
         fullWidth
       >
         <DialogTitle>
-          {showMore !== null && `${myStations[showMore].name} 発車時刻一覧`}
+          {showMore !== null && `${myStations[showMore]?.name} ${myDirections[showMore]?.stationName} 方面 発車時刻一覧`}
         </DialogTitle>
         <DialogContent dividers>
-            {showMore !== null && myDepartures[showMore]?.map((dep, i) => (
-                <Table sx={{ tableLayout: 'fixed', width: '100%' }}>
+                  <Table sx={{ tableLayout: 'fixed', width: '100%', borderCollapse: "collapse" }}>
+                    <TableBody>
+                      {showMore !== null && myDepartures[showMore]?.map((dep, i) => (
+                    <>
                 <colgroup>
                     <col style={{ width: '85px' }} />
                     <col />
@@ -269,7 +274,8 @@ export default function DepartureSection() {
                         overflow: 'hidden',
                         minHeight: '15px',
                         width: '100%',
-                        padding: '0'
+                        padding: '3px 0',
+                        borderBottom: '1px solid rgba(0, 0, 0, 0.12)'
                     },
                     '&:last-child td, &:last-child th': {
                         border: 0
@@ -300,12 +306,17 @@ export default function DepartureSection() {
                             {toTimeString(dep.time)}
                         </Typography>
                     </TableCell>
-                </TableRow>
+                    </TableRow>
+                </>
+                      ))}
+                    </TableBody>
             </Table>
-          ))}
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => navigate('/')}>閉じる</Button>
+                  <Button onClick={() => {
+                      navigate('/');
+                      setShowMore(false);
+                  }}>閉じる</Button>
         </DialogActions>
       </Dialog>
     </Box>
