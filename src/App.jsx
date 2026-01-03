@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import { ThemeProvider, createTheme, CssBaseline, Dialog, DialogTitle, DialogContent } from '@mui/material';
 import './App.css';
 
 import Header from './components/Header.jsx'
 import Home from './pages/home/Home.jsx'
+import MobileBottomNavigation from './components/MobileBottomNavigation.jsx';
 
 const theme = createTheme({
   palette: {
@@ -40,55 +41,17 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-          <div className="App">
+        <HashRouter>
             <Header />
 
-      {/* メイン */}
           <main>
-            <HashRouter>
                 <Routes>
-                    <Route path='/' element={<Home />}></Route>
+                    <Route path="/" element={<Navigate to="/home" replace />} />
+                    <Route path='/home' element={<Home />}></Route>
                 </Routes>
-            </HashRouter>
           </main>
-
-      {/* フッター（スマホ表示） */}
-      <footer>
-              <nav className="footer-nav">
-                  <div>
-                    <a href="#">地下鉄時刻表
-                        <div>
-                        <img className="icon" src="./image/subway-timeTable.png" alt="" />
-                        </div>
-                      </a>
-                  </div>
-                  <div>
-          <a href="#">地下鉄路線図
-            <div>
-              <img className="icon" src="./image/subway-routeMap.png" alt="" />
-            </div>
-                      </a></div>
-                  <div>
-          <a href="#"><strong>乗換案内</strong>
-            <div>
-              <img className="icon" src="./image/transfer.png" alt="" />
-            </div>
-                      </a></div>
-                  <div>
-          <a href="#">バス時刻表
-            <div>
-              <img className="icon" src="./image/bus-timeTable.png" alt="" />
-            </div>
-                      </a></div>
-                  <div>
-          <a href="#">バス路線図
-            <div>
-              <img className="icon" src="./image/bus-routeMap.png" alt="" />
-            </div>
-                  </a>
-                    </div>
-        </nav>
-          </footer>
+              
+          <MobileBottomNavigation />
           
           <Dialog
               open={isWarnOpen}
@@ -123,7 +86,7 @@ function App() {
                   </DialogContent>
           </Dialog>
 
-          </div>
+        </HashRouter>
           </ThemeProvider>
   );
 }
