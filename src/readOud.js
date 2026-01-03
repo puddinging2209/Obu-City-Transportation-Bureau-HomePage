@@ -97,7 +97,6 @@ function busIndex(diagram, busStop, direction) {
 async function searchDeparture(sta, direction) {
 
     const station = sta.name;
-    console.log(sta);
     if (sta.role === 'station') {
         const json = lines[direction.route].json;
         const diagram = await dia(json);

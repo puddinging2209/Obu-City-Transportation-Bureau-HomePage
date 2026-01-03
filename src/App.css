@@ -133,11 +133,11 @@ main {
 }
 
 .departure-card table tr td:nth-child(1) {
-    width: 110px;
+    width: 80px;
 }
 
 .departure-card table tr td:nth-child(2) {
-    width: calc(100% - 140px);
+    width: calc(100% - 110px);
     overflow: hidden;
 }
 
@@ -402,11 +402,11 @@ footer {
 }
 
 .Modal table tr td:nth-child(1) {
-    width: 130px;
+    width: 100px;
 }
 
 .Modal table tr td:nth-child(2) {
-    width: calc(100% - 160px);
+    width: calc(100% - 130px);
     overflow: hidden;
 }
 
