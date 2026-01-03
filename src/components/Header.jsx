@@ -12,9 +12,7 @@ function Header() {
                 <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
                     <Button>地下鉄時刻表</Button>
                     <Button>地下鉄路線図</Button>
-                    <Button variant="contained" color="secondary">
-                        乗換案内
-                    </Button>
+                    <Button>乗換案内</Button>
                     <Button>バス時刻表</Button>
                     <Button>バス路線図</Button>
                 </Box>
