@@ -1,8 +1,28 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import ReactModal from 'react-modal';
+import {
+  Box,
+  Card,
+  CardContent,
+  CardActionArea,
+  Typography,
+  Button,
+  Chip,
+  IconButton,
+  Stack,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Table,
+  TableRow,
+  TableCell,
+  TableContainer,
+} from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import Select from 'react-select';
-import Marquee from 'react-fast-marquee';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+import OverflowMarquee from '../../components/OverflowMarquee.jsx';
 
 import { nowsecond, toTimeString, name } from '../../func.js';
 import { searchDeparture } from '../../readOud.js';
@@ -11,254 +31,185 @@ import busStops from '../../busStops.json';
 import lines from '../../lines.json';
 import types from '../../types.json';
 
-function DepartureSection() {
-    const [myStations, setMyStations] = React.useState(localStorage.getItem('myStations')?.match(/\[\{.*\}.*\]/) ? JSON.parse(localStorage.getItem('myStations')) : [{ name: '大府', role: 'station' }]);
-    const initialDirections = myStations.map(station => stations[station.name]?.directions?.[0] || busStops[station.name]?.directions?.[0] || null);
-    const [myDirections, setMyDirections] = React.useState(initialDirections)
-    const [myDepartures, setMyDepartures] = React.useState([]);
-    const [showSearch, setShowSearch] = React.useState(false);
-    const [showMore, setShowMore] = React.useState(false)
-    const textRefs = React.useRef({});
-    const [overflows, setOverflows] = React.useState({});
-    const moreTextRefs = React.useRef([]);
-    const [moreOverflows, setMoreOverflows] = React.useState([]);
+export default function DepartureSection() {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    const location = useLocation();
-    const navigate = useNavigate();
+  const [myStations, setMyStations] = React.useState(
+    localStorage.getItem('myStations')?.match(/\[\{.*\}.*\]/) ? JSON.parse(localStorage.getItem('myStations')) : [{ name: '大府', role: 'station' }]
+  );
 
-    if (
-        showMore !== false && 
-        myDepartures[showMore] && 
-        moreTextRefs.current.length !== myDepartures[showMore].length
-    ) {
-        moreTextRefs.current = myDepartures[showMore].map(() => React.createRef());
-    }
+  const [myDirections, setMyDirections] = React.useState(() =>
+    myStations.map(
+      s => stations[s.name]?.directions?.[0] || busStops[s.name]?.directions?.[0] || null
+    )
+  );
 
-    function handleRemoveMyStation(index) {
-        const newStations = myStations.filter((_, i) => i !== index);
-        setMyStations(newStations);
-        localStorage.setItem('myStations', JSON.stringify(newStations));
-        const newDirections = myDirections.filter((_, i) => i !== index);
-        setMyDirections(newDirections);
-    };
+  const [myDepartures, setMyDepartures] = React.useState([]);
+  const [showSearch, setShowSearch] = React.useState(false);
+  const [showMore, setShowMore] = React.useState(null);
 
-    React.useEffect(() => {
-        const params = new URLSearchParams(location.search);
-        setShowSearch(params.get('modal') === 'addStation');
-        setShowMore(params.get('modal')?.startsWith('more-') ? Number(params.get('modal').replace('more-', '')) : false);
-    }, [location]);
+  React.useEffect(() => {
+    Promise.all(
+      myStations.map((sta, i) =>
+        myDirections[i] ? searchDeparture(sta, myDirections[i]) : []
+      )
+    ).then(setMyDepartures);
+  }, [myStations, myDirections]);
 
-    React.useEffect(() => {
-        textRefs.current = myStations.map(() => ({name: React.createRef(), line: React.createRef(), departure: [React.createRef(), React.createRef()]}));
-        setOverflows(myStations.map(() => ({ name: false, line: false, departure: [false, false] })));
-    }, [myStations]);
+  React.useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const m = params.get('modal');
+    if (m?.startsWith('more-')) setShowMore(Number(m.replace('more-', '')));
+    else setShowMore(null);
+  }, [location]);
 
-    React.useLayoutEffect(() => {
-        const newOverflows = myStations.map(() => ({ name: false, line: false, departure: [false, false] }));
-        myStations.forEach((_, i) => {
-            if (textRefs.current[i]?.name?.current) {
-                const el = textRefs.current[i].name.current;
-                newOverflows[i].name = el.scrollWidth > el.clientWidth;
-            }
-            if (textRefs.current[i]?.line?.current) {
-                const el = textRefs.current[i].line.current;
-                newOverflows[i].line = el.scrollWidth > el.clientWidth;
-            }
-        });
-        myDepartures.forEach((deps, i) => {
-            if (deps) {
-                deps.forEach((_, j) => {
-                    if (textRefs.current[i]?.departure[j]?.current) {
-                        const el = textRefs.current[i].departure[j].current;
-                        newOverflows[i].departure[j] = el.scrollWidth > el.clientWidth;
-                    }
-                });
-            }
-        });
-        setOverflows(newOverflows);
-    }, [myDepartures, myDirections]);
-
-    React.useLayoutEffect(() => {
-        if (showMore === false) return;
-        if (!myDepartures[showMore]) return;
-
-        const newOverflows = myDepartures[showMore].map(() => false);
-
-        console.log(moreTextRefs.current)
-
-        myDepartures[showMore].forEach((_, i) => {
-            const el = moreTextRefs.current[i];
-            if (el) {
-                newOverflows[i] = el.scrollWidth > el.clientWidth
-            }
-        });
-
-        setMoreOverflows(newOverflows);
-    }, [showMore, myDepartures]);
-
-    React.useEffect(() => {
-        const fetchDepartures = async () => {
-            const departures = await Promise.all(myStations.map(async (sta, i) => {
-                if (myDirections[i]) {
-                    return await searchDeparture(sta, myDirections[i]);
-                }
-                return [];
-            }));
-            setMyDepartures(departures);
-        };
-        fetchDepartures();
-    }, [myStations, myDirections]);
+  function removeStation(i) {
+    const s = myStations.filter((_, idx) => idx !== i);
+    const d = myDirections.filter((_, idx) => idx !== i);
+    setMyStations(s);
+    setMyDirections(d);
+    localStorage.setItem('myStations', JSON.stringify(s));
+  }
 
   return (
-    <section className="departure-area">
-      <h2>発車案内（マイ駅・停留所）</h2>
-          <div className="departure-list">
-              {myStations.map((sta, i) => {
-                  const station = sta.name;
-                  function handleDirectionChange(selectedOption) {
-                      const newDirections = [...myDirections];
-                      newDirections[i] = selectedOption.value;
-                      setMyDirections(newDirections);
-                  }
-                  const options = sta.role === 'station' ?
-                      stations[station].directions.map((direction) => ({ value: direction, label: `${direction.stationName}方面` })) :
-                      busStops[station].directions.map((direction) => ({ value: direction, label: `${direction.stationName}方面` }));
-                  return (
-                      <div className="departure-card" key={station}>
-                          <div className="card-header">
-                              <div
-                                  style={{
-                                      width: `calc(100% - ${(myDirections[i]?.stationName.length + 2) * 13 + 32}px)`,
-                                      minWidth: `calc(100% - 136px)`,
-                                      paddingRight: '10px',
-                                  }}
-                              >
-                                  <h3
-                                  ref={textRefs.current[i]?.name}
-                                      style={{
-                                          width: '100%',
-                                          margin: 0,
-                                          whiteSpace: 'nowrap',
-                                          overflow: 'hidden',
-                                      }}
-                                  >{overflows[i]?.name ? (
-                                      <Marquee
-                                          speed={20}
-                                          pauseOnHover={true}
-                                          play={true}
-                                      ><div style={{ marginRight: '30px' }}>{station}</div></Marquee>
-                                  ) :
-                                    station
+    <Box>
+      <Typography variant="h6" sx={{ mb: 2 }}>発車案内（マイ駅・停留所）</Typography>
+
+      <Stack direction="row" spacing={2} sx={{ overflowX: 'auto', pb: 1 }}>
+        {myStations.map((sta, i) => {
+          const options = (sta.role === 'station'
+            ? stations[sta.name].directions
+            : busStops[sta.name].directions
+          ).map(d => ({ value: d, label: `${d.stationName}方面` }));
+
+          const upcoming = myDepartures[i]
+            ?.filter(d => d.time >= nowsecond())
+            .slice(0, 2) ?? [];
+            
+          return (
+            <Card key={sta.name} sx={{ width: 300, position: 'relative' }}>
+              <CardContent>
+                <Box sx={{ mb: 1 }}>
+                  <Typography variant="subtitle1" noWrap>
+                    {sta.name.length > 10 ? (
+                      <Marquee speed={20} pauseOnHover>
+                        <span style={{ marginRight: 32 }}>{sta.name}</span>
+                      </Marquee>
+                    ) : sta.name}
+                  </Typography>
+
+                  <Typography variant="body2" color="text.secondary" noWrap>
+                    {lines[myDirections[i]?.route]?.show ?? myDirections[i]?.route}
+                  </Typography>
+                </Box>
+
+                
+                <Select
+                  options={options}
+                  value={options.find(o => o.value === myDirections[i])}
+                  onChange={e => {
+                    const d = [...myDirections];
+                    d[i] = e.value;
+                    setMyDirections(d);
+                  }}
+                  isSearchable={false}
+                  styles={{ container: b => ({ ...b, marginBottom: 8 }) }}
+                />
+
+                <Stack spacing={1}>
+                  {upcoming.map((dep, j) => (
+                          <Table sx={{ tableLayout: 'fixed', width: '100%' }}>
+                            <colgroup>
+                                <col style={{ width: '85px' }} />
+                                <col />
+                                <col style={{ width: '42px' }} />
+                            </colgroup>
+                          
+                              <TableRow sx={{
+                                    '& .MuiTableCell-root': {
+                                        overflow: 'hidden',
+                                        minHeight: '15px',
+                                        width: '100%',
+                                        padding: '0'
+                                    },
+                                    '&:last-child td, &:last-child th': {
+                                        border: 0
                                     }
-                                  </h3>
-                                  <div
-                                      ref={textRefs.current[i]?.line}
-                                      style={{
-                                          width: '100%',
-                                          margin: 0,
-                                          whiteSpace: 'nowrap',
-                                          overflow: 'hidden',
-                                      }}
-                                  >{overflows[i]?.line ? (
-                                      <Marquee
-                                          speed={20}
-                                          pauseOnHover={true}
-                                          play={true}
-                                      ><div style={{ marginRight: '30px' }}><p>{lines[myDirections[i]?.route]?.show ?? myDirections[i]?.route}</p></div></Marquee>
-                                  ) :
-                                    <p>{lines[myDirections[i]?.route]?.show ?? myDirections[i]?.route}</p>
-                                      }
-                                  </div>
-                              </div>
-                              <Select
-                                  value={options.find(opt => opt.value === myDirections[i]) || null}
-                                  onChange={(e) => handleDirectionChange(e)}
-                                  isSearchable={false}
-                                  menuPortalTarget={document.body}
-                                  styles={{
-                                      control: (provided) => ({
-                                          ...provided,
-                                          width: 'fit-content',
-                                          maxWidth: '126px',
-                                      }),
-                                      menuPortal: (base) => ({
-                                          ...base,
-                                          zIndex: 9999
-                                      }),
-                                      // 選択された値の文字スタイル
-                                      singleValue: (provided) => ({
-                                          ...provided,
-                                          fontSize: '13px',
-                                          textAlign: 'right',
-                                      }),
-                                        // ドロップダウンリストの各項目の文字スタイル
-                                        option: (provided) => ({
-                                            ...provided,
-                                            width:'fit-content',
-                                            whiteSpace: 'nowrap',
-                                            fontSize: '11px',
-                                        }),
-                                  }}
-                                  components={{
-                                    DropdownIndicator: () => null,
-                                    IndicatorSeparator: () => null,
-                                    }}
-                                  options={options}
-                              />
-                          </div>
-                          <table>
-                              <tbody>
-                                  {[0, 1].map((j) => {
-                                      const showDepartures = myDepartures.map((deps) => [deps.filter((d => d.time >= nowsecond()))[0] || null, deps.filter(d => d.time >= nowsecond())[1] || null]);
-                                      const departure = showDepartures?.[i]?.[j];
-                                      return departure && (
-                                          <tr key={j}>
-                                              <td><a className="type" style={{background: types[departure.typeName].color}}>{departure.typeName}</a></td>
-                                              <td ref={textRefs.current[i]?.departure[j]} style={overflows[i]?.departure[j] ? {overflow: 'visible', whiteSpace: 'nowrap'} : {overflow: 'hidden', whiteSpace: 'nowrap'}}>
-                                                  {overflows[i]?.departure[j] ? (
-                                                      <Marquee
-                                                          speed={20}
-                                                          pauseOnHover={false}
-                                                          play={true}
-                                                      ><div style={{marginRight: '30px'}}>{name(departure.terminal)}</div></Marquee>
-                                                  ) : (
-                                                      name(departure.terminal)
-                                                  )}
-                                              </td>
-                                              <td className="time">{toTimeString(departure.time)}</td>
-                                          </tr>
-                                      );
-                                  })}
-                              </tbody>
-                          </table>
-                          <a className="more-link" onClick={() => {
-                              setShowMore(i);
-                              navigate(`?modal=more-${i}`);
-                          }}>もっと見る</a>
-                          <button className="remove-btn" onClick={() => handleRemoveMyStation(i)}>×</button>
-                      </div>
-                  )
-              })}
-              <div className="add-card" onClick={() => {
-                  navigate('?modal=addStation');
-                  setShowSearch(true);
-              }}>
-          <img className="icon-plus" src="./image/icon_add.png" alt="プラスアイコン" />
-          <p>マイ駅・停留所を追加</p>
-        </div>
-          </div>
-          <ReactModal
-            isOpen={showSearch}
-              onRequestClose={() => {
+                              }}>
+                                <TableCell sx={{ px: 0, width: '85px' }}>
+                                    <Chip
+                                    label={dep.typeName}
+                                    size="small"
+                                    sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, width: '80px'}}
+                                      />
+                                  </TableCell>
+
+                                  <TableCell sx={{ px: 0 }}>
+                                    <div
+                                        style={{
+                                        width: '100%',
+                                        overflow: 'hidden',
+                                        whiteSpace: 'nowrap',
+                                        }}
+                                    >
+                                        <OverflowMarquee text={name(dep.terminal)} />
+                                    </div>
+                                  </TableCell>
+
+                                  <TableCell sx={{ px: 0, maxWidth: '30px'}}>
+                                    <Typography variant="body2" fontWeight="bold" sx={{textAlign: 'right'}}>
+                                        {toTimeString(dep.time)}
+                                  </Typography>
+                                  </TableCell>
+                              </TableRow>
+                            </Table>
+                  ))}
+                </Stack>
+
+                <Button size="small" sx={{ mt: 1 }} onClick={() => navigate(`?modal=more-${i}`)}>
+                  もっと見る
+                </Button>
+
+                <IconButton
+                  size="small"
+                  sx={{ position: 'absolute', bottom: 8, right: 8 }}
+                  onClick={() => removeStation(i)}
+                >
+                  <CloseIcon fontSize="small" />
+                </IconButton>
+              </CardContent>
+            </Card>
+          );
+        })}
+            <Card sx={{ width: 300 }} variant="outlined">
+                  <CardActionArea onClick={
+                      () => {
+                          setShowSearch(true);
+                          navigate('?modal=addStation');
+                      }
+                    }
+                    style={{width: '100%', height: '100%'}}
+                  >
+                      <img className="icon-plus" src={'./image/icon_add.png'} alt="plus" style={{height: '50px'}} />
+                    <Typography align="center">マイ駅を追加</Typography>
+                </CardActionArea>
+            </Card>
+          </Stack>
+          
+          
+          <Dialog
+            open={showSearch}
+              onClose={() => {
                   setShowSearch(false);
                   navigate('/');
               }}
-            className="Modal searchModal"
-            overlayClassName="Overlay"
+              fullWidth
           >
-              <div className="search-modal">
-                <div className="search-content">
-                    <h3>マイ駅・停留所を追加</h3>
+              <DialogTitle>
+                  <h3>マイ駅・停留所を追加</h3>
+              </DialogTitle>
+                <DialogContent>
                     <Select
                           options={
                               [
@@ -293,70 +244,70 @@ function DepartureSection() {
                           setShowSearch(false);
                           navigate('/');
                       }}>閉じる</a>
-                </div>
-              </div>
-          </ReactModal>
-          <ReactModal
-              isOpen={showMore !== false}
-              onRequestClose={() => {
-                  setShowMore(false);
-                  navigate('/');
-              }}
-            className="Modal listModal"
-            overlayClassName="Overlay"
-          >
-              <div className="more-modal">
-                  <div className="more-content">
-                    <h3>{showMore !== false ? `${myStations[showMore].name} ${myDirections[showMore]?.stationName}方面` : ''}</h3>
-                          <table>
-                              <tbody>
-                                  {showMore !== false && myDepartures[showMore]?.map((train, i) => {
-                                      const departure = train;
-                                      return departure ? (
-                                          <tr key={`dep-${i}`}>
-                                              <td><a className="type" style={{background: types[departure.typeName].color}}>{departure.typeName}</a></td>
-                                              <td>
-                                                <div
-                                                    ref={(el) => {
-                                                        moreTextRefs.current[i] = el;
-                                                    }}
-                                                    style={{
-                                                    width: '100%',
-                                                    overflow: 'hidden',
-                                                    whiteSpace: 'nowrap',
-                                                    }}
-                                                >
-                                                  {moreOverflows?.[i] ? (
-                                                      <Marquee
-                                                          speed={20}
-                                                          pauseOnHover={false}
-                                                          play={true}
-                                                          gradient={false}
-                                                      ><span style={{marginRight: '30px'}}>{name(departure.terminal)}</span></Marquee>
-                                                  ) : (
-                                                      name(departure.terminal)
-                                                      )}
-                                                  </div>
-                                              </td>
-                                              <td className="time">{toTimeString(departure.time)}</td>
-                                          </tr>
-                                      ) : (
-                                          <tr key={`dep-${i}`}>
-                                              <td colSpan="3">データなし</td>
-                                          </tr>
-                                      );
-                                  })}
-                              </tbody>
-                          </table>
-                      <a className='modalClose' onClick={() => {
-                          setShowMore(false)
-                          navigate('/');
-                      }}>閉じる</a>
-                </div>
-              </div>
-          </ReactModal>
-    </section>
-  );
-};
+                </DialogContent>
+          </Dialog>
 
-export default DepartureSection;
+      <Dialog
+        open={showMore !== null}
+        onClose={() => navigate('/')}
+        fullWidth
+      >
+        <DialogTitle>
+          {showMore !== null && `${myStations[showMore].name} 発車時刻一覧`}
+        </DialogTitle>
+        <DialogContent dividers>
+            {showMore !== null && myDepartures[showMore]?.map((dep, i) => (
+                <Table sx={{ tableLayout: 'fixed', width: '100%' }}>
+                <colgroup>
+                    <col style={{ width: '85px' }} />
+                    <col />
+                    <col style={{ width: '42px' }} />
+                </colgroup>
+            
+                <TableRow sx={{
+                    '& .MuiTableCell-root': {
+                        overflow: 'hidden',
+                        minHeight: '15px',
+                        width: '100%',
+                        padding: '0'
+                    },
+                    '&:last-child td, &:last-child th': {
+                        border: 0
+                    }
+                }}>
+                <TableCell sx={{ px: 0, width: '85px' }}>
+                    <Chip
+                        label={dep.typeName}
+                        size="small"
+                        sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, width: '80px'}}
+                        />
+                    </TableCell>
+
+                    <TableCell sx={{ px: 0 }}>
+                    <div
+                        style={{
+                        width: '100%',
+                        overflow: 'hidden',
+                        whiteSpace: 'nowrap',
+                        }}
+                    >
+                        <OverflowMarquee text={name(dep.terminal)} />
+                    </div>
+                    </TableCell>
+
+                    <TableCell sx={{ px: 0, maxWidth: '30px'}}>
+                        <Typography variant="body2" fontWeight="bold" sx={{textAlign: 'right'}}>
+                            {toTimeString(dep.time)}
+                        </Typography>
+                    </TableCell>
+                </TableRow>
+            </Table>
+          ))}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => navigate('/')}>閉じる</Button>
+        </DialogActions>
+      </Dialog>
+    </Box>
+  );
+}
