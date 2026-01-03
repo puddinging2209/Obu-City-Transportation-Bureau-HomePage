@@ -1,11 +1,27 @@
 import React from 'react';
 
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import ReactModal from 'react-modal';
 
+import { ThemeProvider, createTheme, CssBaseline, Dialog, DialogTitle, DialogContent } from '@mui/material';
 import './App.css';
 
+import Header from './components/Header.jsx'
 import Home from './pages/home/Home.jsx'
+
+const theme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#1976d2', // 地下鉄っぽい青
+    },
+    secondary: {
+      main: '#ff6600', // バス色
+    },
+  },
+  shape: {
+    borderRadius: 8,
+  },
+});
 
 function App() {
 
@@ -22,34 +38,10 @@ function App() {
     }, []);
 
   return (
-    <div className="App">
-      {/* ヘッダー（PC表示） */}
-      <header>
-        <div className="header-top">
-          <div className="title">
-            <a href="index.html">大府市交通局</a>
-          </div>
-        </div>
-
-        {/* 共通ナビゲーション */}
-        <nav className="header-nav">
-          <div>
-            <a href="#"><img className="icon" src="./image/subway-timeTable.png" alt="" />地下鉄時刻表</a>
-          </div>
-          <div>
-            <a href="#"><img className="icon" src="./image/subway-routeMap.png" alt="" />地下鉄路線図</a>
-          </div>
-          <div>
-            <a href="#" className="transfer"><img className="icon" src="./image/transfer.png" alt="" />乗換案内</a>
-          </div>
-          <div>
-            <a href="#"><img className="icon" src="./image/bus-timeTable.png" alt="" />バス時刻表</a>
-          </div>
-          <div>
-            <a href="#"><img className="icon" src="./image/bus-routeMap.png" alt="" />バス路線図</a>
-          </div>
-        </nav>
-      </header>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+          <div className="App">
+            <Header />
 
       {/* メイン */}
           <main>
@@ -98,15 +90,16 @@ function App() {
         </nav>
           </footer>
           
-          <ReactModal
-              isOpen={isWarnOpen}
-              onRequestClose={closeWarnModal}
-              contentLabel="Warning Modal"
-              className="Modal warnModal"
-              overlayClassName="Overlay"
-          >
-              <h1>このウェブサイトの内容は架空のもので実在しません</h1>
-              <h2>以下の事項に注意して閲覧してください</h2>
+          <Dialog
+              open={isWarnOpen}
+                  onClose={closeWarnModal}
+                  fullWidth
+              >
+                  <DialogTitle>
+                      <h1>このウェブサイトの内容は架空のもので実在しません</h1>
+                      <h2>以下の事項に注意して閲覧してください</h2>
+                  </DialogTitle>
+                  <DialogContent>
               <ul>
                   <li>このウェブサイトは大府市公式のものではありません。</li>
                   <li>公式ホームページ→<a href="https://www.city.obu.aichi.jp/" className='link'>https://www.city.obu.aichi.jp/</a></li>
@@ -126,10 +119,12 @@ function App() {
                   </div>
                 <button onClick={window.close} className="modalClose" style={{marginRight: '20px'}}>ページを閉じる</button>
                 <button onClick={closeWarnModal} className="modalClose" style={{marginRight: '20px'}}>×</button>
-              </div>
-          </ReactModal>
+                      </div>
+                  </DialogContent>
+          </Dialog>
 
-    </div>
+          </div>
+          </ThemeProvider>
   );
 }
 

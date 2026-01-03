@@ -1,4 +1,4 @@
-import React from "react"
+import { Button } from "@mui/material"
 
 import DepartureSection from "./DepartureSection"
 
@@ -9,9 +9,25 @@ function Home() {
             <DepartureSection />
 
             {/* 大きなボタン */ }
-            <div className="big-buttons">
-                <a href="#" className="btn btn-subway">地下鉄に乗る</a>
-                <a href="#" className="btn btn-bus">バスに乗る</a>
+            <div className="big-buttons"><Button
+                variant="contained"
+                color="primary"
+                size="large"
+                fullWidth
+                sx={{ py: 3, fontSize: 22 }}
+                >
+                地下鉄に乗る
+            </Button>
+
+            <Button
+                variant="contained"
+                color="secondary"
+                size="large"
+                fullWidth
+                sx={{ py: 3, fontSize: 22 }}
+                >
+                バスに乗る
+            </Button>
             </div>
         </>
     )
