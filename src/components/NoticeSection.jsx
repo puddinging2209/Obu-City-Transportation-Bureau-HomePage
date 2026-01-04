@@ -14,7 +14,7 @@ import notices from "../notices.json";
 
 function NoticeSection() {
   return (
-    <Box sx={{ width: "70%", mx: "auto", my: 4 }}>
+    <Box sx={{ width: { xs: "100%", md: "70%"}, mx: "auto", my: 4 }}>
       <Paper elevation={1} sx={{ p: 2 }}>
         <Typography
           variant="h6"

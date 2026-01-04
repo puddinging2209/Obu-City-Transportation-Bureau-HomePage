@@ -82,13 +82,13 @@ export default function DepartureSection() {
         if (nearestStation) {
             const d = stations[nearestStation]?.directions?.[0] ?? null;
             setNearestDirection(d);
-            searchDeparture({ name: nearestStation, role: 'station' }, d).then(deps => { setNearestDeparture(deps); console.log(deps) });
+            searchDeparture({ name: nearestStation, role: 'station' }, d).then(deps => setNearestDeparture(deps));
         }
     }, [nearestStation]);
 
     React.useEffect(() => {
         if (nearestDirection) {
-            searchDeparture({ name: nearestStation, role: 'station' }, nearestDirection).then(deps => { setNearestDeparture(deps); console.log(deps); });
+            searchDeparture({ name: nearestStation, role: 'station' }, nearestDirection).then(deps => setNearestDeparture(deps));
         }
     }, [nearestDirection]);
 
@@ -105,8 +105,8 @@ export default function DepartureSection() {
   return (
       <Box>
           
-        <Box sx={{ overflowX: 'auto', mx: 'auto', pb: 2, width: 'fit-content', textAlign: 'center' }}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>      
+        <Box sx={{ mx: 'auto', pb: 2, width: 'fit-content', textAlign: 'center' }}>
+        <Box sx={{ display: 'flex', width: { xs: '100%', md: 'auto' }, justifyContent: 'space-between', alignItems: 'center' }}>      
         <Typography variant="h6" sx={{ mb: 2 }}>最寄り駅</Typography>
         <Button onClick={() => {
             searchNearestStation()
@@ -115,7 +115,7 @@ export default function DepartureSection() {
 
         }}>更新</Button>
         </Box>
-        <Card key={nearestStation} sx={{ width: { xs: '85%', md: 300 }, height: 240, position: 'relative', flexShrink: 0 }}>
+        <Card key={nearestStation} sx={{ width: { xs: '100%', md: 300 }, height: 240, position: 'relative', flexShrink: 0 }}>
                   {nearestStation ?
                       <CardContent>
                           <Box sx={{ mb: 1 }}>
