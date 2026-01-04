@@ -24,6 +24,7 @@ export default function DirectionBottomSheet({
       onClose={onClose}
       onOpen={() => {}}
       disableDiscovery
+      disableScrollLock 
       PaperProps={{
         sx: {
           borderTopLeftRadius: 16,
