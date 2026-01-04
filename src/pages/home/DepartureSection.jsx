@@ -63,21 +63,34 @@ export default function DepartureSection() {
   React.useEffect(() => {
     const params = new URLSearchParams(location.search);
     const m = params.get('modal');
-    if (m?.startsWith('more-')) setShowMore(Number(m.replace('more-', '')));
+    if (m?.startsWith('more-') && m.match(/more-[0-9]+/)) setShowMore(Number(m.replace('more-', '')));
+    else if (m?.startsWith('more-')) setShowMore(m.replace('more-', ''))
     else setShowMore(null);
   }, [location]);
     
     const [nearestStation, setNearestStation] = React.useState(null);
     const [nearestDirection, setNearestDirection] = React.useState(null);
-    const [nearestDeparture, setNearestDeparture] = React.useState(null);
+    const [nearestDeparture, setNearestDeparture] = React.useState([]);
+
+    React.useEffect(() => {
+        searchNearestStation()
+        .then(name => setNearestStation(name))
+        .catch(() => alert('位置情報の取得に失敗しました'));
+    }, []);
 
     React.useEffect(() => {
         if (nearestStation) {
             const d = stations[nearestStation]?.directions?.[0] ?? null;
             setNearestDirection(d);
-            searchDeparture(nearestStation, nearestDirection).then(setNearestDeparture);
+            searchDeparture({ name: nearestStation, role: 'station' }, d).then(deps => { setNearestDeparture(deps); console.log(deps) });
         }
     }, [nearestStation]);
+
+    React.useEffect(() => {
+        if (nearestDirection) {
+            searchDeparture({ name: nearestStation, role: 'station' }, nearestDirection).then(deps => { setNearestDeparture(deps); console.log(deps); });
+        }
+    }, [nearestDirection]);
 
   function removeStation(i) {
     const s = myStations.filter((_, idx) => idx !== i);
@@ -145,10 +158,10 @@ export default function DepartureSection() {
                                   onClick={() => {
                                       setIsOpenMobileSelector({
                                           open: true,
-                                          index: i,
+                                          index: 'nearest',
                                           options: stations[nearestStation]?.directions.map(d => ({ value: d, label: `${d.stationName}方面`, route: d.route }))
                                       });
-                                      navigate(`?modal=directionSelector-${i}`);
+                                      navigate('?modal=directionSelector-nearest');
                                   }}
                               >
                                   {nearestDirection?.stationName}方面 ▼
@@ -157,7 +170,7 @@ export default function DepartureSection() {
             
 
                           <Stack spacing={1}>
-                              {(nearestDeparture?.length !== 0) ? nearestDeparture?.slice(0, 1).map((dep) => (
+                              {(nearestDeparture?.filter(d => d.time >= nowsecond()).length !== 0) ? nearestDeparture?.filter(d => d.time >= nowsecond()).slice(0, 2).map((dep) => (
                                   <Table sx={{ tableLayout: 'fixed', width: '100%' }} key={`${dep.type}${dep.terminal}${dep.time}`}>
                                       <colgroup>
                                           <col style={{ width: '85px' }} />
@@ -228,19 +241,11 @@ export default function DepartureSection() {
                           </Stack>
 
                           <Button size="small" sx={{ mt: 1 }} onClick={() => {
-                              setShowMore(i);
-                              navigate(`?modal=more-${i}`)
+                              setShowMore('nearest');
+                              navigate('?modal=more-nearest');
                           }}>
                               もっと見る
                           </Button>
-
-                          <IconButton
-                              size="small"
-                              sx={{ position: 'absolute', bottom: 8, right: 8 }}
-                              onClick={() => removeStation(i)}
-                          >
-                              <CloseIcon fontSize="small" />
-                          </IconButton>
                       </CardContent> : 
                       <CardContent sx={{ textAlign: 'center', verticalAlign: 'middle' }}>
                           <Typography variant="body1" sx={{ textAlign: 'center' }}>位置情報が取得できませんでした</Typography>
@@ -427,15 +432,21 @@ export default function DepartureSection() {
           <DirectionBottomSheet
             open={isOpenMobileSelector.open}
             options={isOpenMobileSelector.options}
-            value={myDirections[isOpenMobileSelector.index]}
+            value={(isOpenMobileSelector.index !== 'nearest') ? myDirections[isOpenMobileSelector.index] : nearestDirection}
             onClose={() => {
                 setIsOpenMobileSelector({ open: false, index: null, options: [] });
                 navigate('/home');
             }}
             onSelect={value => {
-                const d = [...myDirections];
-                d[isOpenMobileSelector.index] = value;
-                setMyDirections(d);
+                const params = new URLSearchParams(location.search);
+                const m = params.get('modal');
+                if (m?.startsWith('directionSelector') && m.match(/directionSelector-[0-9]+/)) {
+                    const d = [...myDirections];
+                    d[isOpenMobileSelector.index] = value;
+                    setMyDirections(d);
+                } else if (m?.startsWith('directionSelector') && m == 'directionSelector-nearest') {
+                    setNearestDirection(value);
+                }
 
                 setIsOpenMobileSelector({ open: false, index: null, options: [] });
                 navigate('/home');
@@ -493,21 +504,21 @@ export default function DepartureSection() {
           </Dialog>
 
       <Dialog
-        open={showMore !== null}
+        open={showMore != null}
               onClose={() => {
-                  setShowMore(false);
-                  navigate('/home')
+                  navigate('/home');
+                  setShowMore(null);
               }}
         fullWidth
       >
         <DialogTitle>
-          {showMore !== null && `${myStations[showMore]?.name} ${myDirections[showMore]?.stationName} 方面 発車時刻一覧`}
+          {showMore != null && `${myStations[showMore]?.name ?? nearestStation} ${myDirections[showMore]?.stationName ?? nearestDirection.stationName} 方面 発車時刻一覧`}
         </DialogTitle>
         <DialogContent dividers>
-                  <Table sx={{ tableLayout: 'fixed', width: '100%', borderCollapse: "collapse" }}>
-                    <TableBody>
-                      {showMore !== null && myDepartures[showMore]?.map((dep, i) => (
-                    <>
+            <Table sx={{ tableLayout: 'fixed', width: '100%', borderCollapse: "collapse" }}>
+            <TableBody>
+                {showMore != null && (showMore !== 'nearest' ? myDepartures[showMore] : nearestDeparture)?.map((dep, i) => (
+                <>
                 <colgroup>
                     <col style={{ width: '85px' }} />
                     <col />
@@ -560,7 +571,7 @@ export default function DepartureSection() {
         <DialogActions>
             <Button onClick={() => {
                 navigate('/home');
-                setShowMore(false);
+                setShowMore(null);
             }}>閉じる</Button>
         </DialogActions>
       </Dialog>
