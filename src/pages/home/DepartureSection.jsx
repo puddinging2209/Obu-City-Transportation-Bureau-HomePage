@@ -27,6 +27,8 @@ import DirectionBottomSheet from '../../components/DirectionBottomSheet.jsx';
 
 import { nowsecond, toTimeString, name } from '../../func.js';
 import { searchDeparture } from '../../readOud.js';
+import searchNearestStation from './searchNearestStation.js';
+
 import stations from '../../stations.json';
 import busStops from '../../busStops.json';
 import lines from '../../lines.json';
@@ -64,6 +66,18 @@ export default function DepartureSection() {
     if (m?.startsWith('more-')) setShowMore(Number(m.replace('more-', '')));
     else setShowMore(null);
   }, [location]);
+    
+    const [nearestStation, setNearestStation] = React.useState(null);
+    const [nearestDirection, setNearestDirection] = React.useState(null);
+    const [nearestDeparture, setNearestDeparture] = React.useState(null);
+
+    React.useEffect(() => {
+        if (nearestStation) {
+            const d = stations[nearestStation]?.directions?.[0] ?? null;
+            setNearestDirection(d);
+            searchDeparture(nearestStation, nearestDirection).then(setNearestDeparture);
+        }
+    }, [nearestStation]);
 
   function removeStation(i) {
     const s = myStations.filter((_, idx) => idx !== i);
@@ -76,7 +90,166 @@ export default function DepartureSection() {
     const [isOpenMobileSelector, setIsOpenMobileSelector] = React.useState({ open: false, index: null, options: []})
 
   return (
-    <Box>
+      <Box>
+          
+        <Box sx={{ overflowX: 'auto', mx: 'auto', pb: 2, width: 'fit-content', textAlign: 'center' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>      
+        <Typography variant="h6" sx={{ mb: 2 }}>最寄り駅</Typography>
+        <Button onClick={() => {
+            searchNearestStation()
+            .then(name => setNearestStation(name))
+            .catch(() => alert('位置情報の取得に失敗しました'));
+
+        }}>更新</Button>
+        </Box>
+        <Card key={nearestStation} sx={{ width: { xs: '85%', md: 300 }, height: 240, position: 'relative', flexShrink: 0 }}>
+                  {nearestStation ?
+                      <CardContent>
+                          <Box sx={{ mb: 1 }}>
+                              <Typography variant="subtitle1" sx={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }} noWrap>
+                                  <OverflowMarquee text={name(nearestStation)} />
+                              </Typography>
+
+                              <Typography variant="body2" color="text.secondary" noWrap>
+                                  {lines[nearestDirection?.route]?.show ?? nearestDirection?.route}
+                              </Typography>
+                          </Box>
+
+            
+                          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                              <Select
+                                  options={stations[nearestStation]?.directions.map(d => ({ value: d, label: `${d.stationName}方面`, route: d.route }))}
+                                  value={stations[nearestStation]?.directions.map(d => ({ value: d, label: `${d.stationName}方面`, route: d.route })).find(o => o.value === nearestDirection)}
+                                  onChange={e => {
+                                      setNearestDirection(e.value);
+                                  }}
+                                  isSearchable={false}
+                                  menuPortalTarget={document.body}
+                                  styles={{ container: b => ({ ...b, marginBottom: 8 }) }}
+                                  formatOptionLabel={({ value, label, route }, { context }) => (
+                                      <div style={{ display: 'flex', height: '100%', justifyContent: 'space-between' }}>
+                                          <Typography sx={{ fontSize: '14px', fontWeight: 'bold', color: 'inherit' }}>{label}</Typography>
+                                          {context === 'menu' && (
+                                              <Typography sx={{ fontSize: '12px', color: 'inherit' }}>{lines[route]?.show ?? route}</Typography>
+                                          )}
+                                      </div>
+                                  )}
+                              />
+                          </Box>
+                    
+                          <Box sx={{ display: { xs: 'block', md: 'none' }, marginBottom: 1 }}>
+                              <Button
+                                  variant="outlined"
+                                  size="small"
+                                  fullWidth
+                                  onClick={() => {
+                                      setIsOpenMobileSelector({
+                                          open: true,
+                                          index: i,
+                                          options: stations[nearestStation]?.directions.map(d => ({ value: d, label: `${d.stationName}方面`, route: d.route }))
+                                      });
+                                      navigate(`?modal=directionSelector-${i}`);
+                                  }}
+                              >
+                                  {nearestDirection?.stationName}方面 ▼
+                              </Button>
+                          </Box>
+            
+
+                          <Stack spacing={1}>
+                              {(nearestDeparture?.length !== 0) ? nearestDeparture?.slice(0, 1).map((dep) => (
+                                  <Table sx={{ tableLayout: 'fixed', width: '100%' }} key={`${dep.type}${dep.terminal}${dep.time}`}>
+                                      <colgroup>
+                                          <col style={{ width: '85px' }} />
+                                          <col />
+                                          <col style={{ width: '42px' }} />
+                                      </colgroup>
+                        
+                                      <TableBody>
+                                          <TableRow sx={{
+                                              '& .MuiTableCell-root': {
+                                                  overflow: 'hidden',
+                                                  minHeight: '15px',
+                                                  width: '100%',
+                                                  padding: '0'
+                                              },
+                                              '&:last-child td, &:last-child th': {
+                                                  border: 0
+                                              }
+                                          }}>
+                                              <TableCell sx={{ px: 0, width: '85px' }}>
+                                                  <Chip
+                                                      label={dep.typeName}
+                                                      size="small"
+                                                      sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, width: '80px' }}
+                                                  />
+                                              </TableCell>
+
+                                              <TableCell sx={{ px: 0 }}>
+                                                  <div
+                                                      style={{
+                                                          width: '100%',
+                                                          overflow: 'hidden',
+                                                          whiteSpace: 'nowrap',
+                                                      }}
+                                                  >
+                                                      <OverflowMarquee text={name(dep.terminal)} />
+                                                  </div>
+                                              </TableCell>
+
+                                              <TableCell sx={{ px: 0, maxWidth: '30px' }}>
+                                                  <Typography variant="body2" fontWeight="bold" sx={{ textAlign: 'right' }}>
+                                                      {toTimeString(dep.time)}
+                                                  </Typography>
+                                              </TableCell>
+                                          </TableRow>
+                                      </TableBody>
+                                  </Table>
+                              )) : (
+                                  <Table sx={{ tableLayout: 'fixed', width: '100%' }}>
+                
+                                      <TableRow sx={{
+                                          '& .MuiTableCell-root': {
+                                              overflow: 'hidden',
+                                              minHeight: '15px',
+                                              width: '100%',
+                                              padding: '0'
+                                          },
+                                          '&:last-child td, &:last-child th': {
+                                              border: 0
+                                          }
+                                      }}>
+                                          <TableCell sx={{ px: 0, width: '100%' }}>
+                                              <Typography variant='h6' sx={{ textAlign: 'center' }}>本日の運転は終了しました</Typography>
+                                          </TableCell>
+                                      </TableRow>
+                                  </Table>
+                              )}
+                          </Stack>
+
+                          <Button size="small" sx={{ mt: 1 }} onClick={() => {
+                              setShowMore(i);
+                              navigate(`?modal=more-${i}`)
+                          }}>
+                              もっと見る
+                          </Button>
+
+                          <IconButton
+                              size="small"
+                              sx={{ position: 'absolute', bottom: 8, right: 8 }}
+                              onClick={() => removeStation(i)}
+                          >
+                              <CloseIcon fontSize="small" />
+                          </IconButton>
+                      </CardContent> : 
+                      <CardContent sx={{ textAlign: 'center', verticalAlign: 'middle' }}>
+                          <Typography variant="body1" sx={{ textAlign: 'center' }}>位置情報が取得できませんでした</Typography>
+                      </CardContent>
+                      }
+              </Card>
+              </Box>
+
+
       <Typography variant="h6" sx={{ mb: 2 }}>発車案内（マイ駅・停留所）</Typography>
 
           <Stack direction="row" spacing={2} sx={{ overflowX: 'auto', whiteSpace: 'nowrap', flexWrap: 'nowrap', pb: 1, scrollSnapType: { xs: 'x mandatory', md: 'none'} }}>
@@ -91,7 +264,7 @@ export default function DepartureSection() {
             .slice(0, 2) ?? [];
             
           return (
-            <Card key={sta.name} sx={{ width: { xs: '85%', md: 300 }, position: 'relative', flexShrink: 0, scrollSnapAlign: { xs: 'center', md: 'none' } }}>
+            <Card key={sta.name} sx={{ width: { xs: '85%', md: 300 }, height: 240, position: 'relative', flexShrink: 0, scrollSnapAlign: { xs: 'center', md: 'none' } }}>
               <CardContent>
                 <Box sx={{ mb: 1 }}>
                   <Typography variant="subtitle1" sx={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap'}} noWrap>
