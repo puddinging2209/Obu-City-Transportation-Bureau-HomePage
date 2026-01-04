@@ -1,5 +1,4 @@
 import lines from '../lines.json';
-
 import {
   SwipeableDrawer,
   List,
@@ -24,7 +23,7 @@ export default function DirectionBottomSheet({
       onClose={onClose}
       onOpen={() => {}}
       disableDiscovery
-      disableScrollLock 
+      disableScrollLock
       PaperProps={{
         sx: {
           borderTopLeftRadius: 16,
@@ -33,35 +32,29 @@ export default function DirectionBottomSheet({
         },
       }}
     >
-      {/* ヘッダー */}
       <Box sx={{ px: 2, py: 1 }}>
         <Typography variant="subtitle1" fontWeight="bold">
           方面を選択
         </Typography>
       </Box>
 
-      {/* 選択肢 */}
       <List>
         {options.map(o => {
-          const selected = o.value === value;
+          const selected =
+            o.value.route === value?.route &&
+            o.value.stationName === value?.stationName;
 
           return (
             <ListItemButton
-              key={o.value}
+              key={`${o.value.route}-${o.value.stationName}`}
               onClick={() => {
                 onSelect(o.value);
-                onClose();
               }}
             >
-              <Radio
-                checked={selected}
-                tabIndex={-1}
-                value={o.value}
-                color="primary"
-              />
+              <Radio checked={selected} />
 
               <ListItemText
-                primary={`${lines[o.route]?.show ?? o.route} ${o.label}`}
+                primary={`${lines[o.value.route]?.show ?? o.value.route} ${o.label}`}
                 primaryTypographyProps={{
                   fontWeight: selected ? 'bold' : 'normal',
                 }}
