@@ -841,5 +841,47 @@
       "江端町",
       "大府森岡"
     ]
+  },
+  "東コース": {
+    "name": "東コース",
+    "show": "東コース",
+    "json": "East",
+    "color": "#FFD600"
+  },
+  "西コース": {
+    "name": "西コース",
+    "show": "西コース",
+    "json": "West",
+    "color": "#FFD600"
+  },
+  "南コース": {
+    "name": "南コース",
+    "show": "南コース",
+    "json": "South",
+    "color": "#FFD600"
+  },
+  "北コース": {
+    "name": "北コース",
+    "show": "北コース",
+    "json": "North",
+    "color": "#FFD600"
+  },
+  "中央コース": {
+    "name": "中央コース",
+    "show": "中央コース",
+    "json": "Center",
+    "color": "#FFD600"
+  },
+  "サクラコース": {
+    "name": "サクラコース",
+    "show": "サクラコース",
+    "json": "Sakura",
+    "color": "#FFD600"
+  },
+  "ツツジコース": {
+    "name": "ツツジコース",
+    "show": "ツツジコース",
+    "json": "Tsutsuji",
+    "color": "#FFD600"
   }
 }

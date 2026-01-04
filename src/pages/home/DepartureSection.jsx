@@ -50,7 +50,7 @@ export default function DepartureSection() {
   const [showSearch, setShowSearch] = React.useState(false);
   const [showMore, setShowMore] = React.useState(null);
 
-  React.useEffect(() => {
+    React.useEffect(() => {
     Promise.all(
       myStations.map((sta, i) =>
         myDirections[i] ? searchDeparture(sta, myDirections[i]) : []
@@ -127,7 +127,7 @@ export default function DepartureSection() {
                 />
                 </Box>
                       
-                <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+                <Box sx={{ display: { xs: 'block', md: 'none' }, marginBottom: 1 }}>
                 <Button
                 variant="outlined"
                 size="small"
@@ -148,13 +148,14 @@ export default function DepartureSection() {
 
                 <Stack spacing={1}>
                   {(upcoming.length !== 0) ? upcoming.map((dep) => (
-                    <Table sx={{ tableLayout: 'fixed', width: '100%' }}>
+                    <Table sx={{ tableLayout: 'fixed', width: '100%' }} key={`${dep.type}${dep.terminal}${dep.time}`}>
                     <colgroup>
                         <col style={{ width: '85px' }} />
                         <col />
                         <col style={{ width: '42px' }} />
-                    </colgroup>
-                    
+                          </colgroup>
+                          
+                    <TableBody>
                         <TableRow sx={{
                             '& .MuiTableCell-root': {
                                 overflow: 'hidden',
@@ -191,7 +192,8 @@ export default function DepartureSection() {
                                 {toTimeString(dep.time)}
                             </Typography>
                             </TableCell>
-                        </TableRow>
+                              </TableRow>
+                            </TableBody>
                     </Table>
                   )) : (
                     <Table sx={{ tableLayout: 'fixed', width: '100%' }}>
@@ -255,12 +257,15 @@ export default function DepartureSection() {
             value={myDirections[isOpenMobileSelector.index]}
             onClose={() => {
                 setIsOpenMobileSelector({ open: false, index: null, options: [] });
-                navigate('/');
+                navigate('/home');
             }}
             onSelect={value => {
                 const d = [...myDirections];
                 d[isOpenMobileSelector.index] = value;
                 setMyDirections(d);
+
+                setIsOpenMobileSelector({ open: false, index: null, options: [] });
+                navigate('/home');
             }}
           />
           
@@ -269,7 +274,7 @@ export default function DepartureSection() {
             open={showSearch}
               onClose={() => {
                   setShowSearch(false);
-                  navigate('/');
+                  navigate('/home');
               }}
               fullWidth
           >
@@ -309,7 +314,7 @@ export default function DepartureSection() {
                     />
                       <a className='modalClose' onClick={() => {
                           setShowSearch(false);
-                          navigate('/');
+                          navigate('/home');
                       }}>閉じる</a>
                 </DialogContent>
           </Dialog>
@@ -318,7 +323,7 @@ export default function DepartureSection() {
         open={showMore !== null}
               onClose={() => {
                   setShowMore(false);
-                  navigate('/')
+                  navigate('/home')
               }}
         fullWidth
       >
@@ -381,7 +386,7 @@ export default function DepartureSection() {
         </DialogContent>
         <DialogActions>
             <Button onClick={() => {
-                navigate('/');
+                navigate('/home');
                 setShowMore(false);
             }}>閉じる</Button>
         </DialogActions>

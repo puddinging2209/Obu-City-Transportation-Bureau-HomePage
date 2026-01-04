@@ -1,14 +1,24 @@
-import stations from './stations.json';
-import busStops from './busStops.json';
 import lines from './lines.json';
 import { adjustTime, name_number, terminal, typeName } from './func.js';
 
 async function dia(rosen) {
+
+    async function searchOud(rosen) {
+        try {
+            const response = await fetch(`./oud/${rosen}.json`);
+            const diagram = await response.json();
+            return diagram;
+        } catch (e) {
+            const response = await fetch(`./src/oud/${rosen}.json`);
+            const diagram = await response.json();
+            return diagram;
+        }
+    }
+
     if (lines[rosen]) {
         rosen = lines[rosen].json;
     }
-    const response = await fetch(`./oud/${rosen}.json`);
-    const diagram = await response.json();
+    const diagram = await searchOud(rosen);
     return diagram;
 }
 
