@@ -17,6 +17,7 @@ import {
   TableBody,
   TableRow,
   TableCell,
+  CircularProgress,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import Select from 'react-select';
@@ -71,12 +72,22 @@ export default function DepartureSection() {
     const [nearestStation, setNearestStation] = React.useState(null);
     const [nearestDirection, setNearestDirection] = React.useState(null);
     const [nearestDeparture, setNearestDeparture] = React.useState([]);
+    const [loadingNearest, setLoadingNearest] = React.useState(false);
 
-    React.useEffect(() => {
+    function updateNearest() {
+        setLoadingNearest(true);
         searchNearestStation()
-        .then(name => setNearestStation(name))
-        .catch(() => alert('位置情報の取得に失敗しました'));
-    }, []);
+            .then(name => {
+                setLoadingNearest(false);
+                setNearestStation(name)
+            })
+            .catch(() => {
+                setLoadingNearest(false);
+                alert('位置情報の取得に失敗しました');
+            });
+    }
+
+    React.useEffect(updateNearest, []);
 
     React.useEffect(() => {
         if (nearestStation) {
@@ -92,12 +103,12 @@ export default function DepartureSection() {
         }
     }, [nearestDirection]);
 
-  function removeStation(i) {
-    const s = myStations.filter((_, idx) => idx !== i);
-    const d = myDirections.filter((_, idx) => idx !== i);
-    setMyStations(s);
-    setMyDirections(d);
-    localStorage.setItem('myStations', JSON.stringify(s));
+    function removeStation(i) {
+        const s = myStations.filter((_, idx) => idx !== i);
+        const d = myDirections.filter((_, idx) => idx !== i);
+        setMyStations(s);
+        setMyDirections(d);
+        localStorage.setItem('myStations', JSON.stringify(s));
     }
     
     const [isOpenMobileSelector, setIsOpenMobileSelector] = React.useState({ open: false, index: null, options: []})
@@ -106,14 +117,13 @@ export default function DepartureSection() {
       <Box>
           
         <Box sx={{ mx: 'auto', pb: 2, width: 'fit-content', textAlign: 'center' }}>
-        <Box sx={{ display: 'flex', width: { xs: '100%', md: 'auto' }, justifyContent: 'space-between', alignItems: 'center' }}>      
-        <Typography variant="h6" sx={{ mb: 2 }}>最寄り駅</Typography>
-        <Button onClick={() => {
-            searchNearestStation()
-            .then(name => setNearestStation(name))
-            .catch(() => alert('位置情報の取得に失敗しました'));
-
-        }}>更新</Button>
+        <Box sx={{ display: 'flex', pb: 2, width: { xs: '100%', md: 'auto' }, justifyContent: 'space-between', alignItems: 'center' }}>      
+        <Typography variant="h6">最寄り駅</Typography>
+        <Button sx={{ height: 36 }} disabled={loadingNearest} onClick={() => {
+            if (!loadingNearest) updateNearest();
+        }}>{!loadingNearest ? '更新' : 
+                <CircularProgress sx={{ p: 'auto' }} color="inherit" size={16} />
+            }</Button>
         </Box>
         <Card key={nearestStation} sx={{ width: { xs: '100%', md: 300 }, height: 240, position: 'relative', flexShrink: 0 }}>
                   {nearestStation ?
