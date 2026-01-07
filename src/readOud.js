@@ -147,7 +147,7 @@ async function searchDeparture(sta, direction) {
             return { route: route, stationName: direction.stationName };
         })
         let departures = await Promise.all(routes.map(async (route, i) => {
-            const diagram = await dia(lines[route]?.json ?? route);
+            const diagram = await dia(route);
             const index = busIndex(diagram, busStop, { ...directions[i], stationName: directions[i].stationName.split('・')[0] });
             return index.map((index) => {
                 const d = (index.from < index.to) ? 0 : 1;
