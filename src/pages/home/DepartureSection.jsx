@@ -183,7 +183,7 @@ export default function DepartureSection() {
                               {(nearestDeparture?.filter(d => d.time >= nowsecond()).length !== 0) ? nearestDeparture?.filter(d => d.time >= nowsecond()).slice(0, 2).map((dep) => (
                                   <Table sx={{ tableLayout: 'fixed', width: '100%' }} key={`${dep.type}${dep.terminal}${dep.time}`}>
                                       <colgroup>
-                                          <col style={{ width: '85px' }} />
+                                          <col style={{ minWidth: '85px' }} />
                                           <col />
                                           <col style={{ width: '42px' }} />
                                       </colgroup>
@@ -204,7 +204,7 @@ export default function DepartureSection() {
                                                   <Chip
                                                       label={dep.typeName}
                                                       size="small"
-                                                      sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, width: '80px' }}
+                                                      sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, minWidth: '80px' }}
                                                   />
                                               </TableCell>
 
@@ -265,7 +265,7 @@ export default function DepartureSection() {
               </Box>
 
 
-      <Typography variant="h6" sx={{ mb: 2 }}>発車案内（マイ駅・停留所）</Typography>
+      <Typography variant="h6" sx={{ mb: 2 }}>マイ駅・停留所</Typography>
 
           <Stack direction="row" spacing={2} sx={{ overflowX: 'auto', whiteSpace: 'nowrap', flexWrap: 'nowrap', pb: 1, scrollSnapType: { xs: 'x mandatory', md: 'none'} }}>
         {myStations.map((sta, i) => {
@@ -338,7 +338,7 @@ export default function DepartureSection() {
                   {(upcoming.length !== 0) ? upcoming.map((dep) => (
                     <Table sx={{ tableLayout: 'fixed', width: '100%' }} key={`${dep.type}${dep.terminal}${dep.time}`}>
                     <colgroup>
-                        <col style={{ width: '85px' }} />
+                        <col style={{ minWidth: '85px' }} />
                         <col />
                         <col style={{ width: '42px' }} />
                           </colgroup>
@@ -359,7 +359,7 @@ export default function DepartureSection() {
                             <Chip
                             label={dep.typeName}
                             size="small"
-                            sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, width: '80px'}}
+                            sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, minWidth: '80px'}}
                                 />
                             </TableCell>
 
@@ -522,7 +522,12 @@ export default function DepartureSection() {
         fullWidth
       >
         <DialogTitle>
-          {showMore != null && `${myStations[showMore]?.name ?? nearestStation} ${myDirections[showMore]?.stationName ?? nearestDirection.stationName} 方面 発車時刻一覧`}
+            {showMore != null && (
+                <>
+                    <Typography   graphy variant="h6">{myStations[showMore]?.name ?? nearestStation}</Typography>
+                    <Typography variant="subtitle1">{`${myDirections[showMore]?.stationName ?? nearestDirection.stationName} 方面`}</Typography>
+                </>
+            )}
         </DialogTitle>
         <DialogContent dividers>
             <Table sx={{ tableLayout: 'fixed', width: '100%', borderCollapse: "collapse" }}>
@@ -530,7 +535,7 @@ export default function DepartureSection() {
                 {showMore != null && (showMore !== 'nearest' ? myDepartures[showMore] : nearestDeparture)?.map((dep, i) => (
                 <>
                 <colgroup>
-                    <col style={{ width: '85px' }} />
+                    <col style={{ minWidth: '85px' }} />
                     <col />
                     <col style={{ width: '42px' }} />
                 </colgroup>
@@ -551,7 +556,7 @@ export default function DepartureSection() {
                     <Chip
                         label={dep.typeName}
                         size="small"
-                        sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, width: '80px'}}
+                        sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, minWidth: '80px'}}
                         />
                     </TableCell>
 
