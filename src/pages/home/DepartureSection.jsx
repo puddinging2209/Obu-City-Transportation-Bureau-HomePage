@@ -49,7 +49,16 @@ export default function DepartureSection() {
     myStations.map(
       s => stations[s.name]?.directions?.[0] || busStops[s.name]?.directions?.[0] || null
     )
-  );
+    );
+    
+    function addMyStation(sta, role) {
+        const newStations = [...myStations, {name: sta, role: role}];
+        setMyStations(newStations);
+        localStorage.setItem('myStations', JSON.stringify(newStations));
+        const newDirections = [...myDirections, stations[sta]?.directions?.[0] || busStops[sta]?.directions?.[0] || null];
+        setMyDirections(newDirections);
+        setShowSearch(false);
+    }
 
   const [myDepartures, setMyDepartures] = React.useState([]);
   const [showSearch, setShowSearch] = React.useState(false);
@@ -127,13 +136,11 @@ export default function DepartureSection() {
         <Box sx={{ mx: 'auto', pb: 2, width: 'fit-content', textAlign: 'center' }}>
         <Box sx={{ display: 'flex', pb: 2, width: { xs: '100%', md: 'auto' }, justifyContent: 'space-between', alignItems: 'center' }}>      
         <Typography variant="h6">最寄り駅</Typography>
-        <Button sx={{ height: 36 }} disabled={loadingNearest} onClick={() => {
+        <Button sx={{ height: 36 }} loading={loadingNearest} onClick={() => {
             if (!loadingNearest) updateNearest();
-        }}>{!loadingNearest ? '更新' : 
-                <CircularProgress sx={{ p: 'auto' }} color="inherit" size={16} />
-            }</Button>
+        }}>更新</Button>
         </Box>
-        <Card key={nearestStation} sx={{ width: { xs: '100%', md: 300 }, height: 240, position: 'relative', flexShrink: 0 }}>
+        <Card key={nearestStation} sx={{ width: { xs: '100%', md: 300 }, minHeight: 240, position: 'relative', flexShrink: 0 }}>
                   {nearestStation ?
                       <CardContent>
                           <Box sx={{ mb: 1 }}>
@@ -263,7 +270,14 @@ export default function DepartureSection() {
                               navigate('?modal=more-nearest');
                           }}>
                               もっと見る
-                          </Button>
+                          </Button><br/>
+                          <Button
+                              variant='contained'
+                              size="small"
+                              onClick={() => addMyStation(nearestStation, 'station')}
+                              disabled={myStations.some(s => s.name === nearestStation)}
+                              disableElevation
+                          >マイ駅に追加</Button>
                       </CardContent> : 
                       <CardContent sx={{ textAlign: 'center', verticalAlign: 'middle' }}>
                           <Typography variant="body1" sx={{ textAlign: 'center' }}>位置情報が取得できませんでした</Typography>
@@ -287,7 +301,7 @@ export default function DepartureSection() {
             .slice(0, 2) ?? [];
             
           return (
-            <Card key={sta.name} sx={{ width: { xs: '85%', md: 300 }, height: 240, position: 'relative', flexShrink: 0, scrollSnapAlign: { xs: 'center', md: 'none' } }}>
+            <Card key={sta.name} sx={{ width: { xs: '90%', md: 300 }, height: 240, position: 'relative', flexShrink: 0, scrollSnapAlign: { xs: 'center', md: 'none' } }}>
               <CardContent>
                 <Box sx={{ mb: 1 }}>
                   <Typography variant="subtitle1" sx={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap'}} noWrap>
@@ -492,14 +506,7 @@ export default function DepartureSection() {
                               ].sort((a, b) => a.kana.localeCompare(b.kana))
                           }
                         onChange={(selected) => {
-                            if (selected) {
-                                const newStations = [...myStations, {name: selected.value, role: selected.role}];
-                                setMyStations(newStations);
-                                localStorage.setItem('myStations', JSON.stringify(newStations));
-                                const newDirections = [...myDirections, stations[selected.value]?.directions?.[0] || busStops[selected.value]?.directions?.[0] || null];
-                                setMyDirections(newDirections);
-                                setShowSearch(false);
-                            }
+                            if (selected)  addMyStation(selected.value, selected.role);
                         }}
                         placeholder="駅・停留所を検索"
                         isSearchable={true}
