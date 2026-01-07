@@ -55,9 +55,7 @@ export default function DepartureSection() {
 
     React.useEffect(() => {
     Promise.all(
-      myStations.map((sta, i) =>
-        myDirections[i] ? searchDeparture(sta, myDirections[i]) : []
-      )
+        myStations.map((sta, i) => searchDeparture(sta, myDirections[i]))
     ).then(setMyDepartures);
   }, [myStations, myDirections]);
 
@@ -68,6 +66,14 @@ export default function DepartureSection() {
     else if (m?.startsWith('more-')) setShowMore(m.replace('more-', ''))
     else setShowMore(null);
   }, [location]);
+    
+    function scrollToDep() {
+        const deps = myDepartures[showMore] ?? nearestDeparture;
+        const next = deps.sort((a, b) => a.time - b.time).find(dep => dep.time > nowsecond());
+        if (!next) return;
+        const el = document.getElementById(String(next.time));
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     
     const [nearestStation, setNearestStation] = React.useState(null);
     const [nearestDirection, setNearestDirection] = React.useState(null);
@@ -515,16 +521,18 @@ export default function DepartureSection() {
 
       <Dialog
         open={showMore != null}
-              onClose={() => {
-                  navigate('/home');
-                  setShowMore(null);
-              }}
+        onClose={() => {
+            navigate('/home');
+            setShowMore(null);
+        }}
+        scroll="paper"  
+        TransitionProps={{ onEntered: scrollToDep }}
         fullWidth
       >
         <DialogTitle>
             {showMore != null && (
                 <>
-                    <Typography   graphy variant="h6">{myStations[showMore]?.name ?? nearestStation}</Typography>
+                    <Typography graphy variant="h6">{myStations[showMore]?.name ?? nearestStation}</Typography>
                     <Typography variant="subtitle1">{`${myDirections[showMore]?.stationName ?? nearestDirection.stationName} 方面`}</Typography>
                 </>
             )}
@@ -540,7 +548,7 @@ export default function DepartureSection() {
                     <col style={{ width: '42px' }} />
                 </colgroup>
             
-                <TableRow sx={{
+                <TableRow id={ String(dep.time) } sx={{
                     '& .MuiTableCell-root': {
                         overflow: 'hidden',
                         minHeight: '15px',
