@@ -19,7 +19,9 @@ import {
   TableCell,
   CircularProgress,
 } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
+
 import Select from 'react-select';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -438,7 +440,7 @@ export default function DepartureSection() {
                     }
                     style={{width: '100%', height: '100%'}}
                   >
-                      <img className="icon-plus" src={'./image/icon_add.png'} alt="plus" style={{height: '50px'}} />
+                    <AddIcon fontSize='large'/>
                     <Typography align="center">マイ駅を追加</Typography>
                 </CardActionArea>
             </Card>
