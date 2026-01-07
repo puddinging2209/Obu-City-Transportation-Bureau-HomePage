@@ -56,7 +56,7 @@ export default function DepartureSection() {
     React.useEffect(() => {
     Promise.all(
         myStations.map((sta, i) => searchDeparture(sta, myDirections[i]))
-    ).then(setMyDepartures);
+    ).then(deps => setMyDepartures(deps));
   }, [myStations, myDirections]);
 
   React.useEffect(() => {
