@@ -26,6 +26,7 @@ import Select from 'react-select';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import OverflowMarquee from '../../components/OverflowMarquee.jsx';
+import DepartureRow from '../../components/DepartureRow.jsx';
 import DirectionBottomSheet from '../../components/DirectionBottomSheet.jsx';
 
 import { nowsecond, toTimeString, name } from '../../func.js';
@@ -195,55 +196,13 @@ export default function DepartureSection() {
             
 
                           <Stack spacing={1}>
-                              {(nearestDeparture?.filter(d => d.time >= nowsecond()).length !== 0) ? nearestDeparture?.filter(d => d.time >= nowsecond()).slice(0, 2).map((dep) => (
-                                  <Table sx={{ tableLayout: 'fixed', width: '100%' }} key={`${dep.type}${dep.terminal}${dep.time}`}>
-                                      <colgroup>
-                                          <col style={{ minWidth: '85px' }} />
-                                          <col />
-                                          <col style={{ width: '42px' }} />
-                                      </colgroup>
-                        
-                                      <TableBody>
-                                          <TableRow sx={{
-                                              '& .MuiTableCell-root': {
-                                                  overflow: 'hidden',
-                                                  minHeight: '15px',
-                                                  width: '100%',
-                                                  padding: '0'
-                                              },
-                                              '&:last-child td, &:last-child th': {
-                                                  border: 0
-                                              }
-                                          }}>
-                                              <TableCell sx={{ px: 0, width: '85px' }}>
-                                                  <Chip
-                                                      label={dep.typeName}
-                                                      size="small"
-                                                      sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, minWidth: '80px' }}
-                                                  />
-                                              </TableCell>
-
-                                              <TableCell sx={{ px: 0 }}>
-                                                  <div
-                                                      style={{
-                                                          width: '100%',
-                                                          overflow: 'hidden',
-                                                          whiteSpace: 'nowrap',
-                                                      }}
-                                                  >
-                                                      <OverflowMarquee text={name(dep.terminal)} />
-                                                  </div>
-                                              </TableCell>
-
-                                              <TableCell sx={{ px: 0, maxWidth: '30px' }}>
-                                                  <Typography variant="body2" fontWeight="bold" sx={{ textAlign: 'right' }}>
-                                                      {toTimeString(dep.time)}
-                                                  </Typography>
-                                              </TableCell>
-                                          </TableRow>
-                                      </TableBody>
-                                  </Table>
-                              )) : (
+                              {(nearestDeparture?.filter(d => d.time >= nowsecond()).length !== 0) ? (
+                                <Box>
+                                    {nearestDeparture?.filter(d => d.time >= nowsecond()).slice(0, 2)?.map(dep => (
+                                        <DepartureRow key={dep.time} dep={dep} />
+                                    ))}
+                                </Box>
+                              ) : (
                                   <Table sx={{ tableLayout: 'fixed', width: '100%' }}>
                 
                                       <TableRow sx={{
@@ -326,7 +285,7 @@ export default function DepartureSection() {
                   isSearchable={false}
                   menuPortalTarget={document.body}
                   styles={{ container: b => ({ ...b, marginBottom: 8 }) }}
-                  formatOptionLabel={({ value, label, route }, { context }) => (
+                  formatOptionLabel={({ _, label, route }, { context }) => (
                     <div style={{ display: 'flex', height: '100%', justifyContent: 'space-between' }}>
                         <Typography sx={{ fontSize: '14px', fontWeight: 'bold', color: 'inherit' }}>{label}</Typography>
                           {context === 'menu' && (
@@ -357,55 +316,13 @@ export default function DepartureSection() {
                 
 
                 <Stack spacing={1}>
-                  {(upcoming.length !== 0) ? upcoming.map((dep) => (
-                    <Table sx={{ tableLayout: 'fixed', width: '100%' }} key={`${dep.type}${dep.terminal}${dep.time}`}>
-                    <colgroup>
-                        <col style={{ minWidth: '85px' }} />
-                        <col />
-                        <col style={{ width: '42px' }} />
-                          </colgroup>
-                          
-                    <TableBody>
-                        <TableRow sx={{
-                            '& .MuiTableCell-root': {
-                                overflow: 'hidden',
-                                minHeight: '15px',
-                                width: '100%',
-                                padding: '0'
-                            },
-                            '&:last-child td, &:last-child th': {
-                                border: 0
-                            }
-                        }}>
-                        <TableCell sx={{ px: 0, width: '85px' }}>
-                            <Chip
-                            label={dep.typeName}
-                            size="small"
-                            sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, minWidth: '80px'}}
-                                />
-                            </TableCell>
-
-                            <TableCell sx={{ px: 0 }}>
-                            <div
-                                style={{
-                                width: '100%',
-                                overflow: 'hidden',
-                                whiteSpace: 'nowrap',
-                                }}
-                            >
-                                <OverflowMarquee text={name(dep.terminal)} />
-                            </div>
-                            </TableCell>
-
-                            <TableCell sx={{ px: 0, maxWidth: '30px'}}>
-                            <Typography variant="body2" fontWeight="bold" sx={{textAlign: 'right'}}>
-                                {toTimeString(dep.time)}
-                            </Typography>
-                            </TableCell>
-                              </TableRow>
-                            </TableBody>
-                    </Table>
-                  )) : (
+                  {(upcoming.length !== 0) ?(
+                    <Box>
+                        {upcoming.map(dep => (
+                            <DepartureRow key={dep.time} dep={dep} />
+                        ))}
+                    </Box>
+                  ) : (
                     <Table sx={{ tableLayout: 'fixed', width: '100%' }}>
                     
                         <TableRow sx={{
@@ -547,58 +464,16 @@ export default function DepartureSection() {
             )}
         </DialogTitle>
         <DialogContent dividers>
-            <Table sx={{ tableLayout: 'fixed', width: '100%', borderCollapse: "collapse" }}>
-            <TableBody>
-                {showMore != null && (showMore !== 'nearest' ? myDepartures[showMore] : nearestDeparture)?.map((dep, i) => (
-                <>
-                <colgroup>
-                    <col style={{ minWidth: '85px' }} />
-                    <col />
-                    <col style={{ width: '42px' }} />
-                </colgroup>
-            
-                <TableRow id={ String(dep.time) } sx={{
-                    '& .MuiTableCell-root': {
-                        overflow: 'hidden',
-                        minHeight: '15px',
-                        width: '100%',
-                        padding: '3px 0',
-                        borderBottom: '1px solid rgba(0, 0, 0, 0.12)'
-                    },
-                    '&:last-child td, &:last-child th': {
-                        border: 0
-                    }
-                }}>
-                <TableCell sx={{ px: 0, width: '85px' }}>
-                    <Chip
-                        label={dep.typeName}
-                        size="small"
-                        sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, minWidth: '80px'}}
-                        />
-                    </TableCell>
-
-                    <TableCell sx={{ px: 0 }}>
-                    <div
-                        style={{
-                        width: '100%',
-                        overflow: 'hidden',
-                        whiteSpace: 'nowrap',
-                        }}
-                    >
-                        <OverflowMarquee text={name(dep.terminal)} />
-                    </div>
-                    </TableCell>
-
-                    <TableCell sx={{ px: 0, maxWidth: '30px'}}>
-                        <Typography variant="body2" fontWeight="bold" sx={{textAlign: 'right'}}>
-                            {toTimeString(dep.time)}
-                        </Typography>
-                    </TableCell>
-                    </TableRow>
-                </>
-                      ))}
-                    </TableBody>
-            </Table>
+            <Box>
+                {(showMore !== null
+                    ? showMore !== 'nearest'
+                    ? myDepartures[showMore]
+                    : nearestDeparture
+                    : []
+                )?.map(dep => (
+                    <DepartureRow needId={true} key={dep.time} dep={dep} />
+                ))}
+            </Box>
         </DialogContent>
         <DialogActions>
             <Button onClick={() => {
