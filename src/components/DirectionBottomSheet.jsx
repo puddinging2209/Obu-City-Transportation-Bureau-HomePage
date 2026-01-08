@@ -53,11 +53,14 @@ export default function DirectionBottomSheet({
             >
               <Radio checked={selected} />
 
-              <ListItemText
-                primary={`${lines[o.value.route]?.show ?? o.value.route} ${o.label}`}
-                primaryTypographyProps={{
-                  fontWeight: selected ? 'bold' : 'normal',
-                }}
+            <ListItemText
+                disableTypography
+                primary={
+                    <>
+                        <Typography variant='subtitle1' sx={{ mt: 0, fontWeight: selected ? 'bold' : 'normal' }}>{o.label}</Typography>
+                        <Typography sx={{ mt: 0, fontWeight: selected ? 'bold' : 'normal' }} variant='body2'>{lines[o.value.route]?.show ?? o.value.route}</Typography>
+                    </>
+                }
               />
             </ListItemButton>
           );
