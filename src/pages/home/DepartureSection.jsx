@@ -204,7 +204,7 @@ export default function DepartureSection() {
                                                   <Chip
                                                       label={dep.typeName}
                                                       size="small"
-                                                      sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, width: '80px' }}
+                                                      sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, minWidth: '80px' }}
                                                   />
                                               </TableCell>
 
@@ -341,7 +341,7 @@ export default function DepartureSection() {
                         <col style={{ width: '85px' }} />
                         <col />
                         <col style={{ width: '42px' }} />
-                          </colgroup>
+                    </colgroup>
                           
                     <TableBody>
                         <TableRow sx={{
@@ -359,7 +359,7 @@ export default function DepartureSection() {
                             <Chip
                             label={dep.typeName}
                             size="small"
-                            sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, width: '80px'}}
+                            sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, minWidth: '80px'}}
                                 />
                             </TableCell>
 
@@ -526,6 +526,12 @@ export default function DepartureSection() {
         </DialogTitle>
         <DialogContent dividers>
             <Table sx={{ tableLayout: 'fixed', width: '100%', borderCollapse: "collapse" }}>
+                <colgroup>
+                    <col style={{ width: '85px' }} />
+                    <col />
+                    <col style={{ width: '42px' }} />
+                </colgroup>
+        
             <TableBody>
                 {showMore != null && (showMore !== 'nearest' ? myDepartures[showMore] : nearestDeparture)?.map((dep, i) => (
                 <>
@@ -551,7 +557,7 @@ export default function DepartureSection() {
                     <Chip
                         label={dep.typeName}
                         size="small"
-                        sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, width: '80px'}}
+                        sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, minWidth: '80px'}}
                         />
                     </TableCell>
 
