@@ -1,5 +1,7 @@
 import lines from '../public/data/lines.json';
-import { adjustTime, name_number, terminal, typeName } from './func.js';
+import { name_number } from './utils/Station.js';
+import { adjustTime } from './utils/Time.js';
+import { terminal, typeName } from './utils/Train.js';
 
 async function dia(rosen) {
 
@@ -173,3 +175,4 @@ async function searchDeparture(sta, direction) {
     }
 }
 export { searchDeparture };
+

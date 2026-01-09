@@ -846,42 +846,42 @@
     "name": "東コース",
     "show": "東コース",
     "json": "East",
-    "color": "#FFD600"
+    "color": "#f200f2"
   },
   "西コース": {
     "name": "西コース",
     "show": "西コース",
     "json": "West",
-    "color": "#FFD600"
+    "color": "#e39509"
   },
   "南コース": {
     "name": "南コース",
     "show": "南コース",
     "json": "South",
-    "color": "#FFD600"
+    "color": "#0000f2"
   },
   "北コース": {
     "name": "北コース",
     "show": "北コース",
     "json": "North",
-    "color": "#FFD600"
+    "color": "#33cc33"
   },
   "中央コース": {
     "name": "中央コース",
     "show": "中央コース",
     "json": "Center",
-    "color": "#FFD600"
+    "color": "#7030a0"
   },
   "サクラコース": {
     "name": "サクラコース",
     "show": "サクラコース",
     "json": "Sakura",
-    "color": "#FFD600"
+    "color": "#f291f2"
   },
   "ツツジコース": {
     "name": "ツツジコース",
     "show": "ツツジコース",
     "json": "Tsutsuji",
-    "color": "#FFD600"
+    "color": "#f26100"
   }
 }
