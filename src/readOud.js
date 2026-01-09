@@ -9,7 +9,7 @@ async function dia(rosen) {
             const diagram = await response.json();
             return diagram;
         } catch (e) {
-            const response = await fetch(`./src/oud/${rosen}.json`);
+            const response = await fetch(`./public/oud/${rosen}.json`);
             const diagram = await response.json();
             return diagram;
         }
