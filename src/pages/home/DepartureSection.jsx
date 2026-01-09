@@ -1,12 +1,12 @@
 import React from 'react';
 import {
+  Container,
   Box,
   Card,
   CardContent,
   CardActionArea,
   Typography,
   Button,
-  Chip,
   IconButton,
   Stack,
   Dialog,
@@ -14,10 +14,8 @@ import {
   DialogContent,
   DialogActions,
   Table,
-  TableBody,
   TableRow,
   TableCell,
-  CircularProgress,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
@@ -134,8 +132,8 @@ export default function DepartureSection() {
   return (
       <Box>
           
-        <Box sx={{ mx: 'auto', pb: 2, width: 'fit-content', textAlign: 'center' }}>
-        <Box sx={{ display: 'flex', pb: 2, width: { xs: '100%', md: 'auto' }, justifyContent: 'space-between', alignItems: 'center' }}>      
+        <Container sx={{ mx: 'auto', pb: 2, width: { xs: '100%', md: 'fit-content' }, textAlign: 'center' }}>
+        <Box sx={{ display: 'flex', pb: 2, width: { xs: '100%', md: '100%' }, justifyContent: 'space-between', alignItems: 'center' }}>      
         <Typography variant="h6">最寄り駅</Typography>
         <Button sx={{ height: 36 }} loading={loadingNearest} onClick={() => {
             if (!loadingNearest) updateNearest();
@@ -243,7 +241,7 @@ export default function DepartureSection() {
                       </CardContent>
                       }
               </Card>
-              </Box>
+              </Container>
 
 
       <Typography variant="h6" sx={{ mb: 2 }}>マイ駅・停留所</Typography>
