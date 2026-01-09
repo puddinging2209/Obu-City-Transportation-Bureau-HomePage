@@ -1,24 +1,90 @@
-import { Box, Button, Card, CardContent, Stack, Typography } from '@mui/material';
+import React from 'react';
+
+import CloseIcon from '@mui/icons-material/Close';
+import {
+    Box,
+    Button,
+    Card,
+    CardContent,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+    IconButton,
+    Stack,
+    Table,
+    TableCell,
+    TableRow,
+    Typography
+} from '@mui/material';
+import { useAtom, useSetAtom } from 'jotai';
+import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
+
+import { addMyStationAtom, myStationsAtom } from '../Atom.js';
+
+import DepartureRow from './DepartureRow.jsx';
+import DirectionBottomSheet from './DirectionBottomSheet.jsx';
+import OverflowMarquee from './OverflowMarquee.jsx';
 
 import busStops from '../../public/data/busStops.json';
 import lines from '../../public/data/lines.json';
 import stations from '../../public/data/stations.json';
-import { name, nowsecond } from '../func.js';
 
-function DepartureCard({ station, isShowAddButton = false }) {
+import { searchDeparture } from '../readOud.js';
+import { name } from '../utils/Station.js';
+import { nowsecond } from '../utils/Time.js';
 
-    const [direction, setDirection] = React.useState(stations[s.name]?.directions?.[0] || busStops[s.name]?.directions?.[0] || null);
+function DepartureCard({ station, addButton = false, removeButton = false }) {
+    const navigate = useNavigate();
 
-    const [isOpenMobileSelector, setIsOpenMobileSelector] = React.useState(false);
+    const [myStations, setMyStations] = useAtom(myStationsAtom);
+
+    const [direction, setDirection] = React.useState(stations[station?.name]?.directions?.[0] || busStops[station?.name]?.directions?.[0] || null);
+    const [departures, setDepartures] = React.useState([]);
+
+    React.useEffect(() => {
+        console.log(station);
+        setDirection(stations[station?.name]?.directions?.[0] || busStops[station?.name]?.directions?.[0] || null);
+    }, []);
+
+    React.useEffect(() => {
+        if (direction) {
+            searchDeparture(station, direction).then(deps => setDepartures(deps));
+        }
+    }, [direction]);
+
+    const addMyStation = useSetAtom(addMyStationAtom);
+
+    function removeStation() {
+        const s = myStations.filter((value) => value.name != station.name);
+        setMyStations(s);
+        localStorage.setItem('myStations', JSON.stringify(s));
+    }
+
+    const directionOptions =
+        (station.role === 'station') ? 
+            stations[station.name]?.directions.map(d => ({ value: d, label: `${d.stationName}方面`, route: d.route })) : 
+            busStops[station.name]?.directions.map(d => ({ value: d, label: `${d.stationName}方面`, route: d.route }))
+
+    const [isOpenShowMore, setIsOpenShowMore] = React.useState(false);
+        
+    function scrollToDep() {
+        const next = departures.find(dep => dep.time > nowsecond());
+        if (!next) return;
+        const el = document.getElementById(String(next.time));
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    const [isOpenMobileSelector, setIsOpenMobileSelector] = React.useState({ open: false, options: [] });
 
     return (
         <>
-            <Card key={station} sx={{ width: { xs: '90%', md: 300 }, minHeight: 240, position: 'relative', flexShrink: 0 }}>
+            <Card key={station.name} sx={{ width: { xs: '80vw', md: 300 }, minHeight: 240, position: 'relative', flexShrink: 0 }}>
                 <CardContent>
                     <Box sx={{ mb: 1 }}>
-                        <Typography variant="subtitle1" sx={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }} noWrap>
-                            <OverflowMarquee text={name(station)} />
+                        <Typography variant="h6" sx={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }} noWrap>
+                            <OverflowMarquee text={name(station.name)} />
                         </Typography>
 
                         <Typography variant="body2" color="text.secondary" noWrap>
@@ -29,8 +95,8 @@ function DepartureCard({ station, isShowAddButton = false }) {
                 
                     <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                         <Select
-                            options={stations[station]?.directions.map(d => ({ value: d, label: `${d.stationName}方面`, route: d.route }))}
-                            value={stations[station]?.directions.map(d => ({ value: d, label: `${d.stationName}方面`, route: d.route })).find(o => o.value === direction)}
+                            options={directionOptions}
+                            value={directionOptions.find(o => o.value == direction)}
                             onChange={e => {
                                 setDirection(e.value);
                             }}
@@ -56,21 +122,19 @@ function DepartureCard({ station, isShowAddButton = false }) {
                             onClick={() => {
                                 setIsOpenMobileSelector({
                                     open: true,
-                                    index: 'nearest',
-                                    options: stations[station]?.directions.map(d => ({ value: d, label: `${d.stationName}方面`, route: d.route }))
+                                    options: stations[station.name]?.directions.map(d => ({ value: d, label: `${d.stationName}方面`, route: d.route }))
                                 });
-                                navigate('?modal=directionSelector-nearest');
+                                navigate(`?modal=directionSelector-${station.name}`);
                             }}
                         >
                             {direction?.stationName}方面 ▼
                         </Button>
                     </Box>
-                
 
                     <Stack spacing={1}>
-                        {(nearestDeparture?.filter(d => d.time >= nowsecond()).length !== 0) ? (
+                        {(departures?.filter(d => d.time >= nowsecond()).length !== 0) ? (
                             <Box>
-                                {nearestDeparture?.filter(d => d.time >= nowsecond()).slice(0, 2)?.map(dep => (
+                                {departures?.filter(d => d.time >= nowsecond()).slice(0, 2)?.map(dep => (
                                     <DepartureRow key={dep.time} dep={dep} />
                                 ))}
                             </Box>
@@ -97,36 +161,78 @@ function DepartureCard({ station, isShowAddButton = false }) {
                     </Stack>
 
                     <Button size="small" sx={{ mt: 1 }} onClick={() => {
-                        setShowMore('nearest');
-                        navigate('?modal=more-nearest');
+                        setIsOpenShowMore(true);
+                        navigate(`?modal=more-${station.name}`);
                     }}>
                         もっと見る
-                    </Button><br />
+                    </Button>
+                    <IconButton
+                        size="small"
+                        sx={{ position: 'absolute', bottom: 8, right: 8, display: removeButton ? 'block' : 'none' }}
+                        onClick={() => removeStation()}
+                    >
+                        <CloseIcon fontSize="small" />
+                    </IconButton><br />
                     <Button
-                        display={isShowAddButton ? 'block' : 'none'}
+                        sx={{ mt: 1, display: addButton ? 'block' : 'none' }}
                         variant='contained'
                         size="small"
-                        onClick={() => addMyStation(station, 'station')}
-                        disabled={myStations.some(s => s.name === station)}
+                        onClick={() => addMyStation({name: station.name, role: 'station'})}
+                        disabled={myStations.some(s => s.name === station.name)}
                         disableElevation
                     >マイ駅に追加</Button>
                 </CardContent>
             </Card>
             
             <DirectionBottomSheet
-            open={isOpenMobileSelector.open}
-            options={isOpenMobileSelector.options}
-            value={direction}
-            onClose={() => {
-                setIsOpenMobileSelector({ open: false, index: null, options: [] });
-                navigate('/home');
-            }}
-            onSelect={value => {
-                setDirection(value);
-                setIsOpenMobileSelector({ open: false, index: null, options: [] });
-                navigate('/home');
-            }}
+                open={isOpenMobileSelector.open}
+                options={isOpenMobileSelector.options}
+                value={direction}
+                onClose={() => {
+                    setIsOpenMobileSelector({ open: false, index: null, options: [] });
+                    navigate('/home');
+                }}
+                onSelect={value => {
+                    setDirection(value);
+                    setIsOpenMobileSelector({ open: false, index: null, options: [] });
+                    navigate('/home');
+                }}
             />
+
+            <Dialog
+                open={isOpenShowMore}
+                onClose={() => {
+                    navigate('/home');
+                    setIsOpenShowMore(false);
+                }}
+                scroll="paper"  
+                TransitionProps={{ onEntered: scrollToDep }}
+                fullWidth
+            >
+                <DialogTitle>
+                    {isOpenShowMore && (
+                        <>
+                            <Typography graphy variant="h6">{station.name}</Typography>
+                            <Typography variant="subtitle1">{`${direction?.stationName} 方面`}</Typography>
+                        </>
+                    )}
+                </DialogTitle>
+                <DialogContent dividers>
+                    <Box>
+                        {departures?.map(dep => (
+                            <DepartureRow needId={true} key={dep.time} dep={dep} />
+                        ))}
+                    </Box>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={() => {
+                        navigate('/home');
+                        setIsOpenShowMore(false);
+                    }}>閉じる</Button>
+                </DialogActions>
+            </Dialog>
         </>
     )
 }
+
+export default DepartureCard

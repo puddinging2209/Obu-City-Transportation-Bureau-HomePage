@@ -1,6 +1,7 @@
 import { Box, Chip, Grid, Typography } from '@mui/material';
 
-import { name, toTimeString } from '../func.js';
+import { name } from '../utils/Station.js';
+import { toTimeString } from '../utils/Time.js';
 import OverflowMarquee from './OverflowMarquee.jsx';
 
 import types from '../../public/data/types.json';
