@@ -24,6 +24,7 @@ export default function OverflowMarquee({
       ref={boxRef}
       style={{
         width: '100%',
+        fontSize: '0.8em',
         overflow: 'hidden',
         whiteSpace: 'nowrap',
         position: 'relative',

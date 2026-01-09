@@ -19,11 +19,14 @@ import {
   TableCell,
   CircularProgress,
 } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
+
 import Select from 'react-select';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import OverflowMarquee from '../../components/OverflowMarquee.jsx';
+import DepartureRow from '../../components/DepartureRow.jsx';
 import DirectionBottomSheet from '../../components/DirectionBottomSheet.jsx';
 
 import { nowsecond, toTimeString, name } from '../../func.js';
@@ -47,7 +50,16 @@ export default function DepartureSection() {
     myStations.map(
       s => stations[s.name]?.directions?.[0] || busStops[s.name]?.directions?.[0] || null
     )
-  );
+    );
+    
+    function addMyStation(sta, role) {
+        const newStations = [...myStations, {name: sta, role: role}];
+        setMyStations(newStations);
+        localStorage.setItem('myStations', JSON.stringify(newStations));
+        const newDirections = [...myDirections, stations[sta]?.directions?.[0] || busStops[sta]?.directions?.[0] || null];
+        setMyDirections(newDirections);
+        setShowSearch(false);
+    }
 
   const [myDepartures, setMyDepartures] = React.useState([]);
   const [showSearch, setShowSearch] = React.useState(false);
@@ -55,10 +67,8 @@ export default function DepartureSection() {
 
     React.useEffect(() => {
     Promise.all(
-      myStations.map((sta, i) =>
-        myDirections[i] ? searchDeparture(sta, myDirections[i]) : []
-      )
-    ).then(setMyDepartures);
+        myStations.map((sta, i) => searchDeparture(sta, myDirections[i]))
+    ).then(deps => setMyDepartures(deps));
   }, [myStations, myDirections]);
 
   React.useEffect(() => {
@@ -68,6 +78,14 @@ export default function DepartureSection() {
     else if (m?.startsWith('more-')) setShowMore(m.replace('more-', ''))
     else setShowMore(null);
   }, [location]);
+    
+    function scrollToDep() {
+        const deps = myDepartures[showMore] ?? nearestDeparture;
+        const next = deps.sort((a, b) => a.time - b.time).find(dep => dep.time > nowsecond());
+        if (!next) return;
+        const el = document.getElementById(String(next.time));
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     
     const [nearestStation, setNearestStation] = React.useState(null);
     const [nearestDirection, setNearestDirection] = React.useState(null);
@@ -119,13 +137,11 @@ export default function DepartureSection() {
         <Box sx={{ mx: 'auto', pb: 2, width: 'fit-content', textAlign: 'center' }}>
         <Box sx={{ display: 'flex', pb: 2, width: { xs: '100%', md: 'auto' }, justifyContent: 'space-between', alignItems: 'center' }}>      
         <Typography variant="h6">最寄り駅</Typography>
-        <Button sx={{ height: 36 }} disabled={loadingNearest} onClick={() => {
+        <Button sx={{ height: 36 }} loading={loadingNearest} onClick={() => {
             if (!loadingNearest) updateNearest();
-        }}>{!loadingNearest ? '更新' : 
-                <CircularProgress sx={{ p: 'auto' }} color="inherit" size={16} />
-            }</Button>
+        }}>更新</Button>
         </Box>
-        <Card key={nearestStation} sx={{ width: { xs: '100%', md: 300 }, height: 240, position: 'relative', flexShrink: 0 }}>
+        <Card key={nearestStation} sx={{ width: { xs: '100%', md: 300 }, minHeight: 240, position: 'relative', flexShrink: 0 }}>
                   {nearestStation ?
                       <CardContent>
                           <Box sx={{ mb: 1 }}>
@@ -180,55 +196,13 @@ export default function DepartureSection() {
             
 
                           <Stack spacing={1}>
-                              {(nearestDeparture?.filter(d => d.time >= nowsecond()).length !== 0) ? nearestDeparture?.filter(d => d.time >= nowsecond()).slice(0, 2).map((dep) => (
-                                  <Table sx={{ tableLayout: 'fixed', width: '100%' }} key={`${dep.type}${dep.terminal}${dep.time}`}>
-                                      <colgroup>
-                                          <col style={{ width: '85px' }} />
-                                          <col />
-                                          <col style={{ width: '42px' }} />
-                                      </colgroup>
-                        
-                                      <TableBody>
-                                          <TableRow sx={{
-                                              '& .MuiTableCell-root': {
-                                                  overflow: 'hidden',
-                                                  minHeight: '15px',
-                                                  width: '100%',
-                                                  padding: '0'
-                                              },
-                                              '&:last-child td, &:last-child th': {
-                                                  border: 0
-                                              }
-                                          }}>
-                                              <TableCell sx={{ px: 0, width: '85px' }}>
-                                                  <Chip
-                                                      label={dep.typeName}
-                                                      size="small"
-                                                      sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, minWidth: '80px' }}
-                                                  />
-                                              </TableCell>
-
-                                              <TableCell sx={{ px: 0 }}>
-                                                  <div
-                                                      style={{
-                                                          width: '100%',
-                                                          overflow: 'hidden',
-                                                          whiteSpace: 'nowrap',
-                                                      }}
-                                                  >
-                                                      <OverflowMarquee text={name(dep.terminal)} />
-                                                  </div>
-                                              </TableCell>
-
-                                              <TableCell sx={{ px: 0, maxWidth: '30px' }}>
-                                                  <Typography variant="body2" fontWeight="bold" sx={{ textAlign: 'right' }}>
-                                                      {toTimeString(dep.time)}
-                                                  </Typography>
-                                              </TableCell>
-                                          </TableRow>
-                                      </TableBody>
-                                  </Table>
-                              )) : (
+                              {(nearestDeparture?.filter(d => d.time >= nowsecond()).length !== 0) ? (
+                                <Box>
+                                    {nearestDeparture?.filter(d => d.time >= nowsecond()).slice(0, 2)?.map(dep => (
+                                        <DepartureRow key={dep.time} dep={dep} />
+                                    ))}
+                                </Box>
+                              ) : (
                                   <Table sx={{ tableLayout: 'fixed', width: '100%' }}>
                 
                                       <TableRow sx={{
@@ -255,7 +229,14 @@ export default function DepartureSection() {
                               navigate('?modal=more-nearest');
                           }}>
                               もっと見る
-                          </Button>
+                          </Button><br/>
+                          <Button
+                              variant='contained'
+                              size="small"
+                              onClick={() => addMyStation(nearestStation, 'station')}
+                              disabled={myStations.some(s => s.name === nearestStation)}
+                              disableElevation
+                          >マイ駅に追加</Button>
                       </CardContent> : 
                       <CardContent sx={{ textAlign: 'center', verticalAlign: 'middle' }}>
                           <Typography variant="body1" sx={{ textAlign: 'center' }}>位置情報が取得できませんでした</Typography>
@@ -265,7 +246,7 @@ export default function DepartureSection() {
               </Box>
 
 
-      <Typography variant="h6" sx={{ mb: 2 }}>発車案内（マイ駅・停留所）</Typography>
+      <Typography variant="h6" sx={{ mb: 2 }}>マイ駅・停留所</Typography>
 
           <Stack direction="row" spacing={2} sx={{ overflowX: 'auto', whiteSpace: 'nowrap', flexWrap: 'nowrap', pb: 1, scrollSnapType: { xs: 'x mandatory', md: 'none'} }}>
         {myStations.map((sta, i) => {
@@ -279,7 +260,7 @@ export default function DepartureSection() {
             .slice(0, 2) ?? [];
             
           return (
-            <Card key={sta.name} sx={{ width: { xs: '85%', md: 300 }, height: 240, position: 'relative', flexShrink: 0, scrollSnapAlign: { xs: 'center', md: 'none' } }}>
+            <Card key={sta.name} sx={{ width: { xs: '90%', md: 300 }, height: 240, position: 'relative', flexShrink: 0, scrollSnapAlign: { xs: 'center', md: 'none' } }}>
               <CardContent>
                 <Box sx={{ mb: 1 }}>
                   <Typography variant="subtitle1" sx={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap'}} noWrap>
@@ -304,7 +285,7 @@ export default function DepartureSection() {
                   isSearchable={false}
                   menuPortalTarget={document.body}
                   styles={{ container: b => ({ ...b, marginBottom: 8 }) }}
-                  formatOptionLabel={({ value, label, route }, { context }) => (
+                  formatOptionLabel={({ _, label, route }, { context }) => (
                     <div style={{ display: 'flex', height: '100%', justifyContent: 'space-between' }}>
                         <Typography sx={{ fontSize: '14px', fontWeight: 'bold', color: 'inherit' }}>{label}</Typography>
                           {context === 'menu' && (
@@ -335,55 +316,13 @@ export default function DepartureSection() {
                 
 
                 <Stack spacing={1}>
-                  {(upcoming.length !== 0) ? upcoming.map((dep) => (
-                    <Table sx={{ tableLayout: 'fixed', width: '100%' }} key={`${dep.type}${dep.terminal}${dep.time}`}>
-                    <colgroup>
-                        <col style={{ width: '85px' }} />
-                        <col />
-                        <col style={{ width: '42px' }} />
-                    </colgroup>
-                          
-                    <TableBody>
-                        <TableRow sx={{
-                            '& .MuiTableCell-root': {
-                                overflow: 'hidden',
-                                minHeight: '15px',
-                                width: '100%',
-                                padding: '0'
-                            },
-                            '&:last-child td, &:last-child th': {
-                                border: 0
-                            }
-                        }}>
-                        <TableCell sx={{ px: 0, width: '85px' }}>
-                            <Chip
-                            label={dep.typeName}
-                            size="small"
-                            sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, minWidth: '80px'}}
-                                />
-                            </TableCell>
-
-                            <TableCell sx={{ px: 0 }}>
-                            <div
-                                style={{
-                                width: '100%',
-                                overflow: 'hidden',
-                                whiteSpace: 'nowrap',
-                                }}
-                            >
-                                <OverflowMarquee text={name(dep.terminal)} />
-                            </div>
-                            </TableCell>
-
-                            <TableCell sx={{ px: 0, maxWidth: '30px'}}>
-                            <Typography variant="body2" fontWeight="bold" sx={{textAlign: 'right'}}>
-                                {toTimeString(dep.time)}
-                            </Typography>
-                            </TableCell>
-                              </TableRow>
-                            </TableBody>
-                    </Table>
-                  )) : (
+                  {(upcoming.length !== 0) ?(
+                    <Box>
+                        {upcoming.map(dep => (
+                            <DepartureRow key={dep.time} dep={dep} />
+                        ))}
+                    </Box>
+                  ) : (
                     <Table sx={{ tableLayout: 'fixed', width: '100%' }}>
                     
                         <TableRow sx={{
@@ -432,7 +371,7 @@ export default function DepartureSection() {
                     }
                     style={{width: '100%', height: '100%'}}
                   >
-                      <img className="icon-plus" src={'./image/icon_add.png'} alt="plus" style={{height: '50px'}} />
+                    <AddIcon fontSize='large'/>
                     <Typography align="center">マイ駅を追加</Typography>
                 </CardActionArea>
             </Card>
@@ -484,14 +423,7 @@ export default function DepartureSection() {
                               ].sort((a, b) => a.kana.localeCompare(b.kana))
                           }
                         onChange={(selected) => {
-                            if (selected) {
-                                const newStations = [...myStations, {name: selected.value, role: selected.role}];
-                                setMyStations(newStations);
-                                localStorage.setItem('myStations', JSON.stringify(newStations));
-                                const newDirections = [...myDirections, stations[selected.value]?.directions?.[0] || busStops[selected.value]?.directions?.[0] || null];
-                                setMyDirections(newDirections);
-                                setShowSearch(false);
-                            }
+                            if (selected)  addMyStation(selected.value, selected.role);
                         }}
                         placeholder="駅・停留所を検索"
                         isSearchable={true}
@@ -515,74 +447,33 @@ export default function DepartureSection() {
 
       <Dialog
         open={showMore != null}
-              onClose={() => {
-                  navigate('/home');
-                  setShowMore(null);
-              }}
+        onClose={() => {
+            navigate('/home');
+            setShowMore(null);
+        }}
+        scroll="paper"  
+        TransitionProps={{ onEntered: scrollToDep }}
         fullWidth
       >
         <DialogTitle>
-          {showMore != null && `${myStations[showMore]?.name ?? nearestStation} ${myDirections[showMore]?.stationName ?? nearestDirection.stationName} 方面 発車時刻一覧`}
+            {showMore != null && (
+                <>
+                    <Typography graphy variant="h6">{myStations[showMore]?.name ?? nearestStation}</Typography>
+                    <Typography variant="subtitle1">{`${myDirections[showMore]?.stationName ?? nearestDirection.stationName} 方面`}</Typography>
+                </>
+            )}
         </DialogTitle>
         <DialogContent dividers>
-            <Table sx={{ tableLayout: 'fixed', width: '100%', borderCollapse: "collapse" }}>
-                <colgroup>
-                    <col style={{ width: '85px' }} />
-                    <col />
-                    <col style={{ width: '42px' }} />
-                </colgroup>
-        
-            <TableBody>
-                {showMore != null && (showMore !== 'nearest' ? myDepartures[showMore] : nearestDeparture)?.map((dep, i) => (
-                <>
-                <colgroup>
-                    <col style={{ width: '85px' }} />
-                    <col />
-                    <col style={{ width: '42px' }} />
-                </colgroup>
-            
-                <TableRow sx={{
-                    '& .MuiTableCell-root': {
-                        overflow: 'hidden',
-                        minHeight: '15px',
-                        width: '100%',
-                        padding: '3px 0',
-                        borderBottom: '1px solid rgba(0, 0, 0, 0.12)'
-                    },
-                    '&:last-child td, &:last-child th': {
-                        border: 0
-                    }
-                }}>
-                <TableCell sx={{ px: 0, width: '85px' }}>
-                    <Chip
-                        label={dep.typeName}
-                        size="small"
-                        sx={{ background: types[dep.typeName].color, color: '#fff', mr: 1, minWidth: '80px'}}
-                        />
-                    </TableCell>
-
-                    <TableCell sx={{ px: 0 }}>
-                    <div
-                        style={{
-                        width: '100%',
-                        overflow: 'hidden',
-                        whiteSpace: 'nowrap',
-                        }}
-                    >
-                        <OverflowMarquee text={name(dep.terminal)} />
-                    </div>
-                    </TableCell>
-
-                    <TableCell sx={{ px: 0, maxWidth: '30px'}}>
-                        <Typography variant="body2" fontWeight="bold" sx={{textAlign: 'right'}}>
-                            {toTimeString(dep.time)}
-                        </Typography>
-                    </TableCell>
-                    </TableRow>
-                </>
-                      ))}
-                    </TableBody>
-            </Table>
+            <Box>
+                {(showMore !== null
+                    ? showMore !== 'nearest'
+                    ? myDepartures[showMore]
+                    : nearestDeparture
+                    : []
+                )?.map(dep => (
+                    <DepartureRow needId={true} key={dep.time} dep={dep} />
+                ))}
+            </Box>
         </DialogContent>
         <DialogActions>
             <Button onClick={() => {
