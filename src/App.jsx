@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-import { ThemeProvider, createTheme, CssBaseline, Dialog, DialogTitle, DialogContent } from '@mui/material';
-import './App.css';
+import { createTheme, CssBaseline, Dialog, DialogContent, DialogTitle, ThemeProvider } from '@mui/material';
+// import './App.css';
 
-import Header from './components/Header.jsx'
-import Home from './pages/home/Home.jsx'
+import Header from './components/Header.jsx';
 import MobileBottomNavigation from './components/MobileBottomNavigation.jsx';
+import Home from './pages/home/Home.jsx';
 
 const theme = createTheme({
   palette: {

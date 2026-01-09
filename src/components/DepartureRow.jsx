@@ -1,9 +1,9 @@
-import { Grid, Chip, Typography, Box } from '@mui/material';
+import { Box, Chip, Grid, Typography } from '@mui/material';
 
+import { name, toTimeString } from '../func.js';
 import OverflowMarquee from './OverflowMarquee.jsx';
-import { toTimeString, name } from '../func.js';
 
-import types from '../types.json';
+import types from '../../public/data/types.json';
 
 function DepartureRow({ dep, needId = false }) {
   return (

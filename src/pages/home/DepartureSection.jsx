@@ -1,40 +1,39 @@
-import React from 'react';
-import {
-  Container,
-  Box,
-  Card,
-  CardContent,
-  CardActionArea,
-  Typography,
-  Button,
-  IconButton,
-  Stack,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Table,
-  TableRow,
-  TableCell,
-} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
+import {
+    Box,
+    Button,
+    Card,
+    CardActionArea,
+    CardContent,
+    Container,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+    IconButton,
+    Stack,
+    Table,
+    TableCell,
+    TableRow,
+    Typography,
+} from '@mui/material';
+import React from 'react';
 
-import Select from 'react-select';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Select from 'react-select';
 
-import OverflowMarquee from '../../components/OverflowMarquee.jsx';
 import DepartureRow from '../../components/DepartureRow.jsx';
 import DirectionBottomSheet from '../../components/DirectionBottomSheet.jsx';
+import OverflowMarquee from '../../components/OverflowMarquee.jsx';
 
-import { nowsecond, toTimeString, name } from '../../func.js';
+import { name, nowsecond } from '../../func.js';
 import { searchDeparture } from '../../readOud.js';
 import searchNearestStation from './searchNearestStation.js';
 
-import stations from '../../stations.json';
-import busStops from '../../busStops.json';
-import lines from '../../lines.json';
-import types from '../../types.json';
+import busStops from '../../../public/data/busStops.json';
+import lines from '../../../public/data/lines.json';
+import stations from '../../../public/data/stations.json';
 
 export default function DepartureSection() {
   const navigate = useNavigate();

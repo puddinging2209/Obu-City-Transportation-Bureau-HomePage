@@ -1,13 +1,13 @@
 import {
-  Box,
-  Paper,
-  Typography,
-  List,
-  ListItemButton,
-  ListItemText,
-  Chip,
+    Box,
+    Chip,
+    List,
+    ListItemButton,
+    ListItemText,
+    Paper,
+    Typography,
 } from "@mui/material";
-import notices from "../notices.json";
+import notices from "../../public/data/notices.json";
 
 // category: ["更新", "イベント", "重要"]
 // important: trueを設定可能
