@@ -1,13 +1,13 @@
-import lines from '../lines.json';
 import {
-  SwipeableDrawer,
-  List,
-  ListItemButton,
-  ListItemText,
-  Radio,
-  Typography,
-  Box,
+    Box,
+    List,
+    ListItemButton,
+    ListItemText,
+    Radio,
+    SwipeableDrawer,
+    Typography,
 } from '@mui/material';
+import lines from '../../public/data/lines.json';
 
 export default function DirectionBottomSheet({
   open,

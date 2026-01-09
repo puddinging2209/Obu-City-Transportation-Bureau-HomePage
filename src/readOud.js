@@ -1,4 +1,4 @@
-import lines from './lines.json';
+import lines from '../public/data/lines.json';
 import { adjustTime, name_number, terminal, typeName } from './func.js';
 
 async function dia(rosen) {

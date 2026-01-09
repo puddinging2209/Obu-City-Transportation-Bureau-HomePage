@@ -1,4 +1,4 @@
-import stations from './stations.json';
+import stations from '../public/data/stations.json';
 
 function nowsecond() {
     const now = new Date();
@@ -75,4 +75,4 @@ function typeName(train, diagram) {
     return diagram.railway.trainTypes[train.type].name;
 }
 
-export { nowsecond, toTime, toTimeString, adjustTime, name, name_number, terminal, typeName };
+export { adjustTime, name, name_number, nowsecond, terminal, toTime, toTimeString, typeName };

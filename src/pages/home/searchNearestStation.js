@@ -1,4 +1,4 @@
-import stations from '../../stations.json';
+import stations from '../../../public/data/stations.json';
 
 export default function searchNearestStation() {
     return new Promise((resolve, reject) => {
