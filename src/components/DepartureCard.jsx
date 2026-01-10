@@ -6,6 +6,7 @@ import {
     Button,
     Card,
     CardContent,
+    Container,
     Dialog,
     DialogActions,
     DialogContent,
@@ -138,24 +139,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                                 ))}
                             </Box>
                         ) : (
-                            <Table sx={{ tableLayout: 'fixed', width: '100%' }}>
-                    
-                                <TableRow sx={{
-                                    '& .MuiTableCell-root': {
-                                        overflow: 'hidden',
-                                        minHeight: '15px',
-                                        width: '100%',
-                                        padding: '0'
-                                    },
-                                    '&:last-child td, &:last-child th': {
-                                        border: 0
-                                    }
-                                }}>
-                                    <TableCell sx={{ px: 0, width: '100%' }}>
-                                        <Typography variant='h6' sx={{ textAlign: 'center' }}>本日の運転は終了しました</Typography>
-                                    </TableCell>
-                                </TableRow>
-                            </Table>
+                            <Typography variant='h6' sx={{ textAlign: 'center' }}>本日の運転は終了しました</Typography>
                         )}
                     </Stack>
 
@@ -211,8 +195,8 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                 <DialogTitle>
                     {isOpenShowMore && (
                         <>
-                            <Typography graphy variant="h6">{station.name}</Typography>
-                            <Typography variant="subtitle1">{`${direction?.stationName} 方面`}</Typography>
+                            <Typography variant="h6" component="div">{station.name}</Typography>
+                            <Typography variant="subtitle1" component="div">{`${direction?.stationName} 方面`}</Typography>
                         </>
                     )}
                 </DialogTitle>
