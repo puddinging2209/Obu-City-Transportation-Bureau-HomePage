@@ -3,7 +3,7 @@ import { name_number } from './Station.js';
 import { adjustTime } from './Time.js';
 import { terminal, typeName } from './Train.js';
 
-async function dia(rosen) {
+export async function dia(rosen) {
 
     async function searchOud(rosen) {
         try {
@@ -19,6 +19,8 @@ async function dia(rosen) {
 
     if (lines[rosen]) {
         rosen = lines[rosen].json;
+    } else if (lines.some(rosen => rosen.code === rosen)) {
+        rosen = lines.find(rosen => rosen.code === rosen).json;
     }
     const diagram = await searchOud(rosen);
     return diagram;
@@ -132,12 +134,6 @@ async function searchDeparture(sta, direction) {
         } else if (direction.route === '刈田川線' && direction.stationName.includes('若草')) {
             departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
         }
-
-        departures.sort((a, b) => {
-            const timeA = adjustTime(a.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);
-            const timeB = adjustTime(b.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure);
-            return timeA - timeB;
-        });
         return departures.map((tra) => {
             const time = tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure;
             return {
@@ -146,7 +142,7 @@ async function searchDeparture(sta, direction) {
                 time: adjustTime(time),
                 train: tra
             }
-        });
+        }).sort((a, b) => adjustTime(a.time) - adjustTime(b.time));
     } else if (sta.role === 'busStop') {
         const busStop = sta.name;
         let routes = direction.route.split('/');
@@ -179,8 +175,7 @@ async function searchDeparture(sta, direction) {
             }).flat();
         }));
 
-        const result = departures.flat();
-        return result.sort((a, b) => a.time - b.time);
+        return departures.flat().sort((a, b) => a.time - b.time);
     }
 }
 export { searchDeparture };
