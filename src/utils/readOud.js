@@ -19,7 +19,7 @@ export async function dia(rosen) {
 
     if (lines[rosen]) {
         rosen = lines[rosen].json;
-    } else if (lines.some(rosen => rosen.code === rosen)) {
+    } else if (Object.values(lines).some(rosen => rosen.code === rosen)) {
         rosen = lines.find(rosen => rosen.code === rosen).json;
     }
     const diagram = await searchOud(rosen);

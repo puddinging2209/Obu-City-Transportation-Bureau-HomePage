@@ -53,6 +53,12 @@ export default function DepartureSection() {
 
     const [isShowSearch, setIsShowSearch] = React.useState(false);
 
+    const selectRef = React.useRef(null);
+
+    function focusInput() {
+        selectRef.current.focus();
+    }
+
   return (
       <Box>
           
@@ -103,6 +109,7 @@ export default function DepartureSection() {
                   setIsShowSearch(false);
                   navigate('/home');
               }}
+                TransitionProps={{ onEntered: focusInput }}
               fullWidth
           >
               <DialogTitle>
@@ -110,6 +117,7 @@ export default function DepartureSection() {
               </DialogTitle>
                 <DialogContent>
                     <Select
+                        ref={selectRef}
                         options={
                             [
                                 ...Object.keys(stations).filter(station => !(myStations).map(station => station.name).includes(station)).map(station => ({ value: station, label: station, role: 'station', kana: stations[station].kana })),
