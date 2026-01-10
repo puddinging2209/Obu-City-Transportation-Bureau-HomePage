@@ -3,12 +3,17 @@ import React from 'react';
 import { HashRouter, Navigate, Route, Link as RouterLink, Routes } from 'react-router-dom';
 
 import CloseIcon from '@mui/icons-material/Close';
-import { createTheme, CssBaseline, Dialog, DialogContent, DialogTitle, FormControlLabel, IconButton, ThemeProvider, Typography } from '@mui/material';
+import { Box, createTheme, CssBaseline, Dialog, DialogContent, DialogTitle, FormControlLabel, IconButton, ThemeProvider, Typography } from '@mui/material';
 
 import Header from './components/Header.jsx';
 import MobileBottomNavigation from './components/MobileBottomNavigation.jsx';
+
 import About from './pages/About.jsx';
-import Home from './pages/home/Home.jsx';
+import Home from './pages/Home.jsx';
+import Position from './pages/Position.jsx';
+import RouteMap from './pages/RouteMap.jsx';
+import TimeTable from './pages/TimeTable.jsx';
+import Transfer from './pages/Transfer.jsx';
 
 const theme = createTheme({
   palette: {
@@ -49,6 +54,10 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Navigate to="/home" replace />} />
                     <Route path='/home' element={<Home />}></Route>
+                    <Route path='/routemap' element={<RouteMap />}></Route>
+                    <Route path='/transfer' element={<Transfer />}></Route>
+                    <Route path='/timetable' element={<TimeTable />}></Route>
+                    <Route path='/position' element={<Position />}></Route>
                     <Route path='/about' element={<About />}></Route>  
                 </Routes>
             </main>
@@ -65,10 +74,10 @@ function App() {
                     <Typography variant="body1">以下の事項に注意して閲覧してください</Typography>
                 </DialogTitle>
                 <DialogContent>
+                    <Typography variant='body2'>初めての方はこちらをご覧ください→<RouterLink to='/about' onClick={closeWarnModal}>大府市営地下鉄について</RouterLink></Typography>
                     <Typography variant='body2'>このウェブサイトは大府市公式のものではありません。</Typography>
                     <Typography variant='body2'>大府市交通局、大府市営地下鉄はフィクションであり、実在の大府市とは一切関係ありません。</Typography>
-                    <Typography variant='body2'>初めての方はこちらをご覧ください→<RouterLink to='/about'>大府市営地下鉄について</RouterLink></Typography>  
-                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                         <FormControlLabel
                             control={<input type="checkbox" checked={!isShowWarn} color='primary' onChange={(e) => setIsShowWarn(!e.target.checked)} />}
                             label="今後この警告を表示しない"
@@ -77,7 +86,7 @@ function App() {
                         <IconButton onClick={closeWarnModal} sx={{ mr: 1 }}>
                               <CloseIcon fontSize='small' />
                         </IconButton>
-                    </div>
+                    </Box>
                 </DialogContent>
             </Dialog>
 

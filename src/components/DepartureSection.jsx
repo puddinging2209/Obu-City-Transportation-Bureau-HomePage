@@ -20,12 +20,12 @@ import {
 } from '@mui/material';
 
 
-import { addMyStationAtom, myStationsAtom } from '../../Atom.js';
-import searchNearestStation from './searchNearestStation.js';
+import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
+import searchNearestStation from '../utils/searchNearestStation.js';
 
-import busStops from '../../../public/data/busStops.json';
-import stations from '../../../public/data/stations.json';
-import DepartureCard from '../../components/DepartureCard.jsx';
+import busStops from '../../public/data/busStops.json';
+import stations from '../../public/data/stations.json';
+import DepartureCard from './DepartureCard.jsx';
 
 export default function DepartureSection() {
     const navigate = useNavigate();

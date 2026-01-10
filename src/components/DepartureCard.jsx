@@ -21,7 +21,7 @@ import { useAtom, useSetAtom } from 'jotai';
 import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 
-import { addMyStationAtom, myStationsAtom } from '../Atom.js';
+import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
 
 import DepartureRow from './DepartureRow.jsx';
 import DirectionBottomSheet from './DirectionBottomSheet.jsx';
@@ -31,7 +31,7 @@ import busStops from '../../public/data/busStops.json';
 import lines from '../../public/data/lines.json';
 import stations from '../../public/data/stations.json';
 
-import { searchDeparture } from '../readOud.js';
+import { searchDeparture } from '../utils/readOud.js';
 import { name } from '../utils/Station.js';
 import { nowsecond } from '../utils/Time.js';
 
@@ -40,11 +40,10 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 
     const [myStations, setMyStations] = useAtom(myStationsAtom);
 
-    const [direction, setDirection] = React.useState(stations[station?.name]?.directions?.[0] || busStops[station?.name]?.directions?.[0] || null);
+    const [direction, setDirection] = React.useState(null);
     const [departures, setDepartures] = React.useState([]);
 
     React.useEffect(() => {
-        console.log(station);
         setDirection(stations[station?.name]?.directions?.[0] || busStops[station?.name]?.directions?.[0] || null);
     }, []);
 

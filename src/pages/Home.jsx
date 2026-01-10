@@ -1,5 +1,5 @@
-import DepartureSection from "./DepartureSection"
-import NoticeSection from "../../components/NoticeSection"
+import DepartureSection from "../components/DepartureSection"
+import NoticeSection from "../components/NoticeSection"
 
 function Home() {
 
@@ -7,7 +7,6 @@ function Home() {
         <>
             <DepartureSection />
             <NoticeSection />
-
         </>
     )
 }
