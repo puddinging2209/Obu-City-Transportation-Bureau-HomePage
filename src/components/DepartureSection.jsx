@@ -148,7 +148,7 @@ export default function DepartureSection() {
                 <DialogActions>
                     <Button onClick={() => {
                         navigate('/home');
-                        setIsOpenShowMore(false);
+                        setIsShowSearch(false);
                     }}>閉じる</Button>
                 </DialogActions>
           </Dialog>
