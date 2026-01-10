@@ -121,7 +121,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                             onClick={() => {
                                 setIsOpenMobileSelector({
                                     open: true,
-                                    options: stations[station.name]?.directions.map(d => ({ value: d, label: `${d.stationName}方面`, route: d.route }))
+                                    options: directionOptions
                                 });
                                 navigate(`?modal=directionSelector-${station.name}`);
                             }}
