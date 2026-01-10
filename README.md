@@ -10,6 +10,8 @@
 
 ふれあいバスについても、情報が間違っている場合があります。あらかじめご了承ください。
 
+---
+
 ## License Summary / ライセンス概要
 
 - This repository uses **multiple licenses**, applied per directory.
