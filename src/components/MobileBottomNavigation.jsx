@@ -1,12 +1,12 @@
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import MapIcon from '@mui/icons-material/Map';
-import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import ScheduleIcon from '@mui/icons-material/Schedule';
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import TrainIcon from '@mui/icons-material/Train';
+import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
 
 export default function MobileBottomNavigation() {
   const navigate = useNavigate();

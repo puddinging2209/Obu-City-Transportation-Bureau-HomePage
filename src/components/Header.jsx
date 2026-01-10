@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import { AppBar, Button, ButtonGroup, Toolbar, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
@@ -16,12 +16,15 @@ function Header() {
                     大府市交通局
                 </Typography>
 
-                <Box sx={{ display: { xs: 'none', md: 'flex' }, textAlign: 'right', gap: 1 }}>
+                <ButtonGroup variant='text' sx={{ display: { xs: 'none', md: 'block' }, ml: 'auto' }}>
                     <Button onClick={() => navigate('/routemap')}>路線図</Button>
                     <Button onClick={() => navigate('/transfer')}>乗換案内</Button>
                     <Button onClick={() => navigate('/timetable')}>時刻表</Button>
                     <Button onClick={() => navigate('/position')}>列車位置</Button>
-                </Box>
+                    <Button onClick={() => navigate('/about')}>大府市営地下鉄について</Button>
+                </ButtonGroup>
+
+                <Button sx={{ display: { xs:  'block', md: 'none' }, ml: 'auto' }} onClick={() => navigate('/about')}>大府市営地下鉄について</Button>
             </Toolbar>
         </AppBar>
     );

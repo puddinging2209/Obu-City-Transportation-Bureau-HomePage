@@ -1,7 +1,7 @@
-import lines from '../public/data/lines.json';
-import { name_number } from './utils/Station.js';
-import { adjustTime } from './utils/Time.js';
-import { terminal, typeName } from './utils/Train.js';
+import lines from '../../public/data/lines.json';
+import { name_number } from './Station.js';
+import { adjustTime } from './Time.js';
+import { terminal, typeName } from './Train.js';
 
 async function dia(rosen) {
 
@@ -24,7 +24,7 @@ async function dia(rosen) {
     return diagram;
 }
 
-function indexOfStation(diagram, station, rosen, direction) {
+function indexofFromStation(diagram, station, rosen, direction) {
     const exceptions = [
         { exc: { station: '大府', direction: { route: '大府環状線', stationName: '江端町' } }, return: 12 },
         { exc: { station: '日高', direction: { route: '刈谷環状線', stationName: '刈谷青山' } }, return: 17 },
@@ -64,8 +64,14 @@ function codeofToStation(station, direction, rosen) {
 
 function fromStop(diagram, busStop, direction) {
     const exceptions = [
-        { exc: { busStop: '大府駅東', direction: { route: '東コース', stationName: 'メディアス体育館おおぶ・名鉄前後駅' } }, return: 2 },
-        { exc: { busStop: '大府駅東', direction: { route: '東コース', stationName: '追分町六丁目・名鉄前後駅' } }, return: 32 },
+        { exc: { busStop: '大府駅東', direction: { route: '東コース', stationName: 'メディアス体育館おおぶ' } }, return: 2 },
+        { exc: { busStop: '大府駅東', direction: { route: '東コース', stationName: '追分町六丁目' } }, return: 32 },
+        { exc: { busStop: '共和駅西', direction: { route: '西コース', stationName: 'メディアス体育館おおぶ' } }, return: 33 },
+        { exc: { busStop: '大府駅西', direction: { route: '南コース', stationName: '長寿医療研究センター' } }, return: 35 },
+        { exc: { busStop: '共和駅東', direction: { route: '北コース', stationName: '口無大池' } }, return: 34 },
+        { exc: { busStop: '大府市役所', direction: { route: '中央コース', stationName: 'おおぶ文化交流の杜' } }, return: 24 },
+        { exc: { busStop: '大府市役所', direction: { route: 'サクラコース', stationName: 'げんきの郷' } }, return: 32 },
+        { exc: { busStop: '大府駅東', direction: { route: 'ツツジコース', stationName: 'げんきの郷' } }, return: 34 },
     ];
     const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ busStop, direction }));
     if (exception) {
@@ -84,7 +90,6 @@ function busIndex(diagram, busStop, direction) {
         { exc: { busStop: '長寿医療研究センター', direction: { route: '東コース', stationName: '大府駅東' } }, return: [{ from: 1, to: 0 }, { from: 1, to: 2 }] },
         { exc: { busStop: '大府駅東', direction: { route: '中央コース', stationName: '大府市役所' } }, return: [{ from: 0, to: 1 }, { from: 25, to: 24 }] },
         { exc: { busStop: '大府市役所', direction: { route: '中央コース', stationName: '大府駅東' } }, return: [{ from: 1, to: 0 }, { from: 24, to: 25 }] },
-        { exc: { busStop: '大府駅東', direction: { route: 'サクラコース', stationName: '大府市役所' } }, return: [{ from: 0, to: 1 }, { from: 33, to: 32 }] },
         { exc: { busStop: '大府市役所', direction: { route: 'サクラコース', stationName: '大府駅東' } }, return: [{ from: 1, to: 0 }, { from: 32, to: 33 }] },
         { exc: { busStop: '北崎町一丁目', direction: { route: '東コース', stationName: '名鉄前後駅' } }, return: [{ from: 15, to: 18 }, { from: 21, to: 18 }] },
         { exc: { busStop: '北崎町一丁目', direction: { route: '北コース', stationName: '名鉄前後駅' } }, return: [{ from: 14, to: 17 }, { from: 20, to: 17 }] },
@@ -109,12 +114,12 @@ function busIndex(diagram, busStop, direction) {
 
 async function searchDeparture(sta, direction) {
 
-    const station = sta.name;
     if (sta.role === 'station') {
+        const station = sta.name;
         const json = lines[direction.route].json;
         const diagram = await dia(json);
         const rosen = lines[direction.route].code;
-        const stationIndex = indexOfStation(diagram, station, rosen, direction);
+        const stationIndex = indexofFromStation(diagram, station, rosen, direction);
         const toCode = codeofToStation(station, direction, rosen);
         const numofStations = diagram.railway.stations.length;
         const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == toCode)) ? 0 : 1;
@@ -143,14 +148,18 @@ async function searchDeparture(sta, direction) {
             }
         });
     } else if (sta.role === 'busStop') {
-        const busStop = station;
+        const busStop = sta.name;
         let routes = direction.route.split('/');
         const directions = routes.map((route) => {
-            return { route: route, stationName: direction.stationName };
-        })
+            return { route: route, stationName: direction.stationName }
+        });
         let departures = await Promise.all(routes.map(async (route, i) => {
             const diagram = await dia(route);
-            const index = busIndex(diagram, busStop, { ...directions[i], stationName: directions[i].stationName.split('・')[0] });
+            const index = busIndex(
+                diagram,
+                busStop,
+                { ...directions[i], stationName: directions[i].stationName.split('・')[(busStop === '大府駅東' && route === 'サクラコース') ? 1 : 0] }
+            );
             return index.map((index) => {
                 const d = (index.from < index.to) ? 0 : 1;
                 const numofStations = diagram.railway.stations.length;
