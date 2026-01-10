@@ -83,7 +83,7 @@ export default function DepartureSection() {
 
           <Stack direction="row" spacing={2} sx={{ overflowX: 'auto', whiteSpace: 'nowrap', flexWrap: 'nowrap', pb: 1, scrollSnapType: { xs: 'x mandatory', md: 'none'} }}>
             {myStations.map(sta => 
-              <Box sx={{ scrollSnapAlign: { xs: 'center', md: 'none'} }}>
+              <Box sx={{ scrollSnapAlign: { xs: 'center', md: 'none'} }} key={sta.name}>
                 <DepartureCard key={`my-${sta.name}`} station={sta} removeButton />
               </Box>
             )}
@@ -113,7 +113,7 @@ export default function DepartureSection() {
               fullWidth
           >
               <DialogTitle>
-                  <h3>マイ駅・停留所を追加</h3>
+                  <Typography variant="h6" component="div">マイ駅・停留所を追加</Typography>
               </DialogTitle>
                 <DialogContent>
                     <Select
@@ -148,7 +148,7 @@ export default function DepartureSection() {
                 <DialogActions>
                     <Button onClick={() => {
                         navigate('/home');
-                        setIsOpenShowMore(false);
+                        setIsShowSearch(false);
                     }}>閉じる</Button>
                 </DialogActions>
           </Dialog>
