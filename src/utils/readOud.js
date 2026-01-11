@@ -3,6 +3,15 @@ import { name_number } from './Station.js';
 import { adjustTime } from './Time.js';
 import { terminal, typeName } from './Train.js';
 
+function resolveRosen(rosen, lines) {
+    if (lines[rosen]) return lines[rosen].json;
+
+    const found = Object.values(lines).find(l => l.code === rosen);
+    if (found) return found.json;
+
+    return rosen;
+}
+
 export async function dia(rosen) {
 
     async function searchOud(rosen) {
@@ -17,12 +26,7 @@ export async function dia(rosen) {
         }
     }
 
-    if (lines[rosen]) {
-        rosen = lines[rosen].json;
-    } else if (Object.values(lines).some(rosen => rosen.code === rosen)) {
-        rosen = lines.find(rosen => rosen.code === rosen).json;
-    }
-    const diagram = await searchOud(rosen);
+    const diagram = await searchOud(resolveRosen(rosen));
     return diagram;
 }
 
