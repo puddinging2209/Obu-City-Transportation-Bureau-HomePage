@@ -70,8 +70,8 @@ function App() {
                 fullWidth
             >
                 <DialogTitle>
-                    <Typography variant="h5">このウェブサイトの内容は架空のもので実在しません</Typography>
-                    <Typography variant="body1">以下の事項に注意して閲覧してください</Typography>
+                    <Typography variant="h5" component="div">このウェブサイトの内容は架空のもので実在しません</Typography>
+                    <Typography variant="body1" component="div">以下の事項に注意して閲覧してください</Typography>
                 </DialogTitle>
                 <DialogContent>
                     <Typography variant='body2'>初めての方はこちらをご覧ください→<RouterLink to='/about' onClick={closeWarnModal}>大府市営地下鉄について</RouterLink></Typography>
