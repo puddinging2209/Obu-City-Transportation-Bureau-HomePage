@@ -7,7 +7,7 @@ import {
     SwipeableDrawer,
     Typography,
 } from '@mui/material';
-import lines from '../../public/data/lines.json';
+import lines from '../data/lines.json';
 
 export default function DirectionBottomSheet({
   open,

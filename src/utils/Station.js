@@ -1,4 +1,4 @@
-import stations from '../../public/data/stations.json';
+import stations from '../data/stations.json';
 
 export function number_name(code) {
     const result = Object.values(stations).find(station => station.code.includes(code))?.name;
