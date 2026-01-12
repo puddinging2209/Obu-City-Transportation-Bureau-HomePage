@@ -1,10 +1,10 @@
-import lines from '../../public/data/lines.json';
+import lines from '../data/lines.json';
 import { name_number } from './Station.js';
 import { adjustTime } from './Time.js';
 import { terminal, typeName } from './Train.js';
 
-function resolveRosen(rosen, lines) {
-    if (lines[rosen]) return lines[rosen].json;
+function resolveRosen(rosen) {
+    if (lines?.[rosen]) return lines[rosen].json;
 
     const found = Object.values(lines).find(l => l.code === rosen);
     if (found) return found.json;

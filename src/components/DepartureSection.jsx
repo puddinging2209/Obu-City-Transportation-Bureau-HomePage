@@ -23,8 +23,8 @@ import {
 import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
 import searchNearestStation from '../utils/searchNearestStation.js';
 
-import busStops from '../../public/data/busStops.json';
-import stations from '../../public/data/stations.json';
+import busStops from '../data/busStops.json';
+import stations from '../data/stations.json';
 import DepartureCard from './DepartureCard.jsx';
 
 export default function DepartureSection() {

@@ -27,25 +27,28 @@ import DepartureRow from './DepartureRow.jsx';
 import DirectionBottomSheet from './DirectionBottomSheet.jsx';
 import OverflowMarquee from './OverflowMarquee.jsx';
 
-import busStops from '../../public/data/busStops.json';
-import lines from '../../public/data/lines.json';
-import stations from '../../public/data/stations.json';
+import busStops from '../data/busStops.json';
+import lines from '../data/lines.json';
+import stations from '../data/stations.json';
 
 import { searchDeparture } from '../utils/readOud.js';
 import { name } from '../utils/Station.js';
 import { nowsecond } from '../utils/Time.js';
+
+const StationContext = React.createContext(null);
+const LineContext = React.createContext(null);
 
 function DepartureCard({ station, addButton = false, removeButton = false }) {
     const navigate = useNavigate();
 
     const [myStations, setMyStations] = useAtom(myStationsAtom);
 
-    const [direction, setDirection] = React.useState(null);
+    const [direction, setDirection] = React.useState(stations[station?.name]?.directions?.[0] || busStops[station?.name]?.directions?.[0] || null);
     const [departures, setDepartures] = React.useState([]);
 
     React.useEffect(() => {
         setDirection(stations[station?.name]?.directions?.[0] || busStops[station?.name]?.directions?.[0] || null);
-    }, []);
+    }, [station]);
 
     React.useEffect(() => {
         if (direction) {
@@ -79,6 +82,8 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 
     return (
         <>
+        <LineContext value={direction?.route}>
+        <StationContext value={station.name}>
             <Card key={station.name} sx={{ width: { xs: '80vw', md: 300 }, minHeight: 240, position: 'relative', flexShrink: 0 }}>
                 <CardContent>
                     <Box sx={{ mb: 1 }}>
@@ -133,9 +138,9 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                     <Stack spacing={1}>
                         {(departures?.filter(d => d.time >= nowsecond()).length !== 0) ? (
                             <Box>
-                                {departures?.filter(d => d.time >= nowsecond()).slice(0, 2)?.map(dep => (
-                                    <DepartureRow key={dep.time} dep={dep} />
-                                ))}
+                                    {departures?.filter(d => d.time >= nowsecond()).slice(0, 2)?.map(dep => (
+                                        <DepartureRow key={dep.time} dep={dep} />
+                                    ))}
                             </Box>
                         ) : (
                             <Table sx={{ tableLayout: 'fixed', width: '100%' }}>
@@ -230,8 +235,11 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                     }}>閉じる</Button>
                 </DialogActions>
             </Dialog>
+        </StationContext>
+        </LineContext>
         </>
     )
 }
 
+export { LineContext, StationContext };
 export default DepartureCard
