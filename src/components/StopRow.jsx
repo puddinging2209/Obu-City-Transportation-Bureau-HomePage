@@ -42,8 +42,8 @@ function StopRow({ stop }) {
                                 <Grid
                                 item
                                 sx={{
-                                    flex: '0 0 42px',
-                                    textAlign: 'right',
+                                    flex: '0 0 90px',
+                                    textAlign: 'center',
                                 }}
                                 >
                                     <Typography variant="body2" fontWeight="bold">
@@ -55,8 +55,8 @@ function StopRow({ stop }) {
                                 <Grid
                                     item
                                     sx={{
-                                        flex: '0 0 42px',
-                                        textAlign: 'right',
+                                        flex: '0 0 90px',
+                                        textAlign: 'center',
                                     }}
                                     >
                                     <Typography variant="body2" fontWeight="bold">

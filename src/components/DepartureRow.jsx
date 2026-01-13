@@ -133,8 +133,8 @@ function DepartureRow({ dep, needId = false }) {
                             <Grid
                             item
                             sx={{
-                                flex: '0 0 42px',
-                                textAlign: 'right',
+                                flex: '0 0 90px',
+                                textAlign: 'center',
                             }}
                             >
                                 <Typography variant="body2" fontWeight="bold">到着時刻</Typography>
@@ -144,8 +144,8 @@ function DepartureRow({ dep, needId = false }) {
                             <Grid
                                 item
                                 sx={{
-                                    flex: '0 0 42px',
-                                    textAlign: 'right',
+                                    flex: '0 0 90px',
+                                    textAlign: 'center',
                                 }}
                                 >
                                 <Typography variant="body2" fontWeight="bold">発車時刻</Typography>
