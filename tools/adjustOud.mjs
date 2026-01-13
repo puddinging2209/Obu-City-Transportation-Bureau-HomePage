@@ -58,6 +58,8 @@ async function adjustStationNames(line, newDiagram) {
         console.log(old, '>', name);
     });
 
+    newDiagram.railway.name = line;
+
     return newDiagram;
 }
 

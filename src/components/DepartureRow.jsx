@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Typography } from '@mui/material';
 
 import { name } from '../utils/Station.js';
-import { toTimeString } from '../utils/Time.js';
+import { nowsecond, toTimeString } from '../utils/Time.js';
 import formatStops from '../utils/formatStops.js';
 
 import OverflowMarquee from './OverflowMarquee.jsx';
@@ -20,9 +20,13 @@ function DepartureRow({ dep, needId = false }) {
     const [stops, setStops] = React.useState([]);
 
     const [isShowDialog, setIsShowDialog] = React.useState(false);
+    const [time, setTime] = React.useState(null);
 
     React.useEffect(() => {
-        if (isShowDialog) formatStops(line, dep.train).then(stops => setStops(stops));
+        if (isShowDialog) {
+            formatStops(line, dep.train).then(stops => setStops(stops));
+            setTime(nowsecond());
+        }
     }, [isShowDialog]);
 
     return (
@@ -32,6 +36,7 @@ function DepartureRow({ dep, needId = false }) {
                 sx={{
                     borderBottom: '1px solid rgba(0,0,0,0.12)',
                     py: '3px',
+                    cursor: 'pointer',
                 }}
                 onClick={() => {
                     setIsShowDialog(true);
@@ -113,45 +118,31 @@ function DepartureRow({ dep, needId = false }) {
                         wrap="nowrap"
                         alignItems="center"
                         columnGap={0.5}
-                        sx={{ justifyContent: 'space-between' }}
+                        gap={2}
+                        sx={{ justifyContent: 'flex-end' }}
                     >
-                        <Grid item sx={{ flex: '0 0 auto' }}>
-                            <Box
-                                sx={{
-                                    textAlign: 'left',
-                                    flex: '1 1 auto',
-                                    width: '100%',
-                                }}
-                            >
-                                <Typography variant="body1">駅</Typography>
-                            </Box>
-                        </Grid>
-                        <Grid spacing={2} container>
-                            {/* 到着時刻 */}
-                            <Grid
+                        <Grid
                             item
                             sx={{
-                                flex: '0 0 90px',
+                                flex: '0 0 42px',
+                                textAlign: 'center',
+                            }}
+                        >
+                            <Typography variant="body2" fontWeight="bold">到着</Typography>
+                        </Grid>
+
+                        <Grid
+                            item
+                            sx={{
+                                flex: '0 0 42px',
                                 textAlign: 'center',
                             }}
                             >
-                                <Typography variant="body2" fontWeight="bold">到着時刻</Typography>
-                            </Grid>
-
-                            {/* 発車時刻 */}
-                            <Grid
-                                item
-                                sx={{
-                                    flex: '0 0 90px',
-                                    textAlign: 'center',
-                                }}
-                                >
-                                <Typography variant="body2" fontWeight="bold">発車時刻</Typography>
-                            </Grid>
+                            <Typography variant="body2" fontWeight="bold">発車</Typography>
                         </Grid>
                     </Grid>
                     {stops?.map(stop => (
-                        <StopRow needId={true} key={stop.dep} stop={stop} />
+                        <StopRow key={stop.dep} stop={stop} departed={(stop.dep ?? stop.arr) < time} />
                     ))}
                 </DialogContent>
                 <DialogActions>
