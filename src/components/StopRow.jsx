@@ -6,7 +6,7 @@ import { toTimeString } from '../utils/Time.js';
 import OverflowMarquee from './OverflowMarquee.jsx';
 
 
-function StopRow({ stop }) {
+function StopRow({ stop, departed = false }) {
     return (
         <>
             <Box
@@ -42,11 +42,11 @@ function StopRow({ stop }) {
                                 <Grid
                                 item
                                 sx={{
-                                    flex: '0 0 90px',
+                                    flex: '0 0 42px',
                                     textAlign: 'center',
                                 }}
                                 >
-                                    <Typography variant="body2" fontWeight="bold">
+                                    <Typography variant="body2" fontWeight={!departed ? "bold" : "normal"}>
                                         {stop.arr ? toTimeString(stop.arr) : ''}
                                     </Typography>
                                 </Grid>
@@ -55,18 +55,18 @@ function StopRow({ stop }) {
                                 <Grid
                                     item
                                     sx={{
-                                        flex: '0 0 90px',
+                                        flex: '0 0 42px',
                                         textAlign: 'center',
                                     }}
                                     >
-                                    <Typography variant="body2" fontWeight="bold">
+                                    <Typography variant="body2" fontWeight={!departed ? "bold" : "normal"}>
                                         {stop.dep ? toTimeString(stop.dep) : ''}
                                     </Typography>
                                 </Grid>
                             </Grid>
                         ) : (
-                            <Box sx={{ width: '84px', textAlign: 'center' }}>
-                                <Typography variant="body2" fontWeight="bold">通過</Typography>
+                            <Box sx={{ width: '42px', textAlign: 'center' }}>
+                                <Typography variant="body2">通過</Typography>
                             </Box>
                         )}
                     </>
