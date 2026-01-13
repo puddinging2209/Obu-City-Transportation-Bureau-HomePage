@@ -11,21 +11,19 @@ import StopRow from './StopRow.jsx';
 
 import types from '../data/types.json';
 
-import { LineContext, StationContext } from './DepartureCard.jsx';
+import { LineContext } from './DepartureCard.jsx';
 
 function DepartureRow({ dep, needId = false }) {
-
-    const station = React.useContext(StationContext);
 
     const line = React.useContext(LineContext);
 
     const [stops, setStops] = React.useState([]);
 
-    React.useEffect(() => {
-        formatStops(line, dep.train).then(stops => setStops(stops));
-    }, [line]);
-
     const [isShowDialog, setIsShowDialog] = React.useState(false);
+
+    React.useEffect(() => {
+        if (isShowDialog) formatStops(line, dep.train).then(stops => setStops(stops));
+    }, [isShowDialog]);
 
     return (
         <>

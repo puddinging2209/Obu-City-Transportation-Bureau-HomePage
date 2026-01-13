@@ -1,7 +1,7 @@
 import { dia } from './readOud';
 import { name } from './Station';
 
-function seachStops(diagram, train) {
+function searchStops(diagram, train) {
     const stationList = diagram.railway.stations.map((sta) => sta.name);
     return train.timetable._data.map((sta, i) => {
         const stationName = name(stationList[(train.direction === 0) ? i : stationList.length - 1 - i])
@@ -28,7 +28,7 @@ function seachStops(diagram, train) {
 
 export default async function formatStops(line, train) {
     const innerDiagram = await dia(line);
-    const inner = seachStops(innerDiagram, train);
+    const inner = searchStops(innerDiagram, train);
 
     // 列車番号で同一列車を識別
     // 列車番号の入力がすむまで線内区間のみ
