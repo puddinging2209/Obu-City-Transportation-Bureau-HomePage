@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 /** lines.json を読む */
 async function loadLines() {
     const json = await fs.readFile(
-        path.join(__dirname, '..', 'public', 'data', 'lines.json'),
+        path.join(__dirname, '..', 'src', 'data', 'lines.json'),
         'utf-8'
     );
     return JSON.parse(json);

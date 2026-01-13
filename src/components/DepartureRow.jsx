@@ -107,9 +107,9 @@ function DepartureRow({ dep, needId = false }) {
             >
                 <DialogTitle>
                     {isShowDialog && (
-                        <>
-                            <Typography graphy variant="h6">{`${dep.typeName} ${name(dep.terminal)}行`}</Typography>
-                        </>
+                        <Box sx={{ borderBottom: `solid ${types[dep.typeName].color}` }}>
+                            <Typography graphy variant="h6">{`${dep.typeName}${dep.train.name} ${(dep.train.count != '') ? `${dep.train.count}号` : ''} ${name(dep.terminal)}行`}</Typography>
+                        </Box>
                     )}
                 </DialogTitle>
                 <DialogContent dividers>

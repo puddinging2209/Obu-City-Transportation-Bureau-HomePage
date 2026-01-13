@@ -6,16 +6,12 @@ import {
     Button,
     Card,
     CardContent,
-    Container,
     Dialog,
     DialogActions,
     DialogContent,
     DialogTitle,
     IconButton,
     Stack,
-    Table,
-    TableCell,
-    TableRow,
     Typography
 } from '@mui/material';
 import { useAtom, useSetAtom } from 'jotai';
@@ -53,8 +49,9 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 
     React.useEffect(() => {
         if (direction) {
-            searchDeparture(station, direction).then(deps => setDepartures(deps));
+            searchDeparture(station, direction).then(deps => setDepartures(deps))
         }
+    
     }, [direction]);
 
     const addMyStation = useSetAtom(addMyStationAtom);

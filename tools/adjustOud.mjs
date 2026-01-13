@@ -24,7 +24,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const TEMP_DIR = path.resolve(__dirname, 'temp');
-const OUT_DIR = path.resolve(__dirname, '../public/oud');
+// const OUT_DIR = path.resolve(__dirname, '../public/oud');
+const OUT_DIR = path.resolve(__dirname, './temp');
 
 // ========= CLI引数 =========
 const line = process.argv[2];
@@ -70,7 +71,7 @@ async function writeOud(line, diagram) {
     const outputPath = path.join(OUT_DIR, `${line}.json`);
     await writeFile(
         outputPath,
-        JSON.stringify(diagram, null, 2),
+        JSON.stringify(diagram),
         'utf-8'
     );
 
@@ -83,9 +84,9 @@ async function main() {
         console.log(`▶ 変換開始: ${fileName}.oud2 → ${line}.json`);
 
         const diagram = await readOud2(fileName);
-        adjustStationNames(line, diagram);
+        const newDiagram = await adjustStationNames(line, diagram);
 
-        await writeOud(line, diagram);
+        await writeOud(line, newDiagram);
     } catch (err) {
         console.error('❌ 変換失敗');
         console.error(err.message);
