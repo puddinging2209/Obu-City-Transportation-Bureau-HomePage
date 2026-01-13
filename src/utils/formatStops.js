@@ -37,13 +37,30 @@ async function searchOuter(train, first, last, line) {
     if (first) {
         const diagrams = await Promise.all(stations[first].routes.filter(route => lines[route].json != lines[line].json).map(route => dia(route)));
         const beforeDiagram = diagrams.find(diagram => {
-            return diagram.railway.diagrams[0].trains.flat().some(d => d.number == train.number);
+            return diagram.railway.diagrams[0].trains.flat().some(d => d.number == train.number && d.number !== '');
         });
         if (beforeDiagram) {
-            const before = beforeLine.railway.diagrams[0].trains.flat().find(d => d.number == train.number);
-            result.before.unshift(...searchStops(beforeDiagram, before));
+            const before = beforeDiagram.railway.diagrams[0].trains.flat().find(d => d.number == train.number && d.number !== '');
+            const beforeStops = searchStops(beforeDiagram, before);
+            const firstIndex = beforeStops.findIndex(sta => sta.name === first);
+            result.before.unshift(...beforeStops.slice(firstIndex));
             if (before.operations.some(op => op.outerType === 'B')) {
-                result.before.unshift(...searchOuter(before, result.before[0], null, beforeLine.railway.name));
+                result.before.unshift(...searchOuter(before, result.before[0], null, beforeDiagram.railway.name));
+            }
+        }
+    }
+    if (last) {
+        const diagrams = await Promise.all(stations[last].routes.filter(route => lines[route].json != lines[line].json).map(route => dia(route)));
+        const afterDiagram = diagrams.find(diagram => {
+            return diagram.railway.diagrams[0].trains.flat().some(d => d.number == train.number && d.number !== '');
+        });
+        if (afterDiagram) {
+            const after = afterDiagram.railway.diagrams[0].trains.flat().find(d => d.number == train.number && d.number !== '');
+            const afterStops = searchStops(afterDiagram, after);
+            const lastIndex = afterStops.findIndex(sta => sta.name === last);
+            result.after.push(...afterStops.slice(lastIndex, afterStops.length));
+            if (after.operations.some(op => op.outerType === 'A')) {
+                result.after.push(...searchOuter(after, result.after[0], null, afterDiagram.railway.name));
             }
         }
     }
@@ -57,9 +74,8 @@ export default async function formatStops(line, train) {
     const before = train.operations.some(op => op.outerType === 'B');
     const after = train.operations.some(op => op.outerType === 'A');
 
-    const outer = searchOuter(train, (before) ? inner[0].name : null, (after) ? inner.at(-1).name : null, line);
+    const outer = await searchOuter(train, (before) ? inner[0].name : null, (after) ? inner.at(-1).name : null, line);
 
-    // 列車番号で同一列車を識別
     const preResult = [...outer.before, ...inner, ...outer.after];
     let result = [];
     for (let i = 0; i < preResult.length; i++) {
