@@ -1,7 +1,7 @@
 import lines from '../data/lines.json';
 import stations from '../data/stations.json';
 
-import { dia } from './readOud';
+import { dia, resolveRosen } from './readOud';
 import { name } from './Station';
 
 function searchStops(diagram, train) {
@@ -35,17 +35,19 @@ async function searchOuter(train, first, last, line) {
         after: []
     };
     if (first) {
-        const diagrams = await Promise.all(stations[first].routes.filter(route => lines[route].json != lines[line].json).map(route => dia(route)));
+        const diagrams = await Promise.all(stations[first].routes.filter(route => resolveRosen(route) != resolveRosen(line)).map(route => dia(route)));
         const beforeDiagram = diagrams.find(diagram => {
             return diagram.railway.diagrams[0].trains.flat().some(d => d.number == train.number && d.number !== '');
         });
         if (beforeDiagram) {
             const before = beforeDiagram.railway.diagrams[0].trains.flat().find(d => d.number == train.number && d.number !== '');
+
             const beforeStops = searchStops(beforeDiagram, before);
-            const firstIndex = beforeStops.findIndex(sta => sta.name === first);
-            result.before.unshift(...beforeStops.slice(firstIndex));
+            const lastIndex = beforeStops.findIndex(sta => sta.name === first);
+            result.before.unshift(...beforeStops.slice(0, lastIndex + 1));
             if (before.operations.some(op => op.outerType === 'B')) {
-                result.before.unshift(...searchOuter(before, result.before[0], null, beforeDiagram.railway.name));
+                const befores = await searchOuter(before, result.before[0].name, null, beforeDiagram.railway.name);
+                result.before.unshift(...befores.before);
             }
         }
     }
@@ -56,11 +58,13 @@ async function searchOuter(train, first, last, line) {
         });
         if (afterDiagram) {
             const after = afterDiagram.railway.diagrams[0].trains.flat().find(d => d.number == train.number && d.number !== '');
+
             const afterStops = searchStops(afterDiagram, after);
-            const lastIndex = afterStops.findIndex(sta => sta.name === last);
-            result.after.push(...afterStops.slice(lastIndex, afterStops.length));
+            const firstIndex = afterStops.findIndex(sta => sta.name === last);
+            result.after.push(...afterStops.slice(firstIndex, afterStops.length));
             if (after.operations.some(op => op.outerType === 'A')) {
-                result.after.push(...searchOuter(after, result.after[0], null, afterDiagram.railway.name));
+                const afters = await searchOuter(after, null, result.after[0].name, afterDiagram.railway.name);
+                result.after.push(...afters.after);
             }
         }
     }
@@ -90,5 +94,6 @@ export default async function formatStops(line, train) {
             continue;
         } else result.push(preResult[i]);
     }
+
     return result;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Typography } from '@mui/material';
+import { Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Tab, Tabs, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 import { name } from '../utils/Station.js';
 import { nowsecond, toTimeString } from '../utils/Time.js';
@@ -20,14 +21,35 @@ function DepartureRow({ dep, needId = false }) {
     const [stops, setStops] = React.useState([]);
 
     const [isShowDialog, setIsShowDialog] = React.useState(false);
+    const [multilayer, setMultilayer] = React.useState(0);
     const [time, setTime] = React.useState(null);
 
     React.useEffect(() => {
         if (isShowDialog) {
-            formatStops(line, dep.train).then(stops => setStops(stops));
-            setTime(nowsecond());
+            if (!dep.multilayer) {
+                formatStops(line, dep.train).then(s => setStops(s));
+                setTime(nowsecond());
+            } else {
+                formatStops(line, dep.train[multilayer]).then(s => {
+                    console.log(s);
+                    setStops(s)
+                });
+                setTime(nowsecond());
+            }
         }
-    }, [isShowDialog]);
+    }, [isShowDialog, multilayer]);
+
+    // 高さを変更したカスタムTabs
+    const StyledTabs = styled(Tabs)({
+        minHeight: '32px', // 全体の最小高さを上書き
+        height: '32px',    // 高さを固定
+    });
+
+    // 高さを変更したカスタムTab
+    const StyledTab = styled(Tab)({
+        minHeight: '32px', // 各タブの最小高さを上書き
+        padding: '6px 12px', // 高さに合わせてパディングを調整
+    });
 
     return (
         <>
@@ -108,11 +130,33 @@ function DepartureRow({ dep, needId = false }) {
                 <DialogTitle>
                     {isShowDialog && (
                         <Box sx={{ borderBottom: `solid ${types[dep.typeName].color}` }}>
-                            <Typography graphy variant="h6">{`${dep.typeName}${dep.train.name} ${(dep.train.count != '') ? `${dep.train.count}号` : ''} ${name(dep.terminal)}行`}</Typography>
+                            <Typography graphy variant="h6">
+                                {!dep.multilayer ?
+                                    `${dep.typeName}${dep.train.name} ${(dep.train.count != '') ? `${dep.train.count}号` : ''} ${name(dep.terminal)}行` : 
+                                    `${dep.typeName}${dep.train[multilayer].name} ${(dep.train[multilayer].count != '') ? `${dep.train[multilayer].count}号` : ''} ${name(dep.terminal)}行`
+                                }
+                            </Typography>
                         </Box>
                     )}
                 </DialogTitle>
                 <DialogContent dividers>
+                    {dep.multilayer &&
+                        <Grid>
+                            <StyledTabs
+                                value={multilayer}
+                                onChange={(_, value) => setMultilayer(value)}
+                                sx={{ height: 1, borderBottom: '1px solid #e0e0e0' }}
+                                centered
+                            >
+                                {dep.train?.map((_, index) => {
+                                    const terminal = dep.terminal.split('・')[index];
+                                    return (
+                                        <StyledTab label={`${terminal}行`} value={index} key={`${index}${terminal}`} />
+                                    )
+                                })}
+                            </StyledTabs>
+                        </Grid>
+                    }
                     <Grid
                         container
                         wrap="nowrap"
@@ -142,7 +186,7 @@ function DepartureRow({ dep, needId = false }) {
                         </Grid>
                     </Grid>
                     {stops?.map(stop => (
-                        <StopRow key={stop.dep} stop={stop} departed={(stop.dep ?? stop.arr) < time} />
+                        <StopRow key={`${stop.name}${stop.dep ?? 'pass'}`} stop={stop} departed={(stop.dep ?? stop.arr) < time} />
                     ))}
                 </DialogContent>
                 <DialogActions>

@@ -3,7 +3,7 @@ import { name_number } from './Station.js';
 import { adjustTime } from './Time.js';
 import { terminal, typeName } from './Train.js';
 
-function resolveRosen(rosen) {
+export function resolveRosen(rosen) {
     if (lines?.[rosen]) return lines[rosen].json;
 
     const found = Object.values(lines).find(l => l.code === rosen);
@@ -120,12 +120,40 @@ function busIndex(diagram, busStop, direction) {
     return from.map((_, i) => ({ from: from[i], to: to[i] }));
 }
 
+function mergeMultilayerTrain(deps) {
+    let result = [];
+    for (let i = 0; i < deps.length; i++) {
+        const dep = deps[i];
+        if (
+            i < deps.length - 1 &&
+            Math.abs(Number(deps[i].train.number) - Number(deps[i + 1].train.number)) === 100 &&
+            deps[i].time === deps[i + 1].time
+        ) {
+            if (deps[i].terminal !== deps[i + 1].terminal)
+                result.push({
+                    ...dep,
+                    terminal: `${dep.terminal}・${deps[i + 1].terminal}`,
+                    multilayer: true,
+                    train: [dep.train, deps[i + 1].train],
+                })
+            else
+                result.push({
+                    ...dep,
+                    multilayer: false,
+                    train: dep.train,
+                })
+        } else if (i > 0 && Math.abs(Number(deps[i - 1].train.number) - Number(deps[i].train.number)) === 100 && deps[i - 1].time === deps[i].time) {
+            continue;
+        } else result.push(dep);
+    }
+    return result;
+}
+
 async function searchDeparture(sta, direction) {
 
     if (sta.role === 'station') {
         const station = sta.name;
-        const json = lines[direction.route].json;
-        const diagram = await dia(json);
+        const diagram = await dia(lines[direction.route].json);
         const rosen = lines[direction.route].code;
         const stationIndex = indexofFromStation(diagram, station, rosen, direction);
         const toCode = codeofToStation(station, direction, rosen);
@@ -140,15 +168,19 @@ async function searchDeparture(sta, direction) {
         } else if (direction.route === '刈田川線' && direction.stationName.includes('若草')) {
             departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
         }
-        return departures.map((tra) => {
-            const time = tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure;
-            return {
-                terminal: terminal(tra, diagram),
-                typeName: typeName(tra, diagram),
-                time: adjustTime(time),
-                train: tra
-            }
-        }).sort((a, b) => adjustTime(a.time) - adjustTime(b.time));
+        const result = departures
+            .map((tra) => {
+                const time = tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure;
+                return {
+                    terminal: terminal(tra, diagram),
+                    typeName: typeName(tra, diagram),
+                    time: adjustTime(time),
+                    multilayer: false,
+                    train: tra,
+                }
+            })
+            .sort((a, b) => adjustTime(a.time) - adjustTime(b.time));
+        return mergeMultilayerTrain(result);
     } else if (sta.role === 'busStop') {
         const busStop = sta.name;
         let routes = direction.route.split('/');
