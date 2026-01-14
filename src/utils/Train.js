@@ -1,29 +1,13 @@
+import { name } from "./Station";
+
 export function terminal(train, diagram) {
-    const station_list = diagram.railway.stations.map((sta) => sta.name);
-    let operation_types;
-    let terminal_index;
-    if (train.direction === 0) {
-        operation_types = [];
-        if (train.operations.length !== 0) {
-            operation_types = train.operations.map((obj) => {
-                return obj.outerType;
-            })
-        }
-        terminal_index = operation_types.indexOf("A");
-        return terminal_index === -1 ?
-            station_list[Number(train.timetable.terminalStationIndex)] :
-            diagram.railway.stations[train.timetable.terminalStationIndex].outerTerminal[train.operations[terminal_index].terminalStationIndex].name;
+    const station_list = diagram.railway.stations.map((sta) => name(sta.name));
+
+    const terminalOperation = train.operations.find((op) => op.outerType === "A");
+    if (terminalOperation) {
+        return diagram.railway.stations[(train.direction === 0) ? terminalOperation.stationIndex : station_list.length - 1 - terminalOperation.stationIndex].outerTerminal[terminalOperation.terminalStationIndex].name
     } else {
-        operation_types = [];
-        if (train.operations.length !== 0) {
-            operation_types = train.operations.map((obj) => {
-                return obj.outerType;
-            })
-        }
-        terminal_index = operation_types.indexOf("A");
-        return terminal_index === -1 ?
-            station_list[station_list.length - 1 - Number(train.timetable.terminalStationIndex)] :
-            diagram.railway.stations[station_list.length - 1 - train.timetable.terminalStationIndex].outerTerminal[train.operations[terminal_index].terminalStationIndex].name;
+        return station_list[(train.direction === 0) ? train.timetable.terminalStationIndex : station_list.length - 1 - train.timetable.terminalStationIndex];
     }
 }
 
