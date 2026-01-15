@@ -92,6 +92,10 @@ export default async function formatStops(line, train) {
             });
         } else if (i > 0 && preResult[i - 1].name === preResult[i].name) {
             continue;
+        } else if (preResult[i].name === '大府' && preResult[i].stopType === 'pass') {
+            continue;
+        } else if (preResult.some((sta) => sta.name === '大府' && sta.stopType === 'stop') && ['大府森岡', '鞍流瀬川', '若草', '大東町'].includes(preResult[i].name) && preResult[i].stopType === 'pass') {
+            continue;
         } else result.push(preResult[i]);
     }
 

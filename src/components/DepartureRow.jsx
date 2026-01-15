@@ -130,7 +130,7 @@ function DepartureRow({ dep, needId = false }) {
                 <DialogTitle>
                     {isShowDialog && (
                         <Box sx={{ borderBottom: `solid ${types[dep.typeName].color}` }}>
-                            <Typography graphy variant="h6">
+                            <Typography variant="h6">
                                 {!dep.multilayer ?
                                     `${dep.typeName}${dep.train.name} ${(dep.train.count != '') ? `${dep.train.count}号` : ''} ${name(dep.terminal)}行` : 
                                     `${dep.typeName}${dep.train[multilayer].name} ${(dep.train[multilayer].count != '') ? `${dep.train[multilayer].count}号` : ''} ${name(dep.terminal)}行`
