@@ -60,6 +60,7 @@ function codeofToStation(station, direction, rosen) {
         { exc: { station: '清城', direction: { route: '半田線住吉支線', stationName: '乙川' } }, return: 'HD17a' },
         { exc: { station: '上汐田', direction: { route: '鳴海連絡線', stationName: '鳴海' } }, return: 'GK04a' },
         { exc: { station: '鳴海', direction: { route: '鳴海連絡線', stationName: '上汐田' } }, return: 'OD14a' },
+        { exc: { station: '大府森岡', direction: { route: '大峯連絡線', stationName: '江端町' } }, return: 'OL11a' },
     ];
 
     const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
@@ -161,12 +162,21 @@ async function searchDeparture(sta, direction) {
         const d = (stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == toCode)) ? 0 : 1;
         let departures = diagram.railway.diagrams[0].trains[d].filter((tra) =>
             tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.stopType === 1 &&
-            tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure != null
+            tra.timetable._data[(d === 0) ? stationIndex : numofStations - 1 - stationIndex]?.departure != null &&
+            tra.timetable._data[(d === 0) ? stationIndex + 1 : numofStations - stationIndex] != null
         );
-        if (direction.route === '刈田川急行線' && ['半月町', '大東町', '惣作'].includes(station)) {
-            departures = departures.filter((tra) => tra.timetable._data[9]?.stopType === 1);
-        } else if (direction.route === '刈田川線' && direction.stationName.includes('若草')) {
-            departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
+        if (rosen === 'KT') {
+            if (direction.route === '刈田川急行線' && ['半月町', '大東町', '惣作'].includes(station)) {
+                departures = departures.filter((tra) => tra.timetable._data[9]?.stopType === 1);
+            } else if (direction.route === '刈田川線' && direction.stationName.includes('若草')) {
+                departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
+            }
+        } else if (rosen === 'HD') {
+            if (direction.route === '半田線' && station === '大府森岡' && direction.stationName === '大府') {
+                departures = departures.filter(tra => tra.timetable._data[d === 0 ? 1 : 28]?.stopType === 1);
+            } else if (direction.route === '大峯連絡線' && station === '大府森岡') {
+                departures = departures.filter(tra => tra.timetable._data[d === 0 ? 1 : 28]?.stopType === 2);
+            }
         }
         const result = departures
             .map((tra) => {

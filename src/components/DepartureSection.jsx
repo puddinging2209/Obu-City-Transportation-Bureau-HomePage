@@ -63,14 +63,15 @@ export default function DepartureSection() {
       <Box>
           
         <Container sx={{ mx: 'auto', pb: 2, width: { xs: '100%', md: 'fit-content' }, textAlign: 'center' }}>
-        <Box sx={{ display: 'flex', pb: 2, width: { xs: '100%', md: '100%' }, justifyContent: 'space-between', alignItems: 'center' }}>      
-        <Typography variant="h6">最寄り駅</Typography>
-        <Button sx={{ height: 36 }} loading={loadingNearest} onClick={() => {
-            if (!loadingNearest) updateNearest();
-        }}>更新</Button>
-        </Box>
+            <Box sx={{ display: 'flex', pb: 2, width: { xs: '100%', md: '100%' }, justifyContent: 'space-between', alignItems: 'center' }}>      
+            <Typography variant="h6">最寄り駅</Typography>
+            <Button sx={{ height: 36 }} loading={loadingNearest} onClick={() => {
+                if (!loadingNearest) updateNearest();
+            }}>更新</Button>
+            </Box>
         {nearestStation ?
-            <DepartureCard station={{name: nearestStation, role: 'station'}} addButton /> : 
+            <div width="100%"><DepartureCard key={`near-${nearestStation}`} station={{ name: nearestStation, role: 'station' }} addButton /></div>
+            : 
             <Card sx={{ width: { xs: '100%', md: 300 }, minHeight: 240, position: 'relative', flexShrink: 0 }}>
                 <Typography variant="body2" sx={{ mt: 2 }}>位置情報が取得できませんでした</Typography>
             </Card>
@@ -84,7 +85,7 @@ export default function DepartureSection() {
           <Stack direction="row" spacing={2} sx={{ overflowX: 'auto', whiteSpace: 'nowrap', flexWrap: 'nowrap', pb: 1, scrollSnapType: { xs: 'x mandatory', md: 'none'} }}>
             {myStations.map(sta => 
               <Box sx={{ scrollSnapAlign: { xs: 'center', md: 'none'} }} key={sta.name}>
-                <DepartureCard key={`my-${sta.name}`} station={sta} removeButton />
+                <Box sx={{ width: { xs: '85vw', md: 300 }}}><DepartureCard key={`my-${sta.name}`} station={sta} removeButton /></Box>
               </Box>
             )}
             <Card sx={{ width: { xs: '85%', md: 300 }, flexShrink: 0, scrollSnapAlign: { xs: 'center', md: 'none' } }} variant="outlined">

@@ -23,9 +23,9 @@ function searchStops(diagram, train) {
                 arr: null,
                 dep: null,
             }
-        } else {
+        } else if (diagram.railway.name === 'KT' && stationName === '知立') {
             return null
-        }
+        } else return null
     }).filter(sta => sta !== null);
 }
 
