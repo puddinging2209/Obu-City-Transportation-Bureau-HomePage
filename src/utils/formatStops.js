@@ -1,4 +1,3 @@
-import lines from '../data/lines.json';
 import stations from '../data/stations.json';
 
 import { dia, resolveRosen } from './readOud';
@@ -9,6 +8,7 @@ function searchStops(diagram, train) {
     return train.timetable._data.map((sta, i) => {
         const stationName = name(stationList[(train.direction === 0) ? i : stationList.length - 1 - i])
         if (!sta) return null;
+        if (diagram.railway.name == 'KT' && stationName === '知立') return null
         if (sta.stopType === 1) {
             return {
                 name: stationName,
@@ -23,8 +23,6 @@ function searchStops(diagram, train) {
                 arr: null,
                 dep: null,
             }
-        } else if (diagram.railway.name === 'KT' && stationName === '知立') {
-            return null
         } else return null
     }).filter(sta => sta !== null);
 }
@@ -52,7 +50,7 @@ async function searchOuter(train, first, last, line) {
         }
     }
     if (last) {
-        const diagrams = await Promise.all(stations[last].routes.filter(route => lines[route].json != lines[line].json).map(route => dia(route)));
+        const diagrams = await Promise.all(stations[last].routes.filter(route => resolveRosen(route) != resolveRosen(line)).map(route => dia(route)));
         const afterDiagram = diagrams.find(diagram => {
             return diagram.railway.diagrams[0].trains.flat().some(d => d.number == train.number && d.number !== '');
         });
@@ -85,7 +83,7 @@ export default async function formatStops(line, train) {
     for (let i = 0; i < preResult.length; i++) {
         if (i < preResult.length - 2 && preResult[i].name === preResult[i + 1].name) {
             result.push({
-                name: name(preResult[i].name),
+                name: preResult[i].name,
                 stopType: preResult[i].stopType,
                 arr: preResult[i].arr,
                 dep: preResult[i + 1].dep

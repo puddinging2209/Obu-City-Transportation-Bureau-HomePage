@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "npm-run-dev"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Start Dev Server and Debug",
+      "configurations": ["Launch Chrome against localhost"],
+      "preLaunchTask": "npm-run-dev",
+      "stopAll": true
+    }
+  ]
+}
