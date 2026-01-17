@@ -61,7 +61,7 @@ async function searchOuter(train, first, last, line) {
             const firstIndex = afterStops.findIndex(sta => sta.name === last);
             result.after.push(...afterStops.slice(firstIndex, afterStops.length));
             if (after.operations.some(op => op.outerType === 'A')) {
-                const afters = await searchOuter(after, null, result.after[0].name, afterDiagram.railway.name);
+                const afters = await searchOuter(after, null, result.after.at(-1).name, afterDiagram.railway.name);
                 result.after.push(...afters.after);
             }
         }
@@ -92,7 +92,7 @@ export default async function formatStops(line, train) {
             continue;
         } else if (preResult[i].name === '大府' && preResult[i].stopType === 'pass') {
             continue;
-        } else if (preResult.some((sta) => sta.name === '大府' && sta.stopType === 'stop') && ['大府森岡', '鞍流瀬川', '若草', '大東町'].includes(preResult[i].name) && preResult[i].stopType === 'pass') {
+        } else if (resolveRosen(line) === 'KT' && preResult.some((sta) => sta.name === '大府' && sta.stopType === 'stop') && ['大府森岡', '鞍流瀬川', '若草', '大東町'].includes(preResult[i].name) && preResult[i].stopType === 'pass') {
             continue;
         } else result.push(preResult[i]);
     }
