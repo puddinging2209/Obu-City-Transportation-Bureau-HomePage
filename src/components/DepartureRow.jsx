@@ -4,7 +4,7 @@ import { Box, Button, Chip, Dialog, DialogActions, DialogContent, DialogTitle, G
 import { styled } from '@mui/material/styles';
 
 import { name } from '../utils/Station.js';
-import { nowsecond, toTimeString } from '../utils/Time.js';
+import { adjustTime, nowsecond, toTimeString } from '../utils/Time.js';
 import formatStops from '../utils/formatStops.js';
 
 import OverflowMarquee from './OverflowMarquee.jsx';
@@ -31,7 +31,6 @@ function DepartureRow({ dep, needId = false }) {
                 setTime(nowsecond());
             } else {
                 formatStops(line, dep.train[multilayer]).then(s => {
-                    console.log(s);
                     setStops(s)
                 });
                 setTime(nowsecond());
@@ -136,6 +135,7 @@ function DepartureRow({ dep, needId = false }) {
                                     `${dep.typeName}${dep.train[multilayer].name} ${(dep.train[multilayer].count != '') ? `${dep.train[multilayer].count}号` : ''} ${name(dep.terminal)}行`
                                 }
                             </Typography>
+                            <Typography variant="body1">{!dep.multilayer ? dep.train.number : dep.train[multilayer].number}</Typography>
                         </Box>
                     )}
                     {dep.multilayer &&
@@ -186,7 +186,7 @@ function DepartureRow({ dep, needId = false }) {
                         </Grid>
                     </Grid>
                     {stops?.map(stop => (
-                        <StopRow key={`${stop.name}${stop.dep ?? 'pass'}`} stop={stop} departed={(stop.dep ?? stop.arr) < time} />
+                        <StopRow key={`${stop.name}${stop.dep ?? 'pass'}`} stop={stop} departed={adjustTime(stop.dep ?? stop.arr) < time} />
                     ))}
                 </DialogContent>
                 <DialogActions>

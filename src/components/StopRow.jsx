@@ -47,7 +47,7 @@ function StopRow({ stop, departed = false }) {
                                 }}
                                 >
                                     <Typography variant="body2" fontWeight={!departed ? "bold" : "normal"}>
-                                        {stop.arr ? toTimeString(stop.arr) : ''}
+                                        {(stop.arr != null) ? toTimeString(stop.arr) : ''}
                                     </Typography>
                                 </Grid>
 
@@ -60,7 +60,7 @@ function StopRow({ stop, departed = false }) {
                                     }}
                                     >
                                     <Typography variant="body2" fontWeight={!departed ? "bold" : "normal"}>
-                                        {stop.dep ? toTimeString(stop.dep) : ''}
+                                        {(stop.dep != null) ? toTimeString(stop.dep) : ''}
                                     </Typography>
                                 </Grid>
                             </Grid>

@@ -42,6 +42,10 @@ export default function DepartureSection() {
             .then(name => {
                 setLoadingNearest(false);
                 setNearestStation(name)
+                const visited = localStorage.getItem('visitedStations') ? JSON.parse(localStorage.getItem('visitedStations')) : [];
+                if (!visited.includes(name)) {
+                    localStorage.setItem('visitedStations', JSON.stringify([...visited, name]));
+                }
             })
             .catch(() => {
                 setLoadingNearest(false);
