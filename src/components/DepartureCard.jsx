@@ -15,7 +15,7 @@ import {
     Typography
 } from '@mui/material';
 import { useAtom, useSetAtom } from 'jotai';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 
 import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
@@ -37,7 +37,6 @@ const LineContext = React.createContext(null);
 
 function DepartureCard({ station, addButton = false, removeButton = false }) {
     const navigate = useNavigate();
-    const [searchParams, setSearchParams] = useSearchParams();
 
     const [myStations, setMyStations] = useAtom(myStationsAtom);
 
