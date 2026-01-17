@@ -127,7 +127,7 @@ function DepartureRow({ dep, needId = false }) {
                 scroll="paper"  
                 fullWidth
             >
-                <DialogTitle>
+                <DialogTitle sx={{ pb: (dep.multilayer ? 0 : '') }}>
                     {isShowDialog && (
                         <Box sx={{ borderBottom: `solid ${types[dep.typeName].color}` }}>
                             <Typography variant="h6">
@@ -138,10 +138,8 @@ function DepartureRow({ dep, needId = false }) {
                             </Typography>
                         </Box>
                     )}
-                </DialogTitle>
-                <DialogContent dividers>
                     {dep.multilayer &&
-                        <Grid>
+                        <Grid sx={{ mt: 0.5 }}>
                             <StyledTabs
                                 value={multilayer}
                                 onChange={(_, value) => setMultilayer(value)}
@@ -157,6 +155,8 @@ function DepartureRow({ dep, needId = false }) {
                             </StyledTabs>
                         </Grid>
                     }
+                </DialogTitle>
+                <DialogContent dividers>
                     <Grid
                         container
                         wrap="nowrap"

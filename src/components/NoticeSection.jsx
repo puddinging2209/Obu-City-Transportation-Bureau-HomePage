@@ -31,7 +31,7 @@ function NoticeSection() {
         <List disablePadding>
           {notices.reverse().map((item) => (
             <ListItemButton
-              key={item.id}
+              key={`noteice-${item.id}`}
               sx={{
                 py: 1,
                 borderBottom: "1px solid #e0e0e0",

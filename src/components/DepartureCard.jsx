@@ -15,7 +15,7 @@ import {
     Typography
 } from '@mui/material';
 import { useAtom, useSetAtom } from 'jotai';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import Select from 'react-select';
 
 import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
@@ -37,6 +37,7 @@ const LineContext = React.createContext(null);
 
 function DepartureCard({ station, addButton = false, removeButton = false }) {
     const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const [myStations, setMyStations] = useAtom(myStationsAtom);
 
@@ -82,7 +83,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
         <>
         <LineContext value={direction?.route}>
         <StationContext value={station.name}>
-            <Card key={station.name} sx={{ width: { xs: '80vw', md: 300 }, minHeight: 240, position: 'relative', flexShrink: 0 }}>
+            <Card key={station.name} sx={{ width: { xs: '100%', md: 300 }, minHeight: 240, position: 'relative', flexShrink: 0 }}>
                 <CardContent>
                     <Box sx={{ mb: 1 }}>
                         <Typography variant="h6" sx={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }} noWrap>
@@ -126,7 +127,6 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                                     open: true,
                                     options: directionOptions
                                 });
-                                navigate(`?modal=directionSelector-${station.name}`);
                             }}
                         >
                             {direction?.stationName}方面 ▼
@@ -174,13 +174,11 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                 options={isOpenMobileSelector.options}
                 value={direction}
                 onClose={() => {
-                    setIsOpenMobileSelector({ open: false, index: null, options: [] });
-                    navigate('/home');
+                    setIsOpenMobileSelector({ open: false, options: [] });
                 }}
                 onSelect={value => {
                     setDirection(value);
-                    setIsOpenMobileSelector({ open: false, index: null, options: [] });
-                    navigate('/home');
+                    setIsOpenMobileSelector({ open: false, options: [] });
                 }}
             />
 

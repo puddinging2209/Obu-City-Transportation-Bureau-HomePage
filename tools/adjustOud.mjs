@@ -33,7 +33,7 @@ const fileName = process.argv[3] ?? line;
 
 if (!line) {
     console.error('❌ 路線名が指定されていません');
-    console.error('   node tools/adjustOud.mjs LINE [FILENAME]');
+    console.error('   node tools/adjustOud.mjs line [FILENAME]');
     process.exit(1);
 }
 
