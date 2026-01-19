@@ -1,13 +1,25 @@
-import { AppBar, Button, ButtonGroup, Toolbar, Typography } from '@mui/material';
+import { AppBar, Button, ButtonGroup, IconButton, Toolbar, Typography } from '@mui/material';
+import { useAtom } from 'jotai';
 import { useNavigate } from 'react-router-dom';
+
+import MenuIcon from '@mui/icons-material/Menu';
+
+import { isOpenDrawerAtom } from '../utils/Atom';
 
 function Header() {
 
     const navigate = useNavigate();
+    const [isOpenDrawer, setIsOpenDrawer] = useAtom(isOpenDrawerAtom);
     
     return (
         <AppBar position="sticky" color="default" elevation={1}>
             <Toolbar>
+                <IconButton edge="start" color="inherit" sx={{ mr: 2 }} onClick={() => {
+                    console.log(isOpenDrawer)
+                    setIsOpenDrawer(true)
+                }}>
+                    <MenuIcon />
+                </IconButton>
                 <Typography
                     variant="h6"
                     sx={{ cursor: 'pointer', userSelect: 'none' }}

@@ -6,6 +6,7 @@ import {
     Button,
     Card,
     CardContent,
+    CircularProgress,
     Dialog,
     DialogActions,
     DialogContent,
@@ -15,7 +16,6 @@ import {
     Typography
 } from '@mui/material';
 import { useAtom, useSetAtom } from 'jotai';
-import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 
 import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
@@ -36,7 +36,6 @@ const StationContext = React.createContext(null);
 const LineContext = React.createContext(null);
 
 function DepartureCard({ station, addButton = false, removeButton = false }) {
-    const navigate = useNavigate();
 
     const [myStations, setMyStations] = useAtom(myStationsAtom);
 
@@ -47,11 +46,16 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
         setDirection(stations[station?.name]?.directions?.[0] || busStops[station?.name]?.directions?.[0] || null);
     }, [station]);
 
+    const [loading, setLoading] = React.useState(false);
+
     React.useEffect(() => {
         if (direction) {
-            searchDeparture(station, direction).then(deps => setDepartures(deps))
+            setLoading(true);
+            searchDeparture(station, direction).then(deps => {
+                setDepartures(deps)
+                setLoading(false);
+            })
         }
-    
     }, [direction]);
 
     const addMyStation = useSetAtom(addMyStationAtom);
@@ -68,6 +72,10 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
             busStops[station.name]?.directions.map(d => ({ value: d, label: `${d.stationName}方面`, route: d.route }))
 
     const [isOpenShowMore, setIsOpenShowMore] = React.useState(false);
+
+    function showMoreDialog() {
+        setIsOpenShowMore(true);
+    }
         
     function scrollToDep() {
         const next = departures.find(dep => dep.time > nowsecond());
@@ -135,18 +143,23 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                     <Stack spacing={1}>
                         {(departures?.filter(d => d.time >= nowsecond()).length !== 0) ? (
                             <Box>
-                                    {departures?.filter(d => d.time >= nowsecond()).slice(0, 2)?.map(dep => (
-                                        <DepartureRow key={dep.time} dep={dep} />
-                                    ))}
+                                {departures?.filter(d => d.time >= nowsecond()).slice(0, 2)?.map(dep => (
+                                    <DepartureRow key={dep.time} dep={dep} />
+                                ))}
                             </Box>
                         ) : (
-                            <Typography variant='h6' sx={{ textAlign: 'center' }}>本日の運転は終了しました</Typography>
+                            (loading) ? (
+                                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 2 }}>
+                                    <CircularProgress size={30} />
+                                </Box>
+                            ) : (
+                                <Typography variant='h6' sx={{ textAlign: 'center' }}>本日の運転は終了しました</Typography>
+                            )
                         )}
                     </Stack>
 
                     <Button size="small" sx={{ mt: 1 }} onClick={() => {
-                        setIsOpenShowMore(true);
-                        navigate(`?modal=more-${station.name}`);
+                        showMoreDialog(true);
                     }}>
                         もっと見る
                     </Button>
@@ -184,7 +197,6 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
             <Dialog
                 open={isOpenShowMore}
                 onClose={() => {
-                    navigate('/home');
                     setIsOpenShowMore(false);
                 }}
                 scroll="paper"  
@@ -208,7 +220,6 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={() => {
-                        navigate('/home');
                         setIsOpenShowMore(false);
                     }}>閉じる</Button>
                 </DialogActions>
