@@ -3,6 +3,8 @@ import { name_number } from './Station.js';
 import { adjustTime } from './Time.js';
 import { terminal, typeName } from './Train.js';
 
+let dias = {};
+
 export function resolveRosen(rosen) {
     if (lines?.[rosen]) return lines[rosen].json;
 
@@ -26,7 +28,12 @@ export async function dia(rosen) {
         }
     }
 
-    const diagram = await searchOud(resolveRosen(rosen));
+    const code = resolveRosen(rosen);
+
+    if (dias[code]) return dias[code];
+
+    const diagram = await searchOud(code);
+    dias[code] = diagram;
     return diagram;
 }
 

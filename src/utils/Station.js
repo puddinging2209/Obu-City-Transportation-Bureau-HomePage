@@ -18,3 +18,12 @@ export function name(text) {
     }
     return text;
 }
+
+export function code(text) {
+    if (name_number(text) != null) {
+        return name_number(text);
+    } else {
+        if (text == '中部国際空港') return 'HK28';
+    }
+    return text;
+}
