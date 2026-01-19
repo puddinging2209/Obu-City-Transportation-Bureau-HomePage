@@ -14,3 +14,5 @@ export const addMyStationAtom = atom(
         localStorage.setItem('myStations', JSON.stringify(after));
     }
 );
+
+export const isOpenDrawerAtom = atom(false);

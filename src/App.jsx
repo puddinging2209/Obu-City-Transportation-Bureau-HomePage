@@ -5,6 +5,7 @@ import { HashRouter, Navigate, Route, Link as RouterLink, Routes } from 'react-r
 import CloseIcon from '@mui/icons-material/Close';
 import { Box, createTheme, CssBaseline, Dialog, DialogContent, DialogTitle, FormControlLabel, IconButton, ThemeProvider, Typography } from '@mui/material';
 
+import Drawer from './components/Drawer.jsx';
 import Header from './components/Header.jsx';
 import MobileBottomNavigation from './components/MobileBottomNavigation.jsx';
 
@@ -49,6 +50,7 @@ function App() {
         <CssBaseline />
             <HashRouter>
                 <Header />
+                <Drawer />
 
             <main>
                 <Routes>
