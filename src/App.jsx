@@ -13,6 +13,7 @@ import About from './pages/About.jsx';
 import Home from './pages/Home.jsx';
 import Position from './pages/Position.jsx';
 import RouteMap from './pages/RouteMap.jsx';
+import Test from './pages/Test.jsx';
 import TimeTable from './pages/TimeTable.jsx';
 import Transfer from './pages/Transfer.jsx';
 
@@ -60,7 +61,8 @@ function App() {
                     <Route path='/transfer' element={<Transfer />}></Route>
                     <Route path='/timetable' element={<TimeTable />}></Route>
                     <Route path='/position' element={<Position />}></Route>
-                    <Route path='/about' element={<About />}></Route>  
+                    <Route path='/about' element={<About />}></Route>
+                    <Route path='test' element={<Test />}></Route>
                 </Routes>
             </main>
                 

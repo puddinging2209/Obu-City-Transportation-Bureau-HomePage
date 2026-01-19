@@ -2,7 +2,6 @@ import React from 'react';
 
 import { useAtomValue, useSetAtom } from 'jotai';
 import { useNavigate } from 'react-router-dom';
-import Select from 'react-select';
 
 import AddIcon from '@mui/icons-material/Add';
 import {
@@ -23,9 +22,8 @@ import {
 import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
 import searchNearestStation from '../utils/searchNearestStation.js';
 
-import busStops from '../data/busStops.json';
-import stations from '../data/stations.json';
 import DepartureCard from './DepartureCard.jsx';
+import StationSelecter from './StationSelecter.jsx';
 
 export default function DepartureSection() {
     const navigate = useNavigate();
@@ -128,35 +126,18 @@ export default function DepartureSection() {
               <DialogTitle>
                   <Typography variant="h6" component="div">マイ駅・停留所を追加</Typography>
               </DialogTitle>
-                <DialogContent>
-                    <Select
-                        ref={selectRef}
-                        options={
-                            [
-                                ...Object.keys(stations).filter(station => !(myStations).map(station => station.name).includes(station)).map(station => ({ value: station, label: station, role: 'station', kana: stations[station].kana })),
-                                ...Object.keys(busStops).filter(stop => !myStations.map(station => station.name).includes(stop)).map(stop => ({ value: stop, label: stop, role: 'busStop', kana: busStops[stop].kana })),
-                            ].sort((a, b) => a.kana.localeCompare(b.kana))
-                        }
-                        onChange={(selected) => {
+              <DialogContent>
+                  <StationSelecter
+                      ref={selectRef}
+                      onChange={(selected) => {
                             if (selected) {
                                 addMyStation({name: selected.value, role: selected.role});
                                 setIsShowSearch(false);
                                 navigate('/home');
                             }
-                        }}
-                        placeholder="駅・停留所を検索"
-                        isSearchable={true}
-                        menuPortalTarget={document.body}
-                        styles={{
-                            menuPortal: base => ({ ...base, zIndex: 10001 })
-                        }}
-                        formatOptionLabel={({ value, label, role }) => (
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>{label}</div>
-                                <div style={{ fontSize: '12px', color: 'gray' }}>{role === 'station' ? '駅' : role === 'busStop' ? '停留所' : ''}</div>
-                            </div>
-                        )}
-                    />
+                        }
+                      }
+                  />
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={() => {
