@@ -1,0 +1,2086 @@
+{
+  "NK01": {
+    "name": "北崎",
+    "json": "NK"
+  },
+  "NK02": {
+    "name": "北崎大島",
+    "json": "NK"
+  },
+  "NK03": {
+    "name": "大脇",
+    "json": "NK"
+  },
+  "NK04": {
+    "name": "琵琶ヶ池",
+    "json": "NK"
+  },
+  "NK05": {
+    "name": "高鴨",
+    "json": "NK"
+  },
+  "NK06": {
+    "name": "豊明市",
+    "json": "NK"
+  },
+  "NK07": {
+    "name": "中央公園",
+    "json": "NK"
+  },
+  "NK08": {
+    "name": "十三塚",
+    "json": "NK"
+  },
+  "NK09": {
+    "name": "沓掛町森前",
+    "json": "NK"
+  },
+  "NK10": {
+    "name": "若王子川",
+    "json": "NK"
+  },
+  "NK11": {
+    "name": "清水々根",
+    "json": "NK"
+  },
+  "NK12": {
+    "name": "春木台",
+    "json": "NK"
+  },
+  "NK13": {
+    "name": "猫池",
+    "json": "NK"
+  },
+  "NK14": {
+    "name": "東郷",
+    "json": "NK"
+  },
+  "NK15": {
+    "name": "白鳥",
+    "json": "NK"
+  },
+  "NK16": {
+    "name": "日進",
+    "json": "NK"
+  },
+  "NK17": {
+    "name": "折戸寺脇",
+    "json": "NK"
+  },
+  "NK18": {
+    "name": "日進東山",
+    "json": "NK"
+  },
+  "NK19": {
+    "name": "日進市",
+    "json": "NK"
+  },
+  "NK20": {
+    "name": "日進白山",
+    "json": "NK"
+  },
+  "NK21": {
+    "name": "岩崎城",
+    "json": "NK"
+  },
+  "NK22": {
+    "name": "弁天池",
+    "json": "NK"
+  },
+  "NK23": {
+    "name": "竹の山",
+    "json": "NK"
+  },
+  "NK24": {
+    "name": "愛知学院大学前",
+    "json": "NK"
+  },
+  "NK25": {
+    "name": "長久手",
+    "json": "NK"
+  },
+  "NK26": {
+    "name": "香流川",
+    "json": "NK"
+  },
+  "NK27": {
+    "name": "長久手市",
+    "json": "NK"
+  },
+  "OD01": {
+    "name": "刈谷",
+    "json": "OD"
+  },
+  "OD02": {
+    "name": "宝町",
+    "json": "OD"
+  },
+  "OD03": {
+    "name": "逢妻",
+    "json": "OD"
+  },
+  "OD04": {
+    "name": "朝日町",
+    "json": "OD"
+  },
+  "OD05": {
+    "name": "若草",
+    "json": "OD"
+  },
+  "OD06": {
+    "name": "大府市役所前",
+    "json": "OD"
+  },
+  "OD07": {
+    "name": "中央町",
+    "json": "OD"
+  },
+  "OD08": {
+    "name": "追分町",
+    "json": "OD"
+  },
+  "OD09": {
+    "name": "共和",
+    "json": "OD"
+  },
+  "OD10": {
+    "name": "水主ヶ池",
+    "json": "OD"
+  },
+  "OD11": {
+    "name": "南大高",
+    "json": "OD"
+  },
+  "OD12": {
+    "name": "大高緑地西",
+    "json": "OD"
+  },
+  "OD13": {
+    "name": "大高",
+    "json": "OD"
+  },
+  "OD14": {
+    "name": "上汐田",
+    "json": "OD"
+  },
+  "OD15": {
+    "name": "元鳴尾",
+    "json": "OD"
+  },
+  "OD16": {
+    "name": "星崎",
+    "json": "OD"
+  },
+  "OD17": {
+    "name": "南笠寺",
+    "json": "OD"
+  },
+  "OD18": {
+    "name": "南区役所前",
+    "json": "OD"
+  },
+  "OD19": {
+    "name": "新笠寺",
+    "json": "OD"
+  },
+  "OD20": {
+    "name": "呼続",
+    "json": "OD"
+  },
+  "OD21": {
+    "name": "汐田",
+    "json": "OD"
+  },
+  "OD22": {
+    "name": "明前町",
+    "json": "OD"
+  },
+  "OD23": {
+    "name": "堀田",
+    "json": "OD"
+  },
+  "OD24": {
+    "name": "新開町",
+    "json": "OD"
+  },
+  "OD25": {
+    "name": "牛巻",
+    "json": "OD"
+  },
+  "OD26": {
+    "name": "高辻",
+    "json": "OD"
+  },
+  "OD27": {
+    "name": "白金",
+    "json": "OD"
+  },
+  "OD28": {
+    "name": "鶴舞",
+    "json": "OD"
+  },
+  "OD29": {
+    "name": "千代田",
+    "json": "OD"
+  },
+  "OD30": {
+    "name": "矢場町",
+    "json": "OD"
+  },
+  "OD31": {
+    "name": "栄町",
+    "json": "OD"
+  },
+  "GK01": {
+    "name": "名和",
+    "json": "GK"
+  },
+  "GK02": {
+    "name": "大高丸ノ内",
+    "json": "GK"
+  },
+  "GK03": {
+    "name": "大高",
+    "json": "GK"
+  },
+  "GK04": {
+    "name": "鳴海",
+    "json": "GK"
+  },
+  "GK05": {
+    "name": "大高緑地口",
+    "json": "GK"
+  },
+  "GK06": {
+    "name": "鎌研",
+    "json": "GK"
+  },
+  "GK07": {
+    "name": "東陵",
+    "json": "GK"
+  },
+  "GK08": {
+    "name": "姥子山",
+    "json": "GK"
+  },
+  "GK09": {
+    "name": "鎌倉台",
+    "json": "GK"
+  },
+  "GK10": {
+    "name": "中京競馬北",
+    "json": "GK"
+  },
+  "GK11": {
+    "name": "間米町",
+    "json": "GK"
+  },
+  "GK12": {
+    "name": "二村台南",
+    "json": "GK"
+  },
+  "GK13": {
+    "name": "三崎町",
+    "json": "GK"
+  },
+  "GK14": {
+    "name": "高鴨",
+    "json": "GK"
+  },
+  "GK15": {
+    "name": "豊明新田",
+    "json": "GK"
+  },
+  "GK16": {
+    "name": "大久伝町",
+    "json": "GK"
+  },
+  "GK17": {
+    "name": "西境本郷",
+    "json": "GK"
+  },
+  "GK18": {
+    "name": "井ヶ谷町南",
+    "json": "GK"
+  },
+  "GK19": {
+    "name": "丸岡",
+    "json": "GK"
+  },
+  "GK20": {
+    "name": "西岡町",
+    "json": "GK"
+  },
+  "GK21": {
+    "name": "石畑",
+    "json": "GK"
+  },
+  "GK22": {
+    "name": "長土井",
+    "json": "GK"
+  },
+  "GK23": {
+    "name": "大島町",
+    "json": "GK"
+  },
+  "GK24": {
+    "name": "中田古屋敷",
+    "json": "GK"
+  },
+  "GK25": {
+    "name": "中田町",
+    "json": "GK"
+  },
+  "GK26": {
+    "name": "中田日進",
+    "json": "GK"
+  },
+  "GK27": {
+    "name": "駒新町",
+    "json": "GK"
+  },
+  "GK28": {
+    "name": "三河金山",
+    "json": "GK"
+  },
+  "GK29": {
+    "name": "駒場町西",
+    "json": "GK"
+  },
+  "GK30": {
+    "name": "駒場橋",
+    "json": "GK"
+  },
+  "GK31": {
+    "name": "宮腰",
+    "json": "GK"
+  },
+  "GK32": {
+    "name": "桜木",
+    "json": "GK"
+  },
+  "GK33": {
+    "name": "知立",
+    "json": "GK"
+  },
+  "HD01": {
+    "name": "大府",
+    "json": "HD"
+  },
+  "HD02": {
+    "name": "大府森岡",
+    "json": "HD"
+  },
+  "HD03": {
+    "name": "公園北",
+    "json": "HD"
+  },
+  "HD04": {
+    "name": "医療センター",
+    "json": "HD"
+  },
+  "HD05": {
+    "name": "公園南",
+    "json": "HD"
+  },
+  "HD06": {
+    "name": "新池",
+    "json": "HD"
+  },
+  "HD07": {
+    "name": "緒川相生",
+    "json": "HD"
+  },
+  "HD08": {
+    "name": "西石浜",
+    "json": "HD"
+  },
+  "HD09": {
+    "name": "藤江",
+    "json": "HD"
+  },
+  "HD10": {
+    "name": "緑ヶ丘",
+    "json": "HD"
+  },
+  "HD11": {
+    "name": "生見町",
+    "json": "HD"
+  },
+  "HD12": {
+    "name": "上池",
+    "json": "HD"
+  },
+  "HD13": {
+    "name": "七本木池",
+    "json": "HD"
+  },
+  "HD14": {
+    "name": "庚申町",
+    "json": "HD"
+  },
+  "HD15": {
+    "name": "乙川畑田",
+    "json": "HD"
+  },
+  "HD16": {
+    "name": "乙川薬師",
+    "json": "HD"
+  },
+  "HD17": {
+    "name": "乙川",
+    "json": "HD"
+  },
+  "HD18": {
+    "name": "半田大橋",
+    "json": "HD"
+  },
+  "HD19": {
+    "name": "半田市",
+    "json": "HD"
+  },
+  "HD17a": {
+    "name": "乙川",
+    "json": "HD"
+  },
+  "HD20": {
+    "name": "半田赤レンガ",
+    "json": "HD"
+  },
+  "HD21": {
+    "name": "住吉町",
+    "json": "HD"
+  },
+  "HD22": {
+    "name": "清城",
+    "json": "HD"
+  },
+  "OL04": {
+    "name": "至学館大学前",
+    "json": "MT"
+  },
+  "MT01": {
+    "name": "坊主山",
+    "json": "MT"
+  },
+  "MT02": {
+    "name": "南陵",
+    "json": "MT"
+  },
+  "MT03": {
+    "name": "桶狭間",
+    "json": "MT"
+  },
+  "MT04": {
+    "name": "長福寺",
+    "json": "MT"
+  },
+  "MT05": {
+    "name": "古戦場公園前",
+    "json": "MT"
+  },
+  "MT06": {
+    "name": "名古屋短大前",
+    "json": "MT"
+  },
+  "MT07": {
+    "name": "有松",
+    "json": "MT"
+  },
+  "MT08": {
+    "name": "鳥澄",
+    "json": "MT"
+  },
+  "MT09": {
+    "name": "扇川",
+    "json": "MT"
+  },
+  "MT10": {
+    "name": "滝ノ水",
+    "json": "MT"
+  },
+  "MT11": {
+    "name": "鳴丘",
+    "json": "MT"
+  },
+  "MT12": {
+    "name": "徳重",
+    "json": "MT"
+  },
+  "MT13": {
+    "name": "神ノ倉",
+    "json": "MT"
+  },
+  "MT14": {
+    "name": "平針台",
+    "json": "MT"
+  },
+  "MT15": {
+    "name": "平針住宅",
+    "json": "MT"
+  },
+  "MT16": {
+    "name": "向が丘",
+    "json": "MT"
+  },
+  "MT17": {
+    "name": "平針南",
+    "json": "MT"
+  },
+  "MT18": {
+    "name": "平針",
+    "json": "MT"
+  },
+  "MT19": {
+    "name": "大応寺",
+    "json": "MT"
+  },
+  "MT20": {
+    "name": "梅森西",
+    "json": "MT"
+  },
+  "MT21": {
+    "name": "梅森台",
+    "json": "MT"
+  },
+  "MT22": {
+    "name": "梅森台北",
+    "json": "MT"
+  },
+  "MT23": {
+    "name": "東名古屋病院",
+    "json": "MT"
+  },
+  "MT24": {
+    "name": "梅森坂",
+    "json": "MT"
+  },
+  "MT25": {
+    "name": "牧野ヶ池東",
+    "json": "MT"
+  },
+  "MT26": {
+    "name": "極楽",
+    "json": "MT"
+  },
+  "MT27": {
+    "name": "高針台",
+    "json": "MT"
+  },
+  "MT28": {
+    "name": "勢子坊",
+    "json": "MT"
+  },
+  "MT29": {
+    "name": "社が丘",
+    "json": "MT"
+  },
+  "MT30": {
+    "name": "姫若町",
+    "json": "MT"
+  },
+  "MT31": {
+    "name": "藤が丘",
+    "json": "MT"
+  },
+  "FT01": {
+    "name": "至学館大学前",
+    "json": "FT"
+  },
+  "FT02": {
+    "name": "二ツ池公園前",
+    "json": "FT"
+  },
+  "FT03": {
+    "name": "平子",
+    "json": "FT"
+  },
+  "FT04": {
+    "name": "メディアス体育館前",
+    "json": "FT"
+  },
+  "FT05": {
+    "name": "大東町",
+    "json": "FT"
+  },
+  "FT06": {
+    "name": "朝日町",
+    "json": "FT"
+  },
+  "FT07": {
+    "name": "森岡工業団地南",
+    "json": "FT"
+  },
+  "FT08": {
+    "name": "新緒川",
+    "json": "FT"
+  },
+  "FT05a": {
+    "name": "大東町",
+    "json": "FT"
+  },
+  "FT09": {
+    "name": "住友重機前",
+    "json": "FT"
+  },
+  "FT10": {
+    "name": "柳ケ坪",
+    "json": "FT"
+  },
+  "FT11": {
+    "name": "森岡中町",
+    "json": "FT"
+  },
+  "FT12": {
+    "name": "寿二区",
+    "json": "FT"
+  },
+  "FT13": {
+    "name": "於大公園西",
+    "json": "FT"
+  },
+  "UD01": {
+    "name": "惣作",
+    "json": "UD"
+  },
+  "UD02": {
+    "name": "後田",
+    "json": "UD"
+  },
+  "UD03": {
+    "name": "内田面",
+    "json": "UD"
+  },
+  "UD04": {
+    "name": "北崎",
+    "json": "UD"
+  },
+  "UD05": {
+    "name": "樫塚",
+    "json": "UD"
+  },
+  "UD06": {
+    "name": "二ツ池北",
+    "json": "UD"
+  },
+  "UD07": {
+    "name": "至学館大学前",
+    "json": "UD"
+  },
+  "UD08": {
+    "name": "北山町",
+    "json": "UD"
+  },
+  "UD09": {
+    "name": "東新町",
+    "json": "UD"
+  },
+  "NB01": {
+    "name": "大高",
+    "json": "NB"
+  },
+  "NB02": {
+    "name": "正光寺",
+    "json": "NB"
+  },
+  "NB03": {
+    "name": "水主ヶ池西",
+    "json": "NB"
+  },
+  "NB04": {
+    "name": "茶屋",
+    "json": "NB"
+  },
+  "NB05": {
+    "name": "共和三丁目",
+    "json": "NB"
+  },
+  "NB06": {
+    "name": "明成一屋",
+    "json": "NB"
+  },
+  "NB07": {
+    "name": "柊山",
+    "json": "NB"
+  },
+  "NB08": {
+    "name": "県営大府住宅",
+    "json": "NB"
+  },
+  "NB09": {
+    "name": "江端中央",
+    "json": "NB"
+  },
+  "NB10": {
+    "name": "鞍流瀬川",
+    "json": "NB"
+  },
+  "NB11": {
+    "name": "柳ケ坪",
+    "json": "NB"
+  },
+  "NB12": {
+    "name": "尾張森岡",
+    "json": "NB"
+  },
+  "NB13": {
+    "name": "緒川塩田",
+    "json": "NB"
+  },
+  "NB14": {
+    "name": "宮戸橋",
+    "json": "NB"
+  },
+  "NB15": {
+    "name": "緒川",
+    "json": "NB"
+  },
+  "MY01": {
+    "name": "新富町",
+    "json": "MY"
+  },
+  "MY02": {
+    "name": "新田町",
+    "json": "MY"
+  },
+  "MY03": {
+    "name": "刈谷市総合運動公園",
+    "json": "MY"
+  },
+  "MY04": {
+    "name": "古和井",
+    "json": "MY"
+  },
+  "MY05": {
+    "name": "西富士松",
+    "json": "MY"
+  },
+  "MY06": {
+    "name": "富士松",
+    "json": "MY"
+  },
+  "MY07": {
+    "name": "今川町",
+    "json": "MY"
+  },
+  "MY08": {
+    "name": "東境松本",
+    "json": "MY"
+  },
+  "MY09": {
+    "name": "富士松図書館前",
+    "json": "MY"
+  },
+  "MY10": {
+    "name": "岩ヶ池",
+    "json": "MY"
+  },
+  "MY11": {
+    "name": "愛教大前",
+    "json": "MY"
+  },
+  "MY12": {
+    "name": "井ヶ谷(洲原公園前)",
+    "json": "MY"
+  },
+  "MY13": {
+    "name": "天白",
+    "json": "MY"
+  },
+  "MY14": {
+    "name": "福田",
+    "json": "MY"
+  },
+  "MY15": {
+    "name": "東荒田",
+    "json": "MY"
+  },
+  "MY16": {
+    "name": "半野木",
+    "json": "MY"
+  },
+  "MY17": {
+    "name": "三好荒池",
+    "json": "MY"
+  },
+  "MY18": {
+    "name": "三好森下",
+    "json": "MY"
+  },
+  "MY19": {
+    "name": "みよし市",
+    "json": "MY"
+  },
+  "MY20": {
+    "name": "前田",
+    "json": "MY"
+  },
+  "MY21": {
+    "name": "三好池",
+    "json": "MY"
+  },
+  "MY22": {
+    "name": "莇生町",
+    "json": "MY"
+  },
+  "MY23": {
+    "name": "境川",
+    "json": "MY"
+  },
+  "MY24": {
+    "name": "蓬平地",
+    "json": "MY"
+  },
+  "MY25": {
+    "name": "福谷",
+    "json": "MY"
+  },
+  "MY26": {
+    "name": "花立",
+    "json": "MY"
+  },
+  "MY27": {
+    "name": "宮ノ前",
+    "json": "MY"
+  },
+  "MY28": {
+    "name": "三好丘三丁目",
+    "json": "MY"
+  },
+  "MY29": {
+    "name": "三好丘",
+    "json": "MY"
+  },
+  "KM01": {
+    "name": "鰻池",
+    "json": "KM"
+  },
+  "KM02": {
+    "name": "岡田川",
+    "json": "KM"
+  },
+  "KM03": {
+    "name": "健康の森西口",
+    "json": "KM"
+  },
+  "KM04": {
+    "name": "半月町",
+    "json": "KM"
+  },
+  "KM05": {
+    "name": "ウド",
+    "json": "KM"
+  },
+  "KM06": {
+    "name": "上野台",
+    "json": "KM"
+  },
+  "KM07": {
+    "name": "新石根",
+    "json": "KM"
+  },
+  "KM08": {
+    "name": "富木島中央",
+    "json": "KM"
+  },
+  "KM09": {
+    "name": "寺下",
+    "json": "KM"
+  },
+  "KM10": {
+    "name": "上浜田",
+    "json": "KM"
+  },
+  "TR01": {
+    "name": "末広",
+    "json": "TR"
+  },
+  "TR02": {
+    "name": "北蕨",
+    "json": "TR"
+  },
+  "TR03": {
+    "name": "日向根",
+    "json": "TR"
+  },
+  "TR04": {
+    "name": "岡前",
+    "json": "TR"
+  },
+  "TR05": {
+    "name": "新宝",
+    "json": "TR"
+  },
+  "TR06": {
+    "name": "潮見",
+    "json": "TR"
+  },
+  "TR07": {
+    "name": "金城ふ頭",
+    "json": "TR"
+  },
+  "TM01": {
+    "name": "生見町",
+    "json": "TM"
+  },
+  "TM02": {
+    "name": "亀崎北浦",
+    "json": "TM"
+  },
+  "TM03": {
+    "name": "洲の崎",
+    "json": "TM"
+  },
+  "TM04": {
+    "name": "高浜碧海",
+    "json": "TM"
+  },
+  "TM05": {
+    "name": "恩任寺",
+    "json": "TM"
+  },
+  "TM06": {
+    "name": "三河高浜",
+    "json": "TM"
+  },
+  "ON01": {
+    "name": "八幡新田",
+    "json": "ON"
+  },
+  "ON02": {
+    "name": "緒川植山",
+    "json": "ON"
+  },
+  "ON03": {
+    "name": "姥池",
+    "json": "ON"
+  },
+  "ON04": {
+    "name": "米田町",
+    "json": "ON"
+  },
+  "ON05": {
+    "name": "馬池町",
+    "json": "ON"
+  },
+  "ON06": {
+    "name": "北屋敷",
+    "json": "ON"
+  },
+  "ON07": {
+    "name": "宮内町",
+    "json": "ON"
+  },
+  "ON08": {
+    "name": "ウド",
+    "json": "ON"
+  },
+  "ON09": {
+    "name": "前新切",
+    "json": "ON"
+  },
+  "ON10": {
+    "name": "田面",
+    "json": "ON"
+  },
+  "ON11": {
+    "name": "末広",
+    "json": "ON"
+  },
+  "ON12": {
+    "name": "神戸",
+    "json": "ON"
+  },
+  "ON13": {
+    "name": "炭焼",
+    "json": "ON"
+  },
+  "ON14": {
+    "name": "大高緑地西",
+    "json": "ON"
+  },
+  "ON15": {
+    "name": "亀原",
+    "json": "ON"
+  },
+  "ON16": {
+    "name": "大高緑地口",
+    "json": "ON"
+  },
+  "ON17": {
+    "name": "潮見が丘",
+    "json": "ON"
+  },
+  "ON18": {
+    "name": "鹿山",
+    "json": "ON"
+  },
+  "ON19": {
+    "name": "新海池",
+    "json": "ON"
+  },
+  "ON20": {
+    "name": "鳴子南",
+    "json": "ON"
+  },
+  "ON21": {
+    "name": "篠の風",
+    "json": "ON"
+  },
+  "ON22": {
+    "name": "相川",
+    "json": "ON"
+  },
+  "ON23": {
+    "name": "相生山東",
+    "json": "ON"
+  },
+  "ON24": {
+    "name": "一ツ山住宅",
+    "json": "ON"
+  },
+  "ON25": {
+    "name": "島田",
+    "json": "ON"
+  },
+  "ON26": {
+    "name": "島田橋",
+    "json": "ON"
+  },
+  "ON27": {
+    "name": "池見",
+    "json": "ON"
+  },
+  "ON28": {
+    "name": "表山",
+    "json": "ON"
+  },
+  "ON29": {
+    "name": "八事",
+    "json": "ON"
+  },
+  "OG01": {
+    "name": "知立",
+    "json": "OG"
+  },
+  "OG02": {
+    "name": "知立堀切",
+    "json": "OG"
+  },
+  "OG03": {
+    "name": "東上重原",
+    "json": "OG"
+  },
+  "OG04": {
+    "name": "上重原",
+    "json": "OG"
+  },
+  "OG05": {
+    "name": "重原",
+    "json": "OG"
+  },
+  "OG06": {
+    "name": "一色町",
+    "json": "OG"
+  },
+  "OG07": {
+    "name": "中山町",
+    "json": "OG"
+  },
+  "OG08": {
+    "name": "刈谷",
+    "json": "OG"
+  },
+  "OG09": {
+    "name": "東陽町",
+    "json": "OG"
+  },
+  "OG10": {
+    "name": "大浜街道",
+    "json": "OG"
+  },
+  "OG11": {
+    "name": "刈谷新栄町",
+    "json": "OG"
+  },
+  "OG12": {
+    "name": "十念寺",
+    "json": "OG"
+  },
+  "OG13": {
+    "name": "司町",
+    "json": "OG"
+  },
+  "OG14": {
+    "name": "東緒川",
+    "json": "OG"
+  },
+  "OG15": {
+    "name": "緒川",
+    "json": "OG"
+  },
+  "OG16": {
+    "name": "於大公園西",
+    "json": "OG"
+  },
+  "OG17": {
+    "name": "緒川相生",
+    "json": "OG"
+  },
+  "OG18": {
+    "name": "鰻池",
+    "json": "OG"
+  },
+  "OG19": {
+    "name": "姥池",
+    "json": "OG"
+  },
+  "OG20": {
+    "name": "緒川植山",
+    "json": "OG"
+  },
+  "OG21": {
+    "name": "知多八幡",
+    "json": "OG"
+  },
+  "OG22": {
+    "name": "七曲公園",
+    "json": "OG"
+  },
+  "OG23": {
+    "name": "佐布里池",
+    "json": "OG"
+  },
+  "OG24": {
+    "name": "梅が丘",
+    "json": "OG"
+  },
+  "OG25": {
+    "name": "五反田",
+    "json": "OG"
+  },
+  "OG26": {
+    "name": "知多新知",
+    "json": "OG"
+  },
+  "OG27": {
+    "name": "新知東町",
+    "json": "OG"
+  },
+  "OG28": {
+    "name": "知多市保健センター",
+    "json": "OG"
+  },
+  "OG29": {
+    "name": "浜脇",
+    "json": "OG"
+  },
+  "OG30": {
+    "name": "東屋敷",
+    "json": "OG"
+  },
+  "OG31": {
+    "name": "朝倉",
+    "json": "OG"
+  },
+  "HK01": {
+    "name": "半田みなと",
+    "json": "HK"
+  },
+  "HK02": {
+    "name": "瑞穂町",
+    "json": "HK"
+  },
+  "HK03": {
+    "name": "東洋町",
+    "json": "HK"
+  },
+  "HK04": {
+    "name": "半田市",
+    "json": "HK"
+  },
+  "HK05": {
+    "name": "半田",
+    "json": "HK"
+  },
+  "HK06": {
+    "name": "知多半田",
+    "json": "HK"
+  },
+  "HK07": {
+    "name": "雁宿公園",
+    "json": "HK"
+  },
+  "HK08": {
+    "name": "清城",
+    "json": "HK"
+  },
+  "HK09": {
+    "name": "柊町",
+    "json": "HK"
+  },
+  "HK10": {
+    "name": "柊四丁目",
+    "json": "HK"
+  },
+  "HK11": {
+    "name": "岩滑西",
+    "json": "HK"
+  },
+  "HK12": {
+    "name": "平井町",
+    "json": "HK"
+  },
+  "HK13": {
+    "name": "新生町",
+    "json": "HK"
+  },
+  "HK14": {
+    "name": "宝来町",
+    "json": "HK"
+  },
+  "HK15": {
+    "name": "三ツ池",
+    "json": "HK"
+  },
+  "HK16": {
+    "name": "金色",
+    "json": "HK"
+  },
+  "HK17": {
+    "name": "飛香台東",
+    "json": "HK"
+  },
+  "HK18": {
+    "name": "新常滑",
+    "json": "HK"
+  },
+  "HK19": {
+    "name": "北条公園",
+    "json": "HK"
+  },
+  "HK20": {
+    "name": "原松町",
+    "json": "HK"
+  },
+  "HK21": {
+    "name": "招き猫通り",
+    "json": "HK"
+  },
+  "HK22": {
+    "name": "常滑",
+    "json": "HK"
+  },
+  "HK23": {
+    "name": "常滑競艇",
+    "json": "HK"
+  },
+  "HK24": {
+    "name": "りんくうビーチ",
+    "json": "HK"
+  },
+  "HK25": {
+    "name": "りんくう常滑",
+    "json": "HK"
+  },
+  "HK26": {
+    "name": "セントレア北",
+    "json": "HK"
+  },
+  "HK27": {
+    "name": "セントレア第1ターミナル",
+    "json": "HK"
+  },
+  "HK28": {
+    "name": "セントレア第2ターミナル",
+    "json": "HK"
+  },
+  "TY01": {
+    "name": "長土井",
+    "json": "TY"
+  },
+  "TY02": {
+    "name": "本田",
+    "json": "TY"
+  },
+  "TY03": {
+    "name": "堤本町",
+    "json": "TY"
+  },
+  "TY04": {
+    "name": "宮畔",
+    "json": "TY"
+  },
+  "TY05": {
+    "name": "平松",
+    "json": "TY"
+  },
+  "TY06": {
+    "name": "宝",
+    "json": "TY"
+  },
+  "TY07": {
+    "name": "大坪",
+    "json": "TY"
+  },
+  "TY08": {
+    "name": "田代町",
+    "json": "TY"
+  },
+  "TY09": {
+    "name": "本新町",
+    "json": "TY"
+  },
+  "TY10": {
+    "name": "豊田東新町",
+    "json": "TY"
+  },
+  "TY11": {
+    "name": "衣ヶ原",
+    "json": "TY"
+  },
+  "TY12": {
+    "name": "広久手町",
+    "json": "TY"
+  },
+  "TY13": {
+    "name": "八迫山",
+    "json": "TY"
+  },
+  "TY14": {
+    "name": "小坂町",
+    "json": "TY"
+  },
+  "TY15": {
+    "name": "豊田市",
+    "json": "TY"
+  },
+  "TY16": {
+    "name": "矢作川",
+    "json": "TY"
+  },
+  "TY17": {
+    "name": "豊田スタジアム前",
+    "json": "TY"
+  },
+  "TY18": {
+    "name": "上野町",
+    "json": "TY"
+  },
+  "TY19": {
+    "name": "加茂川公園",
+    "json": "TY"
+  },
+  "TY20": {
+    "name": "三河渋谷",
+    "json": "TY"
+  },
+  "KL01": {
+    "name": "日高",
+    "json": "KL"
+  },
+  "KL02": {
+    "name": "高倉",
+    "json": "KL"
+  },
+  "KL03": {
+    "name": "宝町",
+    "json": "KL"
+  },
+  "KL04": {
+    "name": "織機本社前",
+    "json": "KL"
+  },
+  "KL05": {
+    "name": "刈谷新栄町",
+    "json": "KL"
+  },
+  "KL06": {
+    "name": "刈谷高松",
+    "json": "KL"
+  },
+  "KL07": {
+    "name": "刈谷住吉",
+    "json": "KL"
+  },
+  "KL08": {
+    "name": "刈谷交通遊園前",
+    "json": "KL"
+  },
+  "KL09": {
+    "name": "下重原",
+    "json": "KL"
+  },
+  "KL10": {
+    "name": "一色町",
+    "json": "KL"
+  },
+  "KL11": {
+    "name": "昭和町",
+    "json": "KL"
+  },
+  "KL12": {
+    "name": "アイシン本社前",
+    "json": "KL"
+  },
+  "KL13": {
+    "name": "恩田",
+    "json": "KL"
+  },
+  "KL14": {
+    "name": "刈谷青山",
+    "json": "KL"
+  },
+  "KL15": {
+    "name": "青山公園西",
+    "json": "KL"
+  },
+  "KL16": {
+    "name": "新田町",
+    "json": "KL"
+  },
+  "KL17": {
+    "name": "小山",
+    "json": "KL"
+  },
+  "KL01a": {
+    "name": "日高",
+    "json": "KL"
+  },
+  "TT01": {
+    "name": "与五八",
+    "json": "TT"
+  },
+  "TT02": {
+    "name": "横須賀高校前",
+    "json": "TT"
+  },
+  "TT03": {
+    "name": "野崎橋",
+    "json": "TT"
+  },
+  "TT04": {
+    "name": "知多平野",
+    "json": "TT"
+  },
+  "TT05": {
+    "name": "長曽橋",
+    "json": "TT"
+  },
+  "TT06": {
+    "name": "朝倉団地",
+    "json": "TT"
+  },
+  "TT07": {
+    "name": "つつじが丘",
+    "json": "TT"
+  },
+  "TT08": {
+    "name": "新知台",
+    "json": "TT"
+  },
+  "TT09": {
+    "name": "知多市保健センター",
+    "json": "TT"
+  },
+  "TT10": {
+    "name": "中央図書館前",
+    "json": "TT"
+  },
+  "TT11": {
+    "name": "美城々根",
+    "json": "TT"
+  },
+  "TT12": {
+    "name": "沖ノ田",
+    "json": "TT"
+  },
+  "TT13": {
+    "name": "日長堀田",
+    "json": "TT"
+  },
+  "TT14": {
+    "name": "前田口",
+    "json": "TT"
+  },
+  "TT15": {
+    "name": "新舞子北",
+    "json": "TT"
+  },
+  "TT16": {
+    "name": "新舞子口",
+    "json": "TT"
+  },
+  "KT01": {
+    "name": "太田川",
+    "json": "KT"
+  },
+  "KT02": {
+    "name": "細田",
+    "json": "KT"
+  },
+  "KT03": {
+    "name": "与五八",
+    "json": "KT"
+  },
+  "KT04": {
+    "name": "北加木屋",
+    "json": "KT"
+  },
+  "KT05": {
+    "name": "吉川",
+    "json": "KT"
+  },
+  "KT06": {
+    "name": "宮内町",
+    "json": "KT"
+  },
+  "KT07": {
+    "name": "半月町",
+    "json": "KT"
+  },
+  "KT08": {
+    "name": "大府森岡",
+    "json": "KT"
+  },
+  "KT09": {
+    "name": "鞍流瀬川",
+    "json": "KT"
+  },
+  "KT10": {
+    "name": "若草",
+    "json": "KT"
+  },
+  "KT11": {
+    "name": "大東町",
+    "json": "KT"
+  },
+  "KT12": {
+    "name": "惣作",
+    "json": "KT"
+  },
+  "KT13": {
+    "name": "中手町",
+    "json": "KT"
+  },
+  "KT14": {
+    "name": "日高",
+    "json": "KT"
+  },
+  "KT15": {
+    "name": "新富町",
+    "json": "KT"
+  },
+  "KT16": {
+    "name": "丸田町",
+    "json": "KT"
+  },
+  "KT17": {
+    "name": "刈谷",
+    "json": "KT"
+  },
+  "KT07a": {
+    "name": "半月町",
+    "json": "KT"
+  },
+  "KT00": {
+    "name": "大府",
+    "json": "KT"
+  },
+  "KT11a": {
+    "name": "大東町",
+    "json": "KT"
+  },
+  "KT12a": {
+    "name": "惣作",
+    "json": "KT"
+  },
+  "KT15a": {
+    "name": "新富町",
+    "json": "KTa"
+  },
+  "KT18": {
+    "name": "刈谷池田",
+    "json": "KTa"
+  },
+  "KT19": {
+    "name": "恩田",
+    "json": "KTa"
+  },
+  "KT20": {
+    "name": "狩野公園",
+    "json": "KTa"
+  },
+  "KT21": {
+    "name": "鳥居",
+    "json": "KTa"
+  },
+  "KT22": {
+    "name": "知立",
+    "json": "KTa"
+  },
+  "OL01": {
+    "name": "大府",
+    "json": "OL"
+  },
+  "OL02": {
+    "name": "大府市役所前",
+    "json": "OL"
+  },
+  "OL03": {
+    "name": "長根",
+    "json": "OL"
+  },
+  "OL04a": {
+    "name": "至学館大学前",
+    "json": "MT"
+  },
+  "OL05": {
+    "name": "梶田町",
+    "json": "OL"
+  },
+  "OL06": {
+    "name": "坊主山",
+    "json": "OL"
+  },
+  "OL07": {
+    "name": "東新町",
+    "json": "OL"
+  },
+  "OL08": {
+    "name": "共和",
+    "json": "OL"
+  },
+  "OL09": {
+    "name": "田面",
+    "json": "OL"
+  },
+  "OL10": {
+    "name": "アローブ前",
+    "json": "OL"
+  },
+  "OL11": {
+    "name": "江端町",
+    "json": "OL"
+  },
+  "OL12": {
+    "name": "大峯",
+    "json": "OL"
+  },
+  "OL01a": {
+    "name": "大府",
+    "json": "OL"
+  },
+  "MR01": {
+    "name": "半田市",
+    "json": "MR"
+  },
+  "MR02": {
+    "name": "南本町",
+    "json": "MR"
+  },
+  "MR03": {
+    "name": "港本町",
+    "json": "MR"
+  },
+  "MR04": {
+    "name": "成岩本町",
+    "json": "MR"
+  },
+  "MR05": {
+    "name": "神戸川",
+    "json": "MR"
+  },
+  "MR06": {
+    "name": "旭町",
+    "json": "MR"
+  },
+  "MR07": {
+    "name": "有楽町",
+    "json": "MR"
+  },
+  "MR08": {
+    "name": "石川橋",
+    "json": "MR"
+  },
+  "MR09": {
+    "name": "下門",
+    "json": "MR"
+  },
+  "MR10": {
+    "name": "武豊",
+    "json": "MR"
+  },
+  "MR11": {
+    "name": "里中",
+    "json": "MR"
+  },
+  "MR12": {
+    "name": "廻間",
+    "json": "MR"
+  },
+  "MR13": {
+    "name": "浦之島",
+    "json": "MR"
+  },
+  "MR14": {
+    "name": "新富貴",
+    "json": "MR"
+  },
+  "MR15": {
+    "name": "篭田",
+    "json": "MR"
+  },
+  "MR16": {
+    "name": "三反田",
+    "json": "MR"
+  },
+  "MR17": {
+    "name": "梅之木",
+    "json": "MR"
+  },
+  "MR18": {
+    "name": "布土",
+    "json": "MR"
+  },
+  "MR19": {
+    "name": "河和口",
+    "json": "MR"
+  },
+  "MR20": {
+    "name": "時志",
+    "json": "MR"
+  },
+  "MR21": {
+    "name": "河和",
+    "json": "MR"
+  },
+  "MR22": {
+    "name": "河和上前田",
+    "json": "MR"
+  },
+  "MR23": {
+    "name": "新浦戸",
+    "json": "MR"
+  },
+  "MR24": {
+    "name": "古布",
+    "json": "MR"
+  },
+  "MR25": {
+    "name": "美浜中平井",
+    "json": "MR"
+  },
+  "MR26": {
+    "name": "郷島",
+    "json": "MR"
+  },
+  "MR27": {
+    "name": "山田海岸",
+    "json": "MR"
+  },
+  "MR28": {
+    "name": "大井港",
+    "json": "MR"
+  },
+  "MR29": {
+    "name": "片名",
+    "json": "MR"
+  },
+  "MR30": {
+    "name": "新師崎",
+    "json": "MR"
+  },
+  "MR31": {
+    "name": "師崎漁港",
+    "json": "MR"
+  },
+  "MR32": {
+    "name": "師崎",
+    "json": "MR"
+  },
+  "MR33": {
+    "name": "師崎港",
+    "json": "MR"
+  },
+  "NW01": {
+    "name": "名和",
+    "json": "NW"
+  },
+  "NW02": {
+    "name": "龍ノ脇",
+    "json": "NW"
+  },
+  "NW03": {
+    "name": "南神田",
+    "json": "NW"
+  },
+  "NW04": {
+    "name": "寺徳",
+    "json": "NW"
+  },
+  "NW05": {
+    "name": "寿鎌",
+    "json": "NW"
+  },
+  "NW06": {
+    "name": "脇ノ田",
+    "json": "NW"
+  },
+  "NW07": {
+    "name": "荒尾町南",
+    "json": "NW"
+  },
+  "NW08": {
+    "name": "富木島中央",
+    "json": "NW"
+  },
+  "NW09": {
+    "name": "伏見橋",
+    "json": "NW"
+  },
+  "NW10": {
+    "name": "北加木屋",
+    "json": "NW"
+  },
+  "NW11": {
+    "name": "丑寅海斗",
+    "json": "NW"
+  },
+  "NW12": {
+    "name": "南加木屋",
+    "json": "NW"
+  },
+  "NW13": {
+    "name": "中平地",
+    "json": "NW"
+  },
+  "NW14": {
+    "name": "八幡新田",
+    "json": "NW"
+  },
+  "UM01": {
+    "name": "古布",
+    "json": "UM"
+  },
+  "UM02": {
+    "name": "古布九条",
+    "json": "UM"
+  },
+  "UM03": {
+    "name": "内田",
+    "json": "UM"
+  },
+  "UM04": {
+    "name": "内海",
+    "json": "UM"
+  },
+  "UM05": {
+    "name": "早稲倉",
+    "json": "UM"
+  },
+  "UM06": {
+    "name": "内海海岸",
+    "json": "UM"
+  },
+  "TZ01": {
+    "name": "荒尾下畑",
+    "json": "TZ"
+  },
+  "TZ02": {
+    "name": "大池公園",
+    "json": "TZ"
+  },
+  "TZ03": {
+    "name": "荒尾町南",
+    "json": "TZ"
+  },
+  "TZ04": {
+    "name": "貴船",
+    "json": "TZ"
+  },
+  "TZ05": {
+    "name": "長口",
+    "json": "TZ"
+  },
+  "TZ06": {
+    "name": "前新切",
+    "json": "TZ"
+  },
+  "TZ07": {
+    "name": "アローブ前",
+    "json": "TZ"
+  },
+  "TZ08": {
+    "name": "柊山",
+    "json": "TZ"
+  },
+  "TZ09": {
+    "name": "中央町",
+    "json": "TZ"
+  },
+  "TZ10": {
+    "name": "長根",
+    "json": "TZ"
+  },
+  "TZ11": {
+    "name": "平子",
+    "json": "TZ"
+  },
+  "TZ12": {
+    "name": "辰池",
+    "json": "TZ"
+  },
+  "TZ13": {
+    "name": "樫塚",
+    "json": "TZ"
+  },
+  "TZ14": {
+    "name": "みどり公園",
+    "json": "TZ"
+  },
+  "TZ15": {
+    "name": "新左山",
+    "json": "TZ"
+  },
+  "TZ16": {
+    "name": "前後",
+    "json": "TZ"
+  },
+  "TZ17": {
+    "name": "二村台南",
+    "json": "TZ"
+  },
+  "TZ18": {
+    "name": "二村台",
+    "json": "TZ"
+  },
+  "TZ19": {
+    "name": "豊明団地",
+    "json": "TZ"
+  },
+  "TZ20": {
+    "name": "若宮",
+    "json": "TZ"
+  },
+  "TZ21": {
+    "name": "沓掛",
+    "json": "TZ"
+  },
+  "TZ00": {
+    "name": "惣作",
+    "json": "TZ"
+  },
+  "TZ10a": {
+    "name": "長根",
+    "json": "TZ"
+  },
+  "KT04a": {
+    "name": "北加木屋",
+    "json": "TT"
+  },
+  "TT02a": {
+    "name": "横須賀高校前",
+    "json": "TT"
+  },
+  "GK04a": {
+    "name": "鳴海",
+    "json": "GK"
+  },
+  "OD14a": {
+    "name": "上汐田",
+    "json": "GK"
+  },
+  "OL11a": {
+    "name": "江端町",
+    "json": "HD"
+  },
+  "HD02a": {
+    "name": "大府森岡",
+    "json": "HD"
+  },
+  "KT01a": {
+    "name": "太田川",
+    "json": "TT"
+  },
+  "KT02a": {
+    "name": "細田",
+    "json": "TT"
+  },
+  "HD17b": {
+    "name": "乙川",
+    "json": "MR"
+  },
+  "HD18a": {
+    "name": "半田大橋",
+    "json": "MR"
+  },
+  "KT17a": {
+    "name": "刈谷",
+    "json": "MY"
+  },
+  "AR01": {
+    "name": "至学館大学前",
+    "json": "AR"
+  },
+  "AR02": {
+    "name": "北山",
+    "json": "AR"
+  },
+  "AR03": {
+    "name": "長根北",
+    "json": "AR"
+  },
+  "AR04": {
+    "name": "追分町",
+    "json": "AR"
+  },
+  "AR05": {
+    "name": "明成一屋",
+    "json": "AR"
+  },
+  "AR06": {
+    "name": "下田ノ松",
+    "json": "AR"
+  },
+  "AR07": {
+    "name": "長草天神社",
+    "json": "AR"
+  },
+  "AR08": {
+    "name": "白魦池",
+    "json": "AR"
+  },
+  "AR09": {
+    "name": "石原",
+    "json": "AR"
+  },
+  "AR10": {
+    "name": "下大脇",
+    "json": "AR"
+  },
+  "AR11": {
+    "name": "荒尾後山",
+    "json": "AR"
+  },
+  "AR12": {
+    "name": "寿鎌",
+    "json": "AR"
+  },
+  "AR13": {
+    "name": "荒尾若宮",
+    "json": "AR"
+  },
+  "AR14": {
+    "name": "荒尾大城",
+    "json": "AR"
+  },
+  "AR15": {
+    "name": "聚楽園",
+    "json": "AR"
+  },
+  "ON10a": {
+    "name": "田面",
+    "json": "TR"
+  }
+}

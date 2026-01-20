@@ -6801,75 +6801,27 @@
     },
     {
       "from": "GK33",
-      "to": "GK33a"
-    },
-    {
-      "from": "GK33a",
-      "to": "GK33"
-    },
-    {
-      "from": "GK33a",
-      "to": "TY15a"
-    },
-    {
-      "from": "TY15a",
-      "to": "GK33a"
-    },
-    {
-      "from": "TY15",
-      "to": "TY15a"
-    },
-    {
-      "from": "TY15a",
       "to": "TY15"
     },
     {
+      "from": "TY15",
+      "to": "GK33"
+    },
+    {
       "from": "GK31",
-      "to": "GK31a"
-    },
-    {
-      "from": "GK31a",
-      "to": "GK31"
-    },
-    {
-      "from": "GK31a",
-      "to": "TY04a"
-    },
-    {
-      "from": "TY04a",
-      "to": "GK31a"
-    },
-    {
-      "from": "TY04",
-      "to": "TY04a"
-    },
-    {
-      "from": "TY04a",
       "to": "TY04"
     },
     {
+      "from": "TY04",
+      "to": "GK31"
+    },
+    {
       "from": "GK25",
-      "to": "GK25a"
-    },
-    {
-      "from": "GK25a",
-      "to": "GK25"
-    },
-    {
-      "from": "GK25a",
-      "to": "TY02a"
-    },
-    {
-      "from": "TY02a",
-      "to": "GK25a"
+      "to": "TY02"
     },
     {
       "from": "TY02",
-      "to": "TY02a"
-    },
-    {
-      "from": "TY02a",
-      "to": "TY02"
+      "to": "GK25"
     },
     {
       "from": "OD31",
@@ -7128,100 +7080,20 @@
       "to": "KT17a"
     },
     {
-      "from": "KT00a",
-      "to": "KT00"
-    },
-    {
       "from": "KT00",
-      "to": "KT00a"
-    },
-    {
-      "from": "KT00a",
-      "to": "OL01"
-    },
-    {
-      "from": "OL01",
-      "to": "KT00a"
-    },
-    {
-      "from": "KT00a",
-      "to": "OL01a"
-    },
-    {
-      "from": "OL01a",
-      "to": "KT00a"
-    },
-    {
-      "from": "KT00a",
-      "to": "HD01"
-    },
-    {
-      "from": "HD01",
-      "to": "KT00a"
-    },
-    {
-      "from": "UD01a",
-      "to": "UD01"
-    },
-    {
-      "from": "UD01",
-      "to": "UD01a"
-    },
-    {
-      "from": "UD01a",
-      "to": "KT12"
-    },
-    {
-      "from": "KT12",
-      "to": "UD01a"
-    },
-    {
-      "from": "UD01a",
-      "to": "KT12a"
-    },
-    {
-      "from": "KT12a",
-      "to": "UD01a"
-    },
-    {
-      "from": "UD01a",
-      "to": "TZ00"
-    },
-    {
-      "from": "TZ00",
-      "to": "UD01a"
-    },
-    {
-      "from": "NK06a",
-      "to": "NK06"
-    },
-    {
-      "from": "NK06",
-      "to": "NK06a"
-    },
-    {
-      "from": "NK16a",
       "to": "NK16"
     },
     {
       "from": "NK16",
-      "to": "NK16a"
+      "to": "KT00"
     },
     {
-      "from": "KT00a",
-      "to": "NK16a"
+      "from": "NK06",
+      "to": "UD01"
     },
     {
-      "from": "NK16a",
-      "to": "KT00a"
-    },
-    {
-      "from": "NK06a",
-      "to": "UD01a"
-    },
-    {
-      "from": "UD01a",
-      "to": "NK06a"
+      "from": "UD01",
+      "to": "NK06"
     },
     {
       "from": "NK16",
@@ -7232,60 +7104,12 @@
       "to": "NK16"
     },
     {
-      "from": "OL01b",
-      "to": "OL01"
-    },
-    {
-      "from": "OL01",
-      "to": "OL01b"
-    },
-    {
-      "from": "OL01b",
+      "from": "OD28",
       "to": "OL01a"
     },
     {
       "from": "OL01a",
-      "to": "OL01b"
-    },
-    {
-      "from": "OL01b",
-      "to": "KT00"
-    },
-    {
-      "from": "KT00",
-      "to": "OL01b"
-    },
-    {
-      "from": "OL01b",
-      "to": "KT00a"
-    },
-    {
-      "from": "KT00a",
-      "to": "OL01b"
-    },
-    {
-      "from": "OL01b",
-      "to": "HD01"
-    },
-    {
-      "from": "HD01",
-      "to": "OL01b"
-    },
-    {
-      "from": "OD28a",
       "to": "OD28"
-    },
-    {
-      "from": "OD28",
-      "to": "OD28a"
-    },
-    {
-      "from": "OD28a",
-      "to": "OL01b"
-    },
-    {
-      "from": "OL01b",
-      "to": "OD28a"
     },
     {
       "from": "AR01",

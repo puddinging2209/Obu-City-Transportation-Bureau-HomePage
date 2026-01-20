@@ -15,7 +15,7 @@ export default function Test() {
 
     async function searchTransfer() {
         if (!from || !to) return;
-        const segments = await dijkstra(code(from)[0], code(to)[0], 50000, 0, false);
+        const segments = await dijkstra(code(from)[0], code(to)[0], 40000, 0, false);
         console.log(segments);
     }
 
