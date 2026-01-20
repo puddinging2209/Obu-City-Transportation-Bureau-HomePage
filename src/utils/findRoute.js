@@ -1,6 +1,7 @@
 import edges from "../data/edges.json";
 
 import { searchFastestTrain } from "./searchFastestTrain.js";
+import { name } from "./Station.js";
 
 // 経路復元 
 function reconstructByState(goalStateId, previous, used) {
@@ -28,6 +29,7 @@ function formatRouteFromStates(states, used) {
 
     for (let i = 1; i < states.length; i++) {
         const curUsed = used[states[i]]
+        console.log(curUsed)
         if (!curUsed || !curUsed.train) continue
 
         // --- segment 開始 ---
@@ -169,7 +171,7 @@ export async function dijkstra(
         if (
             (mode === 0 && time > bestTime[station]) ||
             (mode === 1 && time < bestTime[station])
-        ) continue
+        ) continue;
 
         if (station === goalStation) {
             goalStateId = `${station}@${time}`
@@ -178,29 +180,32 @@ export async function dijkstra(
 
         for (const { node: nextStation } of graph[station] ?? []) {
 
-            console.log(`${station} -> ${nextStation}`)
-            const result = await searchFastestTrain(
-                station.slice(0, 2),
-                time,
-                station,
-                nextStation,
-                mode,
-                tokkyu
-            )
+            let result = null;
+            if (name(station) != name(nextStation)) {
+                result = await searchFastestTrain(
+                    station.slice(0, 2),
+                    time,
+                    station,
+                    nextStation,
+                    mode,
+                    tokkyu
+                );
 
-            if (!result) continue
+                if (!result) continue;
+            }
 
-            const nextTime = mode === 0 ? result.arr : result.dep
+            const nextTime = result ? (mode === 0 ? result.arr : result.dep) : time;
+            console.log(station, nextStation, result, nextTime)
 
             // mode 1: 到着時刻を超えたら不許可
-            if (mode === 1 && nextTime > baseTime) continue
+            if (mode === 1 && nextTime > baseTime) continue;
 
             const better =
                 bestTime[nextStation] === undefined ||
                 (mode === 0 && nextTime < bestTime[nextStation]) ||
                 (mode === 1 && nextTime > bestTime[nextStation])
 
-            if (!better) continue
+            if (!better) continue;
 
             bestTime[nextStation] = nextTime
 

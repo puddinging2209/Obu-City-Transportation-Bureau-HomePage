@@ -6,24 +6,25 @@ import stations from '../data/stations.json';
 
 import { myStationsAtom } from '../utils/Atom.js';
 
-export default function StationSelecter({ref, onChange, station = true, busStop = true}) {
+export default function StationSelecter({ref, onChange, includeMyStations = true, station = true, busStop = true}) {
     const myStations = useAtomValue(myStationsAtom);
 
     let options = [];
     if (station) options.push(
         ...Object.keys(stations)
-            .filter(station => !(myStations)
-                .map(station => station.name)
-                .includes(station))
             .map(station => ({ value: station, label: station, role: 'station', kana: stations[station].kana }))
     );
     if (busStop) options.push(
         ...Object.keys(busStops)
-            .filter(stop => !(myStations)
-                .map(station => station.name)
-                .includes(stop))
             .map(stop => ({ value: stop, label: stop, role: 'busStop', kana: busStops[stop].kana }))
     );
+
+    if (!includeMyStations) {
+        options = options
+            .filter(station => !(myStations)
+                .map(station => station.name)
+                .includes(station))
+    }
 
     return (
         <Select
