@@ -16,12 +16,12 @@ function reconstructByState(goalStateId, previous, used) {
     return formatRouteFromStates(states, used)
 }
 
-
-
 function formatRouteFromStates(states, used) {
     const segments = []
 
-    let currentTrain = null
+    let current = {
+        train: null, detail: { terminal: null, typeName: null }
+    }
     let fromSta = null
     let depTime = null
     let lastArrTime = null
@@ -29,28 +29,29 @@ function formatRouteFromStates(states, used) {
 
     for (let i = 1; i < states.length; i++) {
         const curUsed = used[states[i]]
-        console.log(curUsed)
         if (!curUsed || !curUsed.train) continue
 
         // --- segment 開始 ---
-        if (currentTrain === null) {
-            currentTrain = curUsed.train
+        if (current.train === null) {
+            current = { train: curUsed.train, detail: { terminal: curUsed.terminal, typeName: curUsed.type } }
             fromSta = curUsed.from
             depTime = curUsed.dep
         }
 
         // --- 列車が変わったら segment 確定 ---
-        if (curUsed.train !== currentTrain) {
+        if (curUsed.train !== current.train) {
             segments.push({
-                train: currentTrain,
+                train: current.train,
                 from: fromSta,
                 to: lastTo,
                 depTime,
-                arrTime: lastArrTime
+                arrTime: lastArrTime,
+                terminal: current.detail.terminal,
+                typeName: current.detail.typeName
             })
 
             // 新しい列車
-            currentTrain = curUsed.train
+            current = { train: curUsed.train, detail: { terminal: curUsed.terminal, typeName: curUsed.type } }
             fromSta = curUsed.from
             depTime = curUsed.dep
         }
@@ -61,22 +62,20 @@ function formatRouteFromStates(states, used) {
     }
 
     // --- 最後の segment を必ず確定 ---
-    if (currentTrain !== null) {
+    if (current.train !== null) {
         segments.push({
-            train: currentTrain,
+            train: current,
             from: fromSta,
             to: lastTo,
             depTime,
-            arrTime: lastArrTime
+            arrTime: lastArrTime,
+            terminal: current.detail.terminal,
+            typeName: current.detail.typeName
         })
     }
 
     return segments
 }
-
-
-
-
 
 // ==== 隣接リスト作成 ====
 const graph = {};
@@ -135,7 +134,6 @@ class MinHeap {
     }
 }
 
-
 // ==== Dijkstra ====
 export async function dijkstra(
     startStation,
@@ -183,7 +181,6 @@ export async function dijkstra(
             let result = null;
             if (name(station) != name(nextStation)) {
                 result = await searchFastestTrain(
-                    station.slice(0, 2),
                     time,
                     station,
                     nextStation,
