@@ -1,16 +1,16 @@
-import { dia as readOud } from './readOud.js'
-import { adjustTime } from "./Time.js"
-import { terminal, typeName } from "./Train.js"
+import { dia as readOud } from './readOud.js';
+import { adjustTime } from "./Time.js";
+import { terminal, typeName } from "./Train.js";
 
 export async function searchFastestTrain(rosen, nowtime, fromsta, tosta, mode, tokkyu) {
     const dia = await readOud(rosen)
-    const innerstations = dia.railway.stations.map(sta => sta["name"])
+    const innerstations = dia.railway.stations.map(sta => sta.name);
 
     const nowsecond = adjustTime(nowtime)
 
     let direction;
-    let from = innerstations.indexOf(fromsta);
-    let to = innerstations.indexOf(tosta);
+    let from = (innerstations.includes(fromsta)) ? innerstations.indexOf(fromsta) : innerstations.indexOf(fromsta.slice(0, 4));
+    let to = (innerstations.includes(tosta)) ? innerstations.indexOf(tosta) : innerstations.indexOf(tosta.slice(0, 4));
     if (from < to) {
         direction = 0;
     } else {

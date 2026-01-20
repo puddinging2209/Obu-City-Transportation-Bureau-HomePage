@@ -137,6 +137,7 @@ export default function DepartureSection() {
                             }
                         }
                       }
+                      includeMyStations={false}
                   />
                 </DialogContent>
                 <DialogActions>
