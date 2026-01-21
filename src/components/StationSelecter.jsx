@@ -1,13 +1,10 @@
-import { useAtomValue } from 'jotai';
 import Select from 'react-select';
 
 import busStops from '../data/busStops.json';
 import stations from '../data/stations.json';
 
-import { myStationsAtom } from '../utils/Atom.js';
 
-export default function StationSelecter({ref, onChange, includeMyStations = true, station = true, busStop = true}) {
-    const myStations = useAtomValue(myStationsAtom);
+export default function StationSelecter({ref, onChange, disabledStations = [], station = true, busStop = true}) {
 
     let options = [];
     if (station) options.push(
@@ -19,11 +16,9 @@ export default function StationSelecter({ref, onChange, includeMyStations = true
             .map(stop => ({ value: stop, label: stop, role: 'busStop', kana: busStops[stop].kana }))
     );
 
-    if (!includeMyStations) {
+    if (disabledStations.length) {
         options = options
-            .filter(station => !(myStations)
-                .map(station => station.name)
-                .includes(station))
+            .filter(station => !disabledStations.includes(station.value));
     }
 
     return (
