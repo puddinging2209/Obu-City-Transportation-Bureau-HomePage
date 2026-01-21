@@ -53,7 +53,7 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu) 
                             (mode == 1 && nowsecond > arrTime &&
                                 (fastest.train === null || fastest.dep < depTime))
                         ) {
-                            if (tokkyu || (!tokkyu && type != "特急")) {
+                            if (tokkyu || (!tokkyu && type != "特急" && type != "ライナー")) {
                                 fastest.train = train
                                 fastest.arr = arrTime
                                 fastest.dep = depTime
@@ -110,7 +110,6 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu) 
                     ) {
                         const arrTime = adjustTime(toTrain.timetable._data[to].arrival ?? toTrain.timetable._data[to].departure) + day * 86400
                         const depTime = adjustTime(fromTrain.timetable._data[from].departure ?? fromTrain.timetable._data[from].arrival) + day * 86400
-                        console.log(depTime, arrTime);
                         const type = typeName(fromTrain, fromDia)
                         if (depTime < arrTime) {
 
