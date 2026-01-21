@@ -1,8 +1,8 @@
-import { Typography } from "@mui/material";
+import TransferInput from "../components/TransferInput.jsx";
 
 function Transfer() {
     return (
-        <Typography variant="h6">準備中...</Typography>
+        <TransferInput />
     )
 }
 
