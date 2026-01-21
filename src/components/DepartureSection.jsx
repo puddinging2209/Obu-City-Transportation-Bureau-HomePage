@@ -137,7 +137,7 @@ export default function DepartureSection() {
                             }
                         }
                       }
-                      includeMyStations={false}
+                      disabledStations={myStations.map(s => s.name)}
                   />
                 </DialogContent>
                 <DialogActions>
