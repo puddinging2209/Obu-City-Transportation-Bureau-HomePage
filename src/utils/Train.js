@@ -15,5 +15,8 @@ export function terminal(train, diagram) {
 }
 
 export function typeName(train, diagram) {
-    return diagram.railway.trainTypes[train.type].name;
+    const result = diagram.railway.trainTypes[train.type].name;
+    if (result === '普通 ') return '普通';
+    if (result === 'たこつぼ') return '特急'
+    return result;
 }
