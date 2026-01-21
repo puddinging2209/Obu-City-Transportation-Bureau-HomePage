@@ -192,7 +192,6 @@ export async function dijkstra(
             }
 
             const nextTime = result ? (mode === 0 ? result.arr : result.dep) : time;
-            console.log(station, nextStation, result, nextTime)
 
             // mode 1: 到着時刻を超えたら不許可
             if (mode === 1 && nextTime > baseTime) continue;

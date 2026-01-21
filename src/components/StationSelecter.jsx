@@ -4,7 +4,7 @@ import busStops from '../data/busStops.json';
 import stations from '../data/stations.json';
 
 
-export default function StationSelecter({ref, onChange, disabledStations = [], station = true, busStop = true}) {
+export default function StationSelecter({ref, value, placeholder, onChange, disabledStations = [], station = true, busStop = true}) {
 
     let options = [];
     if (station) options.push(
@@ -26,7 +26,8 @@ export default function StationSelecter({ref, onChange, disabledStations = [], s
             ref={ref}
             options={options.sort((a, b) => a.kana.localeCompare(b.kana))}
             onChange={onChange}
-            placeholder="駅・停留所を検索"
+            value={value}
+            placeholder={placeholder ?? "駅・バス停を検索"}
             isSearchable={true}
             menuPortalTarget={document.body}
             styles={{
