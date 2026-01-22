@@ -34,32 +34,28 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu) 
         for (let day = 0; -2 < day && day < 2; true) {
             dia.railway.diagrams[0].trains[direction].forEach((train) => {
                 if (
-                    train.timetable.firstStationIndex <= from &&
-                    to <= train.timetable.terminalStationIndex &&
-                    train.timetable._data[from] != null &&
-                    train.timetable._data[to] != null
+                    train.timetable._data[from]?.stopType === 1 && train.timetable._data[to]?.stopType === 1
                 ) {
+                    const arrTime = adjustTime(train.timetable._data[to].arrival ?? train.timetable._data[to].departure) + day * 86400
+                    const depTime = adjustTime(train.timetable._data[from].departure ?? train.timetable._data[from].arrival) + day * 86400
+                    const type = typeName(train, dia)
+
                     if (
-                        train.timetable._data[from].stopType === 1 && train.timetable._data[to].stopType === 1
+                        (
+                            mode == 0 && nowsecond < depTime &&
+                            (fastest.train === null || fastest.arr > arrTime)
+                        ) ||
+                        (
+                            mode == 1 && nowsecond > arrTime &&
+                            (fastest.train === null || fastest.dep < depTime)
+                        )
                     ) {
-                        const arrTime = adjustTime(train.timetable._data[to].arrival ?? train.timetable._data[to].departure) + day * 86400
-                        const depTime = adjustTime(train.timetable._data[from].departure ?? train.timetable._data[from].arrival) + day * 86400
-                        const type = typeName(train, dia)
-
-                        if (
-                            (mode == 0 && nowsecond < depTime &&
-                                (fastest.train === null || fastest.time > arrTime)) ||
-
-                            (mode == 1 && nowsecond > arrTime &&
-                                (fastest.train === null || fastest.dep < depTime))
-                        ) {
-                            if (tokkyu || (!tokkyu && type != "特急" && type != "ライナー")) {
-                                fastest.train = train
-                                fastest.arr = arrTime
-                                fastest.dep = depTime
-                                fastest.type = type
-                                fastest.terminal = terminal(train, dia)
-                            }
+                        if (tokkyu || (!tokkyu && type != "特急" && type != "ライナー")) {
+                            fastest.train = train
+                            fastest.arr = arrTime
+                            fastest.dep = depTime
+                            fastest.type = type
+                            fastest.terminal = terminal(train, dia)
                         }
                     }
                 }
