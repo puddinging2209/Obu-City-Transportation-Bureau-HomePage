@@ -3,7 +3,6 @@ import nodes from "../data/nodes.json";
 
 import { searchFastestTrain } from "./searchFastestTrain.js";
 import { name } from "./Station.js";
-import { toTimeString } from "./Time.js";
 
 // 経路復元 
 function reconstructByState(goalStateId, previous, used) {
@@ -46,8 +45,8 @@ function formatRouteFromStates(states, used) {
                 train: current.train,
                 from: name(fromSta),
                 to: name(lastTo),
-                depTime: toTimeString(depTime),
-                arrTime: toTimeString(lastArrTime),
+                depTime: depTime,
+                arrTime: lastArrTime,
                 terminal: current.detail.terminal,
                 typeName: current.detail.typeName,
                 line: nodes[fromSta]?.line
@@ -67,11 +66,11 @@ function formatRouteFromStates(states, used) {
     // --- 最後の segment を必ず確定 ---
     if (current.train !== null) {
         segments.push({
-            train: current,
+            train: current.train,
             from: name(fromSta),
             to: name(lastTo),
-            depTime: toTimeString(depTime),
-            arrTime: toTimeString(lastArrTime),
+            depTime: depTime,
+            arrTime: lastArrTime,
             terminal: current.detail.terminal,
             typeName: current.detail.typeName,
             line: nodes[fromSta]?.line
