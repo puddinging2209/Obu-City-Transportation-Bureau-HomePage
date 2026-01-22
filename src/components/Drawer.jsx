@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import HomeIcon from '@mui/icons-material/Home';
 import MapIcon from '@mui/icons-material/Map';
+import PlaceIcon from '@mui/icons-material/Place';
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import TrainIcon from '@mui/icons-material/Train';
@@ -28,6 +29,7 @@ function Drawer() {
     ];
 
     const subListItems = [
+        { name: '駅ログ！', icon: <PlaceIcon />, path: '/log' },
         { name: '大府市営地下鉄とは', icon: <HelpOutlineIcon />, path: '/about' },
     ];
 

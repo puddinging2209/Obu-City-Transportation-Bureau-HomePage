@@ -11,6 +11,7 @@ import MobileBottomNavigation from './components/MobileBottomNavigation.jsx';
 
 import About from './pages/About.jsx';
 import Home from './pages/Home.jsx';
+import Log from './pages/Log.jsx';
 import Position from './pages/Position.jsx';
 import RouteMap from './pages/RouteMap.jsx';
 import Test from './pages/Test.jsx';
@@ -61,8 +62,9 @@ function App() {
                     <Route path='/transfer' element={<Transfer />}></Route>
                     <Route path='/timetable' element={<TimeTable />}></Route>
                     <Route path='/position' element={<Position />}></Route>
+                    <Route path='/log' element={<Log />}></Route>
                     <Route path='/about' element={<About />}></Route>
-                    <Route path='test' element={<Test />}></Route>
+                    <Route path='/test' element={<Test />}></Route>
                 </Routes>
             </main>
                 
