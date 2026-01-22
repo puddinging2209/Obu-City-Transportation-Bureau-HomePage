@@ -27,7 +27,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { code } from "../utils/Station.js";
 import StationSelecter from "./StationSelecter.jsx";
 
-export default function TransferSearchUI({ onSearch }) {
+export default function TransferSearchUI({ onSearch, loading }) {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -55,7 +55,7 @@ export default function TransferSearchUI({ onSearch }) {
             t = 10799;
         }
 
-        onSearch(code(from), code(to), t, mode, tokkyu);
+        onSearch(code(from)[0], code(to)[0], t, mode, tokkyu);
     };
 
     function handleSwap() {
@@ -78,8 +78,8 @@ export default function TransferSearchUI({ onSearch }) {
       {/* 出発・到着 */}
             <Stack direction="row" spacing={1} alignItems="center">
                 <Stack spacing={1} flex={1}>
-                    <StationSelecter onChange={(value) => setFrom(value.value)} disabledStations={[to]} />
-                    <StationSelecter onChange={(value) => setTo(value.value)} disabledStations={[from]} />
+                    <StationSelecter onChange={(value) => setFrom(value.value)} placeholder="出発駅を選択" busStop={false} disabledStations={[to]} />
+                    <StationSelecter onChange={(value) => setTo(value.value)} placeholder="到着駅を選択" busStop={false} disabledStations={[from]} />
                 </Stack>
                 <IconButton
                 aria-label="入れ替え"
@@ -147,6 +147,7 @@ export default function TransferSearchUI({ onSearch }) {
                     disabled={!from || !to}
                     variant="contained"
                     size={isMobile ? "medium" : "large"}
+                    loading={loading}
                     fullWidth
                 >
                     検索

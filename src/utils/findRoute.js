@@ -1,7 +1,9 @@
 import edges from "../data/edges.json";
+import nodes from "../data/nodes.json";
 
 import { searchFastestTrain } from "./searchFastestTrain.js";
 import { name } from "./Station.js";
+import { toTimeString } from "./Time.js";
 
 // 経路復元 
 function reconstructByState(goalStateId, previous, used) {
@@ -42,12 +44,13 @@ function formatRouteFromStates(states, used) {
         if (curUsed.train !== current.train) {
             segments.push({
                 train: current.train,
-                from: fromSta,
-                to: lastTo,
-                depTime,
-                arrTime: lastArrTime,
+                from: name(fromSta),
+                to: name(lastTo),
+                depTime: toTimeString(depTime),
+                arrTime: toTimeString(lastArrTime),
                 terminal: current.detail.terminal,
-                typeName: current.detail.typeName
+                typeName: current.detail.typeName,
+                line: nodes[fromSta]?.line
             })
 
             // 新しい列車
@@ -65,12 +68,13 @@ function formatRouteFromStates(states, used) {
     if (current.train !== null) {
         segments.push({
             train: current,
-            from: fromSta,
-            to: lastTo,
-            depTime,
-            arrTime: lastArrTime,
+            from: name(fromSta),
+            to: name(lastTo),
+            depTime: toTimeString(depTime),
+            arrTime: toTimeString(lastArrTime),
             terminal: current.detail.terminal,
-            typeName: current.detail.typeName
+            typeName: current.detail.typeName,
+            line: nodes[fromSta]?.line
         })
     }
 
@@ -160,6 +164,7 @@ export async function dijkstra(
     let goalStateId = null
 
     while (true) {
+
         const cur = pq.pop()
         if (!cur) break
 
