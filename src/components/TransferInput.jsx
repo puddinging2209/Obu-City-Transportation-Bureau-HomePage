@@ -125,9 +125,9 @@ export default function TransferSearchUI({ onSearch, loading }) {
                         />
                     </LocalizationProvider>
                     <Box sx={{ mt: 2, display: "flex", justifyContent: "space-between" }}>
-                        <Button sx={{ whiteSpace: 'nowrap' }} onClick={() => setTime(dayjs().subtract(5, 'minute'))}>5分前</Button>
-                        <Button sx={{ whiteSpace: 'nowrap' }} onClick={() => setTime(dayjs())}>現在時刻</Button>
-                        <Button sx={{ whiteSpace: 'nowrap' }} onClick={() => setTime(dayjs().add(5, 'minute'))}>5分後</Button>
+                        <Button size={isMobile ? "small" : "medium"} sx={{ whiteSpace: 'nowrap' }} onClick={() => setTime(dayjs().subtract(5, 'minute'))} disabled={timeType !== "departure" && timeType !== "arrival"}>5分前</Button>
+                        <Button size={isMobile ? "small" : "medium"} sx={{ whiteSpace: 'nowrap' }} onClick={() => setTime(dayjs())} disabled={timeType !== "departure" && timeType !== "arrival"}>現在時刻</Button>
+                        <Button size={isMobile ? "small" : "medium"} sx={{ whiteSpace: 'nowrap' }} onClick={() => setTime(dayjs().add(5, 'minute'))} disabled={timeType !== "departure" && timeType !== "arrival"}>5分後</Button>
                     </Box>
                 </Box>
             </Box>
