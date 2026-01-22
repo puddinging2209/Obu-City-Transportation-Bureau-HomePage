@@ -12,7 +12,7 @@ export function toTime(seconds) {
 }
 
 export function toTimeString(seconds) {
-    const timeObj = toTime(seconds);
+    const timeObj = toTime(Number(seconds));
     const hStr = String(timeObj.h);
     const mStr = String(timeObj.m).padStart(2, '0');
     return `${hStr}:${mStr}`;
