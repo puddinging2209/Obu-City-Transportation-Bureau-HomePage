@@ -4,7 +4,7 @@ import busStops from '../data/busStops.json';
 import stations from '../data/stations.json';
 
 
-export default function StationSelecter({ref, value, placeholder, onChange, disabledStations = [], station = true, busStop = true}) {
+export default function StationSelecter({ref, value, placeholder, onChange, autoFocus = false, disabledStations = [], station = true, busStop = true}) {
 
     let options = [];
     if (station) options.push(
@@ -29,6 +29,7 @@ export default function StationSelecter({ref, value, placeholder, onChange, disa
             value={value}
             placeholder={placeholder ?? "駅・バス停を検索"}
             isSearchable={true}
+            autoFocus={autoFocus}
             menuPortalTarget={document.body}
             styles={{
                 menuPortal: base => ({ ...base, zIndex: 10001 })

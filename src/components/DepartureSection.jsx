@@ -63,12 +63,6 @@ export default function DepartureSection() {
 
     const [isShowSearch, setIsShowSearch] = React.useState(false);
 
-    const selectRef = React.useRef(null);
-
-    function focusInput() {
-        selectRef.current.focus();
-    }
-
   return (
       <Box>
           
@@ -120,7 +114,6 @@ export default function DepartureSection() {
                   setIsShowSearch(false);
                   navigate('/home');
               }}
-                TransitionProps={{ onEntered: focusInput }}
               fullWidth
           >
               <DialogTitle>
@@ -128,7 +121,6 @@ export default function DepartureSection() {
               </DialogTitle>
               <DialogContent>
                   <StationSelecter
-                      ref={selectRef}
                       onChange={(selected) => {
                             if (selected) {
                                 addMyStation({name: selected.value, role: selected.role});
@@ -137,6 +129,7 @@ export default function DepartureSection() {
                             }
                         }
                       }
+                      autoFocus
                       disabledStations={myStations.map(s => s.name)}
                   />
                 </DialogContent>
