@@ -1,6 +1,7 @@
 import React from "react";
 
 import dayjs from "dayjs";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import SettingsIcon from "@mui/icons-material/Settings";
 import SwapVertIcon from "@mui/icons-material/SwapVert";
@@ -27,12 +28,17 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { code } from "../utils/Station.js";
 import StationSelecter from "./StationSelecter.jsx";
 
-export default function TransferSearchUI({ onSearch, loading }) {
+import nodes from "../data/nodes.json";
+import stations from "../data/stations.json";
+
+export default function TransferInput({ onSearch, loading }) {
+    const { search } = useLocation();
+    const navigate = useNavigate();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-    const [from, setFrom] = React.useState("");
-    const [to, setTo] = React.useState("");
+    const [from, setFrom] = React.useState(null);
+    const [to, setTo] = React.useState(null);
     const [timeType, setTimeType] = React.useState("departure");
     const [time, setTime] = React.useState(dayjs());
     const [openOption, setOpenOption] = React.useState(false);
@@ -40,6 +46,45 @@ export default function TransferSearchUI({ onSearch, loading }) {
 
     function toSeconds(time) {
         return Number(time.format('HH')) * 3600 + Number(time.format('mm')) * 60 + Number(time.format('ss'));
+    }
+
+    function toSelecterOption(stationCode) {
+        const stationName = nodes[stationCode]?.name;
+        if (!stationName) return null;
+        return { label: stationName, value: stationName, kana: stations[stationName]?.kana || '' };
+    }
+
+    React.useEffect(() => {
+        const query = new URLSearchParams(search);
+        const from = query.get('from');
+        const to = query.get('to');
+        const time = query.get('time');
+        const mode = query.get('mode');
+        const tokkyu = query.get('tokkyu');
+        if (!from || !to || !time || !mode) return;
+
+        setFrom(toSelecterOption(from));
+        setTo(toSelecterOption(to));
+
+        const t = dayjs().startOf('day').add(Number(time), 'second');
+        setTime(t);
+
+        if (mode === '0') setTimeType('departure');
+        else if (mode === '1') setTimeType('arrival');
+        else setTimeType('departure');
+
+        setTokkyu(tokkyu === 'true');
+        onSearch(from, to, time, mode, tokkyu);
+    }, []);
+
+    function queryChange(time, mode, tokkyu) {
+        const params = new URLSearchParams();
+        if (from) params.append('from', code(from.value)[0]);
+        if (to) params.append('to', code(to.value)[0]);
+        if (time) params.append('time', time);
+        if (mode !== undefined) params.append('mode', mode);
+        if (tokkyu !== undefined) params.append('tokkyu', tokkyu);
+        navigate(`/transfer?${params.toString()}`);
     }
 
     function handleSearch() {
@@ -55,7 +100,8 @@ export default function TransferSearchUI({ onSearch, loading }) {
             t = 10799;
         }
 
-        onSearch(code(from)[0], code(to)[0], t, mode, tokkyu);
+        queryChange(t, mode, tokkyu);
+        onSearch(code(from?.value)[0], code(to?.value)[0], t, mode, tokkyu);
     };
 
     function handleSwap() {
@@ -78,8 +124,8 @@ export default function TransferSearchUI({ onSearch, loading }) {
       {/* 出発・到着 */}
             <Stack direction="row" spacing={1} alignItems="center">
                 <Stack spacing={1} flex={1}>
-                    <StationSelecter onChange={(value) => setFrom(value.value)} placeholder="出発駅を選択" busStop={false} disabledStations={[to]} />
-                    <StationSelecter onChange={(value) => setTo(value.value)} placeholder="到着駅を選択" busStop={false} disabledStations={[from]} />
+                    <StationSelecter onChange={(value) => setFrom(value)} value={from} placeholder="出発駅を選択" busStop={false} disabledStations={[to?.value]} />
+                    <StationSelecter onChange={(value) => setTo(value)} value={to} placeholder="到着駅を選択" busStop={false} disabledStations={[from?.value]} />
                 </Stack>
                 <IconButton
                 aria-label="入れ替え"
@@ -174,6 +220,6 @@ export default function TransferSearchUI({ onSearch, loading }) {
                     <Button onClick={() => setOpenOption(false)}>閉じる</Button>
                 </DialogActions>
             </Dialog>
-    </Box>
-  );
+        </Box>
+    );
 }

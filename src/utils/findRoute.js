@@ -5,7 +5,7 @@ import { searchFastestTrain } from "./searchFastestTrain.js";
 import { name } from "./Station.js";
 
 // 経路復元 
-function reconstructByState(goalStateId, previous, used) {
+function reconstructByState(goalStateId, previous, used, mode) {
     const states = []
     let cur = goalStateId
 
@@ -14,10 +14,10 @@ function reconstructByState(goalStateId, previous, used) {
         cur = previous[cur]
     }
 
-    return formatRouteFromStates(states, used)
+    return formatRouteFromStates(states, used, mode)
 }
 
-function formatRouteFromStates(states, used) {
+function formatRouteFromStates(states, used, mode) {
     const segments = []
 
     let current = {
@@ -43,8 +43,8 @@ function formatRouteFromStates(states, used) {
         if (curUsed.train !== current.train) {
             segments.push({
                 train: current.train,
-                from: name(fromSta),
-                to: name(lastTo),
+                from: mode === 0 ? name(fromSta) : name(lastTo),
+                to: mode === 0 ? name(lastTo) : name(fromSta),
                 depTime: depTime,
                 arrTime: lastArrTime,
                 terminal: current.detail.terminal,
@@ -67,8 +67,8 @@ function formatRouteFromStates(states, used) {
     if (current.train !== null) {
         segments.push({
             train: current.train,
-            from: name(fromSta),
-            to: name(lastTo),
+            from: mode === 0 ? name(fromSta) : name(lastTo),
+            to: mode === 0 ? name(lastTo) : name(fromSta),
             depTime: depTime,
             arrTime: lastArrTime,
             terminal: current.detail.terminal,
@@ -139,8 +139,8 @@ class MinHeap {
 
 // ==== Dijkstra ====
 export async function dijkstra(
-    startStation,
-    goalStation,
+    start,
+    goal,
     baseTime,
     mode,
     tokkyu
@@ -151,13 +151,15 @@ export async function dijkstra(
     const previous = {}          // stateId → stateId
     const used = {}              // stateId → trainResult
 
-    const startStateId = `${startStation}@${baseTime}`
+    const startStation = (mode === 0) ? start : goal
+    const goalStation = (mode === 0) ? goal : start
+
     bestTime[startStation] = baseTime
 
     pq.push({
         station: startStation,
         time: baseTime,
-        priority: mode === 0 ? baseTime : -baseTime
+        priority: baseTime //mode === 0 ? baseTime : -baseTime
     })
 
     let goalStateId = null
@@ -184,10 +186,11 @@ export async function dijkstra(
 
             let result = null;
             if (name(station) != name(nextStation)) {
+                console.log(station, nextStation);
                 result = await searchFastestTrain(
                     time,
-                    station,
-                    nextStation,
+                    (mode === 0) ? station : nextStation,
+                    (mode === 0) ? nextStation : station,
                     mode,
                     tokkyu
                 );
@@ -203,7 +206,7 @@ export async function dijkstra(
             const better =
                 bestTime[nextStation] === undefined ||
                 (mode === 0 && nextTime < bestTime[nextStation]) ||
-                (mode === 1 && nextTime > bestTime[nextStation])
+                (mode === 1 && nextTime > bestTime[station]);
 
             if (!better) continue;
 
@@ -227,7 +230,7 @@ export async function dijkstra(
         }
     }
 
-    if (!goalStateId) return null
+    if (!goalStateId) return null;
 
-    return reconstructByState(goalStateId, previous, used)
+    return reconstructByState(goalStateId, previous, used, mode);
 }

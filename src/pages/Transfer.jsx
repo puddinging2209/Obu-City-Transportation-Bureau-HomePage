@@ -4,6 +4,7 @@ import TransferInput from "../components/TransferInput.jsx";
 import TransferOutput from "../components/TransferOutput.jsx";
 
 import { dijkstra } from "../utils/findRoute.js";
+import { adjustTime } from '../utils/Time.js';
 
 function Transfer() {
 
@@ -13,8 +14,8 @@ function Transfer() {
     async function searchTransfer(from, to, time, mode, tokkyu) {
         if (!from || !to) return;
         setLoading(true)
-        const segments = await dijkstra(from, to, time, mode, tokkyu)
-        setResult(segments)
+        const segments = await dijkstra(from, to, adjustTime(time), mode, tokkyu)
+        setResult((mode === 0) ? segments: segments?.reverse() ?? []);
         setLoading(false)
         console.log(segments)
     }

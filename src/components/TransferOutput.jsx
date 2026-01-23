@@ -31,18 +31,38 @@ export default function TransferOutput({ segments }) {
     const [pushed, setPushed] = React.useState(null);
 
     const requiredTime = toTime(segments.at(-1).arrTime - segments[0].depTime)
+    
+    function copyUrl() {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url)
+            .then(() => {
+                alert('リンクをコピーしました！');
+            })
+            .catch(() => {
+                alert('リンクのコピーに失敗しました');
+            });
+    }
 
     return (
         <>
             <Card sx={{ width: { xs: "100%", md: "70%" }, mx: "auto", my: 4 }}>
                 <CardContent>
-                    <Typography variant="h6" fontWeight='bold'>{`${toTimeString(segments[0].depTime)}発 ${toTimeString(segments.at(-1).arrTime)}着`}</Typography>
-                    <Typography variant="body1">
-                        {requiredTime.h > 0 ?
-                            `所要時間：${requiredTime.h}時間 ${requiredTime.m}分` :
-                            `所要時間：${requiredTime.m}分`
-                        }
-                    </Typography>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', mb: 2 }}>
+                        <Box>
+                            <Typography variant="h6" fontWeight='bold'>{`${toTimeString(segments[0].depTime)}発 ${toTimeString(segments.at(-1).arrTime)}着`}</Typography>
+                            <Typography variant="body1">
+                                {requiredTime.h > 0 ?
+                                    `所要時間：${requiredTime.h}時間 ${requiredTime.m}分` :
+                                    `所要時間：${requiredTime.m}分`
+                                }
+                            </Typography>
+                        </Box>
+                        <Box sx={{ position: 'absolute', right: 0, my: 'auto', alignSelf: 'center' }}>
+                            <Button variant='outlined' size="medium" onClick={copyUrl}>
+                                経路を共有
+                            </Button>
+                        </Box>
+                    </Box>
 
                     <Box sx={{ mt: 2 }}>
                         <StationBox depTime={segments[0].depTime} StationName={segments[0].from} disableArrTime={true} />
@@ -74,8 +94,8 @@ export default function TransferOutput({ segments }) {
 
 function StationBox({ arrTime, depTime, StationName, disableArrTime = false, disableDepTime = false }) {
     return (
-        <Box sx={{ width: '100%', display: 'flex', p: 1, gap: 1 }} bgcolor="#DDD">
-            <Box sx={{ textAlign: 'center' }}>
+        <Box sx={{ width: '100%', display: 'flex', borderRadius: 1, p: 1, gap: 1 }} bgcolor="#DDD">
+            <Box sx={{ flex: '0 0 42px', textAlign: 'center' }}>
                 <Typography variant='body1'>{disableArrTime ? '出発' : toTimeString(arrTime)}</Typography>
                 <Typography variant='body1'>{disableDepTime ? '到着' : toTimeString(depTime)}</Typography>
             </Box>
