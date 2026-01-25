@@ -15,7 +15,7 @@ function Transfer() {
         if (!from || !to) return;
         setLoading(true)
         const segments = await dijkstra(from, to, adjustTime(time), mode, tokkyu)
-        setResult((mode === 0) ? segments: segments?.reverse() ?? []);
+        setResult(segments ?? []);
         setLoading(false)
         console.log(segments)
     }
