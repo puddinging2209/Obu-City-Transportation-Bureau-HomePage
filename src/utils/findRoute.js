@@ -14,7 +14,7 @@ function reconstructByState(goalStateId, previous, used, mode) {
         cur = previous[cur]
     }
 
-    return formatRouteFromStates(states, used, mode)
+    return formatRouteFromStates((mode === 0) ? states : states.reverse(), used, mode)
 }
 
 function formatRouteFromStates(states, used, mode) {
