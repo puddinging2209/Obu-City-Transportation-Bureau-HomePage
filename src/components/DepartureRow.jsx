@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, Chip, Grid, Tab, Tabs, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Box, Chip, Grid, Typography } from '@mui/material';
 
 import { name } from '../utils/Station.js';
 import { toTimeString } from '../utils/Time.js';
@@ -12,21 +11,9 @@ import types from '../data/types.json';
 
 import TrainStopsDialog from './TrainStopsDialog.jsx';
 
-function DepartureRow({ dep, needId = false }) {
+function DepartureRow({ dep, needId = false, station }) {
 
     const [isShowDialog, setIsShowDialog] = React.useState(false);
-
-    // 高さを変更したカスタムTabs
-    const StyledTabs = styled(Tabs)({
-        minHeight: '32px', // 全体の最小高さを上書き
-        height: '32px',    // 高さを固定
-    });
-
-    // 高さを変更したカスタムTab
-    const StyledTab = styled(Tab)({
-        minHeight: '32px', // 各タブの最小高さを上書き
-        padding: '6px 12px', // 高さに合わせてパディングを調整
-    });
 
     return (
         <>
@@ -96,7 +83,7 @@ function DepartureRow({ dep, needId = false }) {
                 </Grid>
             </Box>
 
-            <TrainStopsDialog dep={dep} isShowDialog={isShowDialog} setIsShowDialog={setIsShowDialog} />
+            <TrainStopsDialog dep={dep} isShowDialog={isShowDialog} setIsShowDialog={setIsShowDialog} emphasized={[station]} />
         </>
     );
 }

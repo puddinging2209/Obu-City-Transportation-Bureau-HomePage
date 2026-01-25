@@ -28,9 +28,9 @@ function formatRouteFromStates(states, used, mode) {
     let lastArrTime = null
     let lastTo = null
 
-    for (let i = 1; i < states.length; i++) {
+    for (let i = 0; i < states.length; i++) {
         const curUsed = used[states[i]]
-        if (!curUsed || !curUsed.train) continue
+        if (!curUsed || !curUsed.train) continue;
 
         // --- segment 開始 ---
         if (current.train === null) {
@@ -43,8 +43,8 @@ function formatRouteFromStates(states, used, mode) {
         if (curUsed.train !== current.train) {
             segments.push({
                 train: current.train,
-                from: mode === 0 ? name(fromSta) : name(lastTo),
-                to: mode === 0 ? name(lastTo) : name(fromSta),
+                from: name(fromSta),
+                to: name(lastTo),
                 depTime: depTime,
                 arrTime: lastArrTime,
                 terminal: current.detail.terminal,
@@ -67,8 +67,8 @@ function formatRouteFromStates(states, used, mode) {
     if (current.train !== null) {
         segments.push({
             train: current.train,
-            from: mode === 0 ? name(fromSta) : name(lastTo),
-            to: mode === 0 ? name(lastTo) : name(fromSta),
+            from: name(fromSta),
+            to: name(lastTo),
             depTime: depTime,
             arrTime: lastArrTime,
             terminal: current.detail.terminal,
@@ -201,7 +201,7 @@ export async function dijkstra(
             const nextTime = result ? (mode === 0 ? result.arr : result.dep) : time;
 
             // mode 1: 到着時刻を超えたら不許可
-            if (mode === 1 && nextTime > baseTime) continue;
+            // if (mode === 1 && nextTime > baseTime) continue;
 
             const better =
                 bestTime[nextStation] === undefined ||
@@ -218,8 +218,8 @@ export async function dijkstra(
             previous[toId] = fromId
             used[toId] = {
                 ...result,
-                from: station,
-                to: nextStation,
+                from: mode === 0 ? station : nextStation,
+                to: mode === 0 ? nextStation : station,
             };
 
             pq.push({

@@ -86,7 +86,13 @@ export default function TransferOutput({ segments }) {
                         ))}
                     </Box>
                 </CardContent>
-                <TrainStopsDialog dep={pushed} line={pushed?.line} isShowDialog={showDialog} setIsShowDialog={setShowDialog} />
+                <TrainStopsDialog
+                    dep={pushed}
+                    line={pushed?.line}
+                    isShowDialog={showDialog}
+                    setIsShowDialog={setShowDialog}
+                    emphasized={[pushed?.from, pushed?.to]}
+                />
             </Card>
         </>
   );
