@@ -6,13 +6,14 @@ import { toTimeString } from '../utils/Time.js';
 import OverflowMarquee from './OverflowMarquee.jsx';
 
 
-function StopRow({ stop, departed = false }) {
+function StopRow({ stop, departed = false, emphasized = false }) {
     return (
         <>
             <Box
                 sx={{
                     borderBottom: '1px solid rgba(0,0,0,0.12)',
                     py: '3px',
+                    background: emphasized ? 'rgba(255, 237, 80, 0.5)' : '',
                 }}
             >
                 <Grid
@@ -20,7 +21,7 @@ function StopRow({ stop, departed = false }) {
                     wrap="nowrap"
                     alignItems="center"
                     columnGap={0.5}
-                    sx={{ justifyContent: 'space-between' }}
+                    sx={{ pl: 1, justifyContent: 'space-between' }}
                 >
                     {/* 駅名 */}
                     <Grid item sx={{ flex: '0 0 auto' }}>

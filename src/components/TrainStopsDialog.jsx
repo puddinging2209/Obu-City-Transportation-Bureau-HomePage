@@ -12,7 +12,7 @@ import { LineContext } from './DepartureCard.jsx';
 
 import types from '../data/types.json';
 
-export default function TrainStopsDialog({ dep, line, isShowDialog, setIsShowDialog, }) {
+export default function TrainStopsDialog({ dep, line, isShowDialog, setIsShowDialog, emphasized = [] }) {
 
     if (!dep) return null;
 
@@ -116,7 +116,12 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, setIsShowDia
                     </Grid>
                 </Grid>
                 {stops?.map(stop => (
-                    <StopRow key={`${stop.name}${stop.dep ?? 'pass'}`} stop={stop} departed={adjustTime(stop.dep ?? stop.arr) < time} />
+                    <StopRow
+                        key={`${stop.name}${stop.dep ?? 'pass'}`}
+                        stop={stop}
+                        departed={adjustTime(stop.dep ?? stop.arr) < time}
+                        emphasized={emphasized.map(s => name(s)).includes(stop.name)}
+                    />
                 ))}
             </DialogContent>
             <DialogActions>

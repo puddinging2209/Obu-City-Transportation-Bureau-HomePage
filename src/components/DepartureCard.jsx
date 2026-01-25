@@ -144,7 +144,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                         {(departures?.filter(d => d.time >= nowsecond()).length !== 0) ? (
                             <Box>
                                 {departures?.filter(d => d.time >= nowsecond()).slice(0, 2)?.map(dep => (
-                                    <DepartureRow key={dep.time} dep={dep} />
+                                    <DepartureRow key={dep.time} dep={dep} station={station.name} />
                                 ))}
                             </Box>
                         ) : (
@@ -214,7 +214,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                 <DialogContent dividers>
                     <Box>
                         {departures?.map(dep => (
-                            <DepartureRow needId={true} key={dep.time} dep={dep} />
+                            <DepartureRow needId={true} key={dep.time} dep={dep} station={station.name} />
                         ))}
                     </Box>
                 </DialogContent>
