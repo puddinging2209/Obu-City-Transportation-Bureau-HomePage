@@ -56,25 +56,27 @@ export default function TransferInput({ onSearch, loading }) {
 
     React.useEffect(() => {
         const query = new URLSearchParams(search);
-        const from = query.get('from');
-        const to = query.get('to');
-        const time = query.get('time');
-        const mode = query.get('mode');
-        const tokkyu = query.get('tokkyu');
-        if (!from || !to || !time || !mode) return;
+        const queryFrom = query.get('from');
+        const queryTo = query.get('to');
+        const queryTime = Number(query.get('time'));
+        const queryMode = Number(query.get('mode'));
+        const queryTokkyu = query.get('tokkyu');
+        console.log({queryFrom, queryTo, queryTime, queryMode, queryTokkyu});
+        if (!queryFrom || !queryTo || !queryTime || !queryMode === undefined) return;
 
-        setFrom(toSelecterOption(from));
-        setTo(toSelecterOption(to));
+        setFrom(toSelecterOption(queryFrom));
+        setTo(toSelecterOption(queryTo));
 
-        const t = dayjs().startOf('day').add(Number(time), 'second');
+        const t = dayjs().startOf('day').add(queryTime, 'second');
         setTime(t);
 
-        if (mode === '0') setTimeType('departure');
-        else if (mode === '1') setTimeType('arrival');
+        if (queryMode === 0) setTimeType('departure');
+        else if (queryMode === 1) setTimeType('arrival');
         else setTimeType('departure');
 
-        setTokkyu(tokkyu === 'true');
-        onSearch(from, to, time, mode, tokkyu);
+        setTokkyu(queryTokkyu === 'true');
+        console.log({queryFrom, queryTo, queryTime, queryMode, queryTokkyu});
+        onSearch(queryFrom, queryTo, queryTime, queryMode, queryTokkyu === 'true');
     }, []);
 
     function queryChange(time, mode, tokkyu) {
