@@ -7,10 +7,6 @@ import {
     Card,
     CardContent,
     CircularProgress,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogTitle,
     IconButton,
     Stack,
     Typography
@@ -20,6 +16,7 @@ import Select from 'react-select';
 
 import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
 
+import DepartureListDialog from './DepartureListDialog.jsx';
 import DepartureRow from './DepartureRow.jsx';
 import DirectionBottomSheet from './DirectionBottomSheet.jsx';
 import OverflowMarquee from './OverflowMarquee.jsx';
@@ -76,20 +73,13 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
     function showMoreDialog() {
         setIsOpenShowMore(true);
     }
-        
-    function scrollToDep() {
-        const next = departures.find(dep => dep.time > nowsecond());
-        if (!next) return;
-        const el = document.getElementById(String(next.time));
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
     
     const [isOpenMobileSelector, setIsOpenMobileSelector] = React.useState({ open: false, options: [] });
 
     return (
         <>
         <LineContext value={direction?.route}>
-        <StationContext value={station.name}>
+        <StationContext value={station}>
             <Card key={station.name} sx={{ width: { xs: '100%', md: 300 }, minHeight: 240, position: 'relative', flexShrink: 0 }}>
                 <CardContent>
                     <Box sx={{ mb: 1 }}>
@@ -193,37 +183,15 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                     setIsOpenMobileSelector({ open: false, options: [] });
                 }}
             />
+            
+            <DepartureListDialog
+                departures={departures}
+                isOpen={isOpenShowMore}
+                onClose={() => setIsOpenShowMore(false)}
+                direction={direction}
+            />
 
-            <Dialog
-                open={isOpenShowMore}
-                onClose={() => {
-                    setIsOpenShowMore(false);
-                }}
-                scroll="paper"  
-                TransitionProps={{ onEntered: scrollToDep }}
-                fullWidth
-            >
-                <DialogTitle>
-                    {isOpenShowMore && (
-                        <>
-                            <Typography variant="h6" component="div">{station.name}</Typography>
-                            <Typography variant="subtitle1" component="div">{`${direction?.stationName} 方面`}</Typography>
-                        </>
-                    )}
-                </DialogTitle>
-                <DialogContent dividers>
-                    <Box>
-                        {departures?.map(dep => (
-                            <DepartureRow needId={true} key={dep.time} dep={dep} station={station.name} />
-                        ))}
-                    </Box>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={() => {
-                        setIsOpenShowMore(false);
-                    }}>閉じる</Button>
-                </DialogActions>
-            </Dialog>
+            
         </StationContext>
         </LineContext>
         </>

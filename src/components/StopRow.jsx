@@ -6,9 +6,9 @@ import { toTimeString } from '../utils/Time.js';
 import OverflowMarquee from './OverflowMarquee.jsx';
 
 
-function StopRow({ stop, departed = false, emphasized = false }) {
+function StopRow({ stop, emphasized = false, className = '' }) {
     return (
-        <>
+        <div className={className}>
             <Box
                 sx={{
                     borderBottom: '1px solid rgba(0,0,0,0.12)',
@@ -47,7 +47,7 @@ function StopRow({ stop, departed = false, emphasized = false }) {
                                     textAlign: 'center',
                                 }}
                                 >
-                                    <Typography variant="body2" fontWeight={!departed ? "bold" : "normal"}>
+                                    <Typography variant="body2" fontWeight="bold">
                                         {(stop.arr != null) ? toTimeString(stop.arr) : ''}
                                     </Typography>
                                 </Grid>
@@ -60,7 +60,7 @@ function StopRow({ stop, departed = false, emphasized = false }) {
                                         textAlign: 'center',
                                     }}
                                     >
-                                    <Typography variant="body2" fontWeight={!departed ? "bold" : "normal"}>
+                                    <Typography variant="body2" fontWeight="bold">
                                         {(stop.dep != null) ? toTimeString(stop.dep) : ''}
                                     </Typography>
                                 </Grid>
@@ -73,7 +73,7 @@ function StopRow({ stop, departed = false, emphasized = false }) {
                     </>
                 </Grid>
             </Box>
-        </>
+        </div>
     );
 }
 

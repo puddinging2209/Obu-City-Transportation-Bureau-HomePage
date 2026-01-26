@@ -7,7 +7,6 @@ import StopRow from './StopRow.jsx';
 
 import formatStops from '../utils/formatStops.js';
 import { name } from '../utils/Station.js';
-import { adjustTime, nowsecond } from '../utils/Time.js';
 import { LineContext } from './DepartureCard.jsx';
 
 import types from '../data/types.json';
@@ -18,19 +17,22 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, setIsShowDia
 
     const l = line ?? React.useContext(LineContext);
     const [stops, setStops] = React.useState([]);
-    const [time, setTime] = React.useState(null);
     const [multilayer, setMultilayer] = React.useState(0);
+            
+    function scrollToDep() {
+        const el = document.getElementsByClassName('emphasized')[0];
+        console.log(el);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     
     React.useEffect(() => {
         if (isShowDialog) {
             if (!dep.multilayer) {
                 formatStops(l, dep.train).then(s => setStops(s));
-                setTime(nowsecond());
             } else {
                 formatStops(l, dep.train[multilayer]).then(s => {
                     setStops(s)
                 });
-                setTime(nowsecond());
             }
         }
     }, [isShowDialog, multilayer]);
@@ -53,6 +55,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, setIsShowDia
             onClose={() => {
                 setIsShowDialog(false);
             }}
+            TransitionProps={{ onEntered: scrollToDep }}
             scroll="paper"  
             fullWidth
         >
@@ -115,14 +118,17 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, setIsShowDia
                         <Typography variant="body2" fontWeight="bold">発車</Typography>
                     </Grid>
                 </Grid>
-                {stops?.map(stop => (
-                    <StopRow
-                        key={`${stop.name}${stop.dep ?? 'pass'}`}
-                        stop={stop}
-                        departed={adjustTime(stop.dep ?? stop.arr) < time}
-                        emphasized={emphasized.map(s => name(s)).includes(stop.name)}
-                    />
-                ))}
+                {stops?.map(stop => {
+                    const isEmphasized = emphasized.map(s => name(s)).includes(stop.name);
+                    return (
+                        <StopRow
+                            key={`${stop.name}${stop.dep ?? 'pass'}`}
+                            stop={stop}
+                            emphasized={isEmphasized}
+                            className={isEmphasized ? 'emphasized' : ''}
+                        />
+                    )
+                })}
             </DialogContent>
             <DialogActions>
                 <Button onClick={() => {
