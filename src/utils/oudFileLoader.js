@@ -31,7 +31,7 @@ export async function fetchOud(code) {
 
     if (manifest && manifest.files?.[code]) {
         const hash = manifest.files[code].hash;
-        const res = await fetch(`${BASE}oud/${code}.json?h=${hash}`);
+        const res = await fetch(`./oud/${code}.json?h=${hash}`);
         return await res.json();
     }
 
