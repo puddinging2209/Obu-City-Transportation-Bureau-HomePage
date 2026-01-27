@@ -30,6 +30,7 @@ function Drawer() {
 
     const subListItems = [
         { name: '駅ログ！', icon: <PlaceIcon />, path: '/log' },
+        { name: '列車マップ', icon: <TrainIcon />, path: '/trainmap' },
         { name: '大府市営地下鉄とは', icon: <HelpOutlineIcon />, path: '/about' },
     ];
 

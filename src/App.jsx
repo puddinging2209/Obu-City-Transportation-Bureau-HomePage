@@ -16,6 +16,7 @@ import Position from './pages/Position.jsx';
 import RouteMap from './pages/RouteMap.jsx';
 import Test from './pages/Test.jsx';
 import TimeTable from './pages/TimeTable.jsx';
+import TrainMap from './pages/TrainMap.jsx';
 import Transfer from './pages/Transfer.jsx';
 
 const theme = createTheme({
@@ -65,11 +66,12 @@ function App() {
                     <Route path='/log' element={<Log />}></Route>
                     <Route path='/about' element={<About />}></Route>
                     <Route path='/test' element={<Test />}></Route>
+                    <Route path='/trainmap' element={<TrainMap />}></Route>
                 </Routes>
             </main>
-                
+
             <MobileBottomNavigation />
-            
+
             <Dialog
                 open={isWarnOpen}
                 onClose={closeWarnModal}
