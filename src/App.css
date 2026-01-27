@@ -7,3 +7,12 @@ main {
     padding: 20px;
     text-align: center;
 }
+
+.stationLabel {
+    text-align: left;
+    color: rgb(219, 219, 219);
+    -webkit-text-stroke: 2px black;
+    text-stroke: 2px black;
+    paint-order: stroke;
+    font-size: 0.8rem;
+}
