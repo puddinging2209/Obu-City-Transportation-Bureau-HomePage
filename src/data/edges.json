@@ -1361,27 +1361,19 @@
     },
     {
       "from": "HD16",
-      "to": "HD17"
+      "to": "HD17a"
     },
     {
-      "from": "HD17",
+      "from": "HD17a",
       "to": "HD16"
     },
     {
       "from": "HD14",
-      "to": "HD17"
+      "to": "HD17a"
     },
     {
-      "from": "HD17",
+      "from": "HD17a",
       "to": "HD14"
-    },
-    {
-      "from": "HD17",
-      "to": "HD18"
-    },
-    {
-      "from": "HD18",
-      "to": "HD17"
     },
     {
       "from": "HD17",
@@ -1441,14 +1433,6 @@
     },
     {
       "from": "HD17a",
-      "to": "HD17"
-    },
-    {
-      "from": "HD17",
-      "to": "HD17a"
-    },
-    {
-      "from": "HD17a",
       "to": "HD20"
     },
     {
@@ -1470,14 +1454,6 @@
     {
       "from": "HD21",
       "to": "HD17a"
-    },
-    {
-      "from": "HD21",
-      "to": "HD22"
-    },
-    {
-      "from": "HD22",
-      "to": "HD21"
     },
     {
       "from": "HD21",

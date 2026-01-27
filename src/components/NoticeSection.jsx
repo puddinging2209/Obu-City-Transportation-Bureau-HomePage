@@ -29,7 +29,7 @@ function NoticeSection() {
         </Typography>
 
         <List disablePadding>
-          {notices.toReversed().slice(0, 3).map((item) => (
+          {notices.reverse().slice(0, 3).map((item) => (
             <ListItemButton
               key={`noteice-${item.id}`}
               sx={{
