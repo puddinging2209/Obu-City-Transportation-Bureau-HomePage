@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/generate-oud-manifest.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage.git"

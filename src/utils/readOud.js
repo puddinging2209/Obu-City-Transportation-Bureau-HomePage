@@ -2,6 +2,7 @@ import lines from '../data/lines.json';
 import { name_number } from './Station.js';
 import { adjustTime } from './Time.js';
 import { terminal, typeName } from './Train.js';
+import { fetchOud } from './oudFileLoader.js';
 
 let dias = {};
 
@@ -14,25 +15,17 @@ export function resolveRosen(rosen) {
     return rosen;
 }
 
+/**
+ * ダイヤグラムを読み込む
+ * @param {string} rosen 
+ * @returns {Promise<Object>} ダイヤグラムオブジェクト
+ */
 export async function dia(rosen) {
-
-    async function searchOud(rosen) {
-        try {
-            const response = await fetch(`./oud/${rosen}.json`);
-            const diagram = await response.json();
-            return diagram;
-        } catch (e) {
-            const response = await fetch(`./public/oud/${rosen}.json`);
-            const diagram = await response.json();
-            return diagram;
-        }
-    }
-
     const code = resolveRosen(rosen);
 
     if (dias[code]) return dias[code];
 
-    const diagram = await searchOud(code);
+    const diagram = await fetchOud(code);
     dias[code] = diagram;
     return diagram;
 }

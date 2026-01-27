@@ -7,6 +7,12 @@ import App from './App.jsx';
 
 ReactModal.setAppElement('#root');
 
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("../public/sw.js");
+    });
+}
+
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <App />

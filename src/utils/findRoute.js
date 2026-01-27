@@ -17,7 +17,8 @@ function reconstructByState(goalStateId, previous, used, mode) {
     return formatRouteFromStates((mode === 0) ? states : states.reverse(), used, mode)
 }
 
-function formatRouteFromStates(states, used, mode) {
+function formatRouteFromStates(states, used) {
+    console.log(states);
     const segments = []
 
     let current = {
@@ -137,7 +138,15 @@ class MinHeap {
     }
 }
 
-// ==== Dijkstra ====
+/**
+ * 経路を探索し、経路の詳細を返す
+ * @param {string} start 出発駅（ナンバリング）
+ * @param {string} goal 到着駅（ナンバリング）
+ * @param {number} baseTime 出発時刻（mode=0）または到着時刻（mode=1）
+ * @param {number} mode 出発時刻から検索(0) or 到着時刻から検索(1)
+ * @param {boolean} tokkyu 有料列車（特急 or ライナー）を許可するかどうか
+ * @returns {[{train: string, from: string, to: string, depTime: number, arrTime: number, terminal: string, typeName: string, line: string}, ...]} 経路の詳細情報の配列
+ */
 export async function dijkstra(
     start,
     goal,
@@ -147,90 +156,105 @@ export async function dijkstra(
 ) {
     const pq = new MinHeap()
 
-    const bestTime = {}          // station → 最良到着時刻
-    const previous = {}          // stateId → stateId
-    const used = {}              // stateId → trainResult
+    const bestTime = {}   // stateId → bestTime
+    const previous = {}   // stateId → stateId
+    const used = {}       // stateId → trainResult
 
-    const startStation = (mode === 0) ? start : goal
-    const goalStation = (mode === 0) ? goal : start
+    const startStation = mode === 0 ? start : goal
+    const goalStation = mode === 0 ? goal : start
 
-    bestTime[startStation] = baseTime
+    const startVisited = new Set([startStation])
+    const startKey = startStation
+
+    const startStateId = `${startStation}@${baseTime}@${startKey}`
+
+    bestTime[startStateId] = baseTime
 
     pq.push({
         station: startStation,
         time: baseTime,
-        priority: baseTime //mode === 0 ? baseTime : -baseTime
+        visited: startVisited,
+        priority: baseTime
     })
 
     let goalStateId = null
 
     while (true) {
-
         const cur = pq.pop()
         if (!cur) break
 
-        const { station, time } = cur
+        const { station, time, visited } = cur
 
-        // 枝刈り
-        if (
-            (mode === 0 && time > bestTime[station]) ||
-            (mode === 1 && time < bestTime[station])
-        ) continue;
+        const curStateId = `${station}@${time}`
 
+        // ゴール到達
         if (station === goalStation) {
-            goalStateId = `${station}@${time}`
-            break
+            goalStateId = curStateId
+            break;
         }
 
         for (const { node: nextStation } of graph[station] ?? []) {
+            if (
+                nextStation !== goalStation &&
+                name(station) !== name(nextStation) &&
+                [...visited].some(s => name(s) === name(nextStation))
+            ) continue
 
-            let result = null;
-            if (name(station) != name(nextStation)) {
-                console.log(station, nextStation);
+            let result = null
+            if (name(station) !== name(nextStation)) {
+                console.log(station, nextStation, time);
                 result = await searchFastestTrain(
                     time,
-                    (mode === 0) ? station : nextStation,
-                    (mode === 0) ? nextStation : station,
+                    mode === 0 ? station : nextStation,
+                    mode === 0 ? nextStation : station,
                     mode,
-                    tokkyu
-                );
-
-                if (!result) continue;
+                    tokkyu,
+                    [...visited].sort()
+                )
+                if (!result?.train) continue
+                if (result.passing.some(s => name(s) === name(goalStation))) continue
             }
 
-            const nextTime = result ? (mode === 0 ? result.arr : result.dep) : time;
+            const nextTime = result
+                ? (mode === 0 ? result.arr : result.dep)
+                : time
 
-            // mode 1: 到着時刻を超えたら不許可
-            // if (mode === 1 && nextTime > baseTime) continue;
+            const nextVisited = new Set(visited)
+            if (result?.passing) {
+                for (const sta of result.passing) {
+                    nextVisited.add(sta)
+                }
+            }
+            nextVisited.add(nextStation)
 
-            const better =
-                bestTime[nextStation] === undefined ||
-                (mode === 0 && nextTime < bestTime[nextStation]) ||
-                (mode === 1 && nextTime > bestTime[station]);
+            const nextStateId = `${nextStation}@${nextTime}`
 
-            if (!better) continue;
+            const isBetter =
+                bestTime[nextStateId] === undefined ||
+                (mode === 0 && nextTime < bestTime[nextStateId]) ||
+                (mode === 1 && nextTime > bestTime[nextStateId])
 
-            bestTime[nextStation] = nextTime
+            if (!isBetter) continue
 
-            const fromId = `${station}@${time}`
-            const toId = `${nextStation}@${nextTime}`
-
-            previous[toId] = fromId
-            used[toId] = {
+            bestTime[nextStateId] = nextTime
+            previous[nextStateId] = curStateId
+            used[nextStateId] = {
                 ...result,
                 from: mode === 0 ? station : nextStation,
-                to: mode === 0 ? nextStation : station,
-            };
+                to: mode === 0 ? nextStation : station
+            }
 
             pq.push({
                 station: nextStation,
                 time: nextTime,
+                visited: nextVisited,
                 priority: mode === 0 ? nextTime : -nextTime
             })
         }
+
     }
 
-    if (!goalStateId) return null;
+    if (!goalStateId) return null
 
-    return reconstructByState(goalStateId, previous, used, mode);
+    return reconstructByState(goalStateId, previous, used, mode)
 }
