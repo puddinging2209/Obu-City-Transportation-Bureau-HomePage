@@ -10,9 +10,14 @@ main {
 
 .stationLabel {
     text-align: left;
-    color: rgb(219, 219, 219);
-    -webkit-text-stroke: 2px black;
-    text-stroke: 2px black;
+    color: black;
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
     paint-order: stroke;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+}
+
+.majorStation {
+    -webkit-text-stroke: 2px rgb(247, 255, 194);
+    text-stroke: 2px rgb(247, 255, 194);
 }

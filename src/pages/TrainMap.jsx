@@ -16,7 +16,7 @@ function TrainMap() {
 		(async () => {
 			const L = (await import("leaflet")).default;
 			if (mapRef.current) {
-				return
+				return;
 			}
 			const map = L.map(mapElement);
 			mapRef.current = map;
@@ -30,21 +30,46 @@ function TrainMap() {
 				L.polyline(d.line_coordinates.filter(l => l[0]).map(l => l.map(Number).toReversed()), {
 					color: d.color,
 					weight: 4,
-					opacity: 0.75
+					opacity: 0.85
 				}).addTo(map);
 			})
+			const stationLayers = {};
 			Object.values(stations).forEach(s => {
+				const layerZoomLevel = (() => {
+					if (s.directions.length === 1) {
+						return 10;
+					}
+					if (s.directions.length !== 2) {
+						return 12;
+					}
+					return 14;
+				})();
+				stationLayers[layerZoomLevel] ??= L.layerGroup();
 				L.marker([s.lat, s.lng], {
 					icon: L.divIcon({
 						html: `${s.name}`,
-						className: 'stationLabel',
+						className: 'stationLabel' + (layerZoomLevel <= 12 ? ' majorStation' : ''),
 						iconSize: [120, 24],
 						iconAnchor: [6, 12],
 					})
-				}).addTo(map)
+				}).addTo(stationLayers[layerZoomLevel]);
+			});
+
+			map.on('zoomend', () => {
+				const zoom = map.getZoom()
+				Object.entries(stationLayers).forEach(([level, layer]) => {
+					console.log(zoom, level <= zoom)
+					if (level <= zoom) {
+						if (!map.hasLayer(layer)) {
+							map.addLayer(layer)
+						}
+					} else {
+						map.removeLayer(layer)
+					}
+				})
 			})
-		})()
-	}, [])
+		})();
+	}, []);
 
 	return (
 		<Box
@@ -54,4 +79,4 @@ function TrainMap() {
 	)
 }
 
-export default TrainMap
+export default TrainMap;
