@@ -36,7 +36,7 @@ function TrainMap() {
 			const stationLayers = {};
 			Object.values(stations).forEach(s => {
 				const layerZoomLevel = (() => {
-					if (s.directions.length === 1) {
+					if (s.directions.length === 1 || (s.directions.length !== 2 && s.name.length === 2)) {
 						return 10;
 					}
 					if (s.directions.length !== 2) {
@@ -55,19 +55,20 @@ function TrainMap() {
 				}).addTo(stationLayers[layerZoomLevel]);
 			});
 
-			map.on('zoomend', () => {
-				const zoom = map.getZoom()
+			const zoomHandle = () => {
+				const zoom = map.getZoom();
 				Object.entries(stationLayers).forEach(([level, layer]) => {
-					console.log(zoom, level <= zoom)
 					if (level <= zoom) {
 						if (!map.hasLayer(layer)) {
-							map.addLayer(layer)
+							map.addLayer(layer);
 						}
 					} else {
-						map.removeLayer(layer)
+						map.removeLayer(layer);
 					}
-				})
-			})
+				});
+			};
+			map.on('zoomend', zoomHandle);
+			zoomHandle()
 		})();
 	}, []);
 
