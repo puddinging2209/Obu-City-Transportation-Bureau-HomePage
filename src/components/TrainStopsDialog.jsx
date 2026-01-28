@@ -21,7 +21,6 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, setIsShowDia
             
     function scrollToDep() {
         const el = document.getElementsByClassName('emphasized')[0];
-        console.log(el);
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     

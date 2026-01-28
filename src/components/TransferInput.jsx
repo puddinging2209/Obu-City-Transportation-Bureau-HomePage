@@ -61,7 +61,6 @@ export default function TransferInput({ onSearch, loading }) {
         const queryTime = Number(query.get('time'));
         const queryMode = Number(query.get('mode'));
         const queryTokkyu = query.get('tokkyu');
-        console.log({queryFrom, queryTo, queryTime, queryMode, queryTokkyu});
         if (!queryFrom || !queryTo || !queryTime || !queryMode === undefined) return;
 
         setFrom(toSelecterOption(queryFrom));

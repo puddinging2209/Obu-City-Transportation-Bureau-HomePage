@@ -14,7 +14,8 @@ function reconstructByState(goalStateId, previous, used, mode) {
         cur = previous[cur]
     }
 
-    return formatRouteFromStates((mode === 0) ? states : states.reverse(), used, mode)
+    console.log(states);
+    return formatRouteFromStates((mode === 0) ? states : states.reverse(), used)
 }
 
 function formatRouteFromStates(states, used) {
@@ -138,6 +139,16 @@ class MinHeap {
     }
 }
 
+
+function makeStateId(sta, time, phase, visited) {
+    return `${name(sta)}@${time}@${phase}@${visitedKey(visited)}`;
+}
+
+function visitedKey(visited) {
+    console.log(visited);
+    return [...visited].map(name).sort().join(",");
+}
+
 /**
  * 経路を探索し、経路の詳細を返す
  * @param {string} start 出発駅（ナンバリング）
@@ -147,114 +158,149 @@ class MinHeap {
  * @param {boolean} tokkyu 有料列車（特急 or ライナー）を許可するかどうか
  * @returns {[{train: string, from: string, to: string, depTime: number, arrTime: number, terminal: string, typeName: string, line: string}, ...]} 経路の詳細情報の配列
  */
-export async function dijkstra(
-    start,
-    goal,
-    baseTime,
-    mode,
-    tokkyu
-) {
-    const pq = new MinHeap()
 
-    const bestTime = {}   // stateId → bestTime
-    const previous = {}   // stateId → stateId
-    const used = {}       // stateId → trainResult
+export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
+    const pq = new MinHeap();
 
-    const startStation = mode === 0 ? start : goal
-    const goalStation = mode === 0 ? goal : start
+    const bestTime = {};
+    const previous = {};
+    const used = {};
 
-    const startVisited = new Set([startStation])
-    const startKey = startStation
+    const startStation = mode === 0 ? start : goal;
+    const goalStation = mode === 0 ? goal : start;
 
-    const startStateId = `${startStation}@${baseTime}@${startKey}`
+    const startVisited = new Set([startStation]);
+    const startStateId = makeStateId(startStation, baseTime, "transfer", startVisited);
 
-    bestTime[startStateId] = baseTime
+    bestTime[startStateId] = baseTime;
 
     pq.push({
         station: startStation,
         time: baseTime,
+        phase: "transfer",
         visited: startVisited,
         priority: baseTime
-    })
+    });
 
-    let goalStateId = null
+    pq.push({
+        station: startStation,
+        time: baseTime,
+        phase: "ride",
+        visited: startVisited,
+        priority: baseTime
+    });
+
+    let goalStateId = null;
 
     while (true) {
-        const cur = pq.pop()
-        if (!cur) break
+        const cur = pq.pop();
+        if (!cur) break;
+        console.log(pq.heap.map(s => name(s.station)));
 
-        const { station, time, visited } = cur
+        const { station, time, phase, visited } = cur;
+        const curStateId = makeStateId(station, time, phase, visited);
 
-        const curStateId = `${station}@${time}`
-
-        // ゴール到達
-        if (station === goalStation) {
-            goalStateId = curStateId
+        // === ゴール ===
+        if (name(station) === name(goalStation) && phase === "ride") {
+            goalStateId = curStateId;
             break;
         }
 
-        for (const { node: nextStation } of graph[station] ?? []) {
-            if (
-                nextStation !== goalStation &&
-                name(station) !== name(nextStation) &&
-                [...visited].some(s => name(s) === name(nextStation))
-            ) continue
+        console.log(visited)
 
-            let result = null
-            if (name(station) !== name(nextStation)) {
-                console.log(station, nextStation, time);
-                result = await searchFastestTrain(
+        // ===== ride → transfer =====
+        if (phase === "ride") {
+            const nextTime = time;
+
+            const codes = Object.keys(nodes).filter(code => name(code) === name(station));
+            console.log(codes);
+            for (const nextCode of codes) {
+                const nextVisited = new Set(visited);
+                nextVisited.add(nextCode);
+
+                const nextStateId = makeStateId(station, nextTime, "transfer", nextVisited);
+
+                if (
+                    bestTime[nextStateId] === undefined ||
+                    nextTime < bestTime[nextStateId]
+                ) {
+                    console.log('transfer', station, nextCode)
+                    bestTime[nextStateId] = nextTime
+                    previous[nextStateId] = curStateId
+
+                    pq.push({
+                        station: nextCode,
+                        time: nextTime,
+                        phase: "transfer",
+                        visited: nextVisited,
+                        priority: nextTime
+                    })
+                }
+            }
+
+        }
+
+        // ===== transfer → ride =====
+        if (phase === "transfer") {
+            for (const { node: nextStation } of graph[station] ?? []) {
+
+                // 駅名ベースのループ防止
+                if ([...visited].some(s => name(s) === name(nextStation))) continue;
+
+                console.log('move', name(station), '->', name(nextStation));
+
+                const visitedArray = [...visited];
+
+                const result = await searchFastestTrain(
                     time,
                     mode === 0 ? station : nextStation,
                     mode === 0 ? nextStation : station,
                     mode,
                     tokkyu,
-                    [...visited].sort()
-                )
-                if (!result?.train) continue
-                if (result.passing.some(s => name(s) === name(goalStation))) continue
-            }
+                    visitedArray
+                );
 
-            const nextTime = result
-                ? (mode === 0 ? result.arr : result.dep)
-                : time
+                if (!result?.train) continue;
 
-            const nextVisited = new Set(visited)
-            if (result?.passing) {
-                for (const sta of result.passing) {
-                    nextVisited.add(sta)
+                const nextTime = mode === 0 ? result.arr : result.dep;
+
+                const nextVisited = new Set(visited);
+                result.passing?.forEach(s => nextVisited.add(s));
+                nextVisited.add(nextStation);
+
+                const nextStateId = makeStateId(
+                    nextStation,
+                    nextTime,
+                    "ride",
+                    nextVisited
+                );
+
+                if (
+                    bestTime[nextStateId] === undefined ||
+                    nextTime < bestTime[nextStateId]
+                ) {
+                    bestTime[nextStateId] = nextTime;
+                    previous[nextStateId] = curStateId;
+                    used[nextStateId] = {
+                        ...result,
+                        from: station,
+                        to: nextStation
+                    };
+
+                    pq.push({
+                        station: nextStation,
+                        time: nextTime,
+                        phase: "ride",
+                        visited: nextVisited,
+                        priority: nextTime
+                    });
                 }
             }
-            nextVisited.add(nextStation)
-
-            const nextStateId = `${nextStation}@${nextTime}`
-
-            const isBetter =
-                bestTime[nextStateId] === undefined ||
-                (mode === 0 && nextTime < bestTime[nextStateId]) ||
-                (mode === 1 && nextTime > bestTime[nextStateId])
-
-            if (!isBetter) continue
-
-            bestTime[nextStateId] = nextTime
-            previous[nextStateId] = curStateId
-            used[nextStateId] = {
-                ...result,
-                from: mode === 0 ? station : nextStation,
-                to: mode === 0 ? nextStation : station
-            }
-
-            pq.push({
-                station: nextStation,
-                time: nextTime,
-                visited: nextVisited,
-                priority: mode === 0 ? nextTime : -nextTime
-            })
         }
 
     }
 
-    if (!goalStateId) return null
-
-    return reconstructByState(goalStateId, previous, used, mode)
+    if (!goalStateId) return null;
+    return reconstructByState(goalStateId, previous, used, mode);
 }
+
