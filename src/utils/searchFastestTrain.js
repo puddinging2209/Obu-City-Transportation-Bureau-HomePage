@@ -93,7 +93,6 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
             }
         }
 
-        console.log(fastest.passing);
         return fastest;
 
     } else {
