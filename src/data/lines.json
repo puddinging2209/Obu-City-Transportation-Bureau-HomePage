@@ -5,7 +5,7 @@
     "code": "NK",
     "json": "NK",
     "color": "#5D6CFF",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "北崎",
       "北崎大島",
@@ -42,7 +42,7 @@
     "code": "OD",
     "json": "OD",
     "color": "#FF9000",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "刈谷",
       "宝町",
@@ -83,7 +83,7 @@
     "code": "GK",
     "json": "GK",
     "color": "#60A331",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "名和",
       "大高丸ノ内",
@@ -126,7 +126,7 @@
     "code": "HD",
     "json": "HD",
     "color": "#FFD600",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "大府",
       "大府森岡",
@@ -155,7 +155,7 @@
     "code": "HD",
     "json": "HD",
     "color": "#FFD600",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "乙川",
       "半田赤レンガ",
@@ -169,7 +169,7 @@
     "code": "MT",
     "json": "MT",
     "color": "#9BEA81",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "至学館大学前",
       "坊主山",
@@ -211,7 +211,7 @@
     "code": "FT",
     "json": "FT",
     "color": "#A86700",
-    "fastest_type": 1,
+    "type": "subway",
     "stations": [
       "至学館大学前",
       "二ツ池公園前",
@@ -229,7 +229,7 @@
     "code": "FT",
     "json": "FT",
     "color": "#A86700",
-    "fastest_type": 1,
+    "type": "subway",
     "stations": [
       "大東町",
       "住友重機前",
@@ -245,7 +245,7 @@
     "code": "UD",
     "json": "NK",
     "color": "#00E0FF",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "惣作",
       "後田",
@@ -264,7 +264,7 @@
     "code": "NB",
     "json": "NB",
     "color": "#FF0071",
-    "fastest_type": 0,
+    "type": "subway",
     "stations": [
       "大高",
       "正光寺",
@@ -289,7 +289,7 @@
     "code": "AR",
     "json": "AR",
     "color": "#EDA39C",
-    "fastest_type": 0,
+    "type": "subway",
     "stations": [
       "至学館大学前",
       "北山",
@@ -314,7 +314,7 @@
     "code": "MY",
     "json": "MY",
     "color": "#EA88FF",
-    "fastest_type": 2,
+    "type": "subway",
     "stations": [
       "新富町",
       "新田町",
@@ -353,7 +353,7 @@
     "code": "KM",
     "json": "KM",
     "color": "#FFEA00",
-    "fastest_type": 0,
+    "type": "subway",
     "stations": [
       "鰻池",
       "岡田川",
@@ -373,7 +373,7 @@
     "code": "TR",
     "json": "TR",
     "color": "#0097A7",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "末広",
       "北蕨",
@@ -390,7 +390,7 @@
     "code": "TM",
     "json": "HD",
     "color": "#A700A7",
-    "fastest_type": 0,
+    "type": "subway",
     "stations": [
       "生見町",
       "亀崎北浦",
@@ -406,7 +406,7 @@
     "code": "ON",
     "json": "ON",
     "color": "#FF0101",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "八幡新田",
       "緒川植山",
@@ -445,7 +445,7 @@
     "code": "OG",
     "json": "OG",
     "color": "#969696",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "知立",
       "知立堀切",
@@ -486,7 +486,7 @@
     "code": "HK",
     "json": "HK",
     "color": "#0288D1",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "半田みなと",
       "瑞穂町",
@@ -524,7 +524,7 @@
     "code": "TY",
     "json": "TY",
     "color": "#87CEAC",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "長土井",
       "本田",
@@ -554,7 +554,7 @@
     "code": "KL",
     "json": "KL",
     "color": "#FFC200",
-    "fastest_type": 0,
+    "type": "subway",
     "stations": [
       "日高",
       "高倉",
@@ -581,7 +581,7 @@
     "code": "TT",
     "json": "TT",
     "color": "#018300",
-    "fastest_type": 2,
+    "type": "subway",
     "stations": [
       "与五八",
       "横須賀高校前",
@@ -607,7 +607,7 @@
     "code": "KT",
     "json": "KT",
     "color": "#003DFF",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "太田川",
       "細田",
@@ -634,7 +634,7 @@
     "code": "KT",
     "json": "KT",
     "color": "#003DFF",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "半月町",
       "大府",
@@ -648,7 +648,7 @@
     "code": "KT",
     "json": "KTa",
     "color": "#003DFF",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "新富町",
       "刈谷池田",
@@ -664,7 +664,7 @@
     "code": "OL",
     "json": "OL",
     "color": "#08FF00",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "大府",
       "大府市役所前",
@@ -686,7 +686,7 @@
     "code": "MR",
     "json": "MR",
     "color": "#A1C2FA",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "半田市",
       "南本町",
@@ -729,7 +729,7 @@
     "code": "NW",
     "json": "NW",
     "color": "#DE00FF",
-    "fastest_type": 2,
+    "type": "subway",
     "stations": [
       "名和",
       "龍ノ脇",
@@ -753,7 +753,7 @@
     "code": "UM",
     "json": "MR",
     "color": "#FFFF8D",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "古布",
       "古布九条",
@@ -769,7 +769,7 @@
     "code": "TZ",
     "json": "TZ",
     "color": "#FF66AE",
-    "fastest_type": 0,
+    "type": "subway",
     "stations": [
       "荒尾下畑",
       "大池公園",
@@ -800,7 +800,7 @@
     "code": "TZ",
     "json": "TZ",
     "color": "#FF66AE",
-    "fastest_type": 0,
+    "type": "subway",
     "stations": [
       "惣作",
       "長根"
@@ -812,7 +812,7 @@
     "code": "TT",
     "json": "TT",
     "color": "#018300",
-    "fastest_type": 2,
+    "type": "subway",
     "stations": [
       "北加木屋",
       "横須賀高校前"
@@ -824,7 +824,7 @@
     "code": "OD",
     "json": "GK",
     "color": "#FF9000",
-    "fastest_type": 2,
+    "type": "subway",
     "stations": [
       "鳴海",
       "上汐田"
@@ -836,7 +836,7 @@
     "code": "HD",
     "json": "HD",
     "color": "#FFD600",
-    "fastest_type": 3,
+    "type": "subway",
     "stations": [
       "江端町",
       "大府森岡"
@@ -846,42 +846,49 @@
     "name": "東コース",
     "show": "東コース",
     "json": "East",
-    "color": "#f200f2"
+    "color": "#f200f2",
+    "type": "bus"
   },
   "西コース": {
     "name": "西コース",
     "show": "西コース",
     "json": "West",
-    "color": "#e39509"
+    "color": "#e39509",
+    "type": "bus"
   },
   "南コース": {
     "name": "南コース",
     "show": "南コース",
     "json": "South",
-    "color": "#0000f2"
+    "color": "#0000f2",
+    "type": "bus"
   },
   "北コース": {
     "name": "北コース",
     "show": "北コース",
     "json": "North",
-    "color": "#33cc33"
+    "color": "#33cc33",
+    "type": "bus"
   },
   "中央コース": {
     "name": "中央コース",
     "show": "中央コース",
     "json": "Center",
-    "color": "#7030a0"
+    "color": "#7030a0",
+    "type": "bus"
   },
   "サクラコース": {
     "name": "サクラコース",
     "show": "サクラコース",
     "json": "Sakura",
-    "color": "#f291f2"
+    "color": "#f291f2",
+    "type": "bus"
   },
   "ツツジコース": {
     "name": "ツツジコース",
     "show": "ツツジコース",
     "json": "Tsutsuji",
-    "color": "#f26100"
+    "color": "#f26100",
+    "type": "bus"
   }
 }
