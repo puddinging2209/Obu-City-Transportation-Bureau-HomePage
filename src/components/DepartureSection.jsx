@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useAtomValue, useSetAtom } from 'jotai';
+import { useAtom, useAtomValue, useSetAtom } from 'jotai';
 import { useNavigate } from 'react-router-dom';
 
 import AddIcon from '@mui/icons-material/Add';
@@ -19,7 +19,7 @@ import {
 } from '@mui/material';
 
 
-import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
+import { addMyStationAtom, myStationsAtom, nearestStationAtom } from '../utils/Atom.js';
 import searchNearestStation from '../utils/searchNearestStation.js';
 
 import DepartureCard from './DepartureCard.jsx';
@@ -30,8 +30,10 @@ export default function DepartureSection() {
 
     const myStations = useAtomValue(myStationsAtom);
     const addMyStation = useSetAtom(addMyStationAtom);
-    
+
     const [nearestStation, setNearestStation] = React.useState(null);
+    
+    const [nearestAtom, setNearestAtom] = useAtom(nearestStationAtom);
     const [loadingNearest, setLoadingNearest] = React.useState(false);
 
     function updateNearest() {
@@ -40,6 +42,7 @@ export default function DepartureSection() {
             .then(name => {
                 setLoadingNearest(false);
                 setNearestStation(name);
+                setNearestAtom(name);
 
                 const visited = localStorage.getItem('visitedStations') ? JSON.parse(localStorage.getItem('visitedStations')) : [];
                 if (visited[0]?.name) {
@@ -59,7 +62,13 @@ export default function DepartureSection() {
             });
     }
 
-    React.useEffect(updateNearest, []);
+    React.useEffect(() => {
+        if (!nearestAtom) {
+            updateNearest();
+        } else {
+            setNearestStation(nearestAtom);
+        }
+    }, []);
 
     const [isShowSearch, setIsShowSearch] = React.useState(false);
 

@@ -96,7 +96,7 @@ export default function Log() {
                                 >
                                     <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                         <Typography variant="subtitle1">{line.name}</Typography>
-                                        <Typography variant="body1">{`訪問済: ${logs.filter(log => innerStations.has(log.name)).length} 駅 / ${innerStations.size} 駅`}</Typography>
+                                        <Typography variant="body1">{`訪問済: ${new Set(logs.filter(log => innerStations.has(log.name)).map(log => log.name)).size} 駅 / ${innerStations.size} 駅`}</Typography>
                                     </Box>
                                 </AccordionSummary>
                                 <AccordionDetails>

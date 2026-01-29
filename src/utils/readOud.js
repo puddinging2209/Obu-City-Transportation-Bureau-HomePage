@@ -41,6 +41,7 @@ function indexofFromStation(diagram, station, rosen, direction) {
         { exc: { station: '江端町', direction: { route: '大峯連絡線', stationName: '半田市' } }, return: 0 },
         { exc: { station: '乙川', direction: { route: '半田線', stationName: '大府' } }, return: 17 },
         { exc: { station: '乙川', direction: { route: '半田線住吉支線', stationName: '清城' } }, return: 17 },
+        { exc: { station: '田面', direction: { route: '南港線(名港トリトンライン)', stationName: '金城ふ頭' } }, return: 0 },
     ];
 
     const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));

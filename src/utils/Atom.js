@@ -15,4 +15,6 @@ export const addMyStationAtom = atom(
     }
 );
 
+export const nearestStationAtom = atom(null);
+
 export const isOpenDrawerAtom = atom(false);
