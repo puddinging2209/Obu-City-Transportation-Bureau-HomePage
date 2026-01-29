@@ -192,7 +192,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
 
     let goalStateId = null;
 
-    while (true) {
+    outerLoop: while (true) {
         const cur = pq.pop();
         if (!cur) break;
         console.log(pq.heap.map(s => name(s.station)));
@@ -294,6 +294,11 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                         visited: nextVisited,
                         priority: nextTime
                     });
+
+                    if (name(nextStation) === name(goalStation)) {
+                        goalStateId = nextStateId;
+                        break outerLoop;
+                    }
                 }
             }
         }
