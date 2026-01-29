@@ -1,6 +1,7 @@
 import React from "react";
 
 import dayjs from "dayjs";
+import { useAtomValue } from "jotai";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -15,6 +16,8 @@ import {
     DialogTitle,
     FormControlLabel,
     IconButton,
+    Menu,
+    MenuItem,
     Stack,
     ToggleButton,
     ToggleButtonGroup,
@@ -28,8 +31,50 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { code } from "../utils/Station.js";
 import StationSelecter from "./StationSelecter.jsx";
 
+import { myStationsAtom, nearestStationAtom } from "../utils/Atom.js";
+
 import nodes from "../data/nodes.json";
 import stations from "../data/stations.json";
+
+function StationSelectButtons({ onChange, disabledStations = [] }) {
+    const myStations = useAtomValue(myStationsAtom);
+    const nearestStation = useAtomValue(nearestStationAtom);
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    function handleClick(event) {
+        setAnchorEl(event.currentTarget);
+    };
+    function handleClose(name) {
+        setAnchorEl(null);
+        onChange(name);
+    };
+
+    React.useEffect(() => {
+        console.log(nearestStation);
+        console.log(myStations);
+    }, []);
+
+    return (
+        <Stack spacing={1} direction="row" gap={1}>
+            <Button onClick={() => onChange(nearestStation)} disabled={!nearestStation} size="small" variant="outlined" fullWidth>
+                {`最寄り駅`}
+            </Button>
+            <Button onClick={handleClick} size="small" variant="outlined" fullWidth>
+                {'マイ駅から選ぶ'}
+            </Button>
+            <Menu
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+            >
+                {myStations.filter((value) => value.role == 'station' && !disabledStations.includes(value.name)).map(({name}) => (
+                    <MenuItem key={name} onClick={() => handleClose(name)}>{name}</MenuItem>
+                ))}
+            </Menu>
+        </Stack>
+    )
+}
 
 export default function TransferInput({ onSearch, loading }) {
     const { search } = useLocation();
@@ -124,9 +169,15 @@ export default function TransferInput({ onSearch, loading }) {
 
       {/* 出発・到着 */}
             <Stack direction="row" spacing={1} alignItems="center">
-                <Stack spacing={1} flex={1}>
-                    <StationSelecter onChange={(value) => setFrom(value)} value={from} placeholder="出発駅を選択" busStop={false} disabledStations={[to?.value]} />
-                    <StationSelecter onChange={(value) => setTo(value)} value={to} placeholder="到着駅を選択" busStop={false} disabledStations={[from?.value]} />
+                <Stack flexGrow={1} spacing={2.5}>
+                    <Stack spacing={0.5}>
+                        <StationSelecter onChange={(value) => setFrom(value)} value={from} placeholder="出発駅を選択" busStop={false} disabledStations={[to?.value]} />
+                        <StationSelectButtons disabledStations={[to?.value]} onChange={(value) => setFrom({ value: value, label: value, role: 'station', kana: stations[value].kana })} />
+                    </Stack>
+                    <Stack spacing={0.5}>
+                        <StationSelecter onChange={(value) => setTo(value)} value={to} placeholder="到着駅を選択" busStop={false} disabledStations={[from?.value]} />
+                        <StationSelectButtons disabledStations={[from?.value]} onChange={(value) => setTo({ value: value, label: value, role: 'station', kana: stations[value].kana })} />
+                    </Stack>
                 </Stack>
                 <IconButton
                 aria-label="入れ替え"
