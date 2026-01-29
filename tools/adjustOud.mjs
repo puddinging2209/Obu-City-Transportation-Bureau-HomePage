@@ -54,6 +54,7 @@ async function adjustStationNames(line, diagram) {
     const newNames = oldDia.railway.stations.map(s => s.name);
 
     const newDiagram = {};
+    newDiagram.railway = { ...diagram.railway };
     newNames.forEach((name, i) => {
         const old = diagram.railway.stations[i].name;
         newDiagram.railway.stations[i].name = name;
