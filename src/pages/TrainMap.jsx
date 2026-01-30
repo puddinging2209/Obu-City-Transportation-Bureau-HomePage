@@ -27,7 +27,7 @@ function TrainMap() {
 					'&copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
 			}).addTo(map);
 			Object.values(trainMapData).forEach(d => {
-				L.polyline(d.line_coordinates.filter(l => l[0]).map(l => l.map(Number).toReversed()), {
+				L.polyline(d.line_coordinates.filter(l => l[0]), {
 					color: d.color,
 					weight: 5,
 					opacity: 0.9
@@ -69,6 +69,35 @@ function TrainMap() {
 			};
 			map.on('zoomend', zoomHandle);
 			zoomHandle()
+
+			const points = {}
+			Object.values(trainMapData).forEach(s => {
+				points[s.name] = L.marker([0, 0], {label: s.name}).addTo(map);
+			})
+			let r = 0
+			const t = () => {
+				if (1 < r) {
+					return
+				}
+
+				Object.entries(points).forEach(([s, p]) => {
+					const lineCoordinates = trainMapData[s].line_coordinates
+					for (let i = 0; i < lineCoordinates.length - 1; i++) {
+						if (lineCoordinates[i + 1][2] < r) {
+							continue
+						}
+						const rateInLine = (r - lineCoordinates[i][2]) / (lineCoordinates[i + 1][2] - lineCoordinates[i][2])
+						const lat = lineCoordinates[i][0] + (lineCoordinates[i + 1][0] - lineCoordinates[i][0]) * rateInLine
+						const lng = lineCoordinates[i][1] + (lineCoordinates[i + 1][1] - lineCoordinates[i][1]) * rateInLine
+						p.setLatLng([lat, lng])
+						break
+					}
+				})
+
+				r += 0.0005
+				requestAnimationFrame(t)
+			}
+			t()
 		})();
 	}, []);
 
