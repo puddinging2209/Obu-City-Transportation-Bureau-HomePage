@@ -1,86 +1,14 @@
 import edges from "../data/edges.json";
 import nodes from "../data/nodes.json";
 
+import reconstructByState from "./formatRoute.js";
 import { searchFastestTrain } from "./searchFastestTrain.js";
 import { name } from "./Station.js";
 
+import stations from "../data/stations.json";
+
 // 経路復元 
-function reconstructByState(goalStateId, previous, used, mode) {
-    const states = []
-    let cur = goalStateId
 
-    while (cur) {
-        states.unshift(cur)
-        cur = previous[cur]
-    }
-
-    console.log(states);
-    return formatRouteFromStates((mode === 0) ? states : states.reverse(), used)
-}
-
-function formatRouteFromStates(states, used) {
-    console.log(states);
-    const segments = []
-
-    let current = {
-        train: null, detail: { terminal: null, typeName: null }
-    }
-    let fromSta = null
-    let depTime = null
-    let lastArrTime = null
-    let lastTo = null
-
-    for (let i = 0; i < states.length; i++) {
-        const curUsed = used[states[i]]
-        if (!curUsed || !curUsed.train) continue;
-
-        // --- segment 開始 ---
-        if (current.train === null) {
-            current = { train: curUsed.train, detail: { terminal: curUsed.terminal, typeName: curUsed.type } }
-            fromSta = curUsed.from
-            depTime = curUsed.dep
-        }
-
-        // --- 列車が変わったら segment 確定 ---
-        if (curUsed.train !== current.train) {
-            segments.push({
-                train: current.train,
-                from: name(fromSta),
-                to: name(lastTo),
-                depTime: depTime,
-                arrTime: lastArrTime,
-                terminal: current.detail.terminal,
-                typeName: current.detail.typeName,
-                line: nodes[fromSta]?.line
-            })
-
-            // 新しい列車
-            current = { train: curUsed.train, detail: { terminal: curUsed.terminal, typeName: curUsed.type } }
-            fromSta = curUsed.from
-            depTime = curUsed.dep
-        }
-
-        // 毎回更新（重要）
-        lastArrTime = curUsed.arr
-        lastTo = curUsed.to
-    }
-
-    // --- 最後の segment を必ず確定 ---
-    if (current.train !== null) {
-        segments.push({
-            train: current.train,
-            from: name(fromSta),
-            to: name(lastTo),
-            depTime: depTime,
-            arrTime: lastArrTime,
-            terminal: current.detail.terminal,
-            typeName: current.detail.typeName,
-            line: nodes[fromSta]?.line
-        })
-    }
-
-    return segments
-}
 
 // ==== 隣接リスト作成 ====
 const graph = {};
@@ -139,9 +67,37 @@ class MinHeap {
     }
 }
 
+// A*関係
+function haversine(a, b) {
+    const R = 6371e3; // m
+    const toRad = d => d * Math.PI / 180;
+
+    const lon1 = toRad(stations[name(a)].lng);
+    const lat1 = toRad(stations[name(a)].lat);
+    const lon2 = toRad(stations[name(b)].lng);
+    const lat2 = toRad(stations[name(b)].lat);
+
+    const dLat = lat2 - lat1;
+    const dLon = lon2 - lon1;
+
+    const h =
+        Math.sin(dLat / 2) ** 2 +
+        Math.cos(lat1) * Math.cos(lat2) *
+        Math.sin(dLon / 2) ** 2;
+
+    return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+const MAX_SPEED = 100 * 1000 / 3600; // m/s
+
+function heuristic(sta, goal) {
+    if (!nodes[sta] || !nodes[goal]) return 0;
+    console.log('heuristic', name(sta), '->', name(goal), ':', haversine(sta, goal) / MAX_SPEED);
+    return haversine(sta, goal) / MAX_SPEED;
+}
 
 function makeStateId(sta, time, phase, visited) {
-    return `${name(sta)}@${time}@${phase}@${visitedKey(visited)}`;
+    return `${name(sta)}@${phase}@${visitedKey(visited)}`;
 }
 
 function visitedKey(visited) {
@@ -179,7 +135,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
         time: baseTime,
         phase: "transfer",
         visited: startVisited,
-        priority: baseTime
+        priority: baseTime + heuristic(startStation, goalStation)
     });
 
     pq.push({
@@ -187,7 +143,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
         time: baseTime,
         phase: "ride",
         visited: startVisited,
-        priority: baseTime
+        priority: baseTime + heuristic(startStation, goalStation)
     });
 
     let goalStateId = null;
@@ -206,19 +162,16 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
             break;
         }
 
-        console.log(visited)
-
         // ===== ride → transfer =====
         if (phase === "ride") {
             const nextTime = time;
 
             const codes = Object.keys(nodes).filter(code => name(code) === name(station));
-            console.log(codes);
             for (const nextCode of codes) {
                 const nextVisited = new Set(visited);
                 nextVisited.add(nextCode);
 
-                const nextStateId = makeStateId(station, nextTime, "transfer", nextVisited);
+                const nextStateId = makeStateId(nextCode, nextTime, "transfer", nextVisited);
 
                 if (
                     bestTime[nextStateId] === undefined ||
@@ -233,7 +186,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                         time: nextTime,
                         phase: "transfer",
                         visited: nextVisited,
-                        priority: nextTime
+                        priority: nextTime + heuristic(nextCode, goalStation)
                     })
                 }
             }
@@ -292,13 +245,13 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                         time: nextTime,
                         phase: "ride",
                         visited: nextVisited,
-                        priority: nextTime
+                        priority: nextTime + heuristic(nextStation, goalStation)
                     });
 
-                    if (name(nextStation) === name(goalStation)) {
-                        goalStateId = nextStateId;
-                        break outerLoop;
-                    }
+                    // if (name(nextStation) === name(goalStation)) {
+                    //     goalStateId = nextStateId;
+                    //     break outerLoop;
+                    // }
                 }
             }
         }

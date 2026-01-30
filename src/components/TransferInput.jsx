@@ -57,7 +57,7 @@ function StationSelectButtons({ onChange, disabledStations = [] }) {
 
     return (
         <Stack spacing={1} direction="row" gap={1}>
-            <Button onClick={() => onChange(nearestStation)} disabled={!nearestStation} size="small" variant="outlined" fullWidth>
+            <Button onClick={() => onChange(nearestStation)} disabled={!nearestStation || disabledStations.map(sta => sta.name).includes(nearestStation)} size="small" variant="outlined" fullWidth>
                 {`最寄り駅`}
             </Button>
             <Button onClick={handleClick} size="small" variant="outlined" fullWidth>
