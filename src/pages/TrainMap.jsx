@@ -29,8 +29,8 @@ function TrainMap() {
 			Object.values(trainMapData).forEach(d => {
 				L.polyline(d.line_coordinates.filter(l => l[0]).map(l => l.map(Number).toReversed()), {
 					color: d.color,
-					weight: 4,
-					opacity: 0.85
+					weight: 5,
+					opacity: 0.9
 				}).addTo(map);
 			})
 			const stationLayers = {};
