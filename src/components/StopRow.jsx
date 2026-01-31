@@ -1,17 +1,26 @@
-import { Box, Grid, Typography } from '@mui/material';
+import {
+    Box,
+    Grid,
+    Stack,
+    Typography
+} from '@mui/material';
+
+import OverflowMarquee from './OverflowMarquee.jsx';
 
 import { name } from '../utils/Station.js';
 import { toTimeString } from '../utils/Time.js';
 
-import OverflowMarquee from './OverflowMarquee.jsx';
+import lines from '../data/lines.json';
 
 
 function StopRow({ stop, emphasized = false, className = '' }) {
+
     return (
         <div className={className}>
             <Box
                 sx={{
                     borderBottom: '1px solid rgba(0,0,0,0.12)',
+                    borderLeft: `4px solid ${lines[stop.lineName].color ?? '#000000'}`,
                     py: '3px',
                     background: emphasized ? 'rgba(255, 237, 80, 0.5)' : '',
                 }}
@@ -36,16 +45,16 @@ function StopRow({ stop, emphasized = false, className = '' }) {
                         </Box>
                     </Grid>
 
-                    <>
+                    <Stack direction="row" sx={{ width: 'fit-content', alignItems: 'right' }}>
                         {stop.stopType == 'stop' ? (
-                            <Grid spacing={2} container>
+                            <Grid container spacing={2}>
                                 {/* 到着時刻 */}
                                 <Grid
-                                item
-                                sx={{
-                                    flex: '0 0 42px',
-                                    textAlign: 'center',
-                                }}
+                                    item
+                                    sx={{
+                                        flex: '0 0 42px',
+                                        textAlign: 'center',
+                                    }}
                                 >
                                     <Typography variant="body2" fontWeight="bold">
                                         {(stop.arr != null) ? toTimeString(stop.arr) : ''}
@@ -70,7 +79,7 @@ function StopRow({ stop, emphasized = false, className = '' }) {
                                 <Typography variant="body2">通過</Typography>
                             </Box>
                         )}
-                    </>
+                    </Stack>
                 </Grid>
             </Box>
         </div>
