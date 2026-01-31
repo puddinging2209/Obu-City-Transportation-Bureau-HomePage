@@ -1,12 +1,16 @@
-import { Box } from "@mui/material";
-import "leaflet/dist/leaflet.css";
+import { Box } from '@mui/material';
+import 'leaflet/dist/leaflet.css';
 import React from 'react';
+import lines from '../data/lines.json';
 import stations from '../data/stations.json';
 import trainMapData from '../data/trainMap.json';
+import { dia } from '../utils/readOud';
+import trainMapWorker from '../utils/trainMapWorker?worker';
 
 function TrainMap() {
 	const mapElementRef = React.useRef(null);
 	const mapRef = React.useRef(null);
+	const workerRef = React.useRef(null);
 	React.useEffect(() => {
 		const mapElement = mapElementRef.current;
 		if (!mapElement) {
@@ -14,7 +18,7 @@ function TrainMap() {
 		}
 
 		(async () => {
-			const L = (await import("leaflet")).default;
+			const L = (await import('leaflet')).default;
 			if (mapRef.current) {
 				return;
 			}
@@ -22,7 +26,7 @@ function TrainMap() {
 			mapRef.current = map;
 
 			map.setView([35.0086145360, 136.9621485834], 12);
-			L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+			L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 				attribution:
 					'&copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
 			}).addTo(map);
@@ -68,11 +72,50 @@ function TrainMap() {
 				});
 			};
 			map.on('zoomend', zoomHandle);
-			zoomHandle()
+			zoomHandle();
+
+			workerRef.current = new trainMapWorker();
+
+			new Set(Object.values(lines).filter(e => e.json && e.stations).map(e => e.json)).values().forEach(async id => {
+				const oud = await dia(id)
+				workerRef.current.postMessage({
+					type: 'setOud',
+					id, oud
+				})
+			})
+
+			const p = {}
+
+			workerRef.current.addEventListener('message', ({ data }) => {
+				switch (data.type) {
+					case 'calcPositionResult': {
+						console.log(data)
+						Object.entries(data.data).forEach(([id, trains]) => {
+							Object.entries(trains).forEach(([index, pos]) => {
+								p[id + index] ??= L.marker([0, 0]).addTo(map);
+								p[id + index].setLatLng(pos)
+							})
+						})
+						break
+					}
+
+					default:
+						break
+				}
+			})
+
+			setInterval(() => {
+				const date = new Date()
+				const sec = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds()
+				workerRef.current.postMessage({
+					type: 'calcPosition',
+					sec: sec + 20000
+				})
+			}, 1000)
 
 			const points = {}
 			Object.values(trainMapData).forEach(s => {
-				points[s.name] = L.marker([0, 0], {label: s.name}).addTo(map);
+				points[s.name] = L.marker([0, 0], { label: s.name }).addTo(map);
 			})
 			let r = 0
 			const t = () => {
@@ -103,7 +146,7 @@ function TrainMap() {
 
 	return (
 		<Box
-			sx={{ width: "100%", height: "calc(100dvh - calc(64px + 40px))" }}
+			sx={{ width: '100%', height: 'calc(100dvh - calc(64px + 40px))' }}
 			ref={mapElementRef}
 		></Box>
 	)
