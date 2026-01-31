@@ -18,7 +18,7 @@ for (const e of edges) {
     if (seenEdges.has(key)) continue;
     seenEdges.add(key);
     if (!graph[e.from]) graph[e.from] = [];
-    graph[e.from].push({ node: e.to, cost: e.distance });
+    graph[e.from].push({ node: e.to });
 }
 
 // ==== 優先度付きキュー（最小ヒープ） ====
@@ -88,11 +88,10 @@ function haversine(a, b) {
     return 2 * R * Math.asin(Math.sqrt(h));
 }
 
-const MAX_SPEED = 100 * 1000 / 3600; // m/s
+const MAX_SPEED = 110 * 1000 / 3600; // m/s
 
 function heuristic(sta, goal) {
     if (!nodes[sta] || !nodes[goal]) return 0;
-    console.log('heuristic', name(sta), '->', name(goal), ':', haversine(sta, goal) / MAX_SPEED);
     return haversine(sta, goal) / MAX_SPEED;
 }
 
@@ -101,8 +100,9 @@ function makeStateId(sta, time, phase, visited) {
 }
 
 function visitedKey(visited) {
-    console.log(visited);
-    return [...visited].map(name).sort().join(",");
+    const newVisitedArray = [...visited].map(name).sort();
+    const newVisitedSet = new Set(newVisitedArray);
+    return [...newVisitedSet].join(",");
 }
 
 /**
@@ -125,25 +125,22 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
     const startStation = mode === 0 ? start : goal;
     const goalStation = mode === 0 ? goal : start;
 
-    const startVisited = new Set([startStation]);
-    const startStateId = makeStateId(startStation, baseTime, "transfer", startVisited);
+    console.log(Object.keys(nodes).filter(code => name(code) === name(startStation)).map(code => graph[code]));
+    Object.keys(nodes).filter(code => name(code) === name(startStation)).forEach(code => {
 
-    bestTime[startStateId] = baseTime;
+        const startVisited = new Set([code]);
+        const startStateId = makeStateId(code, baseTime, "transfer", startVisited);
 
-    pq.push({
-        station: startStation,
-        time: baseTime,
-        phase: "transfer",
-        visited: startVisited,
-        priority: baseTime + heuristic(startStation, goalStation)
-    });
+        bestTime[startStateId] = baseTime;
 
-    pq.push({
-        station: startStation,
-        time: baseTime,
-        phase: "ride",
-        visited: startVisited,
-        priority: baseTime + heuristic(startStation, goalStation)
+        pq.push({
+            station: code,
+            time: baseTime,
+            phase: "transfer",
+            visited: startVisited,
+            priority: baseTime + heuristic(startStation, goalStation)
+        });
+
     });
 
     let goalStateId = null;
@@ -151,7 +148,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
     outerLoop: while (true) {
         const cur = pq.pop();
         if (!cur) break;
-        console.log(pq.heap.map(s => name(s.station)));
+        // console.log(pq.heap.map(s => `${name(s.station)} ${s.phase} ${s.time}`));
 
         const { station, time, phase, visited } = cur;
         const curStateId = makeStateId(station, time, phase, visited);
@@ -166,7 +163,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
         if (phase === "ride") {
             const nextTime = time;
 
-            const codes = Object.keys(nodes).filter(code => name(code) === name(station));
+            const codes = Object.entries(nodes).filter(sta => sta[1].name == name(station)).map(sta => sta[0]);
             for (const nextCode of codes) {
                 const nextVisited = new Set(visited);
                 nextVisited.add(nextCode);
@@ -180,6 +177,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                     console.log('transfer', station, nextCode)
                     bestTime[nextStateId] = nextTime
                     previous[nextStateId] = curStateId
+                    if (nextCode === 'ON10a') console.log('reached ON10a');
 
                     pq.push({
                         station: nextCode,
@@ -200,7 +198,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                 // 駅名ベースのループ防止
                 if ([...visited].some(s => name(s) === name(nextStation))) continue;
 
-                console.log('move', name(station), '->', name(nextStation));
+                // console.log('move', station, '->', nextStation);
 
                 const visitedArray = [...visited];
 
@@ -247,11 +245,6 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                         visited: nextVisited,
                         priority: nextTime + heuristic(nextStation, goalStation)
                     });
-
-                    // if (name(nextStation) === name(goalStation)) {
-                    //     goalStateId = nextStateId;
-                    //     break outerLoop;
-                    // }
                 }
             }
         }

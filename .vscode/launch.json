@@ -17,5 +17,11 @@
       "preLaunchTask": "npm-run-dev",
       "stopAll": true
     }
-  ]
+  ],
+  "skipFiles": [
+        "${workspaceFolder}/node_modules/**/*.js",
+        "${workspaceFolder}/node_modules/**/*.mjs",
+        "${workspaceFolder}/node_modules/**/*.cjs",
+        "<node_internals>/**/*.js"
+    ]
 }

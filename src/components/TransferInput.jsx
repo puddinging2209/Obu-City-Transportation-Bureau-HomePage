@@ -47,7 +47,7 @@ function StationSelectButtons({ onChange, disabledStations = [] }) {
     };
     function handleClose(name) {
         setAnchorEl(null);
-        onChange(name);
+        if (typeof name === 'string') onChange(name);
     };
 
     React.useEffect(() => {
@@ -189,7 +189,7 @@ export default function TransferInput({ onSearch, loading }) {
             </Stack>
 
       {/* 時刻設定 */}
-            <Box sx={{ mt: 3 }}>
+            <Box sx={{ mt: { xs: 2, md: 3 } }}>
                 <ToggleButtonGroup
                 value={timeType}
                 exclusive
@@ -203,7 +203,7 @@ export default function TransferInput({ onSearch, loading }) {
                     <ToggleButton value="last">終電</ToggleButton>
                 </ToggleButtonGroup>
 
-                <Box sx={{ mt: 3, display: { xs: "block", md: "flex" }, gap: 1 }}>
+                <Box sx={{ mt: { xs: 1, md: 2 }, display: { xs: "block", md: "flex" }, gap: 1 }}>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <TimePicker
                             label="時刻を選択"

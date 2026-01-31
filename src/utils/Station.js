@@ -1,7 +1,9 @@
+import nodes from '../data/nodes.json';
 import stations from '../data/stations.json';
 
 export function number_name(code) {
-    const result = Object.values(stations).find(station => station.code.includes(code))?.name;
+    const result = nodes[code]?.name;
+    // const result = Object.values(stations).find(station => station.code.includes(code))?.name;
     return result ?? null;
 }
 
@@ -11,7 +13,7 @@ export function name_number(text) {
 }
 
 export function name(text) {
-    if (number_name(text?.slice(0, 4)) != null) {
+    if (number_name(text) != null) {
         return number_name(text.slice(0, 4));
     } else {
         if (text == '空港') return '中部国際空港';
