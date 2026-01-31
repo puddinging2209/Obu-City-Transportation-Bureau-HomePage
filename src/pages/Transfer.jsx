@@ -14,10 +14,17 @@ function Transfer() {
     async function searchTransfer(from, to, time, mode, tokkyu) {
         if (!from || !to) return;
         setLoading(true)
-        const segments = await dijkstra(from, to, adjustTime(time), mode, tokkyu)
-        setResult(segments ?? []);
-        setLoading(false)
-        console.log(segments)
+        try {
+            const segments = await dijkstra(from, to, adjustTime(time), mode, tokkyu)
+            setResult(segments ?? []);
+            console.log(segments)
+        } catch (error) {
+            alert(`エラーが発生しました: ${error.message}`);
+            console.error(error);
+            setResult([]);
+        } finally {
+            setLoading(false)
+        }
     }
 
     return (
