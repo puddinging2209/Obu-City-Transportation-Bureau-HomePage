@@ -88,7 +88,7 @@ function haversine(a, b) {
     return 2 * R * Math.asin(Math.sqrt(h));
 }
 
-const MAX_SPEED = 110 * 1000 / 3600; // m/s
+const MAX_SPEED = 100 * 1000 / 3600; // m/s
 
 function heuristic(sta, goal) {
     if (!nodes[sta] || !nodes[goal]) return 0;
@@ -148,10 +148,14 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
     outerLoop: while (true) {
         const cur = pq.pop();
         if (!cur) break;
-        // console.log(pq.heap.map(s => `${name(s.station)} ${s.phase} ${s.time}`));
+        console.log(pq.heap.map(s => `${name(s.station)} ${s.phase} ${s.time}`));
 
         const { station, time, phase, visited } = cur;
         const curStateId = makeStateId(station, time, phase, visited);
+
+        if (!graph[station]) {
+            console.warn("dead station code:", station);
+        }
 
         // === ゴール ===
         if (name(station) === name(goalStation) && phase === "ride") {
@@ -164,20 +168,20 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
             const nextTime = time;
 
             const codes = Object.entries(nodes).filter(sta => sta[1].name == name(station)).map(sta => sta[0]);
+            console.log(codes)
             for (const nextCode of codes) {
                 const nextVisited = new Set(visited);
                 nextVisited.add(nextCode);
 
                 const nextStateId = makeStateId(nextCode, nextTime, "transfer", nextVisited);
+                console.log(nextCode, bestTime[nextStateId]);
 
                 if (
                     bestTime[nextStateId] === undefined ||
-                    nextTime < bestTime[nextStateId]
+                    nextTime <= bestTime[nextStateId]
                 ) {
-                    console.log('transfer', station, nextCode)
                     bestTime[nextStateId] = nextTime
                     previous[nextStateId] = curStateId
-                    if (nextCode === 'ON10a') console.log('reached ON10a');
 
                     pq.push({
                         station: nextCode,
@@ -198,7 +202,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                 // 駅名ベースのループ防止
                 if ([...visited].some(s => name(s) === name(nextStation))) continue;
 
-                // console.log('move', station, '->', nextStation);
+                console.log('move', station, '->', nextStation);
 
                 const visitedArray = [...visited];
 
