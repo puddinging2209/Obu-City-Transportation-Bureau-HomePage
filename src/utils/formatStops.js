@@ -1,6 +1,7 @@
 import { dia, resolveRosen } from './readOud';
 import { name } from './Station';
 
+import lines from '../data/lines.json';
 import nodes from '../data/nodes.json';
 import stations from '../data/stations.json';
 
@@ -37,7 +38,7 @@ async function searchOuter(train, first, last, line) {
         after: []
     };
     if (first) {
-        const diagrams = await Promise.all(stations[first].routes.filter(route => resolveRosen(route) != resolveRosen(line)).map(route => dia(route)));
+        const diagrams = await Promise.all(stations[first].routes.filter(route => resolveRosen(route) != resolveRosen(line) || lines[route].isLoop).map(route => dia(route)));
         const beforeDiagram = diagrams.find(diagram => {
             return diagram.railway.diagrams[0].trains.flat().some(d => d.number == train.number && d.number !== '');
         });
@@ -45,8 +46,8 @@ async function searchOuter(train, first, last, line) {
             const before = beforeDiagram.railway.diagrams[0].trains.flat().find(d => d.number == train.number && d.number !== '');
 
             const beforeStops = searchStops(beforeDiagram, before);
-            const lastIndex = beforeStops.findIndex(sta => sta.name === first);
-            result.before.unshift(...beforeStops.slice(0, lastIndex + 1));
+            const lastIndex = beforeStops.findIndex(sta => sta.name === first && beforeDiagram.railway.name !== 'OL');
+            result.before.unshift(...beforeStops.slice(0, lastIndex !== -1 ? lastIndex + 1 : beforeStops.length));
             if (before.operations.some(op => op.outerType === 'B')) {
                 const befores = await searchOuter(before, result.before[0].name, null, beforeDiagram.railway.name);
                 result.before.unshift(...befores.before);
@@ -54,7 +55,7 @@ async function searchOuter(train, first, last, line) {
         }
     }
     if (last) {
-        const diagrams = await Promise.all(stations[last].routes.filter(route => resolveRosen(route) != resolveRosen(line)).map(route => dia(route)));
+        const diagrams = await Promise.all(stations[last].routes.filter(route => resolveRosen(route) != resolveRosen(line) || lines[route].isLoop).map(route => dia(route)));
         const afterDiagram = diagrams.find(diagram => {
             return diagram.railway.diagrams[0].trains.flat().some(d => d.number == train.number && d.number !== '');
         });
@@ -103,7 +104,7 @@ export default async function formatStops(line, train) {
             continue;
         } else if (preResult[i].name === '大府' && preResult[i].stopType === 'pass') {
             continue;
-        } else if (resolveRosen(line) === 'KT' && preResult.some((sta) => sta.name === '大府' && sta.stopType === 'stop') && ['大府森岡', '鞍流瀬川', '若草'].includes(preResult[i].name) && preResult[i].stopType === 'pass') {
+        } else if (lines[preResult[i].lineName].code === 'KT' && preResult.some((sta) => sta.name === '大府' && sta.stopType === 'stop') && ['大府森岡', '鞍流瀬川', '若草'].includes(preResult[i].name) && preResult[i].stopType === 'pass') {
             continue;
         } else result.push(preResult[i]);
     }

@@ -26,7 +26,6 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
         let direction;
         let from = (innerstations.includes(fromsta)) ? innerstations.indexOf(fromsta) : innerstations.indexOf(fromsta.slice(0, 4));
         let to = (innerstations.includes(tosta)) ? innerstations.indexOf(tosta) : innerstations.indexOf(tosta.slice(0, 4));
-        if (fromsta === 'ON10a') console.log(`fromsta ON10a${from}`);
         if (from < to) {
             direction = 0;
         } else {
@@ -94,7 +93,6 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
             }
         }
 
-        if (fromsta === 'ON10a') console.log(fastest);
         return fastest;
 
     } else {

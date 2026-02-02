@@ -27,10 +27,12 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, setIsShowDia
     React.useEffect(() => {
         if (isShowDialog) {
             if (!dep.multilayer) {
-                formatStops(l, dep.train).then(s => setStops(s));
+                formatStops(l, dep.train).then(s => {
+                    setStops(s);
+                });
             } else {
                 formatStops(l, dep.train[multilayer]).then(s => {
-                    setStops(s)
+                    setStops(s);
                 });
             }
         }
@@ -60,7 +62,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, setIsShowDia
         >
             <DialogTitle sx={{ pb: (dep.multilayer ? 0 : '') }}>
                 {isShowDialog && (
-                    <Box sx={{ borderBottom: `solid ${types[dep.typeName].color}` }}>
+                    <Box sx={{ borderBottom: `3px solid ${types[dep.typeName].color}` }}>
                         <Typography variant="h6">
                             {!dep.multilayer ?
                                 `${dep.typeName}${dep.train.name.replace(dep.typeName, '')} ${(dep.train.count != '') ? `${dep.train.count}号` : ''} ${name(dep.terminal)}行` : 

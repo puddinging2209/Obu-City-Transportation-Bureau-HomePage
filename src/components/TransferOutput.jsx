@@ -7,13 +7,15 @@ import {
     CardContent,
     Typography
 } from '@mui/material';
+import { useAtomValue, useSetAtom } from 'jotai';
 
-import { toTime, toTimeString } from '../utils/Time';
-import TrainStopsDialog from './TrainStopsDialog';
+import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
+import { toTime, toTimeString } from '../utils/Time.js';
+import TrainStopsDialog from './TrainStopsDialog.jsx';
 
 import lines from '../data/lines.json';
 
-/**
+/*
  * segments: Array<{
  *   from: string
  *   to: string
@@ -43,6 +45,16 @@ export default function TransferOutput({ segments }) {
             });
     }
 
+    function searchRideStation(segments, i) {
+        const seg = segments[i];
+        for (let j = i - 1; j >= 0; j--) {
+            if (segments[j].train.number !== seg.train.number || segments[j].train.number === '') {
+                return segments[j].to;
+            }
+        }
+        return segments[0].from;
+    }
+
     return (
         <>
             <Card sx={{ width: { xs: "100%", md: "70%" }, mx: "auto", my: 4 }}>
@@ -67,23 +79,40 @@ export default function TransferOutput({ segments }) {
                     <Box sx={{ mt: 2 }}>
                         <StationBox depTime={segments[0].depTime} StationName={segments[0].from} disableArrTime={true} />
 
-                        {segments.map((seg, i) => (
-                            <div key={seg.depTime}>
-                                <Box sx={{ ml: '5%', p: 0.5, pl: '3%', textAlign: 'left', borderLeft: 10, borderColor: lines[seg.line]?.color ?? 'green' }}>
-                                    <Typography variant="h6">{`${lines[seg.line]?.show} ${seg.typeName}${seg.train.name.replace(seg.typeName, '')} ${(seg.train.count != '') ? `${seg.train.count}号` : ''}`}</Typography>
-                                    <Typography variant="body1">{`${seg.terminal}行`}</Typography>
-                                    <Button variant='outlined' size="small" sx={{ mt: 1 }} onClick={() => {
-                                        setShowDialog(true);
-                                        setPushed(seg);
-                                    }}>
-                                        停車駅
-                                    </Button>
-                                </Box>
-                                {(i === segments.length - 1 || (seg.train.number !== segments[i + 1]?.train.number || seg.train.number === '')) && (
-                                    <StationBox arrTime={seg.arrTime} depTime={segments[i + 1]?.depTime} StationName={seg.to} disableDepTime={i === segments.length - 1} />
-                                )}
-                            </div>
-                        ))}
+                        {segments.map((seg, i) => {
+                            const isContinue = (i > 0) && (seg.train.number === segments[i - 1]?.train.number) && (seg.train.number !== '');
+                            const isContinueNext = (i < segments.length - 1) && (seg.train.number === segments[i + 1]?.train.number) && (seg.train.number !== '');
+                            return (
+                                <div key={seg.depTime}>
+                                    <Box sx={{ ml: '5%', p: 0.5, pl: '3%', textAlign: 'left', borderLeft: 10, borderColor: lines[seg.line]?.color ?? 'green' }}>
+                                        {isContinue ?
+                                            // <Typography variant='h6' color='text.secondary'>
+                                            //     {/* (直通) */}
+                                            // </Typography>
+                                            <></>
+                                            : 
+                                            <Typography variant="h6">
+                                                {`${seg.typeName}${seg.train.name.replace(seg.typeName, '')} ${(seg.train.count != '') ? `${seg.train.count}号` : ''} ${seg.terminal}行`}
+                                            </Typography>
+                                        }
+                                        <Typography variant="body1">
+                                            {`${lines[seg.line]?.show}${isContinue ? '(直通)' : ''} `}
+                                        </Typography>
+                                        {(!isContinueNext) && (
+                                            <Button variant='outlined' size="small" sx={{ mt: 1 }} onClick={() => {
+                                                setShowDialog(true);
+                                                setPushed({ ...seg, from: searchRideStation(segments, i)});
+                                            }}>
+                                                停車駅
+                                            </Button>
+                                        )}
+                                    </Box>
+                                    {(!isContinueNext) && (
+                                        <StationBox arrTime={seg.arrTime} depTime={segments[i + 1]?.depTime} StationName={seg.to} disableDepTime={i === segments.length - 1} />
+                                    )}
+                                </div>
+                            )
+                        })}
                     </Box>
                 </CardContent>
                 <TrainStopsDialog
@@ -99,6 +128,9 @@ export default function TransferOutput({ segments }) {
 }
 
 function StationBox({ arrTime, depTime, StationName, disableArrTime = false, disableDepTime = false }) {
+    const myStations = useAtomValue(myStationsAtom);
+    const setMyStations = useSetAtom(addMyStationAtom);
+
     return (
         <Box sx={{ width: '100%', display: 'flex', borderRadius: 1, p: 1, gap: 1 }} bgcolor="#DDD">
             <Box sx={{ flex: '0 0 42px', textAlign: 'center' }}>
@@ -108,6 +140,15 @@ function StationBox({ arrTime, depTime, StationName, disableArrTime = false, dis
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', verticalAlign: 'middle', px: 1, py: 'auto' }}>
                 <Typography variant="h6" fontWeight='bold'>{StationName}</Typography>
             </Box>
+            <Button
+                variant='outlined'
+                size="small"
+                sx={{ ml: 'auto' }}
+                disabled={myStations.map(sta => sta?.name).includes(StationName)}
+                onClick={() => setMyStations({name: StationName, role: 'station'})}
+            >
+                マイ駅に追加
+            </Button>
         </Box>
     )
 }
