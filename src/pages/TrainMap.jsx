@@ -104,7 +104,7 @@ function TrainMap() {
 
 			setInterval(() => {
 				const date = new Date()
-				const sec = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds()
+				const sec = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds() + 0.001 * date.getMilliseconds()
 				workerRef.current.postMessage({
 					type: 'calcPosition',
 					sec: sec
