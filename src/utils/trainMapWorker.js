@@ -12,7 +12,6 @@ function normalizeSec(sec) {
 
 function calcTrainsRate(id, sec) {
 	const t = normalizeSec(sec)
-	console.log(sec)
 	const oud = oudData[id]
 	if (!oud) {
 		return {}
@@ -35,20 +34,33 @@ function calcTrainsRate(id, sec) {
 			if (!data._data[i]) {
 				continue
 			}
-			if (data._data[i].departure < t) {
-				for (let j = data.firstStationIndex; j < data.terminalStationIndex; j += direction) {
+			if (normalizeSec(data._data[i].arrival) <= t && t <= normalizeSec(data._data[i].departure)) {
+				if (line.stations[i])
+					result[index] = line.stations[i][1]
+				break
+			}
+			if (normalizeSec(data._data[i].departure) < t) {
+				let nextStationIndex = -1
+				for (let j = i + direction; j < data.terminalStationIndex; j += direction) {
 					if (!data._data[j]?.arrival) {
 						continue
 					}
-					const rate = (t - data._data[i].departure) / (data._data[j].arrival - data._data[i].departure)
-					result[index] = rate
+					nextStationIndex = j
 					break
 				}
-				break
-			}
-			if (t <= data._data[i].arrival && data._data[i].departure <= t) {
-				result[index] = line.stations[i][1]
-				break
+				if (nextStationIndex === -1) {
+					break
+				}
+				if (t < normalizeSec(data._data[nextStationIndex].arrival)) {
+					const rateBetweenStation = (t - normalizeSec(data._data[i].departure)) / (normalizeSec(data._data[nextStationIndex].arrival) - normalizeSec(data._data[i].departure))
+					if (!line.stations[i] || !line.stations[nextStationIndex]) {
+						break
+					}
+					const rateBetweenStationInLine = Math.abs(line.stations[i][1] - line.stations[nextStationIndex][1])
+					const rateInLine = rateBetweenStation * rateBetweenStationInLine + Math.min(line.stations[i][1], line.stations[nextStationIndex][1])
+					result[index] = rateInLine
+					break
+				}
 			}
 		}
 	}
@@ -69,7 +81,7 @@ function calcPositions(sec) {
 				const rateInLine = (r - lineCoordinates[i][2]) / (lineCoordinates[i + 1][2] - lineCoordinates[i][2])
 				const lat = lineCoordinates[i][0] + (lineCoordinates[i + 1][0] - lineCoordinates[i][0]) * rateInLine
 				const lng = lineCoordinates[i][1] + (lineCoordinates[i + 1][1] - lineCoordinates[i][1]) * rateInLine
-				result[id + n] = [lat, lng]
+				result[`${id}_${n}`] = [lat, lng]
 				break
 			}
 		})
@@ -84,6 +96,7 @@ self.addEventListener('message', ({ data }) => {
 			break
 		}
 		case 'calcPosition': {
+			console.log(data.sec)
 			self.postMessage({
 				type: 'calcPositionResult',
 				data: calcPositions(data.sec)
