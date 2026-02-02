@@ -6,6 +6,7 @@
     "json": "NK",
     "color": "#5D6CFF",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "北崎",
       "北崎大島",
@@ -17,7 +18,7 @@
       "十三塚",
       "沓掛町森前",
       "若王子川",
-      "清水々根",
+      "清水ケ根",
       "春木台",
       "猫池",
       "東郷",
@@ -43,6 +44,7 @@
     "json": "OD",
     "color": "#FF9000",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "刈谷",
       "宝町",
@@ -84,6 +86,7 @@
     "json": "GK",
     "color": "#60A331",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "名和",
       "大高丸ノ内",
@@ -127,6 +130,7 @@
     "json": "HD",
     "color": "#FFD600",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "大府",
       "大府森岡",
@@ -156,6 +160,7 @@
     "json": "HD",
     "color": "#FFD600",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "乙川",
       "半田赤レンガ",
@@ -170,6 +175,7 @@
     "json": "MT",
     "color": "#9BEA81",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "至学館大学前",
       "坊主山",
@@ -212,6 +218,7 @@
     "json": "FT",
     "color": "#A86700",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "至学館大学前",
       "二ツ池公園前",
@@ -230,6 +237,7 @@
     "json": "FT",
     "color": "#A86700",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "大東町",
       "住友重機前",
@@ -246,6 +254,7 @@
     "json": "NK",
     "color": "#00E0FF",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "惣作",
       "後田",
@@ -265,6 +274,7 @@
     "json": "NB",
     "color": "#FF0071",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "大高",
       "正光寺",
@@ -290,6 +300,7 @@
     "json": "AR",
     "color": "#EDA39C",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "至学館大学前",
       "北山",
@@ -315,6 +326,7 @@
     "json": "MY",
     "color": "#EA88FF",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "新富町",
       "新田町",
@@ -354,6 +366,7 @@
     "json": "KM",
     "color": "#FFEA00",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "鰻池",
       "岡田川",
@@ -374,6 +387,7 @@
     "json": "TR",
     "color": "#0097A7",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "末広",
       "北蕨",
@@ -391,6 +405,7 @@
     "json": "HD",
     "color": "#A700A7",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "生見町",
       "亀崎北浦",
@@ -407,6 +422,7 @@
     "json": "ON",
     "color": "#FF0101",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "八幡新田",
       "緒川植山",
@@ -446,6 +462,7 @@
     "json": "OG",
     "color": "#969696",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "知立",
       "知立堀切",
@@ -487,6 +504,7 @@
     "json": "HK",
     "color": "#0288D1",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "半田みなと",
       "瑞穂町",
@@ -525,6 +543,7 @@
     "json": "TY",
     "color": "#87CEAC",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "長土井",
       "本田",
@@ -555,6 +574,7 @@
     "json": "KL",
     "color": "#FFC200",
     "type": "subway",
+    "isLoop": true,
     "stations": [
       "日高",
       "高倉",
@@ -582,6 +602,7 @@
     "json": "TT",
     "color": "#018300",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "与五八",
       "横須賀高校前",
@@ -593,7 +614,7 @@
       "新知台",
       "知多市保健センター",
       "中央図書館前",
-      "美城々根",
+      "美城ケ根",
       "沖ノ田",
       "日長堀田",
       "前田口",
@@ -608,6 +629,7 @@
     "json": "KT",
     "color": "#003DFF",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "太田川",
       "細田",
@@ -635,6 +657,7 @@
     "json": "KT",
     "color": "#003DFF",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "半月町",
       "大府",
@@ -649,6 +672,7 @@
     "json": "KTa",
     "color": "#003DFF",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "新富町",
       "刈谷池田",
@@ -665,6 +689,7 @@
     "json": "OL",
     "color": "#08FF00",
     "type": "subway",
+    "isLoop": true,
     "stations": [
       "大府",
       "大府市役所前",
@@ -687,6 +712,7 @@
     "json": "MR",
     "color": "#A1C2FA",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "半田市",
       "南本町",
@@ -730,6 +756,7 @@
     "json": "NW",
     "color": "#DE00FF",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "名和",
       "龍ノ脇",
@@ -754,6 +781,7 @@
     "json": "MR",
     "color": "#FFFF8D",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "古布",
       "古布九条",
@@ -770,6 +798,7 @@
     "json": "TZ",
     "color": "#FF66AE",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "荒尾下畑",
       "大池公園",
@@ -801,6 +830,7 @@
     "json": "TZ",
     "color": "#FF66AE",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "惣作",
       "長根"
@@ -813,6 +843,7 @@
     "json": "TT",
     "color": "#018300",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "北加木屋",
       "横須賀高校前"
@@ -825,6 +856,7 @@
     "json": "GK",
     "color": "#FF9000",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "鳴海",
       "上汐田"
@@ -837,6 +869,7 @@
     "json": "HD",
     "color": "#FFD600",
     "type": "subway",
+    "isLoop": false,
     "stations": [
       "江端町",
       "大府森岡"

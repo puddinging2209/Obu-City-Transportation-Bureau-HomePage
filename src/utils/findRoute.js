@@ -1,10 +1,9 @@
-import edges from "../data/edges.json";
-import nodes from "../data/nodes.json";
-
 import reconstructByState from "./formatRoute.js";
 import { searchFastestTrain } from "./searchFastestTrain.js";
 import { name } from "./Station.js";
 
+import edges from "../data/edges.json";
+import nodes from "../data/nodes.json";
 import stations from "../data/stations.json";
 
 // 経路復元 
@@ -194,7 +193,6 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                 // 駅名ベースのループ防止
                 if ([...visited].some(s => name(s) === name(nextStation))) continue;
 
-                console.log('move', station, '->', nextStation);
 
                 const visitedArray = [...visited];
 
