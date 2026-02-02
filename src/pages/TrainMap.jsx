@@ -90,11 +90,9 @@ function TrainMap() {
 				switch (data.type) {
 					case 'calcPositionResult': {
 						console.log(data)
-						Object.entries(data.data).forEach(([id, trains]) => {
-							Object.entries(trains).forEach(([index, pos]) => {
-								p[id + index] ??= L.marker([0, 0]).addTo(map);
-								p[id + index].setLatLng(pos)
-							})
+						Object.entries(data.data).forEach(([id, pos]) => {
+							p[id] ??= L.marker([0, 0]).addTo(map);
+							p[id].setLatLng(pos);
 						})
 						break
 					}
@@ -109,7 +107,7 @@ function TrainMap() {
 				const sec = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds()
 				workerRef.current.postMessage({
 					type: 'calcPosition',
-					sec: sec + 20000
+					sec: sec
 				})
 			}, 1000)
 
@@ -140,7 +138,6 @@ function TrainMap() {
 				r += 0.0005
 				requestAnimationFrame(t)
 			}
-			t()
 		})();
 	}, []);
 

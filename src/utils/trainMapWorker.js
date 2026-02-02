@@ -12,6 +12,7 @@ function normalizeSec(sec) {
 
 function calcTrainsRate(id, sec) {
 	const t = normalizeSec(sec)
+	console.log(sec)
 	const oud = oudData[id]
 	if (!oud) {
 		return {}
@@ -26,7 +27,7 @@ function calcTrainsRate(id, sec) {
 		if (data.firstStationIndex === -1) {
 			continue
 		}
-		const isRunning = (normalizeSec(data._data[data.firstStationIndex].departure <= t)) && (t <= normalizeSec(data._data[data.terminalStationIndex].arrival))
+		const isRunning = (normalizeSec(data._data[data.firstStationIndex].departure) <= t) && (t <= normalizeSec(data._data[data.terminalStationIndex].arrival))
 		if (!isRunning) {
 			continue
 		}
@@ -57,7 +58,6 @@ function calcTrainsRate(id, sec) {
 function calcPositions(sec) {
 	const result = {}
 	Object.keys(oudData).forEach(id => {
-		const data = {}
 		const trainsRate = calcTrainsRate(id, sec)
 		const lineCoordinates = Object.values(trainMapData).find(e => e.json === id).line_coordinates
 
@@ -69,11 +69,10 @@ function calcPositions(sec) {
 				const rateInLine = (r - lineCoordinates[i][2]) / (lineCoordinates[i + 1][2] - lineCoordinates[i][2])
 				const lat = lineCoordinates[i][0] + (lineCoordinates[i + 1][0] - lineCoordinates[i][0]) * rateInLine
 				const lng = lineCoordinates[i][1] + (lineCoordinates[i + 1][1] - lineCoordinates[i][1]) * rateInLine
-				data[n] = [lat, lng]
+				result[id + n] = [lat, lng]
 				break
 			}
 		})
-		result[id] = data
 	})
 	return result
 }
