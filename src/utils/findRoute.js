@@ -125,7 +125,6 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
     const startStation = mode === 0 ? start : goal;
     const goalStation = mode === 0 ? goal : start;
 
-    console.log(Object.keys(nodes).filter(code => name(code) === name(startStation)).map(code => graph[code]));
     Object.keys(nodes).filter(code => name(code) === name(startStation)).forEach(code => {
 
         const startVisited = new Set([code]);
@@ -148,14 +147,9 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
     outerLoop: while (true) {
         const cur = pq.pop();
         if (!cur) break;
-        console.log(pq.heap.map(s => `${name(s.station)} ${s.phase} ${s.time}`));
 
         const { station, time, phase, visited } = cur;
         const curStateId = makeStateId(station, time, phase, visited);
-
-        if (!graph[station]) {
-            console.warn("dead station code:", station);
-        }
 
         // === ゴール ===
         if (name(station) === name(goalStation) && phase === "ride") {
@@ -168,13 +162,11 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
             const nextTime = time;
 
             const codes = Object.entries(nodes).filter(sta => sta[1].name == name(station)).map(sta => sta[0]);
-            console.log(codes)
             for (const nextCode of codes) {
                 const nextVisited = new Set(visited);
                 nextVisited.add(nextCode);
 
                 const nextStateId = makeStateId(nextCode, nextTime, "transfer", nextVisited);
-                console.log(nextCode, bestTime[nextStateId]);
 
                 if (
                     bestTime[nextStateId] === undefined ||
