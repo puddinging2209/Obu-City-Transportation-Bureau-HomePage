@@ -1,12 +1,14 @@
-const CACHE_NAME = "oud-cache-v1";
+const CACHE_NAME = "oud-cache-v2";
 const BASE = self.registration.scope; // Pages対応
 let lastManifestHash = null;
 
 self.addEventListener("install", () => {
     self.skipWaiting();
+    self.skipWaiting();
 });
 
 self.addEventListener("activate", e => {
+    e.waitUntil(self.clients.claim());
     e.waitUntil(self.clients.claim());
 });
 
@@ -60,6 +62,7 @@ function hashString(str) {
     }
     return hash.toString(36);
 }
+
 
 async function cacheFirst(request) {
     const cache = await caches.open(CACHE_NAME);
