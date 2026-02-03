@@ -12,24 +12,27 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", event => {
     const url = new URL(event.request.url);
 
-    // 🚫 manifest はキャッシュ禁止
+    // manifest.json は常にネットワーク
     if (url.pathname.endsWith("/oud/manifest.json")) {
+        event.respondWith(fetch(event.request, { cache: "no-store" }));
         return;
     }
 
-    // OUD JSON はキャッシュOK
+    // OUD 本体のみキャッシュ対象
     if (url.pathname.includes("/oud/")) {
-        event.respondWith(cacheFirst(event.request));
+        event.respondWith(cacheThenUpdate(event.request));
     }
 });
 
-async function cacheFirst(request) {
+
+async function cacheThenUpdate(request) {
     const cache = await caches.open(CACHE_NAME);
 
     const cached = await cache.match(request);
-    if (cached) return cached;
+    const fetchPromise = fetch(request).then(res => {
+        cache.put(request, res.clone());
+        return res;
+    });
 
-    const fresh = await fetch(request);
-    cache.put(request, fresh.clone());
-    return fresh;
+    return cached || fetchPromise;
 }
