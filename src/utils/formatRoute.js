@@ -76,5 +76,5 @@ function formatRouteFromStates(states, used) {
         })
     }
 
-    return segments
+    return segments;
 }
