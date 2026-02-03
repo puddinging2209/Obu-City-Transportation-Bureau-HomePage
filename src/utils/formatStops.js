@@ -1,9 +1,10 @@
-import { dia, resolveRosen } from './readOud';
-import { name } from './Station';
+import { dia, resolveRosen } from './readOud.js';
+import { name } from './Station.js';
 
 import lines from '../data/lines.json';
 import nodes from '../data/nodes.json';
 import stations from '../data/stations.json';
+import { adjustTime } from './Time.js';
 
 function searchStops(diagram, train) {
     const stationList = diagram.railway.stations.map((sta) => sta.name);
@@ -40,10 +41,23 @@ async function searchOuter(train, first, last, line) {
     if (first) {
         const diagrams = await Promise.all(stations[first].routes.filter(route => resolveRosen(route) != resolveRosen(line) || lines[route].isLoop).map(route => dia(route)));
         const beforeDiagram = diagrams.find(diagram => {
-            return diagram.railway.diagrams[0].trains.flat().some(d => d.number == train.number && d.number !== '');
+            return diagram.railway.diagrams[0].trains
+                .flat()
+                .some(d =>
+                    d.number == train.number &&
+                    d.number !== '' &&
+                    adjustTime(d.timetable._data[d.timetable.terminalStationIndex]?.arrival) < adjustTime(train.timetable._data[train.timetable.firstStationIndex]?.departure)
+                );
         });
         if (beforeDiagram) {
-            const before = beforeDiagram.railway.diagrams[0].trains.flat().find(d => d.number == train.number && d.number !== '');
+            const before =
+                beforeDiagram.railway.diagrams[0].trains
+                    .flat()
+                    .find(d =>
+                        d.number == train.number &&
+                        d.number !== '' &&
+                        adjustTime(d.timetable._data[d.timetable.terminalStationIndex]?.arrival) < adjustTime(train.timetable._data[train.timetable.firstStationIndex]?.departure)
+                    );
 
             const beforeStops = searchStops(beforeDiagram, before);
             const lastIndex = beforeStops.findIndex(sta => sta.name === first && beforeDiagram.railway.name !== 'OL');
@@ -57,10 +71,22 @@ async function searchOuter(train, first, last, line) {
     if (last) {
         const diagrams = await Promise.all(stations[last].routes.filter(route => resolveRosen(route) != resolveRosen(line) || lines[route].isLoop).map(route => dia(route)));
         const afterDiagram = diagrams.find(diagram => {
-            return diagram.railway.diagrams[0].trains.flat().some(d => d.number == train.number && d.number !== '');
+            return diagram.railway.diagrams[0].trains
+                .flat()
+                .some(d =>
+                    d.number == train.number &&
+                    d.number !== '' &&
+                    adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) > adjustTime(train.timetable._data[train.timetable.terminalStationIndex]?.arrival)
+                );
         });
         if (afterDiagram) {
-            const after = afterDiagram.railway.diagrams[0].trains.flat().find(d => d.number == train.number && d.number !== '');
+            const after = afterDiagram.railway.diagrams[0].trains
+                .flat()
+                .find(d =>
+                    d.number == train.number &&
+                    d.number !== '' &&
+                    adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) > adjustTime(train.timetable._data[train.timetable.terminalStationIndex]?.arrival)
+                );
 
             const afterStops = searchStops(afterDiagram, after);
             const firstIndex = afterStops.findIndex(sta => sta.name === last);
