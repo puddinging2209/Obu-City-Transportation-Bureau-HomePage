@@ -55,6 +55,12 @@ export default function TransferOutput({ segments }) {
         return segments[0].from;
     }
 
+    const innerContinues = [
+        { sta: ['大府', '鶴舞'], lines: ['大府環状線', '大府西線', '大高線'] },
+        { sta: ['大府', '日進'], lines: ['刈田川線', '内田面線', '長久手線'] },
+        { sta: ['惣作', '豊明市'], lines: ['内田面線', '長久手線'] },
+    ];
+
     return (
         <>
             <Card sx={{ width: { xs: "100%", md: "70%" }, mx: "auto", my: 4 }}>
@@ -82,15 +88,11 @@ export default function TransferOutput({ segments }) {
                         {segments.map((seg, i) => {
                             const isContinue = (i > 0) && (seg.train.number === segments[i - 1]?.train.number) && (seg.train.number !== '');
                             const isContinueNext = (i < segments.length - 1) && (seg.train.number === segments[i + 1]?.train.number) && (seg.train.number !== '');
+                            const innerContinue = innerContinues.find(ic => ic.sta.includes(seg.from) && ic.sta.includes(seg.to));
                             return (
                                 <div key={seg.depTime}>
                                     <Box sx={{ ml: '5%', p: 0.5, pl: '3%', textAlign: 'left', borderLeft: 10, borderColor: lines[seg.line]?.color ?? 'green' }}>
-                                        {isContinue ?
-                                            // <Typography variant='h6' color='text.secondary'>
-                                            //     {/* (直通) */}
-                                            // </Typography>
-                                            <></>
-                                            : 
+                                        {!isContinue &&
                                             <Typography variant="h6">
                                                 {`${seg.typeName}${seg.train.name.replace(seg.typeName, '')} ${(seg.train.count != '') ? `${seg.train.count}号` : ''} ${seg.terminal}行`}
                                             </Typography>

@@ -46,7 +46,10 @@ async function searchOuter(train, first, last, line) {
                 .some(d =>
                     d.number == train.number &&
                     d.number !== '' &&
-                    adjustTime(d.timetable._data[d.timetable.terminalStationIndex]?.arrival) < adjustTime(train.timetable._data[train.timetable.firstStationIndex]?.departure)
+                    adjustTime(
+                        d.timetable._data[d.timetable.terminalStationIndex]?.arrival ??
+                        d.timetable._data[d.timetable.terminalStationIndex]?.departure
+                    ) <= adjustTime(train.timetable._data[first === '刈谷' ? train.timetable.firstStationIndex + 1 : train.timetable.firstStationIndex]?.departure)
                 );
         });
         if (beforeDiagram) {
@@ -56,7 +59,10 @@ async function searchOuter(train, first, last, line) {
                     .find(d =>
                         d.number == train.number &&
                         d.number !== '' &&
-                        adjustTime(d.timetable._data[d.timetable.terminalStationIndex]?.arrival) < adjustTime(train.timetable._data[train.timetable.firstStationIndex]?.departure)
+                        adjustTime(
+                            d.timetable._data[d.timetable.terminalStationIndex]?.arrival ??
+                            d.timetable._data[d.timetable.terminalStationIndex]?.departure
+                        ) <= adjustTime(train.timetable._data[first === '刈谷' ? train.timetable.firstStationIndex + 1 : train.timetable.firstStationIndex]?.departure)
                     );
 
             const beforeStops = searchStops(beforeDiagram, before);
@@ -76,7 +82,11 @@ async function searchOuter(train, first, last, line) {
                 .some(d =>
                     d.number == train.number &&
                     d.number !== '' &&
-                    adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) > adjustTime(train.timetable._data[train.timetable.terminalStationIndex]?.arrival)
+                    adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) >=
+                    adjustTime(
+                        train.timetable._data[last === '刈谷' ? train.timetable.terminalStationIndex - 1 : train.timetable.terminalStationIndex]?.arrival ??
+                        train.timetable._data[last === '刈谷' ? train.timetable.terminalStationIndex - 1 : train.timetable.terminalStationIndex]?.departure
+                    )
                 );
         });
         if (afterDiagram) {
@@ -85,7 +95,11 @@ async function searchOuter(train, first, last, line) {
                 .find(d =>
                     d.number == train.number &&
                     d.number !== '' &&
-                    adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) > adjustTime(train.timetable._data[train.timetable.terminalStationIndex]?.arrival)
+                    adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) >=
+                    adjustTime(
+                        train.timetable._data[last === '刈谷' ? train.timetable.terminalStationIndex - 1 : train.timetable.terminalStationIndex]?.arrival ??
+                        train.timetable._data[last === '刈谷' ? train.timetable.terminalStationIndex - 1 : train.timetable.terminalStationIndex]?.departure
+                    )
                 );
 
             const afterStops = searchStops(afterDiagram, after);
@@ -110,8 +124,8 @@ export default async function formatStops(line, train) {
     const innerDiagram = await dia(line);
     const inner = searchStops(innerDiagram, train);
 
-    const before = train.operations.some(op => op.outerType === 'B');
-    const after = train.operations.some(op => op.outerType === 'A');
+    const before = train.operations.some(op => op.outerType === 'B') || (inner[0].name === '刈谷' && inner[0].lineName === '刈田川線');
+    const after = train.operations.some(op => op.outerType === 'A') || (inner.at(-1).name === '刈谷' && inner.at(-1).lineName === '刈田川線');
 
     const outer = await searchOuter(train, (before) ? inner[0].name : null, (after) ? inner.at(-1).name : null, line);
 
