@@ -11,8 +11,12 @@ async function loadManifest() {
 
     try {
         const res = await fetch(`${BASE}oud/manifest.json`, {
-            cache: "no-cache",
+            cache: "no-store",
+            headers: {
+                "Cache-Control": "no-cache",
+            },
         });
+
         if (!res.ok) throw new Error();
         oudManifest = await res.json();
     } catch {
