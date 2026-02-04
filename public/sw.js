@@ -6,6 +6,19 @@ self.addEventListener("install", () => {
 });
 
 self.addEventListener("activate", e => {
+    e.waitUntil(
+        caches.keys().then(names => {
+            // "oud-cache-" で始まり、現在の CACHE_NAME と異なるキャッシュを削除
+            return Promise.all(
+                names
+                    .filter(name => name.startsWith("oud-cache-") && name !== CACHE_NAME)
+                    .map(name => {
+                        console.log(`[SW] Deleting old cache: ${name}`);
+                        return caches.delete(name);
+                    })
+            );
+        })
+    );
     e.waitUntil(self.clients.claim());
 });
 
