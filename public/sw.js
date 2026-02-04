@@ -8,7 +8,13 @@ self.addEventListener("install", () => {
 self.addEventListener("activate", e => {
     e.waitUntil(
         caches.keys().then(names => {
-            // "oud-cache-" で始まり、現在の CACHE_NAME と異なるキャッシュを削除
+            // 既に同名のキャッシュが存在する（つまりCACHE_NAMEが既存）なら削除をスキップ
+            if (names.includes(CACHE_NAME)) {
+                console.log('[SW] Current cache exists, skip deleting caches');
+                return;
+            }
+
+            // "oud-cache" で始まり、現在の CACHE_NAME と異なるキャッシュを削除
             return Promise.all(
                 names
                     .filter(name => name.startsWith("oud-cache") && name !== CACHE_NAME)
