@@ -93,7 +93,7 @@ export default function DepartureSection() {
         </Container>
 
 
-      <Typography variant="h6" sx={{ mb: 2 }}>マイ駅・停留所</Typography>
+      <Typography variant="h6" sx={{ mb: 2, textAlign: 'left' }}>マイ駅・停留所</Typography>
 
           <Stack direction="row" spacing={2} sx={{ overflowX: 'auto', whiteSpace: 'nowrap', flexWrap: 'nowrap', pb: 1, scrollSnapType: { xs: 'x mandatory', md: 'none'} }}>
             {myStations.map(sta => 
