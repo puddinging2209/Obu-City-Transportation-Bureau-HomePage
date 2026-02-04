@@ -19,8 +19,9 @@ export default defineConfig({
                 let hasOudChanges = false
 
                 try {
-                    // git diff で変更されたファイルを取得
-                    const diff = execSync('git diff --name-only HEAD', { encoding: 'utf-8' })
+                    // コミット済みの変更を検出するため git diff HEAD~1..HEAD を使う
+                    // これにより、最新コミットで何が変更されたかを確実に取得できる
+                    const diff = execSync('git diff --name-only HEAD~1..HEAD', { encoding: 'utf-8' })
                     const changedFiles = diff.split('\n').filter(f => f)
 
                     // public/oud/ 配下に変更があるか確認
@@ -33,7 +34,8 @@ export default defineConfig({
                         console.log('[update-cache-name] No changes in public/oud/ - keeping existing cache')
                     }
                 } catch (err) {
-                    console.log('[update-cache-name] Git not available, assuming changes were made')
+                    console.log('[update-cache-name] Git error:', err.message)
+                    console.log('[update-cache-name] Assuming changes were made')
                     hasOudChanges = true
                 }
 
