@@ -11,7 +11,7 @@ self.addEventListener("activate", e => {
             // "oud-cache-" で始まり、現在の CACHE_NAME と異なるキャッシュを削除
             return Promise.all(
                 names
-                    .filter(name => name.startsWith("oud-cache-") && name !== CACHE_NAME)
+                    .filter(name => name.startsWith("oud-cache") && name !== CACHE_NAME)
                     .map(name => {
                         console.log(`[SW] Deleting old cache: ${name}`);
                         return caches.delete(name);
