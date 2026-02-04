@@ -15,14 +15,28 @@ self.addEventListener("fetch", event => {
 
     if (!url.pathname.includes("/oud/")) return;
 
-    // manifest.json はキャッシュしない（ネットワークのみ）
+    // manifest.json はキャッシュしない（ネットワークのみ、エラー時はキャッシュ）
     if (url.pathname.endsWith("/oud/manifest.json")) {
-        event.respondWith(fetch(event.request));
+        event.respondWith(networkFirst(event.request));
         return;
     }
 
     event.respondWith(cacheFirst(event.request));
 });
+
+async function networkFirst(request) {
+    try {
+        const response = await fetch(request);
+        if (response.ok) return response;
+    } catch (err) {
+        console.log("[SW] Failed to fetch manifest.json from network");
+    }
+
+    // ネットワーク失敗時はキャッシュから返す
+    const cache = await caches.open(CACHE_NAME);
+    const cached = await cache.match(request);
+    return cached || new Response("Not found", { status: 404 });
+}
 
 async function cacheFirst(request) {
     const cache = await caches.open(CACHE_NAME);
