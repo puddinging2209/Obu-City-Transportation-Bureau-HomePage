@@ -2,6 +2,7 @@ import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemTex
 import { useAtom } from "jotai";
 import { useNavigate } from "react-router-dom";
 
+import ArticleIcon from '@mui/icons-material/Article';
 import HomeIcon from '@mui/icons-material/Home';
 import MapIcon from '@mui/icons-material/Map';
 import PlaceIcon from '@mui/icons-material/Place';
@@ -30,6 +31,7 @@ function Drawer() {
 
     const subListItems = [
         { name: '駅ログ！', icon: <PlaceIcon />, path: '/log' },
+        { name: 'お知らせ', icon: <ArticleIcon />, path: '/news' },
         { name: '大府市営地下鉄とは', icon: <HelpOutlineIcon />, path: '/about' },
     ];
 
