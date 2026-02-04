@@ -18,18 +18,28 @@ export default defineConfig({
                 const srcManifest = 'public/oud/manifest.json'
                 const destManifest = 'docs/oud/manifest.json'
 
-                if (fs.existsSync(srcManifest)) {
-                    // ディレクトリが存在しない場合は作成
-                    const destDir = path.dirname(destManifest)
-                    if (!fs.existsSync(destDir)) {
-                        fs.mkdirSync(destDir, { recursive: true })
-                    }
+                console.log('[copy-manifest] Checking for manifest.json...')
 
-                    fs.copyFileSync(srcManifest, destManifest)
-                    console.log('✅ manifest.json copied to docs/oud/')
-                } else {
-                    console.warn('⚠️ manifest.json not found in public/oud/')
+                if (!fs.existsSync(srcManifest)) {
+                    console.error(`❌ Source manifest not found: ${srcManifest}`)
+                    console.log('[copy-manifest] Available files in public/oud:')
+                    if (fs.existsSync('public/oud')) {
+                        const files = fs.readdirSync('public/oud')
+                        console.log(files)
+                    }
+                    return
                 }
+
+                // ディレクトリが存在しない場合は作成
+                const destDir = path.dirname(destManifest)
+                if (!fs.existsSync(destDir)) {
+                    fs.mkdirSync(destDir, { recursive: true })
+                    console.log(`[copy-manifest] Created directory: ${destDir}`)
+                }
+
+                fs.copyFileSync(srcManifest, destManifest)
+                const stats = fs.statSync(destManifest)
+                console.log(`✅ manifest.json copied to ${destManifest} (${stats.size} bytes)`)
             }
         }
     ],
