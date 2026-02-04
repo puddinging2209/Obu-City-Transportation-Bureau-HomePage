@@ -24,7 +24,8 @@ export default defineConfig({
                     const changedFiles = diff.split('\n').filter(f => f)
 
                     // public/oud/ 配下に変更があるか確認
-                    hasOudChanges = changedFiles.some(f => f.startsWith('public/oud/'))
+                    // ただし生成される manifest.json 自体の差分は無視する
+                    hasOudChanges = changedFiles.some(f => f.startsWith('public/oud/') && f !== 'public/oud/manifest.json')
 
                     if (hasOudChanges) {
                         console.log('[update-cache-name] Changes detected in public/oud/')
