@@ -1,4 +1,4 @@
-const CACHE_NAME = "oud-cache-v3";
+const CACHE_NAME = "oud-cache-initial";
 const BASE = self.registration.scope; // Pages対応
 
 self.addEventListener("install", () => {
@@ -8,13 +8,16 @@ self.addEventListener("install", () => {
 self.addEventListener("activate", e => {
     e.waitUntil(
         caches.keys().then(names => {
-            // 既に同名のキャッシュが存在する（つまりCACHE_NAMEが既存）なら削除をスキップ
-            if (names.includes(CACHE_NAME)) {
-                console.log('[SW] Current cache exists, skip deleting caches');
+            // CACHE_NAME がタイムスタンプ付き（13桁の数字）または initial の場合のみ、
+            // 古いキャッシュを削除する。
+            const isValidCache = /oud-cache-(\d{13}|initial)/.test(CACHE_NAME);
+
+            if (!isValidCache) {
+                console.log('[SW] CACHE_NAME is unknown, keep existing caches');
                 return;
             }
 
-            // "oud-cache" で始まり、現在の CACHE_NAME と異なるキャッシュを削除
+            // タイムスタンプ付きまたは initial なら古いキャッシュを削除
             return Promise.all(
                 names
                     .filter(name => name.startsWith("oud-cache") && name !== CACHE_NAME)

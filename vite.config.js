@@ -40,13 +40,35 @@ export default defineConfig({
                 }
 
                 // public/oud/ 配下に変更がある場合のみ CACHE_NAME を更新
-                let cacheVersion = 'oud-cache-v3' // デフォルト
+                let cacheVersion = null
 
+                // まず、前回ビルドの docs/sw.js から CACHE_NAME を抽出して引き継ぐ
+                const docsSwPath = 'docs/sw.js'
+                if (fs.existsSync(docsSwPath)) {
+                    try {
+                        const previousSw = fs.readFileSync(docsSwPath, 'utf-8')
+                        const match = previousSw.match(/const CACHE_NAME = "([^"]+)"/)
+                        if (match) {
+                            cacheVersion = match[1]
+                            console.log(`[update-cache-name] Previous cache name detected: ${cacheVersion}`)
+                        }
+                    } catch (err) {
+                        console.log('[update-cache-name] Could not read previous sw.js')
+                    }
+                }
+
+                // 変更があった場合は新しいタイムスタンプで更新
                 if (hasOudChanges) {
                     cacheVersion = `oud-cache-${Date.now()}`
                     console.log(`[update-cache-name] Cache name updated: ${cacheVersion}`)
                 } else {
-                    console.log(`[update-cache-name] Cache name kept: ${cacheVersion}`)
+                    // 変更がなく、前回ビルドのキャッシュがない場合は新規生成
+                    if (!cacheVersion) {
+                        cacheVersion = `oud-cache-${Date.now()}`
+                        console.log(`[update-cache-name] First build or cache not found, creating: ${cacheVersion}`)
+                    } else {
+                        console.log(`[update-cache-name] No changes, keeping previous cache: ${cacheVersion}`)
+                    }
                 }
 
                 // sw.js を読み込み、CACHE_NAME を置換
@@ -58,7 +80,6 @@ export default defineConfig({
                 )
 
                 // docs/sw.js に出力
-                const docsSwPath = 'docs/sw.js'
                 if (!fs.existsSync('docs')) {
                     fs.mkdirSync('docs', { recursive: true })
                 }
