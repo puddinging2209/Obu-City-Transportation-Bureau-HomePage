@@ -11,12 +11,10 @@ export default function reconstructByState(goalStateId, previous, used, mode) {
         cur = previous[cur]
     }
 
-    console.log(states);
-    return formatRouteFromStates((mode === 0) ? states : states.reverse(), used)
+    return formatRouteFromStates((mode === 0) ? states : states.reverse(), used, mode);
 }
 
-function formatRouteFromStates(states, used) {
-    console.log(states);
+function formatRouteFromStates(states, used, mode) {
     const segments = []
 
     let current = {
@@ -34,7 +32,7 @@ function formatRouteFromStates(states, used) {
         // --- segment 開始 ---
         if (current.train === null) {
             current = { train: curUsed.train, detail: { terminal: curUsed.terminal, typeName: curUsed.type } }
-            fromSta = curUsed.from
+            fromSta = mode === 0 ? curUsed.from : curUsed.to
             depTime = curUsed.dep
         }
 
@@ -59,7 +57,7 @@ function formatRouteFromStates(states, used) {
 
         // 毎回更新（重要）
         lastArrTime = curUsed.arr
-        lastTo = curUsed.to
+        lastTo = mode === 0 ? curUsed.to : curUsed.from
     }
 
     // --- 最後の segment を必ず確定 ---

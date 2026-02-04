@@ -143,7 +143,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
 
     let goalStateId = null;
 
-    outerLoop: while (true) {
+    while (true) {
         const cur = pq.pop();
         if (!cur) break;
 
@@ -169,7 +169,8 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
 
                 if (
                     bestTime[nextStateId] === undefined ||
-                    nextTime <= bestTime[nextStateId]
+                    (mode === 0 && nextTime <= bestTime[nextStateId]) ||
+                    (mode === 1 && nextTime >= bestTime[nextStateId])
                 ) {
                     bestTime[nextStateId] = nextTime
                     previous[nextStateId] = curStateId
@@ -222,7 +223,8 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
 
                 if (
                     bestTime[nextStateId] === undefined ||
-                    nextTime < bestTime[nextStateId]
+                    (mode === 0 && nextTime < bestTime[nextStateId]) ||
+                    (mode === 1 && nextTime > bestTime[nextStateId])
                 ) {
                     bestTime[nextStateId] = nextTime;
                     previous[nextStateId] = curStateId;
