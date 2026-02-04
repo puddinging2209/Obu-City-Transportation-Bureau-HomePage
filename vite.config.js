@@ -12,6 +12,30 @@ export default defineConfig({
     plugins: [
         react(),
         {
+            name: 'update-cache-name',
+            async generateBundle() {
+                // ビルド時刻をUNIXタイムスタンプで生成
+                const cacheVersion = `oud-cache-${Date.now()}`
+                console.log(`[update-cache-name] Cache name: ${cacheVersion}`)
+
+                // sw.js を読み込み、CACHE_NAME を置換
+                const swPath = 'public/sw.js'
+                const swContent = fs.readFileSync(swPath, 'utf-8')
+                const updatedSw = swContent.replace(
+                    /const CACHE_NAME = "oud-cache-v\d+";/,
+                    `const CACHE_NAME = "${cacheVersion}";`
+                )
+
+                // docs/sw.js に出力
+                const docsSwPath = 'docs/sw.js'
+                if (!fs.existsSync('docs')) {
+                    fs.mkdirSync('docs', { recursive: true })
+                }
+                fs.writeFileSync(docsSwPath, updatedSw)
+                console.log(`[update-cache-name] Updated sw.js with new cache name`)
+            }
+        },
+        {
             name: 'copy-manifest',
             writeBundle() {
                 // ビルド後、manifest.jsonをdocs/oudにコピー
