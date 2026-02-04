@@ -1,4 +1,5 @@
 import react from '@vitejs/plugin-react'
+import { execSync } from 'child_process'
 import fs from 'fs'
 import path from 'path'
 import { defineConfig } from 'vite'
@@ -14,15 +15,42 @@ export default defineConfig({
         {
             name: 'update-cache-name',
             async generateBundle() {
-                // ビルド時刻をUNIXタイムスタンプで生成
-                const cacheVersion = `oud-cache-${Date.now()}`
-                console.log(`[update-cache-name] Cache name: ${cacheVersion}`)
+                // public/oud/ 配下のファイルが変更されたかチェック
+                let hasOudChanges = false
+
+                try {
+                    // git diff で変更されたファイルを取得
+                    const diff = execSync('git diff --name-only HEAD', { encoding: 'utf-8' })
+                    const changedFiles = diff.split('\n').filter(f => f)
+
+                    // public/oud/ 配下に変更があるか確認
+                    hasOudChanges = changedFiles.some(f => f.startsWith('public/oud/'))
+
+                    if (hasOudChanges) {
+                        console.log('[update-cache-name] Changes detected in public/oud/')
+                    } else {
+                        console.log('[update-cache-name] No changes in public/oud/ - keeping existing cache')
+                    }
+                } catch (err) {
+                    console.log('[update-cache-name] Git not available, assuming changes were made')
+                    hasOudChanges = true
+                }
+
+                // public/oud/ 配下に変更がある場合のみ CACHE_NAME を更新
+                let cacheVersion = 'oud-cache-v3' // デフォルト
+
+                if (hasOudChanges) {
+                    cacheVersion = `oud-cache-${Date.now()}`
+                    console.log(`[update-cache-name] Cache name updated: ${cacheVersion}`)
+                } else {
+                    console.log(`[update-cache-name] Cache name kept: ${cacheVersion}`)
+                }
 
                 // sw.js を読み込み、CACHE_NAME を置換
                 const swPath = 'public/sw.js'
                 const swContent = fs.readFileSync(swPath, 'utf-8')
                 const updatedSw = swContent.replace(
-                    /const CACHE_NAME = "oud-cache-v\d+";/,
+                    /const CACHE_NAME = "oud-cache-[^"]*";/,
                     `const CACHE_NAME = "${cacheVersion}";`
                 )
 
@@ -32,7 +60,7 @@ export default defineConfig({
                     fs.mkdirSync('docs', { recursive: true })
                 }
                 fs.writeFileSync(docsSwPath, updatedSw)
-                console.log(`[update-cache-name] Updated sw.js with new cache name`)
+                console.log(`[update-cache-name] Updated sw.js`)
             }
         },
         {

@@ -46,10 +46,13 @@ async function searchOuter(train, first, last, line) {
                 .some(d =>
                     d.number == train.number &&
                     d.number !== '' &&
-                    adjustTime(
-                        d.timetable._data[d.timetable.terminalStationIndex]?.arrival ??
-                        d.timetable._data[d.timetable.terminalStationIndex]?.departure
-                    ) <= adjustTime(train.timetable._data[first === '刈谷' ? train.timetable.firstStationIndex + 1 : train.timetable.firstStationIndex]?.departure)
+                    (
+                        !Object.values(lines).find(l => l.code === diagram.railway.name).isLoop ||
+                        adjustTime(
+                            d.timetable._data[d.timetable.terminalStationIndex]?.arrival ??
+                            d.timetable._data[d.timetable.terminalStationIndex]?.departure
+                        ) <= adjustTime(train.timetable._data[train.timetable.firstStationIndex]?.departure)
+                    )
                 );
         });
         if (beforeDiagram) {
@@ -59,10 +62,13 @@ async function searchOuter(train, first, last, line) {
                     .find(d =>
                         d.number == train.number &&
                         d.number !== '' &&
-                        adjustTime(
-                            d.timetable._data[d.timetable.terminalStationIndex]?.arrival ??
-                            d.timetable._data[d.timetable.terminalStationIndex]?.departure
-                        ) <= adjustTime(train.timetable._data[first === '刈谷' ? train.timetable.firstStationIndex + 1 : train.timetable.firstStationIndex]?.departure)
+                        (
+                            !Object.values(lines).find(l => l.code === beforeDiagram.railway.name).isLoop ||
+                            adjustTime(
+                                d.timetable._data[d.timetable.terminalStationIndex]?.arrival ??
+                                d.timetable._data[d.timetable.terminalStationIndex]?.departure
+                            ) <= adjustTime(train.timetable._data[train.timetable.firstStationIndex]?.departure)
+                        )
                     );
 
             const beforeStops = searchStops(beforeDiagram, before);
@@ -82,10 +88,13 @@ async function searchOuter(train, first, last, line) {
                 .some(d =>
                     d.number == train.number &&
                     d.number !== '' &&
-                    adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) >=
-                    adjustTime(
-                        train.timetable._data[last === '刈谷' ? train.timetable.terminalStationIndex - 1 : train.timetable.terminalStationIndex]?.arrival ??
-                        train.timetable._data[last === '刈谷' ? train.timetable.terminalStationIndex - 1 : train.timetable.terminalStationIndex]?.departure
+                    (
+                        !Object.values(lines).find(l => l.code === diagram.railway.name).isLoop ||
+                        adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) >=
+                        adjustTime(
+                            train.timetable._data[train.timetable.terminalStationIndex]?.arrival ??
+                            train.timetable._data[train.timetable.terminalStationIndex]?.departure
+                        )
                     )
                 );
         });
@@ -95,10 +104,13 @@ async function searchOuter(train, first, last, line) {
                 .find(d =>
                     d.number == train.number &&
                     d.number !== '' &&
-                    adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) >=
-                    adjustTime(
-                        train.timetable._data[last === '刈谷' ? train.timetable.terminalStationIndex - 1 : train.timetable.terminalStationIndex]?.arrival ??
-                        train.timetable._data[last === '刈谷' ? train.timetable.terminalStationIndex - 1 : train.timetable.terminalStationIndex]?.departure
+                    (
+                        !Object.values(lines).find(l => l.code === afterDiagram.railway.name).isLoop ||
+                        adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) >=
+                        adjustTime(
+                            train.timetable._data[train.timetable.terminalStationIndex]?.arrival ??
+                            train.timetable._data[train.timetable.terminalStationIndex]?.departure
+                        )
                     )
                 );
 

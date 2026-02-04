@@ -9,12 +9,14 @@ import {
     Stack,
     Typography,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import notices from "../data/notices.json";
 
 // category: ["更新", "イベント", "重要"]
 // important: trueを設定可能
 
 function NoticeSection() {
+    const navigate = useNavigate();
     return (
         <Box sx={{ width: { xs: "100%", md: "70%"}, mx: "auto", my: 4 }}>
             <Paper elevation={1} sx={{ p: 2 }}>
@@ -32,7 +34,7 @@ function NoticeSection() {
                     お知らせ
                     </Typography>
 
-                    <Button size="small" sx={{ alignSelf: "flex-end", mb: 1 }} href="/#/news">
+                    <Button size="small" sx={{ alignSelf: "flex-end", mb: 1 }} onClick={() => navigate("/news")}>
                         すべて見る
                     </Button>
                 </Stack>
