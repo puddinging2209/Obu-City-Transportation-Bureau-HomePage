@@ -58,13 +58,21 @@ async function networkFirst(request) {
 }
 
 async function cacheFirst(request) {
-    const cache = await caches.open(CACHE_NAME);
+    // 既に存在する oud-cache があればそれを使う。
+    const keys = await caches.keys();
+    const existingCache = keys.find(k => k.startsWith('oud-cache'));
 
+    // 存在するキャッシュがなければ、ビルド時に埋め込まれた CURRENT の CACHE_NAME
+    // を使って新しいキャッシュを作成して保存する（プッシュ時刻を含めるため）。
+    const targetCache = existingCache || CACHE_NAME;
+
+    const cache = await caches.open(targetCache);
     const cached = await cache.match(request);
     if (cached) return cached;
 
     const fresh = await fetch(request);
-    cache.put(request, fresh.clone());
+    // 新しいキャッシュ名（ビルドで埋め込まれたCACHE_NAME）に保存
+    await cache.put(request, fresh.clone());
     return fresh;
 }
 
