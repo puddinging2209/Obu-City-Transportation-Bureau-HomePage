@@ -9,11 +9,17 @@ self.addEventListener("activate", e => {
     e.waitUntil(self.clients.claim());
 });
 
-/* OUD JSONのみキャッシュ */
+/* OUD JSONのみキャッシュ - manifest.jsonは除外 */
 self.addEventListener("fetch", event => {
     const url = new URL(event.request.url);
 
     if (!url.pathname.includes("/oud/")) return;
+
+    // manifest.json はキャッシュしない（ネットワークのみ）
+    if (url.pathname.endsWith("/oud/manifest.json")) {
+        event.respondWith(fetch(event.request));
+        return;
+    }
 
     event.respondWith(cacheFirst(event.request));
 });
