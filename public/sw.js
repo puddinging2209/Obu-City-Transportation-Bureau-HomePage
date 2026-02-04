@@ -1,4 +1,4 @@
-const CACHE_NAME = "oud-cache-v2";
+const CACHE_NAME = "oud-cache-v3";
 const BASE = self.registration.scope; // Pages対応
 
 self.addEventListener("install", () => {
