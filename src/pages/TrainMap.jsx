@@ -88,17 +88,28 @@ function TrainMap() {
 
 			workerRef.current.addEventListener('message', ({ data }) => {
 				switch (data.type) {
-					case 'calcPositionResult': {
-						console.log(data)
-						Object.entries(data.data).forEach(([id, pos]) => {
-							p[id] ??= L.marker([0, 0]).addTo(map);
-							p[id].setLatLng(pos);
-						})
-						break
-					}
-
-					default:
-						break
+                    case 'calcPositionResult':
+                        console.log(data)
+                        Object.entries(data.data).forEach(([id, detail]) => {
+                            if (!p[id]) {
+                                p[id] = L.marker([0, 0]).addTo(map);
+                                p[id].bindPopup('', { autoClose: false });
+                                p[id].train = detail.train
+                                p[id].on('click', function (e) {
+                                    console.log(e.target.train)
+                                });
+                            }
+                            p[id].setLatLng(detail.pos);
+                            p[id].setPopupContent(detail.text);
+                        })
+                        Object.keys(p).forEach(id => {
+                            if (!data.data[id]) {
+                                p[id].remove()
+                                delete p[id]
+                                console.log('remove:', id)
+                            }
+                        })
+                    break;
 				}
 			})
 
