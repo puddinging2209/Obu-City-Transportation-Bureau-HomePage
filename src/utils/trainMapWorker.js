@@ -25,15 +25,16 @@ function calcTrainsRate(id, sec) {
         return {}
     }
     const line = Object.values(trainMapData).find(e => e.json === id)
-    const trains = oud.railway.diagrams[0].trains[0]
+    const trains = oud.railway.diagrams[0].trains.flat()
     const result = {}
     for (let index = 0; index < trains.length; index++) {
         const train = trains[index]
         const data = train.timetable
+        if (data._data.length === 0) continue;
         const direction = train.direction === 0 ? (
-            line.stations.indexOf(sta => sta[0] == name(oud.railway.stations[data.firstStationIndex].name)) < line.stations.indexOf(sta => sta[0] == name(oud.railway.stations[data.terminalStationIndex].name)) ? 1 : -1
+            line.stations.find(sta => sta[0] == name(oud.railway.stations[data.firstStationIndex].name))?.[1] < line.stations.find(sta => sta[0] == name(oud.railway.stations[data.terminalStationIndex].name))?.[1] ? 1 : -1
         ) : (
-            line.stations.indexOf(sta => sta[0] == name(oud.railway.stations[oud.raialway.stations.length - 1 - data.firstStationIndex].name)) < line.stations.indexOf(sta => sta[0] == name(oud.railway.stations[oud.raialway.stations.length - 1 - data.terminalStationIndex].name)) ? -1 : 1
+            line.stations.find(sta => sta[0] == name(oud.railway.stations[oud.railway.stations.length - 1 - data.firstStationIndex].name))?.[1] < line.stations.find(sta => sta[0] == name(oud.railway.stations[oud.railway.stations.length - 1 - data.terminalStationIndex].name))?.[1] ? -1 : 1
         )
         if (data.firstStationIndex === -1) {
             continue
@@ -47,9 +48,10 @@ function calcTrainsRate(id, sec) {
                 continue
             }
             if (normalizeSec(data._data[i].arrival) <= t && t <= normalizeSec(data._data[i].departure)) {
-                if (line.stations[direction === 1 ? i : line.stations.length - 1 - i]) {
-                    const rate = line.stations[direction === 1 ? i : line.stations.length - 1 - i][1];
-                    result[index] = { text: `${rate} ${train.number} ${typeName(train, oud)} ${terminal(train, oud)}`, train: train, rate: rate }
+                const sta = line.stations.find(sta => sta[0] == name(oud.railway.stations[train.drection === 0 ? i : oud.railway.stations.length - 1 - i].name));
+                if (sta) {
+                    const rate = sta[1];
+                    result[index] = { text: `${rate} ${train.number} ${typeName(train, oud)} ${terminal(train, oud)}<br />停車中：${sta[0]}`, train: train, rate: rate }
                 }
                 break
             }
@@ -67,15 +69,14 @@ function calcTrainsRate(id, sec) {
                 }
                 if (t < normalizeSec(data._data[nextStationIndex].arrival ?? data._data[nextStationIndex].departure)) {
                     const rateBetweenStation = (t - normalizeSec(data._data[i].departure)) / (normalizeSec(data._data[nextStationIndex].arrival ?? data._data[nextStationIndex].departure) - normalizeSec(data._data[i].departure))
-                    if (!line.stations[direction === 1 ? i : line.stations.length - 1 - i] || !line.stations[direction === 1 ? nextStationIndex : line.stations.length - 1 - nextStationIndex]) {
+                    const sta = line.stations.find(sta => sta[0] == name(oud.railway.stations[train.drection === 0 ? i : oud.railway.stations.length - 1 - i].name));
+                    const nextSta = line.stations.find(sta => sta[0] == name(oud.railway.stations[train.drection === 0 ? nextStationIndex : oud.railway.stations.length - 1 - nextStationIndex].name));
+                    if (!sta || !nextSta) {
                         break
                     }
-                    const rateBetweenStationInLine =
-                        Math.abs(
-                            line.stations[direction === 1 ? i : line.stations.length - 1 - i][1] - line.stations[direction === 1 ? nextStationIndex : line.stations.length - 1 - nextStationIndex][1]
-                        )
-                    const rateInLine = (direction === 1 ? rateBetweenStation : 1 - rateBetweenStation) * rateBetweenStationInLine + Math.min(line.stations[direction === 1 ? i : line.stations.length - 1 - i][1], line.stations[direction === 1 ? nextStationIndex : line.stations.length - 1 - nextStationIndex][1])
-                    result[index] = { text: `${data._data[data.terminalStationIndex].arrival} ${train.number} ${typeName(train, oud)} ${terminal(train, oud)}`, train: train, rate: rateInLine }
+                    const rateBetweenStationInLine = Math.abs(sta[1] - nextSta[1])
+                    const rateInLine = (direction === 1 ? rateBetweenStation : 1 - rateBetweenStation) * rateBetweenStationInLine + Math.min(sta[1], nextSta[1])
+                    result[index] = { text: `${rateInLine} ${train.number} ${typeName(train, oud)} ${terminal(train, oud)}<br />走行中：${sta[0]} - ${nextSta[0]}`, train: train, rate: rateInLine }
                     break
                 }
             }
@@ -88,7 +89,7 @@ function calcPositions(sec) {
     const result = {}
     Object.keys(oudData).forEach(id => {
         const trainsRate = calcTrainsRate(id, sec)
-        const lineCoordinates = Object.values(trainMapData).find(e => e.json === id).line_coordinates
+        const lineCoordinates = Object.values(trainMapData).find(e => e.json === id).line_coordinates.sort((a, b) => a[2] - b[2])
 
         Object.entries(trainsRate).forEach(([n, r]) => {
             for (let i = 0; i < lineCoordinates.length - 1; i++) {
