@@ -13,6 +13,7 @@ function searchStops(diagram, train) {
         const stationName = name(code);
         if (!sta) return null;
         if (diagram.railway.name == 'KT' && stationName === '知立') return null
+        if (diagram.railway.name == 'MR' && (stationName === '乙川' || stationName === '半田大橋')) return null
         if (sta.stopType === 1) {
             return {
                 name: stationName,
@@ -74,7 +75,7 @@ async function searchOuter(train, first, last, line) {
             const beforeStops = searchStops(beforeDiagram, before);
             const lastIndex = beforeStops.findIndex(sta => sta.name === first && beforeDiagram.railway.name !== 'OL');
             result.before.unshift(...beforeStops.slice(0, lastIndex !== -1 ? lastIndex + 1 : beforeStops.length));
-            if (before.operations.some(op => op.outerType === 'B')) {
+            if (before.operations.some(op => op.outerType === 'B') || (result.before[0].name === '刈谷' && result.before[0].lineName === '刈田川線')) {
                 const befores = await searchOuter(before, result.before[0].name, null, beforeDiagram.railway.name);
                 result.before.unshift(...befores.before);
             }
@@ -117,7 +118,7 @@ async function searchOuter(train, first, last, line) {
             const afterStops = searchStops(afterDiagram, after);
             const firstIndex = afterStops.findIndex(sta => sta.name === last);
             result.after.push(...afterStops.slice(firstIndex, afterStops.length));
-            if (after.operations.some(op => op.outerType === 'A')) {
+            if (after.operations.some(op => op.outerType === 'A') || (result.after.at(-1).name === '刈谷' && result.after.at(-1).lineName === '刈田川線')) {
                 const afters = await searchOuter(after, null, result.after.at(-1).name, afterDiagram.railway.name);
                 result.after.push(...afters.after);
             }
@@ -136,8 +137,12 @@ export default async function formatStops(line, train) {
     const innerDiagram = await dia(line);
     const inner = searchStops(innerDiagram, train);
 
-    const before = train.operations.some(op => op.outerType === 'B') || (inner[0].name === '刈谷' && inner[0].lineName === '刈田川線');
-    const after = train.operations.some(op => op.outerType === 'A') || (inner.at(-1).name === '刈谷' && inner.at(-1).lineName === '刈田川線');
+    const before = train.operations.some(op => op.outerType === 'B') ||
+        (inner[0].name === '刈谷' && inner[0].lineName === '刈田川線') ||
+        (inner[0].name === '半田市' && inner[0].lineName === '師崎線');
+    const after = train.operations.some(op => op.outerType === 'A') ||
+        (inner.at(-1).name === '刈谷' && inner.at(-1).lineName === '刈田川線') ||
+        (inner.at(-1).name === '半田市' && inner.at(-1).lineName === '師崎線');
 
     const outer = await searchOuter(train, (before) ? inner[0].name : null, (after) ? inner.at(-1).name : null, line);
 

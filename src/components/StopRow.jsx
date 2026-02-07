@@ -20,6 +20,7 @@ function StopRow({ stop, emphasized = false, className = '' }) {
             <Box
                 sx={{
                     borderLeft: `4px solid ${lines[stop.lineName].color ?? '#000000'}`,
+                    
                     borderBottom: '1px solid rgba(0,0,0,0.12)',
                     py: '3px',
                     background: emphasized ? 'rgba(255, 237, 80, 0.5)' : '',
