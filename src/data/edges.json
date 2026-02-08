@@ -5016,54 +5016,6 @@
         "to": "KT17"
     },
     {
-        "from": "KT07a",
-        "to": "KT07"
-    },
-    {
-        "from": "KT07",
-        "to": "KT07a"
-    },
-    {
-        "from": "KT07a",
-        "to": "KM04"
-    },
-    {
-        "from": "KM04",
-        "to": "KT07a"
-    },
-    {
-        "from": "KT07a",
-        "to": "KT07"
-    },
-    {
-        "from": "KT07",
-        "to": "KT07a"
-    },
-    {
-        "from": "KT07a",
-        "to": "KT00"
-    },
-    {
-        "from": "KT00",
-        "to": "KT07a"
-    },
-    {
-        "from": "KT07a",
-        "to": "KT00"
-    },
-    {
-        "from": "KT00",
-        "to": "KT07a"
-    },
-    {
-        "from": "KT07a",
-        "to": "KT00"
-    },
-    {
-        "from": "KT00",
-        "to": "KT07a"
-    },
-    {
         "from": "KT00",
         "to": "HD01"
     },
