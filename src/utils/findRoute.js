@@ -33,8 +33,8 @@ async function searchOtherStops(station, time, train, passing, mode) {
         if (newVisited.some(sta => name(sta) == name(toCode))) break;
         newVisited.push(toCode);
         if (to.stopType !== 1 || (mode === 0 && to.arrival === null) || (mode === 1 && to.departure === null)) continue;
-        const arr = to.arrival + Math.trunc(time / 86400) * 86400;
-        const dep = to.departure + Math.trunc(time / 86400) * 86400;
+        const arr = to.arrival + Number(time > to.arrival) * 86400;
+        const dep = to.departure + Number(time > to.departure) * 86400;
         result.push({
             to: toCode,
             arr,
@@ -245,6 +245,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                 );
 
                 if (!result?.train) continue;
+                console.log(station, nextStation, result);
 
                 const other = await searchOtherStops(
                     mode === 0 ? station : nextStation,
@@ -254,7 +255,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                     mode
                 );
 
-                other.forEach(({ to, arr, dep, newVisited: visited }) => {
+                [{ to: nextStation, arr: result[mode === 0 ? 'arr' : 'dep'], dep: result[mode === 1 ? 'dep' : 'arr'], newVisited: [...visitedArray, ...result.passing] }, ...other].forEach(({ to, arr, dep, newVisited: visited }) => {
 
                     const nextTime = mode === 0 ? arr : dep;
 
