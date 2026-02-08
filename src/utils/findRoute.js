@@ -5,9 +5,45 @@ import { name } from "./Station.js";
 import edges from "../data/edges.json";
 import nodes from "../data/nodes.json";
 import stations from "../data/stations.json";
+import { dia } from "./readOud.js";
 
-// 経路復元 
+const MAX_SPEED = 100 * 1000 / 3600; // m/s for heuristic
+const TRANSFER_COST = 0.75; // for heuristic
 
+/**
+ * 同じ列車で行ける駅の到着、出発時刻を探す
+ * @param {string} station 出発駅
+ * @param {number} time 時刻
+ * @param {Object} train 乗車電
+ * @param {Array<string>} passing 経由駅
+ * @param {0|1} mode mode
+ * @returns {Array<{to: string, arr: number, dep: number}>} to駅名、到着時刻、出発時刻
+ */
+async function searchOtherStops(station, time, train, passing, mode) {
+    const diagram = await dia(nodes[station].json);
+    const modeNum = mode === 0 ? 1 : -1;
+    let from = diagram.railway.stations.findIndex(sta => sta.name === station);
+    if (train.direction === 1) from = diagram.railway.stations.length - 1 - from;
+    const result = [];
+    const newVisited = passing
+    for (let i = from + modeNum; (i >= train.timetable.firstStationIndex && i <= train.timetable.terminalStationIndex); i += modeNum) {
+        const to = train.timetable._data[i];
+        const toCode = diagram.railway.stations[train.direction === 0 ? i : diagram.railway.stations.length - 1 - i].name;
+        if (!to || (to.stopType !== 1 && to.stopType !== 2)) continue;
+        if (newVisited.some(sta => name(sta) == name(toCode))) break;
+        newVisited.push(toCode);
+        if (to.stopType !== 1 || (mode === 0 && to.arrival === null) || (mode === 1 && to.departure === null)) continue;
+        const arr = to.arrival + Math.trunc(time / 86400) * 86400;
+        const dep = to.departure + Math.trunc(time / 86400) * 86400;
+        result.push({
+            to: toCode,
+            arr,
+            dep,
+            newVisited: [...newVisited]
+        })
+    }
+    return result;
+}
 
 // ==== 隣接リスト作成 ====
 const graph = {};
@@ -87,14 +123,12 @@ function haversine(a, b) {
     return 2 * R * Math.asin(Math.sqrt(h));
 }
 
-const MAX_SPEED = 100 * 1000 / 3600; // m/s
-
 function heuristic(sta, goal) {
     if (!nodes[sta] || !nodes[goal]) return 0;
     return haversine(sta, goal) / MAX_SPEED;
 }
 
-function makeStateId(sta, time, phase, visited) {
+function makeStateId(sta, phase, visited) {
     return `${name(sta)}@${phase}@${visitedKey(visited)}`;
 }
 
@@ -118,6 +152,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
     const pq = new MinHeap();
 
     const bestTime = {};
+    const bestTransfer = {};
     const previous = {};
     const used = {};
 
@@ -127,16 +162,18 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
     Object.keys(nodes).filter(code => name(code) === name(startStation)).forEach(code => {
 
         const startVisited = new Set([code]);
-        const startStateId = makeStateId(code, baseTime, "transfer", startVisited);
+        const startStateId = makeStateId(code, "transfer", startVisited);
 
         bestTime[startStateId] = baseTime;
+        bestTransfer[startStateId] = 0;
 
         pq.push({
             station: code,
             time: baseTime,
             phase: "transfer",
             visited: startVisited,
-            priority: baseTime + heuristic(startStation, goalStation)
+            priority: baseTime + heuristic(startStation, goalStation),
+            transfer: 0
         });
 
     });
@@ -147,8 +184,8 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
         const cur = pq.pop();
         if (!cur) break;
 
-        const { station, time, phase, visited } = cur;
-        const curStateId = makeStateId(station, time, phase, visited);
+        const { station, time, phase, visited, transfer } = cur;
+        const curStateId = makeStateId(station, phase, visited);
 
         // === ゴール ===
         if (name(station) === name(goalStation) && phase === "ride") {
@@ -165,7 +202,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                 const nextVisited = new Set(visited);
                 nextVisited.add(nextCode);
 
-                const nextStateId = makeStateId(nextCode, nextTime, "transfer", nextVisited);
+                const nextStateId = makeStateId(nextCode, "transfer", nextVisited);
 
                 if (
                     bestTime[nextStateId] === undefined ||
@@ -173,6 +210,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                     (mode === 1 && nextTime >= bestTime[nextStateId])
                 ) {
                     bestTime[nextStateId] = nextTime
+                    bestTransfer[nextStateId] = transfer
                     previous[nextStateId] = curStateId
 
                     pq.push({
@@ -180,7 +218,8 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                         time: nextTime,
                         phase: "transfer",
                         visited: nextVisited,
-                        priority: nextTime + heuristic(nextCode, goalStation)
+                        transfer: transfer,
+                        priority: nextTime + heuristic(nextCode, goalStation) + transfer * TRANSFER_COST,
                     })
                 }
             }
@@ -193,7 +232,6 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
 
                 // 駅名ベースのループ防止
                 if ([...visited].some(s => name(s) === name(nextStation))) continue;
-
 
                 const visitedArray = [...visited];
 
@@ -208,40 +246,63 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
 
                 if (!result?.train) continue;
 
-                const nextTime = mode === 0 ? result.arr : result.dep;
-
-                const nextVisited = new Set(visited);
-                result.passing?.forEach(s => nextVisited.add(s));
-                nextVisited.add(nextStation);
-
-                const nextStateId = makeStateId(
-                    nextStation,
-                    nextTime,
-                    "ride",
-                    nextVisited
+                const other = await searchOtherStops(
+                    mode === 0 ? station : nextStation,
+                    mode === 0 ? result.arr : result.dep,
+                    result.train,
+                    visitedArray,
+                    mode
                 );
 
-                if (
-                    bestTime[nextStateId] === undefined ||
-                    (mode === 0 && nextTime < bestTime[nextStateId]) ||
-                    (mode === 1 && nextTime > bestTime[nextStateId])
-                ) {
-                    bestTime[nextStateId] = nextTime;
-                    previous[nextStateId] = curStateId;
-                    used[nextStateId] = {
-                        ...result,
-                        from: station,
-                        to: nextStation
-                    };
+                other.forEach(({ to, arr, dep, newVisited: visited }) => {
 
-                    pq.push({
-                        station: nextStation,
-                        time: nextTime,
-                        phase: "ride",
-                        visited: nextVisited,
-                        priority: nextTime + heuristic(nextStation, goalStation)
-                    });
-                }
+                    const nextTime = mode === 0 ? arr : dep;
+
+                    const nextVisited = new Set(visited);
+
+                    const nextStateId = makeStateId(
+                        to,
+                        "ride",
+                        nextVisited
+                    );
+
+                    if (
+                        bestTime[nextStateId] === undefined ||
+                        (
+                            (mode === 0 && nextTime < bestTime[nextStateId]) ||
+                            (mode === 1 && nextTime > bestTime[nextStateId])
+                        ) ||
+                        (
+                            nextTime === bestTime[nextStateId] &&
+                            bestTransfer[nextStateId] > transfer + 1
+                        )
+                    ) {
+                        bestTime[nextStateId] = nextTime;
+                        bestTransfer[nextStateId] = transfer + 1;
+                        previous[nextStateId] = curStateId;
+                        used[nextStateId] = {
+                            ...result,
+                            arr: mode === 0 ? arr : result.arr,
+                            dep: mode === 1 ? dep : result.dep,
+                            from: station,
+                            to: to
+                        };
+
+                        let nextTransfer = transfer;
+                        if (used[curStateId]?.train?.number !== result.train?.number || used[curStateId]?.train?.number === '' || result?.train?.number === '') {
+                            nextTransfer++;
+                        }
+
+                        pq.push({
+                            station: to,
+                            time: nextTime,
+                            phase: "ride",
+                            visited: nextVisited,
+                            transfer: nextTransfer,
+                            priority: nextTime + heuristic(to, goalStation) + nextTransfer * TRANSFER_COST,
+                        });
+                    }
+                })
             }
         }
 

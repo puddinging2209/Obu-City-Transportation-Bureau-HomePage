@@ -134,11 +134,13 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
                         if (depTime < arrTime) {
 
                             if (
-                                (mode == 0 && nowsecond < depTime &&
-                                    (fastest.train === null || fastest.time > arrTime)) ||
-
-                                (mode == 1 && nowsecond > arrTime &&
-                                    (fastest.train === null || fastest.dep < depTime))
+                                (
+                                    mode == 0 && nowsecond < depTime &&
+                                    (fastest.train === null || fastest.time > arrTime)
+                                ) || (
+                                    mode == 1 && nowsecond > arrTime &&
+                                    (fastest.train === null || fastest.dep < depTime)
+                                )
                             ) {
                                 const passing = []
                                 fromTrain.timetable._data.forEach((sta, i) => {
