@@ -181,6 +181,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
     let goalStateId = null;
 
     while (true) {
+        console.log([...pq.heap])
         const cur = pq.pop();
         if (!cur) break;
 
@@ -256,6 +257,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                 );
 
                 [{ to: nextStation, arr: result[mode === 0 ? 'arr' : 'dep'], dep: result[mode === 1 ? 'dep' : 'arr'], newVisited: [...visitedArray, ...result.passing] }, ...other].forEach(({ to, arr, dep, newVisited: visited }) => {
+                    console.log(station, to)
 
                     const nextTime = mode === 0 ? arr : dep;
 
