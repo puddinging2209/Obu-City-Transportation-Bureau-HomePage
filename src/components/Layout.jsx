@@ -1,6 +1,20 @@
-import CloseIcon from '@mui/icons-material/Close';
-import { Box, CircularProgress, createTheme, CssBaseline, Dialog, DialogContent, DialogTitle, FormControlLabel, IconButton, ThemeProvider, Typography } from '@mui/material';
 import React, { Suspense } from 'react';
+
+import CloseIcon from '@mui/icons-material/Close';
+import {
+    Box,
+    CircularProgress,
+    createTheme,
+    CssBaseline,
+    Dialog,
+    DialogContent,
+    DialogTitle,
+    FormControlLabel,
+    IconButton,
+    ThemeProvider,
+    Typography
+} from '@mui/material';
+import { NuqsAdapter } from '@offlegacy/nuqs-hash-router';
 import { Outlet, Link as RouterLink } from 'react-router-dom';
 
 import Drawer from './Drawer.jsx';
@@ -38,6 +52,7 @@ function Layout() {
     }, []);
 
     return (
+        <NuqsAdapter>
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <Header />
@@ -77,6 +92,7 @@ function Layout() {
                 </DialogContent>
             </Dialog>
         </ThemeProvider>
+        </NuqsAdapter>
     );
 }
 

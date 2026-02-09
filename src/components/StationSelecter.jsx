@@ -3,7 +3,6 @@ import Select from 'react-select';
 import busStops from '../data/busStops.json';
 import stations from '../data/stations.json';
 
-
 export default function StationSelecter({ref, value, placeholder, onChange, autoFocus = false, disabledStations = [], station = true, busStop = true}) {
 
     let options = [];
