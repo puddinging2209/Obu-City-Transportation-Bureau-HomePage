@@ -50,8 +50,8 @@ async function searchOuter(train, first, last, line) {
                     d.number !== '' &&
                     (
                         !(
-                            Object.values(lines).find(l => l.code === diagram.railway.name).isLoop &&
-                            Object.values(lines).find(l => l.code === line).isLoop
+                            Object.values(lines).find(l => l.code === diagram.railway.name)?.isLoop &&
+                            Object.values(lines).find(l => l.name === line)?.isLoop
                         ) ||
                         adjustTime(
                             d.timetable._data[d.timetable.terminalStationIndex]?.arrival ??
@@ -69,8 +69,8 @@ async function searchOuter(train, first, last, line) {
                         d.number !== '' &&
                         (
                             !(
-                                Object.values(lines).find(l => l.code === beforeDiagram.railway.name).isLoop &&
-                                Object.values(lines).find(l => l.code === line).isLoop
+                                Object.values(lines).find(l => l.code === beforeDiagram.railway.name)?.isLoop &&
+                                Object.values(lines).find(l => l.name === line)?.isLoop
                             ) ||
                             adjustTime(
                                 d.timetable._data[d.timetable.terminalStationIndex]?.arrival ??
@@ -103,8 +103,8 @@ async function searchOuter(train, first, last, line) {
                     d.number !== '' &&
                     (
                         !(
-                            Object.values(lines).find(l => l.code === diagram.railway.name).isLoop &&
-                            Object.values(lines).find(l => l.code === line).isLoop
+                            Object.values(lines).find(l => l.code === diagram.railway.name)?.isLoop &&
+                            Object.values(lines).find(l => l.name === line)?.isLoop
                         ) ||
                         adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) >=
                         adjustTime(
@@ -122,8 +122,8 @@ async function searchOuter(train, first, last, line) {
                     d.number !== '' &&
                     (
                         !(
-                            Object.values(lines).find(l => l.code === afterDiagram.railway.name).isLoop &&
-                            Object.values(lines).find(l => l.code === line).isLoop
+                            Object.values(lines).find(l => l.code === afterDiagram.railway.name)?.isLoop &&
+                            Object.values(lines).find(l => l.name === line)?.isLoop
                         ) ||
                         adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) >=
                         adjustTime(
