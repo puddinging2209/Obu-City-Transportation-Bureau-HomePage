@@ -13,7 +13,7 @@ function RouteMap() {
             <Typography variant="h6">路線図</Typography>
             <Stack sx={{ width: { xs: '100%', md: '70%' }, overflowX: 'auto', mx: 'auto' }}>
                 <img
-                    src={'/routeMap/current.png'}
+                    src={import.meta.env.BASE_URL + 'routeMap/current.png'}
                     alt="路線図"
                     style={{ width: '100%', marginTop: '16px', borderRadius: '14px', cursor: 'zoom-in' }}
                     onClick={() => setIsOpenLightbox(true)}
@@ -22,7 +22,7 @@ function RouteMap() {
             <Lightbox
                 open={isOpenLightbox}
                 close={() => setIsOpenLightbox(false)}
-                slides={[{ src: '/routeMap/current.png' }]}
+                slides={[{ src: import.meta.env.BASE_URL + 'routeMap/current.png' }]}
                 plugins={[Zoom]}
                 carousel={{ finite: true }}
                 render={{
