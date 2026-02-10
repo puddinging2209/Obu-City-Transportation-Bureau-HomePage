@@ -11,7 +11,6 @@ export default function reconstructByState(goalStateId, previous, used, mode) {
         cur = previous[cur]
     }
 
-    console.log(states.map(s => used[s]));
     return formatRouteFromStates((mode === 0) ? states : states.reverse(), used, mode);
 }
 
