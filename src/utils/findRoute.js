@@ -33,8 +33,8 @@ async function searchOtherStops(station, time, train, passing, mode) {
         if (newVisited.some(sta => name(sta) == name(toCode))) break;
         newVisited.push(toCode);
         if (to.stopType !== 1 || (mode === 0 && to.arrival === null) || (mode === 1 && to.departure === null)) continue;
-        const arr = to.arrival + Number(time > to.arrival) * 86400;
-        const dep = to.departure + Number(time > to.departure) * 86400;
+        const arr = to.arrival + Number((mode === 0 && time > to.arrival) || (mode === 1 && time < to.arrival)) * 86400;
+        const dep = to.departure + Number((mode === 0 && time > to.departure) || (mode === 1 && time < to.departure)) * 86400;
         result.push({
             to: toCode,
             arr,
@@ -172,7 +172,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
             time: baseTime,
             phase: "transfer",
             visited: startVisited,
-            priority: baseTime + heuristic(startStation, goalStation),
+            priority: heuristic(startStation, goalStation),
             transfer: 0
         });
 
@@ -181,7 +181,6 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
     let goalStateId = null;
 
     while (true) {
-        console.log([...pq.heap])
         const cur = pq.pop();
         if (!cur) break;
 
@@ -220,7 +219,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                         phase: "transfer",
                         visited: nextVisited,
                         transfer: transfer,
-                        priority: nextTime + heuristic(nextCode, goalStation) + transfer * TRANSFER_COST,
+                        priority: Math.abs(nextTime - baseTime) + heuristic(nextCode, goalStation) + transfer * TRANSFER_COST,
                     })
                 }
             }
@@ -246,7 +245,6 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                 );
 
                 if (!result?.train) continue;
-                console.log(station, nextStation, result);
 
                 const other = await searchOtherStops(
                     mode === 0 ? station : nextStation,
@@ -257,7 +255,6 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                 );
 
                 [{ to: nextStation, arr: result[mode === 0 ? 'arr' : 'dep'], dep: result[mode === 1 ? 'dep' : 'arr'], newVisited: [...visitedArray, ...result.passing] }, ...other].forEach(({ to, arr, dep, newVisited: visited }) => {
-                    console.log(station, to)
 
                     const nextTime = mode === 0 ? arr : dep;
 
@@ -302,7 +299,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                             phase: "ride",
                             visited: nextVisited,
                             transfer: nextTransfer,
-                            priority: nextTime + heuristic(to, goalStation) + nextTransfer * TRANSFER_COST,
+                            priority: Math.abs(nextTime - baseTime) + heuristic(to, goalStation) + nextTransfer * TRANSFER_COST,
                         });
                     }
                 })
