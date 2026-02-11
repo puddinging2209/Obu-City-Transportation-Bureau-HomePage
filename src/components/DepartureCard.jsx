@@ -103,7 +103,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
                             isSearchable={false}
                             menuPortalTarget={document.body}
                             styles={{ container: b => ({ ...b, marginBottom: 8 }) }}
-                            formatOptionLabel={({ value, label, route }, { context }) => (
+                            formatOptionLabel={({ _, label, route }, { context }) => (
                                 <div style={{ display: 'flex', height: '100%', justifyContent: 'space-between' }}>
                                     <Typography sx={{ fontSize: '14px', fontWeight: 'bold', color: 'inherit' }}>{label}</Typography>
                                     {context === 'menu' && (
