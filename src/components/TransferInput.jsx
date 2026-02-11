@@ -50,11 +50,6 @@ function StationSelectButtons({ onChange, disabledStations = [] }) {
         if (typeof name === 'string') onChange(name);
     };
 
-    React.useEffect(() => {
-        console.log(nearestStation);
-        console.log(myStations);
-    }, []);
-
     return (
         <Stack spacing={1} direction="row" gap={1}>
             <Button onClick={() => onChange(nearestStation)} disabled={!nearestStation || disabledStations.includes(nearestStation)} size="small" variant="outlined" fullWidth>
