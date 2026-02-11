@@ -1,7 +1,6 @@
 import React from "react";
 
 import dayjs from "dayjs";
-import { useAtomValue } from "jotai";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -16,8 +15,6 @@ import {
     DialogTitle,
     FormControlLabel,
     IconButton,
-    Menu,
-    MenuItem,
     Stack,
     ToggleButton,
     ToggleButtonGroup,
@@ -29,47 +26,10 @@ import { LocalizationProvider, TimePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 import { code } from "../utils/Station.js";
-import StationSelecter from "./StationSelecter.jsx";
-
-import { myStationsAtom, nearestStationAtom } from "../utils/Atom.js";
+import StationSelecter, { StationSelectButtons } from "./StationSelecter.jsx";
 
 import nodes from "../data/nodes.json";
 import stations from "../data/stations.json";
-
-function StationSelectButtons({ onChange, disabledStations = [] }) {
-    const myStations = useAtomValue(myStationsAtom);
-    const nearestStation = useAtomValue(nearestStationAtom);
-
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open = Boolean(anchorEl);
-    function handleClick(event) {
-        setAnchorEl(event.currentTarget);
-    };
-    function handleClose(name) {
-        setAnchorEl(null);
-        if (typeof name === 'string') onChange(name);
-    };
-
-    return (
-        <Stack spacing={1} direction="row" gap={1}>
-            <Button onClick={() => onChange(nearestStation)} disabled={!nearestStation || disabledStations.includes(nearestStation)} size="small" variant="outlined" fullWidth>
-                最寄り駅
-            </Button>
-            <Button onClick={handleClick} size="small" variant="outlined" fullWidth>
-                マイ駅から選ぶ
-            </Button>
-            <Menu
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-            >
-                {myStations.filter((value) => value.role == 'station' && !disabledStations.includes(value.name)).map(({name}) => (
-                    <MenuItem key={name} onClick={() => handleClose(name)}>{name}</MenuItem>
-                ))}
-            </Menu>
-        </Stack>
-    )
-}
 
 export default function TransferInput({ onSearch, loading }) {
     const { search } = useLocation();
