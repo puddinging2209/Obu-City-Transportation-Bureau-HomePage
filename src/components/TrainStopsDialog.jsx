@@ -13,9 +13,10 @@ import types from '../data/types.json';
 
 export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emphasized = [] }) {
 
-    if (!dep || !line) return null;
-
     const l = line ?? React.useContext(LineContext);
+
+    if (!dep || !l) return null;
+
     const [stops, setStops] = React.useState([]);
     const [multilayer, setMultilayer] = React.useState(0);
             
