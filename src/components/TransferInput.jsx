@@ -127,11 +127,11 @@ export default function TransferInput({ onSearch, loading }) {
                 <Stack flexGrow={1} spacing={2.5}>
                     <Stack spacing={0.5}>
                         <StationSelecter onChange={(value) => setFrom(value)} value={from} placeholder="出発駅を選択" busStop={false} disabledStations={[to?.value]} />
-                        <StationSelectButtons disabledStations={[to?.value]} onChange={(value) => setFrom({ value: value, label: value, role: 'station', kana: stations[value].kana })} />
+                        <StationSelectButtons disabledStations={[to?.value]} onSelect={(value) => setFrom({ value: value, label: value, role: 'station', kana: stations[value].kana })} />
                     </Stack>
                     <Stack spacing={0.5}>
                         <StationSelecter onChange={(value) => setTo(value)} value={to} placeholder="到着駅を選択" busStop={false} disabledStations={[from?.value]} />
-                        <StationSelectButtons disabledStations={[from?.value]} onChange={(value) => setTo({ value: value, label: value, role: 'station', kana: stations[value].kana })} />
+                        <StationSelectButtons disabledStations={[from?.value]} onSelect={(value) => setTo({ value: value, label: value, role: 'station', kana: stations[value].kana })} />
                     </Stack>
                 </Stack>
                 <IconButton
