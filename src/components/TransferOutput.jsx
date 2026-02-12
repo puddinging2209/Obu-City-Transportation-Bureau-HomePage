@@ -121,7 +121,7 @@ export default function TransferOutput({ segments }) {
                     dep={pushed}
                     line={pushed?.line}
                     isShowDialog={showDialog}
-                    setIsShowDialog={setShowDialog}
+                    onClose={() => setShowDialog(false)}
                     emphasized={[pushed?.from, pushed?.to]}
                 />
             </Card>
