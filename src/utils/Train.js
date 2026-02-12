@@ -11,6 +11,7 @@ export function terminal(train, diagram) {
         result = station_list[(train.direction === 0) ? train.timetable.terminalStationIndex : station_list.length - 1 - train.timetable.terminalStationIndex];
     }
     if (result === 'セントレア第2ターミナル') return '中部国際空港';
+    if (result.includes('大府環状線')) return '大府環状線';
     return result;
 }
 

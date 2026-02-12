@@ -11,11 +11,12 @@ import { LineContext } from './DepartureCard.jsx';
 
 import types from '../data/types.json';
 
-export default function TrainStopsDialog({ dep, line, isShowDialog, setIsShowDialog, emphasized = [] }) {
-
-    if (!dep) return null;
+export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emphasized = [] }) {
 
     const l = line ?? React.useContext(LineContext);
+
+    if (!dep || !l) return null;
+
     const [stops, setStops] = React.useState([]);
     const [multilayer, setMultilayer] = React.useState(0);
             
@@ -53,9 +54,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, setIsShowDia
     return (
         <Dialog
             open={isShowDialog}
-            onClose={() => {
-                setIsShowDialog(false);
-            }}
+            onClose={onClose}
             TransitionProps={{ onEntered: scrollToDep }}
             scroll="paper"  
             fullWidth
@@ -132,9 +131,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, setIsShowDia
                 })}
             </DialogContent>
             <DialogActions>
-                <Button onClick={() => {
-                    setIsShowDialog(false);
-                }}>閉じる</Button>
+                <Button onClick={onClose}>閉じる</Button>
             </DialogActions>
         </Dialog>
     )

@@ -1,8 +1,18 @@
+import React from 'react';
+
+import {
+    Button,
+    Menu,
+    MenuItem,
+    Stack
+} from '@mui/material';
+import { useAtomValue } from 'jotai';
 import Select from 'react-select';
+
+import { myStationsAtom, nearestStationAtom } from '../utils/Atom.js';
 
 import busStops from '../data/busStops.json';
 import stations from '../data/stations.json';
-
 
 export default function StationSelecter({ref, value, placeholder, onChange, autoFocus = false, disabledStations = [], station = true, busStop = true}) {
 
@@ -41,5 +51,40 @@ export default function StationSelecter({ref, value, placeholder, onChange, auto
                 </div>
             )}
         />
+    )
+}
+
+export function StationSelectButtons({ onSelect, disabledStations = [] }) {
+    const myStations = useAtomValue(myStationsAtom);
+    const nearestStation = useAtomValue(nearestStationAtom);
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    function handleClick(event) {
+        setAnchorEl(event.currentTarget);
+    };
+    function handleClose(name) {
+        setAnchorEl(null);
+        if (typeof name === 'string') onSelect(name);
+    };
+
+    return (
+        <Stack spacing={1} direction="row" gap={1}>
+            <Button onClick={() => onSelect(nearestStation)} disabled={!nearestStation || disabledStations.includes(nearestStation)} size="small" variant="outlined" fullWidth>
+                最寄り駅
+            </Button>
+            <Button onClick={handleClick} size="small" variant="outlined" fullWidth>
+                マイ駅から選ぶ
+            </Button>
+            <Menu
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+            >
+                {myStations.filter((value) => value.role == 'station' && !disabledStations.includes(value.name)).map(({name}) => (
+                    <MenuItem key={name} onClick={() => handleClose(name)}>{name}</MenuItem>
+                ))}
+            </Menu>
+        </Stack>
     )
 }

@@ -1,48 +1,50 @@
 {
-  "name": "obu-city-transportation-bureau-homepage",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vite",
-    "prebuild": "node scripts/generate-oud-manifest.mjs",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage/issues"
-  },
-  "homepage": "https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage#readme",
-  "dependencies": {
-    "@date-io/date-fns": "^3.2.1",
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.6",
-    "@mui/material": "^7.3.7",
-    "@mui/x-date-pickers": "^8.25.0",
-    "@vitejs/plugin-react": "^5.1.2",
-    "date-fns": "^4.1.0",
-    "dayjs": "^1.11.19",
-    "jotai": "^2.16.1",
-    "leaflet": "^1.9.4",
-    "nuqs": "^2.8.6",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "react-fast-marquee": "^1.6.5",
-    "react-markdown": "^10.1.0",
-    "react-modal": "^3.16.3",
-    "react-router-dom": "^7.11.0",
-    "react-select": "^5.10.2",
-    "vite": "^7.3.0",
-    "yet-another-react-lightbox": "^3.28.0"
-  }
+    "name": "obu-city-transportation-bureau-homepage",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "vite",
+        "prebuild": "node scripts/generate-oud-manifest.mjs",
+        "build": "vite build",
+        "preview": "vite preview",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage/issues"
+    },
+    "homepage": "https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage#readme",
+    "dependencies": {
+        "@date-io/date-fns": "^3.2.1",
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.1",
+        "@mui/icons-material": "^7.3.6",
+        "@mui/material": "^7.3.7",
+        "@mui/x-date-pickers": "^8.25.0",
+        "@offlegacy/nuqs-hash-router": "^0.1.1",
+        "@vitejs/plugin-react": "^5.1.2",
+        "date-fns": "^4.1.0",
+        "dayjs": "^1.11.19",
+        "jotai": "^2.16.1",
+        "leaflet": "^1.9.4",
+        "nuqs": "^2.8.8",
+        "react": "^19.2.3",
+        "react-dom": "^19.2.3",
+        "react-fast-marquee": "^1.6.5",
+        "react-leaflet": "^5.0.0",
+        "react-markdown": "^10.1.0",
+        "react-modal": "^3.16.3",
+        "react-router-dom": "^7.11.0",
+        "react-select": "^5.10.2",
+        "vite": "^7.3.0",
+        "yet-another-react-lightbox": "^3.28.0"
+    }
 }
