@@ -12,7 +12,7 @@ import nodes from '../data/nodes.json';
  * @param {Number} mode 出発時刻から検索(0) or 到着時刻から検索(1)
  * @param {Boolean} tokkyu 有料列車（特急 or ライナー）を許可するかどうか
  * @param {Array<String>} visited 既に経由した駅リスト（ナンバリング）
- * @returns {{train: String, arr: Number, dep: Number, type: String, terminal: String, passing: Array<String>}} 最速の列車情報 {train, arr, dep, type, terminal}
+ * @returns {{train: Object, arr: Number, dep: Number, type: String, terminal: String, passing: Array<String>}} 最速の列車情報 {train, arr, dep, type, terminal}
  */
 export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, visited) {
 
@@ -134,11 +134,13 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
                         if (depTime < arrTime) {
 
                             if (
-                                (mode == 0 && nowsecond < depTime &&
-                                    (fastest.train === null || fastest.time > arrTime)) ||
-
-                                (mode == 1 && nowsecond > arrTime &&
-                                    (fastest.train === null || fastest.dep < depTime))
+                                (
+                                    mode == 0 && nowsecond < depTime &&
+                                    (fastest.train === null || fastest.time > arrTime)
+                                ) || (
+                                    mode == 1 && nowsecond > arrTime &&
+                                    (fastest.train === null || fastest.dep < depTime)
+                                )
                             ) {
                                 const passing = []
                                 fromTrain.timetable._data.forEach((sta, i) => {

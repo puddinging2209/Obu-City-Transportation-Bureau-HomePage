@@ -83,7 +83,7 @@ function DepartureRow({ dep, needId = false, station }) {
                 </Grid>
             </Box>
 
-            <TrainStopsDialog dep={dep} isShowDialog={isShowDialog} setIsShowDialog={setIsShowDialog} emphasized={[station]} />
+            <TrainStopsDialog dep={dep} isShowDialog={isShowDialog} onClose={() => setIsShowDialog(false)} emphasized={[station]} />
         </>
     );
 }
