@@ -1,3 +1,4 @@
+import findDistance from "./findDistance.js";
 import reconstructByState from "./formatRoute.js";
 import { searchFastestTrain } from "./searchFastestTrain.js";
 import { name } from "./Station.js";
@@ -128,6 +129,20 @@ function heuristic(sta, goal) {
     return haversine(sta, goal) / MAX_SPEED;
 }
 
+function isForward(current, next, goal, border = 2000) {
+    const d1 = haversine(current, goal)
+    const d2 = haversine(next, goal)
+    return d2 < d1 + border  // 少し余裕を持たせる
+}
+
+function isFar(start, current, goal) {
+    console.log(start, goal)
+    const d1 = haversine(start, current)
+    const d2 = haversine(current, goal)
+    const d = findDistance(start.slice(0, 4), goal.slice(0, 4))
+    return d1 + d2 > d * 1000
+}
+
 function makeStateId(sta, phase, visited) {
     return `${name(sta)}@${phase}@${visitedKey(visited)}`;
 }
@@ -149,6 +164,7 @@ function visitedKey(visited) {
  */
 
 export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
+
     const pq = new MinHeap();
 
     const bestTime = {};
@@ -191,6 +207,12 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
         if (name(station) === name(goalStation) && phase === "ride") {
             goalStateId = curStateId;
             break;
+        }
+
+        // === 枝切り(?) ===
+        if (isFar(startStation, station, goalStation)) {
+            console.log('missed', name(station))
+            continue;
         }
 
         // ===== ride → transfer =====
@@ -266,16 +288,21 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                         nextVisited
                     );
 
+                    if (!isForward(station, to, goalStation, 2000)) {
+                        console.log('missed', name(station), name(to))
+                    }
                     if (
-                        bestTime[nextStateId] === undefined ||
                         (
-                            (mode === 0 && nextTime < bestTime[nextStateId]) ||
-                            (mode === 1 && nextTime > bestTime[nextStateId])
-                        ) ||
-                        (
-                            nextTime === bestTime[nextStateId] &&
-                            bestTransfer[nextStateId] > transfer + 1
-                        )
+                            bestTime[nextStateId] === undefined ||
+                            (
+                                (mode === 0 && nextTime < bestTime[nextStateId]) ||
+                                (mode === 1 && nextTime > bestTime[nextStateId])
+                            ) ||
+                            (
+                                nextTime === bestTime[nextStateId] &&
+                                bestTransfer[nextStateId] > transfer + 1
+                            )
+                        ) && isForward(station, to, goalStation, 2000)
                     ) {
                         bestTime[nextStateId] = nextTime;
                         bestTransfer[nextStateId] = transfer + 1;
