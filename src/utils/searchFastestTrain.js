@@ -1,8 +1,53 @@
-import { dia as readOud } from './readOud.js';
+import { dia as readDia } from './readOud.js';
+import { name } from "./Station.js";
 import { adjustTime } from "./Time.js";
 import { terminal, typeName } from "./Train.js";
 
 import nodes from '../data/nodes.json';
+
+let dias = {};
+
+async function readOud(json) {
+    if (dias[json]) return dias[json];
+    const diagram = await readDia(json);
+    dias[json] = diagram;
+    return diagram;
+}
+
+/**
+ * 同じ列車で行ける駅の到着、出発時刻を探す
+ * @param {string} station 出発駅
+ * @param {number} time 時刻
+ * @param {Object} train 乗車電
+ * @param {Array<string>} passing 経由駅
+ * @param {0|1} mode mode
+ * @returns {Array<{to: string, arr: number, dep: number}>} to駅名、到着時刻、出発時刻
+ */
+export async function searchOtherStops(station, time, train, passing, mode) {
+    const diagram = await readOud(nodes[station].json);
+    const modeNum = mode === 0 ? 1 : -1;
+    let from = diagram.railway.stations.findIndex(sta => sta.name === station);
+    if (train.direction === 1) from = diagram.railway.stations.length - 1 - from;
+    const result = [];
+    const newVisited = passing
+    for (let i = from + modeNum; (i >= train.timetable.firstStationIndex && i <= train.timetable.terminalStationIndex); i += modeNum) {
+        const to = train.timetable._data[i];
+        const toCode = diagram.railway.stations[train.direction === 0 ? i : diagram.railway.stations.length - 1 - i].name;
+        if (!to || (to.stopType !== 1 && to.stopType !== 2)) continue;
+        if (newVisited.some(sta => name(sta) == name(toCode))) break;
+        newVisited.push(toCode);
+        if (to.stopType !== 1 || (mode === 0 && to.arrival === null) || (mode === 1 && to.departure === null)) continue;
+        const arr = to.arrival + Number((mode === 0 && time > to.arrival) || (mode === 1 && time < to.arrival)) * 86400;
+        const dep = to.departure + Number((mode === 0 && time > to.departure) || (mode === 1 && time < to.departure)) * 86400;
+        result.push({
+            to: toCode,
+            arr,
+            dep,
+            newVisited: [...newVisited]
+        })
+    }
+    return result;
+}
 
 /**
  * 特定の駅間の最速の列車を探す
