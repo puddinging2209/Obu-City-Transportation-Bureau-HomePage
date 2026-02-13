@@ -8,16 +8,15 @@ self.addEventListener("install", () => {
 self.addEventListener("activate", e => {
     e.waitUntil(
         caches.keys().then(names => {
-            // CACHE_NAME がタイムスタンプ付き（13桁の数字）または initial の場合のみ、
-            // 古いキャッシュを削除する。
-            const isValidCache = /oud-cache-(\d{13}|initial)/.test(CACHE_NAME);
+
+            // commitSHA形式のcache名を許可
+            const isValidCache = /^oud-cache-[a-f0-9]+$/.test(CACHE_NAME);
 
             if (!isValidCache) {
                 console.log('[SW] CACHE_NAME is unknown, keep existing caches');
                 return;
             }
 
-            // タイムスタンプ付きまたは initial なら古いキャッシュを削除
             return Promise.all(
                 names
                     .filter(name => name.startsWith("oud-cache") && name !== CACHE_NAME)
@@ -28,6 +27,7 @@ self.addEventListener("activate", e => {
             );
         })
     );
+
     e.waitUntil(self.clients.claim());
 });
 
