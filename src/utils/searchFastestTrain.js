@@ -35,6 +35,7 @@ export async function searchOtherStops(station, time, train, passing, mode) {
     const viaRosen = [];
     for (let i = from + step; (i >= 0 && i < stops.length); i += step) {
         const stop = stops[i];
+        if (passing.some(sta => name(sta) == stop.name)) break;
         newVisited.push(stop.code);
         const lineName = stop.lineName;
         if (!viaRosen.includes(lineName)) viaRosen.push(lineName);
