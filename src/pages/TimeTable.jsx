@@ -131,11 +131,12 @@ function TimeTable() {
                                     <TableCell sx={{ p: 0 }}>
                                         <Stack direction="row" gap={2}>
                                             {deps.map((dep, j) => {
-                                                const strong = dep.typeName === '特急' || dep.typeName === 'ライナー';
+                                                const strong = dep.typeName === '特急';
+                                                const frame = dep.typeName === 'ライナー' || dep.typeName === '各駅停車';
                                                 return (
                                                     <Button onClick={() => { setPushed(dep); setIsShowDialog(true); }} key={`${i}-${j}`}>
                                                         <Box sx={{ flex: '0 0 42px', textAlign: 'center' }}>
-                                                            <Box sx={{ background: strong ? types[dep.typeName]?.color : '' }}>
+                                                            <Box sx={{ background: strong ? types[dep.typeName]?.color : '', border: frame ? `1px solid ${types[dep.typeName]?.color}` : '' }}>
                                                                 <Typography color={strong ? 'white' : types[dep.typeName]?.color} variant='h6'>
                                                                     {String(dep.min).padStart(2, '0')}
                                                                 </Typography>
