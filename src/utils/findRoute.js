@@ -7,7 +7,7 @@ import edges from "../data/edges.json";
 import nodes from "../data/nodes.json";
 import stations from "../data/stations.json";
 
-const MAX_SPEED = 100 * 1000 / 3600; // m/s for heuristic
+const MAX_SPEED = 40 * 1000 / 3600; // m/s for heuristic
 const TRANSFER_COST = 0.75; // for heuristic
 
 // ==== 隣接リスト作成 ====

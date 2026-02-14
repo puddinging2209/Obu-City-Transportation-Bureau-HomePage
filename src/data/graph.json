@@ -5628,5 +5628,65 @@
         "from": "AR14",
         "to": "AR15",
         "distance": 0.49
+    },
+    {
+        "from": "AR01",
+        "to": "OL04",
+        "distance": 0
+    },
+    {
+        "from": "OL04",
+        "to": "AR01",
+        "distance": 0
+    },
+    {
+        "from": "AR01",
+        "to": "UD07",
+        "distance": 0
+    },
+    {
+        "from": "UD07",
+        "to": "AR01",
+        "distance": 0
+    },
+    {
+        "from": "AR01",
+        "to": "FT01",
+        "distance": 0
+    },
+    {
+        "from": "FT01",
+        "to": "AR01",
+        "distance": 0
+    },
+    {
+        "from": "AR04",
+        "to": "OD08",
+        "distance": 0
+    },
+    {
+        "from": "OD08",
+        "to": "AR04",
+        "distance": 0
+    },
+    {
+        "from": "AR05",
+        "to": "NB06",
+        "distance": 0
+    },
+    {
+        "from": "NB06",
+        "to": "AR05",
+        "distance": 0
+    },
+    {
+        "from": "AR12",
+        "to": "NW05",
+        "distance": 0
+    },
+    {
+        "from": "NW05",
+        "to": "AR12",
+        "distance": 0
     }
 ]
