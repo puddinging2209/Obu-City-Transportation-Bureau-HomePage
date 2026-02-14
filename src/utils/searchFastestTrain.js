@@ -170,55 +170,51 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
                     const toTrain = toDia.railway.diagrams[0].trains.flat().find(d => d.number == fromTrain.number)
                     const to = toTrain.direction === 0 ? t : toStations.length - 1 - t;
                     if (
-                        fromTrain.timetable._data[from].stopType === 1 &&
-                        toTrain.timetable._data[to]?.stopType === 1
+                        fromTrain.timetable._data[from].stopType !== 1 ||
+                        toTrain.timetable._data[to]?.stopType !== 1
+                    ) return;
+                    const arrTime = adjustTime(toTrain.timetable._data[to].arrival ?? toTrain.timetable._data[to].departure) + day * 86400
+                    const depTime = adjustTime(fromTrain.timetable._data[from].departure ?? fromTrain.timetable._data[from].arrival) + day * 86400
+                    const type = typeName(fromTrain, fromDia)
+                    if (depTime >= arrTime) return;
+
+                    if (
+                        (
+                            mode == 0 && nowsecond < depTime &&
+                            (fastest.train == null || fastest.arr > arrTime)
+                        ) || (
+                            mode == 1 && nowsecond > arrTime &&
+                            (fastest.train == null || fastest.dep < depTime)
+                        )
                     ) {
-                        const arrTime = adjustTime(toTrain.timetable._data[to].arrival ?? toTrain.timetable._data[to].departure) + day * 86400
-                        const depTime = adjustTime(fromTrain.timetable._data[from].departure ?? fromTrain.timetable._data[from].arrival) + day * 86400
-                        const type = typeName(fromTrain, fromDia)
-                        if (depTime < arrTime) {
+                        const passing = []
+                        fromTrain.timetable._data.forEach((sta, i) => {
+                            if (sta && from < i) {
+                                const station =
+                                    fromTrain.direction === 0
+                                        ? fromStations[i]
+                                        : fromStations[fromStations.length - 1 - i]
 
-                            if (
-                                (
-                                    mode == 0 && nowsecond < depTime &&
-                                    (fastest.train === null || fastest.time > arrTime)
-                                ) || (
-                                    mode == 1 && nowsecond > arrTime &&
-                                    (fastest.train === null || fastest.dep < depTime)
-                                )
-                            ) {
-                                const passing = []
-                                fromTrain.timetable._data.forEach((sta, i) => {
-                                    if (!sta) return
-                                    if (!(from < i)) return
-
-                                    const station =
-                                        fromTrain.direction === 0
-                                            ? fromStations[i]
-                                            : fromStations[fromStations.length - 1 - i]
-
-                                    passing.push(station)
-                                })
-                                toTrain.timetable._data.forEach((sta, i) => {
-                                    if (!sta) return
-                                    if (!(i < to)) return
-
-                                    const station =
-                                        toTrain.direction === 0
-                                            ? toStations[i]
-                                            : toStations[toStations.length - 1 - i]
-
-                                    passing.push(station)
-                                })
-                                if (tokkyu || (!tokkyu && type != "特急" && type != "ライナー")) {
-                                    fastest.train = fromTrain
-                                    fastest.arr = arrTime
-                                    fastest.dep = depTime
-                                    fastest.type = type
-                                    fastest.terminal = terminal(toTrain, toDia)
-                                    fastest.passing = passing
-                                }
+                                passing.push(station)
                             }
+                        })
+                        toTrain.timetable._data.forEach((sta, i) => {
+                            if (sta && i < to) {
+                                const station =
+                                    toTrain.direction === 0
+                                        ? toStations[i]
+                                        : toStations[toStations.length - 1 - i]
+
+                                passing.push(station)
+                            }
+                        })
+                        if (tokkyu || (type != "特急" && type != "ライナー")) {
+                            fastest.train = fromTrain
+                            fastest.arr = arrTime
+                            fastest.dep = depTime
+                            fastest.type = type
+                            fastest.terminal = terminal(toTrain, toDia)
+                            fastest.passing = passing
                         }
                     }
                 }
