@@ -1,6 +1,5 @@
 import { name } from "./Station";
 
-import nodes from "../data/nodes.json";
 
 export default function reconstructByState(goalStateId, previous, used, mode) {
     const states = []
@@ -18,7 +17,7 @@ function formatRouteFromStates(states, used, mode) {
     const segments = []
 
     let current = {
-        train: null, detail: { terminal: null, typeName: null }
+        train: null, detail: { terminal: null, typeName: null, viaRosen: null }
     }
     let fromSta = null
     let depTime = null
@@ -31,7 +30,7 @@ function formatRouteFromStates(states, used, mode) {
 
         // --- segment 開始 ---
         if (current.train === null) {
-            current = { train: curUsed.train, detail: { terminal: curUsed.terminal, typeName: curUsed.type } }
+            current = { train: curUsed.train, detail: { terminal: curUsed.terminal, typeName: curUsed.type, viaRosen: curUsed.viaRosen } }
             fromSta = mode === 0 ? curUsed.from : curUsed.to
             depTime = curUsed.dep
         }
@@ -46,11 +45,11 @@ function formatRouteFromStates(states, used, mode) {
                 arrTime: lastArrTime,
                 terminal: current.detail.terminal,
                 typeName: current.detail.typeName,
-                line: nodes[fromSta]?.line
+                line: current.detail.viaRosen
             })
 
             // 新しい列車
-            current = { train: curUsed.train, detail: { terminal: curUsed.terminal, typeName: curUsed.type } }
+            current = { train: curUsed.train, detail: { terminal: curUsed.terminal, typeName: curUsed.type, viaRosen: curUsed.viaRosen } }
             fromSta = curUsed.from
             depTime = curUsed.dep
         }
@@ -70,7 +69,7 @@ function formatRouteFromStates(states, used, mode) {
             arrTime: lastArrTime,
             terminal: current.detail.terminal,
             typeName: current.detail.typeName,
-            line: nodes[fromSta]?.line
+            line: current.detail.viaRosen
         })
     }
 
