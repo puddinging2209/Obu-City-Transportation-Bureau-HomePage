@@ -15,15 +15,8 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 
     const l = line ?? React.useContext(LineContext);
 
-    if (!dep || !l) return null;
-
     const [stops, setStops] = React.useState([]);
     const [multilayer, setMultilayer] = React.useState(0);
-            
-    function scrollToDep() {
-        const el = document.getElementsByClassName('emphasized')[0];
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
     
     React.useEffect(() => {
         if (isShowDialog) {
@@ -38,6 +31,13 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
             }
         }
     }, [isShowDialog, multilayer]);
+
+    if (!dep || !l) return null;
+
+    function scrollToDep() {
+        const el = document.getElementsByClassName('emphasized')[0];
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
     // 高さを変更したカスタムTabs
     const StyledTabs = styled(Tabs)({

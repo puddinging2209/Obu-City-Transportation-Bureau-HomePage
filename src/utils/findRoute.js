@@ -262,7 +262,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                     mode
                 );
 
-                [{ to: nextStation, arr: result[mode === 0 ? 'arr' : 'dep'], dep: result[mode === 1 ? 'dep' : 'arr'], newVisited: [...visitedArray, ...result.passing] }, ...other].forEach(({ to, arr, dep, newVisited: visited }) => {
+                other.forEach(({ to, arr, dep, newVisited: visited, viaRosen }) => {
 
                     const nextTime = mode === 0 ? arr : dep;
 
@@ -298,7 +298,8 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu) {
                             arr: mode === 0 ? arr : result.arr,
                             dep: mode === 1 ? dep : result.dep,
                             from: station,
-                            to: to
+                            to: to,
+                            viaRosen
                         };
 
                         let nextTransfer = transfer;

@@ -88,38 +88,41 @@ export default function TransferOutput({ segments }) {
                         {segments.map((seg, i) => {
                             const isContinue = (i > 0) && (seg.train.number === segments[i - 1]?.train.number) && (seg.train.number !== '');
                             const isContinueNext = (i < segments.length - 1) && (seg.train.number === segments[i + 1]?.train.number) && (seg.train.number !== '');
-                            const innerContinue = innerContinues.find(ic => ic.sta.includes(seg.from) && ic.sta.includes(seg.to));
-                            return (
-                                <div key={seg.depTime}>
-                                    <Box sx={{ ml: '5%', p: 0.5, pl: '3%', textAlign: 'left', borderLeft: 10, borderColor: lines[seg.line]?.color ?? 'green' }}>
-                                        {!isContinue &&
-                                            <Typography variant="h6">
-                                                {`${seg.typeName}${seg.train.name.replace(seg.typeName, '')} ${(seg.train.count != '') ? `${seg.train.count}号` : ''} ${seg.terminal}行`}
+                            return seg.line.map((line, j) => {
+                                const isInnerContinue = j !== 0 || isContinue;
+                                const isInnerContinueNext = j !== seg.line.length - 1 || isContinueNext;
+                                return (
+                                    <div key={`${seg.depTime}-${line}`}>
+                                        <Box sx={{ ml: '5%', p: 0.5, pl: '3%', textAlign: 'left', borderLeft: 10, borderColor: lines[line]?.color ?? 'green' }}>
+                                            {!isInnerContinue &&
+                                                <Typography variant="h6">
+                                                    {`${seg.typeName}${seg.train.name.replace(seg.typeName, '')} ${(seg.train.count != '') ? `${seg.train.count}号` : ''} ${seg.terminal}行`}
+                                                </Typography>
+                                            }
+                                            <Typography variant="body1">
+                                                {`${lines[line]?.show}${isInnerContinue ? '(直通)' : ''} `}
                                             </Typography>
-                                        }
-                                        <Typography variant="body1">
-                                            {`${lines[seg.line]?.show}${isContinue ? '(直通)' : ''} `}
-                                        </Typography>
-                                        {(!isContinueNext) && (
-                                            <Button variant='outlined' size="small" sx={{ mt: 1 }} onClick={() => {
-                                                setShowDialog(true);
-                                                setPushed({ ...seg, from: searchRideStation(segments, i)});
-                                            }}>
-                                                停車駅
-                                            </Button>
+                                            {(!isInnerContinueNext) && (
+                                                <Button variant='outlined' size="small" sx={{ mt: 1 }} onClick={() => {
+                                                    setShowDialog(true);
+                                                    setPushed({ ...seg, from: searchRideStation(segments, i)});
+                                                }}>
+                                                    停車駅
+                                                </Button>
+                                            )}
+                                        </Box>
+                                        {(!isInnerContinueNext) && (
+                                            <StationBox arrTime={seg.arrTime} depTime={segments[i + 1]?.depTime} StationName={seg.to} disableDepTime={i === segments.length - 1} />
                                         )}
-                                    </Box>
-                                    {(!isContinueNext) && (
-                                        <StationBox arrTime={seg.arrTime} depTime={segments[i + 1]?.depTime} StationName={seg.to} disableDepTime={i === segments.length - 1} />
-                                    )}
-                                </div>
-                            )
+                                    </div>
+                                )
+                            })
                         })}
                     </Box>
                 </CardContent>
                 <TrainStopsDialog
                     dep={pushed}
-                    line={pushed?.line}
+                    line={pushed?.line[0]}
                     isShowDialog={showDialog}
                     onClose={() => setShowDialog(false)}
                     emphasized={[pushed?.from, pushed?.to]}
