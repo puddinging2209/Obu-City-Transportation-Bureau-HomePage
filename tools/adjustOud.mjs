@@ -19,6 +19,8 @@ import { fileURLToPath } from 'url';
 import { dia } from './diaNode.mjs';
 import DiagramParser from './Parsers/DiagramParser.mjs';
 
+import listTrainNumbers from './listTrainNumbers.mjs';
+
 // ========= パス解決（ESMの王道） =========
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -89,6 +91,7 @@ async function main() {
         const newDiagram = await adjustStationNames(line, diagram);
 
         await writeOud(line, newDiagram);
+        await listTrainNumbers(line);
     } catch (err) {
         console.error('❌ 変換失敗');
         console.error(err.message);
