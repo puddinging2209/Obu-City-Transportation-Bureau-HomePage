@@ -15,6 +15,7 @@ export default function reconstructByState(goalStateId, previous, used, mode) {
 
 function formatRouteFromStates(states, used, mode) {
     const segments = []
+    console.log(states);
 
     let current = {
         train: null, detail: { terminal: null, typeName: null, viaRosen: null }
@@ -30,7 +31,15 @@ function formatRouteFromStates(states, used, mode) {
 
         // --- segment 開始 ---
         if (current.train === null) {
-            current = { train: curUsed.train, detail: { terminal: curUsed.terminal, typeName: curUsed.type, viaRosen: curUsed.viaRosen } }
+            current = {
+                train: curUsed.train,
+                detail: {
+                    terminal: curUsed.terminal,
+                    typeName: curUsed.type,
+                    viaRosen: curUsed.viaRosen,
+                    meter: curUsed.meter
+                }
+            }
             fromSta = mode === 0 ? curUsed.from : curUsed.to
             depTime = curUsed.dep
         }
@@ -45,11 +54,20 @@ function formatRouteFromStates(states, used, mode) {
                 arrTime: lastArrTime,
                 terminal: current.detail.terminal,
                 typeName: current.detail.typeName,
-                line: current.detail.viaRosen
+                line: current.detail.viaRosen,
+                meter: current.detail.meter
             })
 
             // 新しい列車
-            current = { train: curUsed.train, detail: { terminal: curUsed.terminal, typeName: curUsed.type, viaRosen: curUsed.viaRosen } }
+            current = {
+                train: curUsed.train,
+                detail: {
+                    terminal: curUsed.terminal,
+                    typeName: curUsed.type,
+                    viaRosen: curUsed.viaRosen,
+                    meter: curUsed.meter
+                }
+            }
             fromSta = curUsed.from
             depTime = curUsed.dep
         }
@@ -69,7 +87,8 @@ function formatRouteFromStates(states, used, mode) {
             arrTime: lastArrTime,
             terminal: current.detail.terminal,
             typeName: current.detail.typeName,
-            line: current.detail.viaRosen
+            line: current.detail.viaRosen,
+            meter: current.detail.meter
         })
     }
 

@@ -43,6 +43,7 @@ export default function TransferInput({ onSearch, loading }) {
     const [time, setTime] = React.useState(dayjs());
     const [openOption, setOpenOption] = React.useState(false);
     const [tokkyu, setTokkyu] = React.useState(false);
+    const [allowOuterTransfer, setAllowOuterTransfer] = React.useState(true);
 
     function toSeconds(time) {
         return Number(time.format('HH')) * 3600 + Number(time.format('mm')) * 60 + Number(time.format('ss'));
@@ -61,6 +62,7 @@ export default function TransferInput({ onSearch, loading }) {
         const queryTime = Number(query.get('time'));
         const queryMode = Number(query.get('mode'));
         const queryTokkyu = query.get('tokkyu');
+        const queryAllowOuterTransfer = query.get('allowOuterTransfer');
         if (!queryFrom || !queryTo || !queryTime || !queryMode === undefined) return;
 
         setFrom(toSelecterOption(queryFrom));
@@ -74,17 +76,19 @@ export default function TransferInput({ onSearch, loading }) {
         else setTimeType('departure');
 
         setTokkyu(queryTokkyu === 'true');
-        console.log({queryFrom, queryTo, queryTime, queryMode, queryTokkyu});
-        onSearch(queryFrom, queryTo, queryTime, queryMode, queryTokkyu === 'true');
+        setAllowOuterTransfer(queryAllowOuterTransfer === 'true');
+        console.log({queryFrom, queryTo, queryTime, queryMode, queryTokkyu, queryAllowOuterTransfer});
+        onSearch(queryFrom, queryTo, queryTime, queryMode, queryTokkyu === 'true', queryAllowOuterTransfer === 'true');
     }, []);
 
-    function queryChange(time, mode, tokkyu) {
+    function queryChange(time, mode, tokkyu, allowOuterTransfer) {
         const params = new URLSearchParams();
         if (from) params.append('from', code(from.value)[0]);
         if (to) params.append('to', code(to.value)[0]);
         if (time) params.append('time', time);
         if (mode !== undefined) params.append('mode', mode);
         if (tokkyu !== undefined) params.append('tokkyu', tokkyu);
+        if (allowOuterTransfer !== undefined) params.append('allowOuterTransfer', allowOuterTransfer);
         navigate(`/transfer?${params.toString()}`);
     }
 
@@ -101,8 +105,8 @@ export default function TransferInput({ onSearch, loading }) {
             t = 10799;
         }
 
-        queryChange(t, mode, tokkyu);
-        onSearch(code(from?.value)[0], code(to?.value)[0], t, mode, tokkyu);
+        queryChange(t, mode, tokkyu, allowOuterTransfer);
+        onSearch(code(from?.value)[0], code(to?.value)[0], t, mode, tokkyu, allowOuterTransfer);
     };
 
     function handleSwap() {
@@ -219,6 +223,14 @@ export default function TransferInput({ onSearch, loading }) {
                                 onChange={e => setTokkyu(e.target.checked)}
                                 checked={tokkyu}
                                 label="有料列車を利用する"
+                            />
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                onChange={e => setAllowOuterTransfer(!e.target.checked)}
+                                checked={!allowOuterTransfer}
+                                label="改札外乗り換えを許可しない"
                             />
                         </Typography>
                     </Stack>

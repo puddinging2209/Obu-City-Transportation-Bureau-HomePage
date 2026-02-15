@@ -1,0 +1,62 @@
+[
+    {
+        "from": "GK07a",
+        "to": "MT07a",
+        "time": 360,
+        "meter": 450
+    },
+    {
+        "from": "MT07a",
+        "to": "GK07a",
+        "time": 360,
+        "meter": 450
+    },
+    {
+        "from": "GK18a",
+        "to": "MY11a",
+        "time": 240,
+        "meter": 280
+    },
+    {
+        "from": "MY11a",
+        "to": "GK18a",
+        "time": 240,
+        "meter": 280
+    },
+    {
+        "from": "TR03a",
+        "to": "NW03a",
+        "time": 180,
+        "meter": 170
+    },
+    {
+        "from": "NW03a",
+        "to": "TR03a",
+        "time": 180,
+        "meter": 170
+    },
+    {
+        "from": "NB05a",
+        "to": "OL08a",
+        "time": 600,
+        "meter": 700
+    },
+    {
+        "from": "OL08a",
+        "to": "NB05a",
+        "time": 600,
+        "meter": 700
+    },
+    {
+        "from": "AR07a",
+        "to": "OL09a",
+        "time": 180,
+        "meter": 230
+    },
+    {
+        "from": "OL09a",
+        "to": "AR07a",
+        "time": 180,
+        "meter": 230
+    }
+]

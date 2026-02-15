@@ -86,6 +86,7 @@ export default function TransferOutput({ segments }) {
                         <StationBox depTime={segments[0].depTime} StationName={segments[0].from} disableArrTime={true} />
 
                         {segments.map((seg, i) => {
+                            const isWalking = seg.train === 'walking';
                             const isContinue = (i > 0) && (seg.train.number === segments[i - 1]?.train.number) && (seg.train.number !== '');
                             const isContinueNext = (i < segments.length - 1) && (seg.train.number === segments[i + 1]?.train.number) && (seg.train.number !== '');
                             return seg.line.map((line, j) => {
@@ -93,16 +94,23 @@ export default function TransferOutput({ segments }) {
                                 const isInnerContinueNext = j !== seg.line.length - 1 || isContinueNext;
                                 return (
                                     <div key={`${seg.depTime}-${line}`}>
-                                        <Box sx={{ ml: '5%', p: 0.5, pl: '3%', textAlign: 'left', borderLeft: 10, borderColor: lines[line]?.color ?? 'green' }}>
-                                            {!isInnerContinue &&
+                                        <Box sx={{ ml: '5%', p: 0.5, pl: '3%', textAlign: 'left', borderLeft: isWalking ? 5 : 10, borderColor: isWalking ? 'black' : lines[line]?.color ?? 'green' }}>
+                                            {!isInnerContinue && (
+                                                isWalking ?
                                                 <Typography variant="h6">
-                                                    {`${seg.typeName}${seg.train.name.replace(seg.typeName, '')} ${(seg.train.count != '') ? `${seg.train.count}号` : ''} ${seg.terminal}行`}
+                                                    {`徒歩(改札外乗り換え) ${seg.meter}m`}
+                                                </Typography>
+                                                :
+                                                <Typography variant="h6">
+                                                    {`${seg.typeName}${seg.train.name?.replace(seg.typeName, '')} ${(seg.train.count != '') ? `${seg.train.count}号` : ''} ${seg.terminal}行`}
+                                                    </Typography>
+                                            )}
+                                            {!isWalking &&
+                                                <Typography variant="body1">
+                                                    {`${lines[line]?.show}${isInnerContinue ? '(直通)' : ''} `}
                                                 </Typography>
                                             }
-                                            <Typography variant="body1">
-                                                {`${lines[line]?.show}${isInnerContinue ? '(直通)' : ''} `}
-                                            </Typography>
-                                            {(!isInnerContinueNext) && (
+                                            {!isInnerContinueNext && !isWalking && (
                                                 <Button variant='outlined' size="small" sx={{ mt: 1 }} onClick={() => {
                                                     setShowDialog(true);
                                                     setPushed({ ...seg, from: searchRideStation(segments, i)});
