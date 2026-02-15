@@ -15,7 +15,6 @@ export default function reconstructByState(goalStateId, previous, used, mode) {
 
 function formatRouteFromStates(states, used, mode) {
     const segments = []
-    console.log(states);
 
     let current = {
         train: null, detail: { terminal: null, typeName: null, viaRosen: null }

@@ -7,11 +7,9 @@ import edges from "../data/edges.json";
 import nodes from "../data/nodes.json";
 import stations from "../data/stations.json";
 import walkPath from "../data/walkPath.json";
-import { toTimeString } from "./Time.js";
 
 const MAX_SPEED = 40 * 1000 / 3600; // m/s for heuristic
 const TRANSFER_COST = 0.75; // for heuristic
-const TRANSFER_TIME = 30;
 
 // ==== 隣接リスト作成 ====
 const graph = {};
@@ -129,7 +127,7 @@ function setKey(sta, set) {
  * @returns {[{train: string, from: string, to: string, depTime: number, arrTime: number, terminal: string, typeName: string, line: string}, ...]} 経路の詳細情報の配列
  */
 
-export async function dijkstra(start, goal, baseTime, mode, tokkyu, allowOuterTransfer = false) {
+export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu, allowOuterTransfer = false) {
 
     const pq = new MinHeap();
 
@@ -242,16 +240,15 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu, allowOuterTr
 
         // ===== transfer → ride =====
         if (phase === "transfer") {
-            const visitedArray = [...visited];
 
             if (nodes[station].line === '徒歩経路') {
                 if (!allowOuterTransfer) continue;
                 const path = walkPath.find(path => path.from === station);
-                if (visitedArray.some(s => name(s) === name(path.to))) continue;
+                if ([...visited].some(s => name(s) === name(path.to))) continue;
 
                 const nextTime = time + path.time;
                 const nextTransfer = transfer + 1;
-                const nextVisited = new Set([...visitedArray, path.to]);
+                const nextVisited = new Set([...visited, path.to]);
 
                 const staName = name(path.to);
                 const visitedIndex = getVisitedIndex(staName, nextVisited);
@@ -274,11 +271,10 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu, allowOuterTr
                     viaRosen: ['徒歩経路'],
                     meter: path.meter
                 };
-                console.log(name(path.from), name(path.to), toTimeString(nextTime))
 
                 pq.push({
                     station: path.to,
-                    time: nextTime + TRANSFER_TIME,
+                    time: nextTime + transferTime,
                     phase: "ride",
                     visitedIndex,
                     transfer: nextTransfer,
@@ -289,7 +285,8 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu, allowOuterTr
 
                 for (const { node: nextStation } of graph[station] ?? []) {
 
-                    // 駅名ベースのループ防止
+                    // 不正乗車、ダメゼッタイ
+                    const visitedArray = [...visited];
                     if (visitedArray.some(s => name(s) === name(nextStation))) continue;
 
                     const result = await searchFastestTrain(
@@ -358,7 +355,7 @@ export async function dijkstra(start, goal, baseTime, mode, tokkyu, allowOuterTr
 
                             pq.push({
                                 station: to,
-                                time: nextTime + (nextTransfer - transfer) * TRANSFER_TIME,
+                                time: nextTime + (nextTransfer - transfer) * transferTime,
                                 phase: "ride",
                                 visitedIndex,
                                 transfer: nextTransfer,

@@ -15,6 +15,7 @@ import {
     DialogTitle,
     FormControlLabel,
     IconButton,
+    Slider,
     Stack,
     ToggleButton,
     ToggleButtonGroup,
@@ -44,6 +45,7 @@ export default function TransferInput({ onSearch, loading }) {
     const [openOption, setOpenOption] = React.useState(false);
     const [tokkyu, setTokkyu] = React.useState(false);
     const [allowOuterTransfer, setAllowOuterTransfer] = React.useState(true);
+    const [transferTime, setTransferTime] = React.useState(30);
 
     function toSeconds(time) {
         return Number(time.format('HH')) * 3600 + Number(time.format('mm')) * 60 + Number(time.format('ss'));
@@ -61,6 +63,7 @@ export default function TransferInput({ onSearch, loading }) {
         const queryTo = query.get('to');
         const queryTime = Number(query.get('time'));
         const queryMode = Number(query.get('mode'));
+        const queryTransferTime = Number(query.get('transferTime'));
         const queryTokkyu = query.get('tokkyu');
         const queryAllowOuterTransfer = query.get('allowOuterTransfer');
         if (!queryFrom || !queryTo || !queryTime || !queryMode === undefined) return;
@@ -75,10 +78,11 @@ export default function TransferInput({ onSearch, loading }) {
         else if (queryMode === 1) setTimeType('arrival');
         else setTimeType('departure');
 
+        setTransferTime(queryTransferTime);
         setTokkyu(queryTokkyu === 'true');
         setAllowOuterTransfer(queryAllowOuterTransfer === 'true');
         console.log({queryFrom, queryTo, queryTime, queryMode, queryTokkyu, queryAllowOuterTransfer});
-        onSearch(queryFrom, queryTo, queryTime, queryMode, queryTokkyu === 'true', queryAllowOuterTransfer === 'true');
+        onSearch(queryFrom, queryTo, queryTime, queryMode, queryTransferTime, queryTokkyu === 'true', queryAllowOuterTransfer === 'true');
     }, []);
 
     function queryChange(time, mode, tokkyu, allowOuterTransfer) {
@@ -87,6 +91,7 @@ export default function TransferInput({ onSearch, loading }) {
         if (to) params.append('to', code(to.value)[0]);
         if (time) params.append('time', time);
         if (mode !== undefined) params.append('mode', mode);
+        if (transferTime !== undefined) params.append('transferTime', transferTime);
         if (tokkyu !== undefined) params.append('tokkyu', tokkyu);
         if (allowOuterTransfer !== undefined) params.append('allowOuterTransfer', allowOuterTransfer);
         navigate(`/transfer?${params.toString()}`);
@@ -106,7 +111,7 @@ export default function TransferInput({ onSearch, loading }) {
         }
 
         queryChange(t, mode, tokkyu, allowOuterTransfer);
-        onSearch(code(from?.value)[0], code(to?.value)[0], t, mode, tokkyu, allowOuterTransfer);
+        onSearch(code(from?.value)[0], code(to?.value)[0], t, mode, transferTime, tokkyu, allowOuterTransfer);
     };
 
     function handleSwap() {
@@ -233,6 +238,22 @@ export default function TransferInput({ onSearch, loading }) {
                                 label="改札外乗り換えを許可しない"
                             />
                         </Typography>
+                        <Stack>
+                            <Typography variant="body2" color="text.secondary">
+                                乗り換え時間(秒)
+                            </Typography>
+                            <Slider
+                                value={transferTime}
+                                onChange={(_, v) => setTransferTime(v)}
+                                defaultValue={30}
+                                valueLabelDisplay="auto"
+                                shiftStep={30}
+                                step={15}
+                                marks
+                                min={15}
+                                max={120}
+                            />
+                        </Stack>
                     </Stack>
                 </DialogContent>
                 <DialogActions>

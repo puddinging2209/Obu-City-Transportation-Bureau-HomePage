@@ -11,11 +11,11 @@ function Transfer() {
     const [result, setResult] = React.useState([]);
     const [loading, setLoading] = React.useState(false);
     
-    async function searchTransfer(from, to, time, mode, tokkyu, allowOuterTransfer) {
+    async function searchTransfer(from, to, time, mode, transferTime, tokkyu, allowOuterTransfer) {
         if (!from || !to) return;
         setLoading(true)
         try {
-            const segments = await dijkstra(from, to, adjustTime(time), mode, tokkyu, allowOuterTransfer);
+            const segments = await dijkstra(from, to, adjustTime(time), mode, transferTime - 1, tokkyu, allowOuterTransfer);
             setResult(segments ?? []);
             console.log(segments)
         } catch (error) {
