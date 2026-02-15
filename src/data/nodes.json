@@ -2588,5 +2588,55 @@
         "name": "田面",
         "line": "南港線(名港トリトンライン)",
         "json": "TR"
+    },
+    "GK07a": {
+        "name": "東陵",
+        "line": "徒歩経路",
+        "json": "walkPath"
+    },
+    "MT07a": {
+        "name": "有松",
+        "line": "徒歩経路",
+        "json": "walkPath"
+    },
+    "GK18a": {
+        "name": "井ヶ谷町南",
+        "line": "徒歩経路",
+        "json": "walkPath"
+    },
+    "MY11a": {
+        "name": "愛教大前",
+        "line": "徒歩経路",
+        "json": "walkPath"
+    },
+    "TR03a": {
+        "name": "日向根",
+        "line": "徒歩経路",
+        "json": "walkPath"
+    },
+    "NW03a": {
+        "name": "南神田",
+        "line": "徒歩経路",
+        "json": "walkPath"
+    },
+    "NB05a": {
+        "name": "共和三丁目",
+        "line": "徒歩経路",
+        "json": "walkPath"
+    },
+    "OL08a": {
+        "name": "共和",
+        "line": "徒歩経路",
+        "json": "walkPath"
+    },
+    "AR07a": {
+        "name": "長草天神社",
+        "line": "徒歩経路",
+        "json": "walkPath"
+    },
+    "OL09a": {
+        "name": "田面",
+        "line": "徒歩経路",
+        "json": "walkPath"
     }
 }
