@@ -11,7 +11,7 @@ function Transfer() {
     const [result, setResult] = React.useState([]);
     const [loading, setLoading] = React.useState(false);
     
-    async function searchTransfer(from, to, time, mode, transferTime, tokkyu, allowOuterTransfer) {
+    async function getTransfer(from, to, time, mode, transferTime, tokkyu, allowOuterTransfer) {
         if (!from || !to) return;
         setLoading(true)
         try {
@@ -29,7 +29,7 @@ function Transfer() {
 
     return (
         <>
-            <TransferInput loading={loading} onSearch={searchTransfer} />
+            <TransferInput loading={loading} onSearch={getTransfer} />
             <TransferOutput segments={result} />
         </>
     )

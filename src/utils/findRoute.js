@@ -1,6 +1,6 @@
 import findDistance from "./findDistance.js";
 import reconstructByState from "./formatRoute.js";
-import { searchFastestTrain, searchOtherStops } from "./searchFastestTrain.js";
+import { getFastestTrain, getOtherStops } from "./getFastestTrain.js";
 import { name } from "./Station.js";
 
 import edges from "../data/edges.json";
@@ -289,7 +289,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                     const visitedArray = [...visited];
                     if (visitedArray.some(s => name(s) === name(nextStation))) continue;
 
-                    const result = await searchFastestTrain(
+                    const result = await getFastestTrain(
                         time,
                         mode === 0 ? station : nextStation,
                         mode === 0 ? nextStation : station,
@@ -300,7 +300,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 
                     if (!result?.train) continue;
 
-                    const other = await searchOtherStops(
+                    const other = await getOtherStops(
                         mode === 0 ? station : nextStation,
                         mode === 0 ? result.arr : result.dep,
                         result.train,

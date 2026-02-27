@@ -25,7 +25,7 @@ import busStops from '../data/busStops.json';
 import lines from '../data/lines.json';
 import stations from '../data/stations.json';
 
-import { searchDeparture } from '../utils/readOud.js';
+import { getDepartures } from '../utils/readOud.js';
 import { name } from '../utils/Station.js';
 import { nowsecond } from '../utils/Time.js';
 
@@ -48,7 +48,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
     React.useEffect(() => {
         if (direction) {
             setLoading(true);
-            searchDeparture(station, direction).then(deps => {
+            getDepartures(station, direction).then(deps => {
                 setDepartures(deps)
                 setLoading(false);
             })

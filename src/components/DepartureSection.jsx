@@ -20,7 +20,7 @@ import {
 
 
 import { addMyStationAtom, myStationsAtom, nearestStationAtom } from '../utils/Atom.js';
-import searchNearestStation from '../utils/searchNearestStation.js';
+import getNearestStation from '../utils/getNearestStation.js';
 
 import DepartureCard from './DepartureCard.jsx';
 import StationSelecter from './StationSelecter.jsx';
@@ -38,7 +38,7 @@ export default function DepartureSection() {
 
     function updateNearest() {
         setLoadingNearest(true);
-        searchNearestStation()
+        getNearestStation()
             .then(name => {
                 setLoadingNearest(false);
                 setNearestStation(name);

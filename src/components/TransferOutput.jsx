@@ -45,7 +45,7 @@ export default function TransferOutput({ segments }) {
             });
     }
 
-    function searchRideStation(segments, i) {
+    function getRideStation(segments, i) {
         const seg = segments[i];
         for (let j = i - 1; j >= 0; j--) {
             if (segments[j].train.number !== seg.train.number || segments[j].train.number === '') {
@@ -113,7 +113,7 @@ export default function TransferOutput({ segments }) {
                                             {!isInnerContinueNext && !isWalking && (
                                                 <Button variant='outlined' size="small" sx={{ mt: 1 }} onClick={() => {
                                                     setShowDialog(true);
-                                                    setPushed({ ...seg, from: searchRideStation(segments, i)});
+                                                    setPushed({ ...seg, from: getRideStation(segments, i)});
                                                 }}>
                                                     停車駅
                                                 </Button>
