@@ -24,7 +24,7 @@ import TrainStopsDialog from '../components/TrainStopsDialog.jsx';
 import stations from '../data/stations.json';
 import types from '../data/types.json';
 
-import { searchDeparture } from '../utils/readOud.js';
+import { getDepartures } from '../utils/readOud.js';
 
 function TimeTable() {
 
@@ -52,7 +52,7 @@ function TimeTable() {
         if (!station) return;
         setDirection(0);
         setLoading(true);
-        searchDeparture({ name: station, role: 'station' }, stations[station]?.directions[0]).then(deps => {
+        getDepartures({ name: station, role: 'station' }, stations[station]?.directions[0]).then(deps => {
             setDepartures(divideDeps(deps))
             setLoading(false);
         })
@@ -61,7 +61,7 @@ function TimeTable() {
     React.useEffect(() => {
         if (station && stations[station]?.directions[direction]) {
             setLoading(true);
-            searchDeparture({ name: station, role: 'station' }, stations[station]?.directions[direction])
+            getDepartures({ name: station, role: 'station' }, stations[station]?.directions[direction])
                 .then(deps => setDepartures(divideDeps(deps)))
                 .catch(() => {
                     setDepartures(Array.from({ length: 27 }, () => []));

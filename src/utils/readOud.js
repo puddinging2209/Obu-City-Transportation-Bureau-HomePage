@@ -151,7 +151,7 @@ function mergeMultilayerTrain(deps) {
     return result;
 }
 
-async function searchDeparture(sta, direction) {
+async function getDepartures(sta, direction) {
 
     if (sta.role === 'station') {
         const station = sta.name;
@@ -227,5 +227,5 @@ async function searchDeparture(sta, direction) {
         return departures.flat().sort((a, b) => a.time - b.time);
     }
 }
-export { searchDeparture };
+export { getDepartures };
 
