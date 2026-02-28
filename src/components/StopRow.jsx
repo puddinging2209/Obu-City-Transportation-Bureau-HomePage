@@ -1,5 +1,6 @@
 import {
     Box,
+    Button,
     Grid,
     Stack,
     Typography
@@ -13,7 +14,7 @@ import { toTimeString } from '../utils/Time.js';
 import lines from '../data/lines.json';
 
 
-function StopRow({ stop, emphasized = false, className = '' }) {
+function StopRow({ stop, emphasized = false, className = '', onOpenContacts }) {
 
     return (
         <div className={className}>
@@ -34,7 +35,7 @@ function StopRow({ stop, emphasized = false, className = '' }) {
                     sx={{ pl: 1, justifyContent: 'space-between' }}
                 >
                     {/* 駅名 */}
-                    <Grid item sx={{ flex: '0 0 auto' }}>
+                    <Grid sx={{ flex: '0 0 auto' }}>
                         <Box
                             sx={{
                                 textAlign: 'left',
@@ -42,8 +43,18 @@ function StopRow({ stop, emphasized = false, className = '' }) {
                                 width: '100%',
                             }}
                         >
-                            <Typography variant="body1"><OverflowMarquee text={name(stop.name)} /></Typography>
+                            <Typography variant="body1" component="div"><OverflowMarquee text={name(stop.name)} /></Typography>
                         </Box>
+                    </Grid>
+
+                    <Grid sx={{ flex: '0 0 auto' }}>
+                        {stop.contacts && stop.contacts.length > 0 && (
+                            <Button size="small" sx={{ p: 0, minWidth: 0 }} onClick={onOpenContacts}>
+                                <Typography variant="body2">
+                                    接続列車
+                                </Typography>
+                            </Button>
+                        )}
                     </Grid>
 
                     <Stack direction="row" sx={{ width: 'fit-content', alignItems: 'right' }}>
@@ -51,7 +62,6 @@ function StopRow({ stop, emphasized = false, className = '' }) {
                             <Grid container spacing={2}>
                                 {/* 到着時刻 */}
                                 <Grid
-                                    item
                                     sx={{
                                         flex: '0 0 42px',
                                         textAlign: 'center',
@@ -64,7 +74,6 @@ function StopRow({ stop, emphasized = false, className = '' }) {
 
                                 {/* 発車時刻 */}
                                 <Grid
-                                    item
                                     sx={{
                                         flex: '0 0 42px',
                                         textAlign: 'center',
