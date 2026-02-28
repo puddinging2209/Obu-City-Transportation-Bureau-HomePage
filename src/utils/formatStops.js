@@ -1,6 +1,6 @@
 import { dia, resolveRosen } from './readOud.js';
 import { name } from './Station.js';
-import { adjustTime, toTimeString } from './Time.js';
+import { adjustTime } from './Time.js';
 
 import lines from '../data/lines.json';
 import nodes from '../data/nodes.json';
@@ -8,7 +8,7 @@ import numberList from '../data/numberList.json';
 import stations from '../data/stations.json';
 import { terminal, typeName } from './Train.js';
 
-function getOtherDepartures(diagram, direction, index, from, to) {
+function getOtherDepartures(diagram, direction, index, from, to, isTerminal = false) {
 
     function getPassTime(train) {
         let passfrom = index;
@@ -23,11 +23,20 @@ function getOtherDepartures(diagram, direction, index, from, to) {
         const fromTime = adjustTime(train.timetable._data[passfrom]?.departure ?? train.timetable._data[passfrom]?.arrival);
         const toTime = adjustTime(train.timetable._data[passto]?.departure ?? train.timetable._data[passto]?.arrival);
         const result = fromTime + (toTime - fromTime) * (index - passfrom) / passLength;
-        console.log(toTimeString(result));
         return result;
     }
 
-    if (!from || !to) return [];
+    function getContactType(train, index) {
+        if (train.timetable._data[index]?.stopType === 2) {
+            return 'waitForPass';
+        } else if (train.timetable._data[index]?.stopType === 1) {
+            return 'contact';
+        } else {
+            return null;
+        }
+    }
+
+    if (!from) return [];
     const result = diagram.railway.diagrams[0].trains[direction].filter(train => {
         if (!train.timetable._data[index]) return false;
         const dep = adjustTime(
@@ -36,18 +45,31 @@ function getOtherDepartures(diagram, direction, index, from, to) {
                 getPassTime(train)
         );
         const arr = adjustTime(train.timetable._data[index]?.arrival);
-        if (dep && from < dep && dep < to) {
-            return true;
+        if (!dep) return false;
+        switch (true) {
+            case (!isTerminal && from != null && to != null):
+                if (from < dep && dep < to) {
+                    return true;
+                }
+                if (arr && arr < from && to < dep) {
+                    return true;
+                }
+                return false;
+
+            case (isTerminal && from != null):
+                if (from < dep && dep <= from + 180) {
+                    return true;
+                }
+                return false;
+            default: return false
         }
-        if (dep && arr && arr < from && to < dep) {
-            return true;
-        }
-        return false;
+
     });
     return result.map(train => ({
-        ...train,
+        train,
         terminal: terminal(train, diagram),
         typeName: typeName(train, diagram),
+        contactType: getContactType(train, index)
     }))
 }
 
@@ -57,10 +79,9 @@ function getStopList(diagram, train) {
         if (!sta) return null;
         const index = (train.direction === 0) ? i : stationList.length - 1 - i;
         const code = stationList[index];
-        const otherDepartures = getOtherDepartures(diagram, train.direction, index, sta.arrival, sta.departure);
-        if (otherDepartures.length > 0) {
-            console.log(`Other departures at ${name(code)} :`, otherDepartures);
-        }
+        const otherDepartures = index === train.timetable.firstStationIndex ?
+            [] :
+            getOtherDepartures(diagram, train.direction, index, adjustTime(sta.arrival), adjustTime(sta.departure), index === train.timetable.terminalStationIndex);
         const stationName = name(code);
         if (diagram.railway.name == 'KT' && stationName === '知立') return null
         if (diagram.railway.name == 'MR' && (stationName === '乙川' || stationName === '半田大橋')) return null
@@ -73,6 +94,7 @@ function getStopList(diagram, train) {
                 arr: sta.arrival ?? null,
                 dep: sta.departure ?? null,
                 lineName: nodes[code].line,
+                contacts: otherDepartures,
             }
         } else if (sta.stopType === 2) {
             return {
@@ -249,6 +271,7 @@ export default async function formatStops(line, train) {
                 arr: preResult[i].arr,
                 dep: preResult[i + 1].dep,
                 lineName: preResult[i].lineName,
+                contacts: [...(preResult[i]?.contacts ?? []), ...preResult[i + 1]?.contacts ?? []],
             });
         } else if (i > 0 && preResult[i - 1].name === preResult[i].name) {
             continue;
