@@ -1,5 +1,5 @@
-import findDistance from "./findDistance.js";
 import reconstructByState from "./formatRoute.js";
+import getDistance from "./getDistance.js";
 import { searchFastestTrain, searchOtherStops } from "./searchFastestTrain.js";
 import { name } from "./Station.js";
 
@@ -155,7 +155,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
     const startStation = mode === 0 ? start : goal;
     const goalStation = mode === 0 ? goal : start;
 
-    const distance = findDistance(startStation.slice(0, 4), goalStation.slice(0, 4));
+    const distance = getDistance(startStation.slice(0, 4), goalStation.slice(0, 4));
 
     Object.keys(nodes).filter(code => name(code) === name(startStation)).forEach(code => {
 

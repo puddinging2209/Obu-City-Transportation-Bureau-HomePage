@@ -5,11 +5,14 @@ import {
     Button,
     Card,
     CardContent,
+    Stack,
     Typography
 } from '@mui/material';
 import { useAtomValue, useSetAtom } from 'jotai';
 
 import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
+import { getFare } from '../utils/getDistance.js';
+import { code } from '../utils/Station.js';
 import { toTime, toTimeString } from '../utils/Time.js';
 import TrainStopsDialog from './TrainStopsDialog.jsx';
 
@@ -33,6 +36,7 @@ export default function TransferOutput({ segments }) {
     const [pushed, setPushed] = React.useState(null);
 
     const requiredTime = toTime(segments.at(-1).arrTime - segments[0].depTime)
+    const fare = getFare(code(segments[0].from)[0], code(segments.at(-1).to)[0]);
     
     function copyUrl() {
         const url = window.location.href;
@@ -55,12 +59,6 @@ export default function TransferOutput({ segments }) {
         return segments[0].from;
     }
 
-    const innerContinues = [
-        { sta: ['大府', '鶴舞'], lines: ['大府環状線', '大府西線', '大高線'] },
-        { sta: ['大府', '日進'], lines: ['刈田川線', '内田面線', '長久手線'] },
-        { sta: ['惣作', '豊明市'], lines: ['内田面線', '長久手線'] },
-    ];
-
     return (
         <>
             <Card sx={{ width: { xs: "100%", md: "70%" }, mx: "auto", my: 4 }}>
@@ -75,11 +73,19 @@ export default function TransferOutput({ segments }) {
                                 }
                             </Typography>
                         </Box>
-                        <Box sx={{ position: 'absolute', right: 0, my: 'auto', alignSelf: 'center' }}>
+                        <Stack direction="row" gap={1} sx={{ position: 'absolute', right: 0, my: 'auto', alignSelf: 'center' }}>
+                            <Stack direction="column" gap={0.5} alignItems="flex-end">
+                                <Typography variant='bpdy1'>
+                                    {fare ? `運賃: ${Math.ceil(fare / 10) * 10}円` : '運賃情報なし'}
+                                </Typography>
+                                <Typography variant="body1">
+                                    {fare ? `IC運賃: ${fare}円` : '運賃情報なし'}
+                                </Typography>
+                            </Stack>
                             <Button variant='outlined' size="medium" onClick={copyUrl}>
                                 経路を共有
                             </Button>
-                        </Box>
+                        </Stack>
                     </Box>
 
                     <Box sx={{ mt: 2 }}>

@@ -1,3 +1,4 @@
+import fares from '../data/fares.json';
 import edges from '../data/graph.json';
 
 // ==== 隣接リスト作成 ====
@@ -117,7 +118,12 @@ function dijkstra(start, goal) {
  * @param {string} goal ナンバリング
  * @returns {number} 距離(km)
  */
-export default function findDistance(start, goal) {
+export default function getDistance(start, goal) {
     const result = dijkstra(start, goal);
     return result.distance;
+}
+
+export function getFare(from, to) {
+    const d = getDistance(from, to);
+    return fares.find(f => f.range[0] < d && d <= f.range[1])?.fare ?? null;
 }

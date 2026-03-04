@@ -1,5 +1,4 @@
-import { name } from "./Station";
-
+import { name } from "./Station.js";
 
 export default function reconstructByState(goalStateId, previous, used, mode) {
     const states = []
