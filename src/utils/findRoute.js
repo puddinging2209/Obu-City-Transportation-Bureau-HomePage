@@ -370,6 +370,6 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
     }
 
     if (!goalStateId) return null;
-    return reconstructByState(goalStateId, previous, used, mode);
+    return reconstructByState(goalStateId, previous, used, distance, mode);
 }
 

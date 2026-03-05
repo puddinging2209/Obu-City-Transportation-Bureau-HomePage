@@ -1,0 +1,20 @@
+const firstFare = 170;
+const boundaries = [3, 10, 20];
+
+const shortFare = 20;
+const middleFare = 18;
+const longFare = 15;
+
+export default function getFare(distance) {
+    let result = 0;
+    if (distance <= boundaries[0]) {
+        result = firstFare;
+    } else if (distance <= boundaries[1]) {
+        result = firstFare + (distance - boundaries[0]) * shortFare;
+    } else if (distance <= boundaries[2]) {
+        result = firstFare + (distance - boundaries[0]) * middleFare;
+    } else {
+        result = (distance - boundaries[0]) * longFare;
+    }
+    return Math.ceil(result);
+}
