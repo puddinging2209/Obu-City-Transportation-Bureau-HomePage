@@ -1,6 +1,8 @@
 import { name } from "./Station.js";
+import { toTime } from "./Time.js";
+import getFare from "./getFare.js";
 
-export default function reconstructByState(goalStateId, previous, used, mode) {
+export default function reconstructByState(goalStateId, previous, used, distance, mode) {
     const states = []
     let cur = goalStateId
 
@@ -9,10 +11,10 @@ export default function reconstructByState(goalStateId, previous, used, mode) {
         cur = previous[cur]
     }
 
-    return formatRouteFromStates((mode === 0) ? states : states.reverse(), used, mode);
+    return formatRouteFromStates((mode === 0) ? states : states.reverse(), used, distance, mode);
 }
 
-function formatRouteFromStates(states, used, mode) {
+function formatRouteFromStates(states, used, distance, mode) {
     const segments = []
 
     let current = {
@@ -90,5 +92,12 @@ function formatRouteFromStates(states, used, mode) {
         })
     }
 
-    return segments;
+    const header = {
+        from: name(segments[0].from),
+        to: name(segments.at(-1).to),
+        fare: getFare(distance),
+        requiredTime: toTime(segments.at(-1).arrTime - segments[0].depTime)
+    };
+
+    return { header, segments };
 }

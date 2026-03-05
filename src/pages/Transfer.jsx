@@ -30,7 +30,7 @@ function Transfer() {
     return (
         <>
             <TransferInput loading={loading} onSearch={searchTransfer} />
-            <TransferOutput segments={result} />
+            <TransferOutput result={result} />
         </>
     )
 }

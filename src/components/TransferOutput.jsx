@@ -11,9 +11,7 @@ import {
 import { useAtomValue, useSetAtom } from 'jotai';
 
 import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
-import { getFare } from '../utils/getDistance.js';
-import { code } from '../utils/Station.js';
-import { toTime, toTimeString } from '../utils/Time.js';
+import { toTimeString } from '../utils/Time.js';
 import TrainStopsDialog from './TrainStopsDialog.jsx';
 
 import lines from '../data/lines.json';
@@ -29,14 +27,16 @@ import lines from '../data/lines.json';
  *   line: string
  * }>
  */
-export default function TransferOutput({ segments }) {
+export default function TransferOutput({ result }) {
+    const segments = result?.segments;
+    const header = result?.header;
     if (!segments || segments.length === 0) return null;
 
     const [showDialog, setShowDialog] = React.useState(false);
     const [pushed, setPushed] = React.useState(null);
 
-    const requiredTime = toTime(segments.at(-1).arrTime - segments[0].depTime)
-    const fare = getFare(code(segments[0].from)[0], code(segments.at(-1).to)[0]);
+    const requiredTime = header.requiredTime;
+    const fare = header.fare;
     
     function copyUrl() {
         const url = window.location.href;
