@@ -34,6 +34,7 @@ export default function NewsList() {
           <AccordionDetails>
             <Box
               sx={{
+                textAlign: "left",
                 "& h2": { mt: 2, fontSize: "1rem" },
                 "& ul": { pl: 3 },
               }}
