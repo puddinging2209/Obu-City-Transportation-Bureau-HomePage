@@ -1590,7 +1590,7 @@
         "directions": [
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "外環線",
@@ -4955,7 +4955,7 @@
         "directions": [
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
@@ -6009,7 +6009,7 @@
         "directions": [
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
@@ -6375,20 +6375,18 @@
     },
     "八幡新田": {
         "code": [
-            "ON01",
             "NW14"
         ],
         "name": "八幡新田",
         "kana": "やわたしんでん",
         "roma": "Yawata-shinden",
         "routes": [
-            "大府西線・八事線",
             "名和線"
         ],
         "directions": [
             {
-                "route": "大府西線・八事線",
-                "stationName": "八事・栄町"
+                "route": "名和線",
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
@@ -6403,6 +6401,7 @@
     "緒川植山": {
         "code": [
             "ON02",
+            "NW15",
             "OG20"
         ],
         "name": "緒川植山",
@@ -6427,12 +6426,12 @@
                 "stationName": "八事・栄町"
             },
             {
-                "route": "大府西線・八事線",
-                "stationName": "緒川植山"
-            },
-            {
                 "route": "阿久比線",
                 "stationName": "新富貴"
+            },
+            {
+                "route": "名和線",
+                "stationName": "名和"
             }
         ],
         "lat": 34.9701345,
@@ -9555,7 +9554,7 @@
             },
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
@@ -10692,7 +10691,7 @@
         "directions": [
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
@@ -10717,7 +10716,7 @@
         "directions": [
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
@@ -10742,7 +10741,7 @@
         "directions": [
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
@@ -10767,7 +10766,7 @@
         "directions": [
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
@@ -10794,7 +10793,7 @@
         "directions": [
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
@@ -10827,7 +10826,7 @@
         "directions": [
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
@@ -10852,7 +10851,7 @@
         "directions": [
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
@@ -10877,7 +10876,7 @@
         "directions": [
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
@@ -10902,7 +10901,7 @@
         "directions": [
             {
                 "route": "名和線",
-                "stationName": "八幡新田"
+                "stationName": "緒川植山"
             },
             {
                 "route": "名和線",
