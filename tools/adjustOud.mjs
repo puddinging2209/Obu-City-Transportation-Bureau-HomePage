@@ -53,7 +53,7 @@ async function readOud2(fileName) {
 // ========= 駅名修正 =========
 async function adjustStationNames(line, diagram) {
     const oldDia = await dia(line);
-    const newNames = oldDia.railway.stations.map(s => s.name);
+    const newNames = oldDia?.railway?.stations.map(s => s.name) ?? [];
 
     const newDiagram = {};
     newDiagram.railway = { ...diagram.railway };

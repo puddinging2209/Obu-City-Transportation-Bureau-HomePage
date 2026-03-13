@@ -6078,5 +6078,55 @@
         "from": "AG30",
         "to": "AG29",
         "distance": 0.42
+    },
+    {
+        "from": "ON39",
+        "to": "OD31",
+        "distance": 0
+    },
+    {
+        "from": "OD31",
+        "to": "ON39",
+        "distance": 0
+    },
+    {
+        "from": "NW15",
+        "to": "OG20",
+        "distance": 0
+    },
+    {
+        "from": "OG20",
+        "to": "NW15",
+        "distance": 0
+    },
+    {
+        "from": "AG01",
+        "to": "OG20",
+        "distance": 0
+    },
+    {
+        "from": "OG20",
+        "to": "AG01",
+        "distance": 0
+    },
+    {
+        "from": "NW15",
+        "to": "AG01",
+        "distance": 0
+    },
+    {
+        "from": "AG01",
+        "to": "NW15",
+        "distance": 0
+    },
+    {
+        "from": "ON02",
+        "to": "AG01",
+        "distance": 0
+    },
+    {
+        "from": "AG01",
+        "to": "ON02",
+        "distance": 0
     }
 ]
