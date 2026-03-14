@@ -6128,5 +6128,25 @@
         "from": "AG01",
         "to": "ON02",
         "distance": 0
+    },
+    {
+        "from": "HD20",
+        "to": "AG14",
+        "distance": 0
+    },
+    {
+        "from": "AG14",
+        "to": "HD20",
+        "distance": 0
+    },
+    {
+        "from": "HK05",
+        "to": "AG15",
+        "distance": 0
+    },
+    {
+        "from": "AG15",
+        "to": "HK05",
+        "distance": 0
     }
 ]
