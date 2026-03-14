@@ -63,7 +63,10 @@ export default function TransferOutput({ result }) {
         <>
             <Card sx={{ width: { xs: "100%", md: "70%" }, mx: "auto", my: 4 }}>
                 <CardContent>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', mb: 2 }}>
+                    <Stack direction="row" justifyContent="space-between">
+                        <Button variant='outlined' size="medium" onClick={copyUrl}>
+                            経路を共有
+                        </Button>
                         <Box>
                             <Typography variant="h6" fontWeight='bold'>{`${toTimeString(segments[0].depTime)}発 ${toTimeString(segments.at(-1).arrTime)}着`}</Typography>
                             <Typography variant="body1">
@@ -73,20 +76,15 @@ export default function TransferOutput({ result }) {
                                 }
                             </Typography>
                         </Box>
-                        <Stack direction="row" gap={1} sx={{ position: 'absolute', right: 0, my: 'auto', alignSelf: 'center' }}>
-                            <Stack direction="column" gap={0.5} alignItems="flex-end">
-                                <Typography variant='bpdy1'>
-                                    {fare ? `運賃: ${Math.ceil(fare / 10) * 10}円` : '運賃情報なし'}
-                                </Typography>
-                                <Typography variant="body1">
-                                    {fare ? `IC運賃: ${fare}円` : '運賃情報なし'}
-                                </Typography>
-                            </Stack>
-                            <Button variant='outlined' size="medium" onClick={copyUrl}>
-                                経路を共有
-                            </Button>
+                        <Stack direction="column" gap={0.5} alignItems="flex-end">
+                            <Typography variant='bpdy1'>
+                                {fare.regular ? `運賃: ${fare.regular}円` : '運賃情報なし'}
+                            </Typography>
+                            <Typography variant="body1">
+                                {fare.ic ? `IC運賃: ${fare.ic}円` : '運賃情報なし'}
+                            </Typography>
                         </Stack>
-                    </Box>
+                    </Stack>
 
                     <Box sx={{ mt: 2 }}>
                         <StationBox depTime={segments[0].depTime} StationName={segments[0].from} disableArrTime={true} />

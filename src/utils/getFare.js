@@ -6,15 +6,20 @@ const middleFare = 18;
 const longFare = 15;
 
 export default function getFare(distance) {
-    let result = 0;
+    let result = { regular: 170, ic: 170 };
+    let fare = 0;
     if (distance <= boundaries[0]) {
-        result = firstFare;
+        fare = firstFare;
     } else if (distance <= boundaries[1]) {
-        result = firstFare + (distance - boundaries[0]) * shortFare;
+        fare = firstFare + (distance - boundaries[0]) * shortFare;
     } else if (distance <= boundaries[2]) {
-        result = firstFare + (distance - boundaries[0]) * middleFare;
+        fare = firstFare + (distance - boundaries[0]) * middleFare;
     } else {
-        result = (distance - boundaries[0]) * longFare;
+        fare = (distance - boundaries[0]) * longFare;
     }
-    return Math.ceil(result);
+    while (result.regular < fare) {
+        result.regular += 30;
+    }
+    result.ic = Math.ceil(fare);
+    return result;
 }
