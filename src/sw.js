@@ -1,4 +1,8 @@
-const CACHE_NAME = "oud-cache-initial";
+import { precacheAndRoute } from 'workbox-precaching';
+
+precacheAndRoute(self.__WB_MANIFEST);
+
+const CACHE_NAME = "oud-cache-initial"; // ビルド時に置換されるプレースホルダ
 const BASE = self.registration.scope; // Pages対応
 
 self.addEventListener("install", () => {
