@@ -81,5 +81,5 @@ export default defineConfig({
                 console.log(`✅ manifest.json copied to ${destManifest} (${stats.size} bytes)`)
             }
         }
-    ],
+    ]
 })
