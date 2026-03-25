@@ -26,26 +26,18 @@ export default defineConfig({
     build: {
         outDir: 'docs'
     },
+    define: {
+        __CACHE_VERSION__: JSON.stringify(cacheVersion)
+    },
     plugins: [
         react(),
         VitePWA({
-            strategy: 'injectManifest',
+            strategies: 'injectManifest',
             srcDir: 'src',
             filename: 'sw.js',
             injectManifest: {
-                inlineWorkboxRuntime: true,
                 injectionPoint: 'self.__WB_MANIFEST',
-                injectionReplacement: [
-                    { search: 'oud-cache-initial', replace: cacheVersion }
-                ],
-                swDest: 'sw.js'
             },
-            base: '/Obu-City-Transportation-Bureau-HomePage/',
-            includeAssets: [
-                'icons/favicon.ico',
-                'icons/apple-touch-icon.png',
-                'icons/favicon.svg'
-            ],
             manifest: {
                 name: 'Vite PWA App',
                 short_name: 'PWA App',
@@ -54,28 +46,32 @@ export default defineConfig({
                 theme_color: '#ffffff',
                 icons: [
                     {
-                        src: '/Obu-City-Transportation-Bureau-HomePage/favicon-96x96.png',
+                        src: 'favicon-96x96.png',
                         sizes: '96x96',
+                        type: 'image/png'
                     },
                     {
-                        src: '/Obu-City-Transportation-Bureau-HomePage/pwa-192.png',
+                        src: 'pwa-192.png',
                         sizes: '192x192',
+                        type: 'image/png'
+
                     },
                     {
-                        src: '/Obu-City-Transportation-Bureau-HomePage/pwa-512.png',
+                        src: 'pwa-512.png',
                         sizes: '512x512',
+                        type: 'image/png',
                         purpose: 'any'
                     },
                     {
-                        src: '/Obu-City-Transportation-Bureau-HomePage/pwa-512.png',
+                        src: 'pwa-512.png',
                         sizes: '512x512',
+                        type: 'image/png',
                         purpose: 'maskable'
                     }
                 ]
             },
             devOptions: {
                 enabled: true,
-                type: 'module'
             }
         })
     ],
