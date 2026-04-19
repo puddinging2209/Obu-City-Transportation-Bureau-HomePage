@@ -58,6 +58,27 @@ export default function TransferInput({ onSearch, loading }) {
     }
 
     React.useEffect(() => {
+
+        if (sessionStorage.getItem('lastSearch')) {
+            const lastSearch = JSON.parse(sessionStorage.getItem('lastSearch'));
+            setFrom(toSelecterOption(lastSearch.from));
+            setTo(toSelecterOption(lastSearch.to));
+
+            const t = dayjs().startOf('day').add(lastSearch.time, 'second');
+            setTime(t);
+
+            if (lastSearch.mode === 0) setTimeType('departure');
+            else if (lastSearch.mode === 1) setTimeType('arrival');
+            else setTimeType('departure');
+
+            setTransferTime(lastSearch.transferTime);
+            setTokkyu(lastSearch.tokkyu);
+            setAllowOuterTransfer(lastSearch.allowOuterTransfer);
+
+            queryChange(lastSearch.time, lastSearch.mode, lastSearch.tokkyu, lastSearch.allowOuterTransfer);
+            onSearch(lastSearch.from, lastSearch.to, lastSearch.time, lastSearch.mode, lastSearch.transferTime, lastSearch.tokkyu, lastSearch.allowOuterTransfer);
+        }
+
         const query = new URLSearchParams(search);
         const queryFrom = query.get('from');
         const queryTo = query.get('to');
@@ -81,7 +102,7 @@ export default function TransferInput({ onSearch, loading }) {
         setTransferTime(queryTransferTime);
         setTokkyu(queryTokkyu === 'true');
         setAllowOuterTransfer(queryAllowOuterTransfer === 'true');
-        console.log({queryFrom, queryTo, queryTime, queryMode, queryTokkyu, queryAllowOuterTransfer});
+
         onSearch(queryFrom, queryTo, queryTime, queryMode, queryTransferTime, queryTokkyu === 'true', queryAllowOuterTransfer === 'true');
     }, []);
 
@@ -111,6 +132,8 @@ export default function TransferInput({ onSearch, loading }) {
         }
 
         queryChange(t, mode, tokkyu, allowOuterTransfer);
+        sessionStorage.setItem('lastSearch', JSON.stringify({ from: code(from?.value)[0], to: code(to?.value)[0], time: t, mode, transferTime, tokkyu, allowOuterTransfer }));
+
         onSearch(code(from?.value)[0], code(to?.value)[0], t, mode, transferTime, tokkyu, allowOuterTransfer);
     };
 
