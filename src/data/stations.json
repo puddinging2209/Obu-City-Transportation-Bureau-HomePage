@@ -6109,7 +6109,7 @@
             },
             {
                 "route": "南港線(名港トリトンライン)",
-                "stationName": "金城ふ頭"
+                "stationName": "湾岸長島"
             }
         ],
         "lat": 35.0369811,
@@ -6130,7 +6130,7 @@
         "directions": [
             {
                 "route": "南港線(名港トリトンライン)",
-                "stationName": "金城ふ頭"
+                "stationName": "湾岸長島"
             },
             {
                 "route": "南港線(名港トリトンライン)",
@@ -6155,7 +6155,7 @@
         "directions": [
             {
                 "route": "南港線(名港トリトンライン)",
-                "stationName": "金城ふ頭"
+                "stationName": "湾岸長島"
             },
             {
                 "route": "南港線(名港トリトンライン)",
@@ -6180,7 +6180,7 @@
         "directions": [
             {
                 "route": "南港線(名港トリトンライン)",
-                "stationName": "金城ふ頭"
+                "stationName": "湾岸長島"
             },
             {
                 "route": "南港線(名港トリトンライン)",
@@ -6205,7 +6205,7 @@
         "directions": [
             {
                 "route": "南港線(名港トリトンライン)",
-                "stationName": "金城ふ頭"
+                "stationName": "湾岸長島"
             },
             {
                 "route": "南港線(名港トリトンライン)",
@@ -6230,7 +6230,7 @@
         "directions": [
             {
                 "route": "南港線(名港トリトンライン)",
-                "stationName": "金城ふ頭"
+                "stationName": "湾岸長島"
             },
             {
                 "route": "南港線(名港トリトンライン)",
@@ -6253,6 +6253,10 @@
             "南港線(名港トリトンライン)"
         ],
         "directions": [
+            {
+                "route": "南港線(名港トリトンライン)",
+                "stationName": "湾岸長島"
+            },
             {
                 "route": "南港線(名港トリトンライン)",
                 "stationName": "田面"
@@ -12223,5 +12227,76 @@
         "lng": 136.9177721,
         "prefecture": "愛知県",
         "city": "名古屋市"
+    },
+    "飛島ふ頭": {
+        "code": [
+            "TR08"
+        ],
+        "name": "飛島ふ頭",
+        "kana": "とびしまふとう",
+        "roma": "Tobishima-futō",
+        "routes": [
+            "南港線(名港トリトンライン)"
+        ],
+        "directions": [
+            {
+                "route": "南港線(名港トリトンライン)",
+                "stationName": "湾岸長島"
+            },
+            {
+                "route": "南港線(名港トリトンライン)",
+                "stationName": "田面"
+            }
+        ],
+        "lat": 35.0518561,
+        "lng": 136.8177671,
+        "prefecture": "愛知県",
+        "city": "飛島村"
+    },
+    "名古屋競馬場": {
+        "code": [
+            "TR09"
+        ],
+        "name": "名古屋競馬場",
+        "kana": "なごやけいばじょう",
+        "roma": "Nagoyakeibajō",
+        "routes": [
+            "南港線(名港トリトンライン)"
+        ],
+        "directions": [
+            {
+                "route": "南港線(名港トリトンライン)",
+                "stationName": "湾岸長島"
+            },
+            {
+                "route": "南港線(名港トリトンライン)",
+                "stationName": "田面"
+            }
+        ],
+        "lat": 35.0494672,
+        "lng": 136.7806752,
+        "prefecture": "愛知県",
+        "city": "弥富市"
+    },
+    "湾岸長島": {
+        "code": [
+            "TR10"
+        ],
+        "name": "湾岸長島",
+        "kana": "わんがんながしま",
+        "roma": "Wangan-nagashima",
+        "routes": [
+            "南港線(名港トリトンライン)"
+        ],
+        "directions": [
+            {
+                "route": "南港線(名港トリトンライン)",
+                "stationName": "田面"
+            }
+        ],
+        "lat": 35.0325205,
+        "lng": 136.7264469,
+        "prefecture": "三重県",
+        "city": "桑名市"
     }
 }

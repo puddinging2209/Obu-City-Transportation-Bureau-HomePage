@@ -6148,5 +6148,35 @@
         "from": "AG15",
         "to": "HK05",
         "distance": 0
+    },
+    {
+        "from": "TR07",
+        "to": "TR08",
+        "distance": 2.8
+    },
+    {
+        "from": "TR08",
+        "to": "TR07",
+        "distance": 2.8
+    },
+    {
+        "from": "TR09",
+        "to": "TR08",
+        "distance": 3.4
+    },
+    {
+        "from": "TR08",
+        "to": "TR09",
+        "distance": 3.4
+    },
+    {
+        "from": "TR09",
+        "to": "TR10",
+        "distance": 5.3
+    },
+    {
+        "from": "TR10",
+        "to": "TR09",
+        "distance": 5.3
     }
 ]
