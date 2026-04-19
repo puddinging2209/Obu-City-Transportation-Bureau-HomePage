@@ -96,6 +96,7 @@ function formatRouteFromStates(states, used, distance, mode) {
         from: name(segments[0].from),
         to: name(segments.at(-1).to),
         fare: getFare(distance),
+        distance: distance,
         requiredTime: toTime(segments.at(-1).arrTime - segments[0].depTime)
     };
 
