@@ -7,45 +7,57 @@ import {
     Container,
     Typography,
 } from "@mui/material";
+import { useQueryState } from "nuqs";
 import ReactMarkdown from "react-markdown";
 
 import news from "../data/notices.json";
 
 export default function NewsList() {
-  return (
-    <Container maxWidth="md" sx={{ mt: 4 }}>
-      <Typography variant="h5" gutterBottom>
-        お知らせ
-      </Typography>
+    const [openId, setOpenId] = useQueryState("id", { 
+        defaultValue: null,
+        parse: (value) => value ? parseInt(value, 10) : null,
+        serialize: (value) => value?.toString() ?? ""
+    });
 
-      {news.toReversed().map(item => (
-        <Accordion key={item.id} disableGutters>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Box>
-              <Typography variant="body2" color="text.secondary">
-                {item.date}
-              </Typography>
-              <Typography variant="body1">
-                {item.title}
-              </Typography>
-            </Box>
-          </AccordionSummary>
+    return (
+        <Container maxWidth="md" sx={{ mt: 4 }}>
+            <Typography variant="h5" gutterBottom>
+                お知らせ
+            </Typography>
 
-          <AccordionDetails>
-            <Box
-              sx={{
-                textAlign: "left",
-                "& h2": { mt: 2, fontSize: "1rem" },
-                "& ul": { pl: 3 },
-              }}
-            >
-              <ReactMarkdown>
-                {item.body}
-              </ReactMarkdown>
-            </Box>
-          </AccordionDetails>
-        </Accordion>
-      ))}
-    </Container>
-  );
+            {news.toReversed().map(item => (
+                <Accordion
+                    key={item.id}
+                    disableGutters
+                    expanded={openId === item.id}
+                    onChange={() => setOpenId(openId === item.id ? null : item.id)}
+                >
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                        <Box>
+                            <Typography variant="body2" color="text.secondary">
+                                {item.date}
+                            </Typography>
+                            <Typography variant="body1">
+                                {item.title}
+                            </Typography>
+                        </Box>
+                    </AccordionSummary>
+
+                    <AccordionDetails>
+                        <Box
+                            sx={{
+                                textAlign: "left",
+                                "& h2": { mt: 2, fontSize: "1rem" },
+                                "& ul": { pl: 3 },
+                            }}
+                        >
+                            <ReactMarkdown>
+                                {item.body}
+                            </ReactMarkdown>
+                        </Box>
+                    </AccordionDetails>
+                </Accordion>
+            ))}
+        </Container>
+    );
 }
