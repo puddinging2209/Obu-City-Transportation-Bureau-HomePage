@@ -10,6 +10,7 @@ import {
     Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+
 import notices from "../data/notices.json";
 
 // category: ["更新", "イベント", "重要"]
@@ -43,6 +44,7 @@ function NoticeSection() {
                     {notices.toReversed().slice(0, 3).map((item) => (
                         <ListItemButton
                             key={`notice-${item.id}`}
+                            onClick={() => navigate(`/news?id=${item.id}`)}
                             sx={{
                                 py: 1,
                                 borderBottom: "1px solid #e0e0e0",
