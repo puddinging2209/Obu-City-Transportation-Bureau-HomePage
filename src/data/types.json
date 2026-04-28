@@ -19,6 +19,11 @@
         "roma": "rapid",
         "color": "#0000DC"
     },
+    "通勤準急": {
+        "name": "通勤準急",
+        "roma": "commuter-semi-rapid",
+        "color": "#84C255"
+    },
     "準急": {
         "name": "準急",
         "roma": "semi-rapid",
