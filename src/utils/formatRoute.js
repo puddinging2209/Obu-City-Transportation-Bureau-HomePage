@@ -100,7 +100,5 @@ function formatRouteFromStates(states, used, distance, mode) {
         requiredTime: toTime(segments.at(-1).arrTime - segments[0].depTime)
     };
 
-    console.log(JSON.stringify(header, null, 2));
-
     return { header, segments };
 }
