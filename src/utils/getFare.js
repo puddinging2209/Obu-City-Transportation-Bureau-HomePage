@@ -6,6 +6,7 @@ const middleFare = 18;
 const longFare = 15;
 
 export default function getFare(distance) {
+    if (!Number.isFinite(distance) || distance < 0) return null; // ありえない距離
     let result = { regular: 170, ic: 170 };
     let fare = 0;
     fare = firstFare +
