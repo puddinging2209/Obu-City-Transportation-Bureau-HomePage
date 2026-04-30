@@ -6178,5 +6178,15 @@
         "from": "TR10",
         "to": "TR09",
         "distance": 5.3
+    },
+    {
+        "from": "TR01",
+        "to": "ON11",
+        "distance": 0
+    },
+    {
+        "from": "ON11",
+        "to": "TR01",
+        "distance": 0
     }
 ]
