@@ -8,33 +8,438 @@
         "type": "subway",
         "isLoop": false,
         "stations": [
-            "北崎",
-            "北崎大島",
-            "大脇",
-            "琵琶ヶ池",
-            "高鴨",
-            "豊明市",
-            "中央公園",
-            "十三塚",
-            "沓掛町森前",
-            "若王子川",
-            "清水ケ根",
-            "春木台",
-            "猫池",
-            "東郷",
-            "白鳥",
-            "日進",
-            "折戸寺脇",
-            "日進東山",
-            "日進市",
-            "日進白山",
-            "岩崎城",
-            "弁天池",
-            "竹の山",
-            "愛知学院大学前",
-            "長久手",
-            "香流川",
-            "長久手市"
+            {
+                "name": "北崎",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "北崎大島",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "大脇",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "琵琶ヶ池",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "高鴨",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "豊明市",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "中央公園",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "十三塚",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "沓掛町森前",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "若王子川",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "清水ケ根",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "春木台",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "猫池",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "東郷",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "白鳥",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "日進",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "折戸寺脇",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "日進東山",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "日進市",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "日進白山",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "岩崎城",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "弁天池",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "竹の山",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "愛知学院大学前",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "長久手",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "香流川",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "長久手市",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            }
         ]
     },
     "大高線": {
