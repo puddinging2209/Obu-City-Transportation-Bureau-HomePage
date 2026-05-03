@@ -5,8 +5,18 @@ import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 
+import EachRouteMap from "../components/EachRouteMap";
+import RouteSelector from "../components/RouteSelector";
+
+import lines from "../data/lines.json";
+
 function RouteMap() {
     const [isOpenLightbox, setIsOpenLightbox] = React.useState(false);
+    const [selectedLine, setSelectedLine] = React.useState('');
+
+    const handleLineChange = (routeId) => {
+        setSelectedLine(routeId);
+    };
 
     return (
         <>
@@ -30,8 +40,10 @@ function RouteMap() {
                     buttonNext: () => null,
                 }}
             />
+            <RouteSelector lines={lines} selectedLine={selectedLine} onLineChange={handleLineChange} />
+            <EachRouteMap line={lines[selectedLine]} />
         </>
-    )
+    );
 }
 
-export default RouteMap
+export default RouteMap;

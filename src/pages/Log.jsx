@@ -88,7 +88,7 @@ export default function Log() {
             <TabPanel value={mode} index={1}>
                 <Card sx={{ width: "100%", overflow: "auto", mx: "auto", my: 4, p: 2 }}>
                     {subwayLines.map((line) => {
-                        const innerStations = new Set(line.stations);
+                        const innerStations = new Set(line.stations[0].name ? line.stations.map(sta => sta.name) : line.stations);
                         return (
                             <Accordion key={line.name}>
                                 <AccordionSummary
