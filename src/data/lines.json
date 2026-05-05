@@ -13,11 +13,11 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
+                    "exp": true,
                     "rap-exp": false,
                     "com-exp": false,
                     "lim-exp": null,
@@ -77,11 +77,11 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
+                    "exp": true,
                     "rap-exp": false,
                     "com-exp": false,
                     "lim-exp": null,
@@ -93,12 +93,12 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
+                    "exp": true,
+                    "rap-exp": true,
                     "com-exp": false,
                     "lim-exp": null,
                     "lin": null
@@ -109,11 +109,11 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
+                    "exp": true,
                     "rap-exp": false,
                     "com-exp": false,
                     "lim-exp": null,
@@ -189,12 +189,12 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
+                    "exp": true,
+                    "rap-exp": true,
                     "com-exp": false,
                     "lim-exp": null,
                     "lin": null
@@ -205,11 +205,11 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
+                    "exp": true,
                     "rap-exp": false,
                     "com-exp": false,
                     "lim-exp": null,
@@ -221,11 +221,11 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
+                    "exp": true,
                     "rap-exp": false,
                     "com-exp": false,
                     "lim-exp": null,
@@ -253,13 +253,13 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": true,
                     "lim-exp": null,
                     "lin": null
                 }
@@ -285,11 +285,11 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
+                    "exp": true,
                     "rap-exp": false,
                     "com-exp": false,
                     "lim-exp": null,
@@ -301,12 +301,12 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
+                    "exp": true,
+                    "rap-exp": true,
                     "com-exp": false,
                     "lim-exp": null,
                     "lin": null
@@ -365,12 +365,12 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
+                    "exp": true,
+                    "rap-exp": true,
                     "com-exp": false,
                     "lim-exp": null,
                     "lin": null
@@ -381,11 +381,11 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
+                    "exp": true,
                     "rap-exp": false,
                     "com-exp": false,
                     "lim-exp": null,
@@ -397,13 +397,13 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": true,
                     "lim-exp": null,
                     "lin": null
                 }
@@ -413,11 +413,11 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
+                    "exp": true,
                     "rap-exp": false,
                     "com-exp": false,
                     "lim-exp": null,
@@ -429,13 +429,13 @@
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": false,
+                    "rap": true,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": true,
                     "lim-exp": null,
                     "lin": null
                 }
@@ -537,25 +537,310 @@
         "type": "subway",
         "isLoop": false,
         "stations": [
-            "大府",
-            "大府森岡",
-            "公園北",
-            "医療センター",
-            "公園南",
-            "新池",
-            "緒川相生",
-            "西石浜",
-            "藤江",
-            "緑ヶ丘",
-            "生見町",
-            "上池",
-            "七本木池",
-            "庚申町",
-            "乙川畑田",
-            "乙川薬師",
-            "乙川",
-            "半田大橋",
-            "半田市"
+            {
+                "name": "大府",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": true,
+                    "lim-exp": true,
+                    "lin": true
+                }
+            },
+            {
+                "name": "大府森岡",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "公園北",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": false,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "医療センター",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": false,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "公園南",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "新池",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": false,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "緒川相生",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "西石浜",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": false,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "藤江",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "緑ヶ丘",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "生見町",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "上池",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": false,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "七本木池",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "庚申町",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "乙川畑田",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": false,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "乙川薬師",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": false,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "乙川",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": true
+                }
+            },
+            {
+                "name": "半田大橋",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "name": "半田市",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": null,
+                    "lim-exp": true,
+                    "lin": true
+                }
+            }
         ]
     },
     "半田線住吉支線": {
@@ -681,21 +966,246 @@
         "type": "subway",
         "isLoop": false,
         "stations": [
-            "大高",
-            "正光寺",
-            "水主ヶ池西",
-            "茶屋",
-            "共和三丁目",
-            "明成一屋",
-            "柊山",
-            "県営大府住宅",
-            "江端中央",
-            "鞍流瀬川",
-            "柳ケ坪",
-            "尾張森岡",
-            "緒川塩田",
-            "宮戸橋",
-            "緒川"
+            {
+                "name": "大高",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "正光寺",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "水主ヶ池西",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "茶屋",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "共和三丁目",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "明成一屋",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "柊山",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "県営大府住宅",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "江端中央",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "鞍流瀬川",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "柳ケ坪",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "尾張森岡",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "緒川塩田",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "宮戸橋",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "緒川",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            }
         ]
     },
     "荒尾線": {
