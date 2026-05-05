@@ -1,6 +1,10 @@
-import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
+
+import { Box, Stack, Typography } from '@mui/material';
+
 import RouteStationRow from './RouteStationRow';
+
+import typesData from '../data/types.json';
 
 function EachRouteMap({ line }) {
     if (!line) {
@@ -25,7 +29,7 @@ function EachRouteMap({ line }) {
             });
         });
 
-        setTypes(Array.from(typeSet));
+        setTypes(Array.from(typeSet).sort((a, b) => Object.values(typesData).findIndex((t) => t.code === a) - Object.values(typesData).findIndex((t) => t.code === b)));
     }, [stations]);
 
     return (
@@ -40,6 +44,30 @@ function EachRouteMap({ line }) {
                     bgcolor: 'background.paper',
                 }}
             >
+                <Stack alignItems="left" direction="row" sx={{
+                    position: 'relative',
+                    pl: '8px'
+                }}>
+                    {types.map((type) => (
+                        <Box sx={{
+                            width: 30,
+                            py: 0.2,
+                            display: 'flex',
+                            alignItems: 'flex-end',
+                        }}>
+                            <Typography
+                                variant="subtitle1"
+                                sx={{
+                                    writingMode: 'vertical-rl',
+                                    fontWeight: 'bold',
+                                    color: Object.values(typesData).find((t) => t.code === type)?.color || '#999',
+                                }}
+                            >
+                                {Object.values(typesData).find((t) => t.code === type)?.name || type}
+                            </Typography>
+                        </Box>
+                    ))}
+                </Stack>
                 <Stack sx={{ position: 'relative', zIndex: 2 }}>
                     {stations.map((station, index) => (
                         <RouteStationRow

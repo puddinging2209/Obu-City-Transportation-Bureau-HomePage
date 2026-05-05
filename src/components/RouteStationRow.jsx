@@ -8,7 +8,6 @@ function RouteStationRow({ station, i, stations, lines, isEven }) {
             sx={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 2,
                 py: 1.25,
                 px: 2,
                 bgcolor: isEven ? '#fafafa' : '#fff',
@@ -27,7 +26,7 @@ function RouteStationRow({ station, i, stations, lines, isEven }) {
                                     key={`${line}top`}
                                     sx={{
                                         position: 'absolute',
-                                        left: 31 + j * 30,
+                                        left: 6 + j * 30,
                                         bottom: '50%',
                                         width: 4,
                                         height: 32,
@@ -42,7 +41,7 @@ function RouteStationRow({ station, i, stations, lines, isEven }) {
                                     key={line}
                                     sx={{
                                         position: 'absolute',
-                                        left: 25 + j * 30,
+                                        left: j * 30,
                                         top: '50%',
                                         transform: 'translateY(-50%)',
                                         width: 16,
@@ -60,7 +59,7 @@ function RouteStationRow({ station, i, stations, lines, isEven }) {
                                     key={`${line}bottom`}
                                     sx={{
                                         position: 'absolute',
-                                        left: 31 + j * 30,
+                                        left: 6 + j * 30,
                                         top: '50%',
                                         width: 4,
                                         height: 32,
@@ -73,8 +72,10 @@ function RouteStationRow({ station, i, stations, lines, isEven }) {
                     );
                 })}
             </Box>
-            <Stack sx={{ width: '100%' }}>
-                <Typography variant="body2">{station.name}</Typography>
+            <Stack sx={{ width: '100%', ml: 0 }}>
+                <Typography variant="body2" sx={{ textAlign: 'left' }}>
+                    {station.name}
+                </Typography>
             </Stack>
             {station.connection && (
                 <Typography variant="caption" sx={{ color: 'text.secondary' }}>
