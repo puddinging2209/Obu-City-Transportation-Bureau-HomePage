@@ -58,7 +58,7 @@ function Layout() {
             <Header />
             <Drawer />
 
-            <main>
+            <main style={{ paddingBottom: '72px' }}>
                 <Suspense fallback={<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}><CircularProgress /></Box>}>
                     <Outlet />
                 </Suspense>
