@@ -33,12 +33,17 @@ function EachRouteMap({ line }) {
     }, [stations]);
 
     return (
-        <Stack alignItems="center" sx={{ mt: 2, px: 1, width: {xs: '100%', md: '80vw'} }}>
+        <Stack
+            alignItems="center"
+            sx={{
+                mt: 2,
+                px: 1,
+                width: '100%'
+            }}>
             <Box
                 sx={{
                     position: 'relative',
-                    width: '100%',
-                    maxWidth: 660,
+                    width: { xs: '100%', md: '70vw' },
                     mx: 'auto',
                     borderRadius: 2,
                     bgcolor: 'background.paper',
