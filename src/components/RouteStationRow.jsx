@@ -18,6 +18,7 @@ function RouteStationRow({ station, i, stations, lines, isEven }) {
         >
             <Box sx={{ position: 'relative', width: lines.length * 30 + 48, flexShrink: 0, height: '100%', display: 'flex', justifyContent: 'center' }} fullWidth>
                 {lines.map((line, j) => {
+                    const type = Object.values(types).find((t) => t.code === line);
                     const preStopType = stations[i - 1]?.types?.[line] ?? null;
                     const stopType = station.types?.[line];
                     const nextStopType = stations[i + 1]?.types?.[line] ?? null;
@@ -32,25 +33,25 @@ function RouteStationRow({ station, i, stations, lines, isEven }) {
                                         bottom: '50%',
                                         width: 4,
                                         height: 32,
-                                        bgcolor: Object.values(types).find((t) => t.code === line)?.color || '#999',
+                                        bgcolor: type?.color || '#999',
                                         zIndex: 3,
                                     }}
                                 />
                             )}
 
-                            {stopType && (
+                            {(stopType === true || stopType === 'some') && (
                                 <Box
                                     key={line}
                                     sx={{
                                         position: 'absolute',
-                                        left: j * 30,
+                                        left: j * 30 + (stopType === 'some' ? 2 : 0),
                                         top: '50%',
                                         transform: 'translateY(-50%)',
-                                        width: 16,
-                                        height: 16,
+                                        width: stopType === true ? 16 : 12,
+                                        height: stopType === true ? 16 : 12,
                                         borderRadius: '50%',
-                                        bgcolor: '#fff',
-                                        border: `3px solid ${Object.values(types).find((t) => t.code === line)?.color || '#999'}`,
+                                        bgcolor: stopType === true ? '#fff' : type?.color || '#999',
+                                        border: `3px solid ${type?.color || '#999'}`,
                                         zIndex: 4,
                                     }}
                                 />
@@ -65,7 +66,7 @@ function RouteStationRow({ station, i, stations, lines, isEven }) {
                                         top: '50%',
                                         width: 4,
                                         height: 32,
-                                        bgcolor: Object.values(types).find((t) => t.code === line)?.color || '#999',
+                                        bgcolor: type?.color || '#999',
                                         zIndex: 3,
                                     }}
                                 />
