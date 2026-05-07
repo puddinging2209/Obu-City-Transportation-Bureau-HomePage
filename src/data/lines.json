@@ -852,10 +852,70 @@
         "type": "subway",
         "isLoop": false,
         "stations": [
-            "乙川",
-            "半田赤レンガ",
-            "住吉町",
-            "清城"
+            {
+                "name": "乙川",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "半田赤レンガ",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": false,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "住吉町",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "清城",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": true,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            }
         ]
     },
     "名東線": {
@@ -1113,7 +1173,7 @@
             {
                 "name": "鞍流瀬川",
                 "types": {
-                    "all": null,
+                    "all": true,
                     "loc": true,
                     "rap": null,
                     "com-sem-exp": null,
@@ -1129,7 +1189,7 @@
             {
                 "name": "柳ケ坪",
                 "types": {
-                    "all": null,
+                    "all": true,
                     "loc": true,
                     "rap": null,
                     "com-sem-exp": null,
@@ -1145,7 +1205,7 @@
             {
                 "name": "尾張森岡",
                 "types": {
-                    "all": null,
+                    "all": true,
                     "loc": true,
                     "rap": null,
                     "com-sem-exp": null,
@@ -1161,7 +1221,7 @@
             {
                 "name": "緒川塩田",
                 "types": {
-                    "all": null,
+                    "all": true,
                     "loc": true,
                     "rap": null,
                     "com-sem-exp": null,
@@ -1177,7 +1237,7 @@
             {
                 "name": "宮戸橋",
                 "types": {
-                    "all": null,
+                    "all": true,
                     "loc": true,
                     "rap": null,
                     "com-sem-exp": null,
@@ -1193,7 +1253,7 @@
             {
                 "name": "緒川",
                 "types": {
-                    "all": null,
+                    "all": true,
                     "loc": true,
                     "rap": null,
                     "com-sem-exp": null,
