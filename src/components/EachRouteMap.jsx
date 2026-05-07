@@ -11,7 +11,7 @@ function EachRouteMap({ line }) {
         return <Typography sx={{ mt: 2 }}>路線を選択してください。</Typography>;
     }
 
-    const { name, stations } = line;
+    const {name, stations} = line;
     const [types, setTypes] = React.useState([]);
 
     React.useEffect(() => {
@@ -33,7 +33,7 @@ function EachRouteMap({ line }) {
     }, [stations]);
 
     return (
-        <Stack alignItems="center" sx={{ mt: 2, px: 1 }}>
+        <Stack alignItems="center" sx={{ mt: 2, px: 1, width: {xs: '100%', md: '80vw'} }}>
             <Box
                 sx={{
                     position: 'relative',
@@ -42,6 +42,7 @@ function EachRouteMap({ line }) {
                     mx: 'auto',
                     borderRadius: 2,
                     bgcolor: 'background.paper',
+                    overflowX: 'auto',
                 }}
             >
                 <Stack alignItems="left" direction="row" sx={{
@@ -68,7 +69,7 @@ function EachRouteMap({ line }) {
                         </Box>
                     ))}
                 </Stack>
-                <Stack sx={{ position: 'relative', zIndex: 2 }}>
+                <Box sx={{ position: 'relative', zIndex: 2, minWidth: types.length * 30 + 48 + 160 }} fullWidth>
                     {stations.map((station, index) => (
                         <RouteStationRow
                             key={station.name || index}
@@ -79,7 +80,7 @@ function EachRouteMap({ line }) {
                             isEven={index % 2 === 0}
                         />
                     ))}
-                </Stack>
+                </Box>
             </Box>
         </Stack>
     );

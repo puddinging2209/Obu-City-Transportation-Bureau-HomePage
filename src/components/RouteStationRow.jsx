@@ -12,9 +12,11 @@ function RouteStationRow({ station, i, stations, lines, isEven }) {
                 px: 2,
                 bgcolor: isEven ? '#fafafa' : '#fff',
                 minHeight: 64,
+                minWidth: lines.length * 30 + 48 + 160,
             }}
+            fullWidth
         >
-            <Box sx={{ position: 'relative', width: lines.length * 30 + 48, height: '100%', display: 'flex', justifyContent: 'center' }}>
+            <Box sx={{ position: 'relative', width: lines.length * 30 + 48, flexShrink: 0, height: '100%', display: 'flex', justifyContent: 'center' }} fullWidth>
                 {lines.map((line, j) => {
                     const preStopType = stations[i - 1]?.types?.[line] ?? null;
                     const stopType = station.types?.[line];
@@ -72,8 +74,8 @@ function RouteStationRow({ station, i, stations, lines, isEven }) {
                     );
                 })}
             </Box>
-            <Stack sx={{ width: '100%', ml: 0 }}>
-                <Typography variant="body2" sx={{ textAlign: 'left' }}>
+            <Stack sx={{ flex: 1, ml: 2, minWidth: 0, overflow: 'hidden' }}>
+                <Typography variant="body2" sx={{ textAlign: 'left', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     {station.name}
                 </Typography>
             </Stack>
