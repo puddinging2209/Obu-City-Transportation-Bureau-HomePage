@@ -578,7 +578,7 @@
                     "com-sem-exp": null,
                     "sem-exp": false,
                     "sub-exp": null,
-                    "exp": false,
+                    "exp": "some",
                     "rap-exp": false,
                     "com-exp": false,
                     "lim-exp": false,
@@ -755,7 +755,7 @@
                     "sem-exp": null,
                     "sub-exp": true,
                     "exp": true,
-                    "rap-exp": true,
+                    "rap-exp": "some",
                     "com-exp": false,
                     "lim-exp": false,
                     "lin": false
@@ -803,9 +803,9 @@
                     "sem-exp": null,
                     "sub-exp": true,
                     "exp": true,
-                    "rap-exp": true,
+                    "rap-exp": "some",
                     "com-exp": false,
-                    "lim-exp": false,
+                    "lim-exp": "some",
                     "lin": true
                 }
             },
@@ -819,7 +819,7 @@
                     "sem-exp": null,
                     "sub-exp": null,
                     "exp": true,
-                    "rap-exp": false,
+                    "rap-exp": "some",
                     "com-exp": null,
                     "lim-exp": false,
                     "lin": false
