@@ -41,7 +41,7 @@ function RouteMap() {
                 }}
             />
             <RouteSelector lines={lines} selectedLine={selectedLine} onLineChange={handleLineChange} />
-            <EachRouteMap line={lines[selectedLine]} />
+            <EachRouteMap line={lines[selectedLine]} onClick={(route) => handleLineChange(route)} />
         </div>
     );
 }

@@ -6,7 +6,7 @@ import RouteStationRow from './RouteStationRow';
 
 import typesData from '../data/types.json';
 
-function EachRouteMap({ line }) {
+function EachRouteMap({ line, onClick }) {
     if (!line) {
         return <Typography sx={{ mt: 2 }}>路線を選択してください。</Typography>;
     }
@@ -82,6 +82,7 @@ function EachRouteMap({ line }) {
                             i={index}
                             stations={stations}
                             lines={types}
+                            onClick={onClick}
                         />
                     ))}
                 </Box>
