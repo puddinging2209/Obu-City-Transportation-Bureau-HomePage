@@ -78,11 +78,10 @@ function EachRouteMap({ line }) {
                     {stations.map((station, index) => (
                         <RouteStationRow
                             key={station.name || index}
-                            station={station}
+                            line={line}
                             i={index}
                             stations={stations}
                             lines={types}
-                            isEven={index % 2 === 0}
                         />
                     ))}
                 </Box>

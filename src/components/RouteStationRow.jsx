@@ -1,8 +1,12 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
 
+import stationData from '../data/stations.json';
 import types from '../data/types.json';
 
-function RouteStationRow({ station, i, stations, lines, isEven }) {
+function RouteStationRow({ i, line, stations, lines }) {
+    const station = stations[i];
+    const isEven = i % 2 === 0;
+
     return (
         <Box
             sx={{
@@ -80,19 +84,21 @@ function RouteStationRow({ station, i, stations, lines, isEven }) {
                     {station.name}
                 </Typography>
             </Stack>
-            {station.connection?.length > 0 && (
-                <Stack direction="column" sx={{ ml: 2, flexShrink: 0 }}>
-                    <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'left' }}>
-                        乗換：
-                    </Typography>
-                    <Stack direction="row" sx={{ mt: 0.5 }}>
-                        {station.connection?.map((line) => (
-                            <Button key={line} sx={{ color: 'text.secondary', ml: 1 }}>
-                                {line}
-                            </Button>
-                        ))}
-                    </Stack>
-                </Stack>
+            {stationData[station.name].routes.filter(route => route !== line.name).length > 0 && (
+                <>
+                    {/* <Stack direction="column" sx={{ ml: 2, flexShrink: 0 }}> */}
+                        <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'left' }}>
+                            乗換：
+                        </Typography>
+                        <Stack direction="row" sx={{ mt: 0.5 }}>
+                            {stationData[station.name].routes.filter(route => route !== line.name).map((route) => (
+                                <Button key={route} sx={{ color: 'text.secondary', ml: 1 }}>
+                                    {route}
+                                </Button>
+                            ))}
+                        </Stack>
+                    {/* </Stack> */}
+                </>
             )}
         </Box>
     );
