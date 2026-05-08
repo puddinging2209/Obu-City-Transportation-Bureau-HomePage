@@ -3,7 +3,7 @@ import { Box, Button, Stack, Typography } from '@mui/material';
 import stationData from '../data/stations.json';
 import types from '../data/types.json';
 
-function RouteStationRow({ i, line, stations, lines }) {
+function RouteStationRow({ i, line, stations, lines, onClick }) {
     const station = stations[i];
     const isEven = i % 2 === 0;
 
@@ -92,7 +92,7 @@ function RouteStationRow({ i, line, stations, lines }) {
                         </Typography>
                         <Stack direction="row" sx={{ mt: 0.5 }}>
                             {stationData[station.name].routes.filter(route => route !== line.name).map((route) => (
-                                <Button key={route} sx={{ color: 'text.secondary', ml: 1 }}>
+                                <Button key={route} size="small" sx={{ color: 'text.secondary', ml: 1 }} onClick={() => onClick(route)}>
                                     {route}
                                 </Button>
                             ))}
