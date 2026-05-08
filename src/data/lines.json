@@ -22,7 +22,10 @@
                     "com-exp": false,
                     "lim-exp": null,
                     "lin": null
-                }
+                },
+                "connection": [
+                    "内田面線"
+                ]
             },
             {
                 "name": "北崎大島",
@@ -86,7 +89,10 @@
                     "com-exp": false,
                     "lim-exp": null,
                     "lin": null
-                }
+                },
+                "connection": [
+                    "外環線"
+                ]
             },
             {
                 "name": "豊明市",
@@ -551,7 +557,11 @@
                     "com-exp": true,
                     "lim-exp": true,
                     "lin": true
-                }
+                },
+                "connection": [
+                    "刈田川線",
+                    "大府環状線"
+                ]
             },
             {
                 "name": "大府森岡",

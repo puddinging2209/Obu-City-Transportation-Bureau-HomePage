@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 
 import types from '../data/types.json';
 
@@ -80,10 +80,19 @@ function RouteStationRow({ station, i, stations, lines, isEven }) {
                     {station.name}
                 </Typography>
             </Stack>
-            {station.connection && (
-                <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-                    {station.connection}
-                </Typography>
+            {station.connection?.length > 0 && (
+                <Stack direction="column" sx={{ ml: 2, flexShrink: 0 }}>
+                    <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'left' }}>
+                        乗換：
+                    </Typography>
+                    <Stack direction="row" sx={{ mt: 0.5 }}>
+                        {station.connection?.map((line) => (
+                            <Button key={line} sx={{ color: 'text.secondary', ml: 1 }}>
+                                {line}
+                            </Button>
+                        ))}
+                    </Stack>
+                </Stack>
             )}
         </Box>
     );
