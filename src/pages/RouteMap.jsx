@@ -19,7 +19,7 @@ function RouteMap() {
     };
 
     return (
-        <>
+        <div style={{ alignItems: 'center' }}>
             <Typography variant="h6">路線図</Typography>
             <Stack sx={{ width: { xs: '100%', md: '70%' }, overflowX: 'auto', mx: 'auto' }}>
                 <img
@@ -42,7 +42,7 @@ function RouteMap() {
             />
             <RouteSelector lines={lines} selectedLine={selectedLine} onLineChange={handleLineChange} />
             <EachRouteMap line={lines[selectedLine]} />
-        </>
+        </div>
     );
 }
 
