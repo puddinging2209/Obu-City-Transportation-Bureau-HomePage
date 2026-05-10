@@ -42,7 +42,7 @@ function StopRow({ stop, emphasized = false, className = '' }) {
                                 width: '100%',
                             }}
                         >
-                            <Typography variant="body1"><OverflowMarquee text={name(stop.name)} /></Typography>
+                            <Typography variant="body1" sx={{ color: (stop.stopType === 'stop' ? 'black' : 'gray')}}><OverflowMarquee text={name(stop.name)} /></Typography>
                         </Box>
                     </Grid>
 
