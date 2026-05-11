@@ -2410,14 +2410,134 @@
         "type": "subway",
         "isLoop": false,
         "stations": [
-            "至学館大学前",
-            "二ツ池公園前",
-            "平子",
-            "メディアス体育館前",
-            "大東町",
-            "朝日町",
-            "森岡工業団地南",
-            "東緒川"
+            {
+                "name": "至学館大学前",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "二ツ池公園前",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": false,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "平子",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": false,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "メディアス体育館前",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": false,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "大東町",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "朝日町",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "森岡工業団地南",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "東緒川",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            }
         ]
     },
     "二ツ池線森岡支線": {
@@ -2429,12 +2549,102 @@
         "type": "subway",
         "isLoop": false,
         "stations": [
-            "大東町",
-            "住友重機前",
-            "柳ケ坪",
-            "森岡中町",
-            "寿二区",
-            "於大公園西"
+            {
+                "name": "大東町",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "住友重機前",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "柳ケ坪",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "森岡中町",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "寿二区",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": false,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "name": "於大公園西",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": null,
+                    "exp": null,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            }
         ]
     },
     "内田面線": {
