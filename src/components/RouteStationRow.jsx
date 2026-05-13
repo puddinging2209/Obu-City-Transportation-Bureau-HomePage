@@ -1,11 +1,19 @@
 import { Box, Stack, Typography } from '@mui/material';
 
+import linesData from '../data/lines.json';
 import stationData from '../data/stations.json';
 import types from '../data/types.json';
 
 function RouteStationRow({ i, line, stations, lines, onClick }) {
     const station = stations[i];
     const isEven = i % 2 === 0;
+    const transferRoutes = stationData[station.name].routes.filter(route =>
+        route !== line.name &&
+        (
+            (i - 1 >= 0 && !linesData[route].stations.some(sta => sta.name === stations[i - 1]?.name)) ||
+            (i + 1 < stations.length && !linesData[route].stations.some(sta => sta.name === stations[i + 1]?.name))
+        )
+    );
 
     return (
         <Box
@@ -95,13 +103,13 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
                         {station.name}
                     </Typography>
                 </Stack>
-                {stationData[station.name].routes.filter(route => route !== line.name).length > 0 && (
+                {transferRoutes.length > 0 && (
                     <Stack direction="row" sx={{ mt: 0, alignItems: 'center' }}>
                         <Typography variant="body2" sx={{ color: 'text.secondary', height: '100%', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', }}>
                             乗換：
                         </Typography>
                         <Stack direction="row">
-                            {stationData[station.name].routes.filter(route => route !== line.name).map((route) => (
+                            {transferRoutes.map((route) => (
                                 <Box key={route} size="small" sx={{ ml: 1, cursor: 'pointer' }} onClick={() => onClick(route)}>
                                     <Typography variant="body2" sx={{ color: 'text.secondary', height: '100%', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', }}>
                                         {route}
