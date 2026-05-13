@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 
 import stationData from '../data/stations.json';
 import types from '../data/types.json';
@@ -20,7 +20,7 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
             }}
             fullWidth
         >
-            <Box sx={{ position: 'relative', width: lines.length * 30 + 48, flexShrink: 0, height: '100%', display: 'flex', justifyContent: 'center' }} fullWidth>
+            <Box sx={{ position: 'relative', width: lines.length * 30, flexShrink: 0, height: '100%', display: 'flex', justifyContent: 'center' }} fullWidth>
                 {lines.map((line, j) => {
                     const type = Object.values(types).find((t) => t.code === line);
                     const preStopType = stations[i - 1]?.types?.[line] ?? null;
@@ -79,27 +79,29 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
                     );
                 })}
             </Box>
-            <Stack sx={{ flex: 1, ml: 2, minWidth: 0, overflow: 'hidden' }}>
-                <Typography variant="body2" sx={{ textAlign: 'left', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                    {station.name}
-                </Typography>
-            </Stack>
-            {stationData[station.name].routes.filter(route => route !== line.name).length > 0 && (
-                <>
-                    {/* <Stack direction="column" sx={{ ml: 2, flexShrink: 0 }}> */}
-                        <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'left' }}>
+            <Stack sx={{ ml: 1 }}>
+                <Stack sx={{ flex: 1, minWidth: 0, }}>
+                    <Typography variant="body1" sx={{ textAlign: 'left', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        {station.name}
+                    </Typography>
+                </Stack>
+                {stationData[station.name].routes.filter(route => route !== line.name).length > 0 && (
+                    <Stack direction="row" sx={{ mt: 0, alignItems: 'center' }}>
+                        <Typography variant="body2" sx={{ color: 'text.secondary', height: '100%', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', }}>
                             乗換：
                         </Typography>
-                        <Stack direction="row" sx={{ mt: 0.5 }}>
+                        <Stack direction="row">
                             {stationData[station.name].routes.filter(route => route !== line.name).map((route) => (
-                                <Button key={route} size="small" sx={{ color: 'text.secondary', ml: 1 }} onClick={() => onClick(route)}>
-                                    {route}
-                                </Button>
+                                <Box key={route} size="small" sx={{ ml: 1, cursor: 'pointer' }} onClick={() => onClick(route)}>
+                                    <Typography variant="body2" sx={{ color: 'text.secondary', height: '100%', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', }}>
+                                        {route}
+                                    </Typography>
+                                </Box>
                             ))}
                         </Stack>
-                    {/* </Stack> */}
-                </>
-            )}
+                    </Stack>
+                )}
+            </Stack>
         </Box>
     );
 }
