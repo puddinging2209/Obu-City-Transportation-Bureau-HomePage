@@ -16,11 +16,21 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
                 px: 2,
                 bgcolor: isEven ? '#fafafa' : '#fff',
                 minHeight: 64,
-                minWidth: lines.length * 30 + 48 + 160,
+                minWidth: 'fit-content',
+                width: '100%', //lines.length * 30 + 48 + 160,
+                overflow: 'visible',
             }}
             fullWidth
         >
-            <Box sx={{ position: 'relative', width: lines.length * 30, flexShrink: 0, height: '100%', display: 'flex', justifyContent: 'center' }} fullWidth>
+            <Box sx={{
+                position: 'relative',
+                minWidth: '20vw',
+                width: lines.length * 30,
+                flexShrink: 0,
+                height: '100%',
+                display: 'flex',
+                justifyContent: 'center'
+            }} fullWidth>
                 {lines.map((line, j) => {
                     const type = Object.values(types).find((t) => t.code === line);
                     const preStopType = stations[i - 1]?.types?.[line] ?? null;
