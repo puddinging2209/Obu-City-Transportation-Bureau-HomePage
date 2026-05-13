@@ -13,6 +13,23 @@ import lines from "../data/lines.json";
 function RouteMap() {
     const [isOpenLightbox, setIsOpenLightbox] = React.useState(false);
     const [selectedLine, setSelectedLine] = React.useState('');
+    const [imageSize, setImageSize] = React.useState('');
+
+    React.useEffect(() => {
+        const fetchImageSize = async () => {
+            try {
+                const response = await fetch(import.meta.env.BASE_URL + 'routeMap/202605.png', { method: 'HEAD' });
+                const size = response.headers.get('content-length');
+                if (size) {
+                    const sizeInMB = (parseInt(size) / (1024 * 1024)).toFixed(1);
+                    setImageSize(` (${sizeInMB}MB)`);
+                }
+            } catch (error) {
+                console.error('Failed to fetch image size:', error);
+            }
+        };
+        fetchImageSize();
+    }, []);
 
     const handleLineChange = (routeId) => {
         setSelectedLine(routeId);
@@ -22,8 +39,16 @@ function RouteMap() {
         <div style={{ alignItems: 'center' }}>
             <Typography variant="h6">路線図</Typography>
             <Stack sx={{ width: { xs: '100%', md: '70%' }, overflowX: 'auto', mx: 'auto' }}>
-                <Button variant="outlined" size="large" onClick={() => setIsOpenLightbox(true)} sx={{ mt: 2 }}>
+                <Button variant="contained" size="large" onClick={() => setIsOpenLightbox(true)} sx={{ mt: 2 }}>
                     全線路線図を表示
+                </Button>
+                <Button variant="outlined" size="large" onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = import.meta.env.BASE_URL + 'routeMap/202605.png';
+                    link.download = '大府市営地下鉄全線.png';
+                    link.click();
+                }} sx={{ mt: 2 }}>
+                    全線路線図をダウンロード{imageSize}
                 </Button>
             </Stack>
             <Lightbox

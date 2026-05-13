@@ -2,7 +2,7 @@ import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 
 function RouteSelector({ lines, selectedLine, onLineChange }) {
     return (
-        <FormControl fullWidth sx={{ mt: 2, maxWidth: 660 }}>
+        <FormControl fullWidth sx={{ mt: 2, width: { xs: '100%', md: '70%' }, mx: 'auto' }}>
             <InputLabel>路線を選択</InputLabel>
             <Select
                 value={selectedLine}
