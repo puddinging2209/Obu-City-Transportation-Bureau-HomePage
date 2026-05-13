@@ -6,12 +6,11 @@ import RouteStationRow from './RouteStationRow';
 
 import typesData from '../data/types.json';
 
-function EachRouteMap({ line, onClick }) {
-    if (!line) {
+function EachRouteMap({ line, stations, route, onClick }) {
+    if (!line || !route) {
         return <Typography sx={{ mt: 2 }}>路線を選択してください。</Typography>;
     }
 
-    const {name, stations} = line;
     const [types, setTypes] = React.useState([]);
 
     React.useEffect(() => {
@@ -29,8 +28,12 @@ function EachRouteMap({ line, onClick }) {
             });
         });
 
-        setTypes(Array.from(typeSet).sort((a, b) => Object.values(typesData).findIndex((t) => t.code === a) - Object.values(typesData).findIndex((t) => t.code === b)));
-    }, [stations]);
+        const availableTypes = Array.from(typeSet);
+        const orderedTypes = Object.values(typesData).map((t) => t.code).filter((code) => availableTypes.includes(code));
+        const filteredTypes = route?.types?.length ? orderedTypes.filter((code) => route.types.includes(code)) : orderedTypes;
+
+        setTypes(filteredTypes);
+    }, [route, stations]);
 
     return (
         <Stack
