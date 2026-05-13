@@ -8250,7 +8250,7 @@
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": false,
+                    "exp": true,
                     "rap-exp": null,
                     "com-exp": null,
                     "lim-exp": null,
