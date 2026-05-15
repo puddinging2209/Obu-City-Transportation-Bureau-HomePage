@@ -1,9 +1,9 @@
-import React from 'react';
 
 import { Box, Stack, Typography } from '@mui/material';
 
 import RouteStationRow from './RouteStationRow';
 
+import operationalRoutes from '../data/operationalRoutes.json';
 import typesData from '../data/types.json';
 
 function EachRouteMap({ line, stations, route, onClick }) {
@@ -11,29 +11,7 @@ function EachRouteMap({ line, stations, route, onClick }) {
         return <Typography sx={{ mt: 2 }}>路線を選択してください。</Typography>;
     }
 
-    const [types, setTypes] = React.useState([]);
-
-    React.useEffect(() => {
-        const typeSet = new Set();
-
-        stations.forEach((station) => {
-            if (!station.types) {
-                return;
-            }
-
-            Object.entries(station.types).forEach(([type, value]) => {
-                if (value !== null) {
-                    typeSet.add(type);
-                }
-            });
-        });
-
-        const availableTypes = Array.from(typeSet);
-        const orderedTypes = Object.values(typesData).map((t) => t.code).filter((code) => availableTypes.includes(code));
-        const filteredTypes = route?.types?.length ? orderedTypes.filter((code) => route.types.includes(code)) : orderedTypes;
-
-        setTypes(filteredTypes);
-    }, [route, stations]);
+    const types = operationalRoutes[route.id]?.types ? Object.entries(operationalRoutes[route.id]?.types).filter(([_, v]) => v).map(([k, _]) => k) : [];
 
     return (
         <Stack
