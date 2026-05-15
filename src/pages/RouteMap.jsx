@@ -75,7 +75,7 @@ function RouteMap() {
                 return;
             }
 
-            const segmentStations = segmentLine.stations;
+            const segmentStations = segment.reverse ? segmentLine.stations.reverse() : segmentLine.stations;
             const startIndex = segment.startAt ? segmentStations.findIndex((station) => station.name === segment.startAt) : 0;
             const endIndex = segment.endAt ? segmentStations.findIndex((station) => station.name === segment.endAt) : segmentStations.length - 1;
             if (startIndex === -1 || endIndex === -1 || startIndex > endIndex) {

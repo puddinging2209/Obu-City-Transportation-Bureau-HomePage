@@ -6,7 +6,20 @@
             {
                 "line": "刈田川線"
             }
-        ]
+        ],
+        "types": {
+            "all": true,
+            "loc": true,
+            "rap": true,
+            "com-sem-exp": false,
+            "sem-exp": false,
+            "sub-exp": true,
+            "exp": true,
+            "rap-exp": true,
+            "com-exp": true,
+            "lim-exp": false,
+            "lin": false
+        }
     },
     "KTr": {
         "id": "KTr",
@@ -27,26 +40,20 @@
                 "startAt": "惣作",
                 "endAt": "刈谷"
             }
-        ]
-    },
-    "KT-TT": {
-        "id": "KT-TT",
-        "label": "刈田川線（つつじが丘直通）",
-        "segments": [
-            {
-                "line": "刈田川線",
-                "endAt": "北加木屋"
-            },
-            {
-                "line": "与五八デルタ線",
-                "startAt": "北加木屋",
-                "endAt": "横須賀高校前"
-            },
-            {
-                "line": "つつじが丘線",
-                "startAt": "横須賀高校前"
-            }
-        ]
+        ],
+        "types": {
+            "all": true,
+            "loc": true,
+            "rap": true,
+            "com-sem-exp": false,
+            "sem-exp": false,
+            "sub-exp": true,
+            "exp": true,
+            "rap-exp": true,
+            "com-exp": true,
+            "lim-exp": false,
+            "lin": false
+        }
     },
     "KTa": {
         "id": "KTa",
@@ -65,6 +72,93 @@
             {
                 "line": "刈田川線知立支線",
                 "startAt": "新富町"
+            }
+        ]
+    },
+    "NK": {
+        "id": "NK",
+        "label": "長久手線",
+        "segments": [
+            {
+                "line": "内田面線",
+                "endAt": "北崎"
+            },
+            {
+                "line": "長久手線"
+            }
+        ]
+    },
+    "UD": {
+        "id": "UD",
+        "label": "内田面線",
+        "segments": [
+            {
+                "line": "内田面線"
+            }
+        ]
+    },
+    "TT": {
+        "id": "TT",
+        "label": "つつじが丘線",
+        "segments": [
+            {
+                "line": "刈田川線",
+                "endAt": "与五八"
+            },
+            {
+                "line": "つつじが丘線",
+                "startAt": "与五八"
+            }
+        ]
+    },
+    "KT-TT": {
+        "id": "KT-TT",
+        "label": "刈田川線-つつじが丘線直通",
+        "segments": [
+            {
+                "line": "刈田川急行線",
+                "reverse": true,
+                "startAt": "大府",
+                "endAt": "半月町"
+            },
+            {
+                "line": "刈田川線",
+                "reverse": true,
+                "startAt": "半月町",
+                "endAt": "北加木屋"
+            },
+            {
+                "line": "与五八デルタ線"
+            },
+            {
+                "line": "つつじが丘線",
+                "startAt": "横須賀高校前"
+            }
+        ]
+    },
+    "OL": {
+        "id": "OL",
+        "label": "大府環状線",
+        "segments": [
+            {
+                "line": "大府環状線"
+            },
+            {
+                "line": "大府環状線",
+                "endAt": "大府"
+            }
+        ]
+    },
+    "MT": {
+        "id": "MT",
+        "label": "名東線",
+        "segments": [
+            {
+                "line": "大府環状線",
+                "endAt": "至学館大学前"
+            },
+            {
+                "line": "名東線"
             }
         ]
     }
