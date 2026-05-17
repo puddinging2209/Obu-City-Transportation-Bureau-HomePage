@@ -1,19 +1,29 @@
 import { Box, Stack, Typography } from '@mui/material';
 
-import linesData from '../data/lines.json';
-import stationData from '../data/stations.json';
+import { getOperationalStationsMap } from '../utils/operationalRoutesCache';
+
+import operationalRoutes from '../data/operationalRoutes.json';
 import types from '../data/types.json';
 
-function RouteStationRow({ i, line, stations, lines, onClick }) {
+function RouteStationRow({ i, line, stations, lines, onClick, selectedRouteId }) {
     const station = stations[i];
     const isEven = i % 2 === 0;
-    const transferRoutes = stationData[station.name].routes.filter(route =>
-        route !== line.name &&
-        (
-            (i - 1 >= 0 && !linesData[route].stations.some(sta => sta.name === stations[i - 1]?.name)) ||
-            (i + 1 < stations.length && !linesData[route].stations.some(sta => sta.name === stations[i + 1]?.name))
-        )
-    );
+    // operationalRoutes に基づくマージ済み駅リストから乗り換えを判定
+    const operationalMap = getOperationalStationsMap();
+    const transferRoutes = Object.entries(operationalMap).filter(([routeId, opStations]) => {
+        if (routeId === selectedRouteId) return false;
+        const indexInOp = opStations.findIndex(s => s.name === station.name);
+        if (indexInOp === -1) return false;
+
+        const prevOp = opStations[indexInOp - 1]?.name;
+        const nextOp = opStations[indexInOp + 1]?.name;
+
+        return (
+            prevOp != null && !stations.map(s => s.name).includes(prevOp)
+        ) || (
+            nextOp != null && !stations.map(s => s.name).includes(nextOp)
+        );
+    }).map(([routeId]) => routeId);
 
     return (
         <Box
@@ -25,7 +35,7 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
                 bgcolor: isEven ? '#fafafa' : '#fff',
                 minHeight: 64,
                 minWidth: 'fit-content',
-                width: '100%', //lines.length * 30 + 48 + 160,
+                width: '100%',
                 overflow: 'visible',
             }}
             fullWidth
@@ -45,7 +55,7 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
                     const stopType = station.types?.[line];
                     const nextStopType = stations[i + 1]?.types?.[line] ?? null;
                     return (
-                        <>
+                        <div key={`${line}div`}>
                             {stopType !== null && preStopType !== null && (
                                 <Box
                                     key={`${line}top`}
@@ -61,7 +71,7 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
                                 />
                             )}
 
-                            {(stopType === true || stopType === 'some') && (
+                            {(stopType === true || stopType === 'some') && !(preStopType === null && nextStopType === null) && (
                                 <Box
                                     key={line}
                                     sx={{
@@ -93,7 +103,7 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
                                     }}
                                 />
                             )}
-                        </>
+                        </div>
                     );
                 })}
             </Box>
@@ -112,7 +122,7 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
                             {transferRoutes.map((route) => (
                                 <Box key={route} size="small" sx={{ ml: 1, cursor: 'pointer' }} onClick={() => onClick(route)}>
                                     <Typography variant="body2" sx={{ color: 'text.secondary', height: '100%', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', }}>
-                                        {route}
+                                        {operationalRoutes[route]?.label || route}
                                     </Typography>
                                 </Box>
                             ))}

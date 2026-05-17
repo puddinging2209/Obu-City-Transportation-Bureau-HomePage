@@ -1,3 +1,4 @@
+import React from 'react';
 
 import { Box, Stack, Typography } from '@mui/material';
 
@@ -10,8 +11,32 @@ function EachRouteMap({ line, stations, route, onClick }) {
     if (!line || !route) {
         return <Typography sx={{ mt: 2 }}>路線を選択してください。</Typography>;
     }
+    const [types, setTypes] = React.useState([]);
 
-    const types = operationalRoutes[route.id]?.types ? Object.entries(operationalRoutes[route.id]?.types).filter(([_, v]) => v).map(([k, _]) => k) : [];
+    React.useEffect(() => {
+
+        if (operationalRoutes[route.id]?.types) {
+            setTypes(Object.entries(operationalRoutes[route.id].types).filter(([_, v]) => v).map(([k, _]) => k));
+            console.log(Object.entries(operationalRoutes[route.id].types).filter(([_, v]) => v).map(([k, _]) => k));
+            return;
+        }
+
+        const typeCounter = {};
+        stations.forEach(station => {
+            Object.entries(station.types).forEach(([type, value]) => {
+                if (value !== null) {
+                    typeCounter[type] = typeCounter[type] ? typeCounter[type] + 1 : 1;
+                }
+            });
+        });
+
+        const availableTypes = Object.keys(typeCounter).filter(type => typeCounter[type] > 1);
+        const orderedTypes = Object.values(typesData).map((t) => t.code).filter((code) => availableTypes.includes(code));
+        const filteredTypes = route?.types?.length ? orderedTypes.filter((code) => route.types.includes(code)) : orderedTypes;
+
+        console.log(filteredTypes);
+        setTypes(filteredTypes);
+    }, [route, stations]);
 
     return (
         <Stack
@@ -36,12 +61,15 @@ function EachRouteMap({ line, stations, route, onClick }) {
                     pl: '8px'
                 }}>
                     {types.map((type) => (
-                        <Box sx={{
-                            width: 30,
-                            py: 0.2,
-                            display: 'flex',
-                            alignItems: 'flex-end',
-                        }}>
+                        <Box
+                            key={type}
+                            sx={{
+                                width: 30,
+                                py: 0.2,
+                                display: 'flex',
+                                alignItems: 'flex-end',
+                            }}
+                        >
                             <Typography
                                 variant="subtitle1"
                                 sx={{
@@ -58,12 +86,13 @@ function EachRouteMap({ line, stations, route, onClick }) {
                 <Box sx={{ position: 'relative', zIndex: 2, minWidth: types.length * 30 + 48 + 160 }} fullWidth>
                     {stations.map((station, index) => (
                         <RouteStationRow
-                            key={station.name || index}
+                            key={`${station.name}${index}`}
                             line={line}
                             i={index}
                             stations={stations}
                             lines={types}
                             onClick={onClick}
+                            selectedRouteId={route.id}
                         />
                     ))}
                 </Box>
