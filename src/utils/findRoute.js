@@ -300,6 +300,8 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 
                     if (!result?.train) continue;
 
+                    // if (5000 <= Number(result.train.number) && Number(result.train.number) < 6000) console.log(name(station), name(nextStation), toTimeString(result.dep), toTimeString(result.arr));
+
                     const other = await searchOtherStops(
                         mode === 0 ? station : nextStation,
                         mode === 0 ? result.arr : result.dep,
@@ -348,19 +350,23 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                                 viaRosen
                             };
 
-                            let nextTransfer = transfer;
-                            if (used[curStateId]?.train?.number !== result.train?.number || used[curStateId]?.train?.number === '' || result?.train?.number === '') {
-                                nextTransfer++;
-                            }
+                            // let nextTransfer = transfer;
+                            // if (used[curStateId]?.train?.number !== result.train?.number || used[curStateId]?.train?.number === '' || result?.train?.number === '') {
+                            //     nextTransfer++;
+                            // }
 
-                            pq.push({
+                            const newTransfer = used[curStateId]?.train?.number !== result.train?.number || used[curStateId]?.train?.number === '' || result?.train?.number === ''
+
+                            const push = {
                                 station: to,
-                                time: nextTime + (nextTransfer - transfer) * transferTime,
+                                time: nextTime + Number(newTransfer) * transferTime,
                                 phase: "ride",
                                 visitedIndex,
-                                transfer: nextTransfer,
-                                priority: Math.abs(nextTime - baseTime) + heuristic(to, goalStation) + nextTransfer * TRANSFER_COST,
-                            });
+                                transfer: transfer + Number(newTransfer),
+                                priority: Math.abs(nextTime - baseTime) + heuristic(to, goalStation) + (transfer + Number(newTransfer)) * TRANSFER_COST,
+                            }
+                            pq.push(push);
+                            if (true) console.log(name(station), name(to), Math.round(push.priority), push, result.train);
                         }
                     })
                 }

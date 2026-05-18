@@ -85,14 +85,7 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
             to = innerstations.length - 1 - to;
         }
 
-        let fastest = {
-            train: null,
-            arr: null,
-            dep: null,
-            type: null,
-            terminal: null,
-            passing: [],
-        };
+        let fastest = {};
         for (let day = 0; -2 < day && day < 2; true) {
             dia.railway.diagrams[0].trains[direction].forEach((train) => {
                 if (
@@ -105,11 +98,11 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
                     if (
                         (
                             mode == 0 && nowsecond < depTime &&
-                            (fastest.train === null || fastest.arr > arrTime)
+                            (fastest.train == null || fastest.arr > arrTime)
                         ) ||
                         (
                             mode == 1 && nowsecond > arrTime &&
-                            (fastest.train === null || fastest.dep < depTime)
+                            (fastest.train == null || fastest.dep < depTime)
                         )
                     ) {
                         const passing = []
