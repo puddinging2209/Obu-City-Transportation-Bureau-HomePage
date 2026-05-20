@@ -9,7 +9,6 @@ import stations from "../data/stations.json";
 import walkPath from "../data/walkPath.json";
 
 const MAX_SPEED = 40 * 1000 / 3600; // m/s for heuristic
-const TRANSFER_COST = 0.75; // for heuristic
 
 // ==== 隣接リスト作成 ====
 const graph = {};
@@ -45,7 +44,9 @@ class MinHeap {
     _up(i) {
         while (i > 0) {
             const p = (i - 1) >> 1
-            if (this.heap[p].priority <= this.heap[i].priority) break
+            const parent = this.heap[p]
+            const current = this.heap[i]
+            if (parent.priority < current.priority || (parent.priority === current.priority && parent.tie <= current.tie)) break
                 ;[this.heap[p], this.heap[i]] = [this.heap[i], this.heap[p]]
             i = p
         }
@@ -58,8 +59,16 @@ class MinHeap {
             let r = l + 1
             let m = i
 
-            if (l < n && this.heap[l].priority < this.heap[m].priority) m = l
-            if (r < n && this.heap[r].priority < this.heap[m].priority) m = r
+            if (l < n) {
+                const left = this.heap[l]
+                const best = this.heap[m]
+                if (left.priority < best.priority || (left.priority === best.priority && left.tie < best.tie)) m = l
+            }
+            if (r < n) {
+                const right = this.heap[r]
+                const best = this.heap[m]
+                if (right.priority < best.priority || (right.priority === best.priority && right.tie < best.tie)) m = r
+            }
             if (m === i) break
 
                 ;[this.heap[m], this.heap[i]] = [this.heap[i], this.heap[m]]
@@ -138,7 +147,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
     const visiteds = {};
     const visitedPool = new Map();
 
-    function getVisitedIndex(sta, set) {
+    const getVisitedIndex = (sta, set) => {
         const key = setKey(sta, set);
 
         if (visitedPool.has(key)) {
@@ -157,6 +166,11 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 
     const distance = getDistance(startStation.slice(0, 4), goalStation.slice(0, 4));
 
+    const makePriority = (time, station, transfer) => ({
+        priority: Math.abs(time - baseTime) + heuristic(station, goalStation),
+        tie: transfer
+    });
+
     Object.keys(nodes).filter(code => name(code) === name(startStation)).forEach(code => {
 
         const startVisited = new Set([code]);
@@ -174,8 +188,8 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
             time: baseTime,
             phase: "transfer",
             visitedIndex,
-            priority: heuristic(startStation, goalStation),
-            transfer: 0
+            transfer: 0,
+            ...makePriority(baseTime, code, 0),
         });
 
     });
@@ -231,8 +245,9 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                         phase: "transfer",
                         visitedIndex,
                         transfer: transfer,
-                        priority: Math.abs(nextTime - baseTime) + heuristic(nextCode, goalStation) + transfer * TRANSFER_COST,
+                        ...makePriority(nextTime, nextCode, transfer),
                     })
+                    console.log(nextCode, makePriority(nextTime, nextCode, transfer));
                 }
             }
 
@@ -278,7 +293,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                     phase: "ride",
                     visitedIndex,
                     transfer: nextTransfer,
-                    priority: Math.abs(nextTime - baseTime) + heuristic(path.to, goalStation) + nextTransfer * TRANSFER_COST,
+                    ...makePriority(nextTime, path.to, nextTransfer),
                 });
 
             } else {
@@ -300,7 +315,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 
                     if (!result?.train) continue;
 
-                    // if (5000 <= Number(result.train.number) && Number(result.train.number) < 6000) console.log(name(station), name(nextStation), toTimeString(result.dep), toTimeString(result.arr));
+                    if (5000 <= Number(result.train.number) && Number(result.train.number) < 6000) console.log(name(station), name(nextStation), result.train);
 
                     const other = await searchOtherStops(
                         mode === 0 ? station : nextStation,
@@ -338,8 +353,11 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                                 )
                             ) && isForward(station, to, goalStation, 10000)
                         ) {
+                            const newTransfer = used[curStateId]?.train?.number !== result.train?.number || used[curStateId]?.train?.number === '' || result?.train?.number === ''
+                            const nextTransfer = transfer + Number(newTransfer);
+
                             bestTime[nextStateId] = nextTime;
-                            bestTransfer[nextStateId] = transfer + 1;
+                            bestTransfer[nextStateId] = nextTransfer;
                             previous[nextStateId] = curStateId;
                             used[nextStateId] = {
                                 ...result,
@@ -350,23 +368,15 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                                 viaRosen
                             };
 
-                            // let nextTransfer = transfer;
-                            // if (used[curStateId]?.train?.number !== result.train?.number || used[curStateId]?.train?.number === '' || result?.train?.number === '') {
-                            //     nextTransfer++;
-                            // }
-
-                            const newTransfer = used[curStateId]?.train?.number !== result.train?.number || used[curStateId]?.train?.number === '' || result?.train?.number === ''
-
-                            const push = {
+                            pq.push({
                                 station: to,
                                 time: nextTime + Number(newTransfer) * transferTime,
                                 phase: "ride",
                                 visitedIndex,
-                                transfer: transfer + Number(newTransfer),
-                                priority: Math.abs(nextTime - baseTime) + heuristic(to, goalStation) + (transfer + Number(newTransfer)) * TRANSFER_COST,
-                            }
-                            pq.push(push);
-                            if (true) console.log(name(station), name(to), Math.round(push.priority), push, result.train);
+                                transfer: nextTransfer,
+                                ...makePriority(nextTime, to, nextTransfer),
+                            });
+                            console.log(name(station), name(to), makePriority(nextTime, to, nextTransfer));
                         }
                     })
                 }

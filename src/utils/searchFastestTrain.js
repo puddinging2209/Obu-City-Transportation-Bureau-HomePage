@@ -74,12 +74,10 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
 
         const innerstations = dia.railway.stations.map(sta => sta.name);
 
-        let direction;
+        let direction = 0;
         let from = (innerstations.includes(fromsta)) ? innerstations.indexOf(fromsta) : innerstations.indexOf(fromsta.slice(0, 4));
         let to = (innerstations.includes(tosta)) ? innerstations.indexOf(tosta) : innerstations.indexOf(tosta.slice(0, 4));
-        if (from < to) {
-            direction = 0;
-        } else {
+        if (from > to) {
             direction = 1;
             from = innerstations.length - 1 - from;
             to = innerstations.length - 1 - to;
@@ -137,6 +135,7 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
             }
         }
 
+        if (fastest.train.number == '5162') console.log(fromsta, tosta)
         return fastest;
 
     } else {
