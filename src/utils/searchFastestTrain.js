@@ -30,7 +30,7 @@ export async function searchOtherStops(station, time, train, passing, mode) {
     const from = stops.findIndex(sta => sta.name === name(station));
     const step = mode === 0 ? 1 : -1;
 
-    const newVisited = passing
+    const newVisited = [...passing];
     const result = [];
     const viaRosen = [];
     for (let i = from + step; (i >= 0 && i < stops.length); i += step) {
@@ -48,10 +48,11 @@ export async function searchOtherStops(station, time, train, passing, mode) {
             to: stop.code,
             arr,
             dep,
-            newVisited: [...passing, stop.code],
+            newVisited: [...newVisited],
             viaRosen: [...viaRosen]
         })
     }
+    if (train.number.startsWith('5')) console.log(result);
     return result;
 }
 
@@ -83,7 +84,7 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
             to = innerstations.length - 1 - to;
         }
 
-        let fastest = {};
+        const fastests = [];
         for (let day = 0; -2 < day && day < 2; true) {
             dia.railway.diagrams[0].trains[direction].forEach((train) => {
                 if (
@@ -96,11 +97,11 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
                     if (
                         (
                             mode == 0 && nowsecond < depTime &&
-                            (fastest.train == null || fastest.arr > arrTime)
+                            (fastests.length < 3 || fastests.at(-1).arr > arrTime)
                         ) ||
                         (
                             mode == 1 && nowsecond > arrTime &&
-                            (fastest.train == null || fastest.dep < depTime)
+                            (fastests.length < 3 || fastests.at(-1).dep < depTime)
                         )
                     ) {
                         const passing = []
@@ -116,17 +117,29 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
                             passing.push(station)
                         })
                         if ((tokkyu || (!tokkyu && type != "特急" && type != "ライナー")) && !visited.some(s => passing.includes(s))) {
-                            fastest.train = train
-                            fastest.arr = arrTime
-                            fastest.dep = depTime
-                            fastest.type = type
-                            fastest.terminal = terminal(train, dia)
-                            fastest.passing = passing
+                            fastests.push({
+                                train: train,
+                                arr: arrTime,
+                                dep: depTime,
+                                type: type,
+                                terminal: terminal(train, dia),
+                                passing: passing
+                            })
+                            fastests.sort((a, b) => {
+                                if (mode == 0) {
+                                    return a.arr - b.arr || a.dep - b.dep
+                                } else {
+                                    return b.dep - a.dep || b.arr - a.arr
+                                }
+                            })
+                            if (fastests.length > 3) {
+                                fastests.pop()
+                            }
                         }
                     }
                 }
             })
-            if (fastest.train) break;
+            if (fastests.length > 0) break;
 
             if (mode == 0) {
                 day++
@@ -135,8 +148,7 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
             }
         }
 
-        if (fastest.train.number == '5162') console.log(fromsta, tosta)
-        return fastest;
+        return fastests;
 
     } else {
 
@@ -149,14 +161,7 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
         let f = (fromStations.includes(fromsta)) ? fromStations.indexOf(fromsta) : fromStations.indexOf(fromsta.slice(0, 4));
         let t = (toStations.includes(tosta)) ? toStations.indexOf(tosta) : toStations.indexOf(tosta.slice(0, 4));
 
-        let fastest = {
-            train: null,
-            arr: null,
-            dep: null,
-            type: null,
-            terminal: null,
-            passing: [],
-        };
+        const fastests = [];
         for (let day = 0; -2 < day && day < 2; true) {
             fromDia.railway.diagrams[0].trains.flat().forEach((fromTrain) => {
                 const from = fromTrain.direction === 0 ? f : fromStations.length - 1 - f;
@@ -179,10 +184,10 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
                     if (
                         (
                             mode == 0 && nowsecond < depTime &&
-                            (fastest.train == null || fastest.arr > arrTime)
+                            (fastests.length === 0 || fastests.at(-1).arr > arrTime)
                         ) || (
                             mode == 1 && nowsecond > arrTime &&
-                            (fastest.train == null || fastest.dep < depTime)
+                            (fastests.length === 0 || fastests.at(-1).dep < depTime)
                         )
                     ) {
                         const passing = []
@@ -207,17 +212,29 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
                             }
                         })
                         if (tokkyu || (type != "特急" && type != "ライナー")) {
-                            fastest.train = fromTrain
-                            fastest.arr = arrTime
-                            fastest.dep = depTime
-                            fastest.type = type
-                            fastest.terminal = terminal(toTrain, toDia)
-                            fastest.passing = passing
+                            fastests.push({
+                                train: fromTrain,
+                                arr: arrTime,
+                                dep: depTime,
+                                type: type,
+                                terminal: terminal(toTrain, toDia),
+                                passing: passing
+                            });
+                            fastests.sort((a, b) => {
+                                if (mode == 0) {
+                                    return a.arr - b.arr || a.dep - b.dep
+                                } else {
+                                    return b.dep - a.dep || b.arr - a.arr
+                                }
+                            })
+                            if (fastests.length > 3) {
+                                fastests.pop()
+                            }
                         }
                     }
                 }
             })
-            if (fastest.train) break;
+            if (fastests.length > 0) break;
 
             if (mode == 0) {
                 day++
@@ -226,7 +243,7 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
             }
         }
 
-        return fastest;
+        return fastests;
 
     }
 }

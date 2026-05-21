@@ -247,7 +247,6 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                         transfer: transfer,
                         ...makePriority(nextTime, nextCode, transfer),
                     })
-                    console.log(nextCode, makePriority(nextTime, nextCode, transfer));
                 }
             }
 
@@ -304,7 +303,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                     const visitedArray = [...visited];
                     if (visitedArray.some(s => name(s) === name(nextStation))) continue;
 
-                    const result = await searchFastestTrain(
+                    const results = await searchFastestTrain(
                         time,
                         mode === 0 ? station : nextStation,
                         mode === 0 ? nextStation : station,
@@ -313,71 +312,74 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                         visitedArray
                     );
 
-                    if (!result?.train) continue;
+                    results.forEach(async result => {
 
-                    if (5000 <= Number(result.train.number) && Number(result.train.number) < 6000) console.log(name(station), name(nextStation), result.train);
+                        if (!result?.train) return;
 
-                    const other = await searchOtherStops(
-                        mode === 0 ? station : nextStation,
-                        mode === 0 ? result.arr : result.dep,
-                        result.train,
-                        visitedArray,
-                        mode
-                    );
 
-                    other.forEach(({ to, arr, dep, newVisited: visited, viaRosen }) => {
-
-                        const nextTime = mode === 0 ? arr : dep;
-
-                        const nextVisited = new Set(visited);
-
-                        const staName = name(to);
-                        const visitedIndex = getVisitedIndex(staName, nextVisited);
-
-                        const nextStateId = makeStateId(
-                            to,
-                            "ride",
-                            visitedIndex
+                        const other = await searchOtherStops(
+                            mode === 0 ? station : nextStation,
+                            mode === 0 ? result.arr : result.dep,
+                            result.train,
+                            visitedArray,
+                            mode
                         );
+                        if (5000 <= Number(result.train.number) && Number(result.train.number) < 6000) console.log(name(station), name(nextStation), result.train, other);
 
-                        if (
-                            (
-                                bestTime[nextStateId] === undefined ||
+                        other.forEach(({ to, arr, dep, newVisited: visited, viaRosen }) => {
+
+                            const nextTime = mode === 0 ? arr : dep;
+
+                            const nextVisited = new Set(visited);
+
+                            const staName = name(to);
+                            const visitedIndex = getVisitedIndex(staName, nextVisited);
+
+                            const nextStateId = makeStateId(
+                                to,
+                                "ride",
+                                visitedIndex
+                            );
+
+                            if (
                                 (
-                                    (mode === 0 && nextTime < bestTime[nextStateId]) ||
-                                    (mode === 1 && nextTime > bestTime[nextStateId])
-                                ) ||
-                                (
-                                    nextTime === bestTime[nextStateId] &&
-                                    bestTransfer[nextStateId] > transfer + 1
-                                )
-                            ) && isForward(station, to, goalStation, 10000)
-                        ) {
-                            const newTransfer = used[curStateId]?.train?.number !== result.train?.number || used[curStateId]?.train?.number === '' || result?.train?.number === ''
-                            const nextTransfer = transfer + Number(newTransfer);
+                                    bestTime[nextStateId] === undefined ||
+                                    (
+                                        (mode === 0 && nextTime < bestTime[nextStateId]) ||
+                                        (mode === 1 && nextTime > bestTime[nextStateId])
+                                    ) ||
+                                    (
+                                        nextTime === bestTime[nextStateId] &&
+                                        bestTransfer[nextStateId] > transfer + 1
+                                    )
+                                ) && isForward(station, to, goalStation, 10000)
+                            ) {
+                                const newTransfer = used[curStateId]?.train?.number !== result.train?.number || used[curStateId]?.train?.number === '' || result?.train?.number === ''
+                                const nextTransfer = transfer + Number(newTransfer);
 
-                            bestTime[nextStateId] = nextTime;
-                            bestTransfer[nextStateId] = nextTransfer;
-                            previous[nextStateId] = curStateId;
-                            used[nextStateId] = {
-                                ...result,
-                                arr: mode === 0 ? arr : result.arr,
-                                dep: mode === 1 ? dep : result.dep,
-                                from: station,
-                                to: to,
-                                viaRosen
-                            };
+                                bestTime[nextStateId] = nextTime;
+                                bestTransfer[nextStateId] = nextTransfer;
+                                previous[nextStateId] = curStateId;
+                                used[nextStateId] = {
+                                    ...result,
+                                    arr: mode === 0 ? arr : result.arr,
+                                    dep: mode === 1 ? dep : result.dep,
+                                    from: station,
+                                    to: to,
+                                    viaRosen
+                                };
 
-                            pq.push({
-                                station: to,
-                                time: nextTime + Number(newTransfer) * transferTime,
-                                phase: "ride",
-                                visitedIndex,
-                                transfer: nextTransfer,
-                                ...makePriority(nextTime, to, nextTransfer),
-                            });
-                            console.log(name(station), name(to), makePriority(nextTime, to, nextTransfer));
-                        }
+                                pq.push({
+                                    station: to,
+                                    time: nextTime + Number(newTransfer) * transferTime,
+                                    phase: "ride",
+                                    visitedIndex,
+                                    transfer: nextTransfer,
+                                    ...makePriority(nextTime, to, nextTransfer),
+                                });
+                                console.log(name(station), name(to), makePriority(nextTime, to, nextTransfer));
+                            }
+                        })
                     })
                 }
             }
