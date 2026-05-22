@@ -18,40 +18,44 @@ async function readOud(json) {
 /**
  * 同じ列車で行ける駅の到着、出発時刻を探す
  * @param {string} station 出発駅
+ * @param {number} fromTime 出発時刻
  * @param {number} time 時刻
  * @param {Object} train 乗車電
  * @param {Array<string>} passing 経由駅
  * @param {0|1} mode mode
  * @returns {Array<{to: string, arr: number, dep: number}>} to駅名、到着時刻、出発時刻
  */
-export async function searchOtherStops(station, time, train, passing, mode) {
+export async function searchOtherStops(station, fromTime, time, train, passing, mode) {
     const stops = await formatStops(nodes[station].json, train);
 
-    const from = stops.findIndex(sta => sta.name === name(station));
+    const froms = stops.filter(sta => sta.name === name(station)).map(sta => stops.indexOf(sta));
+    if (froms.length === 0) return [];
     const step = mode === 0 ? 1 : -1;
 
-    const newVisited = [...passing];
     const result = [];
-    const viaRosen = [];
-    for (let i = from + step; (i >= 0 && i < stops.length); i += step) {
-        const stop = stops[i];
-        if (passing.some(sta => name(sta) == stop.name)) break;
-        newVisited.push(stop.code);
-        const lineName = stop.lineName;
-        if (!viaRosen.includes(lineName)) viaRosen.push(lineName);
-        if (stop.stopType !== 'stop') continue;
-        if (mode === 0 && stop.arr === null) continue;
-        if (mode === 1 && stop.dep === null) continue;
-        const arr = stop.arr + Number((mode === 0 && time > stop.arr) || (mode === 1 && time < stop.arr)) * 86400;
-        const dep = stop.dep + Number((mode === 0 && time > stop.dep) || (mode === 1 && time < stop.dep)) * 86400;
-        result.push({
-            to: stop.code,
-            arr,
-            dep,
-            newVisited: [...newVisited],
-            viaRosen: [...viaRosen]
-        })
-    }
+    froms.forEach(from => {
+        const newVisited = [...passing];
+        const viaRosen = [];
+        for (let i = from + step; (i >= 0 && i < stops.length); i += step) {
+            const stop = stops[i];
+            if (passing.some(sta => name(sta) == stop.name)) break;
+            newVisited.push(stop.code);
+            const lineName = stop.lineName;
+            if (!viaRosen.includes(lineName)) viaRosen.push(lineName);
+            if (stop.stopType !== 'stop') continue;
+            if (mode === 0 && stop.arr === null) continue;
+            if (mode === 1 && stop.dep === null) continue;
+            const arr = stop.arr + Number((mode === 0 && time > stop.arr) || (mode === 1 && time < stop.arr)) * 86400;
+            const dep = stop.dep + Number((mode === 0 && time > stop.dep) || (mode === 1 && time < stop.dep)) * 86400;
+            result.push({
+                to: stop.code,
+                arr,
+                dep,
+                newVisited: [...newVisited],
+                viaRosen: [...viaRosen]
+            })
+        }
+    });
     if (train.number.startsWith('5')) console.log(result);
     return result;
 }

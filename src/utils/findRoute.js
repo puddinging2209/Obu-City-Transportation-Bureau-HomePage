@@ -319,12 +319,13 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 
                         const other = await searchOtherStops(
                             mode === 0 ? station : nextStation,
+                            mode === 0 ? result.dep : result.arr,
                             mode === 0 ? result.arr : result.dep,
                             result.train,
                             visitedArray,
                             mode
                         );
-                        if (5000 <= Number(result.train.number) && Number(result.train.number) < 6000) console.log(name(station), name(nextStation), result.train, other);
+                        console.log(name(station), name(nextStation), result.train, other);
 
                         other.forEach(({ to, arr, dep, newVisited: visited, viaRosen }) => {
 
