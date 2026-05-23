@@ -56,7 +56,6 @@ export async function searchOtherStops(station, fromTime, time, train, passing, 
             })
         }
     });
-    if (train.number.startsWith('5')) console.log(result);
     return result;
 }
 

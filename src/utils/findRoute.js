@@ -325,7 +325,6 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                             visitedArray,
                             mode
                         );
-                        console.log(name(station), name(nextStation), result.train, other);
 
                         other.forEach(({ to, arr, dep, newVisited: visited, viaRosen }) => {
 
@@ -378,7 +377,6 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                                     transfer: nextTransfer,
                                     ...makePriority(nextTime, to, nextTransfer),
                                 });
-                                console.log(name(station), name(to), makePriority(nextTime, to, nextTransfer));
                             }
                         })
                     })
