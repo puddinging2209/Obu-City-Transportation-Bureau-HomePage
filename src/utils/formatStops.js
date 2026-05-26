@@ -61,7 +61,7 @@ async function searchOuter(train, first, last, line) {
                     d.number !== '' &&
                     (
                         !(
-                            Object.values(lines).find(l => l.json === resolveRosen(diagram.railway.name))?.isLoop &&
+                            Object.values(lines).find(l => l.json === resolveRosen(diagram.railway.name))?.isLoop ||
                             Object.values(lines).find(l => l.json === resolveRosen(line))?.isLoop
                         ) ||
                         adjustTime(
@@ -80,7 +80,7 @@ async function searchOuter(train, first, last, line) {
                         d.number !== '' &&
                         (
                             !(
-                                Object.values(lines).find(l => l.json === resolveRosen(beforeDiagram.railway.name))?.isLoop &&
+                                Object.values(lines).find(l => l.json === resolveRosen(beforeDiagram.railway.name))?.isLoop ||
                                 Object.values(lines).find(l => l.json === resolveRosen(line))?.isLoop
                             ) ||
                             adjustTime(
@@ -121,7 +121,7 @@ async function searchOuter(train, first, last, line) {
                     d.number !== '' &&
                     (
                         !(
-                            Object.values(lines).find(l => l.json === resolveRosen(diagram.railway.name))?.isLoop &&
+                            Object.values(lines).find(l => l.json === resolveRosen(diagram.railway.name))?.isLoop ||
                             Object.values(lines).find(l => l.json === resolveRosen(line))?.isLoop
                         ) ||
                         adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) >=
@@ -140,7 +140,7 @@ async function searchOuter(train, first, last, line) {
                     d.number !== '' &&
                     (
                         !(
-                            Object.values(lines).find(l => l.json === resolveRosen(afterDiagram.railway.name))?.isLoop &&
+                            Object.values(lines).find(l => l.json === resolveRosen(afterDiagram.railway.name))?.isLoop ||
                             Object.values(lines).find(l => l.json === resolveRosen(line))?.isLoop
                         ) ||
                         adjustTime(d.timetable._data[d.timetable.firstStationIndex]?.departure) >=
