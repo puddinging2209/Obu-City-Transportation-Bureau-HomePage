@@ -31,11 +31,24 @@ export default function StationSelecter({ref, value, placeholder, onChange, auto
             .filter(station => !disabledStations.includes(station.value));
     }
 
+    const onSelect = (option) => {
+        const history = JSON.parse(window.localStorage.getItem('stationHistory')) || [];
+        history.push(option.value);
+        window.localStorage.setItem('stationHistory', JSON.stringify(history));
+        onChange(option);
+    };
+
+    const history = JSON.parse(window.localStorage.getItem('stationHistory')) || [];
+    const sortedOptions = options
+        .slice()
+        .sort((a, b) => a.kana.localeCompare(b.kana))
+        .sort((a, b) => history.indexOf(b.value) - history.indexOf(a.value));
+
     return (
         <Select
             ref={ref}
-            options={options.sort((a, b) => a.kana.localeCompare(b.kana))}
-            onChange={onChange}
+            options={sortedOptions}
+            onChange={onSelect}
             value={value}
             placeholder={placeholder ?? "駅・バス停を検索"}
             isSearchable={true}
