@@ -46,8 +46,8 @@ class MinHeap {
             const p = (i - 1) >> 1
             const parent = this.heap[p]
             const current = this.heap[i]
-            if (parent.priority < current.priority || (parent.priority === current.priority && parent.tie <= current.tie)) break
-                ;[this.heap[p], this.heap[i]] = [this.heap[i], this.heap[p]]
+            if (parent.priority < current.priority || (parent.priority === current.priority && parent.tie <= current.tie)) break;
+            [this.heap[p], this.heap[i]] = [this.heap[i], this.heap[p]]
             i = p
         }
     }
@@ -71,7 +71,7 @@ class MinHeap {
             }
             if (m === i) break
 
-                ;[this.heap[m], this.heap[i]] = [this.heap[i], this.heap[m]]
+            [this.heap[m], this.heap[i]] = [this.heap[i], this.heap[m]]
             i = m
         }
     }
@@ -137,7 +137,7 @@ function setKey(sta, set) {
  */
 
 export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu, allowOuterTransfer = false) {
-
+    // メインループを非同期にする必要があります
     const pq = new MinHeap();
 
     const bestTime = {};
@@ -198,7 +198,9 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 
     while (true) {
         const cur = pq.pop();
-        if (!cur) break;
+        if (!cur) {
+            break
+        };
 
         const { station, time, phase, visitedIndex, transfer } = cur;
         const visited = visiteds[name(station)][visitedIndex];
@@ -206,6 +208,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 
         // === ゴール ===
         if (name(station) === name(goalStation) && phase === "ride") {
+            console.log('a')
             goalStateId = curStateId;
             break;
         }
@@ -214,6 +217,8 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
         if (isFar(startStation, station, goalStation, distance)) {
             continue;
         }
+
+        console.log(cur);
 
         // ===== ride → transfer =====
         if (phase === "ride") {
@@ -312,10 +317,8 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                         visitedArray
                     );
 
-                    results.forEach(async result => {
-
-                        if (!result?.train) return;
-
+                    for (const result of results) {
+                        if (!result?.train) continue;
 
                         const other = await searchOtherStops(
                             mode === 0 ? station : nextStation,
@@ -326,8 +329,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                             mode
                         );
 
-                        other.forEach(({ to, arr, dep, newVisited: visited, viaRosen }) => {
-
+                        for (const { to, arr, dep, newVisited: visited, viaRosen } of other) {
                             const nextTime = mode === 0 ? arr : dep;
 
                             const nextVisited = new Set(visited);
@@ -378,8 +380,8 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
                                     ...makePriority(nextTime, to, nextTransfer),
                                 });
                             }
-                        })
-                    })
+                        }
+                    }
                 }
             }
         }
