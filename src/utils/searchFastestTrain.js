@@ -241,7 +241,6 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
                                     fromTrain.direction === 0 ?
                                         fromStations[i]
                                     :   fromStations[fromStations.length - 1 - i];
-
                                 passing.push(station);
                             }
                         });
@@ -251,7 +250,6 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
                                     toTrain.direction === 0 ?
                                         toStations[i]
                                     :   toStations[toStations.length - 1 - i];
-
                                 passing.push(station);
                             }
                         });

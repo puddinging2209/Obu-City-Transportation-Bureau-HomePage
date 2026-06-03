@@ -225,6 +225,7 @@ export async function dijkstra(
         const curStateId = makeStateId(station, phase, visitedIndex);
 
         // === ゴール ===
+        console.log(name(station), name(goalStation));
         if (name(station) === name(goalStation) && phase === 'ride') {
             goalStateId = curStateId;
             break;
