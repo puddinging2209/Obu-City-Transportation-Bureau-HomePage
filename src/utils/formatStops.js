@@ -212,7 +212,6 @@ async function searchOuter(train, first, last, line) {
             }
         }
     }
-    stopsCache.set(key, result);
     return result;
 }
 
