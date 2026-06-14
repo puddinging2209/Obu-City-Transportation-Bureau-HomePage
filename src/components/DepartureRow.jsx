@@ -12,7 +12,6 @@ import types from '../data/types.json';
 import TrainStopsDialog from './TrainStopsDialog.jsx';
 
 function DepartureRow({ dep, needId = false, station }) {
-
     const [isShowDialog, setIsShowDialog] = React.useState(false);
 
     return (
@@ -28,62 +27,62 @@ function DepartureRow({ dep, needId = false, station }) {
                     setIsShowDialog(true);
                 }}
             >
-                <Grid
-                    container
-                    wrap="nowrap"
-                    alignItems="center"
-                    columnGap={0.5}
-                >
+                <Grid container wrap='nowrap' alignItems='center' columnGap={0.5}>
                     {/* 種別 */}
                     <Grid item sx={{ flex: '0 0 auto' }}>
-                    <Chip
-                        label={dep.typeName}
-                        size="small"
-                        sx={{
-                        background: types[dep.typeName].color,
-                        color: '#fff',
-                        fontSize: '0.75em',
-                        minWidth: '8.5em',
-                        px: 0.8,
-                        }}
-                    />
+                        <Chip
+                            label={dep.typeName}
+                            size='small'
+                            sx={{
+                                background: types[dep.typeName].color,
+                                color: '#fff',
+                                fontSize: '0.75em',
+                                minWidth: '8.5em',
+                                px: 0.8,
+                            }}
+                        />
                     </Grid>
 
                     {/* 行先（残り全部） */}
                     <Grid
-                    item
-                    sx={{
-                        textAlign: 'center',
-                        flex: '1 1 auto',
-                        minWidth: 0, // ← 超重要
-                    }}
-                    >
-                    <Box
+                        item
                         sx={{
-                        overflow: 'hidden',
-                        whiteSpace: 'nowrap',
+                            textAlign: 'center',
+                            flex: '1 1 auto',
+                            minWidth: 0, // ← 超重要
                         }}
                     >
-                        <OverflowMarquee text={name(dep.terminal)} />
-                    </Box>
+                        <Box
+                            sx={{
+                                overflow: 'hidden',
+                                whiteSpace: 'nowrap',
+                            }}
+                        >
+                            <OverflowMarquee text={name(dep.terminal)} />
+                        </Box>
                     </Grid>
 
                     {/* 時刻（固定） */}
                     <Grid
-                    item
-                    sx={{
-                        flex: '0 0 42px',
-                        textAlign: 'right',
-                    }}
+                        item
+                        sx={{
+                            flex: '0 0 42px',
+                            textAlign: 'right',
+                        }}
                     >
-                    <Typography variant="body2" fontWeight="bold">
-                        {toTimeString(dep.time)}
-                    </Typography>
+                        <Typography variant='body2' fontWeight='bold'>
+                            {toTimeString(dep.time)}
+                        </Typography>
                     </Grid>
                 </Grid>
             </Box>
 
-            <TrainStopsDialog dep={dep} isShowDialog={isShowDialog} onClose={() => setIsShowDialog(false)} emphasized={[station]} />
+            <TrainStopsDialog
+                dep={dep}
+                isShowDialog={isShowDialog}
+                onClose={() => setIsShowDialog(false)}
+                emphasized={[`${station},${dep.time}`]}
+            />
         </>
     );
 }
