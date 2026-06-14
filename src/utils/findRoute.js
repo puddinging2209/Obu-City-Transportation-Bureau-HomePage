@@ -1,5 +1,6 @@
 import reconstructByState from './formatRoute.js';
 import getDistance from './getDistance.js';
+import { dia } from './readOud.js';
 import { searchFastestTrain, searchOtherStops } from './searchFastestTrain.js';
 import { name } from './Station.js';
 
@@ -114,31 +115,30 @@ function heuristic(sta, goal) {
     return haversine(sta, goal) / MAX_SPEED;
 }
 
-function isForward(current, next, goal, mode, border = 10000) {
+function isForward(current, next, goal, border = 10000) {
     const d1 = haversine(current, goal);
     const d2 = haversine(next, goal);
-    if (mode === 0) {
-        return d2 < d1 + border; // 少し余裕を持たせる
-    } else {
-        // mode=1では逆方向探索なので、判定を緩くする
-        return d2 > d1 - border;
-    }
+    return d2 < d1 + border; // 少し余裕を持たせる
 }
 
-function isFar(start, current, goal, d, mode) {
+function isFar(start, current, goal, d) {
     const d1 = haversine(start, current);
     const d2 = haversine(current, goal);
-    // mode=1では枝切りを甘くする
-    const factor = mode === 0 ? 1.3 : 2.0;
-    return d1 + d2 > d * 1000 * factor;
+    return d1 + d2 > d * 1000 * 1.3;
 }
 
 function makeStateId(sta, phase, visitedIndex) {
     return `${name(sta)}@${phase}@${visitedIndex}`;
 }
 
-function setKey(sta, set) {
-    return `${name(sta)}@${[...set].sort().join(',')}`;
+function setKey(sta, visitedNames) {
+    return `${name(sta)}@${[...visitedNames].sort().join(',')}`;
+}
+
+function addVisited(visitedNames, stationCode) {
+    const staName = name(stationCode);
+    if (visitedNames.includes(staName)) return visitedNames;
+    return [...visitedNames, staName].sort();
 }
 
 /**
@@ -172,8 +172,9 @@ export async function dijkstra(
     const visiteds = {};
     const visitedPool = new Map();
 
-    const getVisitedIndex = (sta, set) => {
-        const key = setKey(sta, set);
+    const getVisitedIndex = (sta, visitedCodes) => {
+        const normalized = Array.from(visitedCodes).slice().sort();
+        const key = setKey(sta, normalized);
 
         if (visitedPool.has(key)) {
             return visitedPool.get(key);
@@ -181,7 +182,7 @@ export async function dijkstra(
 
         visiteds[sta] ??= [];
         const index = visiteds[sta].length;
-        visiteds[sta].push(set);
+        visiteds[sta].push(normalized);
         visitedPool.set(key, index);
         return index;
     };
@@ -191,19 +192,22 @@ export async function dijkstra(
 
     const distance = getDistance(startStation.slice(0, 4), goalStation.slice(0, 4));
 
-    const makePriority = (time, station, transfer) => ({
-        priority: Math.abs(time - baseTime) + heuristic(station, goalStation),
-        tie: transfer,
-    });
+    // ヒューリスティックの影響をやや抑える（mode=1でも安定させる目的）
+    const HEURISTIC_WEIGHT = 0.2;
+    const makePriority = (time, station, transfer) => {
+        const elapsed = mode === 0 ? time - baseTime : baseTime - time;
+        return {
+            priority: elapsed + heuristic(station, goalStation) * HEURISTIC_WEIGHT,
+            tie: transfer,
+        };
+    };
 
     const initialPhase = mode === 0 ? 'transfer' : 'ride';
     Object.keys(nodes)
         .filter((code) => name(code) === name(startStation))
         .forEach((code) => {
-            const startVisited = new Set([code]);
-
-            const staName = name(code);
-            const visitedIndex = getVisitedIndex(staName, startVisited);
+            const startVisited = [name(code)];
+            const visitedIndex = getVisitedIndex(name(code), startVisited);
 
             const startStateId = makeStateId(code, initialPhase, visitedIndex);
 
@@ -250,7 +254,7 @@ export async function dijkstra(
         }
 
         // === 枝切り(?) ===
-        if (isFar(startStation, station, goalStation, distance, mode)) {
+        if (isFar(startStation, station, goalStation, distance)) {
             if (processedCount <= 10) {
                 console.log(`[mode=${mode}] 枝切り: ${name(station)} (phase=${phase})`);
             }
@@ -266,15 +270,18 @@ export async function dijkstra(
                 .map((sta) => sta[0]);
             for (const nextCode of codes) {
                 if (nodes[nextCode].line === '徒歩経路' && !allowOuterTransfer) continue;
-                const nextVisited = new Set(visited);
-                nextVisited.add(nextCode);
+                const nextVisited = addVisited(visited, nextCode);
 
                 const staName = name(nextCode);
                 const visitedIndex = getVisitedIndex(staName, nextVisited);
 
                 const nextStateId = makeStateId(nextCode, 'transfer', visitedIndex);
 
-                if (bestTime[nextStateId] === undefined || nextTime < bestTime[nextStateId]) {
+                if (
+                    bestTime[nextStateId] === undefined ||
+                    (mode === 0 && nextTime < bestTime[nextStateId]) ||
+                    (mode === 1 && nextTime > bestTime[nextStateId])
+                ) {
                     bestTime[nextStateId] = nextTime;
                     bestTransfer[nextStateId] = transfer;
                     previous[nextStateId] = curStateId;
@@ -296,11 +303,11 @@ export async function dijkstra(
             if (nodes[station].line === '徒歩経路') {
                 if (!allowOuterTransfer) continue;
                 const path = walkPath.find((path) => path.from === station);
-                if ([...visited].some((s) => name(s) === name(path.to))) continue;
+                if (visited.includes(name(path.to))) continue;
 
                 const nextTime = mode === 0 ? time + path.time : time - path.time;
                 const nextTransfer = transfer + 1;
-                const nextVisited = new Set([...visited, path.to]);
+                const nextVisited = addVisited(visited, path.to);
 
                 const staName = name(path.to);
                 const visitedIndex = getVisitedIndex(staName, nextVisited);
@@ -337,9 +344,8 @@ export async function dijkstra(
                 }
             } else {
                 for (const { node: nextStation } of graph[station] ?? []) {
-                    // 不正乗車、ダメゼッタイ
-                    const visitedArray = [...visited];
-                    if (visitedArray.some((s) => name(s) === name(nextStation))) continue;
+                    if (!isForward(station, nextStation, goalStation)) continue;
+                    if (visited.some((s) => s === name(nextStation))) continue;
 
                     const results = await searchFastestTrain(
                         time,
@@ -347,7 +353,7 @@ export async function dijkstra(
                         mode === 0 ? nextStation : station,
                         mode,
                         tokkyu,
-                        visitedArray,
+                        visited,
                     );
 
                     for (const result of results) {
@@ -358,14 +364,14 @@ export async function dijkstra(
                             mode === 0 ? result.dep : result.arr,
                             mode === 0 ? result.arr : result.dep,
                             result.train,
-                            visitedArray,
+                            visited,
                             mode,
                         );
 
-                        for (const { to, arr, dep, newVisited: visited, viaRosen } of other) {
+                        for (const { to, arr, dep, newVisited: nextVisitedNames, viaRosen } of other) {
                             const nextTime = mode === 0 ? arr : dep;
 
-                            const nextVisited = new Set(visited);
+                            const nextVisited = addVisited(nextVisitedNames, to);
 
                             const staName = name(to);
                             const visitedIndex = getVisitedIndex(staName, nextVisited);
@@ -378,7 +384,7 @@ export async function dijkstra(
                                     (mode === 1 && nextTime > bestTime[nextStateId]) ||
                                     (nextTime === bestTime[nextStateId] &&
                                         bestTransfer[nextStateId] > transfer + 1)) &&
-                                isForward(station, to, goalStation, mode, 10000)
+                                isForward(station, to, goalStation, 10000)
                             ) {
                                 const newTransfer =
                                     used[curStateId]?.train?.number !== result.train?.number ||
@@ -390,12 +396,15 @@ export async function dijkstra(
                                 bestTransfer[nextStateId] = nextTransfer;
                                 previous[nextStateId] = curStateId;
                                 used[nextStateId] = {
-                                    ...result,
+                                    train: { number: result.train?.number ?? '' },
+                                    type: result.type,
+                                    terminal: result.terminal,
                                     arr: mode === 0 ? arr : result.arr,
                                     dep: mode === 1 ? dep : result.dep,
                                     from: station,
                                     to: to,
                                     viaRosen,
+                                    meter: result.meter,
                                 };
 
                                 pq.push({
@@ -421,5 +430,37 @@ export async function dijkstra(
         console.log('見つかりませんでした');
         return null;
     }
-    return reconstructByState(goalStateId, previous, used, distance, mode);
+
+    // reconstruct に渡す used を最小限のフルデータで復元する
+    const usedForReconstruct = {};
+    // collect states from goal to start
+    const states = [];
+    let cur = goalStateId;
+    while (cur) {
+        states.push(cur);
+        cur = previous[cur];
+    }
+
+    // for each used state on path, if train is a lightweight summary, load full train object
+    for (const s of states) {
+        const u = used[s];
+        if (!u) continue;
+        if (u.train && typeof u.train === 'object' && !u.train.timetable && u.train.number) {
+            try {
+                const stationCode = u.from || u.to;
+                const diagram = await dia(nodes[stationCode].json);
+                const trains = diagram.railway.diagrams[0].trains.flat();
+                const full = trains.find((t) => t.number === u.train.number);
+                if (full) {
+                    usedForReconstruct[s] = { ...u, train: full };
+                    continue;
+                }
+            } catch (e) {
+                // fallback to original
+            }
+        }
+        usedForReconstruct[s] = u;
+    }
+
+    return reconstructByState(goalStateId, previous, usedForReconstruct, distance, mode);
 }
