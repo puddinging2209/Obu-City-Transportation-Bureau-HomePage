@@ -6,6 +6,8 @@ import lines from '../data/lines.json';
 import nodes from '../data/nodes.json';
 import numberList from '../data/numberList.json';
 import stations from '../data/stations.json';
+ 
+const stopsCache = new Map();
 
 function searchStops(diagram, train) {
     const stationList = diagram.railway.stations.map((sta) => sta.name);
@@ -210,6 +212,7 @@ async function searchOuter(train, first, last, line) {
             }
         }
     }
+    stopsCache.set(key, result);
     return result;
 }
 
@@ -220,6 +223,8 @@ async function searchOuter(train, first, last, line) {
  */
 
 export default async function formatStops(line, train) {
+    const key = `${line}@${train.number}`;
+    if (stopsCache.has(key)) return stopsCache.get(key);
     const innerDiagram = await dia(line);
     const inner = searchStops(innerDiagram, train);
 
@@ -272,3 +277,6 @@ export default async function formatStops(line, train) {
 
     return result;
 }
+
+// キャッシュに保存（参照を返す。外部での破壊的変更は行わないこと）
+formatStops.clearCache = () => stopsCache.clear();

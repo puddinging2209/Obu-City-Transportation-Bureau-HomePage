@@ -114,16 +114,23 @@ function heuristic(sta, goal) {
     return haversine(sta, goal) / MAX_SPEED;
 }
 
-function isForward(current, next, goal, border = 10000) {
+function isForward(current, next, goal, mode, border = 10000) {
     const d1 = haversine(current, goal);
     const d2 = haversine(next, goal);
-    return d2 < d1 + border; // 少し余裕を持たせる
+    if (mode === 0) {
+        return d2 < d1 + border; // 少し余裕を持たせる
+    } else {
+        // mode=1では逆方向探索なので、判定を緩くする
+        return d2 > d1 - border;
+    }
 }
 
-function isFar(start, current, goal, d) {
+function isFar(start, current, goal, d, mode) {
     const d1 = haversine(start, current);
     const d2 = haversine(current, goal);
-    return d1 + d2 > d * 1000 * 1.3;
+    // mode=1では枝切りを甘くする
+    const factor = mode === 0 ? 1.3 : 2.0;
+    return d1 + d2 > d * 1000 * factor;
 }
 
 function makeStateId(sta, phase, visitedIndex) {
@@ -189,6 +196,7 @@ export async function dijkstra(
         tie: transfer,
     });
 
+    const initialPhase = mode === 0 ? 'transfer' : 'ride';
     Object.keys(nodes)
         .filter((code) => name(code) === name(startStation))
         .forEach((code) => {
@@ -197,7 +205,7 @@ export async function dijkstra(
             const staName = name(code);
             const visitedIndex = getVisitedIndex(staName, startVisited);
 
-            const startStateId = makeStateId(code, 'transfer', visitedIndex);
+            const startStateId = makeStateId(code, initialPhase, visitedIndex);
 
             bestTime[startStateId] = baseTime;
             bestTransfer[startStateId] = 0;
@@ -205,7 +213,7 @@ export async function dijkstra(
             pq.push({
                 station: code,
                 time: baseTime,
-                phase: 'transfer',
+                phase: initialPhase,
                 visitedIndex,
                 transfer: 0,
                 ...makePriority(baseTime, code, 0),
@@ -213,26 +221,39 @@ export async function dijkstra(
         });
 
     let goalStateId = null;
+    let processedCount = 0;
 
     while (true) {
         const cur = pq.pop();
         if (!cur) {
+            console.log(`[mode=${mode}] キューが空になりました。処理済み: ${processedCount}`);
+            console.log(
+                `[mode=${mode}] ゴール駅: ${name(goalStation)}, スタート駅: ${name(startStation)}`,
+            );
             break;
         }
 
         const { station, time, phase, visitedIndex, transfer } = cur;
         const visited = visiteds[name(station)][visitedIndex];
         const curStateId = makeStateId(station, phase, visitedIndex);
+        processedCount++;
 
         // === ゴール ===
-        console.log(name(station), name(goalStation));
-        if (name(station) === name(goalStation) && phase === 'ride') {
+        const goalPhase = mode === 0 ? 'ride' : 'transfer';
+        if (name(station) === name(goalStation) && phase === goalPhase) {
+            console.log(`[mode=${mode}] ゴール到達! time=${time}, transfer=${transfer}`);
+            const depTime = mode === 0 ? time : baseTime;
+            const arrTime = mode === 0 ? baseTime : time;
+            console.log(`[mode=${mode}] 所要時間: ${Math.abs(depTime - arrTime)}秒`);
             goalStateId = curStateId;
             break;
         }
 
         // === 枝切り(?) ===
-        if (isFar(startStation, station, goalStation, distance)) {
+        if (isFar(startStation, station, goalStation, distance, mode)) {
+            if (processedCount <= 10) {
+                console.log(`[mode=${mode}] 枝切り: ${name(station)} (phase=${phase})`);
+            }
             continue;
         }
 
@@ -253,11 +274,7 @@ export async function dijkstra(
 
                 const nextStateId = makeStateId(nextCode, 'transfer', visitedIndex);
 
-                if (
-                    bestTime[nextStateId] === undefined ||
-                    (mode === 0 && nextTime <= bestTime[nextStateId]) ||
-                    (mode === 1 && nextTime >= bestTime[nextStateId])
-                ) {
+                if (bestTime[nextStateId] === undefined || nextTime < bestTime[nextStateId]) {
                     bestTime[nextStateId] = nextTime;
                     bestTransfer[nextStateId] = transfer;
                     previous[nextStateId] = curStateId;
@@ -290,27 +307,34 @@ export async function dijkstra(
 
                 const nextStateId = makeStateId(path.to, 'ride', visitedIndex);
 
-                bestTime[nextStateId] = nextTime;
-                bestTransfer[nextStateId] = nextTransfer;
-                previous[nextStateId] = curStateId;
-                used[nextStateId] = {
-                    train: 'walking',
-                    arr: mode === 0 ? nextTime : time,
-                    dep: mode === 0 ? time : nextTime,
-                    from: station,
-                    to: path.to,
-                    viaRosen: ['徒歩経路'],
-                    meter: path.meter,
-                };
+                if (
+                    bestTime[nextStateId] === undefined ||
+                    (mode === 0 && nextTime < bestTime[nextStateId]) ||
+                    (mode === 1 && nextTime > bestTime[nextStateId]) ||
+                    (nextTime === bestTime[nextStateId] && bestTransfer[nextStateId] > nextTransfer)
+                ) {
+                    bestTime[nextStateId] = nextTime;
+                    bestTransfer[nextStateId] = nextTransfer;
+                    previous[nextStateId] = curStateId;
+                    used[nextStateId] = {
+                        train: 'walking',
+                        arr: mode === 0 ? nextTime : time,
+                        dep: mode === 0 ? time : nextTime,
+                        from: station,
+                        to: path.to,
+                        viaRosen: ['徒歩経路'],
+                        meter: path.meter,
+                    };
 
-                pq.push({
-                    station: path.to,
-                    time: mode === 0 ? nextTime + transferTime : nextTime - transferTime,
-                    phase: 'ride',
-                    visitedIndex,
-                    transfer: nextTransfer,
-                    ...makePriority(nextTime, path.to, nextTransfer),
-                });
+                    pq.push({
+                        station: path.to,
+                        time: mode === 0 ? nextTime + transferTime : nextTime - transferTime,
+                        phase: 'ride',
+                        visitedIndex,
+                        transfer: nextTransfer,
+                        ...makePriority(nextTime, path.to, nextTransfer),
+                    });
+                }
             } else {
                 for (const { node: nextStation } of graph[station] ?? []) {
                     // 不正乗車、ダメゼッタイ
@@ -354,7 +378,7 @@ export async function dijkstra(
                                     (mode === 1 && nextTime > bestTime[nextStateId]) ||
                                     (nextTime === bestTime[nextStateId] &&
                                         bestTransfer[nextStateId] > transfer + 1)) &&
-                                isForward(station, to, goalStation, 10000)
+                                isForward(station, to, goalStation, mode, 10000)
                             ) {
                                 const newTransfer =
                                     used[curStateId]?.train?.number !== result.train?.number ||
@@ -393,6 +417,9 @@ export async function dijkstra(
         }
     }
 
-    if (!goalStateId) return null;
+    if (!goalStateId) {
+        console.log('見つかりませんでした');
+        return null;
+    }
     return reconstructByState(goalStateId, previous, used, distance, mode);
 }
