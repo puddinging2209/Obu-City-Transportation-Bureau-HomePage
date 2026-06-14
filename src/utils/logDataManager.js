@@ -13,14 +13,11 @@ const SECRET_SALT = 'fT3*3$qC%1A9$LRt!wxmRPlfU&t';
 export function exportSaveData(gameState, filename = 'station_log.obu') {
     const data = JSON.stringify(gameState);
 
-    // 1. ハッシュ作成 ＆ データと一緒にパッケージ化
     const hash = CryptoJS.SHA256(data + SECRET_SALT).toString();
     const rawPackage = JSON.stringify({ data, hash });
 
-    // 2. まとめてBase64化
     const base64 = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(rawPackage));
 
-    // 3. ダウンロード実行
     const blob = new Blob([base64], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -37,11 +34,9 @@ export function exportSaveData(gameState, filename = 'station_log.obu') {
  */
 export function importSaveData(fileText) {
     try {
-        // 1. Base64デコード
         const decodedStr = CryptoJS.enc.Base64.parse(fileText).toString(CryptoJS.enc.Utf8);
         const { data, hash } = JSON.parse(decodedStr);
 
-        // 2. 改ざんチェック（ハッシュ値の検証）
         const expectedHash = CryptoJS.SHA256(data + SECRET_SALT).toString();
         if (hash !== expectedHash) {
             alert('セーブデータが破損しています');
