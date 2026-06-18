@@ -1,11 +1,20 @@
 import { Box, Stack, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 import stationData from '../data/stations.json';
 import types from '../data/types.json';
 
 function RouteStationRow({ i, line, stations, lines, onClick }) {
+    const navigate = useNavigate();
+
     const station = stations[i];
     const isEven = i % 2 === 0;
+
+    const linkTo = (sta, line) => {
+        const dId = stationData[sta].directions.findIndex((d) => d.route === line);
+        console.log(stationData[sta].directions, line, dId);
+        navigate(`/timetable?station=${sta}&direction=${dId === -1 ? 0 : dId}`);
+    };
 
     return (
         <Box
@@ -22,15 +31,18 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
             }}
             fullWidth
         >
-            <Box sx={{
-                position: 'relative',
-                minWidth: '20vw',
-                width: lines.length * 30,
-                flexShrink: 0,
-                height: '100%',
-                display: 'flex',
-                justifyContent: 'center'
-            }} fullWidth>
+            <Box
+                sx={{
+                    position: 'relative',
+                    minWidth: '20vw',
+                    width: lines.length * 30,
+                    flexShrink: 0,
+                    height: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                }}
+                fullWidth
+            >
                 {lines.map((line, j) => {
                     const type = Object.values(types).find((t) => t.code === line);
                     const preStopType = stations[i - 1]?.types?.[line] ?? null;
@@ -90,24 +102,72 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
                 })}
             </Box>
             <Stack sx={{ ml: 1 }}>
-                <Stack sx={{ flex: 1, minWidth: 0, }}>
-                    <Typography variant="body1" sx={{ textAlign: 'left', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        {station.name}
-                    </Typography>
+                <Stack sx={{ flex: 1, minWidth: 0 }}>
+                    <Box
+                        onClick={() => linkTo(station.name, line.name)}
+                        sx={{
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            minWidth: 0,
+                        }}
+                    >
+                        <Typography
+                            variant='body1'
+                            sx={{
+                                textAlign: 'left',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                            }}
+                        >
+                            {station.name}
+                        </Typography>
+                    </Box>
                 </Stack>
-                {stationData[station.name].routes.filter(route => route !== line.name).length > 0 && (
-                    <Stack direction="row" sx={{ mt: 0, alignItems: 'center' }}>
-                        <Typography variant="body2" sx={{ color: 'text.secondary', height: '100%', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', }}>
+                {stationData[station.name].routes.filter((route) => route !== line.name).length >
+                    0 && (
+                    <Stack direction='row' sx={{ mt: 0, alignItems: 'center' }}>
+                        <Typography
+                            variant='body2'
+                            sx={{
+                                color: 'text.secondary',
+                                height: '100%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                            }}
+                        >
                             乗換：
                         </Typography>
-                        <Stack direction="row">
-                            {stationData[station.name].routes.filter(route => route !== line.name).map((route) => (
-                                <Box key={route} size="small" sx={{ ml: 1, cursor: 'pointer' }} onClick={() => onClick(route)}>
-                                    <Typography variant="body2" sx={{ color: 'text.secondary', height: '100%', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', }}>
-                                        {route}
-                                    </Typography>
-                                </Box>
-                            ))}
+                        <Stack direction='row'>
+                            {stationData[station.name].routes
+                                .filter((route) => route !== line.name)
+                                .map((route) => (
+                                    <Box
+                                        key={route}
+                                        size='small'
+                                        sx={{ ml: 1, cursor: 'pointer' }}
+                                        onClick={() => onClick(route)}
+                                    >
+                                        <Typography
+                                            variant='body2'
+                                            sx={{
+                                                color: 'text.secondary',
+                                                height: '100%',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                whiteSpace: 'nowrap',
+                                                overflow: 'hidden',
+                                                textOverflow: 'ellipsis',
+                                            }}
+                                        >
+                                            {route}
+                                        </Typography>
+                                    </Box>
+                                ))}
                         </Stack>
                     </Stack>
                 )}
