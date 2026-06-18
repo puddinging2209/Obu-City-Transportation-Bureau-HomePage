@@ -86,7 +86,14 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                                         beforeIndex
                                     :   diagram.railway.stations.length - 1 - beforeIndex
                                 ]?.arrival,
-                            ) < adjustTime(train.timetable._data[afterIndex]?.departure)),
+                            ) < adjustTime(train.timetable._data[afterIndex]?.departure) ||
+                            adjustTime(
+                                d.timetable._data[
+                                    d.direction === 0 ?
+                                        beforeIndex
+                                    :   diagram.railway.stations.length - 1 - beforeIndex
+                                ]?.departure,
+                            ) <= adjustTime(train.timetable._data[afterIndex]?.departure)),
                 );
         });
         if (beforeDiagram) {
@@ -110,7 +117,14 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                                     beforeIndex
                                 :   beforeDiagram.railway.stations.length - 1 - beforeIndex
                             ]?.arrival,
-                        ) < adjustTime(train.timetable._data[afterIndex]?.departure))
+                        ) < adjustTime(train.timetable._data[afterIndex]?.departure) ||
+                        adjustTime(
+                            d.timetable._data[
+                                d.direction === 0 ?
+                                    beforeIndex
+                                :   beforeDiagram.railway.stations.length - 1 - beforeIndex
+                            ]?.departure,
+                        ) <= adjustTime(train.timetable._data[afterIndex]?.departure))
                 );
             });
 
@@ -172,7 +186,14 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                                         afterIndex
                                     :   diagram.railway.stations.length - 1 - afterIndex
                                 ]?.departure,
-                            ) > adjustTime(train.timetable._data[beforeIndex]?.arrival)),
+                            ) > adjustTime(train.timetable._data[beforeIndex]?.arrival) ||
+                            adjustTime(
+                                d.timetable._data[
+                                    d.direction === 0 ?
+                                        afterIndex
+                                    :   diagram.railway.stations.length - 1 - afterIndex
+                                ]?.departure,
+                            ) >= adjustTime(train.timetable._data[beforeIndex]?.departure)),
                 );
         });
         if (afterDiagram) {
@@ -196,7 +217,14 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                                     afterIndex
                                 :   afterDiagram.railway.stations.length - 1 - afterIndex
                             ]?.departure,
-                        ) > adjustTime(train.timetable._data[beforeIndex]?.arrival))
+                        ) > adjustTime(train.timetable._data[beforeIndex]?.arrival) ||
+                        adjustTime(
+                            d.timetable._data[
+                                d.direction === 0 ?
+                                    afterIndex
+                                :   afterDiagram.railway.stations.length - 1 - afterIndex
+                            ]?.departure,
+                        ) >= adjustTime(train.timetable._data[beforeIndex]?.departure))
                 );
             });
 
