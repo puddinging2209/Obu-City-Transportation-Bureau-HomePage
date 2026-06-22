@@ -45,12 +45,13 @@ function searchStops(diagram, train) {
         .filter((sta) => sta !== null);
 }
 
-async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
+async function searchOuter(train, first, last, line, baseDiagram, checked = [], depth = 0) {
     const result = {
         before: [],
         after: [],
     };
-    if (depth > 10) return result;
+    if (depth > 10 || train.number == '') return result;
+    console.log(checked);
     if (first) {
         const diagrams = await Promise.all(
             stations[first].routes
@@ -59,7 +60,7 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                         numberList[resolveRosen(route)]?.includes(String(train.number)) &&
                         (resolveRosen(route) != resolveRosen(line) || lines[route].isLoop),
                 )
-                .map((route) => dia(route)),
+                .map(dia),
         );
         const afterIndex =
             train.direction === 0 ?
@@ -78,7 +79,6 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                 if (beforeIndex === -1) return false;
                 return (
                     d.number == train.number &&
-                    d.number !== '' &&
                     (!(
                         Object.values(lines).find(
                             (l) => l.json === resolveRosen(diagram.railway.name),
@@ -106,7 +106,6 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                 if (beforeIndex === -1) return undefined;
                 return (
                     d.number == train.number &&
-                    d.number !== '' &&
                     (!(
                         Object.values(lines).find(
                             (l) => l.json === resolveRosen(beforeDiagram.railway.name),
@@ -120,6 +119,17 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                             adjustTime(train.timetable._data[afterIndex]?.departure)))
                 );
             });
+
+            if (
+                checked.some(
+                    (c) =>
+                        c.line === beforeDiagram.railway.name &&
+                        c.firstStationIndex === before.timetable.firstStationIndex &&
+                        c.terminalStationIndex === before.timetable.terminalStationIndex,
+                )
+            ) {
+                return result;
+            }
 
             const beforeStops = searchStops(beforeDiagram, before);
             const lastIndex = beforeStops.findIndex(
@@ -140,6 +150,14 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                     null,
                     beforeDiagram.railway.name,
                     beforeDiagram,
+                    [
+                        ...checked,
+                        {
+                            line: beforeDiagram.railway.name,
+                            firstStationIndex: before.timetable.firstStationIndex,
+                            terminalStationIndex: before.timetable.terminalStationIndex,
+                        },
+                    ],
                     depth + 1,
                 );
                 result.before.unshift(...befores.before);
@@ -154,7 +172,7 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                         numberList[resolveRosen(route)]?.includes(String(train.number)) &&
                         (resolveRosen(route) != resolveRosen(line) || lines[route].isLoop),
                 )
-                .map((route) => dia(route)),
+                .map(dia),
         );
         const beforeIndex =
             train.direction === 0 ?
@@ -172,7 +190,6 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                             .findIndex((sta) => name(sta.name) === last);
                 return (
                     d.number == train.number &&
-                    d.number !== '' &&
                     (!(
                         Object.values(lines).find(
                             (l) => l.json === resolveRosen(diagram.railway.name),
@@ -198,7 +215,6 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                 if (afterIndex === -1) return false;
                 return (
                     d.number == train.number &&
-                    d.number !== '' &&
                     (!(
                         Object.values(lines).find(
                             (l) => l.json === resolveRosen(afterDiagram.railway.name),
@@ -212,6 +228,17 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                             adjustTime(train.timetable._data[beforeIndex]?.departure)))
                 );
             });
+
+            if (
+                checked.some(
+                    (c) =>
+                        c.line === afterDiagram.railway.name &&
+                        c.firstStationIndex === after.timetable.firstStationIndex &&
+                        c.terminalStationIndex === after.timetable.terminalStationIndex,
+                )
+            ) {
+                return result;
+            }
 
             const afterStops = searchStops(afterDiagram, after);
             const firstIndex = afterStops.findIndex((sta) => sta.name === last);
@@ -231,6 +258,14 @@ async function searchOuter(train, first, last, line, baseDiagram, depth = 0) {
                     result.after.at(-1).name,
                     afterDiagram.railway.name,
                     afterDiagram,
+                    [
+                        ...checked,
+                        {
+                            line: afterDiagram.railway.name,
+                            firstStationIndex: after.timetable.firstStationIndex,
+                            terminalStationIndex: after.timetable.terminalStationIndex,
+                        },
+                    ],
                     depth + 1,
                 );
                 result.after.push(...afters.after);
