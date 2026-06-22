@@ -25,6 +25,7 @@ export function exportSaveData(gameState, filename = 'station_log.obu') {
     a.download = filename;
     a.click();
     URL.revokeObjectURL(url);
+    localStorage.setItem('lastExport', new Date().toISOString());
 }
 
 /**
