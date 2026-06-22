@@ -46,6 +46,8 @@ export default function Log() {
 
     const subwayLines = Object.values(lines).filter((line) => line.type === 'subway');
 
+    const lastExportedDate = localStorage.getItem('lastExport') ?? null;
+
     const handleLoadSuccess = (loadedData) => {
         if (localStorage.getItem('visitedStations')) {
             if (!window.confirm('現在の訪問履歴は上書きされます。よろしいですか？')) {
@@ -170,6 +172,11 @@ export default function Log() {
                         エクスポートは現在の訪問履歴を保存し、インポートは保存したファイルから訪問履歴を復元します。
                         <br />
                         ※インポートするファイルはエクスポートしたものを使用してください。
+                        <br />
+                        最終エクスポート日時:{' '}
+                        {lastExportedDate ?
+                            dayjs(lastExportedDate).format('YYYY/MM/DD HH:mm')
+                        :   'なし'}
                     </Typography>
                     <Stack direction='row' spacing={2} sx={{ mt: 2, justifyContent: 'center' }}>
                         <Button
