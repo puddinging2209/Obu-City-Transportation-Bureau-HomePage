@@ -26,6 +26,8 @@ import searchNearestStation from '../utils/searchNearestStation.js';
 import DepartureCard from './DepartureCard.jsx';
 import StationSelecter from './StationSelecter.jsx';
 
+import stations from '../data/stations.json';
+
 export default function DepartureSection() {
     const navigate = useNavigate();
 
@@ -43,26 +45,26 @@ export default function DepartureSection() {
     function updateNearest() {
         setLoadingNearest(true);
         searchNearestStation()
-            .then((name) => {
+            .then((id) => {
                 setLoadingNearest(false);
-                setNearestStation(name);
-                setNearestAtom(name);
+                setNearestStation(id);
+                setNearestAtom(id);
 
                 const visited =
                     localStorage.getItem('visitedStations') ?
                         JSON.parse(localStorage.getItem('visitedStations'))
                     :   [];
-                if (Date.now() - visited.toReversed().find((s) => s.name === name)?.time < 300000)
+                if (Date.now() - visited.toReversed().find((s) => s.id === id)?.time < 300000)
                     return; // 5分以内は更新しない
-                if (visited[0]?.name) {
+                if (visited[0]?.id) {
                     localStorage.setItem(
                         'visitedStations',
-                        JSON.stringify([...visited, { name, time: Date.now() }]),
+                        JSON.stringify([...visited, { id, time: Date.now() }]),
                     );
                 } else {
                     localStorage.setItem(
                         'visitedStations',
-                        JSON.stringify([{ name, time: Date.now() }]),
+                        JSON.stringify([{ id, time: Date.now() }]),
                     );
                 }
             })
@@ -129,7 +131,7 @@ export default function DepartureSection() {
                                 <div width='100%'>
                                     <DepartureCard
                                         key={`near-${nearestStation}`}
-                                        station={{ name: nearestStation, role: 'station' }}
+                                        station={{ id: nearestStation, role: 'station' }}
                                         addButton
                                     />
                                 </div>
@@ -171,7 +173,7 @@ export default function DepartureSection() {
                                     <DepartureCard
                                         key={`search-${serchedStation.value}`}
                                         station={{
-                                            name: serchedStation.value,
+                                            id: serchedStation.value,
                                             role: serchedStation.role,
                                         }}
                                         addButton
@@ -201,7 +203,15 @@ export default function DepartureSection() {
                 {myStations.map((sta) => (
                     <Box sx={{ scrollSnapAlign: { xs: 'center', md: 'none' } }} key={sta.name}>
                         <Box sx={{ width: { xs: '85vw', md: 300 } }}>
-                            <DepartureCard key={`my-${sta.name}`} station={sta} removeButton />
+                            <DepartureCard
+                                key={`my-${sta.name}`}
+                                station={{
+                                    id: Object.values(stations).find((s) => s.name === sta.name)
+                                        ?.id,
+                                    ...sta,
+                                }}
+                                removeButton
+                            />
                         </Box>
                     </Box>
                 ))}

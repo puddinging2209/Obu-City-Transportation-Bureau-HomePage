@@ -29,7 +29,7 @@ function DepartureRow({ dep, needId = false, station }) {
             >
                 <Grid container wrap='nowrap' alignItems='center' columnGap={0.5}>
                     {/* 種別 */}
-                    <Grid item sx={{ flex: '0 0 auto' }}>
+                    <Grid sx={{ flex: '0 0 auto' }}>
                         <Chip
                             label={dep.typeName}
                             size='small'
@@ -45,7 +45,6 @@ function DepartureRow({ dep, needId = false, station }) {
 
                     {/* 行先（残り全部） */}
                     <Grid
-                        item
                         sx={{
                             textAlign: 'center',
                             flex: '1 1 auto',
@@ -64,7 +63,6 @@ function DepartureRow({ dep, needId = false, station }) {
 
                     {/* 時刻（固定） */}
                     <Grid
-                        item
                         sx={{
                             flex: '0 0 42px',
                             textAlign: 'right',
