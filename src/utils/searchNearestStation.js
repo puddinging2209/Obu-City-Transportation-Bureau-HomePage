@@ -2,9 +2,8 @@ import stations from '../data/stations.json';
 
 export default function searchNearestStation() {
     return new Promise((resolve, reject) => {
-
         function hubeny(lat1, lng1, lat2, lng2) {
-            const rad = deg => deg * Math.PI / 180;
+            const rad = (deg) => (deg * Math.PI) / 180;
 
             lat1 = rad(lat1);
             lng1 = rad(lng1);
@@ -32,23 +31,23 @@ export default function searchNearestStation() {
         }
 
         navigator.geolocation.getCurrentPosition(
-            pos => {
+            (pos) => {
                 const lat = pos.coords.latitude;
                 const lng = pos.coords.longitude;
 
                 const nearest = Object.values(stations)
-                    .map(s => ({
-                        name: s.name,
-                        d: hubeny(lat, lng, s.lat, s.lng)
+                    .map((s) => ({
+                        id: s.id,
+                        d: hubeny(lat, lng, s.lat, s.lng),
                     }))
                     .sort((a, b) => a.d - b.d)[0];
 
-                resolve(nearest.name);
+                resolve(nearest.id);
             },
-            err => {
+            (err) => {
                 reject(err);
             },
-            { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+            { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 },
         );
     });
 }

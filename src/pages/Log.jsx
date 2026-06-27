@@ -95,7 +95,7 @@ export default function Log() {
                                         <TableCell>
                                             {dayjs(log.time).format('YYYY/MM/DD HH:mm')}
                                         </TableCell>
-                                        <TableCell>{log.name}</TableCell>
+                                        <TableCell>{log.name ?? log.id}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
