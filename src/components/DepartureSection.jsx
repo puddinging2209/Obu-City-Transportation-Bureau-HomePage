@@ -15,6 +15,8 @@ import {
     DialogContent,
     DialogTitle,
     Stack,
+    Tab,
+    Tabs,
     Typography,
 } from '@mui/material';
 
@@ -26,6 +28,9 @@ import StationSelecter from './StationSelecter.jsx';
 
 export default function DepartureSection() {
     const navigate = useNavigate();
+
+    const [content, setContent] = React.useState('nearest');
+    const [serchedStation, setSearchedStation] = React.useState(null);
 
     const myStations = useAtomValue(myStationsAtom);
     const addMyStation = useSetAtom(addMyStationAtom);
@@ -87,47 +92,95 @@ export default function DepartureSection() {
                     textAlign: 'center',
                 }}
             >
-                <Box
-                    sx={{
-                        display: 'flex',
-                        pb: 2,
-                        width: { xs: '100%', md: '100%' },
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                    }}
-                >
-                    <Typography variant='h6'>最寄り駅</Typography>
-                    <Button
-                        sx={{ height: 36 }}
-                        loading={loadingNearest}
-                        onClick={() => {
-                            if (!loadingNearest) updateNearest();
-                        }}
+                <Stack>
+                    <Tabs
+                        value={content}
+                        onChange={(event, newValue) => setContent(newValue)}
+                        centered
                     >
-                        更新
-                    </Button>
-                </Box>
-                {nearestStation ?
-                    <div width='100%'>
-                        <DepartureCard
-                            key={`near-${nearestStation}`}
-                            station={{ name: nearestStation, role: 'station' }}
-                            addButton
-                        />
-                    </div>
-                :   <Card
-                        sx={{
-                            width: { xs: '100%', md: 300 },
-                            minHeight: 240,
-                            position: 'relative',
-                            flexShrink: 0,
-                        }}
-                    >
-                        <Typography variant='body2' sx={{ mt: 2 }}>
-                            位置情報が取得できませんでした
-                        </Typography>
-                    </Card>
-                }
+                        <Tab label='最寄り駅' value='nearest' />
+                        <Tab label='駅を検索' value='search' />
+                    </Tabs>
+                    {content === 'nearest' && (
+                        <Stack>
+                            <Stack
+                                sx={{
+                                    display: 'flex',
+                                    pb: 2,
+                                    width: { xs: '100%', md: '100%' },
+                                    justifyContent: 'space-between',
+                                    alignItems: 'flex-end',
+                                }}
+                            >
+                                <Button
+                                    sx={{
+                                        height: 36,
+                                        ml: 'auto',
+                                    }}
+                                    loading={loadingNearest}
+                                    onClick={() => {
+                                        if (!loadingNearest) updateNearest();
+                                    }}
+                                >
+                                    更新
+                                </Button>
+                            </Stack>
+                            {nearestStation ?
+                                <div width='100%'>
+                                    <DepartureCard
+                                        key={`near-${nearestStation}`}
+                                        station={{ name: nearestStation, role: 'station' }}
+                                        addButton
+                                    />
+                                </div>
+                            :   <Card
+                                    sx={{
+                                        width: { xs: '100%', md: 300 },
+                                        minHeight: 240,
+                                        position: 'relative',
+                                        flexShrink: 0,
+                                    }}
+                                >
+                                    <Typography variant='body2' sx={{ mt: 2 }}>
+                                        位置情報が取得できませんでした
+                                    </Typography>
+                                </Card>
+                            }
+                        </Stack>
+                    )}
+                    {content === 'search' && (
+                        <>
+                            <Stack
+                                sx={{
+                                    display: 'flex',
+                                    mt: 2,
+                                }}
+                            >
+                                <StationSelecter
+                                    onChange={(option) => {
+                                        if (option) {
+                                            setSearchedStation(option);
+                                        }
+                                    }}
+                                    value={serchedStation ? serchedStation : null}
+                                    autoFocus
+                                />
+                            </Stack>
+                            {serchedStation && (
+                                <Box sx={{ mt: 2, width: { xs: '100%', md: 300 } }}>
+                                    <DepartureCard
+                                        key={`search-${serchedStation.value}`}
+                                        station={{
+                                            name: serchedStation.value,
+                                            role: serchedStation.role,
+                                        }}
+                                        addButton
+                                    />
+                                </Box>
+                            )}
+                        </>
+                    )}
+                </Stack>
             </Container>
 
             <Typography variant='h6' sx={{ mb: 2, textAlign: 'left' }}>
