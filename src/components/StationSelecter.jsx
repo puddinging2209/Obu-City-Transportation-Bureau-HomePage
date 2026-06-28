@@ -5,6 +5,7 @@ import { useAtomValue } from 'jotai';
 import Select from 'react-select';
 
 import { myStationsAtom, nearestStationAtom } from '../utils/Atom.js';
+import { id } from '../utils/Station.js';
 
 import busStops from '../data/busStops.json';
 import stations from '../data/stations.json';
@@ -44,9 +45,13 @@ export default function StationSelecter({
     }
 
     const onSelect = (option) => {
-        const history = JSON.parse(window.localStorage.getItem('stationHistory')) || [];
-        history.push(option.value);
-        window.localStorage.setItem('stationHistory', JSON.stringify(history));
+        const history =
+            JSON.parse(window.localStorage.getItem('stationHistory')).toReversed() || [];
+        let newHistory;
+        if (!stations[history[0]]) newHistory = history.map(id).filter((id) => id !== option.value);
+        else newHistory = history.filter((id) => id !== option.value);
+        newHistory.unshift(option.value);
+        window.localStorage.setItem('stationHistory', JSON.stringify(newHistory.toReversed()));
         onChange(option);
     };
 
@@ -116,12 +121,11 @@ export function StationSelectButtons({ onSelect, disabledStations = [] }) {
             <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
                 {myStations
                     .filter(
-                        (value) =>
-                            value.role == 'station' && !disabledStations.includes(value.name),
+                        (value) => value.role == 'station' && !disabledStations.includes(value.id),
                     )
-                    .map(({ name }) => (
-                        <MenuItem key={name} onClick={() => handleClose(name)}>
-                            {name}
+                    .map(({ id }) => (
+                        <MenuItem key={id} onClick={() => handleClose(id)}>
+                            {stations[id].name}
                         </MenuItem>
                     ))}
             </Menu>

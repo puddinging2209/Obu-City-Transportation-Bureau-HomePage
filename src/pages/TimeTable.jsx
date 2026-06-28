@@ -55,7 +55,7 @@ function TimeTable() {
         }
         setLoading(true);
         searchDeparture(
-            { name: station, role: 'station' },
+            { id: station, role: 'station' },
             stations[station]?.directions[desiredDirection],
         ).then((deps) => {
             setDepartures(divideDeps(deps));
@@ -67,7 +67,7 @@ function TimeTable() {
         if (station && stations[station]?.directions[direction]) {
             setLoading(true);
             searchDeparture(
-                { name: station, role: 'station' },
+                { id: station, role: 'station' },
                 stations[station]?.directions[direction],
             )
                 .then((deps) => setDepartures(divideDeps(deps)))
@@ -88,7 +88,7 @@ function TimeTable() {
                         station ?
                             {
                                 value: station,
-                                label: station,
+                                label: stations[station]?.name,
                                 role: 'station',
                                 kana: stations[station]?.kana,
                             }

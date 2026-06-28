@@ -95,7 +95,7 @@ export default function Log() {
                                         <TableCell>
                                             {dayjs(log.time).format('YYYY/MM/DD HH:mm')}
                                         </TableCell>
-                                        <TableCell>{log.name ?? log.id}</TableCell>
+                                        <TableCell>{stations[log.id].name}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
@@ -107,8 +107,8 @@ export default function Log() {
                 <Card sx={{ width: '100%', overflow: 'auto', mx: 'auto', my: 4, p: 2 }}>
                     {subwayLines.map((line) => {
                         const innerStations = new Set(
-                            line.stations[0].name ?
-                                line.stations.map((sta) => sta.name)
+                            line.stations[0].id ?
+                                line.stations.map((sta) => sta.id)
                             :   line.stations,
                         );
                         return (
@@ -123,7 +123,7 @@ export default function Log() {
                                         }}
                                     >
                                         <Typography variant='subtitle1'>{line.name}</Typography>
-                                        <Typography variant='body1'>{`訪問済: ${new Set(logs.filter((log) => innerStations.has(log.name)).map((log) => log.name)).size} 駅 / ${innerStations.size} 駅`}</Typography>
+                                        <Typography variant='body1'>{`訪問済: ${new Set(logs.filter((log) => innerStations.has(log.id)).map((log) => log.id)).size} 駅 / ${innerStations.size} 駅`}</Typography>
                                     </Box>
                                 </AccordionSummary>
                                 <AccordionDetails>
@@ -139,19 +139,21 @@ export default function Log() {
                                             <TableBody>
                                                 {[...innerStations].map((station, i) => (
                                                     <TableRow key={`${line.name}${station}`}>
-                                                        <TableCell>{station}</TableCell>
+                                                        <TableCell>
+                                                            {stations[station].name}
+                                                        </TableCell>
                                                         <TableCell>
                                                             {(
                                                                 logs.some(
-                                                                    (log) => log.name === station,
+                                                                    (log) => log.id === station,
                                                                 )
                                                             ) ?
                                                                 <>
-                                                                    {`最終訪問 : ${dayjs(logs.sort((log1, log2) => log2.time - log1.time).find((log) => log.name === station).time).format('YYYY/MM/DD HH:mm')}`}
+                                                                    {`最終訪問 : ${dayjs(logs.sort((log1, log2) => log2.time - log1.time).find((log) => log.id === station).time).format('YYYY/MM/DD HH:mm')}`}
                                                                 </>
                                                             :   '未訪問'}
                                                         </TableCell>
-                                                        <TableCell>{`${logs.filter((log) => log.name === station).length} 回`}</TableCell>
+                                                        <TableCell>{`${logs.filter((log) => log.id === station).length} 回`}</TableCell>
                                                     </TableRow>
                                                 ))}
                                             </TableBody>

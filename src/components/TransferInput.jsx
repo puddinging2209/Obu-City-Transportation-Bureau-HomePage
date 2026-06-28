@@ -26,7 +26,7 @@ import { useTheme } from '@mui/material/styles';
 import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
-import { code, id } from '../utils/Station.js';
+import { id } from '../utils/Station.js';
 import StationSelecter, { StationSelectButtons } from './StationSelecter.jsx';
 
 import nodes from '../data/nodes.json';
@@ -160,8 +160,8 @@ export default function TransferInput({ onSearch, loading }) {
         sessionStorage.setItem(
             'lastSearch',
             JSON.stringify({
-                from: code(from?.value)[0],
-                to: code(to?.value)[0],
+                from: from?.value,
+                to: to?.value,
                 time: t,
                 mode,
                 transferTime,
@@ -170,15 +170,7 @@ export default function TransferInput({ onSearch, loading }) {
             }),
         );
 
-        onSearch(
-            code(from?.value)[0],
-            code(to?.value)[0],
-            t,
-            mode,
-            transferTime,
-            tokkyu,
-            allowOuterTransfer,
-        );
+        onSearch(from?.value, to?.value, t, mode, transferTime, tokkyu, allowOuterTransfer);
     }
 
     function handleSwap() {
@@ -214,7 +206,7 @@ export default function TransferInput({ onSearch, loading }) {
                             onSelect={(value) =>
                                 setFrom({
                                     value: value,
-                                    label: value,
+                                    label: stations[value].name,
                                     role: 'station',
                                     kana: stations[value].kana,
                                 })
@@ -234,7 +226,7 @@ export default function TransferInput({ onSearch, loading }) {
                             onSelect={(value) =>
                                 setTo({
                                     value: value,
-                                    label: value,
+                                    label: stations[value].name,
                                     role: 'station',
                                     kana: stations[value].kana,
                                 })

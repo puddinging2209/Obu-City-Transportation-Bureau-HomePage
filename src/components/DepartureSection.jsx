@@ -26,8 +26,6 @@ import searchNearestStation from '../utils/searchNearestStation.js';
 import DepartureCard from './DepartureCard.jsx';
 import StationSelecter from './StationSelecter.jsx';
 
-import stations from '../data/stations.json';
-
 export default function DepartureSection() {
     const navigate = useNavigate();
 
@@ -203,15 +201,7 @@ export default function DepartureSection() {
                 {myStations.map((sta) => (
                     <Box sx={{ scrollSnapAlign: { xs: 'center', md: 'none' } }} key={sta.name}>
                         <Box sx={{ width: { xs: '85vw', md: 300 } }}>
-                            <DepartureCard
-                                key={`my-${sta.name}`}
-                                station={{
-                                    id: Object.values(stations).find((s) => s.name === sta.name)
-                                        ?.id,
-                                    ...sta,
-                                }}
-                                removeButton
-                            />
+                            <DepartureCard key={`my-${sta.name}`} station={sta} removeButton />
                         </Box>
                     </Box>
                 ))}

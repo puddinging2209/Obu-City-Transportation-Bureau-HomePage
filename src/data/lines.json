@@ -9,7 +9,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "北崎",
+                "id": "kts",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -25,7 +25,7 @@
                 }
             },
             {
-                "name": "北崎大島",
+                "id": "kto",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -41,7 +41,7 @@
                 }
             },
             {
-                "name": "大脇",
+                "id": "owk",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -57,7 +57,7 @@
                 }
             },
             {
-                "name": "琵琶ヶ池",
+                "id": "bwg",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -73,7 +73,7 @@
                 }
             },
             {
-                "name": "高鴨",
+                "id": "tkg",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -89,103 +89,7 @@
                 }
             },
             {
-                "name": "豊明市",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": true,
-                    "rap-exp": true,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "中央公園",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": true,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "十三塚",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "沓掛町森前",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "若王子川",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "清水ケ根",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "春木台",
+                "id": "tyk",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -201,7 +105,7 @@
                 }
             },
             {
-                "name": "猫池",
+                "id": "chk",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -217,23 +121,7 @@
                 }
             },
             {
-                "name": "東郷",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": true,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "白鳥",
+                "id": "jsd",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -249,23 +137,7 @@
                 }
             },
             {
-                "name": "日進",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": true,
-                    "rap-exp": true,
-                    "com-exp": true,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "折戸寺脇",
+                "id": "kmm",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -281,15 +153,15 @@
                 }
             },
             {
-                "name": "日進東山",
+                "id": "wko",
                 "types": {
                     "all": true,
                     "loc": true,
-                    "rap": true,
+                    "rap": false,
                     "com-sem-exp": null,
                     "sem-exp": null,
                     "sub-exp": null,
-                    "exp": true,
+                    "exp": false,
                     "rap-exp": false,
                     "com-exp": false,
                     "lim-exp": null,
@@ -297,7 +169,23 @@
                 }
             },
             {
-                "name": "日進市",
+                "id": "smz",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "hrd",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -313,71 +201,7 @@
                 }
             },
             {
-                "name": "日進白山",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "岩崎城",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "弁天池",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "竹の山",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": true,
-                    "rap-exp": true,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "愛知学院大学前",
+                "id": "nki",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -393,7 +217,39 @@
                 }
             },
             {
-                "name": "長久手",
+                "id": "tgo",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "srt",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "nsn",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -409,7 +265,23 @@
                 }
             },
             {
-                "name": "香流川",
+                "id": "ord",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "nsi",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -425,7 +297,135 @@
                 }
             },
             {
-                "name": "長久手市",
+                "id": "nss",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "nsa",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "iws",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "bnt",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "tky",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "aic",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "ngk",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": true,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "knr",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "nks",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -452,7 +452,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "刈谷",
+                "id": "kry",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -468,7 +468,7 @@
                 }
             },
             {
-                "name": "宝町",
+                "id": "krm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -484,7 +484,7 @@
                 }
             },
             {
-                "name": "逢妻",
+                "id": "aiz",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -500,7 +500,7 @@
                 }
             },
             {
-                "name": "朝日町",
+                "id": "ash",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -516,7 +516,7 @@
                 }
             },
             {
-                "name": "若草",
+                "id": "wks",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -532,7 +532,7 @@
                 }
             },
             {
-                "name": "大府市役所前",
+                "id": "obs",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -548,7 +548,7 @@
                 }
             },
             {
-                "name": "中央町",
+                "id": "chc",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -564,7 +564,7 @@
                 }
             },
             {
-                "name": "追分町",
+                "id": "oiw",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -580,7 +580,7 @@
                 }
             },
             {
-                "name": "共和",
+                "id": "kyw",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -596,7 +596,7 @@
                 }
             },
             {
-                "name": "水主ヶ池",
+                "id": "kkg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -612,7 +612,7 @@
                 }
             },
             {
-                "name": "南大高",
+                "id": "mod",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -628,7 +628,7 @@
                 }
             },
             {
-                "name": "大高緑地西",
+                "id": "ryn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -644,7 +644,7 @@
                 }
             },
             {
-                "name": "大高",
+                "id": "odk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -660,7 +660,7 @@
                 }
             },
             {
-                "name": "上汐田",
+                "id": "kso",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -676,7 +676,7 @@
                 }
             },
             {
-                "name": "元鳴尾",
+                "id": "mtn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -692,7 +692,7 @@
                 }
             },
             {
-                "name": "星崎",
+                "id": "hsh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -708,7 +708,7 @@
                 }
             },
             {
-                "name": "南笠寺",
+                "id": "mks",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -724,7 +724,7 @@
                 }
             },
             {
-                "name": "南区役所前",
+                "id": "mky",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -740,7 +740,7 @@
                 }
             },
             {
-                "name": "新笠寺",
+                "id": "sks",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -756,7 +756,7 @@
                 }
             },
             {
-                "name": "呼続",
+                "id": "ybt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -772,7 +772,7 @@
                 }
             },
             {
-                "name": "汐田",
+                "id": "sod",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -788,7 +788,7 @@
                 }
             },
             {
-                "name": "明前町",
+                "id": "mzn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -804,7 +804,7 @@
                 }
             },
             {
-                "name": "堀田",
+                "id": "hrt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -820,7 +820,7 @@
                 }
             },
             {
-                "name": "新開町",
+                "id": "snk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -836,7 +836,7 @@
                 }
             },
             {
-                "name": "牛巻",
+                "id": "usm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -852,7 +852,7 @@
                 }
             },
             {
-                "name": "高辻",
+                "id": "tkj",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -868,7 +868,7 @@
                 }
             },
             {
-                "name": "白金",
+                "id": "srk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -884,7 +884,7 @@
                 }
             },
             {
-                "name": "鶴舞",
+                "id": "trm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -900,7 +900,7 @@
                 }
             },
             {
-                "name": "千代田",
+                "id": "chy",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -916,7 +916,7 @@
                 }
             },
             {
-                "name": "矢場町",
+                "id": "yba",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -932,7 +932,7 @@
                 }
             },
             {
-                "name": "栄町",
+                "id": "ske",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -959,7 +959,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "名和",
+                "id": "nwa",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -975,7 +975,7 @@
                 }
             },
             {
-                "name": "大高丸ノ内",
+                "id": "odm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -991,7 +991,7 @@
                 }
             },
             {
-                "name": "大高",
+                "id": "odk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1007,7 +1007,7 @@
                 }
             },
             {
-                "name": "鳴海",
+                "id": "nrm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1023,7 +1023,7 @@
                 }
             },
             {
-                "name": "大高緑地口",
+                "id": "ryg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1039,7 +1039,7 @@
                 }
             },
             {
-                "name": "鎌研",
+                "id": "kmt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1055,7 +1055,7 @@
                 }
             },
             {
-                "name": "東陵",
+                "id": "try",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1071,7 +1071,7 @@
                 }
             },
             {
-                "name": "姥子山",
+                "id": "ubi",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1087,7 +1087,7 @@
                 }
             },
             {
-                "name": "鎌倉台",
+                "id": "kkd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1103,7 +1103,7 @@
                 }
             },
             {
-                "name": "中京競馬北",
+                "id": "ckk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1119,7 +1119,7 @@
                 }
             },
             {
-                "name": "間米町",
+                "id": "mgm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1135,7 +1135,7 @@
                 }
             },
             {
-                "name": "二村台南",
+                "id": "ftm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1151,7 +1151,7 @@
                 }
             },
             {
-                "name": "三崎町",
+                "id": "msk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1167,7 +1167,7 @@
                 }
             },
             {
-                "name": "高鴨",
+                "id": "tkg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1183,7 +1183,7 @@
                 }
             },
             {
-                "name": "豊明新田",
+                "id": "tys",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1199,7 +1199,7 @@
                 }
             },
             {
-                "name": "大久伝町",
+                "id": "okt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1215,7 +1215,7 @@
                 }
             },
             {
-                "name": "西境本郷",
+                "id": "nzk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1231,7 +1231,7 @@
                 }
             },
             {
-                "name": "井ヶ谷町南",
+                "id": "igm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1247,7 +1247,7 @@
                 }
             },
             {
-                "name": "丸岡",
+                "id": "mro",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1263,7 +1263,7 @@
                 }
             },
             {
-                "name": "西岡町",
+                "id": "nso",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1279,7 +1279,7 @@
                 }
             },
             {
-                "name": "石畑",
+                "id": "ish",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1295,7 +1295,7 @@
                 }
             },
             {
-                "name": "長土井",
+                "id": "ngd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1311,7 +1311,7 @@
                 }
             },
             {
-                "name": "大島町",
+                "id": "osh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1327,7 +1327,7 @@
                 }
             },
             {
-                "name": "中田古屋敷",
+                "id": "nkf",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1343,7 +1343,7 @@
                 }
             },
             {
-                "name": "中田町",
+                "id": "nkd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1359,7 +1359,7 @@
                 }
             },
             {
-                "name": "中田日進",
+                "id": "nkn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1375,7 +1375,7 @@
                 }
             },
             {
-                "name": "駒新町",
+                "id": "kms",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1391,7 +1391,7 @@
                 }
             },
             {
-                "name": "三河金山",
+                "id": "mkk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1407,7 +1407,7 @@
                 }
             },
             {
-                "name": "駒場町西",
+                "id": "kbn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1423,7 +1423,7 @@
                 }
             },
             {
-                "name": "駒場橋",
+                "id": "kbb",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1439,7 +1439,7 @@
                 }
             },
             {
-                "name": "宮腰",
+                "id": "myn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1455,7 +1455,7 @@
                 }
             },
             {
-                "name": "桜木",
+                "id": "skr",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1471,7 +1471,7 @@
                 }
             },
             {
-                "name": "知立",
+                "id": "chr",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1498,7 +1498,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "大府",
+                "id": "obu",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1514,7 +1514,7 @@
                 }
             },
             {
-                "name": "大府森岡",
+                "id": "obm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1530,7 +1530,7 @@
                 }
             },
             {
-                "name": "公園北",
+                "id": "knk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1546,7 +1546,7 @@
                 }
             },
             {
-                "name": "医療センター",
+                "id": "iry",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1562,7 +1562,7 @@
                 }
             },
             {
-                "name": "公園南",
+                "id": "knm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1578,7 +1578,7 @@
                 }
             },
             {
-                "name": "新池",
+                "id": "sik",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1594,7 +1594,7 @@
                 }
             },
             {
-                "name": "緒川相生",
+                "id": "oga",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1610,7 +1610,7 @@
                 }
             },
             {
-                "name": "西石浜",
+                "id": "nis",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1626,7 +1626,7 @@
                 }
             },
             {
-                "name": "藤江",
+                "id": "fje",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1642,7 +1642,7 @@
                 }
             },
             {
-                "name": "緑ヶ丘",
+                "id": "mdr",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1658,7 +1658,7 @@
                 }
             },
             {
-                "name": "生見町",
+                "id": "hem",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1674,7 +1674,7 @@
                 }
             },
             {
-                "name": "上池",
+                "id": "kmi",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1690,7 +1690,7 @@
                 }
             },
             {
-                "name": "七本木池",
+                "id": "sch",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1706,7 +1706,7 @@
                 }
             },
             {
-                "name": "庚申町",
+                "id": "ksn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1722,7 +1722,7 @@
                 }
             },
             {
-                "name": "乙川畑田",
+                "id": "owh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1738,7 +1738,7 @@
                 }
             },
             {
-                "name": "乙川薬師",
+                "id": "owy",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1754,7 +1754,7 @@
                 }
             },
             {
-                "name": "乙川",
+                "id": "okw",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1770,7 +1770,7 @@
                 }
             },
             {
-                "name": "半田大橋",
+                "id": "hno",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1786,7 +1786,7 @@
                 }
             },
             {
-                "name": "半田市",
+                "id": "hns",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1813,7 +1813,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "乙川",
+                "id": "okw",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -1829,7 +1829,7 @@
                 }
             },
             {
-                "name": "半田赤レンガ",
+                "id": "akr",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -1845,7 +1845,7 @@
                 }
             },
             {
-                "name": "住吉町",
+                "id": "smy",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -1861,7 +1861,7 @@
                 }
             },
             {
-                "name": "清城",
+                "id": "sis",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -1888,7 +1888,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "至学館大学前",
+                "id": "shg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1904,7 +1904,7 @@
                 }
             },
             {
-                "name": "坊主山",
+                "id": "bzy",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1920,7 +1920,7 @@
                 }
             },
             {
-                "name": "南陵",
+                "id": "nry",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -1936,71 +1936,7 @@
                 }
             },
             {
-                "name": "桶狭間",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": true,
-                    "sub-exp": true,
-                    "exp": true,
-                    "rap-exp": true,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "長福寺",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": false,
-                    "sub-exp": false,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "古戦場公園前",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": true,
-                    "sub-exp": true,
-                    "exp": true,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "名古屋短大前",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": false,
-                    "sub-exp": false,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "有松",
+                "id": "okh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2016,7 +1952,7 @@
                 }
             },
             {
-                "name": "鳥澄",
+                "id": "cfk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2032,23 +1968,7 @@
                 }
             },
             {
-                "name": "扇川",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": false,
-                    "sub-exp": false,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "滝ノ水",
+                "id": "ksk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2064,7 +1984,7 @@
                 }
             },
             {
-                "name": "鳴丘",
+                "id": "ngt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2080,7 +2000,87 @@
                 }
             },
             {
-                "name": "徳重",
+                "id": "arm",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "trs",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": false,
+                    "sub-exp": false,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "ogg",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": false,
+                    "sub-exp": false,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "tkm",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": true,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "nrk",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": false,
+                    "sub-exp": false,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "tsg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2096,7 +2096,7 @@
                 }
             },
             {
-                "name": "神ノ倉",
+                "id": "kmn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2112,7 +2112,7 @@
                 }
             },
             {
-                "name": "平針台",
+                "id": "hbd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2128,7 +2128,7 @@
                 }
             },
             {
-                "name": "平針住宅",
+                "id": "hbj",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2144,7 +2144,7 @@
                 }
             },
             {
-                "name": "向が丘",
+                "id": "mki",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2160,7 +2160,7 @@
                 }
             },
             {
-                "name": "平針南",
+                "id": "hbm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2176,7 +2176,7 @@
                 }
             },
             {
-                "name": "平針",
+                "id": "hrb",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2192,7 +2192,7 @@
                 }
             },
             {
-                "name": "大応寺",
+                "id": "doj",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2208,7 +2208,7 @@
                 }
             },
             {
-                "name": "梅森西",
+                "id": "mmn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2224,7 +2224,7 @@
                 }
             },
             {
-                "name": "梅森台",
+                "id": "mmd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2240,7 +2240,7 @@
                 }
             },
             {
-                "name": "梅森台北",
+                "id": "udk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2256,7 +2256,7 @@
                 }
             },
             {
-                "name": "東名古屋病院",
+                "id": "hnb",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2272,7 +2272,7 @@
                 }
             },
             {
-                "name": "梅森坂",
+                "id": "mmz",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2288,7 +2288,7 @@
                 }
             },
             {
-                "name": "牧野ヶ池東",
+                "id": "mkn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2304,7 +2304,7 @@
                 }
             },
             {
-                "name": "極楽",
+                "id": "gkr",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2320,7 +2320,7 @@
                 }
             },
             {
-                "name": "高針台",
+                "id": "tbd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2336,7 +2336,7 @@
                 }
             },
             {
-                "name": "勢子坊",
+                "id": "skb",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2352,7 +2352,7 @@
                 }
             },
             {
-                "name": "社が丘",
+                "id": "ysh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2368,7 +2368,7 @@
                 }
             },
             {
-                "name": "姫若町",
+                "id": "hmk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2384,7 +2384,7 @@
                 }
             },
             {
-                "name": "藤が丘",
+                "id": "fjg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2411,7 +2411,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "至学館大学前",
+                "id": "shg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2427,7 +2427,7 @@
                 }
             },
             {
-                "name": "二ツ池公園前",
+                "id": "fts",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2443,7 +2443,7 @@
                 }
             },
             {
-                "name": "平子",
+                "id": "hrk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2459,7 +2459,7 @@
                 }
             },
             {
-                "name": "メディアス体育館前",
+                "id": "mds",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2475,7 +2475,7 @@
                 }
             },
             {
-                "name": "大東町",
+                "id": "dtc",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2491,7 +2491,7 @@
                 }
             },
             {
-                "name": "朝日町",
+                "id": "ash",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2507,7 +2507,7 @@
                 }
             },
             {
-                "name": "森岡工業団地南",
+                "id": "mrk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2523,7 +2523,7 @@
                 }
             },
             {
-                "name": "東緒川",
+                "id": "hog",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2550,7 +2550,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "大東町",
+                "id": "dtc",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2566,7 +2566,7 @@
                 }
             },
             {
-                "name": "住友重機前",
+                "id": "smt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2582,7 +2582,7 @@
                 }
             },
             {
-                "name": "柳ケ坪",
+                "id": "yng",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2598,7 +2598,7 @@
                 }
             },
             {
-                "name": "森岡中町",
+                "id": "mrn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2614,7 +2614,7 @@
                 }
             },
             {
-                "name": "寿二区",
+                "id": "ktb",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2630,7 +2630,7 @@
                 }
             },
             {
-                "name": "於大公園西",
+                "id": "odn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2657,7 +2657,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "惣作",
+                "id": "sos",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -2673,7 +2673,7 @@
                 }
             },
             {
-                "name": "後田",
+                "id": "usr",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -2689,7 +2689,7 @@
                 }
             },
             {
-                "name": "内田面",
+                "id": "udm",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -2705,7 +2705,7 @@
                 }
             },
             {
-                "name": "北崎",
+                "id": "kts",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -2721,7 +2721,7 @@
                 }
             },
             {
-                "name": "樫塚",
+                "id": "ksd",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -2737,7 +2737,7 @@
                 }
             },
             {
-                "name": "二ツ池北",
+                "id": "ftk",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -2753,7 +2753,7 @@
                 }
             },
             {
-                "name": "至学館大学前",
+                "id": "shg",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -2769,7 +2769,7 @@
                 }
             },
             {
-                "name": "北山町",
+                "id": "ktc",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -2785,7 +2785,7 @@
                 }
             },
             {
-                "name": "東新町",
+                "id": "tsn",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -2812,7 +2812,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "大高",
+                "id": "odk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2828,7 +2828,7 @@
                 }
             },
             {
-                "name": "正光寺",
+                "id": "skj",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2844,7 +2844,7 @@
                 }
             },
             {
-                "name": "水主ヶ池西",
+                "id": "kgn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2860,7 +2860,7 @@
                 }
             },
             {
-                "name": "茶屋",
+                "id": "cya",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2876,7 +2876,7 @@
                 }
             },
             {
-                "name": "共和三丁目",
+                "id": "kw3",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2892,7 +2892,7 @@
                 }
             },
             {
-                "name": "明成一屋",
+                "id": "msh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2908,7 +2908,7 @@
                 }
             },
             {
-                "name": "柊山",
+                "id": "hry",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2924,7 +2924,7 @@
                 }
             },
             {
-                "name": "県営大府住宅",
+                "id": "kne",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2940,7 +2940,7 @@
                 }
             },
             {
-                "name": "江端中央",
+                "id": "ebc",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -2956,7 +2956,7 @@
                 }
             },
             {
-                "name": "鞍流瀬川",
+                "id": "krn",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -2972,7 +2972,7 @@
                 }
             },
             {
-                "name": "柳ケ坪",
+                "id": "yng",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -2988,7 +2988,7 @@
                 }
             },
             {
-                "name": "尾張森岡",
+                "id": "owm",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -3004,7 +3004,7 @@
                 }
             },
             {
-                "name": "緒川塩田",
+                "id": "ows",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -3020,7 +3020,7 @@
                 }
             },
             {
-                "name": "宮戸橋",
+                "id": "myt",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -3036,7 +3036,7 @@
                 }
             },
             {
-                "name": "緒川",
+                "id": "ogw",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -3063,7 +3063,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "至学館大学前",
+                "id": "shg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3079,7 +3079,7 @@
                 }
             },
             {
-                "name": "北山",
+                "id": "ktm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3095,7 +3095,7 @@
                 }
             },
             {
-                "name": "長根北",
+                "id": "gnk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3111,7 +3111,7 @@
                 }
             },
             {
-                "name": "追分町",
+                "id": "oiw",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3127,7 +3127,7 @@
                 }
             },
             {
-                "name": "明成一屋",
+                "id": "msh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3143,7 +3143,7 @@
                 }
             },
             {
-                "name": "下田ノ松",
+                "id": "smn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3159,7 +3159,7 @@
                 }
             },
             {
-                "name": "長草天神社",
+                "id": "nkt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3175,7 +3175,7 @@
                 }
             },
             {
-                "name": "白魦池",
+                "id": "srh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3191,7 +3191,7 @@
                 }
             },
             {
-                "name": "石原",
+                "id": "isi",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3207,7 +3207,7 @@
                 }
             },
             {
-                "name": "下大脇",
+                "id": "smo",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3223,7 +3223,7 @@
                 }
             },
             {
-                "name": "荒尾後山",
+                "id": "aru",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3239,7 +3239,7 @@
                 }
             },
             {
-                "name": "寿鎌",
+                "id": "zgm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3255,7 +3255,7 @@
                 }
             },
             {
-                "name": "荒尾若宮",
+                "id": "arw",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3271,7 +3271,7 @@
                 }
             },
             {
-                "name": "荒尾大城",
+                "id": "aro",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3287,7 +3287,7 @@
                 }
             },
             {
-                "name": "聚楽園",
+                "id": "shr",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3314,7 +3314,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "新富町",
+                "id": "stm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3330,7 +3330,7 @@
                 }
             },
             {
-                "name": "新田町",
+                "id": "sdn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3346,7 +3346,7 @@
                 }
             },
             {
-                "name": "刈谷市総合運動公園",
+                "id": "krs",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3362,7 +3362,7 @@
                 }
             },
             {
-                "name": "古和井",
+                "id": "kwi",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3378,7 +3378,7 @@
                 }
             },
             {
-                "name": "西富士松",
+                "id": "nfj",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3394,7 +3394,7 @@
                 }
             },
             {
-                "name": "富士松",
+                "id": "fjm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3410,7 +3410,7 @@
                 }
             },
             {
-                "name": "今川町",
+                "id": "img",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3426,7 +3426,7 @@
                 }
             },
             {
-                "name": "東境松本",
+                "id": "hzk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3442,7 +3442,7 @@
                 }
             },
             {
-                "name": "富士松図書館前",
+                "id": "fjt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3458,7 +3458,7 @@
                 }
             },
             {
-                "name": "岩ヶ池",
+                "id": "iwg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3474,7 +3474,7 @@
                 }
             },
             {
-                "name": "愛教大前",
+                "id": "akd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3490,7 +3490,7 @@
                 }
             },
             {
-                "name": "井ヶ谷",
+                "id": "igy",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3506,7 +3506,7 @@
                 }
             },
             {
-                "name": "天白",
+                "id": "tmp",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3522,7 +3522,7 @@
                 }
             },
             {
-                "name": "福田",
+                "id": "fkt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3538,7 +3538,7 @@
                 }
             },
             {
-                "name": "東荒田",
+                "id": "har",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3554,7 +3554,7 @@
                 }
             },
             {
-                "name": "半野木",
+                "id": "hnk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3570,7 +3570,7 @@
                 }
             },
             {
-                "name": "三好荒池",
+                "id": "mar",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3586,7 +3586,7 @@
                 }
             },
             {
-                "name": "三好森下",
+                "id": "mms",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3602,7 +3602,7 @@
                 }
             },
             {
-                "name": "みよし市",
+                "id": "mys",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3618,7 +3618,7 @@
                 }
             },
             {
-                "name": "前田",
+                "id": "med",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3634,7 +3634,7 @@
                 }
             },
             {
-                "name": "三好池",
+                "id": "mik",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3650,7 +3650,7 @@
                 }
             },
             {
-                "name": "莇生町",
+                "id": "azb",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3666,7 +3666,7 @@
                 }
             },
             {
-                "name": "境川",
+                "id": "skg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3682,7 +3682,7 @@
                 }
             },
             {
-                "name": "蓬平地",
+                "id": "ymg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3698,7 +3698,7 @@
                 }
             },
             {
-                "name": "福谷",
+                "id": "ukg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3714,7 +3714,7 @@
                 }
             },
             {
-                "name": "花立",
+                "id": "htt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3730,7 +3730,7 @@
                 }
             },
             {
-                "name": "宮ノ前",
+                "id": "mym",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3746,7 +3746,7 @@
                 }
             },
             {
-                "name": "三好丘三丁目",
+                "id": "mgs",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3762,7 +3762,7 @@
                 }
             },
             {
-                "name": "三好丘",
+                "id": "mgk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3789,7 +3789,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "鰻池",
+                "id": "unk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3805,7 +3805,7 @@
                 }
             },
             {
-                "name": "岡田川",
+                "id": "okd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3821,7 +3821,7 @@
                 }
             },
             {
-                "name": "健康の森西口",
+                "id": "kkn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3837,7 +3837,7 @@
                 }
             },
             {
-                "name": "半月町",
+                "id": "hnt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3853,7 +3853,7 @@
                 }
             },
             {
-                "name": "ウド",
+                "id": "udo",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3869,7 +3869,7 @@
                 }
             },
             {
-                "name": "上野台",
+                "id": "und",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3885,7 +3885,7 @@
                 }
             },
             {
-                "name": "新石根",
+                "id": "sin",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3901,7 +3901,7 @@
                 }
             },
             {
-                "name": "富木島中央",
+                "id": "fkc",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3917,7 +3917,7 @@
                 }
             },
             {
-                "name": "寺下",
+                "id": "trt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3933,7 +3933,7 @@
                 }
             },
             {
-                "name": "上浜田",
+                "id": "kmh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3960,7 +3960,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "末広",
+                "id": "seh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3976,7 +3976,7 @@
                 }
             },
             {
-                "name": "北蕨",
+                "id": "ktw",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -3992,7 +3992,7 @@
                 }
             },
             {
-                "name": "日向根",
+                "id": "hnn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4008,7 +4008,7 @@
                 }
             },
             {
-                "name": "岡前",
+                "id": "okm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4024,7 +4024,7 @@
                 }
             },
             {
-                "name": "新宝",
+                "id": "smp",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4040,7 +4040,7 @@
                 }
             },
             {
-                "name": "潮見",
+                "id": "som",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4056,7 +4056,7 @@
                 }
             },
             {
-                "name": "金城ふ頭",
+                "id": "knj",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4072,7 +4072,7 @@
                 }
             },
             {
-                "name": "飛島ふ頭",
+                "id": "tbs",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4088,7 +4088,7 @@
                 }
             },
             {
-                "name": "名古屋競馬場",
+                "id": "nkb",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4104,7 +4104,7 @@
                 }
             },
             {
-                "name": "湾岸長島",
+                "id": "wng",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4131,7 +4131,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "生見町",
+                "id": "hem",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4147,7 +4147,7 @@
                 }
             },
             {
-                "name": "亀崎北浦",
+                "id": "kmz",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4163,7 +4163,7 @@
                 }
             },
             {
-                "name": "洲の崎",
+                "id": "sns",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4179,7 +4179,7 @@
                 }
             },
             {
-                "name": "高浜碧海",
+                "id": "tkh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4195,7 +4195,7 @@
                 }
             },
             {
-                "name": "恩任寺",
+                "id": "onn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4211,7 +4211,7 @@
                 }
             },
             {
-                "name": "三河高浜",
+                "id": "mtk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4238,7 +4238,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "緒川植山",
+                "id": "oue",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4254,7 +4254,7 @@
                 }
             },
             {
-                "name": "姥池",
+                "id": "ubk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4270,7 +4270,7 @@
                 }
             },
             {
-                "name": "米田町",
+                "id": "kmd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4286,7 +4286,7 @@
                 }
             },
             {
-                "name": "馬池町",
+                "id": "umk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4302,7 +4302,7 @@
                 }
             },
             {
-                "name": "北屋敷",
+                "id": "kty",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4318,7 +4318,7 @@
                 }
             },
             {
-                "name": "宮内町",
+                "id": "myu",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4334,7 +4334,7 @@
                 }
             },
             {
-                "name": "ウド",
+                "id": "udo",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4350,7 +4350,7 @@
                 }
             },
             {
-                "name": "前新切",
+                "id": "msn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4366,71 +4366,7 @@
                 }
             },
             {
-                "name": "田面",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": true,
-                    "rap-exp": true,
-                    "com-exp": true,
-                    "lim-exp": false,
-                    "lin": false
-                }
-            },
-            {
-                "name": "末広",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": false,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": false,
-                    "lin": false
-                }
-            },
-            {
-                "name": "神戸",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": false,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": false,
-                    "lin": false
-                }
-            },
-            {
-                "name": "炭焼",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": true,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": false,
-                    "lin": false
-                }
-            },
-            {
-                "name": "大高緑地西",
+                "id": "tmo",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4446,7 +4382,71 @@
                 }
             },
             {
-                "name": "亀原",
+                "id": "seh",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": false,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "id": "gdo",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": false,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "id": "syk",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "id": "ryn",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": true,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "id": "khr",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4462,7 +4462,7 @@
                 }
             },
             {
-                "name": "大高緑地口",
+                "id": "ryg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4478,7 +4478,7 @@
                 }
             },
             {
-                "name": "潮見が丘",
+                "id": "sim",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4494,7 +4494,7 @@
                 }
             },
             {
-                "name": "鹿山",
+                "id": "sky",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4510,7 +4510,7 @@
                 }
             },
             {
-                "name": "新海池",
+                "id": "nmk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4526,7 +4526,7 @@
                 }
             },
             {
-                "name": "鳴子南",
+                "id": "nkm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4542,7 +4542,7 @@
                 }
             },
             {
-                "name": "篠の風",
+                "id": "snn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4558,7 +4558,7 @@
                 }
             },
             {
-                "name": "相川",
+                "id": "akw",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4574,7 +4574,7 @@
                 }
             },
             {
-                "name": "相生山東",
+                "id": "aoy",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4590,7 +4590,7 @@
                 }
             },
             {
-                "name": "一ツ山住宅",
+                "id": "hts",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4606,7 +4606,7 @@
                 }
             },
             {
-                "name": "島田",
+                "id": "smd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4622,7 +4622,7 @@
                 }
             },
             {
-                "name": "島田橋",
+                "id": "smb",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4638,7 +4638,7 @@
                 }
             },
             {
-                "name": "池見",
+                "id": "ikm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4654,7 +4654,7 @@
                 }
             },
             {
-                "name": "表山",
+                "id": "omt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4670,7 +4670,7 @@
                 }
             },
             {
-                "name": "八事",
+                "id": "ygt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4686,7 +4686,7 @@
                 }
             },
             {
-                "name": "広路町",
+                "id": "hrj",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4702,7 +4702,7 @@
                 }
             },
             {
-                "name": "いりなか",
+                "id": "irn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4718,7 +4718,7 @@
                 }
             },
             {
-                "name": "川名公園",
+                "id": "kwn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4734,7 +4734,7 @@
                 }
             },
             {
-                "name": "安田通",
+                "id": "ysd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4750,7 +4750,7 @@
                 }
             },
             {
-                "name": "春岡",
+                "id": "hro",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4766,7 +4766,7 @@
                 }
             },
             {
-                "name": "吹上",
+                "id": "fkg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4782,7 +4782,7 @@
                 }
             },
             {
-                "name": "南千種",
+                "id": "mck",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4798,7 +4798,7 @@
                 }
             },
             {
-                "name": "菊里",
+                "id": "kkz",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4814,7 +4814,7 @@
                 }
             },
             {
-                "name": "新栄町",
+                "id": "ssk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4830,7 +4830,7 @@
                 }
             },
             {
-                "name": "栄町",
+                "id": "ske",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4857,7 +4857,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "知立",
+                "id": "chr",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4873,7 +4873,7 @@
                 }
             },
             {
-                "name": "知立堀切",
+                "id": "chh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4889,7 +4889,7 @@
                 }
             },
             {
-                "name": "東上重原",
+                "id": "hks",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4905,7 +4905,7 @@
                 }
             },
             {
-                "name": "上重原",
+                "id": "ksg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4921,7 +4921,7 @@
                 }
             },
             {
-                "name": "重原",
+                "id": "sgh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4937,7 +4937,7 @@
                 }
             },
             {
-                "name": "一色町",
+                "id": "isk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4953,7 +4953,7 @@
                 }
             },
             {
-                "name": "中山町",
+                "id": "nky",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4969,7 +4969,7 @@
                 }
             },
             {
-                "name": "刈谷",
+                "id": "kry",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -4985,7 +4985,7 @@
                 }
             },
             {
-                "name": "東陽町",
+                "id": "tyo",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5001,7 +5001,7 @@
                 }
             },
             {
-                "name": "大浜街道",
+                "id": "ohm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5017,7 +5017,7 @@
                 }
             },
             {
-                "name": "刈谷新栄町",
+                "id": "kss",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5033,7 +5033,7 @@
                 }
             },
             {
-                "name": "十念寺",
+                "id": "jnj",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5049,7 +5049,7 @@
                 }
             },
             {
-                "name": "司町",
+                "id": "tkc",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5065,7 +5065,7 @@
                 }
             },
             {
-                "name": "東緒川",
+                "id": "hog",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5081,7 +5081,7 @@
                 }
             },
             {
-                "name": "緒川",
+                "id": "ogw",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5097,7 +5097,7 @@
                 }
             },
             {
-                "name": "於大公園西",
+                "id": "odn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5113,7 +5113,7 @@
                 }
             },
             {
-                "name": "緒川相生",
+                "id": "oga",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5129,7 +5129,7 @@
                 }
             },
             {
-                "name": "鰻池",
+                "id": "unk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5145,7 +5145,7 @@
                 }
             },
             {
-                "name": "姥池",
+                "id": "ubk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5161,7 +5161,7 @@
                 }
             },
             {
-                "name": "緒川植山",
+                "id": "oue",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5177,7 +5177,7 @@
                 }
             },
             {
-                "name": "知多八幡",
+                "id": "cty",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5193,7 +5193,7 @@
                 }
             },
             {
-                "name": "七曲公園",
+                "id": "nmg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5209,7 +5209,7 @@
                 }
             },
             {
-                "name": "佐布里池",
+                "id": "sri",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5225,7 +5225,7 @@
                 }
             },
             {
-                "name": "梅が丘",
+                "id": "umg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5241,7 +5241,7 @@
                 }
             },
             {
-                "name": "五反田",
+                "id": "gtn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5257,7 +5257,7 @@
                 }
             },
             {
-                "name": "知多新知",
+                "id": "ctc",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5273,7 +5273,7 @@
                 }
             },
             {
-                "name": "新知東町",
+                "id": "snc",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5289,7 +5289,7 @@
                 }
             },
             {
-                "name": "知多市保健センター",
+                "id": "cts",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5305,7 +5305,7 @@
                 }
             },
             {
-                "name": "浜脇",
+                "id": "hmw",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5321,7 +5321,7 @@
                 }
             },
             {
-                "name": "東屋敷",
+                "id": "hgy",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5337,7 +5337,7 @@
                 }
             },
             {
-                "name": "朝倉",
+                "id": "ask",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5364,7 +5364,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "半田みなと",
+                "id": "hnm",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5380,7 +5380,7 @@
                 }
             },
             {
-                "name": "瑞穂町",
+                "id": "mzh",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5396,7 +5396,7 @@
                 }
             },
             {
-                "name": "東洋町",
+                "id": "toy",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5412,7 +5412,7 @@
                 }
             },
             {
-                "name": "半田市",
+                "id": "hns",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5428,7 +5428,7 @@
                 }
             },
             {
-                "name": "半田",
+                "id": "hnd",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5444,7 +5444,7 @@
                 }
             },
             {
-                "name": "知多半田",
+                "id": "chn",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5460,7 +5460,7 @@
                 }
             },
             {
-                "name": "雁宿公園",
+                "id": "krd",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5476,7 +5476,7 @@
                 }
             },
             {
-                "name": "清城",
+                "id": "sis",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5492,7 +5492,7 @@
                 }
             },
             {
-                "name": "柊町",
+                "id": "hrg",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5508,7 +5508,7 @@
                 }
             },
             {
-                "name": "柊四丁目",
+                "id": "hyc",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5524,7 +5524,7 @@
                 }
             },
             {
-                "name": "岩滑西",
+                "id": "ynn",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5540,7 +5540,7 @@
                 }
             },
             {
-                "name": "平井町",
+                "id": "hri",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5556,7 +5556,7 @@
                 }
             },
             {
-                "name": "新生町",
+                "id": "sse",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5572,7 +5572,7 @@
                 }
             },
             {
-                "name": "宝来町",
+                "id": "hor",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5588,7 +5588,7 @@
                 }
             },
             {
-                "name": "三ツ池",
+                "id": "mti",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5604,7 +5604,7 @@
                 }
             },
             {
-                "name": "金色",
+                "id": "kni",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5620,7 +5620,7 @@
                 }
             },
             {
-                "name": "飛香台東",
+                "id": "asd",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5636,7 +5636,7 @@
                 }
             },
             {
-                "name": "新常滑",
+                "id": "stk",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5652,7 +5652,7 @@
                 }
             },
             {
-                "name": "北条公園",
+                "id": "ktj",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5668,7 +5668,7 @@
                 }
             },
             {
-                "name": "原松町",
+                "id": "hrm",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5684,7 +5684,7 @@
                 }
             },
             {
-                "name": "招き猫通り",
+                "id": "mnd",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5700,39 +5700,7 @@
                 }
             },
             {
-                "name": "常滑",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": true,
-                    "rap-exp": true,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "常滑競艇",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "りんくうビーチ",
+                "id": "tkn",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5748,7 +5716,7 @@
                 }
             },
             {
-                "name": "りんくう常滑",
+                "id": "tkk",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5764,7 +5732,39 @@
                 }
             },
             {
-                "name": "セントレア北",
+                "id": "rnk",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "rnt",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "ctk",
                 "types": {
                     "all": true,
                     "loc": false,
@@ -5780,7 +5780,7 @@
                 }
             },
             {
-                "name": "セントレア第1ターミナル",
+                "id": "ct1",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5796,7 +5796,7 @@
                 }
             },
             {
-                "name": "セントレア第2ターミナル",
+                "id": "ct2",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -5823,7 +5823,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "長土井",
+                "id": "ngd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5839,7 +5839,7 @@
                 }
             },
             {
-                "name": "本田",
+                "id": "hon",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5855,7 +5855,7 @@
                 }
             },
             {
-                "name": "堤本町",
+                "id": "ttm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5871,103 +5871,7 @@
                 }
             },
             {
-                "name": "宮畔",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": true,
-                    "rap-exp": true,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "平松",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "宝",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "大坪",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "田代町",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": true,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "本新町",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "豊田東新町",
+                "id": "myg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5983,7 +5887,7 @@
                 }
             },
             {
-                "name": "衣ヶ原",
+                "id": "hmt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -5999,7 +5903,39 @@
                 }
             },
             {
-                "name": "広久手町",
+                "id": "tkr",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "otb",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "tsr",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6015,7 +5951,7 @@
                 }
             },
             {
-                "name": "八迫山",
+                "id": "hsn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6031,7 +5967,23 @@
                 }
             },
             {
-                "name": "小坂町",
+                "id": "tts",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "krg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6047,7 +5999,55 @@
                 }
             },
             {
-                "name": "豊田市",
+                "id": "hkt",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "yts",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "kzk",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "tyt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6063,7 +6063,7 @@
                 }
             },
             {
-                "name": "矢作川",
+                "id": "yhg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6079,7 +6079,7 @@
                 }
             },
             {
-                "name": "豊田スタジアム前",
+                "id": "tst",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6095,7 +6095,7 @@
                 }
             },
             {
-                "name": "上野町",
+                "id": "uen",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6111,7 +6111,7 @@
                 }
             },
             {
-                "name": "加茂川公園",
+                "id": "kmg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6127,7 +6127,7 @@
                 }
             },
             {
-                "name": "三河渋谷",
+                "id": "msb",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6154,7 +6154,7 @@
         "isLoop": true,
         "stations": [
             {
-                "name": "日高",
+                "id": "hdk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6170,7 +6170,7 @@
                 }
             },
             {
-                "name": "高倉",
+                "id": "kkr",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6186,7 +6186,7 @@
                 }
             },
             {
-                "name": "宝町",
+                "id": "krm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6202,7 +6202,7 @@
                 }
             },
             {
-                "name": "織機本社前",
+                "id": "skk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6218,7 +6218,7 @@
                 }
             },
             {
-                "name": "刈谷新栄町",
+                "id": "kss",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6234,7 +6234,7 @@
                 }
             },
             {
-                "name": "刈谷高松",
+                "id": "krt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6250,7 +6250,7 @@
                 }
             },
             {
-                "name": "刈谷住吉",
+                "id": "ksm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6266,7 +6266,7 @@
                 }
             },
             {
-                "name": "刈谷交通遊園前",
+                "id": "krk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6282,7 +6282,7 @@
                 }
             },
             {
-                "name": "下重原",
+                "id": "sms",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6298,7 +6298,7 @@
                 }
             },
             {
-                "name": "一色町",
+                "id": "isk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6314,7 +6314,7 @@
                 }
             },
             {
-                "name": "昭和町",
+                "id": "shw",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6330,7 +6330,7 @@
                 }
             },
             {
-                "name": "アイシン本社前",
+                "id": "ais",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6346,7 +6346,7 @@
                 }
             },
             {
-                "name": "恩田",
+                "id": "ond",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6362,7 +6362,7 @@
                 }
             },
             {
-                "name": "刈谷青山",
+                "id": "kra",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6378,7 +6378,7 @@
                 }
             },
             {
-                "name": "青山公園西",
+                "id": "aym",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6394,7 +6394,7 @@
                 }
             },
             {
-                "name": "新田町",
+                "id": "sdn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6410,7 +6410,7 @@
                 }
             },
             {
-                "name": "小山",
+                "id": "oym",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6437,7 +6437,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "与五八",
+                "id": "ygh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6453,7 +6453,7 @@
                 }
             },
             {
-                "name": "横須賀高校前",
+                "id": "yks",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6469,7 +6469,7 @@
                 }
             },
             {
-                "name": "野崎橋",
+                "id": "nzb",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6485,7 +6485,7 @@
                 }
             },
             {
-                "name": "知多平野",
+                "id": "cth",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6501,7 +6501,7 @@
                 }
             },
             {
-                "name": "長曽橋",
+                "id": "chs",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6517,7 +6517,7 @@
                 }
             },
             {
-                "name": "朝倉団地",
+                "id": "skd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6533,7 +6533,7 @@
                 }
             },
             {
-                "name": "つつじが丘",
+                "id": "ttj",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6549,7 +6549,7 @@
                 }
             },
             {
-                "name": "新知台",
+                "id": "scd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6565,7 +6565,7 @@
                 }
             },
             {
-                "name": "知多市保健センター",
+                "id": "cts",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6581,7 +6581,7 @@
                 }
             },
             {
-                "name": "中央図書館前",
+                "id": "cht",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6597,7 +6597,7 @@
                 }
             },
             {
-                "name": "美城ケ根",
+                "id": "mkg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6613,7 +6613,7 @@
                 }
             },
             {
-                "name": "沖ノ田",
+                "id": "okn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6629,7 +6629,7 @@
                 }
             },
             {
-                "name": "日長堀田",
+                "id": "hng",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6645,7 +6645,7 @@
                 }
             },
             {
-                "name": "前田口",
+                "id": "mdg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6661,7 +6661,7 @@
                 }
             },
             {
-                "name": "新舞子北",
+                "id": "smk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6677,7 +6677,7 @@
                 }
             },
             {
-                "name": "新舞子口",
+                "id": "smg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -6704,7 +6704,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "太田川",
+                "id": "tgw",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -6720,7 +6720,7 @@
                 }
             },
             {
-                "name": "細田",
+                "id": "hsd",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -6736,7 +6736,7 @@
                 }
             },
             {
-                "name": "与五八",
+                "id": "ygh",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -6752,7 +6752,7 @@
                 }
             },
             {
-                "name": "北加木屋",
+                "id": "ktk",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -6768,7 +6768,7 @@
                 }
             },
             {
-                "name": "吉川",
+                "id": "ysk",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -6784,7 +6784,7 @@
                 }
             },
             {
-                "name": "宮内町",
+                "id": "myu",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -6800,87 +6800,7 @@
                 }
             },
             {
-                "name": "半月町",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": true,
-                    "rap-exp": true,
-                    "com-exp": false,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "大府森岡",
-                "types": {
-                    "all": true,
-                    "loc": null,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": true,
-                    "rap-exp": null,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "鞍流瀬川",
-                "types": {
-                    "all": true,
-                    "loc": null,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": false,
-                    "rap-exp": null,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "若草",
-                "types": {
-                    "all": true,
-                    "loc": null,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": true,
-                    "rap-exp": null,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "大東町",
-                "types": {
-                    "all": true,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": false,
-                    "rap-exp": null,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "惣作",
+                "id": "hnt",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -6896,7 +6816,87 @@
                 }
             },
             {
-                "name": "中手町",
+                "id": "obm",
+                "types": {
+                    "all": true,
+                    "loc": null,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "krn",
+                "types": {
+                    "all": true,
+                    "loc": null,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": false,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "wks",
+                "types": {
+                    "all": true,
+                    "loc": null,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "dtc",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": false,
+                    "rap-exp": null,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "sos",
+                "types": {
+                    "all": true,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": false,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "nkc",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -6912,7 +6912,7 @@
                 }
             },
             {
-                "name": "日高",
+                "id": "hdk",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -6928,7 +6928,7 @@
                 }
             },
             {
-                "name": "新富町",
+                "id": "stm",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -6944,7 +6944,7 @@
                 }
             },
             {
-                "name": "丸田町",
+                "id": "mrt",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -6960,7 +6960,7 @@
                 }
             },
             {
-                "name": "刈谷",
+                "id": "kry",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -6987,7 +6987,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "半月町",
+                "id": "hnt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7003,7 +7003,7 @@
                 }
             },
             {
-                "name": "大府",
+                "id": "obu",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7019,7 +7019,7 @@
                 }
             },
             {
-                "name": "大東町",
+                "id": "dtc",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -7035,7 +7035,7 @@
                 }
             },
             {
-                "name": "惣作",
+                "id": "sos",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -7062,7 +7062,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "新富町",
+                "id": "stm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7078,7 +7078,7 @@
                 }
             },
             {
-                "name": "刈谷池田",
+                "id": "kik",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7094,7 +7094,7 @@
                 }
             },
             {
-                "name": "恩田",
+                "id": "ond",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7110,7 +7110,7 @@
                 }
             },
             {
-                "name": "狩野公園",
+                "id": "kko",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7126,7 +7126,7 @@
                 }
             },
             {
-                "name": "鳥居",
+                "id": "tri",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7142,7 +7142,7 @@
                 }
             },
             {
-                "name": "知立",
+                "id": "chr",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7169,7 +7169,7 @@
         "isLoop": true,
         "stations": [
             {
-                "name": "大府",
+                "id": "obu",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -7185,7 +7185,7 @@
                 }
             },
             {
-                "name": "大府市役所前",
+                "id": "obs",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7201,7 +7201,7 @@
                 }
             },
             {
-                "name": "長根",
+                "id": "ngn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7217,7 +7217,7 @@
                 }
             },
             {
-                "name": "至学館大学前",
+                "id": "shg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7233,7 +7233,7 @@
                 }
             },
             {
-                "name": "梶田町",
+                "id": "kjt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7249,7 +7249,7 @@
                 }
             },
             {
-                "name": "坊主山",
+                "id": "bzy",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7265,7 +7265,7 @@
                 }
             },
             {
-                "name": "東新町",
+                "id": "tsn",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -7281,7 +7281,7 @@
                 }
             },
             {
-                "name": "共和",
+                "id": "kyw",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -7297,7 +7297,7 @@
                 }
             },
             {
-                "name": "田面",
+                "id": "tmo",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -7313,7 +7313,7 @@
                 }
             },
             {
-                "name": "アローブ前",
+                "id": "alb",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -7329,7 +7329,7 @@
                 }
             },
             {
-                "name": "江端町",
+                "id": "ebt",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -7345,7 +7345,7 @@
                 }
             },
             {
-                "name": "大峯",
+                "id": "omn",
                 "types": {
                     "all": true,
                     "loc": true,
@@ -7372,7 +7372,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "半田市",
+                "id": "hns",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7388,7 +7388,7 @@
                 }
             },
             {
-                "name": "南本町",
+                "id": "mhc",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7404,7 +7404,7 @@
                 }
             },
             {
-                "name": "港本町",
+                "id": "mnt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7420,7 +7420,7 @@
                 }
             },
             {
-                "name": "成岩本町",
+                "id": "nrw",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7436,7 +7436,7 @@
                 }
             },
             {
-                "name": "神戸川",
+                "id": "gdg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7452,7 +7452,7 @@
                 }
             },
             {
-                "name": "旭町",
+                "id": "asm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7468,7 +7468,7 @@
                 }
             },
             {
-                "name": "有楽町",
+                "id": "yrk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7484,7 +7484,7 @@
                 }
             },
             {
-                "name": "石川橋",
+                "id": "ikb",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7500,7 +7500,7 @@
                 }
             },
             {
-                "name": "下門",
+                "id": "tmn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7516,7 +7516,7 @@
                 }
             },
             {
-                "name": "武豊",
+                "id": "tkt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7532,7 +7532,7 @@
                 }
             },
             {
-                "name": "里中",
+                "id": "stn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7548,7 +7548,7 @@
                 }
             },
             {
-                "name": "廻間",
+                "id": "hzm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7564,7 +7564,7 @@
                 }
             },
             {
-                "name": "浦之島",
+                "id": "urn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7580,7 +7580,7 @@
                 }
             },
             {
-                "name": "新富貴",
+                "id": "sfk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7596,7 +7596,7 @@
                 }
             },
             {
-                "name": "篭田",
+                "id": "kgt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7612,7 +7612,7 @@
                 }
             },
             {
-                "name": "三反田",
+                "id": "snt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7628,7 +7628,7 @@
                 }
             },
             {
-                "name": "梅之木",
+                "id": "umn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7644,7 +7644,7 @@
                 }
             },
             {
-                "name": "布土",
+                "id": "ftt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7660,7 +7660,7 @@
                 }
             },
             {
-                "name": "河和口",
+                "id": "kwg",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7676,7 +7676,7 @@
                 }
             },
             {
-                "name": "時志",
+                "id": "tks",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7692,119 +7692,7 @@
                 }
             },
             {
-                "name": "河和",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": true,
-                    "rap-exp": true,
-                    "com-exp": null,
-                    "lim-exp": true,
-                    "lin": true
-                }
-            },
-            {
-                "name": "河和上前田",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": "some",
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": false,
-                    "lin": false
-                }
-            },
-            {
-                "name": "新浦戸",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": false,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": "some",
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": false,
-                    "lin": false
-                }
-            },
-            {
-                "name": "古布",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": true,
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": false,
-                    "lin": false
-                }
-            },
-            {
-                "name": "美浜中平井",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": "some",
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": false,
-                    "lin": false
-                }
-            },
-            {
-                "name": "郷島",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": "some",
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": false,
-                    "lin": false
-                }
-            },
-            {
-                "name": "山田海岸",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": true,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": null,
-                    "exp": "some",
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": false,
-                    "lin": false
-                }
-            },
-            {
-                "name": "大井港",
+                "id": "kwa",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7820,7 +7708,55 @@
                 }
             },
             {
-                "name": "片名",
+                "id": "kwk",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": "some",
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "id": "sur",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": false,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": "some",
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "id": "koh",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "id": "mnh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7836,7 +7772,7 @@
                 }
             },
             {
-                "name": "新師崎",
+                "id": "gjm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7852,7 +7788,7 @@
                 }
             },
             {
-                "name": "師崎漁港",
+                "id": "ymd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7868,7 +7804,7 @@
                 }
             },
             {
-                "name": "師崎",
+                "id": "oik",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7884,7 +7820,71 @@
                 }
             },
             {
-                "name": "師崎港",
+                "id": "ktn",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": "some",
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "id": "smr",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": "some",
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "id": "mrg",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": "some",
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": false,
+                    "lin": false
+                }
+            },
+            {
+                "id": "mrz",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": true,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": null,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": null,
+                    "lim-exp": true,
+                    "lin": true
+                }
+            },
+            {
+                "id": "mzk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7911,7 +7911,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "名和",
+                "id": "nwa",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7927,7 +7927,7 @@
                 }
             },
             {
-                "name": "龍ノ脇",
+                "id": "rnw",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7943,7 +7943,7 @@
                 }
             },
             {
-                "name": "南神田",
+                "id": "mjd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7959,7 +7959,7 @@
                 }
             },
             {
-                "name": "寺徳",
+                "id": "jtk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7975,7 +7975,7 @@
                 }
             },
             {
-                "name": "寿鎌",
+                "id": "zgm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -7991,7 +7991,7 @@
                 }
             },
             {
-                "name": "脇ノ田",
+                "id": "wkn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8007,7 +8007,7 @@
                 }
             },
             {
-                "name": "荒尾町南",
+                "id": "amm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8023,7 +8023,7 @@
                 }
             },
             {
-                "name": "富木島中央",
+                "id": "fkc",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8039,7 +8039,7 @@
                 }
             },
             {
-                "name": "伏見橋",
+                "id": "fsm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8055,7 +8055,7 @@
                 }
             },
             {
-                "name": "北加木屋",
+                "id": "ktk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8071,7 +8071,7 @@
                 }
             },
             {
-                "name": "丑寅海斗",
+                "id": "ust",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8087,7 +8087,7 @@
                 }
             },
             {
-                "name": "南加木屋",
+                "id": "mnk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8103,7 +8103,7 @@
                 }
             },
             {
-                "name": "中平地",
+                "id": "nkh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8119,7 +8119,7 @@
                 }
             },
             {
-                "name": "八幡新田",
+                "id": "ywt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8135,7 +8135,7 @@
                 }
             },
             {
-                "name": "緒川植山",
+                "id": "oue",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8162,7 +8162,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "古布",
+                "id": "koh",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8178,7 +8178,7 @@
                 }
             },
             {
-                "name": "古布九条",
+                "id": "kjo",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8194,7 +8194,7 @@
                 }
             },
             {
-                "name": "内田",
+                "id": "ucd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8210,7 +8210,7 @@
                 }
             },
             {
-                "name": "内海",
+                "id": "utm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8226,7 +8226,7 @@
                 }
             },
             {
-                "name": "早稲倉",
+                "id": "wsk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8242,7 +8242,7 @@
                 }
             },
             {
-                "name": "内海海岸",
+                "id": "utk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8269,7 +8269,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "荒尾下畑",
+                "id": "ars",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8285,7 +8285,7 @@
                 }
             },
             {
-                "name": "大池公園",
+                "id": "okk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8301,7 +8301,7 @@
                 }
             },
             {
-                "name": "荒尾町南",
+                "id": "amm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8317,7 +8317,7 @@
                 }
             },
             {
-                "name": "貴船",
+                "id": "kfn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8333,7 +8333,7 @@
                 }
             },
             {
-                "name": "長口",
+                "id": "gkt",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8349,7 +8349,7 @@
                 }
             },
             {
-                "name": "前新切",
+                "id": "msn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8365,7 +8365,7 @@
                 }
             },
             {
-                "name": "アローブ前",
+                "id": "alb",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8381,7 +8381,7 @@
                 }
             },
             {
-                "name": "柊山",
+                "id": "hry",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8397,7 +8397,7 @@
                 }
             },
             {
-                "name": "中央町",
+                "id": "chc",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8413,7 +8413,7 @@
                 }
             },
             {
-                "name": "長根",
+                "id": "ngn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8429,7 +8429,7 @@
                 }
             },
             {
-                "name": "平子",
+                "id": "hrk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8445,7 +8445,7 @@
                 }
             },
             {
-                "name": "辰池",
+                "id": "tti",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8461,7 +8461,7 @@
                 }
             },
             {
-                "name": "樫塚",
+                "id": "ksd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8477,7 +8477,7 @@
                 }
             },
             {
-                "name": "みどり公園",
+                "id": "mdk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8493,7 +8493,7 @@
                 }
             },
             {
-                "name": "新左山",
+                "id": "szy",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8509,7 +8509,7 @@
                 }
             },
             {
-                "name": "前後",
+                "id": "zng",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8525,7 +8525,7 @@
                 }
             },
             {
-                "name": "二村台南",
+                "id": "ftm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8541,7 +8541,7 @@
                 }
             },
             {
-                "name": "二村台",
+                "id": "fmd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8557,7 +8557,7 @@
                 }
             },
             {
-                "name": "豊明団地",
+                "id": "tyd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8573,7 +8573,7 @@
                 }
             },
             {
-                "name": "若宮",
+                "id": "wkm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8589,7 +8589,7 @@
                 }
             },
             {
-                "name": "沓掛",
+                "id": "kkk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8616,7 +8616,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "緒川植山",
+                "id": "oue",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8632,7 +8632,7 @@
                 }
             },
             {
-                "name": "釜池",
+                "id": "kmk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8648,7 +8648,7 @@
                 }
             },
             {
-                "name": "丸池台",
+                "id": "mri",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8664,7 +8664,7 @@
                 }
             },
             {
-                "name": "東ヶ丘",
+                "id": "hgo",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8680,7 +8680,7 @@
                 }
             },
             {
-                "name": "高根台",
+                "id": "tkd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8696,7 +8696,7 @@
                 }
             },
             {
-                "name": "福住",
+                "id": "fks",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8712,7 +8712,7 @@
                 }
             },
             {
-                "name": "荒古",
+                "id": "ark",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8728,7 +8728,7 @@
                 }
             },
             {
-                "name": "狐平井",
+                "id": "kth",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8744,103 +8744,7 @@
                 }
             },
             {
-                "name": "宮津",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": true,
-                    "rap-exp": true,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "蟹田橋",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "萩",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "岩滑東",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "半田住吉",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": true,
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "半田赤レンガ",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "半田",
+                "id": "myz",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8856,7 +8760,7 @@
                 }
             },
             {
-                "name": "半田中町",
+                "id": "knd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8872,7 +8776,39 @@
                 }
             },
             {
-                "name": "栄町二丁目",
+                "id": "hgi",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "ynh",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "hds",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8888,7 +8824,7 @@
                 }
             },
             {
-                "name": "栄町四丁目",
+                "id": "akr",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -8904,87 +8840,7 @@
                 }
             },
             {
-                "name": "新青山",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": true,
-                    "rap-exp": true,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "花園町",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "豊成",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": true,
-                    "rap-exp": true,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "鹿狩池",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "平井畑",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "武豊中根",
+                "id": "hnd",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -9000,7 +8856,7 @@
                 }
             },
             {
-                "name": "知多向陽",
+                "id": "hdn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -9016,7 +8872,23 @@
                 }
             },
             {
-                "name": "大門田",
+                "id": "sk2",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "sk4",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -9032,23 +8904,7 @@
                 }
             },
             {
-                "name": "武豊鎮守",
-                "types": {
-                    "all": null,
-                    "loc": true,
-                    "rap": null,
-                    "com-sem-exp": null,
-                    "sem-exp": null,
-                    "sub-exp": true,
-                    "exp": false,
-                    "rap-exp": false,
-                    "com-exp": null,
-                    "lim-exp": null,
-                    "lin": null
-                }
-            },
-            {
-                "name": "富貴宮前",
+                "id": "say",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -9064,7 +8920,23 @@
                 }
             },
             {
-                "name": "富貴",
+                "id": "hnz",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "hso",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -9080,7 +8952,135 @@
                 }
             },
             {
-                "name": "新富貴",
+                "id": "kgr",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "hbt",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "ttn",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "cky",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "dmn",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "ttc",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": false,
+                    "rap-exp": false,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "fkm",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "fki",
+                "types": {
+                    "all": null,
+                    "loc": true,
+                    "rap": null,
+                    "com-sem-exp": null,
+                    "sem-exp": null,
+                    "sub-exp": true,
+                    "exp": true,
+                    "rap-exp": true,
+                    "com-exp": null,
+                    "lim-exp": null,
+                    "lin": null
+                }
+            },
+            {
+                "id": "sfk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -9107,7 +9107,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "惣作",
+                "id": "sos",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -9123,7 +9123,7 @@
                 }
             },
             {
-                "name": "長根",
+                "id": "ngn",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -9150,7 +9150,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "北加木屋",
+                "id": "ktk",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -9166,7 +9166,7 @@
                 }
             },
             {
-                "name": "横須賀高校前",
+                "id": "yks",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -9193,7 +9193,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "鳴海",
+                "id": "nrm",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -9209,7 +9209,7 @@
                 }
             },
             {
-                "name": "上汐田",
+                "id": "kso",
                 "types": {
                     "all": null,
                     "loc": true,
@@ -9236,7 +9236,7 @@
         "isLoop": false,
         "stations": [
             {
-                "name": "江端町",
+                "id": "ebt",
                 "types": {
                     "all": null,
                     "loc": null,
@@ -9252,7 +9252,7 @@
                 }
             },
             {
-                "name": "大府森岡",
+                "id": "obm",
                 "types": {
                     "all": null,
                     "loc": null,
