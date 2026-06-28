@@ -7,6 +7,7 @@ export function name_number(text) {
 }
 
 export function id_number(id) {
+    console.log(id);
     return stations[id]?.code ?? null;
 }
 
@@ -22,7 +23,7 @@ export function code(text) {
     if (name_number(text) != null) {
         return name_number(text);
     } else if (text == '中部国際空港') return 'HK28';
-    else if (stations[text]) return stations[text].number;
+    else if (stations[text]) return stations[text].code[0];
     return text;
 }
 

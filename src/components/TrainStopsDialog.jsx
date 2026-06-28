@@ -138,7 +138,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
                 </Grid>
                 {stops?.map((stop) => {
                     const isEmphasized =
-                        emphasized.map((s) => name(s.split(',')[0])).includes(stop.name) &&
+                        emphasized.map((s) => s.split(',')[0]).includes(stop.id) &&
                         (emphasized.some((s) => s.split(',')[1] === '') ||
                             emphasized.map((s) => Number(s.split(',')[1])).includes(stop.dep) ||
                             emphasized.map((s) => Number(s.split(',')[1])).includes(stop.arr));

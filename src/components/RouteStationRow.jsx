@@ -104,7 +104,7 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
             <Stack sx={{ ml: 1 }}>
                 <Stack sx={{ flex: 1, minWidth: 0 }}>
                     <Box
-                        onClick={() => linkTo(station.name, line.name)}
+                        onClick={() => linkTo(station.id, line.name)}
                         sx={{
                             cursor: 'pointer',
                             display: 'flex',
@@ -121,11 +121,11 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
                                 textOverflow: 'ellipsis',
                             }}
                         >
-                            {station.name}
+                            {stationData[station.id].name}
                         </Typography>
                     </Box>
                 </Stack>
-                {stationData[station.name].routes.filter((route) => route !== line.name).length >
+                {stationData[station.id].routes.filter((route) => route !== line.name).length >
                     0 && (
                     <Stack direction='row' sx={{ mt: 0, alignItems: 'center' }}>
                         <Typography
@@ -143,7 +143,7 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
                             乗換：
                         </Typography>
                         <Stack direction='row'>
-                            {stationData[station.name].routes
+                            {stationData[station.id].routes
                                 .filter((route) => route !== line.name)
                                 .map((route) => (
                                     <Box
