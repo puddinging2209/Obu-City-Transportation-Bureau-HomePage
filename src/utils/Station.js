@@ -7,7 +7,6 @@ export function name_number(text) {
 }
 
 export function id_number(id) {
-    console.log(id);
     return stations[id]?.code ?? null;
 }
 

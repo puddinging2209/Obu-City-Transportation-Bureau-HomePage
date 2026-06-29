@@ -55,10 +55,11 @@ export default function TransferInput({ onSearch, loading }) {
         );
     }
 
-    function toSelecterOption(stationCode) {
-        const stationName = nodes[stationCode]?.name;
+    function toSelecterOption(id) {
+        const stationName = nodes[id]?.name;
         if (!stationName) return null;
-        return { label: stationName, value: stationName, kana: stations[stationName]?.kana || '' };
+        console.log({ label: stationName, value: id, kana: stations[id]?.kana || '' });
+        return { label: stationName, value: id, role: 'station', kana: stations[id]?.kana || '' };
     }
 
     React.useEffect(() => {

@@ -12,7 +12,6 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
 
     const linkTo = (sta, line) => {
         const dId = stationData[sta].directions.findIndex((d) => d.route === line);
-        console.log(stationData[sta].directions, line, dId);
         navigate(`/timetable?station=${sta}&direction=${dId === -1 ? 0 : dId}`);
     };
 
