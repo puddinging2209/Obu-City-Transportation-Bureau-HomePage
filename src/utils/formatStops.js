@@ -85,7 +85,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
                         )?.isLoop ||
                         Object.values(lines).find((l) => l.json === resolveRosen(line))?.isLoop
                     ) ||
-                        (d.timetable._data[beforeIndex].arrival ?
+                        (d.timetable._data[beforeIndex]?.arrival ?
                             adjustTime(d.timetable._data[beforeIndex]?.arrival) <
                             adjustTime(train.timetable._data[afterIndex]?.departure)
                         :   adjustTime(d.timetable._data[beforeIndex]?.departure) <=
@@ -112,7 +112,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
                         )?.isLoop ||
                         Object.values(lines).find((l) => l.json === resolveRosen(line))?.isLoop
                     ) ||
-                        (d.timetable._data[beforeIndex].arrival ?
+                        (d.timetable._data[beforeIndex]?.arrival ?
                             adjustTime(d.timetable._data[beforeIndex]?.arrival) <
                             adjustTime(train.timetable._data[afterIndex]?.departure)
                         :   adjustTime(d.timetable._data[beforeIndex]?.departure) <=
@@ -196,7 +196,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
                         )?.isLoop ||
                         Object.values(lines).find((l) => l.json === resolveRosen(line))?.isLoop
                     ) ||
-                        (train.timetable._data[beforeIndex].arrival ?
+                        (train.timetable._data[beforeIndex]?.arrival ?
                             adjustTime(d.timetable._data[afterIndex]?.departure) >
                             adjustTime(train.timetable._data[beforeIndex]?.arrival)
                         :   adjustTime(d.timetable._data[afterIndex]?.departure) >=
@@ -221,7 +221,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
                         )?.isLoop ||
                         Object.values(lines).find((l) => l.json === resolveRosen(line))?.isLoop
                     ) ||
-                        (train.timetable._data[beforeIndex].arrival ?
+                        (train.timetable._data[beforeIndex]?.arrival ?
                             adjustTime(d.timetable._data[afterIndex]?.departure) >
                             adjustTime(train.timetable._data[beforeIndex]?.arrival)
                         :   adjustTime(d.timetable._data[afterIndex]?.departure) >=
