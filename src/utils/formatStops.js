@@ -9,13 +9,14 @@ import stations from '../data/stations.json';
 
 function searchStops(diagram, train) {
     const stationList = diagram.railway.stations.map((sta) => sta.name);
+    console.log(diagram);
     if (!train) return [];
     return train.timetable._data
         .map((sta, i) => {
             const code = stationList[train.direction === 0 ? i : stationList.length - 1 - i];
             const stationId = id(code);
             const stationName = name(code);
-            if (!sta) return null;
+            if (!sta || !code || !stationId || !stationName) return null;
             if (diagram.railway.name == 'KT' && stationId === 'chr') return null;
             if (diagram.railway.name == 'MR' && (stationId === 'okw' || stationId === 'hno'))
                 return null;
@@ -269,7 +270,6 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
             }
         }
     }
-    console.log(result);
     return result;
 }
 
@@ -305,7 +305,7 @@ export default async function formatStops(line, train) {
     const preResult = [...outer.before, ...inner, ...outer.after];
     let result = [];
     for (let i = 0; i < preResult.length; i++) {
-        if (i < preResult.length - 2 && preResult[i].name === preResult[i + 1].name) {
+        if (i < preResult.length - 2 && preResult[i].id === preResult[i + 1].id) {
             result.push({
                 name: preResult[i].name,
                 id: preResult[i].id,
@@ -315,7 +315,7 @@ export default async function formatStops(line, train) {
                 dep: preResult[i + 1].dep,
                 lineName: preResult[i].lineName,
             });
-        } else if (i > 0 && preResult[i - 1].name === preResult[i].name) {
+        } else if (i > 0 && preResult[i - 1].id === preResult[i].id) {
             continue;
         } else if (
             (preResult[i].id === 'obu' || preResult[i].id === 'ktk') &&
