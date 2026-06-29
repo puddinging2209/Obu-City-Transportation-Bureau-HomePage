@@ -3,6 +3,8 @@ import { execSync } from 'child_process'
 import fs from 'fs'
 import path from 'path'
 import { defineConfig } from 'vite'
+import viteOgp from 'vite-plugin-open-graph'
+import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,6 +14,39 @@ export default defineConfig({
     },
     plugins: [
         react(),
+        VitePWA({
+            registerType: 'autoUpdate',
+            injectRegister: 'auto',
+            manifest: {
+                name: '大府市交通局',
+                description: '架空鉄道「大府市営地下鉄」を含む大府市交通局のホームページです。',
+                theme_color: '#f5f5f5',
+                display: 'standalone',
+                lang: 'ja-jp',
+                start_url: '/Obu-City-Transportation-Bureau-HomePage/',
+                icons: [
+                    {
+                        src: 'icons/192.png',
+                        sizes: '192x192',
+                        type: 'image/png'
+                    }, {
+                        src: 'icons/512.png',
+                        sizes: '512x512',
+                        type: 'image/png'
+                    }
+                ]
+            },
+        }),
+        viteOgp({
+            basic: {
+                title: '大府市交通局',
+                type: 'website',
+                image: 'https://puddinging2209.github.io/Obu-City-Transportation-Bureau-HomePage/icons/128.png',
+                description: '架空鉄道「大府市営地下鉄」を含む大府市交通局のホームページです。',
+                url: 'https://puddinging2209.github.io/Obu-City-Transportation-Bureau-HomePage/',
+                locale: 'ja_JP'
+            }
+        }),
         {
             name: 'update-cache-name',
             async generateBundle() {
