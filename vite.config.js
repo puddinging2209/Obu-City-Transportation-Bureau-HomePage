@@ -36,12 +36,14 @@ export default defineConfig({
         react(),
         VitePWA({
             strategies: 'injectManifest',
+            srcDir: 'src',
             outDir: 'docs',
+            filename: 'sw.js',
             injectRegister: 'inline',
             registerType: 'autoUpdate',
 
             injectManifest: {
-                swSrc: path.resolve(__dirname, 'src/custom-sw.js'),
+                swSrc: path.resolve(__dirname, 'src/sw.js'),
                 swDest: path.resolve(__dirname, 'docs/sw.js'),
                 globDirectory: 'docs',
                 globPatterns: ['**/*.{js,css,html,ico,png,svg,txt}'],
