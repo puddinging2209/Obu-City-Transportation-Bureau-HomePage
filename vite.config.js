@@ -6,17 +6,46 @@ import { defineConfig } from 'vite';
 import viteOgp from 'vite-plugin-open-graph';
 import { VitePWA } from 'vite-plugin-pwa';
 
+// public/oud の最終コミットSHA（またはタイムスタンプ）を取得する関数
+function getOudCacheVersion() {
+    try {
+        const lastOudCommit = execSync('git log -n 1 --pretty=format:%H -- public/oud', {
+            encoding: 'utf-8',
+        }).trim();
+        console.log(`[Cache Version] Last OUD change commit: ${lastOudCommit}`);
+        return `oud-cache-${lastOudCommit}`;
+    } catch (err) {
+        console.log('[Cache Version] Git error:', err.message);
+        console.log('[Cache Version] Fallback to timestamp');
+        return `oud-cache-${Date.now()}`;
+    }
+}
+
+const cacheVersion = getOudCacheVersion();
+
 // https://vitejs.dev/config/
 export default defineConfig({
     base: '/Obu-City-Transportation-Bureau-HomePage/',
     build: {
         outDir: 'docs',
     },
+    define: {
+        __OUD_CACHE_NAME__: JSON.stringify(cacheVersion),
+    },
     plugins: [
         react(),
         VitePWA({
+            strategies: 'injectManifest',
+            outDir: 'docs',
+            injectRegister: 'inline',
             registerType: 'autoUpdate',
-            injectRegister: 'auto',
+
+            injectManifest: {
+                swSrc: path.resolve(__dirname, 'src/custom-sw.js'),
+                swDest: path.resolve(__dirname, 'docs/sw.js'),
+                globDirectory: 'docs',
+                globPatterns: ['**/*.{js,css,html,ico,png,svg,txt}'],
+            },
             manifest: {
                 name: '大府市交通局',
                 short_name: '大府市交通局',
@@ -49,45 +78,6 @@ export default defineConfig({
                 locale: 'ja_JP',
             },
         }),
-        {
-            name: 'update-cache-name',
-            async generateBundle() {
-                let cacheVersion;
-
-                try {
-                    // public/oud が最後に変更されたコミットSHAを取得
-                    const lastOudCommit = execSync(
-                        'git log -n 1 --pretty=format:%H -- public/oud',
-                        { encoding: 'utf-8' },
-                    ).trim();
-
-                    cacheVersion = `oud-cache-${lastOudCommit}`;
-                    console.log(`[update-cache-name] Last OUD change commit: ${lastOudCommit}`);
-                } catch (err) {
-                    console.log('[update-cache-name] Git error:', err.message);
-                    console.log('[update-cache-name] Fallback to timestamp');
-                    cacheVersion = `oud-cache-${Date.now()}`;
-                }
-
-                // sw.js を読み込み、CACHE_NAME を置換
-                const swPath = 'public/sw.js';
-                const swContent = fs.readFileSync(swPath, 'utf-8');
-
-                const updatedSw = swContent.replace(
-                    /const CACHE_NAME = "oud-cache-[^"]*";/,
-                    `const CACHE_NAME = "${cacheVersion}";`,
-                );
-
-                const docsSwPath = 'docs/sw.js';
-
-                if (!fs.existsSync('docs')) {
-                    fs.mkdirSync('docs', { recursive: true });
-                }
-
-                fs.writeFileSync(docsSwPath, updatedSw);
-                console.log('[update-cache-name] Updated sw.js');
-            },
-        },
         {
             name: 'copy-manifest',
             writeBundle() {
