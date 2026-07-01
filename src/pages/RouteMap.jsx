@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
-import { Button, Stack, Typography } from "@mui/material";
-import { useQueryState } from "nuqs";
-import Lightbox from "yet-another-react-lightbox";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import "yet-another-react-lightbox/styles.css";
+import { Button, Stack, Typography } from '@mui/material';
+import { useQueryState } from 'nuqs';
+import Lightbox from 'yet-another-react-lightbox';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import 'yet-another-react-lightbox/styles.css';
 
-import EachRouteMap from "../components/EachRouteMap";
-import RouteSelector from "../components/RouteSelector";
+import EachRouteMap from '../components/EachRouteMap';
+import RouteSelector from '../components/RouteSelector';
 
-import buildRouteStations from "../utils/buildOperationalRoute";
+import buildRouteStations from '../utils/buildOperationalRoute';
 
-import lines from "../data/lines.json";
-import operationalRoutes from "../data/operationalRoutes.json";
+import lines from '../data/lines.json';
+import operationalRoutes from '../data/operationalRoutes.json';
 
 const routeList = Object.values(operationalRoutes);
 const routeById = routeList.reduce((acc, route) => {
@@ -23,16 +23,19 @@ const defaultRouteId = 'KT';
 
 function RouteMap() {
     const [isOpenLightbox, setIsOpenLightbox] = React.useState(false);
-    const [selectedLine, setSelectedLine] = useQueryState('line', defaultRouteId, {
+    const [selectedLine, setSelectedLine] = useQueryState('line', {
+        defaultValue: defaultRouteId,
         serialize: (value) => value,
-        parse: (value) => value
+        parse: (value) => value,
     });
     const [imageSize, setImageSize] = React.useState('');
 
     React.useEffect(() => {
         const fetchImageSize = async () => {
             try {
-                const response = await fetch(import.meta.env.BASE_URL + 'routeMap/202605.png', { method: 'HEAD' });
+                const response = await fetch(import.meta.env.BASE_URL + 'routeMap/202605.png', {
+                    method: 'HEAD',
+                });
                 const size = response.headers.get('content-length');
                 if (size) {
                     const sizeInMB = (parseInt(size) / (1024 * 1024)).toFixed(1);
@@ -65,17 +68,27 @@ function RouteMap() {
 
     return (
         <div style={{ alignItems: 'center' }}>
-            <Typography variant="h6">路線図</Typography>
+            <Typography variant='h6'>路線図</Typography>
             <Stack sx={{ width: { xs: '100%', md: '70%' }, overflowX: 'auto', mx: 'auto' }}>
-                <Button variant="contained" size="large" onClick={() => setIsOpenLightbox(true)} sx={{ mt: 2 }}>
+                <Button
+                    variant='contained'
+                    size='large'
+                    onClick={() => setIsOpenLightbox(true)}
+                    sx={{ mt: 2 }}
+                >
                     全線路線図を表示
                 </Button>
-                <Button variant="outlined" size="large" onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = import.meta.env.BASE_URL + 'routeMap/202605.png';
-                    link.download = '大府市営地下鉄全線.png';
-                    link.click();
-                }} sx={{ mt: 2 }}>
+                <Button
+                    variant='outlined'
+                    size='large'
+                    onClick={() => {
+                        const link = document.createElement('a');
+                        link.href = import.meta.env.BASE_URL + 'routeMap/202605.png';
+                        link.download = '大府市営地下鉄全線.png';
+                        link.click();
+                    }}
+                    sx={{ mt: 2 }}
+                >
                     全線路線図をダウンロード{imageSize}
                 </Button>
             </Stack>
@@ -90,8 +103,17 @@ function RouteMap() {
                     buttonNext: () => null,
                 }}
             />
-            <RouteSelector routes={routeList} selected={selectedLine} onLineChange={handleLineChange} />
-            <EachRouteMap line={line} stations={stations} route={selectedRoute} onClick={(route) => handleLineChange(route)} />
+            <RouteSelector
+                routes={routeList}
+                selected={selectedLine}
+                onLineChange={handleLineChange}
+            />
+            <EachRouteMap
+                line={line}
+                stations={stations}
+                route={selectedRoute}
+                onClick={(route) => handleLineChange(route)}
+            />
         </div>
     );
 }

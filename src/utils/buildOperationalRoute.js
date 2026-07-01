@@ -13,15 +13,25 @@ export default function buildRouteStations(route, linesData = lines) {
             return;
         }
 
-        const segmentStations = segment.reverse ? segmentLine.stations.slice().reverse() : segmentLine.stations;
-        const startIndex = segment.startAt ? segmentStations.findIndex((station) => station.name === segment.startAt) : 0;
-        const endIndex = segment.endAt ? segmentStations.findIndex((station) => station.name === segment.endAt) : segmentStations.length - 1;
+        const segmentStations =
+            segment.reverse ? segmentLine.stations.slice().reverse() : segmentLine.stations;
+        const startIndex =
+            segment.startAt ?
+                segmentStations.findIndex((station) => station.id === segment.startAt)
+            :   0;
+        const endIndex =
+            segment.endAt ?
+                segmentStations.findIndex((station) => station.id === segment.endAt)
+            :   segmentStations.length - 1;
         if (startIndex === -1 || endIndex === -1 || startIndex > endIndex) {
             return;
         }
 
         const slice = segmentStations.slice(startIndex, endIndex + 1);
-        if (mergedStations.length > 0 && mergedStations[mergedStations.length - 1]?.name === slice[0]?.name) {
+        if (
+            mergedStations.length > 0 &&
+            mergedStations[mergedStations.length - 1]?.id === slice[0]?.id
+        ) {
             // 接続駅: types データをマージ（true を優先）
             const lastStation = mergedStations[mergedStations.length - 1];
             const currentStation = slice[0];
@@ -49,4 +59,4 @@ export default function buildRouteStations(route, linesData = lines) {
     }
 
     return [];
-};
+}
