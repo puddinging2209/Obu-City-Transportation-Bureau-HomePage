@@ -9,7 +9,6 @@ import stations from '../data/stations.json';
 
 function searchStops(diagram, train) {
     const stationList = diagram.railway.stations.map((sta) => sta.name);
-    console.log(diagram);
     if (!train) return [];
     return train.timetable._data
         .map((sta, i) => {

@@ -36,7 +36,6 @@ export default function SaveDataImportButton({ onLoadSuccess }) {
                 accept='.obu' // 独自拡張子を指定
                 hidden // 画面上には表示しない
                 onChange={handleFileChange}
-                dddddd
             />
         </Button>
     );

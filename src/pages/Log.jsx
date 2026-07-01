@@ -24,6 +24,7 @@ import {
 
 import SaveDataImportButton from '../components/ImportLogButton';
 import { exportSaveData } from '../utils/logDataManager';
+import { id } from '../utils/Station.js';
 
 import lines from '../data/lines.json';
 import stations from '../data/stations.json';
@@ -42,7 +43,7 @@ export default function Log() {
 
     const logs = JSON.parse(localStorage.getItem('visitedStations') || '[]').toReversed();
     const numOfStations = Object.keys(stations).length;
-    const checkedStations = new Set(logs.map((log) => log.name)).size;
+    const checkedStations = new Set(logs.map((log) => log.id)).size;
 
     const subwayLines = Object.values(lines).filter((line) => line.type === 'subway');
 
@@ -54,7 +55,11 @@ export default function Log() {
                 return;
             }
         }
-        localStorage.setItem('visitedStations', JSON.stringify(loadedData));
+        const transformedData = loadedData.map((log) => ({
+            id: log.id ?? id(log.name),
+            time: log.time,
+        }));
+        localStorage.setItem('visitedStations', JSON.stringify(transformedData));
         window.location.reload();
     };
 
