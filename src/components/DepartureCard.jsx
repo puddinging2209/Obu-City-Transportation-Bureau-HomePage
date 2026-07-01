@@ -63,7 +63,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
     const addMyStation = useSetAtom(addMyStationAtom);
 
     function removeStation() {
-        const s = myStations.filter((value) => value.name != station.id);
+        const s = myStations.filter((value) => value.id != station.id);
         setMyStations(s);
         localStorage.setItem('myStations', JSON.stringify(s));
     }
