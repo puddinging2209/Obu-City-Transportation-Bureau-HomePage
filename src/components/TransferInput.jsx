@@ -58,7 +58,6 @@ export default function TransferInput({ onSearch, loading }) {
     function toSelecterOption(id) {
         const stationName = nodes[id]?.name;
         if (!stationName) return null;
-        console.log({ label: stationName, value: id, kana: stations[id]?.kana || '' });
         return { label: stationName, value: id, role: 'station', kana: stations[id]?.kana || '' };
     }
 
