@@ -13,10 +13,10 @@ import {
     TableContainer,
     TableRow,
     Tabs,
-    Typography
+    Typography,
 } from '@mui/material';
 import '@offlegacy/nuqs-hash-router';
-import { useQueryState } from 'nuqs';
+import { parseAsInteger, useQueryState } from 'nuqs';
 
 import StationSelecter, { StationSelectButtons } from '../components/StationSelecter.jsx';
 import TrainStopsDialog from '../components/TrainStopsDialog.jsx';
@@ -27,9 +27,8 @@ import types from '../data/types.json';
 import { searchDeparture } from '../utils/readOud.js';
 
 function TimeTable() {
-
-    const [station, setStation] = useQueryState('station')
-    const [direction, setDirection] = useQueryState('direction', { defaultValue: 0 })
+    const [station, setStation] = useQueryState('station');
+    const [direction, setDirection] = useQueryState('direction', parseAsInteger.withDefault(0));
 
     const [departures, setDepartures] = React.useState(Array.from({ length: 24 }, () => []));
     const [loading, setLoading] = React.useState(false);
@@ -44,25 +43,34 @@ function TimeTable() {
             const min = Math.floor((dep.time % 3600) / 60);
             result[hour < 3 ? hour + 24 : hour].push({ ...dep, min });
         }
-        result.forEach(deps => deps.sort((a, b) => a.time - b.time));
+        result.forEach((deps) => deps.sort((a, b) => a.time - b.time));
         return result;
     }
 
     React.useEffect(() => {
         if (!station) return;
-        setDirection(0);
+        const desiredDirection = stations[station]?.directions?.[direction] ? direction : 0;
+        if (desiredDirection !== direction) {
+            setDirection(desiredDirection);
+        }
         setLoading(true);
-        searchDeparture({ name: station, role: 'station' }, stations[station]?.directions[0]).then(deps => {
-            setDepartures(divideDeps(deps))
+        searchDeparture(
+            { id: station, role: 'station' },
+            stations[station]?.directions[desiredDirection],
+        ).then((deps) => {
+            setDepartures(divideDeps(deps));
             setLoading(false);
-        })
+        });
     }, [station]);
 
     React.useEffect(() => {
         if (station && stations[station]?.directions[direction]) {
             setLoading(true);
-            searchDeparture({ name: station, role: 'station' }, stations[station]?.directions[direction])
-                .then(deps => setDepartures(divideDeps(deps)))
+            searchDeparture(
+                { id: station, role: 'station' },
+                stations[station]?.directions[direction],
+            )
+                .then((deps) => setDepartures(divideDeps(deps)))
                 .catch(() => {
                     setDepartures(Array.from({ length: 27 }, () => []));
                     alert('エラーが発生しました\nもう一度お試しください');
@@ -73,27 +81,29 @@ function TimeTable() {
 
     return (
         <>
-            <Typography variant="h6">時刻表</Typography>
+            <Typography variant='h6'>時刻表</Typography>
             <Stack sx={{ mt: 2 }} spacing={2}>
                 <StationSelecter
-                    value={station ? {
-                        value: station,
-                        label: station,
-                        role: 'station',
-                        kana: stations[station]?.kana
-                    } : null}
+                    value={
+                        station ?
+                            {
+                                value: station,
+                                label: stations[station]?.name,
+                                role: 'station',
+                                kana: stations[station]?.kana,
+                            }
+                        :   null
+                    }
                     placeholder={'駅を選択'}
-                    onChange={(value => setStation(value.value))}
+                    onChange={(value) => setStation(value.value)}
                     busStop={false}
                 />
-                <StationSelectButtons
-                    onSelect={station => setStation(station)}
-                />
+                <StationSelectButtons onSelect={(station) => setStation(station)} />
                 <Stack sx={{ width: '100%', px: 'auto' }}>
-                    <Tabs 
-                        value={direction} 
+                    <Tabs
+                        value={direction}
                         onChange={(_, v) => setDirection(v)}
-                        variant="scrollable"
+                        variant='scrollable'
                         scrollButtons='auto'
                         allowScrollButtonsMobile
                         sx={{
@@ -105,7 +115,9 @@ function TimeTable() {
                             },
                         }}
                     >
-                        {stations[station]?.directions?.map((direction, i) => <Tab label={`${direction.stationName} 方面`} key={i} />)}
+                        {stations[station]?.directions?.map((direction, i) => (
+                            <Tab label={`${direction.stationName} 方面`} key={i} />
+                        ))}
                     </Tabs>
                 </Stack>
             </Stack>
@@ -118,48 +130,119 @@ function TimeTable() {
                     </colgroup>
 
                     <TableBody>
-                        {loading ? (
+                        {loading ?
                             <TableRow>
                                 <TableCell colSpan={2} sx={{ textAlign: 'center' }}>
                                     <CircularProgress />
                                 </TableCell>
                             </TableRow>
-                        ) : (
-                            departures.map((deps, i) => (
-                                <TableRow key={i} sx={{ width: '100%', p: 0, overflowX: 'auto', backgroundColor: i % 2 === 0 ? 'white' : '#f0f0f0', display: i < 3 ? 'none' : '' }}>
-                                    <TableCell sx={{ textAlign: 'right', backgroundColor: i % 2 === 0 ? '#f0f0f0ff' : '#e0e0e0ff', borderRight: '1px solid #ccc', position: 'sticky', zIndex: 2, left: 0 }}><Typography variant="h5">{i}</Typography></TableCell>
+                        :   departures.map((deps, i) => (
+                                <TableRow
+                                    key={i}
+                                    sx={{
+                                        width: '100%',
+                                        p: 0,
+                                        overflowX: 'auto',
+                                        backgroundColor: i % 2 === 0 ? 'white' : '#f0f0f0',
+                                        display: i < 3 ? 'none' : '',
+                                    }}
+                                >
+                                    <TableCell
+                                        sx={{
+                                            textAlign: 'right',
+                                            backgroundColor:
+                                                i % 2 === 0 ? '#f0f0f0ff' : '#e0e0e0ff',
+                                            borderRight: '1px solid #ccc',
+                                            position: 'sticky',
+                                            zIndex: 2,
+                                            left: 0,
+                                        }}
+                                    >
+                                        <Typography variant='h5'>{i}</Typography>
+                                    </TableCell>
                                     <TableCell sx={{ p: 0 }}>
-                                        <Stack direction="row" gap={2}>
+                                        <Stack direction='row' gap={2}>
                                             {deps.map((dep, j) => {
                                                 const strong = dep.typeName === '特急';
-                                                const frame = dep.typeName === 'ライナー' || dep.typeName === '各駅停車';
+                                                const frame =
+                                                    dep.typeName === 'ライナー' ||
+                                                    dep.typeName === '各駅停車';
                                                 return (
-                                                    <Button onClick={() => { setPushed(dep); setIsShowDialog(true); }} key={`${i}-${j}`}>
-                                                        <Box sx={{ flex: '0 0 42px', textAlign: 'center' }}>
-                                                            <Box sx={{ background: strong ? types[dep.typeName]?.color : '', border: frame ? `1px solid ${types[dep.typeName]?.color}` : '' }}>
-                                                                <Typography color={strong ? 'white' : types[dep.typeName]?.color} variant='h6'>
-                                                                    {String(dep.min).padStart(2, '0')}
+                                                    <Button
+                                                        onClick={() => {
+                                                            setPushed(dep);
+                                                            setIsShowDialog(true);
+                                                        }}
+                                                        key={`${i}-${j}`}
+                                                    >
+                                                        <Box
+                                                            sx={{
+                                                                flex: '0 0 42px',
+                                                                textAlign: 'center',
+                                                            }}
+                                                        >
+                                                            <Box
+                                                                sx={{
+                                                                    background:
+                                                                        strong ?
+                                                                            types[dep.typeName]
+                                                                                ?.color
+                                                                        :   '',
+                                                                    border:
+                                                                        frame ?
+                                                                            `1px solid ${types[dep.typeName]?.color}`
+                                                                        :   '',
+                                                                }}
+                                                            >
+                                                                <Typography
+                                                                    color={
+                                                                        strong ? 'white' : (
+                                                                            types[dep.typeName]
+                                                                                ?.color
+                                                                        )
+                                                                    }
+                                                                    variant='h6'
+                                                                >
+                                                                    {String(dep.min).padStart(
+                                                                        2,
+                                                                        '0',
+                                                                    )}
                                                                 </Typography>
                                                             </Box>
-                                                            <Typography color={types[dep.typeName]?.color} sx={{ whiteSpace: 'nowrap' }} variant="body6">
+                                                            <Typography
+                                                                color={types[dep.typeName]?.color}
+                                                                sx={{ whiteSpace: 'nowrap' }}
+                                                                variant='body6'
+                                                            >
                                                                 {dep.terminal}
                                                             </Typography>
                                                         </Box>
                                                     </Button>
-                                                )
+                                                );
                                             })}
                                         </Stack>
                                     </TableCell>
                                 </TableRow>
                             ))
-                        )}
+                        }
                     </TableBody>
                 </Table>
             </TableContainer>
-            
-            {pushed && isShowDialog && <TrainStopsDialog dep={pushed} line={stations[station]?.directions[direction]?.route} isShowDialog={isShowDialog} onClose={() => { setIsShowDialog(false); setPushed(null); }} emphasized={[station]} />}
+
+            {pushed && isShowDialog && (
+                <TrainStopsDialog
+                    dep={pushed}
+                    line={stations[station]?.directions[direction]?.route}
+                    isShowDialog={isShowDialog}
+                    onClose={() => {
+                        setIsShowDialog(false);
+                        setPushed(null);
+                    }}
+                    emphasized={[station]}
+                />
+            )}
         </>
-    )
+    );
 }
 
-export default TimeTable
+export default TimeTable;

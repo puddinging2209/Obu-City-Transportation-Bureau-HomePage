@@ -1,6 +1,17 @@
 import React from 'react';
 
-import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Tab, Tabs, Typography } from '@mui/material';
+import {
+    Box,
+    Button,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+    Grid,
+    Tab,
+    Tabs,
+    Typography,
+} from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 import StopRow from './StopRow.jsx';
@@ -12,20 +23,19 @@ import { LineContext } from './DepartureCard.jsx';
 import types from '../data/types.json';
 
 export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emphasized = [] }) {
-
     const l = line ?? React.useContext(LineContext);
 
     const [stops, setStops] = React.useState([]);
     const [multilayer, setMultilayer] = React.useState(0);
-    
+
     React.useEffect(() => {
         if (isShowDialog) {
             if (!dep.multilayer) {
-                formatStops(l, dep.train).then(s => {
+                formatStops(l, dep.train).then((s) => {
                     setStops(s);
                 });
             } else {
-                formatStops(l, dep.train[multilayer]).then(s => {
+                formatStops(l, dep.train[multilayer]).then((s) => {
                     setStops(s);
                 });
             }
@@ -42,7 +52,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
     // 高さを変更したカスタムTabs
     const StyledTabs = styled(Tabs)({
         minHeight: '32px', // 全体の最小高さを上書き
-        height: '32px',    // 高さを固定
+        height: '32px', // 高さを固定
     });
 
     // 高さを変更したカスタムTab
@@ -56,22 +66,24 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
             open={isShowDialog}
             onClose={onClose}
             TransitionProps={{ onEntered: scrollToDep }}
-            scroll="paper"  
+            scroll='paper'
             fullWidth
         >
-            <DialogTitle sx={{ pb: (dep.multilayer ? 0 : '') }}>
+            <DialogTitle sx={{ pb: dep.multilayer ? 0 : '' }}>
                 {isShowDialog && (
                     <Box sx={{ borderBottom: `3px solid ${types[dep.typeName].color}` }}>
-                        <Typography variant="h6">
+                        <Typography variant='h6'>
                             {!dep.multilayer ?
-                                `${dep.typeName}${dep.train.name.replace(dep.typeName, '')} ${(dep.train.count != '') ? `${dep.train.count}号` : ''} ${name(dep.terminal)}行` : 
-                                `${dep.typeName}${dep.train[multilayer].name.replace(dep.typeName, '')} ${(dep.train[multilayer].count != '') ? `${dep.train[multilayer].count}号` : ''} ${name(dep.terminal)}行`
+                                `${dep.typeName}${dep.train.name.replace(dep.typeName, '')} ${dep.train.count != '' ? `${dep.train.count}号` : ''} ${name(dep.terminal)}行`
+                            :   `${dep.typeName}${dep.train[multilayer].name.replace(dep.typeName, '')} ${dep.train[multilayer].count != '' ? `${dep.train[multilayer].count}号` : ''} ${name(dep.terminal)}行`
                             }
                         </Typography>
-                        <Typography variant="body1">{!dep.multilayer ? dep.train.number : dep.train[multilayer].number}</Typography>
+                        <Typography variant='body1'>
+                            {!dep.multilayer ? dep.train.number : dep.train[multilayer].number}
+                        </Typography>
                     </Box>
                 )}
-                {dep.multilayer &&
+                {dep.multilayer && (
                     <Grid sx={{ mt: 0.5 }}>
                         <StyledTabs
                             value={multilayer}
@@ -82,49 +94,54 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
                             {dep.train?.map((_, index) => {
                                 const terminal = dep.terminal.split('・')[index];
                                 return (
-                                    <StyledTab label={`${terminal}行`} value={index} key={`${index}${terminal}`} />
-                                )
+                                    <StyledTab
+                                        label={`${terminal}行`}
+                                        value={index}
+                                        key={`${index}${terminal}`}
+                                    />
+                                );
                             })}
                         </StyledTabs>
                     </Grid>
-                }
+                )}
             </DialogTitle>
             <DialogContent dividers>
                 <Grid
                     container
-                    wrap="nowrap"
-                    alignItems="center"
+                    wrap='nowrap'
+                    alignItems='center'
                     columnGap={0.5}
                     gap={2}
                     sx={{ justifyContent: 'flex-end' }}
                 >
                     <Grid
-                        item
                         sx={{
                             flex: '0 0 42px',
                             textAlign: 'center',
                         }}
                     >
-                        <Typography variant="body2" fontWeight="bold">到着</Typography>
+                        <Typography variant='body2' fontWeight='bold'>
+                            到着
+                        </Typography>
                     </Grid>
 
                     <Grid
-                        item
                         sx={{
                             flex: '0 0 42px',
                             textAlign: 'center',
                         }}
-                        >
-                        <Typography variant="body2" fontWeight="bold">発車</Typography>
+                    >
+                        <Typography variant='body2' fontWeight='bold'>
+                            発車
+                        </Typography>
                     </Grid>
                 </Grid>
-                {stops?.map(stop => {
+                {stops?.map((stop) => {
                     const isEmphasized =
-                        emphasized.map(s => name(s.split(',')[0])).includes(stop.name) && (
-                            emphasized.some(s => s.split(',')[1] === '') ||
-                            emphasized.map(s => Number(s.split(',')[1])).includes(stop.dep) || 
-                            emphasized.map(s => Number(s.split(',')[1])).includes(stop.arr)
-                        );
+                        emphasized.map((s) => s.split(',')[0]).includes(stop.id) &&
+                        (emphasized.some((s) => s.split(',')[1] === '') ||
+                            emphasized.map((s) => Number(s.split(',')[1])).includes(stop.dep) ||
+                            emphasized.map((s) => Number(s.split(',')[1])).includes(stop.arr));
                     return (
                         <StopRow
                             key={`${stop.name}${stop.dep ?? 'pass'}`}
@@ -132,12 +149,12 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
                             emphasized={isEmphasized}
                             className={isEmphasized ? 'emphasized' : ''}
                         />
-                    )
+                    );
                 })}
             </DialogContent>
             <DialogActions>
                 <Button onClick={onClose}>閉じる</Button>
             </DialogActions>
         </Dialog>
-    )
+    );
 }
