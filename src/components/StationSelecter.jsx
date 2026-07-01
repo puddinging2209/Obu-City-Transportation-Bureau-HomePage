@@ -46,7 +46,7 @@ export default function StationSelecter({
 
     const onSelect = (option) => {
         const history =
-            JSON.parse(window.localStorage.getItem('stationHistory')).toReversed() || [];
+            JSON.parse(window.localStorage.getItem('stationHistory'))?.toReversed() || [];
         let newHistory;
         if (!stations[history[0]]) newHistory = history.map(id).filter((id) => id !== option.value);
         else newHistory = history.filter((id) => id !== option.value);
