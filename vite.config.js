@@ -45,7 +45,7 @@ export default defineConfig({
                 globPatterns: ['**/*.{js,css,html,ico,png,svg,txt}'],
                 runtimeCaching: [
                     {
-                        urlPattern: /\/oud\/.+\.json$/,
+                        urlPattern: /\/Obu-City-Transportation-Bureau-HomePage\/oud\/.+\.json$/,
                         handler: 'CacheFirst',
                         options: {
                             cacheName: 'oud-cache',
@@ -56,7 +56,8 @@ export default defineConfig({
                         },
                     },
                     {
-                        urlPattern: /\/oud\/manifest\.json$/,
+                        urlPattern:
+                            /\/Obu-City-Transportation-Bureau-HomePage\/oud\/manifest\.json$/,
                         handler: 'NetworkFirst',
                         options: {
                             cacheName: 'oud-manifest',
