@@ -1,12 +1,8 @@
-import { precacheAndRoute } from 'workbox-precaching';
-
-// 1. Viteがビルドしたアセット（HTML/JS/CSS等）の自動プリキャッシュを登録
-precacheAndRoute(self.__WB_MANIFEST);
-
-// 2. vite.config.js から注入される変数を受け取る
+// vite.config.js から注入される変数を受け取る
 const CACHE_NAME = __OUD_CACHE_NAME__;
 
-const BASE = self.registration.scope;
+// VitePWAがビルド時にマニフェストを注入するプレースホルダー
+const precacheManifest = self.__WB_MANIFEST;
 
 self.addEventListener('install', () => {
     self.skipWaiting();
