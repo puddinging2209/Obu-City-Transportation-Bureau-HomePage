@@ -243,7 +243,7 @@ export default function DepartureSection() {
                     <StationSelecter
                         onChange={(selected) => {
                             if (selected) {
-                                addMyStation({ name: selected.value, role: selected.role });
+                                addMyStation({ id: selected.value, role: selected.role });
                                 setIsShowSearch(false);
                                 navigate('/home');
                             }
