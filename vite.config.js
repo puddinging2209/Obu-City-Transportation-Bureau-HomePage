@@ -35,18 +35,35 @@ export default defineConfig({
     plugins: [
         react(),
         VitePWA({
-            strategies: 'injectManifest',
+            strategies: 'generateSW',
             srcDir: 'src',
             outDir: 'docs',
             filename: 'sw.js',
             injectRegister: 'inline',
             registerType: 'autoUpdate',
-
-            injectManifest: {
-                swSrc: path.resolve(__dirname, 'src/sw.js'),
-                swDest: path.resolve(__dirname, 'docs/sw.js'),
-                globDirectory: 'docs',
+            workbox: {
                 globPatterns: ['**/*.{js,css,html,ico,png,svg,txt}'],
+                runtimeCaching: [
+                    {
+                        urlPattern: /\/oud\/.+\.json$/,
+                        handler: 'CacheFirst',
+                        options: {
+                            cacheName: 'oud-cache',
+                            expiration: {
+                                maxEntries: 50,
+                                maxAgeSeconds: 7 * 24 * 60 * 60, // 7 days
+                            },
+                        },
+                    },
+                    {
+                        urlPattern: /\/oud\/manifest\.json$/,
+                        handler: 'NetworkFirst',
+                        options: {
+                            cacheName: 'oud-manifest',
+                            networkTimeoutSeconds: 3,
+                        },
+                    },
+                ],
             },
             manifest: {
                 name: '大府市交通局',
