@@ -204,6 +204,84 @@
             "lin": false
         }
     },
+    "TZ": {
+        "id": "TZ",
+        "label": "東西線",
+        "segments": [
+            {
+                "line": "東西線"
+            }
+        ],
+        "types": {
+            "all": false,
+            "loc": true,
+            "rap": false,
+            "com-sem-exp": false,
+            "sem-exp": false,
+            "sub-exp": true,
+            "exp": false,
+            "rap-exp": false,
+            "com-exp": false,
+            "lim-exp": false,
+            "lin": false
+        }
+    },
+    "KT-TZ": {
+        "id": "KT-TZ",
+        "label": "刈田川線-東西線直通",
+        "segments": [
+            {
+                "line": "刈田川線",
+                "startAt": "kry",
+                "endAt": "sos",
+                "reverse": true
+            },
+            {
+                "line": "惣作直通線",
+                "reverse": true
+            },
+            {
+                "line": "東西線",
+                "startAt": "ngn",
+                "reverse": true
+            }
+        ],
+        "types": {
+            "all": false,
+            "loc": true,
+            "rap": false,
+            "com-sem-exp": false,
+            "sem-exp": false,
+            "sub-exp": true,
+            "exp": false,
+            "rap-exp": false,
+            "com-exp": false,
+            "lim-exp": false,
+            "lin": false
+        }
+    },
+    "NB": {
+        "id": "NB",
+        "label": "南北線",
+        "segments": [
+            {
+                "line": "南北線"
+            }
+        ],
+        "types": {
+            "all": true,
+            "loc": true,
+            "rap": false,
+            "com-sem-exp": false,
+            "sem-exp": false,
+            "sub-exp": false,
+            "exp": false,
+            "rap-exp": false,
+            "com-exp": false,
+            "lim-exp": false,
+            "lin": false
+        }
+    },
     "OL": {
         "id": "OL",
         "label": "大府環状線",
@@ -227,6 +305,55 @@
             },
             {
                 "line": "名東線"
+            }
+        ]
+    },
+    "FT": {
+        "id": "FT",
+        "label": "二ツ池線",
+        "segments": [
+            {
+                "line": "二ツ池線"
+            }
+        ]
+    },
+    "FTa": {
+        "id": "FTa",
+        "label": "二ツ池線森岡支線",
+        "segments": [
+            {
+                "line": "二ツ池線",
+                "endAt": "dtc"
+            },
+            {
+                "line": "二ツ池線森岡支線"
+            }
+        ]
+    },
+    "AR": {
+        "id": "AR",
+        "label": "荒尾線",
+        "segments": [
+            {
+                "line": "荒尾線"
+            }
+        ]
+    },
+    "KM": {
+        "id": "KM",
+        "label": "健康の森線",
+        "segments": [
+            {
+                "line": "健康の森線"
+            }
+        ]
+    },
+    "OG": {
+        "id": "OG",
+        "label": "緒川線",
+        "segments": [
+            {
+                "line": "緒川線"
             }
         ]
     }
