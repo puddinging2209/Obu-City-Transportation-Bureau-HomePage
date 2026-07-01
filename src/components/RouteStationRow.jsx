@@ -1,5 +1,9 @@
 import { Box, Stack, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
+import { getOperationalStationsMap } from '../utils/operationalRoutesCache.js';
+
+import operationalRoutes from '../data/operationalRoutes.json';
 import stationData from '../data/stations.json';
 import types from '../data/types.json';
 
