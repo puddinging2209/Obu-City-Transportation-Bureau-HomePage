@@ -29,7 +29,6 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { id } from '../utils/Station.js';
 import StationSelecter, { StationSelectButtons } from './StationSelecter.jsx';
 
-import nodes from '../data/nodes.json';
 import stations from '../data/stations.json';
 
 export default function TransferInput({ onSearch, loading }) {
@@ -56,7 +55,7 @@ export default function TransferInput({ onSearch, loading }) {
     }
 
     function toSelecterOption(id) {
-        const stationName = nodes[id]?.name;
+        const stationName = stations[id]?.name;
         if (!stationName) return null;
         return { label: stationName, value: id, role: 'station', kana: stations[id]?.kana || '' };
     }

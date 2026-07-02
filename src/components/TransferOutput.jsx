@@ -127,7 +127,7 @@ export default function TransferOutput({ result }) {
                                                         {`徒歩(改札外乗り換え) ${seg.meter}m`}
                                                     </Typography>
                                                 :   <Typography variant='h6'>
-                                                        {`${seg.typeName}${seg.train.name?.replace(seg.typeName, '')} ${seg.train.count != '' ? `${seg.train.count}号` : ''} ${seg.terminal}行`}
+                                                        {`${seg.typeName}${seg.train.name?.replace(seg.typeName, '')} ${seg.train.count != '' ? `${seg.train.count}号` : ''} ${name(seg.terminal)}行`}
                                                     </Typography>)}
                                             {!isWalking && !isSameLineName && (
                                                 <Typography variant='body1'>
