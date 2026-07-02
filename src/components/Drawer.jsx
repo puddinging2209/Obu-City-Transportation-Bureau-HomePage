@@ -1,6 +1,15 @@
-import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, SwipeableDrawer } from "@mui/material";
-import { useAtom } from "jotai";
-import { useNavigate } from "react-router-dom";
+import {
+    Box,
+    Divider,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    SwipeableDrawer,
+} from '@mui/material';
+import { useAtom } from 'jotai';
+import { useNavigate } from 'react-router-dom';
 
 import ArticleIcon from '@mui/icons-material/Article';
 import HomeIcon from '@mui/icons-material/Home';
@@ -12,11 +21,9 @@ import TrainIcon from '@mui/icons-material/Train';
 
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
-import { isOpenDrawerAtom } from "../utils/Atom";
-
+import { isOpenDrawerAtom } from '../utils/Atom';
 
 function Drawer() {
-
     const navigate = useNavigate();
 
     const [isOpen, setIsOpen] = useAtom(isOpenDrawerAtom);
@@ -38,7 +45,7 @@ function Drawer() {
     function handleNavigate(path) {
         navigate(path);
         setIsOpen(false);
-    };
+    }
 
     function DrawerMenu() {
         return (
@@ -47,33 +54,29 @@ function Drawer() {
                 onClick={() => setIsOpen(false)}
                 onKeyDown={() => setIsOpen(false)}
             >
-            <List>
-                {listItems.map(({name, icon, path}) => (
-                <ListItem key={name} disablePadding>
-                    <ListItemButton onClick={() => handleNavigate(path)}>
-                    <ListItemIcon>
-                        {icon}
-                    </ListItemIcon>
-                    <ListItemText primary={name} />
-                    </ListItemButton>
-                </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {subListItems.map(({name, icon, path}) => (
-                <ListItem key={name} disablePadding>
-                    <ListItemButton onClick={() => handleNavigate(path)}>
-                    <ListItemIcon>
-                        {icon}
-                    </ListItemIcon>
-                    <ListItemText primary={name} />
-                    </ListItemButton>
-                </ListItem>
-                ))}
-            </List>
+                <List>
+                    {listItems.map(({ name, icon, path }) => (
+                        <ListItem key={name} disablePadding>
+                            <ListItemButton onClick={() => handleNavigate(path)}>
+                                <ListItemIcon>{icon}</ListItemIcon>
+                                <ListItemText primary={name} />
+                            </ListItemButton>
+                        </ListItem>
+                    ))}
+                </List>
+                <Divider />
+                <List>
+                    {subListItems.map(({ name, icon, path }) => (
+                        <ListItem key={name} disablePadding>
+                            <ListItemButton onClick={() => handleNavigate(path)}>
+                                <ListItemIcon>{icon}</ListItemIcon>
+                                <ListItemText primary={name} />
+                            </ListItemButton>
+                        </ListItem>
+                    ))}
+                </List>
             </Box>
-        )
+        );
     }
 
     return (
@@ -85,7 +88,7 @@ function Drawer() {
         >
             <DrawerMenu />
         </SwipeableDrawer>
-    )
+    );
 }
 
-export default Drawer
+export default Drawer;

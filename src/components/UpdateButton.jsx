@@ -69,14 +69,16 @@ export default function UpdateButton() {
     if (!showUpdate) return null;
 
     return (
-        <Button
-            variant='contained'
-            color='primary'
-            startIcon={<UpdateIcon />}
-            onClick={handleUpdate}
-            size='small'
-        >
-            更新可能
-        </Button>
+        <Dialog open={showUpdate}>
+            <Button
+                variant='contained'
+                color='primary'
+                startIcon={<UpdateIcon />}
+                onClick={handleUpdate}
+                size='small'
+            >
+                更新可能
+            </Button>
+        </Dialog>
     );
 }
