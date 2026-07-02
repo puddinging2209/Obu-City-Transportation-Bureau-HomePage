@@ -20,6 +20,7 @@ import { Outlet, Link as RouterLink } from 'react-router-dom';
 import Drawer from './Drawer.jsx';
 import Header from './Header.jsx';
 import MobileBottomNavigation from './MobileBottomNavigation.jsx';
+import UpdateButton from './UpdateButton.jsx';
 
 const theme = createTheme({
     palette: {
@@ -80,6 +81,8 @@ function Layout() {
                 </main>
 
                 <MobileBottomNavigation />
+
+                <UpdateButton />
 
                 <Dialog open={isWarnOpen} onClose={closeWarnModal} fullWidth>
                     <DialogTitle>

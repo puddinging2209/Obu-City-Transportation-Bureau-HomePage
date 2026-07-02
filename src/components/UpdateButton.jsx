@@ -1,5 +1,5 @@
 import UpdateIcon from '@mui/icons-material/Update';
-import { Button } from '@mui/material';
+import { Button, Dialog, DialogContent, DialogTitle } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 export default function UpdateButton() {
@@ -69,16 +69,19 @@ export default function UpdateButton() {
     if (!showUpdate) return null;
 
     return (
-        <Dialog open={showUpdate}>
-            <Button
-                variant='contained'
-                color='primary'
-                startIcon={<UpdateIcon />}
-                onClick={handleUpdate}
-                size='small'
-            >
-                更新可能
-            </Button>
+        <Dialog open={true}>
+            <DialogTitle>新しいアップデートがあります</DialogTitle>
+            <DialogContent>
+                <Button
+                    variant='contained'
+                    color='primary'
+                    startIcon={<UpdateIcon />}
+                    onClick={handleUpdate}
+                    size='small'
+                >
+                    更新
+                </Button>
+            </DialogContent>
         </Dialog>
     );
 }
