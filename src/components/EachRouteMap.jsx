@@ -11,7 +11,7 @@ function EachRouteMap({ line, onClick }) {
         return <Typography sx={{ mt: 2 }}>路線を選択してください。</Typography>;
     }
 
-    const {name, stations} = line;
+    const { name, stations } = line;
     const [types, setTypes] = React.useState([]);
 
     React.useEffect(() => {
@@ -29,17 +29,24 @@ function EachRouteMap({ line, onClick }) {
             });
         });
 
-        setTypes(Array.from(typeSet).sort((a, b) => Object.values(typesData).findIndex((t) => t.code === a) - Object.values(typesData).findIndex((t) => t.code === b)));
+        setTypes(
+            Array.from(typeSet).sort(
+                (a, b) =>
+                    Object.values(typesData).findIndex((t) => t.code === a) -
+                    Object.values(typesData).findIndex((t) => t.code === b),
+            ),
+        );
     }, [stations]);
 
     return (
         <Stack
-            alignItems="center"
+            alignItems='center'
             sx={{
                 mt: 2,
                 px: 1,
-                width: '100%'
-            }}>
+                width: '100%',
+            }}
+        >
             <Box
                 sx={{
                     position: 'relative',
@@ -50,34 +57,46 @@ function EachRouteMap({ line, onClick }) {
                     overflowX: 'auto',
                 }}
             >
-                <Stack alignItems="left" direction="row" sx={{
-                    position: 'relative',
-                    pl: '8px'
-                }}>
+                <Stack
+                    alignItems='left'
+                    direction='row'
+                    sx={{
+                        position: 'relative',
+                        pl: '8px',
+                    }}
+                >
                     {types.map((type) => (
-                        <Box sx={{
-                            width: 30,
-                            py: 0.2,
-                            display: 'flex',
-                            alignItems: 'flex-end',
-                        }}>
+                        <Box
+                            sx={{
+                                width: 30,
+                                py: 0.2,
+                                display: 'flex',
+                                alignItems: 'flex-end',
+                            }}
+                        >
                             <Typography
-                                variant="subtitle1"
+                                variant='subtitle1'
                                 sx={{
                                     writingMode: 'vertical-rl',
                                     fontWeight: 'bold',
-                                    color: Object.values(typesData).find((t) => t.code === type)?.color || '#999',
+                                    color:
+                                        Object.values(typesData).find((t) => t.code === type)
+                                            ?.color || '#999',
                                 }}
                             >
-                                {Object.values(typesData).find((t) => t.code === type)?.name || type}
+                                {Object.values(typesData).find((t) => t.code === type)?.name ||
+                                    type}
                             </Typography>
                         </Box>
                     ))}
                 </Stack>
-                <Box sx={{ position: 'relative', zIndex: 2, minWidth: types.length * 30 + 48 + 160 }} fullWidth>
+                <Box
+                    sx={{ position: 'relative', zIndex: 2, minWidth: types.length * 30 + 48 + 160 }}
+                    fullWidth
+                >
                     {stations.map((station, index) => (
                         <RouteStationRow
-                            key={station.name || index}
+                            key={station.id || index}
                             line={line}
                             i={index}
                             stations={stations}

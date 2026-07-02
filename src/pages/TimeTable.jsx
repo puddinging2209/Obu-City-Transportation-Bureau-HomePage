@@ -25,6 +25,7 @@ import stations from '../data/stations.json';
 import types from '../data/types.json';
 
 import { searchDeparture } from '../utils/readOud.js';
+import { name } from '../utils/Station.js';
 
 function TimeTable() {
     const [station, setStation] = useQueryState('station');
@@ -214,7 +215,7 @@ function TimeTable() {
                                                                 sx={{ whiteSpace: 'nowrap' }}
                                                                 variant='body6'
                                                             >
-                                                                {dep.terminal}
+                                                                {name(dep.terminal)}
                                                             </Typography>
                                                         </Box>
                                                     </Button>

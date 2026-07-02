@@ -199,9 +199,9 @@ export default function DepartureSection() {
                 }}
             >
                 {myStations.map((sta) => (
-                    <Box sx={{ scrollSnapAlign: { xs: 'center', md: 'none' } }} key={sta.name}>
+                    <Box sx={{ scrollSnapAlign: { xs: 'center', md: 'none' } }} key={sta.id}>
                         <Box sx={{ width: { xs: '85vw', md: 300 } }}>
-                            <DepartureCard key={`my-${sta.name}`} station={sta} removeButton />
+                            <DepartureCard key={`my-${sta.id}`} station={sta} removeButton />
                         </Box>
                     </Box>
                 ))}
