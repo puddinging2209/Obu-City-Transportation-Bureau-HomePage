@@ -1,10 +1,9 @@
 import UpdateIcon from '@mui/icons-material/Update';
-import { Button, CircularProgress } from '@mui/material';
+import { Button } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 export default function UpdateButton() {
     const [showUpdate, setShowUpdate] = useState(false);
-    const [isUpdating, setIsUpdating] = useState(false);
     const [registration, setRegistration] = useState(null);
 
     useEffect(() => {
@@ -62,7 +61,6 @@ export default function UpdateButton() {
 
     const handleUpdate = () => {
         if (registration?.waiting) {
-            setIsUpdating(true);
             // 新しいSWにメッセージを送信
             registration.waiting.postMessage({ type: 'SKIP_WAITING' });
         }
@@ -74,12 +72,11 @@ export default function UpdateButton() {
         <Button
             variant='contained'
             color='primary'
-            startIcon={isUpdating ? <CircularProgress size={24} /> : <UpdateIcon />}
+            startIcon={<UpdateIcon />}
             onClick={handleUpdate}
-            disabled={isUpdating}
             size='small'
         >
-            {isUpdating ? '更新中...' : '更新可能'}
+            更新可能
         </Button>
     );
 }
