@@ -80,16 +80,12 @@ function indexofFromStation(diagram, station, rosen, direction) {
         },
     ];
 
-    const exception = exceptions.find(
-        (exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }),
-    );
+    const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
     if (exception) {
         return exception.return;
     }
 
-    return diagram.railway.stations.findIndex(
-        (sta) => sta.name == id_number(station).find((value) => value.includes(rosen)),
-    );
+    return diagram.railway.stations.findIndex((sta) => sta.name == id_number(station).find((value) => value.includes(rosen)));
 }
 
 function codeofToStation(station, direction, rosen) {
@@ -131,9 +127,7 @@ function codeofToStation(station, direction, rosen) {
         },
     ];
 
-    const exception = exceptions.find(
-        (exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }),
-    );
+    const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
     if (exception) {
         return exception.return;
     }
@@ -197,9 +191,7 @@ function fromStop(diagram, busStop, direction) {
             return: 34,
         },
     ];
-    const exception = exceptions.find(
-        (exc) => JSON.stringify(exc.exc) == JSON.stringify({ busStop, direction }),
-    );
+    const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ busStop, direction }));
     if (exception) {
         return exception.return;
     }
@@ -207,9 +199,7 @@ function fromStop(diagram, busStop, direction) {
 }
 
 function toStop(diagram, busStop, direction) {
-    return diagram.railway.stations.findIndex(
-        (stop) => stop.name == direction.stationName.split('・')[0],
-    );
+    return diagram.railway.stations.findIndex((stop) => stop.name == direction.stationName.split('・')[0]);
 }
 
 function busIndex(diagram, busStop, direction) {
@@ -353,9 +343,7 @@ function busIndex(diagram, busStop, direction) {
             return: [{ from: 16, to: 13 }],
         },
     ];
-    const exception = exceptions.find(
-        (exc) => JSON.stringify(exc.exc) == JSON.stringify({ busStop, direction }),
-    );
+    const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ busStop, direction }));
     if (exception) {
         return exception.return;
     }
@@ -387,11 +375,7 @@ function mergeMultilayerTrain(deps) {
                     multilayer: false,
                     train: dep.train,
                 });
-        } else if (
-            i > 0 &&
-            Math.abs(Number(deps[i - 1].train.number) - Number(deps[i].train.number)) === 100 &&
-            deps[i - 1].time === deps[i].time
-        ) {
+        } else if (i > 0 && Math.abs(Number(deps[i - 1].train.number) - Number(deps[i].train.number)) === 100 && deps[i - 1].time === deps[i].time) {
             continue;
         } else result.push(dep);
     }
@@ -406,16 +390,12 @@ async function searchDeparture(sta, direction) {
         const stationIndex = indexofFromStation(diagram, station, rosen, direction);
         const toCode = codeofToStation(station, direction, rosen);
         const numofStations = diagram.railway.stations.length;
-        const d =
-            stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == toCode) ? 0 : 1;
+        const d = stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == toCode) ? 0 : 1;
         let departures = diagram.railway.diagrams[0].trains[d].filter(
             (tra) =>
-                tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]
-                    ?.stopType === 1 &&
-                tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]
-                    ?.departure != null &&
-                tra.timetable._data[d === 0 ? stationIndex + 1 : numofStations - stationIndex] !=
-                    null,
+                tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]?.stopType === 1 &&
+                tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]?.departure != null &&
+                tra.timetable._data[d === 0 ? stationIndex + 1 : numofStations - stationIndex] != null,
         );
         if (rosen === 'KT') {
             if (direction.route === '刈田川急行線' && ['hnt', 'dtc', 'sos'].includes(station)) {
@@ -424,25 +404,15 @@ async function searchDeparture(sta, direction) {
                 departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
             }
         } else if (rosen === 'HD') {
-            if (
-                direction.route === '半田線' &&
-                station === 'obm' &&
-                direction.stationName === '大府'
-            ) {
-                departures = departures.filter(
-                    (tra) => tra.timetable._data[d === 0 ? 1 : 28]?.stopType === 1,
-                );
+            if (direction.route === '半田線' && station === 'obm' && direction.stationName === '大府') {
+                departures = departures.filter((tra) => tra.timetable._data[d === 0 ? 1 : 28]?.stopType === 1);
             } else if (direction.route === '大峯連絡線' && station === 'obm') {
-                departures = departures.filter(
-                    (tra) => tra.timetable._data[d === 0 ? 1 : 28]?.stopType === 2,
-                );
+                departures = departures.filter((tra) => tra.timetable._data[d === 0 ? 1 : 28]?.stopType === 2);
             }
         }
         const result = departures
             .map((tra) => {
-                const time =
-                    tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]
-                        ?.departure;
+                const time = tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]?.departure;
                 return {
                     terminal: terminal(tra, diagram),
                     typeName: typeName(tra, diagram),
@@ -464,10 +434,7 @@ async function searchDeparture(sta, direction) {
                 const diagram = await dia(route);
                 const index = busIndex(diagram, busStop, {
                     ...directions[i],
-                    stationName:
-                        directions[i].stationName.split('・')[
-                            busStop === '大府駅東' && route === 'サクラコース' ? 1 : 0
-                        ],
+                    stationName: directions[i].stationName.split('・')[busStop === '大府駅東' && route === 'サクラコース' ? 1 : 0],
                 });
                 return index
                     .map((index) => {
@@ -475,18 +442,11 @@ async function searchDeparture(sta, direction) {
                         const numofStations = diagram.railway.stations.length;
                         const filtered = diagram.railway.diagrams[0].trains[d].filter(
                             (bus) =>
-                                bus.timetable._data[
-                                    d === 0 ? index.from : numofStations - 1 - index.from
-                                ]?.stopType === 1 &&
-                                bus.timetable._data[
-                                    d === 0 ? index.from : numofStations - 1 - index.from
-                                ]?.departure != null,
+                                bus.timetable._data[d === 0 ? index.from : numofStations - 1 - index.from]?.stopType === 1 &&
+                                bus.timetable._data[d === 0 ? index.from : numofStations - 1 - index.from]?.departure != null,
                         );
                         return filtered.map((tra) => {
-                            const time =
-                                tra.timetable._data[
-                                    d === 0 ? index.from : numofStations - 1 - index.from
-                                ]?.departure;
+                            const time = tra.timetable._data[d === 0 ? index.from : numofStations - 1 - index.from]?.departure;
                             return {
                                 terminal: d === 0 ? '左まわり' : '右まわり',
                                 typeName: typeName(tra, diagram),
