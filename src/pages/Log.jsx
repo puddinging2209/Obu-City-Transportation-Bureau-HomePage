@@ -4,22 +4,22 @@ import dayjs from 'dayjs';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
-    Accordion,
-    AccordionDetails,
-    AccordionSummary,
-    Box,
-    Button,
-    Card,
-    Stack,
-    Tab,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    Tabs,
-    Typography,
+	Accordion,
+	AccordionDetails,
+	AccordionSummary,
+	Box,
+	Button,
+	Card,
+	Stack,
+	Tab,
+	Table,
+	TableBody,
+	TableCell,
+	TableContainer,
+	TableHead,
+	TableRow,
+	Tabs,
+	Typography,
 } from '@mui/material';
 
 import SaveDataImportButton from '../components/ImportLogButton';
@@ -30,173 +30,151 @@ import lines from '../data/lines.json';
 import stations from '../data/stations.json';
 
 function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-    return (
-        <Box role='tabpanel' hidden={value !== index} {...other}>
-            {children}
-        </Box>
-    );
+	const { children, value, index, ...other } = props;
+	return (
+		<Box role='tabpanel' hidden={value !== index} {...other}>
+			{children}
+		</Box>
+	);
 }
 
 export default function Log() {
-    const [mode, setMode] = React.useState(0);
+	const [mode, setMode] = React.useState(0);
 
-    const logs = JSON.parse(localStorage.getItem('visitedStations') || '[]').toReversed();
-    const numOfStations = Object.keys(stations).length;
-    const checkedStations = new Set(logs.map((log) => log.id)).size;
+	const logs = JSON.parse(localStorage.getItem('visitedStations') || '[]').toReversed();
+	const numOfStations = Object.keys(stations).length;
+	const checkedStations = new Set(logs.map((log) => log.id)).size;
 
-    const subwayLines = Object.values(lines).filter((line) => line.type === 'subway');
+	const subwayLines = Object.values(lines).filter((line) => line.type === 'subway');
 
-    const lastExportedDate = localStorage.getItem('lastExport') ?? null;
+	const lastExportedDate = localStorage.getItem('lastExport') ?? null;
 
-    const handleLoadSuccess = (loadedData) => {
-        if (localStorage.getItem('visitedStations')) {
-            if (!window.confirm('現在の訪問履歴は上書きされます。よろしいですか？')) {
-                return;
-            }
-        }
-        const transformedData = loadedData.map((log) => ({
-            id: log.id ?? id(log.name),
-            time: log.time,
-        }));
-        localStorage.setItem('visitedStations', JSON.stringify(transformedData));
-        window.location.reload();
-    };
+	const handleLoadSuccess = (loadedData) => {
+		if (localStorage.getItem('visitedStations')) {
+			if (!window.confirm('現在の訪問履歴は上書きされます。よろしいですか？')) {
+				return;
+			}
+		}
+		const transformedData = loadedData.map((log) => ({
+			id: log.id ?? id(log.name),
+			time: log.time,
+		}));
+		localStorage.setItem('visitedStations', JSON.stringify(transformedData));
+		window.location.reload();
+	};
 
-    return (
-        <Box sx={{ width: { xs: '100%', md: '70%' }, mx: 'auto', my: 4, p: 2 }}>
-            <Typography variant='h6'>駅ログ！</Typography>
-            <Typography variant='body1' sx={{ mt: 1 }}>
-                station logs!
-            </Typography>
-            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
-                <Typography variant='body1' sx={{ mt: 1 }}>
-                    {`訪問済: ${checkedStations}駅 / ${numOfStations}駅 ${((checkedStations / numOfStations) * 100).toFixed(2)}%`}
-                </Typography>
-            </Box>
-            <Box>
-                <Tabs value={mode} onChange={(_, v) => setMode(v)}>
-                    <Tab label='履歴一覧' value={0} />
-                    <Tab label='路線別' value={1} />
-                    <Tab label='データ管理' value={2} />
-                </Tabs>
-            </Box>
-            <TabPanel value={mode} index={0}>
-                <Card sx={{ width: '100%', overflow: 'auto', mx: 'auto', my: 4, p: 2 }}>
-                    <TableContainer>
-                        <Table>
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell>タイムスタンプ</TableCell>
-                                    <TableCell>駅</TableCell>
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {logs.map((log, i) => (
-                                    <TableRow
-                                        key={`${i}-${log.time}`}
-                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                    >
-                                        <TableCell>
-                                            {dayjs(log.time).format('YYYY/MM/DD HH:mm')}
-                                        </TableCell>
-                                        <TableCell>{stations[log.id].name}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-                </Card>
-            </TabPanel>
-            <TabPanel value={mode} index={1}>
-                <Card sx={{ width: '100%', overflow: 'auto', mx: 'auto', my: 4, p: 2 }}>
-                    {subwayLines.map((line) => {
-                        const innerStations = new Set(
-                            line.stations[0].id ?
-                                line.stations.map((sta) => sta.id)
-                            :   line.stations,
-                        );
-                        return (
-                            <Accordion key={line.name}>
-                                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Box
-                                        sx={{
-                                            width: '100%',
-                                            display: 'flex',
-                                            justifyContent: 'space-between',
-                                            alignItems: 'center',
-                                        }}
-                                    >
-                                        <Typography variant='subtitle1'>{line.name}</Typography>
-                                        <Typography variant='body1'>{`訪問済: ${new Set(logs.filter((log) => innerStations.has(log.id)).map((log) => log.id)).size} 駅 / ${innerStations.size} 駅`}</Typography>
-                                    </Box>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <TableContainer>
-                                        <Table>
-                                            <TableHead>
-                                                <TableRow>
-                                                    <TableCell>駅</TableCell>
-                                                    <TableCell>訪問履歴</TableCell>
-                                                    <TableCell>訪問回数</TableCell>
-                                                </TableRow>
-                                            </TableHead>
-                                            <TableBody>
-                                                {[...innerStations].map((station, i) => (
-                                                    <TableRow key={`${line.name}${station}`}>
-                                                        <TableCell>
-                                                            {stations[station].name}
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            {(
-                                                                logs.some(
-                                                                    (log) => log.id === station,
-                                                                )
-                                                            ) ?
-                                                                <>
-                                                                    {`最終訪問 : ${dayjs(logs.sort((log1, log2) => log2.time - log1.time).find((log) => log.id === station).time).format('YYYY/MM/DD HH:mm')}`}
-                                                                </>
-                                                            :   '未訪問'}
-                                                        </TableCell>
-                                                        <TableCell>{`${logs.filter((log) => log.id === station).length} 回`}</TableCell>
-                                                    </TableRow>
-                                                ))}
-                                            </TableBody>
-                                        </Table>
-                                    </TableContainer>
-                                </AccordionDetails>
-                            </Accordion>
-                        );
-                    })}
-                </Card>
-            </TabPanel>
-            <TabPanel value={mode} index={2}>
-                <Card sx={{ width: '100%', overflow: 'auto', mx: 'auto', my: 4, p: 2 }}>
-                    <Typography variant='h6'>データ管理</Typography>
-                    <Typography variant='body1' sx={{ mt: 2 }}>
-                        データのエクスポート・インポートができます。
-                        <br />
-                        エクスポートは現在の訪問履歴を保存し、インポートは保存したファイルから訪問履歴を復元します。
-                        <br />
-                        ※インポートするファイルはエクスポートしたものを使用してください。
-                        <br />
-                        最終エクスポート日時:{' '}
-                        {lastExportedDate ?
-                            dayjs(lastExportedDate).format('YYYY/MM/DD HH:mm')
-                        :   'なし'}
-                    </Typography>
-                    <Stack direction='row' spacing={2} sx={{ mt: 2, justifyContent: 'center' }}>
-                        <Button
-                            variant='contained'
-                            sx={{ mt: 2 }}
-                            onClick={() => exportSaveData(logs)}
-                        >
-                            エクスポート
-                        </Button>
-                        <SaveDataImportButton onLoadSuccess={handleLoadSuccess} />
-                    </Stack>
-                </Card>
-            </TabPanel>
-        </Box>
-    );
+	return (
+		<Box sx={{ width: { xs: '100%', md: '70%' }, mx: 'auto', my: 4, p: 2 }}>
+			<Typography variant='h6'>駅ログ！</Typography>
+			<Typography variant='body1' sx={{ mt: 1 }}>
+				station logs!
+			</Typography>
+			<Box sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
+				<Typography variant='body1' sx={{ mt: 1 }}>
+					{`訪問済: ${checkedStations}駅 / ${numOfStations}駅 ${((checkedStations / numOfStations) * 100).toFixed(2)}%`}
+				</Typography>
+			</Box>
+			<Box>
+				<Tabs value={mode} onChange={(_, v) => setMode(v)}>
+					<Tab label='履歴一覧' value={0} />
+					<Tab label='路線別' value={1} />
+					<Tab label='データ管理' value={2} />
+				</Tabs>
+			</Box>
+			<TabPanel value={mode} index={0}>
+				<Card sx={{ width: '100%', overflow: 'auto', mx: 'auto', my: 4, p: 2 }}>
+					<TableContainer>
+						<Table>
+							<TableHead>
+								<TableRow>
+									<TableCell>タイムスタンプ</TableCell>
+									<TableCell>駅</TableCell>
+								</TableRow>
+							</TableHead>
+							<TableBody>
+								{logs.map((log, i) => (
+									<TableRow key={`${i}-${log.time}`} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+										<TableCell>{dayjs(log.time).format('YYYY/MM/DD HH:mm')}</TableCell>
+										<TableCell>{stations[log.id]?.name}</TableCell>
+									</TableRow>
+								))}
+							</TableBody>
+						</Table>
+					</TableContainer>
+				</Card>
+			</TabPanel>
+			<TabPanel value={mode} index={1}>
+				<Card sx={{ width: '100%', overflow: 'auto', mx: 'auto', my: 4, p: 2 }}>
+					{subwayLines.map((line) => {
+						const innerStations = new Set(line.stations[0].id ? line.stations.map((sta) => sta.id) : line.stations);
+						return (
+							<Accordion key={line.name}>
+								<AccordionSummary expandIcon={<ExpandMoreIcon />}>
+									<Box
+										sx={{
+											width: '100%',
+											display: 'flex',
+											justifyContent: 'space-between',
+											alignItems: 'center',
+										}}
+									>
+										<Typography variant='subtitle1'>{line.name}</Typography>
+										<Typography variant='body1'>{`訪問済: ${new Set(logs.filter((log) => innerStations.has(log.id)).map((log) => log.id)).size} 駅 / ${innerStations.size} 駅`}</Typography>
+									</Box>
+								</AccordionSummary>
+								<AccordionDetails>
+									<TableContainer>
+										<Table>
+											<TableHead>
+												<TableRow>
+													<TableCell>駅</TableCell>
+													<TableCell>訪問履歴</TableCell>
+													<TableCell>訪問回数</TableCell>
+												</TableRow>
+											</TableHead>
+											<TableBody>
+												{[...innerStations].map((station, i) => (
+													<TableRow key={`${line.name}${station}`}>
+														<TableCell>{stations[station].name}</TableCell>
+														<TableCell>
+															{logs.some((log) => log.id === station) ?
+																<>
+																	{`最終訪問 : ${dayjs(logs.sort((log1, log2) => log2.time - log1.time).find((log) => log.id === station).time).format('YYYY/MM/DD HH:mm')}`}
+																</>
+															:	'未訪問'}
+														</TableCell>
+														<TableCell>{`${logs.filter((log) => log.id === station).length} 回`}</TableCell>
+													</TableRow>
+												))}
+											</TableBody>
+										</Table>
+									</TableContainer>
+								</AccordionDetails>
+							</Accordion>
+						);
+					})}
+				</Card>
+			</TabPanel>
+			<TabPanel value={mode} index={2}>
+				<Card sx={{ width: '100%', overflow: 'auto', mx: 'auto', my: 4, p: 2 }}>
+					<Typography variant='h6'>データ管理</Typography>
+					<Typography variant='body1' sx={{ mt: 2 }}>
+						データのエクスポート・インポートができます。
+						<br />
+						エクスポートは現在の訪問履歴を保存し、インポートは保存したファイルから訪問履歴を復元します。
+						<br />
+						※インポートするファイルはエクスポートしたものを使用してください。
+						<br />
+						最終エクスポート日時: {lastExportedDate ? dayjs(lastExportedDate).format('YYYY/MM/DD HH:mm') : 'なし'}
+					</Typography>
+					<Stack direction='row' spacing={2} sx={{ mt: 2, justifyContent: 'center' }}>
+						<Button variant='contained' sx={{ mt: 2 }} onClick={() => exportSaveData(logs)}>
+							エクスポート
+						</Button>
+						<SaveDataImportButton onLoadSuccess={handleLoadSuccess} />
+					</Stack>
+				</Card>
+			</TabPanel>
+		</Box>
+	);
 }
