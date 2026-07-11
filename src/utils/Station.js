@@ -13,12 +13,16 @@ export function id_number(id) {
 export function name(text) {
 	if (nodes[text]) {
 		return nodes[text].name;
-	} else if (text == '空港' || text == '中部国際空港') return '中部国際空港';
-	else if (text == '循環') return '循環';
-	else if (text == '大府環状線') return '大府環状線';
-	else if (stations[text]) return stations[text].name;
+	} else if (stations[text]) return stations[text].name;
 	else if (Object.values(stations).find((s) => s.name === text)) return text;
 	return null;
+}
+
+export function label(text) {
+	if (name(text) != null) {
+		return name(text);
+	} else if (text === '空港') return '中部国際空港';
+	return text;
 }
 
 export function code(text) {
