@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 import StopRow from './StopRow.jsx';
 
 import formatStops from '../utils/formatStops.js';
-import { name } from '../utils/Station.js';
+import { label } from '../utils/Station.js';
 import { LineContext } from './DepartureCard.jsx';
 
 import types from '../data/types.json';
@@ -57,8 +57,8 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 					<Box sx={{ borderBottom: `3px solid ${types[dep.typeName].color}` }}>
 						<Typography variant='h6'>
 							{!dep.multilayer ?
-								`${dep.typeName}${dep.train.name.replace(dep.typeName, '')} ${dep.train.count != '' ? `${dep.train.count}号` : ''} ${name(dep.terminal)}行`
-							:	`${dep.typeName}${dep.train[multilayer].name.replace(dep.typeName, '')} ${dep.train[multilayer].count != '' ? `${dep.train[multilayer].count}号` : ''} ${name(dep.terminal)}行`
+								`${dep.typeName}${dep.train.name.replace(dep.typeName, '')} ${dep.train.count != '' ? `${dep.train.count}号` : ''} ${label(dep.terminal)}行`
+							:	`${dep.typeName}${dep.train[multilayer].name.replace(dep.typeName, '')} ${dep.train[multilayer].count != '' ? `${dep.train[multilayer].count}号` : ''} ${label(dep.terminal)}行`
 							}
 						</Typography>
 						<Typography variant='body1'>{!dep.multilayer ? dep.train.number : dep.train[multilayer].number}</Typography>
