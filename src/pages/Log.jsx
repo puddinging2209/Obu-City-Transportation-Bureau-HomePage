@@ -229,12 +229,18 @@ export default function Log() {
 			</TabPanel>
 			<TabPanel value={mode} index={2}>
 				<Card sx={{ width: '100%', overflow: 'auto', mx: 'auto', my: 4, p: 2 }}>
-					{cities.map((city) => {
-						const innerStations = Object.values(stations)
-							.filter((station) => station.city === city)
-							.map((station) => station.id);
-						return <StationGroupAccordion key={city} title={city} stationIds={innerStations} logs={logs} />;
-					})}
+					{cities
+						.sort(
+							(a, b) =>
+								Object.values(stations).filter((s) => s.city === b).length -
+								Object.values(stations).filter((s) => s.city === a).length,
+						)
+						.map((city) => {
+							const innerStations = Object.values(stations)
+								.filter((station) => station.city === city)
+								.map((station) => station.id);
+							return <StationGroupAccordion key={city} title={city} stationIds={innerStations} logs={logs} />;
+						})}
 				</Card>
 			</TabPanel>
 			<TabPanel value={mode} index={3}>
