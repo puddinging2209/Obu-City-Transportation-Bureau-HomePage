@@ -7,6 +7,12 @@ import nodes from '../data/nodes.json';
 import numberList from '../data/numberList.json';
 import stations from '../data/stations.json';
 
+const formatStopsCache = new Map();
+
+function getFormatStopsCacheKey(line, train) {
+    return `${resolveRosen(line)}:${train?.number ?? ''}:${train?.direction ?? ''}:${train?.timetable?.firstStationIndex ?? ''}:${train?.timetable?.terminalStationIndex ?? ''}:${train?.timetable?._data?.length ?? ''}`;
+}
+
 function searchStops(diagram, train) {
     const stationList = diagram.railway.stations.map((sta) => sta.name);
     if (!train) return [];
@@ -279,6 +285,11 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
  */
 
 export default async function formatStops(line, train) {
+    const cacheKey = getFormatStopsCacheKey(line, train);
+    if (formatStopsCache.has(cacheKey)) {
+        return formatStopsCache.get(cacheKey);
+    }
+
     const innerDiagram = await dia(line);
     const inner = searchStops(innerDiagram, train);
 
