@@ -2,132 +2,125 @@ import React, { Suspense } from 'react';
 
 import CloseIcon from '@mui/icons-material/Close';
 import {
-    Box,
-    CircularProgress,
-    createTheme,
-    CssBaseline,
-    Dialog,
-    DialogContent,
-    DialogTitle,
-    FormControlLabel,
-    IconButton,
-    ThemeProvider,
-    Typography,
+	Box,
+	CircularProgress,
+	createTheme,
+	CssBaseline,
+	Dialog,
+	DialogContent,
+	DialogTitle,
+	FormControlLabel,
+	IconButton,
+	ThemeProvider,
+	Typography,
 } from '@mui/material';
 import { NuqsAdapter } from '@offlegacy/nuqs-hash-router';
+import { useAtom } from 'jotai';
 import { Outlet, Link as RouterLink } from 'react-router-dom';
 
+import { settingsAtom } from '../utils/Atom.js';
 import Drawer from './Drawer.jsx';
 import Header from './Header.jsx';
 import MobileBottomNavigation from './MobileBottomNavigation.jsx';
 import UpdateButton from './UpdateButton.jsx';
 
-const theme = createTheme({
-    palette: {
-        mode: 'light',
-        primary: {
-            main: '#1976d2', // 地下鉄っぽい青
-        },
-        secondary: {
-            main: '#ff6600', // バス色
-        },
-    },
-    shape: {
-        borderRadius: 8,
-    },
-});
-
 function Layout() {
-    const [isWarnOpen, setIsWarnOpen] = React.useState(false);
-    const [isShowWarn, setIsShowWarn] = React.useState(
-        localStorage.getItem('isShowWarn') ? JSON.parse(localStorage.getItem('isShowWarn')) : true,
-    );
+	const [isWarnOpen, setIsWarnOpen] = React.useState(false);
+	const [isShowWarn, setIsShowWarn] = React.useState(localStorage.getItem('isShowWarn') ? JSON.parse(localStorage.getItem('isShowWarn')) : true);
+	const [settings, setSettings] = useAtom(settingsAtom);
 
-    function closeWarnModal() {
-        setIsWarnOpen(false);
-        if (!isShowWarn) {
-            localStorage.setItem('isShowWarn', false);
-        }
-    }
+	const theme = createTheme({
+		palette: {
+			mode:
+				settings.theme === 'system' ?
+					window.matchMedia('(prefers-color-scheme: dark)').matches ?
+						'dark'
+					:	'light'
+				:	settings.theme,
+		},
+		shape: {
+			borderRadius: 8,
+		},
+	});
 
-    React.useEffect(() => {
-        if (isShowWarn) setIsWarnOpen(true);
-    }, []);
+	function closeWarnModal() {
+		setIsWarnOpen(false);
+		if (!isShowWarn) {
+			localStorage.setItem('isShowWarn', false);
+		}
+	}
 
-    return (
-        <NuqsAdapter>
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <Header />
-                <Drawer />
+	React.useEffect(() => {
+		if (isShowWarn) setIsWarnOpen(true);
+	}, []);
 
-                <main style={{ paddingBottom: '72px' }}>
-                    <Suspense
-                        fallback={
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    minHeight: '400px',
-                                }}
-                            >
-                                <CircularProgress />
-                            </Box>
-                        }
-                    >
-                        <Outlet />
-                    </Suspense>
-                </main>
+	return (
+		<NuqsAdapter>
+			<ThemeProvider theme={theme}>
+				<CssBaseline />
+				<Header />
+				<Drawer />
 
-                <MobileBottomNavigation />
+				<main style={{ paddingBottom: '72px' }}>
+					<Suspense
+						fallback={
+							<Box
+								sx={{
+									display: 'flex',
+									justifyContent: 'center',
+									alignItems: 'center',
+									minHeight: '400px',
+								}}
+							>
+								<CircularProgress />
+							</Box>
+						}
+					>
+						<Outlet />
+					</Suspense>
+				</main>
 
-                <UpdateButton />
+				<MobileBottomNavigation />
 
-                <Dialog open={isWarnOpen} onClose={closeWarnModal} fullWidth>
-                    <DialogTitle>
-                        <Typography variant='h5' component='div'>
-                            このウェブサイトの内容は架空のもので実在しません
-                        </Typography>
-                        <Typography variant='body1' component='div'>
-                            以下の事項に注意して閲覧してください
-                        </Typography>
-                    </DialogTitle>
-                    <DialogContent>
-                        <Typography variant='body2'>
-                            初めての方はこちらをご覧ください→
-                            <RouterLink to='/about' onClick={closeWarnModal}>
-                                大府市営地下鉄について
-                            </RouterLink>
-                        </Typography>
-                        <Typography variant='body2'>
-                            このウェブサイトは大府市公式のものではありません。
-                        </Typography>
-                        <Typography variant='body2'>
-                            大府市交通局、大府市営地下鉄はフィクションであり、実在の大府市とは一切関係ありません。
-                        </Typography>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                            <FormControlLabel
-                                control={
-                                    <input
-                                        type='checkbox'
-                                        checked={!isShowWarn}
-                                        color='primary'
-                                        onChange={(e) => setIsShowWarn(!e.target.checked)}
-                                    />
-                                }
-                                label='今後この警告を表示しない'
-                                sx={{ ml: 0, mr: 'auto' }}
-                            />
-                            <IconButton onClick={closeWarnModal} sx={{ mr: 1 }}>
-                                <CloseIcon fontSize='small' />
-                            </IconButton>
-                        </Box>
-                    </DialogContent>
-                </Dialog>
-            </ThemeProvider>
-        </NuqsAdapter>
-    );
+				<UpdateButton />
+
+				<Dialog open={isWarnOpen} onClose={closeWarnModal} fullWidth>
+					<DialogTitle>
+						<Typography variant='h5' component='div'>
+							このウェブサイトの内容は架空のもので実在しません
+						</Typography>
+						<Typography variant='body1' component='div'>
+							以下の事項に注意して閲覧してください
+						</Typography>
+					</DialogTitle>
+					<DialogContent>
+						<Typography variant='body2'>
+							初めての方はこちらをご覧ください→
+							<RouterLink to='/about' onClick={closeWarnModal}>
+								大府市営地下鉄について
+							</RouterLink>
+						</Typography>
+						<Typography variant='body2'>このウェブサイトは大府市公式のものではありません。</Typography>
+						<Typography variant='body2'>
+							大府市交通局、大府市営地下鉄はフィクションであり、実在の大府市とは一切関係ありません。
+						</Typography>
+						<Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+							<FormControlLabel
+								control={
+									<input type='checkbox' checked={!isShowWarn} color='primary' onChange={(e) => setIsShowWarn(!e.target.checked)} />
+								}
+								label='今後この警告を表示しない'
+								sx={{ ml: 0, mr: 'auto' }}
+							/>
+							<IconButton onClick={closeWarnModal} sx={{ mr: 1 }}>
+								<CloseIcon fontSize='small' />
+							</IconButton>
+						</Box>
+					</DialogContent>
+				</Dialog>
+			</ThemeProvider>
+		</NuqsAdapter>
+	);
 }
 
 export default Layout;
