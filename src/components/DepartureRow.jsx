@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Box, Chip, Grid, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 import OverflowMarquee from './OverflowMarquee.jsx';
 import TrainStopsDialog from './TrainStopsDialog.jsx';
@@ -11,6 +12,8 @@ import { toTimeString } from '../utils/Time.js';
 import types from '../data/types.json';
 
 function DepartureRow({ dep, needId = false, station }) {
+	const theme = useTheme();
+
 	const [isShowDialog, setIsShowDialog] = React.useState(false);
 
 	return (
@@ -18,7 +21,7 @@ function DepartureRow({ dep, needId = false, station }) {
 			<Box
 				id={needId ? String(dep.time) : null}
 				sx={{
-					borderBottom: '1px solid rgba(0,0,0,0.12)',
+					borderBottom: `1px solid ${theme.palette.divider}`,
 					py: '3px',
 					cursor: 'pointer',
 				}}
