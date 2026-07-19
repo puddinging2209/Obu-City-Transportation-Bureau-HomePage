@@ -13,11 +13,7 @@ function Settings() {
 
 		return (
 			<div role='tabpanel' hidden={value !== index} {...other}>
-				{value === index && (
-					<Box sx={{ p: 3 }}>
-						<Typography>{children}</Typography>
-					</Box>
-				)}
+				{value === index && <Typography>{children}</Typography>}
 			</div>
 		);
 	};

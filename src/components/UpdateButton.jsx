@@ -117,9 +117,9 @@ export default function UpdateButton() {
 				<Dialog open={true} onClose={() => setShowOudUpdate(false)}>
 					<DialogTitle>データ更新があります</DialogTitle>
 					<DialogContent>
-						<div>運行データ（OUD）が更新されました。キャッシュを更新しますか？</div>
+						<div>運行データが更新されました。</div>
 						<Button variant='contained' color='primary' startIcon={<UpdateIcon />} onClick={handleOudUpdate} size='small'>
-							更新して反映
+							更新
 						</Button>
 					</DialogContent>
 				</Dialog>
