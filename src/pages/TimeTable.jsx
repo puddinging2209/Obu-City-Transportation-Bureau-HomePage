@@ -91,7 +91,6 @@ function TimeTable() {
 					}
 					placeholder={'駅を選択'}
 					onChange={(value) => setStation(value.value)}
-					busStop={false}
 				/>
 				<StationSelectButtons onSelect={(station) => setStation(station)} />
 				<Stack sx={{ width: '100%', px: 'auto' }}>

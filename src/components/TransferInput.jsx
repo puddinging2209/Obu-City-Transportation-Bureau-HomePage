@@ -175,7 +175,6 @@ export default function TransferInput({ onSearch, loading }) {
 							onChange={(value) => setFrom(value)}
 							value={from}
 							placeholder='出発駅を選択'
-							busStop={false}
 							disabledStations={[to?.value]}
 						/>
 						<StationSelectButtons
@@ -191,13 +190,7 @@ export default function TransferInput({ onSearch, loading }) {
 						/>
 					</Stack>
 					<Stack spacing={0.5}>
-						<StationSelecter
-							onChange={(value) => setTo(value)}
-							value={to}
-							placeholder='到着駅を選択'
-							busStop={false}
-							disabledStations={[from?.value]}
-						/>
+						<StationSelecter onChange={(value) => setTo(value)} value={to} placeholder='到着駅を選択' disabledStations={[from?.value]} />
 						<StationSelectButtons
 							disabledStations={[from?.value]}
 							onSelect={(value) =>
