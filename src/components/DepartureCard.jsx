@@ -12,7 +12,6 @@ import DepartureRow from './DepartureRow.jsx';
 import DirectionBottomSheet from './DirectionBottomSheet.jsx';
 import OverflowMarquee from './OverflowMarquee.jsx';
 
-import busStops from '../data/busStops.json';
 import lines from '../data/lines.json';
 import stations from '../data/stations.json';
 
@@ -26,11 +25,11 @@ const LineContext = React.createContext(null);
 function DepartureCard({ station, addButton = false, removeButton = false }) {
 	const [myStations, setMyStations] = useAtom(myStationsAtom);
 
-	const [direction, setDirection] = React.useState(stations[station?.id]?.directions?.[0] || busStops[station?.id]?.directions?.[0] || null);
+	const [direction, setDirection] = React.useState(stations[station?.id]?.directions?.[0] || null);
 	const [departures, setDepartures] = React.useState([]);
 
 	React.useEffect(() => {
-		setDirection(stations[station?.id]?.directions?.[0] || busStops[station?.id]?.directions?.[0] || null);
+		setDirection(stations[station?.id]?.directions?.[0] || null);
 	}, [station]);
 
 	const [loading, setLoading] = React.useState(false);
@@ -53,18 +52,11 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 		localStorage.setItem('myStations', JSON.stringify(s));
 	}
 
-	const directionOptions =
-		station.role === 'station' ?
-			stations[station.id]?.directions.map((d) => ({
-				value: d,
-				label: `${d.stationName}方面`,
-				route: d.route,
-			}))
-		:	busStops[station.id]?.directions.map((d) => ({
-				value: d,
-				label: `${d.stationName}方面`,
-				route: d.route,
-			}));
+	const directionOptions = stations[station.id]?.directions.map((d) => ({
+		value: d,
+		label: `${d.stationName}方面`,
+		route: d.route,
+	}));
 
 	const [isOpenShowMore, setIsOpenShowMore] = React.useState(false);
 
