@@ -119,7 +119,7 @@ export default function DepartureSection() {
 							</Stack>
 							{nearestStation ?
 								<div width='100%'>
-									<DepartureCard key={`near-${nearestStation}`} station={{ id: nearestStation, role: 'station' }} addButton />
+									<DepartureCard key={`near-${nearestStation}`} station={nearestStation} addButton />
 								</div>
 							:	<Card
 									sx={{
@@ -156,14 +156,7 @@ export default function DepartureSection() {
 							</Stack>
 							<Box sx={{ mt: 2, width: { xs: '100%', md: 300 } }}>
 								{serchedStation ?
-									<DepartureCard
-										key={`search-${serchedStation.value}`}
-										station={{
-											id: serchedStation.value,
-											role: serchedStation.role,
-										}}
-										addButton
-									/>
+									<DepartureCard key={`search-${serchedStation.value}`} station={serchedStation} addButton />
 								:	<Card
 										sx={{
 											width: { xs: '100%', md: 300 },
@@ -201,7 +194,7 @@ export default function DepartureSection() {
 				{myStations.map((sta) => (
 					<Box sx={{ scrollSnapAlign: { xs: 'center', md: 'none' } }} key={sta.id}>
 						<Box sx={{ width: { xs: '85vw', md: 300 } }}>
-							<DepartureCard key={`my-${sta.id}`} station={sta} removeButton />
+							<DepartureCard key={`my-${sta.id}`} station={sta.id} removeButton />
 						</Box>
 					</Box>
 				))}
