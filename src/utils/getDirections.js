@@ -5,8 +5,14 @@ export default function getDirections(station) {
 	const lines = stationsData[station].routes;
 	return lines
 		.map((line) => {
-			const candidates = [linesData[line].stations[0].id, linesData[line].stations.at(-1).id];
-			return candidates.filter((id) => id !== station).map((id) => ({ line, id }));
+			const index = linesData[line].stations.findIndex((s) => station === s.id);
+			return [-1, 1].map((d) => {
+				for (let i = index + d; i >= 0 && i < linesData[line].stations.length; i += d) {
+					const s = linesData[line].stations[i];
+					if (s.types['com-exp'] || i === 0 || i === linesData[line].stations.length - 1) return { line, id: s.id };
+				}
+			});
 		})
-		.flat();
+		.flat()
+		.filter((d) => d);
 }

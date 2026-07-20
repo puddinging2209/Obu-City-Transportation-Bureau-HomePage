@@ -3,7 +3,7 @@ import stations from '../data/stations.json';
 
 export function name_number(text) {
 	if (text === '中部国際空港') return ['HK28'];
-	return Object.values(stations).find((s) => s.name === text)?.code ?? null;
+	return Object.values(stations).find((s) => s.id === id(text))?.code ?? null;
 }
 
 export function id_number(id) {

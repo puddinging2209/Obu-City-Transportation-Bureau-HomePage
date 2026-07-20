@@ -24,16 +24,16 @@ export default function DepartureListDialog({ departures, isOpen, onClose, direc
 				{isOpen && (
 					<>
 						<Typography variant='h6' component='div'>
-							{label(station.id)}
+							{label(station)}
 						</Typography>
-						<Typography variant='subtitle1' component='div'>{`${direction?.stationName} 方面`}</Typography>
+						<Typography variant='subtitle1' component='div'>{`${direction?.id} 方面`}</Typography>
 					</>
 				)}
 			</DialogTitle>
 			<DialogContent dividers>
 				<Box>
 					{departures?.map((dep) => (
-						<DepartureRow needId={true} key={dep.time} dep={dep} station={station.id} />
+						<DepartureRow needId={true} key={dep.time} dep={dep} station={station} />
 					))}
 				</Box>
 			</DialogContent>

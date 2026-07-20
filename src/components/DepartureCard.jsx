@@ -1,9 +1,8 @@
 import React from 'react';
 
 import CloseIcon from '@mui/icons-material/Close';
-import { Box, Button, Card, CardContent, CircularProgress, IconButton, Stack, Typography } from '@mui/material';
+import { Box, Button, Card, CardContent, CircularProgress, IconButton, MenuItem, Select, Stack, Typography } from '@mui/material';
 import { useAtom, useSetAtom } from 'jotai';
-import Select from 'react-select';
 
 import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
 
@@ -25,23 +24,17 @@ const LineContext = React.createContext(null);
 function DepartureCard({ station, addButton = false, removeButton = false }) {
 	const [myStations, setMyStations] = useAtom(myStationsAtom);
 
-	const [direction, setDirection] = React.useState();
+	const [direction, setDirection] = React.useState(0);
 	const [departures, setDepartures] = React.useState([]);
-
-	React.useEffect(() => {
-		setDirection(getDirections(station)[0] || null);
-	}, [station]);
 
 	const [loading, setLoading] = React.useState(false);
 
 	React.useEffect(() => {
-		if (direction) {
-			setLoading(true);
-			searchDeparture(station, direction).then((deps) => {
-				setDepartures(deps);
-				setLoading(false);
-			});
-		}
+		setLoading(true);
+		searchDeparture(station, directionOptions[direction]).then((deps) => {
+			setDepartures(deps);
+			setLoading(false);
+		});
 	}, [direction]);
 
 	const addMyStation = useSetAtom(addMyStationAtom);
@@ -52,7 +45,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 		localStorage.setItem('myStations', JSON.stringify(s));
 	}
 
-	const directionOptions = getDirections(station);
+	const directionOptions = React.useMemo(() => getDirections(station), [station]);
 
 	const [isOpenShowMore, setIsOpenShowMore] = React.useState(false);
 
@@ -85,43 +78,40 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 								</Typography>
 
 								<Typography variant='body2' color='text.secondary' noWrap>
-									{lines[direction?.route]?.show ?? direction?.route}
+									{lines[directionOptions[direction]?.line]?.show}
 								</Typography>
 							</Box>
 
 							<Box sx={{ display: { xs: 'none', md: 'block' } }}>
 								<Select
-									options={directionOptions.map((o) => ({ value: o.id, label: o.id }))}
-									value={directionOptions.find((o) => o.value === direction)}
-									onChange={(e) => {
-										setDirection(e.value);
+									value={direction}
+									onChange={(e) => setDirection(e.target.value)}
+									renderValue={(i) => {
+										return label(directionOptions[i]?.id);
 									}}
-									isSearchable={false}
-									menuPortalTarget={document.body}
-									styles={{ container: (b) => ({ ...b, marginBottom: 8 }) }}
-									formatOptionLabel={({ _, label, route }, { context }) => (
-										<div
-											style={{
-												display: 'flex',
-												height: '100%',
-												justifyContent: 'space-between',
-											}}
-										>
-											<Typography
-												sx={{
-													fontSize: '14px',
-													fontWeight: 'bold',
-													color: 'inherit',
-												}}
-											>
-												{label}
-											</Typography>
-											{context === 'menu' && (
-												<Typography sx={{ fontSize: '12px', color: 'inherit' }}>{lines[route]?.show ?? route}</Typography>
-											)}
-										</div>
-									)}
-								/>
+									sx={{
+										height: 40,
+										mb: 1,
+									}}
+									fullWidth
+								>
+									{directionOptions.map((o, i) => (
+										<MenuItem key={i} value={i}>
+											<Stack direction='row' justifyContent='space-between' sx={{ width: '100%' }}>
+												<Typography
+													sx={{
+														fontSize: '14px',
+														fontWeight: 'bold',
+														color: 'inherit',
+													}}
+												>
+													{label(o.id)}
+												</Typography>
+												<Typography sx={{ fontSize: '12px', color: 'inherit' }}>{lines[o.line]?.show}</Typography>
+											</Stack>
+										</MenuItem>
+									))}
+								</Select>
 							</Box>
 
 							<Box sx={{ display: { xs: 'block', md: 'none' }, marginBottom: 1 }}>
