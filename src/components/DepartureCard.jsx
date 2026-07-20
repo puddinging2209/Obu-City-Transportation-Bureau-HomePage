@@ -13,8 +13,8 @@ import DirectionBottomSheet from './DirectionBottomSheet.jsx';
 import OverflowMarquee from './OverflowMarquee.jsx';
 
 import lines from '../data/lines.json';
-import stations from '../data/stations.json';
 
+import getDirections from '../utils/getDirections.js';
 import { searchDeparture } from '../utils/readOud.js';
 import { label } from '../utils/Station.js';
 import { nowsecond } from '../utils/Time.js';
@@ -25,11 +25,11 @@ const LineContext = React.createContext(null);
 function DepartureCard({ station, addButton = false, removeButton = false }) {
 	const [myStations, setMyStations] = useAtom(myStationsAtom);
 
-	const [direction, setDirection] = React.useState(stations[station?.id]?.directions?.[0] || null);
+	const [direction, setDirection] = React.useState();
 	const [departures, setDepartures] = React.useState([]);
 
 	React.useEffect(() => {
-		setDirection(stations[station?.id]?.directions?.[0] || null);
+		setDirection(getDirections(station)[0] || null);
 	}, [station]);
 
 	const [loading, setLoading] = React.useState(false);
@@ -47,16 +47,12 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 	const addMyStation = useSetAtom(addMyStationAtom);
 
 	function removeStation() {
-		const s = myStations.filter((value) => value.id != station.id);
+		const s = myStations.filter((value) => value.id != station);
 		setMyStations(s);
 		localStorage.setItem('myStations', JSON.stringify(s));
 	}
 
-	const directionOptions = stations[station.id]?.directions.map((d) => ({
-		value: d,
-		label: `${d.stationName}方面`,
-		route: d.route,
-	}));
+	const directionOptions = getDirections(station);
 
 	const [isOpenShowMore, setIsOpenShowMore] = React.useState(false);
 
@@ -74,7 +70,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 			<LineContext value={direction?.route}>
 				<StationContext value={station}>
 					<Card
-						key={station.id}
+						key={station}
 						sx={{
 							width: { xs: '100%', md: 300 },
 							minHeight: 240,
@@ -85,7 +81,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 						<CardContent>
 							<Box sx={{ mb: 1 }}>
 								<Typography variant='h6' sx={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }} noWrap>
-									<OverflowMarquee text={label(station?.id)} />
+									<OverflowMarquee text={label(station)} />
 								</Typography>
 
 								<Typography variant='body2' color='text.secondary' noWrap>
@@ -95,8 +91,8 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 
 							<Box sx={{ display: { xs: 'none', md: 'block' } }}>
 								<Select
-									options={directionOptions}
-									value={directionOptions.find((o) => o.value == direction)}
+									options={directionOptions.map((o) => ({ value: o.id, label: o.id }))}
+									value={directionOptions.find((o) => o.value === direction)}
 									onChange={(e) => {
 										setDirection(e.value);
 									}}
@@ -151,7 +147,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 											?.filter((d) => d.time >= nowsecond())
 											.slice(0, 2)
 											?.map((dep) => (
-												<DepartureRow key={dep.time} dep={dep} station={station.id} />
+												<DepartureRow key={dep.time} dep={dep} station={station} />
 											))}
 									</Box>
 								: loading ?
@@ -197,8 +193,8 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 								sx={{ mt: 1, display: addButton ? 'block' : 'none' }}
 								variant='contained'
 								size='small'
-								onClick={() => addMyStation({ id: station.id, role: 'station' })}
-								disabled={myStations.some((s) => s.id === station.id)}
+								onClick={() => addMyStation({ id: station, role: 'station' })}
+								disabled={myStations.some((s) => s.id === station)}
 								disableElevation
 							>
 								マイ駅に追加
