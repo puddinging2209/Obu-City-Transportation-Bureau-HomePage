@@ -1,12 +1,15 @@
 import React from 'react';
 
 import { Box, Card, CardContent, Stack, Tab, Tabs, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { useAtom } from 'jotai';
 import { settingsAtom } from '../utils/Atom.js';
 
 function Settings() {
 	const [settings, setSettings] = useAtom(settingsAtom);
 	const [tabValue, setTabValue] = React.useState(0);
+
+	const theme = useTheme();
 
 	const TabPanel = (props) => {
 		const { children, value, index, ...other } = props;
@@ -41,10 +44,10 @@ function Settings() {
 			</Box>
 
 			<TabPanel value={tabValue} index={0}>
-				<Card>
+				<Card sx={{ borderRadius: `0 0 ${theme.shape.borderRadius}px ${theme.shape.borderRadius}px` }}>
 					<CardContent>
 						<Stack direction='row' justifyContent='space-between' alignItems='center'>
-							<Typography>テーマ</Typography>
+							テーマ
 							<ToggleButtonGroup size='small' value={settings.theme} onChange={handleThemeChange} exclusive>
 								<ToggleButton value='light'>ライトモード</ToggleButton>
 								<ToggleButton value='dark'>ダークモード</ToggleButton>
