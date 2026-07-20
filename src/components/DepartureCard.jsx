@@ -85,7 +85,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 						<CardContent>
 							<Box sx={{ mb: 1 }}>
 								<Typography variant='h6' sx={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }} noWrap>
-									<OverflowMarquee text={label(station?.id)} />
+									<OverflowMarquee>{label(station.id)}</OverflowMarquee>
 								</Typography>
 
 								<Typography variant='body2' color='text.secondary' noWrap>

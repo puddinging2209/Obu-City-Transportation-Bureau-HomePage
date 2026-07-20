@@ -2,9 +2,15 @@ import { atom } from 'jotai';
 
 import { id } from './Station.js';
 
-export const settingsAtom = atom({
-	theme: localStorage.getItem('theme') ?? 'light',
-});
+export const settingsAtom = atom(
+	JSON.parse(localStorage.getItem('settings')) ?? {
+		theme: 'light',
+	},
+	(get, set, settings) => {
+		localStorage.setItem('settings', JSON.stringify(settings));
+		set(settingsAtom, settings);
+	},
+);
 
 export const myStationsAtom = atom(
 	localStorage.getItem('myStations')?.match(/\[\{.*\}.*\]/) ?
