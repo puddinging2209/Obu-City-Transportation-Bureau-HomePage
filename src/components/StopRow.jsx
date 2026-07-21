@@ -1,9 +1,8 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { alpha, useTheme } from '@mui/material/styles';
 
 import OverflowMarquee from './OverflowMarquee.jsx';
 
-import { label } from '../utils/Station.js';
 import { toTimeString } from '../utils/Time.js';
 
 import lines from '../data/lines.json';
@@ -18,7 +17,7 @@ function StopRow({ stop, emphasized = false, className = '' }) {
 
 					borderBottom: `1px solid ${theme.palette.divider}`,
 					py: '3px',
-					background: emphasized ? theme.palette.info[theme.palette.mode] : '',
+					background: emphasized ? alpha(theme.palette.warning[theme.palette.mode], 0.4) : '',
 				}}
 			>
 				<Grid container wrap='nowrap' alignItems='center' columnGap={0.5} sx={{ pl: 1, justifyContent: 'space-between' }}>
@@ -31,7 +30,13 @@ function StopRow({ stop, emphasized = false, className = '' }) {
 								width: '100%',
 							}}
 						>
-							<OverflowMarquee text={label(stop.name)} />
+							<OverflowMarquee
+								style={{
+									fontWeight: emphasized ? 'bold' : 'normal',
+								}}
+							>
+								{stop.name}
+							</OverflowMarquee>
 						</Box>
 					</Grid>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Box, Button, Card, CardContent, Stack, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { useAtomValue, useSetAtom } from 'jotai';
 
 import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
@@ -24,10 +25,11 @@ import lines from '../data/lines.json';
 export default function TransferOutput({ result }) {
 	const segments = result?.segments;
 	const header = result?.header;
-	if (!segments || segments.length === 0) return null;
 
 	const [showDialog, setShowDialog] = React.useState(false);
 	const [pushed, setPushed] = React.useState(null);
+
+	if (!segments || segments.length === 0) return null;
 
 	const requiredTime = header.requiredTime;
 	const fare = header.fare;
@@ -154,11 +156,12 @@ export default function TransferOutput({ result }) {
 }
 
 function StationBox({ arrTime, depTime, StationId, disableArrTime = false, disableDepTime = false }) {
+	const theme = useTheme();
 	const myStations = useAtomValue(myStationsAtom);
 	const setMyStations = useSetAtom(addMyStationAtom);
 
 	return (
-		<Box sx={{ width: '100%', display: 'flex', borderRadius: 1, p: 1, gap: 1 }} bgcolor='#DDD'>
+		<Box sx={{ width: '100%', display: 'flex', borderRadius: 1, p: 1, gap: 1 }} bgcolor={theme.palette.mode === 'light' ? '#DDD' : '#333'}>
 			<Box sx={{ flex: '0 0 42px', textAlign: 'center' }}>
 				<Typography variant='body1'>{disableArrTime ? '出発' : toTimeString(arrTime)}</Typography>
 				<Typography variant='body1'>{disableDepTime ? '到着' : toTimeString(depTime)}</Typography>
