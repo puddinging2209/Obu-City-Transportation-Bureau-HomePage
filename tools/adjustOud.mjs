@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-/**
+/*
  * 使い方:
- * 
+ *
  *   /tools/temp に .oud2 ファイルを置く
- * 
+ *
  *   node tools/adjustOud.mjs LINE [FILENAME]
  *
  * 例:
@@ -21,12 +21,11 @@ import DiagramParser from './Parsers/DiagramParser.mjs';
 
 import listTrainNumbers from './listTrainNumbers.mjs';
 
-// ========= パス解決（ESMの王道） =========
+// ========= パス解決 =========
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const TEMP_DIR = path.resolve(__dirname, 'temp');
-// const OUT_DIR = path.resolve(__dirname, '../public/oud');
 const OUT_DIR = path.resolve(__dirname, './temp');
 
 // ========= CLI引数 =========
@@ -34,69 +33,65 @@ const line = process.argv[2];
 const fileName = process.argv[3] ?? line;
 
 if (!line) {
-    console.error('❌ 路線名が指定されていません');
-    console.error('   node tools/adjustOud.mjs line [FILENAME]');
-    process.exit(1);
+	console.error('❌ 路線名が指定されていません');
+	console.error('   node tools/adjustOud.mjs line [FILENAME]');
+	process.exit(1);
 }
 
 // ========= OUD2読み込み & パース =========
 async function readOud2(fileName) {
-    const inputPath = path.join(TEMP_DIR, `${fileName}.oud2`);
-    const text = await readFile(inputPath, 'utf-8');
+	const inputPath = path.join(TEMP_DIR, `${fileName}.oud2`);
+	const text = await readFile(inputPath, 'utf-8');
 
-    const parser = new DiagramParser();
-    const diagram = await parser.parse(text);
+	const parser = new DiagramParser();
+	const diagram = await parser.parse(text);
 
-    return diagram;
+	return diagram;
 }
 
 // ========= 駅名修正 =========
 async function adjustStationNames(line, diagram) {
-    const oldDia = await dia(line);
-    const newNames = oldDia?.railway?.stations.map(s => s.name) ?? [];
+	const oldDia = await dia(line);
+	const newNames = oldDia?.railway?.stations.map((s) => s.name) ?? [];
 
-    const newDiagram = {};
-    newDiagram.railway = { ...diagram.railway };
-    newNames.forEach((name, i) => {
-        const old = diagram.railway.stations[i].name;
-        newDiagram.railway.stations[i].name = name;
-        console.log(old, '>', name);
-    });
+	const newDiagram = {};
+	newDiagram.railway = { ...diagram.railway };
+	newNames.forEach((name, i) => {
+		const old = diagram.railway.stations[i].name;
+		newDiagram.railway.stations[i].name = name;
+		console.log(old, '>', name);
+	});
 
-    newDiagram.railway.name = line;
+	newDiagram.railway.name = line;
 
-    return newDiagram;
+	return newDiagram;
 }
 
 // ========= 出力 =========
 async function writeOud(line, diagram) {
-    await mkdir(OUT_DIR, { recursive: true });
+	await mkdir(OUT_DIR, { recursive: true });
 
-    const outputPath = path.join(OUT_DIR, `${line}.json`);
-    await writeFile(
-        outputPath,
-        JSON.stringify(diagram),
-        'utf-8'
-    );
+	const outputPath = path.join(OUT_DIR, `${line}.json`);
+	await writeFile(outputPath, JSON.stringify(diagram), 'utf-8');
 
-    console.log(`出力完了: ${outputPath}`);
+	console.log(`出力完了: ${outputPath}`);
 }
 
 // ========= メイン =========
 async function main() {
-    try {
-        console.log(`▶ 変換開始: ${fileName}.oud2 → ${line}.json`);
+	try {
+		console.log(`▶ 変換開始: ${fileName}.oud2 → ${line}.json`);
 
-        const diagram = await readOud2(fileName);
-        const newDiagram = await adjustStationNames(line, diagram);
+		const diagram = await readOud2(fileName);
+		const newDiagram = await adjustStationNames(line, diagram);
 
-        await writeOud(line, newDiagram);
-        await listTrainNumbers(line);
-    } catch (err) {
-        console.error('❌ 変換失敗');
-        console.error(err.message);
-        process.exit(1);
-    }
+		await writeOud(line, newDiagram);
+		await listTrainNumbers(line);
+	} catch (err) {
+		console.error('❌ 変換失敗');
+		console.error(err.message);
+		process.exit(1);
+	}
 }
 
 await main();
