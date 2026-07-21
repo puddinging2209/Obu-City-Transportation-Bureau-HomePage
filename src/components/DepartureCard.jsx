@@ -40,7 +40,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 	const addMyStation = useSetAtom(addMyStationAtom);
 
 	function removeStation() {
-		const s = myStations.filter((value) => value.id != station);
+		const s = myStations.filter((value) => value !== station);
 		setMyStations(s);
 		localStorage.setItem('myStations', JSON.stringify(s));
 	}
@@ -53,10 +53,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 		setIsOpenShowMore(true);
 	}
 
-	const [isOpenMobileSelector, setIsOpenMobileSelector] = React.useState({
-		open: false,
-		options: [],
-	});
+	const [isOpenMobileSelector, setIsOpenMobileSelector] = React.useState(false);
 
 	return (
 		<>
@@ -74,7 +71,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 						<CardContent>
 							<Box sx={{ mb: 1 }}>
 								<Typography variant='h6' sx={{ width: '100%', overflow: 'hidden', whiteSpace: 'nowrap' }} noWrap>
-									<OverflowMarquee>{label(station.id)}</OverflowMarquee>
+									<OverflowMarquee>{label(station)}</OverflowMarquee>
 								</Typography>
 
 								<Typography variant='body2' color='text.secondary' noWrap>
@@ -126,7 +123,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 										});
 									}}
 								>
-									{direction?.stationName}方面 ▼
+									{label(directionOptions[direction]?.id)}方面 ▼
 								</Button>
 							</Box>
 
@@ -183,8 +180,8 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 								sx={{ mt: 1, display: addButton ? 'block' : 'none' }}
 								variant='contained'
 								size='small'
-								onClick={() => addMyStation({ id: station, role: 'station' })}
-								disabled={myStations.some((s) => s.id === station)}
+								onClick={() => addMyStation(station)}
+								disabled={myStations.some((s) => s === station)}
 								disableElevation
 							>
 								マイ駅に追加
@@ -193,15 +190,15 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 					</Card>
 
 					<DirectionBottomSheet
-						open={isOpenMobileSelector.open}
-						options={isOpenMobileSelector.options}
+						open={isOpenMobileSelector}
+						options={directionOptions}
 						value={direction}
 						onClose={() => {
-							setIsOpenMobileSelector({ open: false, options: [] });
+							setIsOpenMobileSelector(false);
 						}}
 						onSelect={(value) => {
 							setDirection(value);
-							setIsOpenMobileSelector({ open: false, options: [] });
+							setIsOpenMobileSelector(false);
 						}}
 					/>
 
@@ -209,7 +206,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 						departures={departures}
 						isOpen={isOpenShowMore}
 						onClose={() => setIsOpenShowMore(false)}
-						direction={direction}
+						direction={directionOptions[direction]}
 					/>
 				</StationContext>
 			</LineContext>

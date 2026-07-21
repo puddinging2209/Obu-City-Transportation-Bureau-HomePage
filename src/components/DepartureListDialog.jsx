@@ -26,7 +26,9 @@ export default function DepartureListDialog({ departures, isOpen, onClose, direc
 						<Typography variant='h6' component='div'>
 							{label(station)}
 						</Typography>
-						<Typography variant='subtitle1' component='div'>{`${direction?.id} 方面`}</Typography>
+						<Typography variant='subtitle1' component='div'>
+							{label(direction?.id)} 方面
+						</Typography>
 					</>
 				)}
 			</DialogTitle>

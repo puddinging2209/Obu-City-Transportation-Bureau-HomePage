@@ -3,7 +3,8 @@ let oudManifest = null;
 
 const BASE = import.meta.env.BASE_URL;
 
-/** manifest を一度だけ読み込む
+/**
+ * manifest を一度だけ読み込む
  * @return {Promise<Object|false>} manifestオブジェクト、またはdev環境ではfalse
  */
 async function loadManifest() {
@@ -26,7 +27,8 @@ async function loadManifest() {
 	return oudManifest;
 }
 
-/** ダイヤグラムを取得
+/**
+ * ダイヤグラムを取得
  * @param {string} code 路線コード
  * @return {Promise<Object>} ダイヤグラムオブジェクト
  */

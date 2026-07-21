@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Tab, Tabs, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 
 import StopRow from './StopRow.jsx';
 
@@ -14,6 +14,7 @@ import types from '../data/types.json';
 export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emphasized = [] }) {
 	const [stops, setStops] = React.useState([]);
 	const [multilayer, setMultilayer] = React.useState(0);
+	const theme = useTheme();
 
 	React.useEffect(() => {
 		if (isShowDialog) {
@@ -55,13 +56,15 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 			<DialogTitle sx={{ pb: dep.multilayer ? 0 : '' }}>
 				{isShowDialog && (
 					<Box sx={{ borderBottom: `3px solid ${types[dep.typeName].color}` }}>
-						<Typography variant='h6'>
+						<Typography variant='h6' sx={{ wordBreak: 'keep-all', overflowWrap: 'anywhere' }}>
 							{!dep.multilayer ?
 								`${dep.typeName}${dep.train.name.replace(dep.typeName, '')} ${dep.train.count != '' ? `${dep.train.count}号` : ''} ${label(dep.terminal)}行`
 							:	`${dep.typeName}${dep.train[multilayer].name.replace(dep.typeName, '')} ${dep.train[multilayer].count != '' ? `${dep.train[multilayer].count}号` : ''} ${label(dep.terminal)}行`
 							}
 						</Typography>
-						<Typography variant='body1'>{!dep.multilayer ? dep.train.number : dep.train[multilayer].number}</Typography>
+						<Typography variant='body1' noWrap>
+							{!dep.multilayer ? dep.train.number : dep.train[multilayer].number}
+						</Typography>
 					</Box>
 				)}
 				{dep.multilayer && (
@@ -69,7 +72,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 						<StyledTabs
 							value={multilayer}
 							onChange={(_, value) => setMultilayer(value)}
-							sx={{ height: 1, borderBottom: '1px solid #e0e0e0' }}
+							sx={{ height: 1, borderBottom: `1px solid theme.palette.divider` }}
 							centered
 						>
 							{dep.train?.map((_, index) => {

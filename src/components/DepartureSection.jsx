@@ -156,7 +156,7 @@ export default function DepartureSection() {
 							</Stack>
 							<Box sx={{ mt: 2, width: { xs: '100%', md: 300 } }}>
 								{serchedStation ?
-									<DepartureCard key={`search-${serchedStation.value}`} station={serchedStation} addButton />
+									<DepartureCard key={`search-${serchedStation.value}`} station={serchedStation.value} addButton />
 								:	<Card
 										sx={{
 											width: { xs: '100%', md: 300 },
@@ -192,9 +192,9 @@ export default function DepartureSection() {
 				}}
 			>
 				{myStations.map((sta) => (
-					<Box sx={{ scrollSnapAlign: { xs: 'center', md: 'none' } }} key={sta.id}>
+					<Box sx={{ scrollSnapAlign: { xs: 'center', md: 'none' } }} key={sta}>
 						<Box sx={{ width: { xs: '85vw', md: 300 } }}>
-							<DepartureCard key={`my-${sta.id}`} station={sta.id} removeButton />
+							<DepartureCard key={`my-${sta}`} station={sta} removeButton />
 						</Box>
 					</Box>
 				))}
@@ -236,13 +236,13 @@ export default function DepartureSection() {
 					<StationSelecter
 						onChange={(selected) => {
 							if (selected) {
-								addMyStation({ id: selected.value, role: selected.role });
+								addMyStation(selected.value);
 								setIsShowSearch(false);
 								navigate('/home');
 							}
 						}}
 						autoFocus
-						disabledStations={myStations.map((s) => s.name)}
+						disabledStations={myStations}
 					/>
 				</DialogContent>
 				<DialogActions>

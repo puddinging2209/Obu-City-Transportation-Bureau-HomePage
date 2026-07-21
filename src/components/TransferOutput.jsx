@@ -184,8 +184,8 @@ function StationBox({ arrTime, depTime, StationId, disableArrTime = false, disab
 				variant='outlined'
 				size='small'
 				sx={{ ml: 'auto' }}
-				disabled={myStations.map((sta) => sta?.id).includes(StationId)}
-				onClick={() => setMyStations({ id: StationId, role: 'station' })}
+				disabled={myStations.includes(StationId)}
+				onClick={() => setMyStations(StationId)}
 			>
 				マイ駅に追加
 			</Button>
