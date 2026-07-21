@@ -6985,7 +6985,7 @@
 		"name": "刈田川急行線",
 		"show": "刈田川線",
 		"code": "KT",
-		"json": "KT",
+		"json": "KTr",
 		"color": "#003DFF",
 		"type": "subway",
 		"isLoop": false,
