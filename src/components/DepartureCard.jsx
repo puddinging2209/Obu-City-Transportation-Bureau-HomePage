@@ -60,7 +60,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 
 	return (
 		<>
-			<LineContext value={direction?.route}>
+			<LineContext value={directionOptions[direction]?.line}>
 				<StationContext value={station}>
 					<Card
 						key={station}
@@ -87,7 +87,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 									value={direction}
 									onChange={(e) => setDirection(e.target.value)}
 									renderValue={(i) => {
-										return label(directionOptions[i]?.id);
+										return label(directionOptions[i]?.id) + ' 方面';
 									}}
 									sx={{
 										height: 40,
@@ -105,7 +105,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 														color: 'inherit',
 													}}
 												>
-													{label(o.id)}
+													{label(o.id)} 方面
 												</Typography>
 												<Typography sx={{ fontSize: '12px', color: 'inherit' }}>{lines[o.line]?.show}</Typography>
 											</Stack>
