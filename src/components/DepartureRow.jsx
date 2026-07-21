@@ -59,7 +59,7 @@ function DepartureRow({ dep, needId = false, station }) {
 								whiteSpace: 'nowrap',
 							}}
 						>
-							<OverflowMarquee text={label(dep.terminal)} />
+							<OverflowMarquee>{label(dep.terminal)}</OverflowMarquee>
 						</Box>
 					</Grid>
 
