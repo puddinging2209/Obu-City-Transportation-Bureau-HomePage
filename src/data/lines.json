@@ -6167,7 +6167,8 @@
 					"com-exp": null,
 					"lim-exp": null,
 					"lin": null
-				}
+				},
+				"isMajor": true
 			},
 			{
 				"id": "kkr",
@@ -6231,7 +6232,8 @@
 					"com-exp": null,
 					"lim-exp": null,
 					"lin": null
-				}
+				},
+				"isMajor": true
 			},
 			{
 				"id": "krt",
@@ -6311,7 +6313,8 @@
 					"com-exp": null,
 					"lim-exp": null,
 					"lin": null
-				}
+				},
+				"isMajor": true
 			},
 			{
 				"id": "shw",
@@ -6375,7 +6378,8 @@
 					"com-exp": null,
 					"lim-exp": null,
 					"lin": null
-				}
+				},
+				"isMajor": true
 			},
 			{
 				"id": "aym",
@@ -7182,7 +7186,8 @@
 					"com-exp": true,
 					"lim-exp": true,
 					"lin": true
-				}
+				},
+				"isMajor": true
 			},
 			{
 				"id": "obs",
@@ -7230,7 +7235,8 @@
 					"com-exp": true,
 					"lim-exp": null,
 					"lin": null
-				}
+				},
+				"isMajor": true
 			},
 			{
 				"id": "kjt",
@@ -7294,7 +7300,8 @@
 					"com-exp": null,
 					"lim-exp": null,
 					"lin": null
-				}
+				},
+				"isMajor": true
 			},
 			{
 				"id": "tmo",
@@ -7342,7 +7349,8 @@
 					"com-exp": false,
 					"lim-exp": false,
 					"lin": false
-				}
+				},
+				"isMajor": true
 			},
 			{
 				"id": "omn",
