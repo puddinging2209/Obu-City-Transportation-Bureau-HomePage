@@ -6,6 +6,7 @@ export default function getDirections(station) {
 	return lines
 		.map((line) => {
 			const index = linesData[line].stations.findIndex((s) => station === s.id);
+			if (index === -1) return [];
 			return [-1, 1].map((d) => {
 				for (let i = index + d; i >= 0 && i < linesData[line].stations.length; i += d) {
 					const s = linesData[line].stations[i];

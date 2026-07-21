@@ -16,7 +16,7 @@ function Settings() {
 
 		return (
 			<div role='tabpanel' hidden={value !== index} {...other}>
-				{value === index && <Typography>{children}</Typography>}
+				{value === index && children}
 			</div>
 		);
 	};
@@ -46,7 +46,7 @@ function Settings() {
 			<TabPanel value={tabValue} index={0}>
 				<Card sx={{ borderRadius: `0 0 ${theme.shape.borderRadius}px ${theme.shape.borderRadius}px` }}>
 					<CardContent>
-						<Stack direction='row' justifyContent='space-between' alignItems='center'>
+						<Stack direction='row' justifyContent='space-between'>
 							テーマ
 							<ToggleButtonGroup size='small' value={settings.theme} onChange={handleThemeChange} exclusive>
 								<ToggleButton value='light'>ライトモード</ToggleButton>

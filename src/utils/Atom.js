@@ -13,17 +13,14 @@ export const settingsAtom = atom(
 );
 
 export const myStationsAtom = atom(
-	localStorage.getItem('myStations')?.match(/\[\{.*\}.*\]/) ?
-		JSON.parse(localStorage.getItem('myStations')).map((v) => ({
-			id: v.id ?? id(v.name),
-			role: v.role,
-		}))
-	:	[{ id: 'obu', role: 'station' }],
+	localStorage.getItem('myStations') ?
+		JSON.parse(localStorage.getItem('myStations')).map((v) => (typeof v === 'string' ? v : v.id || id(v.name)))
+	:	['obu'],
 );
 
-export const addMyStationAtom = atom(null, (get, set, { id, role }) => {
+export const addMyStationAtom = atom(null, (get, set, s) => {
 	const prev = get(myStationsAtom);
-	const after = [...prev, { id, role }];
+	const after = [...prev, s];
 
 	set(myStationsAtom, after);
 	localStorage.setItem('myStations', JSON.stringify(after));

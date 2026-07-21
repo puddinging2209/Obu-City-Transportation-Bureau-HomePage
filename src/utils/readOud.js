@@ -164,6 +164,11 @@ function mergeMultilayerTrain(deps) {
 	return result;
 }
 
+/**
+ * 駅と方向から発車案内を取得
+ * 	@param {string} station 駅id
+ * 	@param {{line: string, id: string}} direction 方向
+ */
 async function searchDeparture(station, direction) {
 	const diagram = await dia(lines[direction.line].json);
 	const rosen = lines[direction.line].code;

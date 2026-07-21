@@ -15,11 +15,13 @@ import {
 	Tabs,
 	Typography,
 } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import '@offlegacy/nuqs-hash-router';
 import { parseAsInteger, useQueryState } from 'nuqs';
 
 import StationSelecter, { StationSelectButtons } from '../components/StationSelecter.jsx';
 import TrainStopsDialog from '../components/TrainStopsDialog.jsx';
+import getDirections from '../utils/getDirections.js';
 
 import stations from '../data/stations.json';
 import types from '../data/types.json';
@@ -37,6 +39,10 @@ function TimeTable() {
 	const [pushed, setPushed] = React.useState(null);
 	const [isShowDialog, setIsShowDialog] = React.useState(false);
 
+	const theme = useTheme();
+
+	const directionOptions = React.useMemo(() => getDirections(station), [station]);
+
 	function divideDeps(deps) {
 		let result = Array.from({ length: 27 }, () => []);
 		for (const dep of deps) {
@@ -50,21 +56,21 @@ function TimeTable() {
 
 	React.useEffect(() => {
 		if (!station) return;
-		const desiredDirection = stations[station]?.directions?.[direction] ? direction : 0;
+		const desiredDirection = directionOptions[direction] ? direction : 0;
 		if (desiredDirection !== direction) {
 			setDirection(desiredDirection);
 		}
 		setLoading(true);
-		searchDeparture({ id: station, role: 'station' }, stations[station]?.directions[desiredDirection]).then((deps) => {
+		searchDeparture(station, directionOptions[desiredDirection]).then((deps) => {
 			setDepartures(divideDeps(deps));
 			setLoading(false);
 		});
 	}, [station]);
 
 	React.useEffect(() => {
-		if (station && stations[station]?.directions[direction]) {
+		if (station && directionOptions[direction]) {
 			setLoading(true);
-			searchDeparture({ id: station, role: 'station' }, stations[station]?.directions[direction])
+			searchDeparture(station, directionOptions[direction])
 				.then((deps) => setDepartures(divideDeps(deps)))
 				.catch(() => {
 					setDepartures(Array.from({ length: 27 }, () => []));
@@ -84,7 +90,6 @@ function TimeTable() {
 							{
 								value: station,
 								label: stations[station]?.name,
-								role: 'station',
 								kana: stations[station]?.kana,
 							}
 						:	null
@@ -109,8 +114,8 @@ function TimeTable() {
 							},
 						}}
 					>
-						{stations[station]?.directions?.map((direction, i) => (
-							<Tab label={`${direction.stationName} 方面`} key={i} />
+						{directionOptions.map((direction, i) => (
+							<Tab label={`${label(direction.id)} 方面`} key={i} />
 						))}
 					</Tabs>
 				</Stack>
@@ -137,7 +142,7 @@ function TimeTable() {
 										width: '100%',
 										p: 0,
 										overflowX: 'auto',
-										backgroundColor: i % 2 === 0 ? 'white' : '#f0f0f0',
+										backgroundColor: i % 2 === 0 ? theme.palette.background.paper : theme.palette.background.default,
 										display: i < 3 ? 'none' : '',
 									}}
 								>
@@ -154,7 +159,7 @@ function TimeTable() {
 										<Typography variant='h5'>{i}</Typography>
 									</TableCell>
 									<TableCell sx={{ p: 0 }}>
-										<Stack direction='row' gap={2}>
+										<Stack direction='row' gap={0}>
 											{deps.map((dep, j) => {
 												const strong = dep.typeName === '特急';
 												const frame = dep.typeName === 'ライナー' || dep.typeName === '各駅停車';
@@ -187,7 +192,7 @@ function TimeTable() {
 																sx={{ whiteSpace: 'nowrap' }}
 																variant='body6'
 															>
-																{label(dep.terminal)}
+																{label(dep.terminal)[0]}
 															</Typography>
 														</Box>
 													</Button>
@@ -205,7 +210,7 @@ function TimeTable() {
 			{pushed && isShowDialog && (
 				<TrainStopsDialog
 					dep={pushed}
-					line={stations[station]?.directions[direction]?.route}
+					line={directionOptions[direction]?.line}
 					isShowDialog={isShowDialog}
 					onClose={() => {
 						setIsShowDialog(false);

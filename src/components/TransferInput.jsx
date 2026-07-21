@@ -56,7 +56,7 @@ export default function TransferInput({ onSearch, loading }) {
 	function toSelecterOption(id) {
 		const stationName = stations[id]?.name;
 		if (!stationName) return null;
-		return { label: stationName, value: id, role: 'station', kana: stations[id]?.kana || '' };
+		return { label: stationName, value: id, kana: stations[id]?.kana || '' };
 	}
 
 	React.useEffect(() => {
@@ -183,7 +183,6 @@ export default function TransferInput({ onSearch, loading }) {
 								setFrom({
 									value: value,
 									label: stations[value].name,
-									role: 'station',
 									kana: stations[value].kana,
 								})
 							}
@@ -197,7 +196,6 @@ export default function TransferInput({ onSearch, loading }) {
 								setTo({
 									value: value,
 									label: stations[value].name,
-									role: 'station',
 									kana: stations[value].kana,
 								})
 							}
