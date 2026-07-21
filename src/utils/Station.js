@@ -3,11 +3,11 @@ import stations from '../data/stations.json';
 
 export function name_number(text) {
 	if (text === '中部国際空港') return ['HK28'];
-	return Object.values(stations).find((s) => s.id === id(text))?.code[0] ?? null;
+	return Object.values(stations).find((s) => s.id === id(text))?.code ?? [];
 }
 
 export function id_number(id) {
-	return stations[id]?.code[0] ?? null;
+	return stations[id]?.code ?? [];
 }
 
 export function name(text) {
@@ -26,7 +26,7 @@ export function label(text) {
 }
 
 export function code(text) {
-	if (name_number(text)) return name_number(text);
+	if (name_number(text)) return name_number(text)[0];
 	else if (text == '中部国際空港') return 'HK28';
 	else if (stations[text]) return stations[text].code[0];
 	else if (Object.keys(nodes).includes(text)) return text;

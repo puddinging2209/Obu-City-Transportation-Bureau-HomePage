@@ -142,14 +142,20 @@ function TimeTable() {
 										width: '100%',
 										p: 0,
 										overflowX: 'auto',
-										backgroundColor: i % 2 === 0 ? theme.palette.background.paper : theme.palette.background.default,
+										backgroundColor:
+											i % 2 === 0 ? theme.palette.background.default
+											: theme.palette.mode === 'light' ? '#DDD'
+											: '#333',
 										display: i < 3 ? 'none' : '',
 									}}
 								>
 									<TableCell
 										sx={{
 											textAlign: 'right',
-											backgroundColor: i % 2 === 0 ? '#f0f0f0ff' : '#e0e0e0ff',
+											backgroundColor:
+												i % 2 === 0 ? theme.palette.background.default
+												: theme.palette.mode === 'light' ? '#DDD'
+												: '#333',
 											borderRight: '1px solid #ccc',
 											position: 'sticky',
 											zIndex: 2,
