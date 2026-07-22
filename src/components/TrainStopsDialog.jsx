@@ -16,6 +16,8 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 	const [multilayer, setMultilayer] = React.useState(0);
 	const theme = useTheme();
 
+	const l = line ?? React.useContext(LineContext);
+
 	React.useEffect(() => {
 		if (isShowDialog) {
 			if (!dep.multilayer) {
@@ -29,8 +31,6 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 			}
 		}
 	}, [isShowDialog, multilayer]);
-
-	const l = line ?? React.useContext(LineContext);
 
 	if (!dep || !l) return null;
 

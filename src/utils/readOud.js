@@ -1,8 +1,10 @@
-import lines from '../data/lines.json';
-import { id_number, name_number } from './Station.js';
+import { codes } from './Station.js';
 import { adjustTime } from './Time.js';
 import { terminal, typeName } from './Train.js';
 import { fetchOud } from './oudFileLoader.js';
+
+import lines from '../data/lines.json';
+import nodes from '../data/nodes.json';
 
 let dias = {};
 
@@ -85,7 +87,7 @@ function indexofFromStation(diagram, station, rosen, direction) {
 		return exception.return;
 	}
 
-	return diagram.railway.stations.findIndex((sta) => sta.name == id_number(station).find((value) => value.includes(rosen)));
+	return diagram.railway.stations.findIndex((sta) => sta.name === codes(station).find((value) => nodes[value]?.json === resolveRosen(rosen)));
 }
 
 function codeofToStation(station, direction, rosen) {
@@ -132,7 +134,7 @@ function codeofToStation(station, direction, rosen) {
 		return exception.return;
 	}
 
-	return name_number(direction.id.split('・')[0]).find((value) => value.includes(rosen));
+	return codes(direction.id.split('・')[0]).find((value) => nodes[value]?.json === resolveRosen(rosen));
 }
 
 function mergeMultilayerTrain(deps) {
@@ -170,25 +172,24 @@ function mergeMultilayerTrain(deps) {
  * 	@param {{line: string, id: string}} direction 方向
  */
 async function searchDeparture(station, direction) {
-	const diagram = await dia(lines[direction.line].json);
-	const rosen = lines[direction.line].code;
+	const diagram = await dia(resolveRosen(direction.line));
+	const rosen = lines[direction.line].json;
 	const stationIndex = indexofFromStation(diagram, station, rosen, direction);
-	const toCode = codeofToStation(station, direction, rosen);
+	const toIndex = diagram.railway.stations.findIndex((sta) => sta.name == codeofToStation(station, direction, rosen));
+	console.log(stationIndex, toIndex);
+	if (toIndex === -1 || stationIndex === -1) {
+		console.log('not found', station, direction);
+		return [];
+	}
 	const numofStations = diagram.railway.stations.length;
-	const d = stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == toCode) ? 0 : 1;
+	const d = stationIndex < toIndex ? 0 : 1;
 	let departures = diagram.railway.diagrams[0].trains[d].filter(
 		(tra) =>
 			tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]?.stopType === 1 &&
 			tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]?.departure !== undefined &&
 			tra.timetable._data[d === 0 ? stationIndex + 1 : numofStations - stationIndex],
 	);
-	if (rosen === 'KT') {
-		if (direction.line === '刈田川急行線' && station !== 'obu') {
-			departures = departures.filter((tra) => tra.timetable._data[9]?.stopType === 1);
-		} else if (direction.line === '刈田川線' && ((station === 'hnt' && d === 0) || (['dtc', 'sos'].includes(station) && d === 1))) {
-			departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
-		}
-	} else if (rosen === 'HD') {
+	if (rosen === 'HD') {
 		if (direction.line === '半田線' && station === 'obm' && direction.id === 'obu') {
 			departures = departures.filter((tra) => tra.timetable._data[d === 0 ? 1 : 28]?.stopType === 1);
 		} else if (direction.line === '大峯連絡線' && station === 'obm') {
@@ -206,7 +207,7 @@ async function searchDeparture(station, direction) {
 				train: tra,
 			};
 		})
-		.sort((a, b) => adjustTime(a.time) - adjustTime(b.time));
+		.sort((a, b) => a.time - b.time);
 	return mergeMultilayerTrain(result);
 }
 export { searchDeparture };
