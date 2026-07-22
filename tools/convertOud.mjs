@@ -14,10 +14,6 @@ import { mkdir, readFile, writeFile } from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import { dia } from './diaNode.mjs';
-
-import listTrainNumbers from './listTrainNumbers.mjs';
-
 // ========= パス解決 =========
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -46,24 +42,29 @@ async function readOud2(fileName) {
 }
 
 // ========= 修正 =========
-async function convertOud(line, diagram) {
-	const oldDia = await dia(line);
-
+export function convertOud(line, oldDia) {
 	if (fileName === 'KT') {
-		const newKTStations = oldDia.railway.stations.filter((s) => s.name !== 'KT00');
+		const KTrNames = ['半月町', '大府', '大東町', '惣作'];
+		const KTrCodes = ['KT07a', 'KT00', 'KT11a', 'KT12a'];
+		const newKTStations = oldDia.railway.stations
+			.filter((s) => s.name !== '大府')
+			.map((s, i) => ({ ...s, name: 'KT' + String(i + 1).padStart(2, '0') }));
 		newKTStations.find((s) => s.name === 'KT07').outerTerminal = [{ name: 'a' }];
-		const newKTaStations = oldDia.railway.stations.filter(
-			(s) => s.name === 'KT07' || s.name === 'KT00' || s.name === 'KT11' || s.name === 'KT12',
-		);
-		newKTaStations.find((s) => s.name === 'KT07').outerTerminal = [{ name: 'a' }];
-		const newKTaStationIndexs = newKTaStations.map((s) => oldDia.railway.stations.findIndex((ss) => ss.name === s.name));
+		let newKTrStations = oldDia.railway.stations.filter((s) => KTrNames.includes(s.name));
+		newKTrStations = newKTrStations.map((s, i) => ({
+			...s,
+			name: KTrCodes[i],
+		}));
+		newKTrStations.find((s) => s.name === 'KT07a').outerTerminal = [{ name: 'a' }];
+		const newKTrStationIndexs = newKTrStations.map((_, i) => oldDia.railway.stations.findIndex((ss) => KTrNames[i] === ss.name));
+		console.log(newKTrStationIndexs);
 		const newKTTrains = [[], []];
-		const newKTaTrains = [[], []];
+		const newKTrTrains = [[], []];
 		oldDia.railway.diagrams[0].trains.map((trains, i) => {
 			const obuIndex =
 				i === 0 ?
-					oldDia.railway.stations.findIndex((s) => s.name === 'KT00')
-				:	oldDia.railway.stations.length - 1 - oldDia.railway.stations.findIndex((s) => s.name === 'KT00');
+					oldDia.railway.stations.findIndex((s) => s.name === '大府')
+				:	oldDia.railway.stations.length - 1 - oldDia.railway.stations.findIndex((s) => s.name === '大府');
 			const KTnumberList = new Set();
 			const KTaNumberList = new Set();
 			trains.forEach((t) => {
@@ -87,21 +88,21 @@ async function convertOud(line, diagram) {
 				} else {
 					const escapeIndex =
 						i === 0 ?
-							oldDia.railway.stations.findIndex((s) => s.name === 'KT07')
-						:	oldDia.railway.stations.length - 1 - oldDia.railway.stations.findIndex((s) => s.name === 'KT12');
+							oldDia.railway.stations.findIndex((s) => s.name === '半月町')
+						:	oldDia.railway.stations.length - 1 - oldDia.railway.stations.findIndex((s) => s.name === '惣作');
 					const enterIndex =
 						i === 0 ?
-							oldDia.railway.stations.findIndex((s) => s.name === 'KT12')
-						:	oldDia.railway.stations.length - 1 - oldDia.railway.stations.findIndex((s) => s.name === 'KT07');
+							oldDia.railway.stations.findIndex((s) => s.name === '惣作')
+						:	oldDia.railway.stations.length - 1 - oldDia.railway.stations.findIndex((s) => s.name === '半月町');
 					const hash = createHash('sha256').update(JSON.stringify(t)).digest('hex').slice(0, 8);
-					const KTa = {
+					const KTr = {
 						...t,
 						timetable: {
 							...t.timetable,
 							_data:
 								t.direction === 0 ?
-									newKTaStationIndexs.map((index) => t.timetable._data[index])
-								:	newKTaStationIndexs
+									newKTrStationIndexs.map((index) => t.timetable._data[index])
+								:	newKTrStationIndexs
 										.map((i) => oldDia.railway.stations.length - 1 - i)
 										.toReversed()
 										.map((index) => t.timetable._data[index]),
@@ -109,8 +110,8 @@ async function convertOud(line, diagram) {
 						operations: [],
 						hash,
 					};
-					KTa.timetable.firstStationIndex = KTa.timetable._data.findIndex((d) => d);
-					KTa.timetable.terminalStationIndex = KTa.timetable._data.findLastIndex((d) => d);
+					KTr.timetable.firstStationIndex = KTr.timetable._data.findIndex((d) => d);
+					KTr.timetable.terminalStationIndex = KTr.timetable._data.findLastIndex((d) => d);
 					if (t.timetable.firstStationIndex < escapeIndex) {
 						newKTTrains[i].push({
 							...t,
@@ -131,9 +132,9 @@ async function convertOud(line, diagram) {
 							],
 							hash,
 						});
-						KTa.operations.push({
-							stationIndex: KTa.timetable.terminalStationIndex,
-							outerType: 'A',
+						KTr.operations.push({
+							stationIndex: KTr.timetable.terminalStationIndex,
+							outerType: 'B',
 							value1: 4,
 							terminalStationIndex: 0,
 							time: null,
@@ -161,25 +162,26 @@ async function convertOud(line, diagram) {
 							],
 							hash,
 						});
-						KTa.operations.push({
-							stationIndex: KTa.timetable.firstStationIndex,
-							outerType: 'B',
+						KTr.operations.push({
+							stationIndex: KTr.timetable.firstStationIndex,
+							outerType: 'A',
 							value1: 4,
 							terminalStationIndex: 0,
 							time: null,
 						});
 						KTnumberList.add(t.number);
 					}
-					newKTaTrains[i].push(KTa);
+					newKTrTrains[i].push(KTr);
 					KTaNumberList.add(t.number);
 				}
 			});
 		});
-		return [
+		const result = [
 			{
 				...oldDia,
 				railway: {
 					...oldDia.railway,
+					name: 'KT',
 					stations: newKTStations,
 					diagrams: [
 						{
@@ -193,16 +195,20 @@ async function convertOud(line, diagram) {
 				...oldDia,
 				railway: {
 					...oldDia.railway,
-					stations: newKTaStations,
+					name: 'KTr',
+					stations: newKTrStations,
 					diagrams: [
 						{
 							...oldDia.railway.diagrams[0],
-							trains: newKTaTrains,
+							trains: newKTrTrains,
 						},
 					],
 				},
 			},
 		];
+
+		writeOud(line, result[0]);
+		writeOud(line + 'r', result[1]);
 	}
 }
 
@@ -217,22 +223,22 @@ async function writeOud(line, diagram) {
 }
 
 // ========= メイン =========
-async function main() {
-	try {
-		console.log(`▶ 変換開始: ${fileName}.oud2 → ${line}.json`);
+// async function main() {
+// 	try {
+// 		console.log(`▶ 変換開始: ${fileName}.oud2 → ${line}.json`);
 
-		const diagram = await readOud2(fileName);
-		const newDiagrams = await convertOud(line, diagram);
+// 		const diagram = await readOud2(fileName);
+// 		const newDiagrams = await convertOud(line, diagram);
 
-		newDiagrams.forEach(async (d, i) => {
-			await writeOud(line + i, d);
-			await listTrainNumbers(line + i);
-		});
-	} catch (err) {
-		console.error('❌ 変換失敗');
-		console.error(err.message);
-		process.exit(1);
-	}
-}
+// 		newDiagrams.forEach(async (d, i) => {
+// 			await writeOud(line + i, d);
+// 			await listTrainNumbers(line + i);
+// 		});
+// 	} catch (err) {
+// 		console.error('❌ 変換失敗');
+// 		console.error(err.message);
+// 		process.exit(1);
+// 	}
+// }
 
-await main();
+// await main();

@@ -16,6 +16,7 @@ import { mkdir, readFile, writeFile } from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+import { convertOud } from './convertOud.mjs';
 import { dia } from './diaNode.mjs';
 import DiagramParser from './Parsers/DiagramParser.mjs';
 
@@ -51,6 +52,10 @@ async function readOud2(fileName) {
 
 // ========= 駅名修正 =========
 async function adjustStationNames(line, diagram) {
+	if (line === 'KT') {
+		convertOud(line, diagram);
+		return;
+	}
 	const oldDia = await dia(line);
 	const newNames = oldDia?.railway?.stations.map((s) => s.name) ?? [];
 
@@ -64,7 +69,7 @@ async function adjustStationNames(line, diagram) {
 
 	newDiagram.railway.name = line;
 
-	return newDiagram;
+	return [newDiagram];
 }
 
 // ========= 出力 =========
@@ -84,12 +89,13 @@ async function main() {
 
 		const diagram = await readOud2(fileName);
 		const newDiagram = await adjustStationNames(line, diagram);
+		if (!newDiagram) return;
 
 		await writeOud(line, newDiagram);
 		await listTrainNumbers(line);
 	} catch (err) {
 		console.error('❌ 変換失敗');
-		console.error(err.message);
+		console.error(err);
 		process.exit(1);
 	}
 }
