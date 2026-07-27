@@ -24,6 +24,7 @@ import { addMyStationAtom, myStationsAtom, nearestStationAtom } from '../utils/A
 import searchNearestStation from '../utils/searchNearestStation.js';
 
 import DepartureCard from './DepartureCard.jsx';
+import NewStationSnackbar from './NewStationSnackbar.jsx';
 import StationSelecter from './StationSelecter.jsx';
 
 export default function DepartureSection() {
@@ -39,6 +40,8 @@ export default function DepartureSection() {
 
 	const [nearestAtom, setNearestAtom] = useAtom(nearestStationAtom);
 	const [loadingNearest, setLoadingNearest] = React.useState(false);
+
+	const [isOpenSnackbar, setIsOpenSnackbar] = React.useState(false);
 
 	const updateVisited = (visited) => {
 		const updated = [];
@@ -60,7 +63,9 @@ export default function DepartureSection() {
 
 				const visited = localStorage.getItem('visitedStations') ? JSON.parse(localStorage.getItem('visitedStations')) : [];
 				if (visited.at(-1)?.id === id) return; // 同駅連続では更新しない
-				localStorage.setItem('visitedStations', JSON.stringify([...updateVisited(visited), { id, time: Date.now() }]));
+				const newVisited = [...updateVisited(visited), { id, time: Date.now() }];
+				localStorage.setItem('visitedStations', JSON.stringify(newVisited));
+				if (newVisited.filter((v) => v.id === id).length === 1) setIsOpenSnackbar(true);
 			})
 			.catch(() => {
 				setLoadingNearest(false);
@@ -79,7 +84,7 @@ export default function DepartureSection() {
 	const [isShowSearch, setIsShowSearch] = React.useState(false);
 
 	return (
-		<Box>
+		<>
 			<Container
 				sx={{
 					mx: 'auto',
@@ -256,6 +261,8 @@ export default function DepartureSection() {
 					</Button>
 				</DialogActions>
 			</Dialog>
-		</Box>
+
+			<NewStationSnackbar open={isOpenSnackbar} onClose={() => setIsOpenSnackbar(false)} />
+		</>
 	);
 }
