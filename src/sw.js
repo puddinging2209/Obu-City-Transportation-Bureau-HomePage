@@ -16,7 +16,7 @@ self.addEventListener('install', () => {
 self.addEventListener('activate', (e) => {
 	e.waitUntil(
 		caches.keys().then((names) => {
-			const isValidCache = /^oud-cache-[a-f0-9]+$/.test(CACHE_NAME);
+			const isValidCache = /^(oud-cache-[a-f0-9])|(workbox-precache-.*)+$/.test(CACHE_NAME);
 
 			if (!isValidCache) {
 				console.log('[SW] CACHE_NAME is unknown, keep existing caches');
@@ -141,9 +141,16 @@ async function cacheFirst(request) {
 	const cached = await cache.match(request);
 	if (cached) return cached;
 
-	const fresh = await fetch(request);
-	await cache.put(request, fresh.clone());
-	return fresh;
+	try {
+		let response = await fetch(request);
+		// レスポンスが正常（200 OK等）かつ基本型の場合のみキャッシュする
+		if (response && response.status === 200) {
+			await cache.put(request, response.clone());
+		}
+		return response;
+	} catch (err) {
+		console.error('[SW] Fetch failed:', err);
+	}
 }
 
 /* クライアントからのメッセージを受け取ってキャッシュをクリア */
