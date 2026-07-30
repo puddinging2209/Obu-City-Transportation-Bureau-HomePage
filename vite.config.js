@@ -35,7 +35,7 @@ export default defineConfig({
 	plugins: [
 		react(),
 		VitePWA({
-			strategies: 'generateSW',
+			strategies: 'injectManifest',
 			srcDir: 'src',
 			outDir: 'docs',
 			filename: 'sw.js',
