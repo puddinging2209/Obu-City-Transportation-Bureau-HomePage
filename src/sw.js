@@ -7,7 +7,7 @@ const CACHE_NAME = __OUD_CACHE_NAME__;
 const precacheManifest = self.__WB_MANIFEST;
 
 // Viteが生成した全静的アセットを自動キャッシュ＆ルーティング
-precacheAndRoute(self.__WB_MANIFEST);
+precacheAndRoute(precacheManifest);
 
 self.addEventListener('install', () => {
 	self.skipWaiting();
