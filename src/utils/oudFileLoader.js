@@ -11,12 +11,8 @@ async function loadManifest() {
 	if (oudManifest !== null) return oudManifest;
 
 	try {
-		const res = await fetch(`${BASE}oud/manifest.json`, {
-			cache: 'no-store',
-			headers: {
-				'Cache-Control': 'no-cache',
-			},
-		});
+		// cache: 'no-store' を削除（キャッシュ制御は SW 側に任せる）
+		const res = await fetch(`${BASE}oud/manifest.json`);
 
 		if (!res.ok) throw new Error();
 		oudManifest = await res.json();
@@ -37,7 +33,8 @@ export async function fetchOud(code) {
 
 	if (manifest && manifest.files?.[code]) {
 		const hash = manifest.files[code].hash;
-		const res = await fetch(`./oud/${code}.json?h=${hash}`);
+		// ./ ではなく ${BASE} を使用して URL 崩れを防ぐ
+		const res = await fetch(`${BASE}oud/${code}.json?h=${hash}`);
 		return await res.json();
 	}
 
