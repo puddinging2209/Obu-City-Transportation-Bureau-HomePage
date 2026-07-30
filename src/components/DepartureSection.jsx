@@ -63,7 +63,7 @@ export default function DepartureSection() {
 
 				const visited = localStorage.getItem('visitedStations') ? JSON.parse(localStorage.getItem('visitedStations')) : [];
 				if (visited.at(-1)?.id === id) return; // 同駅連続では更新しない
-				const newVisited = [...updateVisited(visited).sort((v1, v2) => v2.time - v1.time), { id, time: Date.now() }];
+				const newVisited = [...updateVisited(visited).sort((v1, v2) => v1.time - v2.time), { id, time: Date.now() }];
 				localStorage.setItem('visitedStations', JSON.stringify(newVisited));
 				if (newVisited.filter((v) => v.id === id).length === 1) setIsOpenSnackbar(true);
 			})
