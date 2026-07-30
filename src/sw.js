@@ -77,19 +77,27 @@ async function networkFirst(request) {
 async function cacheFirst(request) {
 	const cache = await caches.open(CACHE_NAME);
 
-	// 1. まずキャッシュを検索 (クエリ ?h=xxx を含むURLで一致)
+	// 1. キャッシュ内を探す
 	const cached = await cache.match(request);
-	if (cached) return cached;
+	if (cached) {
+		console.log('[SW 📦] キャッシュから返却:', request.url);
+		return cached;
+	}
 
-	// 2. キャッシュに無ければネットワークから取得して自動で CacheStorage に入れる
+	// 2. ネットワークから取得して保存
 	try {
+		console.log('[SW 🌐] ネットワークへリクエスト:', request.url);
 		const response = await fetch(request);
+
 		if (response && response.status === 200) {
 			await cache.put(request, response.clone());
+			console.log('[SW ✅] キャッシュ保存成功:', request.url);
+		} else {
+			console.warn('[SW ⚠️] ステータスが200以外のため保存スキップ:', response.status);
 		}
 		return response;
 	} catch (err) {
-		console.error('[SW] Fetch failed for OUD JSON:', err);
+		console.error('[SW ❌] Fetch 失敗:', err);
 	}
 }
 
