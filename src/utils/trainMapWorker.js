@@ -1,5 +1,12 @@
 import linesData from '../data/lines.json';
+import lineShapeData from '../data/lineShape.json';
+import routesData from '../data/routes.json';
 import stationsData from '../data/stations.json';
+
+const typeExceptions = {
+	'普通 ': '普通',
+	'たこつぼ': '特急'
+}
 
 const stations = Object.values(stationsData)
 const lineCodeNameMap = Object.fromEntries(Object.values(linesData).reverse().map(l => [l.code, l.name]))
@@ -7,6 +14,9 @@ const lineCodeNameMap = Object.fromEntries(Object.values(linesData).reverse().ma
 const trains = new Set()
 
 function normalizeSec(sec) {
+	if(sec === null){
+		return null
+	}
 	const rest = sec % (24 * 60 * 60)
 	if (3 * 60 * 60 <= rest) {
 		return rest
@@ -32,10 +42,7 @@ const getStationId = (numbering) => {
 const searchStops = (train, lineCode) => {
 	return train.timetable._data
 		.map((sta, i) => {
-			if (!sta) {
-				return null
-			}
-			const stationId = sta.stationId;
+			const stationId = sta?.stationId;
 			if (!sta || !stationId) return null;
 			if (lineCode == 'KT' && stationId === 'chr') return null;
 			if (lineCode == 'MR' && (stationId === 'okw' || stationId === 'hno')) return null;
@@ -86,7 +93,9 @@ const formatStops = (trains) => {
 
 const setTrains = ouds => {
 	const trainsGroupByNumber = {}
+	const sequenceNumbers = {}
 	for (const oud of ouds) {
+		const lineCode = oud.railway.name
 		for (const train of oud.railway.diagrams[0].trains.flat()) {
 			train.timetable._data.forEach((d, i) => {
 				if (d) {
@@ -94,30 +103,124 @@ const setTrains = ouds => {
 						oud.railway.stations.at(i * (train.direction ? -1 : 1) - train.direction).name
 					)
 					d.lineName = lineCodeNameMap[oud.railway.name]
+					d.arrival = normalizeSec(d.arrival)
+					d.departure = normalizeSec(d.departure)
 				}
 			})
-			const number = train.number || Math.random()
+			sequenceNumbers[lineCode] ??= 0
+			const number = train.number || String(lineCode + sequenceNumbers[lineCode]++)
 			trainsGroupByNumber[number] ??= []
 			trainsGroupByNumber[number].push({
 				train,
-				lineCode: oud.railway.name,
+				lineCode,
 				type: oud.railway.trainTypes[train.type].name
 			})
 		}
 	}
 	for (const [number, train] of Object.entries(trainsGroupByNumber)) {
 		const stops = formatStops(train)
-		if(!stops.length) {
+		if (!stops.length) {
 			continue
 		}
+		const type = typeExceptions[train[0].type] ?? train[0].type
 		trains.add({
 			stops,
-			type: train[0].type,
+			type,
 			number,
-			startAt: normalizeSec(stops[0].dep),
-			endAt: normalizeSec(stops.at(-1).arr)
+			startAt: stops[0].dep,
+			endAt: stops.at(-1).arr
 		})
 	}
+}
+
+const calcPositions = (sec) => {
+	const results = []
+	for (const train of trains) {
+		if (!(train.startAt <= sec && sec <= train.endAt)) {
+			continue
+		}
+		const routeReference = routesData.trains[train.number]
+		if (!routeReference) {
+			continue
+		}
+		const routes = routesData.routes[routeReference]
+		const segmentData = []
+		let stoppedCount = 0
+		for (const stop of train.stops) {
+			segmentData.push(stop)
+			if (stop.stopType === 'pass') {
+				continue
+			}
+			if (stop.arr <= sec && sec <= stop.dep) {
+				segmentData.length = 0
+				segmentData.push(stop)
+				break
+			}
+			if (sec < stop.arr) {
+				break
+			}
+			if (stop.dep <= sec) {
+				segmentData.length = 0
+				segmentData.push(stop)
+			}
+			stoppedCount++
+		}
+		const { targetSegment, targetRate } = (() => {
+			const period = segmentData.at(-1).arr - segmentData[0].dep
+			const rate = (sec - segmentData[0].dep) / period
+			// 停車中
+			if (segmentData.length === 1) {
+				if (!routes[stoppedCount]) {
+					return { targetRate: null, targetSegment: null }
+				}
+				return {
+					targetSegment: routes[stoppedCount][0],
+					targetRate: 0
+				}
+			} /* 移動中 */ else {
+				const segmentRoutes = routes[stoppedCount - 1]
+				const lengthSum = segmentRoutes.reduce((s, c) => s + c.length, 0)
+				const pos = lengthSum * rate
+				let sum = 0
+				for (let i = 0; i < segmentRoutes.length; i++) {
+					if (pos <= sum + segmentRoutes[i].length) {
+						const remain = pos - sum
+						const targetRate = remain / segmentRoutes[i].length
+						return {
+							targetSegment: segmentRoutes[i],
+							targetRate
+						}
+					}
+					sum += segmentRoutes[i].length
+				}
+				return { targetRate: null, targetSegment: null }
+			}
+		})()
+		// if (targetRate < 0 || 1 < targetRate)
+		if (!targetRate && !targetSegment) {
+			continue
+		}
+		const lineName = targetSegment.line
+		const lineRate = (targetSegment.to - targetSegment.from) * targetRate + targetSegment.from
+		const shapeData = lineShapeData[lineName]
+		const coordinate = (() => {
+			for (let i = 1; i < shapeData.length; i++) {
+				if (lineRate <= shapeData[i][2]) {
+					const remain = lineRate - shapeData[i - 1][2]
+					const segmentRate = remain / (shapeData[i][2] - shapeData[i - 1][2])
+					return [
+						(shapeData[i][0] - shapeData[i - 1][0]) * segmentRate + shapeData[i - 1][0],
+						(shapeData[i][1] - shapeData[i - 1][1]) * segmentRate + shapeData[i - 1][1],
+					]
+				}
+			}
+		})()
+		results.push({
+			...train,
+			coordinate
+		})
+	}
+	return results
 }
 
 self.addEventListener('message', ({ data }) => {
@@ -129,7 +232,12 @@ self.addEventListener('message', ({ data }) => {
 			setTrains(data.ouds)
 			break
 		}
-
+		case 'calcPosition': {
+			self.postMessage({
+				type: 'calcPositionResult',
+				data: calcPositions(normalizeSec(data.sec))
+			})
+		}
 		default:
 			break
 	}
