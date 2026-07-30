@@ -1,8 +1,13 @@
+import { precacheAndRoute } from 'workbox-precaching';
+
 // vite.config.js から注入される変数を受け取る
 const CACHE_NAME = __OUD_CACHE_NAME__;
 
 // VitePWAがビルド時にマニフェストを注入するプレースホルダー
 const precacheManifest = self.__WB_MANIFEST;
+
+// Viteが生成した全静的アセットを自動キャッシュ＆ルーティング
+precacheAndRoute(self.__WB_MANIFEST);
 
 self.addEventListener('install', () => {
 	self.skipWaiting();
