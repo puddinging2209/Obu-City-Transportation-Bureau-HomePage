@@ -1,25 +1,16 @@
+import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 import { precacheAndRoute } from 'workbox-precaching';
+import { registerRoute } from 'workbox-routing';
+import { NetworkFirst } from 'workbox-strategies';
 
-// vite.config.js から注入される変数を受け取る
 const CACHE_NAME = __OUD_CACHE_NAME__;
-
-// VitePWAがビルド時にマニフェストを注入するプレースホルダー
 const precacheManifest = self.__WB_MANIFEST;
 
-// Viteが生成した全静的アセットを自動キャッシュ＆ルーティング
 precacheAndRoute(precacheManifest);
 
-// 1. Install - キャッシュ領域を事前に準備
-self.addEventListener('install', (e) => {
-	e.waitUntil(
-		caches.open(CACHE_NAME).then(() => {
-			console.log(`[SW] Initialized cache: ${CACHE_NAME}`);
-		}),
-	);
-	self.skipWaiting();
-});
+self.addEventListener('install', () => self.skipWaiting());
 
-// 2. Activate - 古い oud-cache-xxx を削除
+// 古いキャッシュグループ（旧 CACHE_NAME）の丸ごと削除
 self.addEventListener('activate', (e) => {
 	e.waitUntil(
 		caches.keys().then((names) => {
@@ -27,81 +18,64 @@ self.addEventListener('activate', (e) => {
 				names
 					.filter((name) => name.startsWith('oud-cache') && name !== CACHE_NAME)
 					.map((name) => {
-						console.log(`[SW] Deleting old cache: ${name}`);
+						console.log(`[SW] 不要な古いキャッシュグループを削除: ${name}`);
 						return caches.delete(name);
 					}),
 			);
 		}),
 	);
-
 	e.waitUntil(self.clients.claim());
 });
 
-// 3. Fetch イベントハンドラ
-self.addEventListener('fetch', (event) => {
-	const url = new URL(event.request.url);
+// 💡 旧ハッシュ付きファイル & クエリなしの旧ファイルを自動削除するカスタムプラグイン
+const cleanOldHashPlugin = {
+	cacheDidUpdate: async ({ cacheName, request }) => {
+		const cache = await caches.open(cacheName);
+		const keys = await cache.keys();
+		const currentUrl = new URL(request.url);
 
-	// /oud/ 以外のリクエストは Workbox のプリキャッシュに任せる
-	if (!url.pathname.includes('/oud/')) return;
+		for (const req of keys) {
+			const reqUrl = new URL(req.url);
 
-	// manifest.json は Network First（常に最新を取得・失敗したらキャッシュ）
-	if (url.pathname.endsWith('/oud/manifest.json')) {
-		event.respondWith(networkFirst(event.request));
-		return;
-	}
-
-	// 各路線 JSON は Cache First（キャッシュになければネットワークから取得して自動保存）
-	event.respondWith(cacheFirst(event.request));
-});
-
-/* manifest.json 用：Network First */
-async function networkFirst(request) {
-	const cache = await caches.open(CACHE_NAME);
-	try {
-		const response = await fetch(request);
-		if (response && response.ok) {
-			// 取得成功したら自動的に CacheStorage へ保存
-			await cache.put(request, response.clone());
-			return response;
+			// パスが一致し、完全なURL(クエリ含)が異なるものを消去
+			if (reqUrl.pathname === currentUrl.pathname && reqUrl.href !== currentUrl.href) {
+				console.log(`[SW] 古いキャッシュ（旧ハッシュ）を削除: ${reqUrl.href}`);
+				await cache.delete(req);
+			}
 		}
-	} catch (err) {
-		console.log('[SW] Failed to fetch manifest.json from network, falling back to cache');
-	}
+	},
+};
 
-	// オフライン時はキャッシュから返す
-	const cached = await cache.match(request);
-	return cached || new Response('Not found', { status: 404 });
-}
+// A) manifest.json -> NetworkFirst (3秒応答がなければキャッシュ)
+registerRoute(
+	({ url }) => url.pathname.includes('/oud/') && url.pathname.endsWith('manifest.json'),
+	new NetworkFirst({
+		cacheName: CACHE_NAME,
+		networkTimeoutSeconds: 3,
+		plugins: [
+			new CacheableResponsePlugin({
+				statuses: [0, 200],
+			}),
+		],
+	}),
+);
 
-/* OUD JSON データ用：Cache First */
-async function cacheFirst(request) {
-	const cache = await caches.open(CACHE_NAME);
+// B) 各路線 JSON (*.json) -> NetworkFirst + 旧ファイル自動消去
+registerRoute(
+	({ url }) => url.pathname.includes('/oud/') && !url.pathname.endsWith('manifest.json'),
+	new NetworkFirst({
+		cacheName: CACHE_NAME,
+		networkTimeoutSeconds: 3,
+		plugins: [
+			new CacheableResponsePlugin({
+				statuses: [0, 200],
+			}),
+			cleanOldHashPlugin, // 新しいファイルが保存された時に古いファイルを消去
+		],
+	}),
+);
 
-	// 1. キャッシュ内を探す
-	const cached = await cache.match(request);
-	if (cached) {
-		console.log('[SW 📦] キャッシュから返却:', request.url);
-		return cached;
-	}
-
-	// 2. ネットワークから取得して保存
-	try {
-		console.log('[SW 🌐] ネットワークへリクエスト:', request.url);
-		const response = await fetch(request);
-
-		if (response && response.status === 200) {
-			await cache.put(request, response.clone());
-			console.log('[SW ✅] キャッシュ保存成功:', request.url);
-		} else {
-			console.warn('[SW ⚠️] ステータスが200以外のため保存スキップ:', response.status);
-		}
-		return response;
-	} catch (err) {
-		console.error('[SW ❌] Fetch 失敗:', err);
-	}
-}
-
-// 4. Message イベントハンドラ
+// 4. Message イベントハンドラ（キャッシュクリア・スキップ用）
 self.addEventListener('message', (event) => {
 	if (!event.data || !event.data.type) return;
 
