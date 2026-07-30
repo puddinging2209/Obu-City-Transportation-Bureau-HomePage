@@ -46,12 +46,15 @@ const cleanOldHashPlugin = {
 	},
 };
 
-// A) manifest.json -> NetworkFirst (3秒応答がなければキャッシュ)
+// A) manifest.json -> NetworkFirst (ブラウザの disk cache をバイパス)
 registerRoute(
 	({ url }) => url.pathname.includes('/oud/') && url.pathname.endsWith('manifest.json'),
 	new NetworkFirst({
 		cacheName: CACHE_NAME,
 		networkTimeoutSeconds: 3,
+		fetchOptions: {
+			cache: 'no-cache', // ブラウザの HTTP ディスクキャッシュを強制無視する
+		},
 		plugins: [
 			new CacheableResponsePlugin({
 				statuses: [0, 200],
@@ -66,11 +69,14 @@ registerRoute(
 	new NetworkFirst({
 		cacheName: CACHE_NAME,
 		networkTimeoutSeconds: 3,
+		fetchOptions: {
+			cache: 'no-cache', // ブラウザの HTTP ディスクキャッシュを強制無視する
+		},
 		plugins: [
 			new CacheableResponsePlugin({
 				statuses: [0, 200],
 			}),
-			cleanOldHashPlugin, // 新しいファイルが保存された時に古いファイルを消去
+			cleanOldHashPlugin,
 		],
 	}),
 );
