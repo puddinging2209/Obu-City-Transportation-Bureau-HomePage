@@ -41,6 +41,9 @@ export default defineConfig({
 			filename: 'sw.js',
 			injectRegister: 'inline',
 			registerType: 'autoUpdate',
+			injectManifest: {
+				rollupFormat: 'iife',
+			},
 			workbox: {
 				globPatterns: ['**/*.{js,css,html,ico,png,svg,txt}'],
 				runtimeCaching: [
