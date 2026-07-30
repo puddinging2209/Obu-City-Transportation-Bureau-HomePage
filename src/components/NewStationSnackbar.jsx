@@ -18,7 +18,7 @@ export default function NewStationSnackbar({ open, onClose }) {
 	return (
 		<>
 			<Snackbar
-				anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+				sx={{ anchorOrigin: { vertical: { xs: 'top', md: 'bottom' }, horizontal: 'center' } }}
 				open={open}
 				onClose={handleClose}
 				action={action}
