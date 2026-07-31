@@ -23,7 +23,7 @@ export function TimeControl({ state, setter }) {
 		setter({
 			startAt: performance.now(),
 			baseSimulationTime: state.baseSimulationTime + (performance.now() - state.startAt) * state.speedRate / 1000,
-			speedRate: rate
+			speedRate: number
 		})
 	}
 	React.useEffect(() => {
