@@ -42,6 +42,7 @@ export async function initializeLinesLayer({ map, store }) {
 		},
 		disable() {
 			map.setLayoutProperty('lines', 'visibility', 'none')
-		}
+		},
+		update() {}
 	}
 }
