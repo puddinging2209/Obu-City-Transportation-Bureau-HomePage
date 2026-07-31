@@ -1,7 +1,7 @@
 import linesData from '../../../data/lines.json';
 import typesData from '../../../data/types.json';
-import TrainMapWorker from '../../../utils/trainMapWorker?worker';
 import { dia } from '../.././../utils/readOud';
+import TrainMapWorker from '../trainMapWorker?worker';
 
 export async function initializeTrainsLayer({ map, store }) {
 	const worker = new TrainMapWorker()
@@ -15,14 +15,6 @@ export async function initializeTrainsLayer({ map, store }) {
 		type: 'setOuds',
 		ouds
 	})
-	setInterval(() => {
-		const date = new Date()
-		const sec = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds() + 0.001 * date.getMilliseconds()
-		worker.postMessage({
-			type: 'calcPosition',
-			sec
-		})
-	}, 100)
 	map.addSource('trains', {
 		type: 'geojson',
 		data: {
@@ -79,6 +71,12 @@ export async function initializeTrainsLayer({ map, store }) {
 		},
 		disable() {
 			map.setLayoutProperty('trains', 'visibility', 'none')
+		},
+		update(sec) {
+			worker.postMessage({
+				type: 'calcPosition',
+				sec
+			})
 		}
 	}
 }

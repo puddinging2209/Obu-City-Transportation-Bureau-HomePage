@@ -74,7 +74,8 @@ export async function initializeStationsLayer({ map, store }) {
 		},
 		disable() {
 			map.setLayoutProperty('stations', 'visibility', 'none')
-		}
+		},
+		update() {}
 	}
 	return data
 }

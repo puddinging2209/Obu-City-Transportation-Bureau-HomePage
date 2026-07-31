@@ -4,6 +4,7 @@ import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import React from 'react';
 import Map from 'react-map-gl/maplibre';
+import { TimeControl } from './components/TimeControl';
 import { initializeLinesLayer } from './layers/lines';
 import { initializeStationsLayer } from './layers/stations';
 import { initializeTrainsLayer } from './layers/trains';
@@ -15,11 +16,17 @@ const layers = [
 ]
 
 function TrainMap() {
+	const date = new Date()
 	const theme = useTheme()
 	const store = useStore()
 	const layersRef = React.useRef([])
 	const [isLoading, setIsLoading] = React.useState(true)
 	const [layersEnabled, setLayersEnabled] = React.useState([])
+	const [playerState, setPlayerState] = React.useState({
+		startAt: performance.now(),
+		baseSimulationTime: date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds() + 0.001 * date.getMilliseconds(),
+		speedRate: 1
+	})
 
 	const mapHandle = (mapEl) => {
 		if (!mapEl) {
@@ -34,6 +41,16 @@ function TrainMap() {
 			setIsLoading(false)
 		})
 	}
+
+	React.useEffect(() => {
+		const id = setInterval(() => {
+			const sec = (playerState.baseSimulationTime + (performance.now() - playerState.startAt) * playerState.speedRate / 1000) % (60 * 60 * 24)
+			layersRef.current.forEach((l, i) => {
+				if (layersEnabled[i]) l.update(sec)
+			})
+		}, 1000 / 24);
+		return () => clearInterval(id)
+	}, [layersRef, playerState, layersEnabled])
 
 	return (
 		<Box sx={{ position: "relative", width: "100%", height: "100%" }}>
@@ -68,6 +85,7 @@ function TrainMap() {
 				borderRadius: "8px",
 				bgcolor: theme.palette.background.default
 			}}>
+				<TimeControl state={playerState} setter={setPlayerState}></TimeControl>
 				{
 					layersRef.current.map((l, i) => (
 						<FormControlLabel
@@ -79,9 +97,7 @@ function TrainMap() {
 								></Checkbox>
 							}
 							onChange={e => {
-								const v = [...layersEnabled]
-								v[i] = e.target.checked
-								setLayersEnabled(v)
+								setLayersEnabled(layersEnabled.with(i, e.target.checked))
 								e.target.checked ? l.enable() : l.disable()
 							}}
 						></FormControlLabel>
