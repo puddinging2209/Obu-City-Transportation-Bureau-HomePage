@@ -56,6 +56,7 @@ export default function TransferInput({ onSearch, loading }) {
 	const showSeconds = useAtomValue(settingsAtom).showSeconds;
 
 	const toSeconds = (time) => {
+		if (!dayjs.isDayjs(time)) return time;
 		return Number(time.format('HH')) * 3600 + Number(time.format('mm')) * 60 + Number(time.format('ss'));
 	};
 
@@ -69,13 +70,13 @@ export default function TransferInput({ onSearch, loading }) {
 		const params = new URLSearchParams();
 		params.set(
 			'p',
-			options.from +
+			options.from.value +
 				options.timeType[0] +
-				String(options.time).padStart(5, 0) +
+				String(toSeconds(options.time)).padStart(5, 0) +
 				String(options.transferTime).padStart(2, 0) +
 				(options.tokkyu ? 't' : 'f') +
 				(options.allowOuterTransfer ? 't' : 'f') +
-				options.to,
+				options.to.value,
 		);
 		navigate(`/transfer?${params.toString()}`);
 	};
@@ -88,13 +89,17 @@ export default function TransferInput({ onSearch, loading }) {
 			l: 'last',
 		};
 
-		const from = p.slice(0, 3);
+		if (!p) return null;
+
+		const from = toSelecterOption(p.slice(0, 3));
 		const timeType = timeTypes[p.slice(3, 4)];
-		const time = Number(p.slice(4, 9));
+		const time = dayjs()
+			.startOf('day')
+			.add(Number(p.slice(4, 9)), 'second');
 		const transferTime = Number(p.slice(9, 11));
 		const tokkyu = p.slice(11, 12) === 't';
 		const allowOuterTransfer = p.slice(12, 13) === 't';
-		const to = p.slice(13, 16);
+		const to = toSelecterOption(p.slice(13, 16));
 
 		return { from, to, timeType, time, tokkyu, allowOuterTransfer, transferTime };
 	};
@@ -105,8 +110,8 @@ export default function TransferInput({ onSearch, loading }) {
 
 			setOptions({
 				...options,
-				from: toSelecterOption(lastSearch.from),
-				to: toSelecterOption(lastSearch.to),
+				from: lastSearch.from,
+				to: lastSearch.to,
 				time: dayjs().startOf('day').add(lastSearch.time, 'second'),
 				timeType: lastSearch.timeType,
 				transferTime: lastSearch.transferTime,
@@ -115,7 +120,9 @@ export default function TransferInput({ onSearch, loading }) {
 			});
 
 			writeQuery(lastSearch);
-			setResult(lastSearch.result ?? []);
+			setResult(lastSearch.result);
+
+			if (!!lastSearch.result && Object.keys(lastSearch.result).length > 0) return;
 		}
 
 		const query = new URLSearchParams(search);
@@ -127,18 +134,13 @@ export default function TransferInput({ onSearch, loading }) {
 			...newOptions,
 		});
 
-		onSearch(
-			newOptions.from,
-			newOptions.to,
-			newOptions.time,
-			newOptions.timeType === 'departure' ? 0 : 1,
-			newOptions.transferTime,
-			newOptions.tokkyu,
-			newOptions.allowOuterTransfer,
-		);
+		handleSearch({
+			...options,
+			...newOptions,
+		});
 	}, []);
 
-	const handleSearch = () => {
+	const handleSearch = (options) => {
 		let mode;
 		let t = toSeconds(options.time);
 		if (options.timeType === 'departure') mode = 0;
@@ -158,7 +160,7 @@ export default function TransferInput({ onSearch, loading }) {
 			'lastSearch',
 			JSON.stringify({
 				...options,
-				result: result,
+				time: t,
 			}),
 		);
 	};
@@ -314,7 +316,7 @@ export default function TransferInput({ onSearch, loading }) {
 				</Button>
 
 				<Button
-					onClick={handleSearch}
+					onClick={() => handleSearch(options)}
 					disabled={!options.from || !options.to}
 					variant='contained'
 					size={isMobile ? 'medium' : 'large'}
