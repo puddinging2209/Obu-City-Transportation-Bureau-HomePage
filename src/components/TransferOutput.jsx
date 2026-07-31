@@ -4,7 +4,7 @@ import { Box, Button, Card, CardContent, Stack, Typography } from '@mui/material
 import { useTheme } from '@mui/material/styles';
 import { useAtomValue, useSetAtom } from 'jotai';
 
-import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
+import { addMyStationAtom, myStationsAtom, settingsAtom } from '../utils/Atom.js';
 import { label } from '../utils/Station.js';
 import { toTimeString } from '../utils/Time.js';
 import TrainStopsDialog from './TrainStopsDialog.jsx';
@@ -160,9 +160,12 @@ function StationBox({ arrTime, depTime, StationId, disableArrTime = false, disab
 	const myStations = useAtomValue(myStationsAtom);
 	const setMyStations = useSetAtom(addMyStationAtom);
 
+	const showSeconds = useAtomValue(settingsAtom).showSeconds;
+	const timeWidth = 42 * (!showSeconds ? 1 : 1.6);
+
 	return (
 		<Box sx={{ width: '100%', display: 'flex', borderRadius: 1, p: 1, gap: 1 }} bgcolor={theme.palette.mode === 'light' ? '#DDD' : '#333'}>
-			<Box sx={{ flex: '0 0 42px', textAlign: 'center' }}>
+			<Box sx={{ flex: `0 0 ${timeWidth}px`, textAlign: 'center' }}>
 				<Typography variant='body1'>{disableArrTime ? '出発' : toTimeString(arrTime)}</Typography>
 				<Typography variant='body1'>{disableDepTime ? '到着' : toTimeString(depTime)}</Typography>
 			</Box>

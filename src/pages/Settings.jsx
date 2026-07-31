@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Card, CardContent, Stack, Tab, Tabs, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
+import { Box, Card, CardContent, Checkbox, Stack, Tab, Tabs, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useAtom } from 'jotai';
 import { settingsAtom } from '../utils/Atom.js';
@@ -46,13 +46,17 @@ function Settings() {
 			<TabPanel value={tabValue} index={0}>
 				<Card sx={{ borderRadius: `0 0 ${theme.shape.borderRadius}px ${theme.shape.borderRadius}px` }}>
 					<CardContent>
-						<Stack direction='row' justifyContent='space-between'>
+						<Stack direction='row' justifyContent='space-between' alignItems='center'>
 							テーマ
 							<ToggleButtonGroup size='small' value={settings.theme} onChange={handleThemeChange} exclusive>
 								<ToggleButton value='light'>ライトモード</ToggleButton>
 								<ToggleButton value='dark'>ダークモード</ToggleButton>
 								<ToggleButton value='system'>システム設定に従う</ToggleButton>
 							</ToggleButtonGroup>
+						</Stack>
+						<Stack direction='row' justifyContent='space-between' alignItems='center'>
+							時刻に秒を表示する
+							<Checkbox checked={settings.showSeconds} onChange={(e) => setSettings({ ...settings, showSeconds: e.target.checked })} />
 						</Stack>
 					</CardContent>
 				</Card>
