@@ -25,11 +25,12 @@ import {
 import { useTheme } from '@mui/material/styles';
 import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { useAtom } from 'jotai';
+import { useAtom, useAtomValue } from 'jotai';
 
 import { resultAtom } from '../pages/Transfer.jsx';
-import { id } from '../utils/Station.js';
 import StationSelecter, { StationSelectButtons } from './StationSelecter.jsx';
+
+import { settingsAtom } from '../utils/Atom.js';
 
 import stations from '../data/stations.json';
 
@@ -40,120 +41,135 @@ export default function TransferInput({ onSearch, loading }) {
 	const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 	const [result, setResult] = useAtom(resultAtom);
 
-	const [from, setFrom] = React.useState(null);
-	const [to, setTo] = React.useState(null);
-	const [timeType, setTimeType] = React.useState('departure');
-	const [time, setTime] = React.useState(dayjs());
+	const [options, setOptions] = React.useState({
+		from: null,
+		to: null,
+		timeType: 'departure',
+		time: dayjs(),
+		tokkyu: false,
+		allowOuterTransfer: true,
+		transferTime: 30,
+	});
+
 	const [openOption, setOpenOption] = React.useState(false);
-	const [tokkyu, setTokkyu] = React.useState(false);
-	const [allowOuterTransfer, setAllowOuterTransfer] = React.useState(true);
-	const [transferTime, setTransferTime] = React.useState(30);
 
-	function toSeconds(time) {
+	const showSeconds = useAtomValue(settingsAtom).showSeconds;
+
+	const toSeconds = (time) => {
 		return Number(time.format('HH')) * 3600 + Number(time.format('mm')) * 60 + Number(time.format('ss'));
-	}
+	};
 
-	function toSelecterOption(id) {
+	const toSelecterOption = (id) => {
 		const stationName = stations[id]?.name;
 		if (!stationName) return null;
 		return { label: stationName, value: id, kana: stations[id]?.kana || '' };
-	}
+	};
+
+	const writeQuery = (options) => {
+		const params = new URLSearchParams();
+		params.set(
+			'p',
+			options.from +
+				options.timeType[0] +
+				String(options.time).padStart(5, 0) +
+				String(options.transferTime).padStart(2, 0) +
+				(options.tokkyu ? 't' : 'f') +
+				(options.allowOuterTransfer ? 't' : 'f') +
+				options.to,
+		);
+		navigate(`/transfer?${params.toString()}`);
+	};
+
+	const readQuery = (p) => {
+		const timeTypes = {
+			d: 'departure',
+			a: 'arrival',
+			f: 'first',
+			l: 'last',
+		};
+
+		const from = p.slice(0, 3);
+		const timeType = timeTypes[p.slice(3, 4)];
+		const time = Number(p.slice(4, 9));
+		const transferTime = Number(p.slice(9, 11));
+		const tokkyu = p.slice(11, 12) === 't';
+		const allowOuterTransfer = p.slice(12, 13) === 't';
+		const to = p.slice(13, 16);
+
+		return { from, to, timeType, time, tokkyu, allowOuterTransfer, transferTime };
+	};
 
 	React.useEffect(() => {
 		if (sessionStorage.getItem('lastSearch')) {
 			const lastSearch = JSON.parse(sessionStorage.getItem('lastSearch'));
-			setFrom(toSelecterOption(lastSearch.from));
-			setTo(toSelecterOption(lastSearch.to));
 
-			const t = dayjs().startOf('day').add(lastSearch.time, 'second');
-			setTime(t);
+			setOptions({
+				...options,
+				from: toSelecterOption(lastSearch.from),
+				to: toSelecterOption(lastSearch.to),
+				time: dayjs().startOf('day').add(lastSearch.time, 'second'),
+				timeType: lastSearch.timeType,
+				transferTime: lastSearch.transferTime,
+				tokkyu: lastSearch.tokkyu,
+				allowOuterTransfer: lastSearch.allowOuterTransfer,
+			});
 
-			if (lastSearch.mode === 0) setTimeType('departure');
-			else if (lastSearch.mode === 1) setTimeType('arrival');
-			else setTimeType('departure');
-
-			setTransferTime(lastSearch.transferTime);
-			setTokkyu(lastSearch.tokkyu);
-			setAllowOuterTransfer(lastSearch.allowOuterTransfer);
-
-			queryChange(lastSearch.time, lastSearch.mode, lastSearch.tokkyu, lastSearch.allowOuterTransfer);
+			writeQuery(lastSearch);
 			setResult(lastSearch.result ?? []);
 		}
 
 		const query = new URLSearchParams(search);
-		const queryFrom = query.get('from');
-		const queryTo = query.get('to');
-		const queryTime = Number(query.get('time'));
-		const queryMode = Number(query.get('mode'));
-		const queryTransferTime = Number(query.get('transferTime'));
-		const queryTokkyu = query.get('tokkyu');
-		const queryAllowOuterTransfer = query.get('allowOuterTransfer');
-		if (!queryFrom || !queryTo || !queryTime || !queryMode === undefined) return;
+		const newOptions = readQuery(query.get('p'));
+		if (!newOptions) return;
 
-		setFrom(toSelecterOption(queryFrom));
-		setTo(toSelecterOption(queryTo));
+		setOptions({
+			...options,
+			...newOptions,
+		});
 
-		const t = dayjs().startOf('day').add(queryTime, 'second');
-		setTime(t);
-
-		if (queryMode === 0) setTimeType('departure');
-		else if (queryMode === 1) setTimeType('arrival');
-		else setTimeType('departure');
-
-		setTransferTime(queryTransferTime);
-		setTokkyu(queryTokkyu === 'true');
-		setAllowOuterTransfer(queryAllowOuterTransfer === 'true');
-
-		onSearch(queryFrom, queryTo, queryTime, queryMode, queryTransferTime, queryTokkyu === 'true', queryAllowOuterTransfer === 'true');
+		onSearch(
+			newOptions.from,
+			newOptions.to,
+			newOptions.time,
+			newOptions.timeType === 'departure' ? 0 : 1,
+			newOptions.transferTime,
+			newOptions.tokkyu,
+			newOptions.allowOuterTransfer,
+		);
 	}, []);
 
-	function queryChange(time, mode, tokkyu, allowOuterTransfer) {
-		const params = new URLSearchParams();
-		if (from) params.append('from', id(from.value));
-		if (to) params.append('to', id(to.value));
-		if (time) params.append('time', time);
-		if (mode !== undefined) params.append('mode', mode);
-		if (transferTime !== undefined) params.append('transferTime', transferTime);
-		if (tokkyu !== undefined) params.append('tokkyu', tokkyu);
-		if (allowOuterTransfer !== undefined) params.append('allowOuterTransfer', allowOuterTransfer);
-		navigate(`/transfer?${params.toString()}`);
-	}
-
-	function handleSearch() {
+	const handleSearch = () => {
 		let mode;
-		let t = toSeconds(time);
-		if (timeType === 'departure') mode = 0;
-		else if (timeType === 'arrival') mode = 1;
-		else if (timeType === 'first') {
+		let t = toSeconds(options.time);
+		if (options.timeType === 'departure') mode = 0;
+		else if (options.timeType === 'arrival') mode = 1;
+		else if (options.timeType === 'first') {
 			mode = 0;
 			t = 10800;
-		} else if (timeType === 'last') {
+		} else if (options.timeType === 'last') {
 			mode = 1;
 			t = 10799;
 		}
 
-		queryChange(t, mode, tokkyu, allowOuterTransfer);
+		writeQuery(options);
 
-		onSearch(from?.value, to?.value, t, mode, transferTime, tokkyu, allowOuterTransfer);
+		onSearch(options.from?.value, options.to?.value, t, mode, options.transferTime, options.tokkyu, options.allowOuterTransfer);
 		sessionStorage.setItem(
 			'lastSearch',
 			JSON.stringify({
-				from: from?.value,
-				to: to?.value,
-				time: t,
-				mode,
-				transferTime,
-				tokkyu,
-				allowOuterTransfer,
+				...options,
 				result: result,
 			}),
 		);
-	}
+	};
 
-	function handleSwap() {
-		setFrom(to);
-		setTo(from);
-	}
+	const handleSwap = () => {
+		setOptions({
+			...options,
+			from: options.to,
+			to: options.from,
+		});
+	};
 
 	return (
 		<Box
@@ -172,31 +188,47 @@ export default function TransferInput({ onSearch, loading }) {
 				<Stack flexGrow={1} spacing={2.5}>
 					<Stack spacing={0.5}>
 						<StationSelecter
-							onChange={(value) => setFrom(value)}
-							value={from}
+							onChange={(value) =>
+								setOptions({
+									...options,
+									from: value,
+								})
+							}
+							value={options.from}
 							placeholder='出発駅を選択'
-							disabledStations={[to?.value]}
+							disabledStations={[options.to?.value]}
 						/>
 						<StationSelectButtons
-							disabledStations={[to?.value]}
+							disabledStations={[options.to?.value]}
 							onSelect={(value) =>
-								setFrom({
-									value: value,
-									label: stations[value].name,
-									kana: stations[value].kana,
+								setOptions({
+									...options,
+									from: {
+										value: value,
+										label: stations[value].name,
+										kana: stations[value].kana,
+									},
 								})
 							}
 						/>
 					</Stack>
 					<Stack spacing={0.5}>
-						<StationSelecter onChange={(value) => setTo(value)} value={to} placeholder='到着駅を選択' disabledStations={[from?.value]} />
+						<StationSelecter
+							onChange={(value) => setOptions({ ...options, to: value })}
+							value={options.to}
+							placeholder='到着駅を選択'
+							disabledStations={[options.from?.value]}
+						/>
 						<StationSelectButtons
-							disabledStations={[from?.value]}
+							disabledStations={[options.from?.value]}
 							onSelect={(value) =>
-								setTo({
-									value: value,
-									label: stations[value].name,
-									kana: stations[value].kana,
+								setOptions({
+									...options,
+									to: {
+										value: value,
+										label: stations[value].name,
+										kana: stations[value].kana,
+									},
 								})
 							}
 						/>
@@ -209,7 +241,13 @@ export default function TransferInput({ onSearch, loading }) {
 
 			{/* 時刻設定 */}
 			<Box sx={{ mt: { xs: 2, md: 3 } }}>
-				<ToggleButtonGroup value={timeType} exclusive onChange={(_, v) => v && setTimeType(v)} size={isMobile ? 'small' : 'medium'} fullWidth>
+				<ToggleButtonGroup
+					value={options.timeType}
+					exclusive
+					onChange={(_, v) => v && setTimeType(v)}
+					size={isMobile ? 'small' : 'medium'}
+					fullWidth
+				>
 					<ToggleButton value='departure'>出発</ToggleButton>
 					<ToggleButton value='arrival'>到着</ToggleButton>
 					<ToggleButton value='first'>初電</ToggleButton>
@@ -220,8 +258,13 @@ export default function TransferInput({ onSearch, loading }) {
 					<LocalizationProvider dateAdapter={AdapterDayjs}>
 						<TimePicker
 							label='時刻を選択'
-							value={time}
-							onChange={(newValue) => setTime(newValue)}
+							value={options?.time}
+							onChange={(newValue) =>
+								setOptions({
+									...options,
+									time: newValue,
+								})
+							}
 							ampm={false}
 							slotProps={{
 								textField: {
@@ -230,33 +273,33 @@ export default function TransferInput({ onSearch, loading }) {
 								},
 							}}
 							fullWidth
-							format='HH:mm'
+							format={!showSeconds ? 'HH:mm' : 'HH:mm:ss'}
 							sx={{ mt: 2 }}
-							disabled={timeType !== 'departure' && timeType !== 'arrival'}
+							disabled={options.timeType !== 'departure' && options.timeType !== 'arrival'}
 						/>
 					</LocalizationProvider>
 					<Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between' }}>
 						<Button
 							size={isMobile ? 'small' : 'medium'}
 							sx={{ whiteSpace: 'nowrap' }}
-							onClick={() => setTime(dayjs().subtract(5, 'minute'))}
-							disabled={timeType !== 'departure' && timeType !== 'arrival'}
+							onClick={() => setOptions({ ...options, time: dayjs().subtract(5, 'minute') })}
+							disabled={options.timeType !== 'departure' && options.timeType !== 'arrival'}
 						>
 							5分前
 						</Button>
 						<Button
 							size={isMobile ? 'small' : 'medium'}
 							sx={{ whiteSpace: 'nowrap' }}
-							onClick={() => setTime(dayjs())}
-							disabled={timeType !== 'departure' && timeType !== 'arrival'}
+							onClick={() => setOptions({ ...options, time: dayjs() })}
+							disabled={options.timeType !== 'departure' && options.timeType !== 'arrival'}
 						>
 							現在時刻
 						</Button>
 						<Button
 							size={isMobile ? 'small' : 'medium'}
 							sx={{ whiteSpace: 'nowrap' }}
-							onClick={() => setTime(dayjs().add(5, 'minute'))}
-							disabled={timeType !== 'departure' && timeType !== 'arrival'}
+							onClick={() => setOptions({ ...options, time: dayjs().add(5, 'minute') })}
+							disabled={options.timeType !== 'departure' && options.timeType !== 'arrival'}
 						>
 							5分後
 						</Button>
@@ -272,7 +315,7 @@ export default function TransferInput({ onSearch, loading }) {
 
 				<Button
 					onClick={handleSearch}
-					disabled={!from || !to}
+					disabled={!options.from || !options.to}
 					variant='contained'
 					size={isMobile ? 'medium' : 'large'}
 					loading={loading}
@@ -291,16 +334,16 @@ export default function TransferInput({ onSearch, loading }) {
 						<Typography variant='body2' color='text.secondary'>
 							<FormControlLabel
 								control={<Checkbox />}
-								onChange={(e) => setTokkyu(e.target.checked)}
-								checked={tokkyu}
+								onChange={(e) => setOptions({ ...options, tokkyu: e.target.checked })}
+								checked={options.tokkyu}
 								label='有料列車を利用する'
 							/>
 						</Typography>
 						<Typography variant='body2' color='text.secondary'>
 							<FormControlLabel
 								control={<Checkbox />}
-								onChange={(e) => setAllowOuterTransfer(!e.target.checked)}
-								checked={!allowOuterTransfer}
+								onChange={(e) => setOptions({ ...options, allowOuterTransfer: !e.target.checked })}
+								checked={!options.allowOuterTransfer}
 								label='改札外乗り換えを許可しない'
 							/>
 						</Typography>
@@ -309,8 +352,8 @@ export default function TransferInput({ onSearch, loading }) {
 								乗り換え時間(秒)
 							</Typography>
 							<Slider
-								value={transferTime}
-								onChange={(_, v) => setTransferTime(v)}
+								value={options.transferTime}
+								onChange={(_, v) => setOptions({ ...options, transferTime: v })}
 								defaultValue={30}
 								valueLabelDisplay='auto'
 								shiftStep={30}
