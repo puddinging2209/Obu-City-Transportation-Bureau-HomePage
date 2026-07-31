@@ -19,8 +19,16 @@ function Transfer() {
 		setLoading(true);
 		try {
 			const segments = await dijkstra(from, to, adjustTime(time), mode, transferTime - 1, tokkyu, allowOuterTransfer);
-			setResult(segments ?? []);
+			setResult(segments);
 			console.log(segments);
+			const lastSearch = JSON.parse(sessionStorage.getItem('lastSearch'));
+			sessionStorage.setItem(
+				'lastSearch',
+				JSON.stringify({
+					...lastSearch,
+					result: segments,
+				}),
+			);
 		} catch (error) {
 			alert(`エラーが発生しました: ${error.message}`);
 			console.error(error);
