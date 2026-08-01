@@ -63,8 +63,8 @@ export function TimeControl({ state, setter }) {
 			></Slider>
 			<Stack direction='row' justifyContent='center' spacing={1}>
 				<Typography sx={{ whiteSpace: 'nowrap' }}>速度</Typography>
-				<CompactButton size='small' variant='outlined' onClick={() => changeSpeed(state.speedRate - 10)}>-10</CompactButton>
-				<CompactButton size='small' variant='outlined' onClick={() => changeSpeed(state.speedRate - 1)}>-1</CompactButton>
+				<CompactButton size='small' variant='outlined' onClick={() => changeSpeed(state.speedRate / 5)}>×0.25</CompactButton>
+				<CompactButton size='small' variant='outlined' onClick={() => changeSpeed(state.speedRate / 2)}>×0.5</CompactButton>
 				<CompactInput
 					size='small'
 					variant='filled'
@@ -73,8 +73,8 @@ export function TimeControl({ state, setter }) {
 					onChange={e => changeSpeed(e.target.value)}
 					inputMode='numeric'
 				></CompactInput>
-				<CompactButton size='small' variant='outlined' onClick={() => changeSpeed(state.speedRate + 1)}>+1</CompactButton>
-				<CompactButton size='small' variant='outlined' onClick={() => changeSpeed(state.speedRate + 10)}>+10</CompactButton>
+				<CompactButton size='small' variant='outlined' onClick={() => changeSpeed(state.speedRate * 2)}>×2</CompactButton>
+				<CompactButton size='small' variant='outlined' onClick={() => changeSpeed(state.speedRate * 5)}>×5</CompactButton>
 			</Stack>
 		</Stack>
 	)
