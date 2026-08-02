@@ -246,7 +246,7 @@ export default function TransferInput({ onSearch, loading }) {
 				<ToggleButtonGroup
 					value={options.timeType}
 					exclusive
-					onChange={(_, v) => v && setTimeType(v)}
+					onChange={(_, v) => v && setOptions({ ...options, timeType: v })}
 					size={isMobile ? 'small' : 'medium'}
 					fullWidth
 				>
