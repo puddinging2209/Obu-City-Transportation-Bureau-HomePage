@@ -31,7 +31,11 @@ function TrainMap() {
 			const map = mapEl.getMap()
 			map.addControl(new maplibregl.NavigationControl())
 
-			layersRef.current = await Promise.all(layers.map(l => l({ map, store })))
+			for (const l of layers) {
+				const layer = await l({ map, store })
+				layersRef.current.push(layer)
+				layer.defaultEnabled ? layer.enable() : layer.disable()
+			}
 			setLayersEnabled(layersRef.current.map(l => l.defaultEnabled))
 			setIsLoading(false)
 		})
