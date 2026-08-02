@@ -21,10 +21,13 @@ export function TimeControl() {
 		if (isEditing) {
 			return
 		}
-		const id = setInterval(() => {
+		let id
+		const tick = () => {
 			setDisplayTime((timeState.baseSimulationTime + (performance.now() - timeState.startAt) * timeState.speedRate / 1000) % (60 * 60 * 24))
-		}, 1000 / 24);
-		return () => clearInterval(id)
+			id = requestAnimationFrame(tick)
+		}
+		id = requestAnimationFrame(tick);
+		return () => cancelAnimationFrame(id)
 	}, [timeState, isEditing])
 
 	return (

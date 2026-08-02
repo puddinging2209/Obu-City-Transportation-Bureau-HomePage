@@ -1,9 +1,19 @@
+import { MapboxOverlay } from '@deck.gl/mapbox';
+import { ScatterplotLayer } from 'deck.gl';
 import linesData from '../../../data/lines.json';
 import typesData from '../../../data/types.json';
 import { dia } from '../.././../utils/readOud';
 import TrainMapWorker from '../trainMapWorker?worker';
 
 export async function initializeTrainsLayer({ map, store }) {
+	const hexToRgb = (hex) => {
+		return [
+			parseInt(hex.substring(1, 3), 16),
+			parseInt(hex.substring(3, 5), 16),
+			parseInt(hex.substring(5, 7), 16)
+		]
+	}
+
 	const worker = new TrainMapWorker()
 	const ouds = await Promise.all(
 		new Set(Object.values(linesData).filter(e => e.json && e.stations).map(e => e.json))
@@ -15,64 +25,64 @@ export async function initializeTrainsLayer({ map, store }) {
 		type: 'setOuds',
 		ouds
 	})
-	map.addSource('trains', {
-		type: 'geojson',
-		data: {
-			type: 'FeatureCollection',
-			features: []
-		}
+
+	const trainOverlay = new MapboxOverlay({
+		interleaved: true,
+		layers: []
 	})
-	map.addLayer({
-		id: 'trains',
-		type: 'circle',
-		source: 'trains',
-		paint: {
-			'circle-radius': 6,
-			'circle-color': ['get', 'color'],
-			'circle-stroke-color': '#fff',
-			'circle-stroke-width': 1
-		}
-	})
+	map.addControl(trainOverlay)
+
+	let visible = true
+
 	worker.addEventListener('message', ({ data }) => {
 		switch (data.type) {
-			case 'calcPositionResult':
-				map.getSource('trains').setData({
-					type: 'FeatureCollection',
-					features: data.data.filter(t => t.coordinate).map(t => {
-						return {
-							type: 'Feature',
-							properties: {
-								number: t.number,
-								priority: 100,
-								color: typesData[t.type]?.color ?? '#f0f'
-							},
-							geometry: {
-								type: 'Point',
-								coordinates: t.coordinate.reverse()
-							}
-						}
-					})
+			case 'calcPositionResult': {
+				const points = data.data.filter(t => t.coordinate).map(t => ({
+					id: t.number,
+					position: t.coordinate.reverse(),
+					color: [...hexToRgb(typesData[t.type]?.color ?? '#ff00ff'), 255],
+				}))
+				const layer = new ScatterplotLayer({
+					id: 'trains',
+					data: points,
+					pickable: false,
+
+					getPosition: d => d.position,
+					getFillColor: d => d.color,
+					getLineColor: [255, 255, 255, 255],
+
+					stroked: true,
+					filled: true,
+					radiusUnits: 'pixels',
+					getRadius: 6,
+					lineWidthUnits: 'pixels',
+					getLineWidth: 1.5,
+
+					updateTriggers: {
+						getPosition: data.sec,
+						getFillColor: data.sec
+					}
+				})
+				trainOverlay.setProps({
+					layers: visible ? [layer] : []
 				})
 				break;
+			}
 		}
-	})
-	map.on('click', 'trains', e => {
-		const feature = e.features?.[0]
-		if (!feature) return
-
-		console.log(feature.properties.number)
 	})
 
 	return {
 		name: '列車',
 		defaultEnabled: true,
 		enable() {
-			map.setLayoutProperty('trains', 'visibility', 'visible')
+			visible = true
 		},
 		disable() {
-			map.setLayoutProperty('trains', 'visibility', 'none')
+			visible = false
+			trainOverlay.setProps({ layers: [] })
 		},
 		update(sec) {
+			if (!visible) return
 			worker.postMessage({
 				type: 'calcPosition',
 				sec

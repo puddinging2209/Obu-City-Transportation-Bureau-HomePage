@@ -69,7 +69,7 @@ const sortTrains = (trains) => {
 	)
 	for (let i = 0; i < sorted.length; i++) {
 		if (sorted[i].train.operations.some(o => o.outerType === 'A')) {
-			if (sorted[i + 1] && !sorted[i + 1].train.operations.some(o => o.outerType === 'B')){
+			if (sorted[i + 1] && !sorted[i + 1].train.operations.some(o => o.outerType === 'B')) {
 				sorted[i].train.timetable._data = []
 			}
 		}
@@ -255,7 +255,8 @@ self.addEventListener('message', ({ data }) => {
 		case 'calcPosition': {
 			self.postMessage({
 				type: 'calcPositionResult',
-				data: calcPositions(normalizeSec(data.sec))
+				data: calcPositions(normalizeSec(data.sec)),
+				sec: data.sec
 			})
 		}
 		default:
