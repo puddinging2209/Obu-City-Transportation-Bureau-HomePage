@@ -66,7 +66,7 @@ export async function initializeStationsLayer({ map, store }) {
 		}
 	});
 
-	const data = {
+	return {
 		name: '駅',
 		defaultEnabled: true,
 		enable() {
@@ -77,5 +77,4 @@ export async function initializeStationsLayer({ map, store }) {
 		},
 		update() {}
 	}
-	return data
 }
