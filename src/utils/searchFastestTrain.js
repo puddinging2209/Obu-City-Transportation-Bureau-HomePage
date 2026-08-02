@@ -136,9 +136,9 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
 									return b.dep - a.dep || b.arr - a.arr;
 								}
 							});
-							if (fastests.length > 3) {
-								fastests.pop();
-							}
+							// if (fastests.length > requiredNumber) {
+							// 	fastests.pop();
+							// }
 						}
 					}
 				}
@@ -220,9 +220,9 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
 									return b.dep - a.dep || b.arr - a.arr;
 								}
 							});
-							if (fastests.length > 3) {
-								fastests.pop();
-							}
+							// if (fastests.length > requiredNumber) {
+							// 	fastests.pop();
+							// }
 						}
 					}
 				}

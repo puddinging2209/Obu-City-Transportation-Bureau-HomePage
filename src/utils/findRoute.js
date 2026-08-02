@@ -162,7 +162,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 	const startStation = mode === 0 ? code(start) : code(goal);
 	const goalStation = mode === 0 ? code(goal) : code(start);
 
-	const distance = getDistance(start, goal);
+	const distance = getDistance(id(start), id(goal));
 
 	const makePriority = (time, station, transfer) => ({
 		priority: Math.abs(time - baseTime) + heuristic(station, goalStation),
@@ -303,7 +303,8 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 						mode,
 						tokkyu,
 						visitedArray,
-					);
+					).then((res) => res.splice(0, Math.ceil(getDistance(id(station), id(goalStation)) / 12)));
+					console.log('results', results);
 
 					for (const result of results) {
 						if (!result?.train) continue;
