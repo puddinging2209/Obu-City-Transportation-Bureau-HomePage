@@ -38,13 +38,16 @@ function TrainMap() {
 	}
 
 	React.useEffect(() => {
-		const id = setInterval(() => {
+		let id
+		const tick = () => {
 			const sec = (timeState.baseSimulationTime + (performance.now() - timeState.startAt) * timeState.speedRate / 1000) % (60 * 60 * 24)
 			layersRef.current.forEach((l, i) => {
 				if (layersEnabled[i]) l.update(sec)
 			})
-		}, 1000 / 24);
-		return () => clearInterval(id)
+			id = requestAnimationFrame(tick)
+		}
+		id = requestAnimationFrame(tick);
+		return () => cancelAnimationFrame(id)
 	}, [layersRef, timeState, layersEnabled])
 
 	return (
