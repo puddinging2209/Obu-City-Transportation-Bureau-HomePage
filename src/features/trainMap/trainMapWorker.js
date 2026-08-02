@@ -2,16 +2,19 @@ import linesData from '../../data/lines.json';
 import lineShapeData from '../../data/lineShape.json';
 import routesData from '../../data/routes.json';
 import stationsData from '../../data/stations.json';
+import typesData from '../../data/types.json';
 
 const typeExceptions = {
 	'普通 ': '普通',
 	'たこつぼ': '特急'
 }
 
+const typePriorities = Object.fromEntries(Object.keys(typesData).map((d, i) => [d, i]))
+
 const stations = Object.values(stationsData)
 const lineCodeNameMap = Object.fromEntries(Object.values(linesData).reverse().map(l => [l.code, l.name]))
 
-const trains = new Set()
+let trains = null
 
 function normalizeSec(sec) {
 	if (sec === null) {
@@ -137,13 +140,15 @@ const setTrains = ouds => {
 			})
 		}
 	}
+	const trainsGroupByType = []
 	for (const [number, train] of Object.entries(trainsGroupByNumber)) {
 		const stops = formatStops(train)
 		if (!stops.length) {
 			continue
 		}
 		const type = typeExceptions[train[0].type] ?? train[0].type
-		trains.add({
+		trainsGroupByType[typePriorities[type]] ??= []
+		trainsGroupByType[typePriorities[type]].push({
 			stops,
 			type,
 			number,
@@ -151,6 +156,7 @@ const setTrains = ouds => {
 			endAt: stops.at(-1).arr
 		})
 	}
+	trains = new Set(trainsGroupByType.flat())
 }
 
 const calcPositions = (sec) => {
