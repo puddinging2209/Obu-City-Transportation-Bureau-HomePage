@@ -294,7 +294,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 				for (const { node: nextStation } of graph[station] ?? []) {
 					// 不正乗車、ダメゼッタイ
 					const visitedArray = [...visited];
-					if (visitedArray.some((s) => id(s) === id(nextStation))) continue;
+					if (visitedArray.includes(id(nextStation))) continue;
 
 					const results = await searchFastestTrain(
 						time,
@@ -350,6 +350,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 									from: station,
 									to: to,
 									viaRosen,
+									lastRosen: result.lastRosen,
 								};
 
 								pq.push({
