@@ -4,11 +4,13 @@ import { searchFastestTrain, searchOtherStops } from './searchFastestTrain.js';
 import { code, id } from './Station.js';
 
 import edges from '../data/edges.json';
+import fareExceptions from '../data/fareExceptions.json';
 import nodes from '../data/nodes.json';
 import stations from '../data/stations.json';
 import walkPath from '../data/walkPath.json';
 
 const MAX_SPEED = (35 * 1000) / 3600; // m/s for heuristic
+const allowDuplicateSections = fareExceptions?.allowDuplicates ?? [];
 
 // ==== 隣接リスト作成 ====
 const graph = {};
@@ -121,6 +123,33 @@ function makeStateId(sta, phase, visitedIndex) {
 
 function setKey(sta, set) {
 	return `${id(sta)}@${[...set].sort().join(',')}`;
+}
+
+function findAllowedDuplicateRule(station, nextStation, visitedArray) {
+	const nextStationId = id(nextStation);
+	if (!nextStationId) return null;
+
+	const visitedIds = (visitedArray ?? []).map((s) => id(s)).filter(Boolean);
+	const currentLine = nodes[station]?.json;
+	const targetLine = nodes[nextStation]?.json;
+
+	return (
+		allowDuplicateSections.find((rule) => {
+			if (nextStationId !== id(rule.fromSta)) return false;
+
+			const fromIndex = visitedIds.lastIndexOf(id(rule.fromSta));
+			const toIndex = visitedIds.lastIndexOf(id(rule.toSta));
+			if (fromIndex === -1 || toIndex === -1 || toIndex <= fromIndex) return false;
+
+			return [currentLine, targetLine].some((line) => rule.lines.includes(line));
+		}) ?? null
+	);
+}
+
+function getSearchVisited(station, nextStation, visitedArray) {
+	const rule = findAllowedDuplicateRule(station, nextStation, visitedArray);
+	if (!rule) return visitedArray;
+	return visitedArray.filter((s) => id(s) !== id(rule.fromSta));
 }
 
 /**
@@ -294,7 +323,10 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 				for (const { node: nextStation } of graph[station] ?? []) {
 					// 不正乗車、ダメゼッタイ
 					const visitedArray = [...visited];
-					if (visitedArray.includes(id(nextStation))) continue;
+					const duplicateRule = findAllowedDuplicateRule(station, nextStation, visitedArray);
+					if (visitedArray.includes(id(nextStation)) && !duplicateRule) continue;
+
+					const searchVisited = duplicateRule ? visitedArray.filter((s) => id(s) !== id(duplicateRule.fromSta)) : visitedArray;
 
 					const results = await searchFastestTrain(
 						time,
@@ -302,8 +334,8 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 						mode === 0 ? nextStation : station,
 						mode,
 						tokkyu,
-						visitedArray,
-					).then((res) => res.splice(0, Math.ceil(getDistance(id(station), id(goalStation)) / 12)));
+						searchVisited,
+					).then((res) => res.splice(0, Math.max(3, Math.ceil(getDistance(id(station), id(goalStation)) / 12))));
 
 					for (const result of results) {
 						if (!result?.train) continue;
@@ -313,7 +345,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 							mode === 0 ? result.dep : result.arr,
 							mode === 0 ? result.arr : result.dep,
 							result.train,
-							visitedArray,
+							searchVisited,
 							mode,
 						);
 

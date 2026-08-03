@@ -1,9 +1,12 @@
 import linesData from '../data/lines.json';
-import stationsData from '../data/stations.json';
+import nodes from '../data/nodes.json';
 
 export default function getDirections(station) {
 	if (!station) return [];
-	const lines = stationsData[station].routes;
+	const lines = Object.values(nodes)
+		.filter((n) => n.id === station)
+		.map((n) => n.line)
+		.flat();
 	return lines
 		.map((line) => {
 			const index = linesData[line].stations.findIndex((s) => station === s.id);
