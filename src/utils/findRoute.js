@@ -172,9 +172,9 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 	Object.keys(nodes)
 		.filter((code) => id(code) === id(startStation))
 		.forEach((code) => {
-			const startVisited = new Set([code]);
-
 			const staId = id(code);
+
+			const startVisited = new Set([staId]);
 			const visitedIndex = getVisitedIndex(staId, startVisited);
 
 			const startStateId = makeStateId(code, 'transfer', visitedIndex);
@@ -304,7 +304,6 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 						tokkyu,
 						visitedArray,
 					).then((res) => res.splice(0, Math.ceil(getDistance(id(station), id(goalStation)) / 12)));
-					console.log('results', results);
 
 					for (const result of results) {
 						if (!result?.train) continue;

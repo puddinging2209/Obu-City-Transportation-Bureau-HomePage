@@ -25,7 +25,7 @@ export default function NewStationSnackbar({ open, onClose }) {
 				autoHideDuration={5000}
 			>
 				<Alert onClose={handleClose} severity='success' variant='filled' sx={{ width: '100%' }}>
-					新駅にアクセスしました
+					新駅に訪問しました
 				</Alert>
 			</Snackbar>
 		</>
