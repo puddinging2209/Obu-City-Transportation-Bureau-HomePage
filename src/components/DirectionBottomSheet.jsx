@@ -31,7 +31,7 @@ export default function DirectionBottomSheet({ open, onClose, options, value, on
 
 					return (
 						<ListItemButton
-							key={`${o.line}-${o.id}`}
+							key={`${o.line}-${o.id}(${i})`}
 							onClick={() => {
 								onSelect(i);
 							}}

@@ -27,10 +27,9 @@ import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useAtom, useAtomValue } from 'jotai';
 
-import { resultAtom } from '../pages/Transfer.jsx';
 import StationSelecter, { StationSelectButtons } from './StationSelecter.jsx';
 
-import { settingsAtom } from '../utils/Atom.js';
+import { resultAtom, settingsAtom } from '../utils/Atom.js';
 
 import stations from '../data/stations.json';
 
