@@ -1,10 +1,13 @@
 import React from 'react';
 
 import dayjs from 'dayjs';
+import { DndProvider, useDrag, useDragLayer, useDrop } from 'react-dnd';
+import { HTML5Backend, getEmptyImage } from 'react-dnd-html5-backend';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import DeleteIcon from '@mui/icons-material/Delete';
+import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SwapVertIcon from '@mui/icons-material/SwapVert';
 import {
@@ -106,6 +109,148 @@ export default function TransferInput({ onSearch, loading }) {
 		return { from, to, timeType, time, tokkyu, allowOuterTransfer, transferTime };
 	};
 
+	const ItemTypes = {
+		VIA_STATION: 'viaStation',
+	};
+
+	const [forceHideDragLayer, setForceHideDragLayer] = React.useState(false);
+
+	React.useEffect(() => {
+		const hideLayer = () => setForceHideDragLayer(true);
+		window.addEventListener('mouseup', hideLayer);
+		window.addEventListener('touchend', hideLayer);
+		window.addEventListener('dragend', hideLayer);
+		window.addEventListener('drop', hideLayer);
+		return () => {
+			window.removeEventListener('mouseup', hideLayer);
+			window.removeEventListener('touchend', hideLayer);
+			window.removeEventListener('dragend', hideLayer);
+			window.removeEventListener('drop', hideLayer);
+		};
+	}, []);
+
+	const CustomDragLayer = () => {
+		const { itemType, isDragging, item, currentOffset } = useDragLayer((monitor) => ({
+			item: monitor.getItem(),
+			itemType: monitor.getItemType(),
+			currentOffset: monitor.getClientOffset(),
+			isDragging: monitor.isDragging(),
+		}));
+
+		const offset = currentOffset;
+		if (!isDragging || forceHideDragLayer || itemType !== ItemTypes.VIA_STATION || !offset || !item) return null;
+
+		const station = options.viaStations[item.index];
+		const previewWidth = Math.min(720, window.innerWidth);
+		const previewHeight = 72;
+		const x = Math.min(Math.max(offset.x, 0), Math.max(window.innerWidth - previewWidth, 0));
+		const y = Math.min(Math.max(offset.y, 0), Math.max(window.innerHeight - previewHeight, 0));
+
+		return (
+			<div
+				style={{
+					position: 'fixed',
+					left: 0,
+					top: 0,
+					transform: `translate(${x}px, ${y}px)`,
+					pointerEvents: 'none',
+					zIndex: 9999,
+					width: '100%',
+					maxWidth: 720,
+				}}
+			>
+				<Stack
+					direction='row'
+					spacing={1}
+					sx={{
+						alignItems: 'center',
+						width: '100%',
+						opacity: 0.9,
+						backgroundColor: 'background.paper',
+						borderRadius: 1,
+						boxShadow: 3,
+						px: 1,
+						py: 0.5,
+					}}
+				>
+					<IconButton aria-label='移動' sx={{ cursor: 'grab', pointerEvents: 'none' }}>
+						<DragIndicatorIcon />
+					</IconButton>
+					<Stack spacing={0.5} sx={{ width: '100%' }}>
+						<Typography variant='body2'>{station?.label || `経由駅${item.index + 1}`}</Typography>
+					</Stack>
+				</Stack>
+			</div>
+		);
+	};
+
+	const ViaStationRow = ({ station, index, moveViaStation, onChange, onSelect, onRemove, disabledStations }) => {
+		const dropRef = React.useRef(null);
+		const dragRef = React.useRef(null); // 移動アイコン用のrefを新設
+
+		const [{ isDragging }, drag, preview] = useDrag(() => ({
+			type: ItemTypes.VIA_STATION,
+			item: { index },
+			collect: (monitor) => ({
+				isDragging: monitor.isDragging(),
+			}),
+			end: () => {
+				setForceHideDragLayer(true);
+			},
+		}));
+
+		React.useEffect(() => {
+			preview(getEmptyImage(), { captureDraggingState: true });
+		}, [preview]);
+
+		const [, drop] = useDrop({
+			accept: ItemTypes.VIA_STATION,
+			hover(item, monitor) {
+				if (!dropRef.current) return;
+				const dragIndex = item.index;
+				const hoverIndex = index;
+				if (dragIndex === hoverIndex) return;
+
+				// 行全体の境界を取得
+				const hoverBoundingRect = dropRef.current.getBoundingClientRect();
+				const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
+				const clientOffset = monitor.getClientOffset();
+				if (!clientOffset) return;
+				const hoverClientY = clientOffset.y - hoverBoundingRect.top;
+
+				if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) return;
+				if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) return;
+
+				moveViaStation(dragIndex, hoverIndex);
+				item.index = hoverIndex;
+			},
+		});
+
+		// それぞれのrefに紐づけ
+		drag(dragRef);
+		drop(dropRef);
+
+		return (
+			<Stack direction='row' spacing={1} ref={dropRef} sx={{ alignItems: 'center', width: '100%', opacity: isDragging ? 0.5 : 1 }}>
+				<IconButton aria-label='移動' ref={dragRef} sx={{ cursor: 'grab' }}>
+					<DragIndicatorIcon />
+				</IconButton>
+				<Stack spacing={0.5} sx={{ width: '100%' }}>
+					<StationSelecter
+						onChange={onChange}
+						value={station}
+						placeholder={`経由駅${index + 1}を選択`}
+						disabledStations={disabledStations}
+					/>
+					<StationSelectButtons disabledStations={disabledStations} onSelect={onSelect} />
+				</Stack>
+				<IconButton aria-label='削除' onClick={onRemove} sx={{ alignSelf: 'center' }}>
+					<DeleteIcon />
+				</IconButton>
+			</Stack>
+		);
+	};
+
 	React.useEffect(() => {
 		if (sessionStorage.getItem('lastSearch')) {
 			const lastSearch = JSON.parse(sessionStorage.getItem('lastSearch'));
@@ -148,6 +293,18 @@ export default function TransferInput({ onSearch, loading }) {
 			from: options.to,
 			to: options.from,
 			viaStations: options.viaStations.toReversed(),
+		});
+	};
+
+	const moveViaStation = (fromIndex, toIndex) => {
+		setOptions((prev) => {
+			const newViaStations = [...prev.viaStations];
+			const [moved] = newViaStations.splice(fromIndex, 1);
+			newViaStations.splice(toIndex, 0, moved);
+			return {
+				...prev,
+				viaStations: newViaStations,
+			};
 		});
 	};
 
@@ -217,49 +374,40 @@ export default function TransferInput({ onSearch, loading }) {
 							}
 						/>
 					</Stack>
-					{options.viaStations.map((viaStation, index) => (
-						<Stack direction='row' spacing={1} key={index} sx={{ alignItems: 'center', width: '100%' }}>
-							<Stack spacing={0.5} sx={{ width: '100%' }}>
-								<StationSelecter
-									onChange={(value) => {
-										const newViaStations = [...options.viaStations];
-										newViaStations[index] = value;
-										setOptions({
-											...options,
-											viaStations: newViaStations,
-										});
-									}}
-									value={viaStation}
-									placeholder={`経由駅${index + 1}を選択`}
-									disabledStations={[
-										options.from?.value,
-										options.to?.value,
-										...options.viaStations.filter((s, i) => i !== index).map((s) => s?.value),
-									]}
-								/>
-								<StationSelectButtons
-									disabledStations={[
-										options.from?.value,
-										options.to?.value,
-										...options.viaStations.filter((s, i) => i !== index).map((s) => s?.value),
-									]}
-									onSelect={(value) => {
-										const newViaStations = [...options.viaStations];
-										newViaStations[index] = {
-											value: value,
-											label: stations[value].name,
-											kana: stations[value].kana,
-										};
-										setOptions({
-											...options,
-											viaStations: newViaStations,
-										});
-									}}
-								/>
-							</Stack>
-							<IconButton
-								aria-label='削除'
-								onClick={() => {
+					<DndProvider backend={HTML5Backend}>
+						<CustomDragLayer />
+						{options.viaStations.map((viaStation, index) => (
+							<ViaStationRow
+								key={index}
+								station={viaStation}
+								index={index}
+								moveViaStation={moveViaStation}
+								onChange={(value) => {
+									const newViaStations = [...options.viaStations];
+									newViaStations[index] = value;
+									setOptions({
+										...options,
+										viaStations: newViaStations,
+									});
+								}}
+								onSelect={(value) => {
+									const newViaStations = [...options.viaStations];
+									newViaStations[index] = {
+										value: value,
+										label: stations[value].name,
+										kana: stations[value].kana,
+									};
+									setOptions({
+										...options,
+										viaStations: newViaStations,
+									});
+								}}
+								disabledStations={[
+									options.from?.value,
+									options.to?.value,
+									...options.viaStations.filter((s, i) => i !== index).map((s) => s?.value),
+								]}
+								onRemove={() => {
 									const newViaStations = [...options.viaStations];
 									newViaStations.splice(index, 1);
 									setOptions({
@@ -267,12 +415,9 @@ export default function TransferInput({ onSearch, loading }) {
 										viaStations: newViaStations,
 									});
 								}}
-								sx={{ alignSelf: 'center' }}
-							>
-								<DeleteIcon />
-							</IconButton>
-						</Stack>
-					))}
+							/>
+						))}
+					</DndProvider>
 					<Button
 						variant='outlined'
 						endIcon={<AddOutlinedIcon />}
