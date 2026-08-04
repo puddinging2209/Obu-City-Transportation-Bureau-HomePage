@@ -86,6 +86,7 @@ export function TimeControl() {
 					inputMode='numeric'
 					value={timeState.speedRate}
 					onChange={e => {
+						const rate = e.target.value
 						const number = Number.isNaN(Number(rate)) ? 1 : Number(rate)
 						setSpeed(number)
 					}}
