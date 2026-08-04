@@ -6,9 +6,10 @@ export default function getDirections(station) {
 	const lines = Object.values(nodes)
 		.filter((n) => n.id === station)
 		.map((n) => n.line)
-		.flat();
+		.filter((l) => l !== '徒歩経路');
 	return lines
 		.map((line) => {
+			console.log(line);
 			const index = linesData[line].stations.findIndex((s) => station === s.id);
 			if (index === -1) return [];
 			if (!linesData[line].isLoop || !(index === 0 || index === linesData[line].stations.length - 1))

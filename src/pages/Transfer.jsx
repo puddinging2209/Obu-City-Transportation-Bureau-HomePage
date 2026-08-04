@@ -1,14 +1,13 @@
 import React from 'react';
 
-import { atom, useAtom } from 'jotai';
+import { useAtom } from 'jotai';
 
 import TransferInput from '../components/TransferInput.jsx';
 import TransferOutput from '../components/TransferOutput.jsx';
 
+import { resultAtom } from '../utils/Atom.js';
 import { dijkstra } from '../utils/findRoute.js';
 import { adjustTime } from '../utils/Time.js';
-
-export const resultAtom = atom([]);
 
 function Transfer() {
 	const [result, setResult] = useAtom(resultAtom);

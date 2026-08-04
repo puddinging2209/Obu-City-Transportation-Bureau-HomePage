@@ -31,3 +31,5 @@ export const addMyStationAtom = atom(null, (get, set, s) => {
 export const nearestStationAtom = atom(null);
 
 export const isOpenDrawerAtom = atom(false);
+
+export const resultAtom = atom([]);
