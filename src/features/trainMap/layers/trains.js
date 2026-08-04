@@ -3,6 +3,8 @@ import { ScatterplotLayer } from 'deck.gl';
 import linesData from '../../../data/lines.json';
 import typesData from '../../../data/types.json';
 import { dia } from '../.././../utils/readOud';
+import { TrainInfo } from '../components/TrainInfo';
+import { setBottomSheetComponentAtom, setBottomSheetTitleAtom } from '../states/sheet';
 import TrainMapWorker from '../trainMapWorker?worker';
 
 export async function initializeTrainsLayer({ map, store }) {
@@ -12,6 +14,10 @@ export async function initializeTrainsLayer({ map, store }) {
 			parseInt(hex.substring(3, 5), 16),
 			parseInt(hex.substring(5, 7), 16)
 		]
+	}
+	const showTrainInfo = (train) => {
+		store.set(setBottomSheetComponentAtom, TrainInfo, { train })
+		store.set(setBottomSheetTitleAtom, '列車情報')
 	}
 
 	const worker = new TrainMapWorker()
@@ -45,7 +51,7 @@ export async function initializeTrainsLayer({ map, store }) {
 				const layer = new ScatterplotLayer({
 					id: 'trains',
 					data: points,
-					pickable: false,
+					pickable: true,
 
 					getPosition: d => d.position,
 					getFillColor: d => d.color,
@@ -61,6 +67,12 @@ export async function initializeTrainsLayer({ map, store }) {
 					updateTriggers: {
 						getPosition: data.sec,
 						getFillColor: data.sec
+					},
+					onClick: (e) => {
+						const train = data.data.find(t => t.number === e.object?.id)
+						if (train) {
+							showTrainInfo(train)
+						}
 					}
 				})
 				trainOverlay.setProps({
