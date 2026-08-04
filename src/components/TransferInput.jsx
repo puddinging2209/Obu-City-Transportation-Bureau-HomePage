@@ -3,6 +3,8 @@ import React from 'react';
 import dayjs from 'dayjs';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
+import DeleteIcon from '@mui/icons-material/Delete';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SwapVertIcon from '@mui/icons-material/SwapVert';
 import {
@@ -48,6 +50,7 @@ export default function TransferInput({ onSearch, loading }) {
 		tokkyu: false,
 		allowOuterTransfer: true,
 		transferTime: 30,
+		viaStations: [],
 	});
 
 	const [openOption, setOpenOption] = React.useState(false);
@@ -139,6 +142,15 @@ export default function TransferInput({ onSearch, loading }) {
 		});
 	}, []);
 
+	const handleSwap = () => {
+		setOptions({
+			...options,
+			from: options.to,
+			to: options.from,
+			viaStations: options.viaStations.toReversed(),
+		});
+	};
+
 	const handleSearch = (options) => {
 		let mode;
 		let t = toSeconds(options.time);
@@ -162,14 +174,6 @@ export default function TransferInput({ onSearch, loading }) {
 				time: t,
 			}),
 		);
-	};
-
-	const handleSwap = () => {
-		setOptions({
-			...options,
-			from: options.to,
-			to: options.from,
-		});
 	};
 
 	return (
@@ -197,10 +201,10 @@ export default function TransferInput({ onSearch, loading }) {
 							}
 							value={options.from}
 							placeholder='出発駅を選択'
-							disabledStations={[options.to?.value]}
+							disabledStations={[options.to?.value, ...options.viaStations.map((s) => s?.value)]}
 						/>
 						<StationSelectButtons
-							disabledStations={[options.to?.value]}
+							disabledStations={[options.to?.value, ...options.viaStations.map((s) => s?.value)]}
 							onSelect={(value) =>
 								setOptions({
 									...options,
@@ -213,15 +217,84 @@ export default function TransferInput({ onSearch, loading }) {
 							}
 						/>
 					</Stack>
+					{options.viaStations.map((viaStation, index) => (
+						<Stack direction='row' spacing={1} key={index} sx={{ alignItems: 'center', width: '100%' }}>
+							<Stack spacing={0.5} sx={{ width: '100%' }}>
+								<StationSelecter
+									onChange={(value) => {
+										const newViaStations = [...options.viaStations];
+										newViaStations[index] = value;
+										setOptions({
+											...options,
+											viaStations: newViaStations,
+										});
+									}}
+									value={viaStation}
+									placeholder={`経由駅${index + 1}を選択`}
+									disabledStations={[
+										options.from?.value,
+										options.to?.value,
+										...options.viaStations.filter((s, i) => i !== index).map((s) => s?.value),
+									]}
+								/>
+								<StationSelectButtons
+									disabledStations={[
+										options.from?.value,
+										options.to?.value,
+										...options.viaStations.filter((s, i) => i !== index).map((s) => s?.value),
+									]}
+									onSelect={(value) => {
+										const newViaStations = [...options.viaStations];
+										newViaStations[index] = {
+											value: value,
+											label: stations[value].name,
+											kana: stations[value].kana,
+										};
+										setOptions({
+											...options,
+											viaStations: newViaStations,
+										});
+									}}
+								/>
+							</Stack>
+							<IconButton
+								aria-label='削除'
+								onClick={() => {
+									const newViaStations = [...options.viaStations];
+									newViaStations.splice(index, 1);
+									setOptions({
+										...options,
+										viaStations: newViaStations,
+									});
+								}}
+								sx={{ alignSelf: 'center' }}
+							>
+								<DeleteIcon />
+							</IconButton>
+						</Stack>
+					))}
+					<Button
+						variant='outlined'
+						endIcon={<AddOutlinedIcon />}
+						onClick={() =>
+							setOptions({
+								...options,
+								viaStations: [...options.viaStations, null],
+							})
+						}
+						fullWidth
+					>
+						経由駅を追加する
+					</Button>
 					<Stack spacing={0.5}>
 						<StationSelecter
 							onChange={(value) => setOptions({ ...options, to: value })}
 							value={options.to}
 							placeholder='到着駅を選択'
-							disabledStations={[options.from?.value]}
+							disabledStations={[options.from?.value, ...options.viaStations.map((s) => s?.value)]}
 						/>
 						<StationSelectButtons
-							disabledStations={[options.from?.value]}
+							disabledStations={[options.from?.value, ...options.viaStations.map((s) => s?.value)]}
 							onSelect={(value) =>
 								setOptions({
 									...options,
