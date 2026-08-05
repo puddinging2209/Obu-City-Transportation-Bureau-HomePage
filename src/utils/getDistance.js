@@ -66,13 +66,25 @@ class MinHeap {
 	}
 }
 
+function containsInOrder(parent, sub) {
+	let subIndex = 0;
+	for (const item of parent) {
+		if (item === sub[subIndex]) {
+			subIndex++;
+			if (subIndex === sub.length) return true;
+		}
+	}
+	return sub.length === 0;
+}
+
 /**
  * 2駅間の最短経路とその距離を返す
  * @param {string} start 出発駅id
  * @param {string} goal 到着駅id
+ * @param {string[]} via 経由駅id
  * @returns {{distance: number, path: string[]}} 最短経路(ナンバリング配列)とその距離
  */
-function dijkstra(start, goal) {
+export function dijkstra(start, goal, via = []) {
 	const distances = {};
 	const previous = {};
 	Object.keys(graph).forEach((node) => {
@@ -86,12 +98,23 @@ function dijkstra(start, goal) {
 	distances[start] = 0;
 	pq.push({ node: start, priority: 0 });
 
+	let path = [];
 	while (true) {
 		const current = pq.pop();
 		if (!current) break;
 
 		const currentNode = current.node;
-		if (currentNode === goal) break;
+		if (currentNode === goal) {
+			// 経路復元
+			path = [];
+			let cur = goal;
+			while (cur !== undefined) {
+				path.unshift(cur);
+				cur = previous[cur];
+			}
+			if (containsInOrder(path, via)) break;
+			else continue;
+		}
 
 		for (const neighbor of graph[currentNode] || []) {
 			const newDist = distances[currentNode] + neighbor.cost;
@@ -103,14 +126,6 @@ function dijkstra(start, goal) {
 		}
 	}
 
-	// 経路復元
-	const path = [];
-	let cur = goal;
-	while (cur !== undefined) {
-		path.unshift(cur);
-		cur = previous[cur];
-	}
-
 	return { path, distance: distances[goal] };
 }
 
@@ -118,9 +133,10 @@ function dijkstra(start, goal) {
  * 2駅間の距離(営業キロ)を返す
  * @param {string} start 出発駅id
  * @param {string} goal 到着駅id
+ * @param {string[]} via 経由駅id
  * @returns {number} 距離(km)
  */
-export default function getDistance(start, goal) {
-	const result = dijkstra(start, goal);
+export default function getDistance(start, goal, via = []) {
+	const result = dijkstra(start, goal, via);
 	return result.distance ?? 0;
 }
