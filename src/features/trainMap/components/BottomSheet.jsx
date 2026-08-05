@@ -1,5 +1,5 @@
 import CloseIcon from '@mui/icons-material/Close';
-import { IconButton, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, IconButton, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { useAtomValue, useSetAtom } from 'jotai';
 import { bottomSheetContent, clearBottomSheetAtom, isBottomSheetOpenAtom, setBottomSheetComponentAtom, setBottomSheetTitleAtom } from '../states/sheet';
 
@@ -34,7 +34,6 @@ export function BottomSheet() {
 				alignItems='center'
 				sx={{
 					height: '100%',
-					overflowY: 'auto'
 				}}
 			>
 				<Typography>{bottomSheet.title}</Typography>
@@ -42,9 +41,16 @@ export function BottomSheet() {
 					<CloseIcon></CloseIcon>
 				</IconButton>
 			</Stack>
-			{isBottomSheetOpen ? (
-				<bottomSheet.component {...bottomSheet.props}></bottomSheet.component>
-			) : <></>}
+			<Box
+				sx={{
+					height: '100%',
+					overflowY: 'auto'
+				}}
+			>
+				{isBottomSheetOpen ? (
+					<bottomSheet.component {...bottomSheet.props}></bottomSheet.component>
+				) : <></>}
+			</Box>
 		</Stack>
 	)
 }
