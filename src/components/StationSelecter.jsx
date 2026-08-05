@@ -153,3 +153,9 @@ export function StationSelectButtons({ onSelect, disabledStations = [] }) {
 		</Stack>
 	);
 }
+
+export const toSelecterOption = (id) => {
+	const stationName = stations[id]?.name;
+	if (!stationName) return null;
+	return { label: stationName, value: id, kana: stations[id]?.kana || '' };
+};

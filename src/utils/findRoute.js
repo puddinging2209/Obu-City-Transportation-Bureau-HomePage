@@ -329,7 +329,6 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 					...makePriority(nextTime, path.to, nextTransfer),
 				});
 			} else {
-				console.log(station, graph[station]);
 				for (const { node: nextStation } of graph[station] ?? []) {
 					// 不正乗車、ダメゼッタイ
 					const visitedArray = [...visited];
