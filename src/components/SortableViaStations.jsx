@@ -34,6 +34,7 @@ export default function SortableViaStations({ handleChange, handleDelete, disabl
 	const [value, setValue] = React.useState();
 	const [options, setOptions] = React.useState({
 		exitGate: false,
+		exitTrain: false,
 		stayingTime: 0.5,
 	});
 	const [timeIndex, setTimeIndex] = React.useState(0);
@@ -101,7 +102,21 @@ export default function SortableViaStations({ handleChange, handleDelete, disabl
 						<Typography variant='body2' color='text.secondary'>
 							<FormControlLabel
 								control={<Checkbox />}
-								onChange={(e) => setOptions({ ...options, exitGate: e.target.checked })}
+								onChange={(e) => setOptions({ ...options, exitTrain: e.target.checked })}
+								checked={options.exitTrain}
+								label='列車から降りる'
+							/>
+						</Typography>
+						<Typography variant='body2' color='text.secondary'>
+							<FormControlLabel
+								control={<Checkbox />}
+								onChange={(e) =>
+									setOptions({
+										...options,
+										exitGate: e.target.checked,
+										exitTrain: e.target.checked ? true : options.exitTrain,
+									})
+								}
 								checked={options.exitGate}
 								label='改札外へ出る'
 							/>
