@@ -135,9 +135,9 @@ export default function SortableViaStations({ handleChange, handleDelete, disabl
 	);
 }
 
-export function DraggingItem({ label, sx }) {
+export function DraggingItem({ label }) {
 	return (
-		<Paper elevation={3} sx={{ p: 1, width: '100%', ...sx }}>
+		<Paper elevation={3} sx={{ p: 1, width: '100%' }}>
 			<Stack direction='row' sx={{ alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
 				<Typography variant='subtitle1'>{label}</Typography>
 				<DragHandleIcon sx={{ alignSelf: 'center' }} />
