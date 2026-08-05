@@ -28,3 +28,8 @@ export function toTimeString(seconds) {
 export function adjustTime(seconds) {
 	return seconds < 10800 ? seconds + 86400 : seconds;
 }
+
+export function toSeconds(time) {
+	if (!dayjs.isDayjs(time)) return time;
+	return Number(time.format('HH')) * 3600 + Number(time.format('mm')) * 60 + Number(time.format('ss'));
+}
