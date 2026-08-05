@@ -73,7 +73,12 @@ export default function TransferInput({ onSearch, loading }) {
 				String(options.transferTime).padStart(2, 0) +
 				(options.tokkyu ? 't' : 'f') +
 				(options.allowOuterTransfer ? 't' : 'f') +
-				options.to.value,
+				options.to.value +
+				(options.enableViaStations ?
+					options.viaStations
+						.map((s) => s.value?.value + String(s.options.stayingTime).padStart(2, 0) + (s.options.exitGate ? 't' : 'f'))
+						.join('')
+				:	''),
 		);
 		navigate(`/transfer?${params.toString()}`);
 	};
@@ -97,8 +102,23 @@ export default function TransferInput({ onSearch, loading }) {
 		const tokkyu = p.slice(11, 12) === 't';
 		const allowOuterTransfer = p.slice(12, 13) === 't';
 		const to = toSelecterOption(p.slice(13, 16));
+		const enableViaStations = p.length > 16;
+		const viaStations =
+			enableViaStations ?
+				p
+					.slice(16)
+					.match(/.{1,6}/g)
+					.map((s) => ({
+						id: crypto.randomUUID(),
+						value: toSelecterOption(s.slice(0, 3)),
+						options: {
+							stayingTime: Number(s.slice(3, 5)),
+							exitGate: s.slice(5, 6) === 't',
+						},
+					}))
+			:	[];
 
-		return { from, to, timeType, time, tokkyu, allowOuterTransfer, transferTime };
+		return { from, to, timeType, time, tokkyu, allowOuterTransfer, transferTime, enableViaStations, viaStations };
 	};
 
 	React.useEffect(() => {
@@ -114,6 +134,8 @@ export default function TransferInput({ onSearch, loading }) {
 				transferTime: lastSearch.transferTime,
 				tokkyu: lastSearch.tokkyu,
 				allowOuterTransfer: lastSearch.allowOuterTransfer,
+				enableViaStations: lastSearch.enableViaStations,
+				viaStations: lastSearch.viaStations,
 			});
 
 			writeQuery(lastSearch);
@@ -188,7 +210,7 @@ export default function TransferInput({ onSearch, loading }) {
 
 		writeQuery(options);
 
-		onSearch(options.from?.value, options.to?.value, t, mode, options.transferTime, options.tokkyu, options.allowOuterTransfer);
+		onSearch(options.from?.value, options.to?.value, t, mode, options);
 		sessionStorage.setItem(
 			'lastSearch',
 			JSON.stringify({
@@ -265,9 +287,11 @@ export default function TransferInput({ onSearch, loading }) {
 							modifiers={[restrictToVerticalAxis]}
 						>
 							<SortableContext items={options.viaStations}>
-								{options.viaStations.map(({ id, value }) => (
+								{options.viaStations.map(({ id, value, options: stationOptions }) => (
 									<Stack key={id} sx={{ mb: 1.5 }}>
 										<SortableViaStations
+											value={value}
+											options={stationOptions}
 											handleChange={(v) => handleChangeViaStation(id, v)}
 											handleDelete={() => handleDeleteViaStation(id)}
 											disabledStations={[
@@ -290,7 +314,14 @@ export default function TransferInput({ onSearch, loading }) {
 							onClick={() =>
 								setOptions({
 									...options,
-									viaStations: [...options.viaStations, { id: crypto.randomUUID() }],
+									viaStations: [
+										...options.viaStations,
+										{
+											id: crypto.randomUUID(),
+											value: null,
+											options: { stayingTime: 5, exitGate: false },
+										},
+									],
 								})
 							}
 							fullWidth
@@ -401,7 +432,7 @@ export default function TransferInput({ onSearch, loading }) {
 
 				<Button
 					onClick={() => handleSearch(options)}
-					disabled={!options.from || !options.to}
+					disabled={!options.from || !options.to || (options.enableViaStations && options.viaStations.some((s) => !s.value))}
 					variant='contained'
 					size={isMobile ? 'medium' : 'large'}
 					loading={loading}

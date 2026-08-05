@@ -22,7 +22,7 @@ import {
 
 import StationSelecter, { StationSelectButtons, toSelecterOption } from './StationSelecter.jsx';
 
-const timeValues = [0.5, 1, 5, 10, 15, 20, 30, 40, 50, 60];
+const timeValues = [0, 0.5, 1, 5, 10, 15, 20, 30, 40, 50, 60];
 const scale = (i) => timeValues[i];
 
 const marks = timeValues.map((value, index) => ({
@@ -30,14 +30,8 @@ const marks = timeValues.map((value, index) => ({
 	label: value.toString(),
 }));
 
-export default function SortableViaStations({ handleChange, handleDelete, disabledStations, id }) {
-	const [value, setValue] = React.useState();
-	const [options, setOptions] = React.useState({
-		exitGate: false,
-		exitTrain: false,
-		stayingTime: 0.5,
-	});
-	const [timeIndex, setTimeIndex] = React.useState(0);
+export default function SortableViaStations({ handleChange, handleDelete, disabledStations, id, value, options }) {
+	const [timeIndex, setTimeIndex] = React.useState(options.stayingTime ? timeValues.indexOf(options.stayingTime) : 3);
 	const [openDialog, setOpenDialog] = React.useState(false);
 
 	const { setNodeRef, attributes, listeners, transform, transition, isDragging, setActivatorNodeRef } = useSortable({
@@ -62,7 +56,6 @@ export default function SortableViaStations({ handleChange, handleDelete, disabl
 					<Stack spacing={0.5} sx={{ width: '100%' }}>
 						<StationSelecter
 							onChange={(v) => {
-								setValue(v);
 								handleChange({ value: v, options });
 							}}
 							value={value}
@@ -73,7 +66,6 @@ export default function SortableViaStations({ handleChange, handleDelete, disabl
 							disabledStations={disabledStations}
 							onSelect={(v) => {
 								const newValue = toSelecterOption(v);
-								setValue(newValue);
 								handleChange({ value: newValue, options });
 							}}
 						/>
@@ -96,25 +88,16 @@ export default function SortableViaStations({ handleChange, handleDelete, disabl
 				</Stack>
 			</div>
 			<Dialog open={openDialog} onClose={handleCloseDialog} fullWidth>
-				<DialogTitle>経由駅の設定({value?.label ?? '駅が選択されていません'})</DialogTitle>
+				<DialogTitle>経由駅オプション({value?.label ?? '駅が選択されていません'})</DialogTitle>
 				<DialogContent>
 					<Stack spacing={2}>
 						<Typography variant='body2' color='text.secondary'>
 							<FormControlLabel
 								control={<Checkbox />}
-								onChange={(e) => setOptions({ ...options, exitTrain: e.target.checked })}
-								checked={options.exitTrain}
-								label='列車から降りる'
-							/>
-						</Typography>
-						<Typography variant='body2' color='text.secondary'>
-							<FormControlLabel
-								control={<Checkbox />}
 								onChange={(e) =>
-									setOptions({
-										...options,
-										exitGate: e.target.checked,
-										exitTrain: e.target.checked ? true : options.exitTrain,
+									handleChange({
+										value,
+										options: { ...options, exitGate: e.target.checked },
 									})
 								}
 								checked={options.exitGate}
@@ -129,9 +112,12 @@ export default function SortableViaStations({ handleChange, handleDelete, disabl
 								value={timeIndex}
 								onChange={(_, v) => {
 									setTimeIndex(v);
-									setOptions({ ...options, stayingTime: scale(v) });
+									handleChange({
+										value,
+										options: { ...options, stayingTime: scale(v) },
+									});
 								}}
-								defaultValue={0}
+								defaultValue={3}
 								valueLabelDisplay='auto'
 								step={1}
 								marks
@@ -152,7 +138,7 @@ export default function SortableViaStations({ handleChange, handleDelete, disabl
 
 export function DraggingItem({ label }) {
 	return (
-		<Paper elevation={3} sx={{ p: 1, width: '100%' }}>
+		<Paper elevation={3} sx={{ p: 1, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 			<Stack direction='row' sx={{ alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
 				<Typography variant='subtitle1'>{label}</Typography>
 				<DragHandleIcon sx={{ alignSelf: 'center' }} />

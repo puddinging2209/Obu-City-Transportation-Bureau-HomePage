@@ -1,5 +1,6 @@
 import reconstructByState from './formatRoute.js';
 import getDistance from './getDistance.js';
+import getFare from './getFare.js';
 import { searchFastestTrain, searchOtherStops } from './searchFastestTrain.js';
 import { code, id } from './Station.js';
 
@@ -150,6 +151,17 @@ function findAllowedDuplicateRule(station, nextStation, visitedArray) {
 	);
 }
 
+function containsInOrder(parent, sub) {
+	let subIndex = 0;
+	for (const item of parent) {
+		if (item === sub[subIndex]) {
+			subIndex++;
+			if (subIndex === sub.length) return true;
+		}
+	}
+	return sub.length === 0;
+}
+
 /**
  * 経路を探索し、経路の詳細を返す
  * @param {string} start 出発駅（ナンバリング）
@@ -162,7 +174,7 @@ function findAllowedDuplicateRule(station, nextStation, visitedArray) {
  * @returns {[{train: string, from: string, to: string, depTime: number, arrTime: number, terminal: string, typeName: string, line: string}, ...]} 経路の詳細情報の配列
  */
 
-export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu, allowOuterTransfer = false) {
+export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu, allowOuterTransfer = false, passStations = []) {
 	const pq = new MinHeap();
 
 	const bestTime = {};
@@ -190,6 +202,13 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 	const goalStation = mode === 0 ? code(goal) : code(start);
 
 	const distance = getDistance(id(start), id(goal));
+
+	const header = {
+		from: id(start),
+		to: id(goal),
+		distance,
+		fare: getFare(distance),
+	};
 
 	const makePriority = (time, station, transfer) => {
 		const h = heuristic(station, goalStation);
@@ -244,8 +263,18 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 
 		// === ゴール ===
 		if (id(station) === id(goalStation) && phase === 'ride') {
-			goalStateId = curStateId;
-			break;
+			if (
+				containsInOrder(
+					[...visited],
+					passStations.map((s) => id(s)),
+				)
+			) {
+				goalStateId = curStateId;
+				header.visited = [...visited].map((s) => id(s));
+				break;
+			} else {
+				continue;
+			}
 		}
 
 		// === 枝切り(?) ===
@@ -413,5 +442,5 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 	}
 
 	if (!goalStateId) return null;
-	return reconstructByState(goalStateId, previous, used, distance, mode);
+	return reconstructByState(goalStateId, previous, used, mode, header);
 }

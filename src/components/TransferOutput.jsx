@@ -29,6 +29,8 @@ export default function TransferOutput({ result }) {
 	const [showDialog, setShowDialog] = React.useState(false);
 	const [pushed, setPushed] = React.useState(null);
 
+	const settings = useAtomValue(settingsAtom);
+
 	if (!segments || segments.length === 0) return null;
 
 	const requiredTime = header.requiredTime;
@@ -70,7 +72,8 @@ export default function TransferOutput({ result }) {
 								fontWeight='bold'
 							>{`${toTimeString(segments[0].depTime)}発 ${toTimeString(segments.at(-1).arrTime)}着`}</Typography>
 							<Typography variant='body1'>
-								{requiredTime.h > 0 ? `所要時間：${requiredTime.h}時間 ${requiredTime.m}分` : `所要時間：${requiredTime.m}分`}
+								{(requiredTime.h > 0 ? `所要時間：${requiredTime.h}時間 ${requiredTime.m}分` : `所要時間：${requiredTime.m}分`) +
+									(settings.showSeconds ? ` ${requiredTime.s}秒` : '')}
 							</Typography>
 						</Box>
 						<Stack direction='column' gap={0.5} alignItems='flex-end'>
