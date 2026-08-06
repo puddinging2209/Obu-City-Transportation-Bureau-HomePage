@@ -6,7 +6,7 @@ export function LayersControl({ layers }) {
 	const [layersEnabled, setLayersEnabled] = useAtom(layersEnabledAtom)
 
 	return (
-		<Stack>
+		<Stack gap={1}>
 			{
 				layers.map((l, i) => (
 					<FormControlLabel
