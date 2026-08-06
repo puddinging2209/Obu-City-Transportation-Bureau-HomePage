@@ -17,7 +17,7 @@ export function BottomSheet() {
 			sx={{
 				position: 'absolute',
 				width: isMobile ? 'calc(100% - 16px)' : '350px',
-				maxHeight: '400px',
+				maxHeight: '70%',
 				padding: '16px',
 				left: '8px',
 				bottom: '0px',
@@ -25,6 +25,7 @@ export function BottomSheet() {
 				bgcolor: theme.palette.background.default,
 				zIndex: 1051,
 				translate: isBottomSheetOpen ? '0% 0%' : '0% 100%',
+				transition: 'translate .1s'
 			}}
 			spacing={1}
 		>
@@ -44,6 +45,7 @@ export function BottomSheet() {
 			<Box
 				sx={{
 					height: '100%',
+					overflowX: 'hidden',
 					overflowY: 'auto'
 				}}
 			>
