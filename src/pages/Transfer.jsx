@@ -22,17 +22,9 @@ function Transfer() {
 			if (!enableViaStations || viaStations.length === 0) {
 				segments = [await dijkstra(from, to, adjustTime(baseTime), mode, transferTime - 1, tokkyu, allowOuterTransfer)];
 			} else {
-				const stations = [from, ...viaStations.filter((s) => s.options.stayingTime > 0).map((s) => s.value.value), to];
+				const stations = [from, ...viaStations.map((s) => s.value.value), to];
 				let time = baseTime;
 				for (let i = 0; i < stations.length - 1; i++) {
-					let passStations = [];
-					for (let j = viaStations.findIndex((s) => s.value.value === stations[i]) + 1; j < viaStations.length; j++) {
-						if (viaStations[j].options.stayingTime === 0) {
-							passStations.push(viaStations[j].value.value);
-						} else {
-							break;
-						}
-					}
 					const segment = await dijkstra(
 						stations[i],
 						stations[i + 1],
@@ -41,7 +33,6 @@ function Transfer() {
 						transferTime - 1,
 						tokkyu,
 						allowOuterTransfer,
-						passStations,
 					);
 					time = segment.segments.at(-1).arrTime + viaStations[i]?.options?.stayingTime * 60 ?? 0;
 					if (i > 0 && !viaStations[i - 1]?.options?.exitGate) {
@@ -64,7 +55,7 @@ function Transfer() {
 							};
 							segments.pop();
 							segments.push(newSegment);
-						}
+						} else segments.push(segment);
 					} else segments.push(segment);
 				}
 			}
