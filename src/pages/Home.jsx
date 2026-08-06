@@ -1,14 +1,13 @@
-import DepartureSection from "../components/DepartureSection"
-import NoticeSection from "../components/NoticeSection"
+import DepartureSection from '../components/DepartureSection.jsx';
+import NoticeSection from '../components/NoticeSection.jsx';
 
 function Home() {
-
-    return (
-        <>
-            <DepartureSection />
-            <NoticeSection />
-        </>
-    )
+	return (
+		<>
+			<DepartureSection />
+			<NoticeSection />
+		</>
+	);
 }
 
-export default Home
+export default Home;

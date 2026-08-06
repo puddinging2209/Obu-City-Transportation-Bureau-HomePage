@@ -2,10 +2,9 @@ import { dia, resolveRosen } from './readOud.js';
 import { id, name } from './Station.js';
 import { adjustTime } from './Time.js';
 
-import lines from '../data/lines.json';
+import linesData from '../data/lines.json';
 import nodes from '../data/nodes.json';
 import numberList from '../data/numberList.json';
-import stations from '../data/stations.json';
 
 const formatStopsCache = new Map();
 
@@ -57,15 +56,22 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 	};
 	if (depth > 10 || train.number == '') return result;
 	if (first) {
-		const diagrams = await Promise.all(
-			stations[first].routes
-				.filter(
-					(route) =>
-						numberList[resolveRosen(route)]?.includes(String(train.number)) &&
-						(resolveRosen(route) != resolveRosen(line) || lines[route].isLoop),
-				)
-				.map(dia),
-		);
+		const lines = Array.from(
+			new Set(
+				Object.values(nodes)
+					.filter((n) => n.id === first)
+					.map((n) => n.line),
+			),
+		)
+			.filter(
+				(route) =>
+					numberList[resolveRosen(route)]?.includes(String(train.number)) &&
+					(resolveRosen(route) != resolveRosen(line) ||
+						(linesData[route].isLoop && [linesData[route].stations[0].id, linesData[route].stations.at(-1).id].includes(first))),
+			)
+			.map(resolveRosen);
+		console.log(lines);
+		const diagrams = await Promise.all(lines.map(dia));
 		const afterIndex =
 			train.direction === 0 ?
 				baseDiagram.railway.stations.findIndex((sta) => id(sta.name) === first)
@@ -80,8 +86,8 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 				return (
 					d.number == train.number &&
 					(!(
-						Object.values(lines).find((l) => l.json === resolveRosen(diagram.railway.name))?.isLoop ||
-						Object.values(lines).find((l) => l.json === resolveRosen(line))?.isLoop
+						Object.values(linesData).find((l) => l.json === resolveRosen(diagram.railway.name))?.isLoop ||
+						Object.values(linesData).find((l) => l.json === resolveRosen(line))?.isLoop
 					) ||
 						(d.timetable._data[beforeIndex]?.arrival ?
 							adjustTime(d.timetable._data[beforeIndex]?.arrival) < adjustTime(train.timetable._data[afterIndex]?.departure)
@@ -99,8 +105,8 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 				return (
 					d.number == train.number &&
 					(!(
-						Object.values(lines).find((l) => l.json === resolveRosen(beforeDiagram.railway.name))?.isLoop ||
-						Object.values(lines).find((l) => l.json === resolveRosen(line))?.isLoop
+						Object.values(linesData).find((l) => l.json === resolveRosen(beforeDiagram.railway.name))?.isLoop ||
+						Object.values(linesData).find((l) => l.json === resolveRosen(line))?.isLoop
 					) ||
 						(d.timetable._data[beforeIndex]?.arrival ?
 							adjustTime(d.timetable._data[beforeIndex]?.arrival) < adjustTime(train.timetable._data[afterIndex]?.departure)
@@ -149,15 +155,22 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 		}
 	}
 	if (last) {
-		const diagrams = await Promise.all(
-			stations[last].routes
-				.filter(
-					(route) =>
-						numberList[resolveRosen(route)]?.includes(String(train.number)) &&
-						(resolveRosen(route) != resolveRosen(line) || lines[route].isLoop),
-				)
-				.map(dia),
-		);
+		const lines = Array.from(
+			new Set(
+				Object.values(nodes)
+					.filter((n) => n.id === last)
+					.map((n) => n.line),
+			),
+		)
+			.filter(
+				(route) =>
+					numberList[resolveRosen(route)]?.includes(String(train.number)) &&
+					(resolveRosen(route) != resolveRosen(line) ||
+						(linesData[route].isLoop && [linesData[route].stations[0].id, linesData[route].stations.at(-1).id].includes(last))),
+			)
+			.map(resolveRosen);
+		console.log(lines);
+		const diagrams = await Promise.all(lines.map(dia));
 		const beforeIndex =
 			train.direction === 0 ?
 				baseDiagram.railway.stations.findLastIndex((sta) => id(sta.name) === last)
@@ -171,8 +184,8 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 				return (
 					d.number == train.number &&
 					(!(
-						Object.values(lines).find((l) => l.json === resolveRosen(diagram.railway.name))?.isLoop ||
-						Object.values(lines).find((l) => l.json === resolveRosen(line))?.isLoop
+						Object.values(linesData).find((l) => l.json === resolveRosen(diagram.railway.name))?.isLoop ||
+						Object.values(linesData).find((l) => l.json === resolveRosen(line))?.isLoop
 					) ||
 						(train.timetable._data[beforeIndex]?.arrival ?
 							adjustTime(d.timetable._data[afterIndex]?.departure) > adjustTime(train.timetable._data[beforeIndex]?.arrival)
@@ -190,8 +203,8 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 				return (
 					d.number == train.number &&
 					(!(
-						Object.values(lines).find((l) => l.json === resolveRosen(afterDiagram.railway.name))?.isLoop ||
-						Object.values(lines).find((l) => l.json === resolveRosen(line))?.isLoop
+						Object.values(linesData).find((l) => l.json === resolveRosen(afterDiagram.railway.name))?.isLoop ||
+						Object.values(linesData).find((l) => l.json === resolveRosen(line))?.isLoop
 					) ||
 						(train.timetable._data[beforeIndex]?.arrival ?
 							adjustTime(d.timetable._data[afterIndex]?.departure) > adjustTime(train.timetable._data[beforeIndex]?.arrival)
@@ -289,7 +302,7 @@ export default async function formatStops(line, train) {
 		} else if ((preResult[i].id === 'obu' || preResult[i].id === 'ktk') && preResult[i].stopType === 'pass') {
 			continue;
 		} else if (
-			lines[preResult[i].lineName].code === 'KT' &&
+			linesData[preResult[i].lineName].code === 'KT' &&
 			preResult.some((sta) => sta.id === 'obu' && sta.stopType === 'stop') &&
 			['obm', 'krn', 'wks'].includes(preResult[i].id) &&
 			preResult[i].stopType === 'pass'
