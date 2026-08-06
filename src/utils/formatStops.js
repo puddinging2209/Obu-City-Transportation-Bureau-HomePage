@@ -70,7 +70,6 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 						(linesData[route].isLoop && [linesData[route].stations[0].id, linesData[route].stations.at(-1).id].includes(first))),
 			)
 			.map(resolveRosen);
-		console.log(lines);
 		const diagrams = await Promise.all(lines.map(dia));
 		const afterIndex =
 			train.direction === 0 ?
@@ -169,7 +168,6 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 						(linesData[route].isLoop && [linesData[route].stations[0].id, linesData[route].stations.at(-1).id].includes(last))),
 			)
 			.map(resolveRosen);
-		console.log(lines);
 		const diagrams = await Promise.all(lines.map(dia));
 		const beforeIndex =
 			train.direction === 0 ?
