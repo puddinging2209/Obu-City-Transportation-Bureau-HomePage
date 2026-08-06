@@ -22,7 +22,7 @@ import {
 
 import StationSelecter, { StationSelectButtons, toSelecterOption } from './StationSelecter.jsx';
 
-const timeValues = [0, 0.5, 1, 5, 10, 15, 20, 30, 40, 50, 60];
+const timeValues = [0.5, 1, 5, 10, 15, 20, 30, 40, 50, 60];
 const scale = (i) => timeValues[i];
 
 const marks = timeValues.map((value, index) => ({
