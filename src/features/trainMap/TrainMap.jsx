@@ -16,6 +16,7 @@ import { timeAtom } from './states/time';
 function TrainMap() {
 	const date = new Date()
 	const store = useStore()
+	const containerRef = React.useRef()
 	const layersRef = React.useRef([])
 	const [isLoading, setIsLoading] = React.useState(true)
 	const [layersEnabled, setLayersEnabled] = useAtom(layersEnabledAtom)
@@ -55,8 +56,23 @@ function TrainMap() {
 		return () => cancelAnimationFrame(id)
 	}, [layersRef, timeState, layersEnabled])
 
+	React.useEffect(() => {
+		if (!containerRef.current) return
+
+		const node = containerRef.current.parentNode.parentNode
+		node.style.padding = '0px'
+		node.style.paddingBottom = '0px'
+		return () => {
+			node.style.padding = null
+			node.style.paddingBottom = null
+		}
+	}, [containerRef])
+
 	return (
-		<Box sx={{ position: "relative", width: "100%", height: "100%" }}>
+		<Box
+			ref={containerRef}
+			sx={{ position: "relative", width: "100%", height: "100%", overflow: 'hidden' }}
+		>
 			{isLoading ? (<Box sx={{
 				position: "absolute",
 				display: "flex",
