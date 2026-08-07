@@ -1,7 +1,7 @@
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LayersIcon from '@mui/icons-material/Layers';
 import { Box, CircularProgress, Fab, Stack } from '@mui/material';
-import { useAtom, useAtomValue, useSetAtom, useStore } from 'jotai';
+import { useAtomValue, useSetAtom, useStore } from 'jotai';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import React from 'react';
@@ -9,7 +9,7 @@ import Map from 'react-map-gl/maplibre';
 import { BottomSheet } from './components/BottomSheet';
 import { LayersControl } from './components/LayersControl';
 import { TimeControl } from './components/TimeControl';
-import { layers, layersEnabledAtom } from './states/layers';
+import { layers, layersEnabledAtom, updateLayerEnabledAtom } from './states/layers';
 import { setBottomSheetComponentAtom, setBottomSheetTitleAtom } from './states/sheet';
 import { timeAtom } from './states/time';
 
@@ -19,27 +19,29 @@ function TrainMap() {
 	const containerRef = React.useRef()
 	const layersRef = React.useRef([])
 	const [isLoading, setIsLoading] = React.useState(true)
-	const [layersEnabled, setLayersEnabled] = useAtom(layersEnabledAtom)
+	const layersEnabled = useAtomValue(layersEnabledAtom)
+	const updateLayerEnabled = useSetAtom(updateLayerEnabledAtom)
 	const timeState = useAtomValue(timeAtom)
 	const setBottomSheetContent = useSetAtom(setBottomSheetComponentAtom)
 	const setBottomSheetTitle = useSetAtom(setBottomSheetTitleAtom)
 
 	const mapHandle = (mapEl) => {
 		if (!mapEl) {
-			return
+			return;
 		}
 		mapEl.on('load', async () => {
-			const map = mapEl.getMap()
-			map.addControl(new maplibregl.NavigationControl())
+			const map = mapEl.getMap();
+			map.addControl(new maplibregl.NavigationControl());
 
 			for (const l of layers.toReversed()) {
-				const layer = await l({ map, store })
-				layersRef.current.push(layer)
-				layer.defaultEnabled ? layer.enable() : layer.disable()
+				const layer = await l({ map, store });
+				layersRef.current.push(layer);
+				const enabled = layersEnabled[layer.id] ?? layer.defaultEnabled
+				enabled ? layer.enable() : layer.disable();
+				updateLayerEnabled(layer.id,enabled )
 			}
-			layersRef.current.reverse()
-			setLayersEnabled(layersRef.current.map(l => l.defaultEnabled))
-			setIsLoading(false)
+			layersRef.current.reverse();
+			setIsLoading(false);
 		})
 	}
 
@@ -47,8 +49,8 @@ function TrainMap() {
 		let id
 		const tick = () => {
 			const sec = (timeState.baseSimulationTime + (performance.now() - timeState.startAt) * timeState.speedRate / 1000) % (60 * 60 * 24)
-			layersRef.current.forEach((l, i) => {
-				if (layersEnabled[i]) l.update(sec)
+			layersRef.current.forEach(l => {
+				if (layersEnabled[l.id]) l.update(sec)
 			})
 			id = requestAnimationFrame(tick)
 		}

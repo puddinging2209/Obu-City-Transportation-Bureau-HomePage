@@ -26,6 +26,7 @@ export async function initializeObuLayer({ map, store }) {
 	})
 
 	return {
+		id: 'obu',
 		name: '大府市の範囲',
 		defaultEnabled: false,
 		enable() {

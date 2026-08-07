@@ -1,24 +1,25 @@
 import { Checkbox, FormControlLabel, Stack } from '@mui/material';
-import { useAtom } from 'jotai';
-import { layersEnabledAtom } from '../states/layers';
+import { useAtomValue, useSetAtom } from 'jotai';
+import { layersEnabledAtom, updateLayerEnabledAtom } from '../states/layers';
 
 export function LayersControl({ layers }) {
-	const [layersEnabled, setLayersEnabled] = useAtom(layersEnabledAtom)
+	const layersEnabled = useAtomValue(layersEnabledAtom)
+	const updateLayerEnabled = useSetAtom(updateLayerEnabledAtom)
 
 	return (
 		<Stack gap={1}>
 			{
-				layers.map((l, i) => (
+				layers.map((l) => (
 					<FormControlLabel
-						key={i}
+						key={l.id}
 						label={l.name}
 						control={
 							<Checkbox
-								checked={layersEnabled[i] ?? false}
+								checked={layersEnabled[l.id] ?? false}
 							></Checkbox>
 						}
 						onChange={e => {
-							setLayersEnabled(layersEnabled.with(i, e.target.checked))
+							updateLayerEnabled(l.id, e.target.checked)
 							e.target.checked ? l.enable() : l.disable()
 						}}
 					></FormControlLabel>

@@ -51,7 +51,7 @@ export async function initializeStationsLayer({ map, store }) {
 		source: 'stations',
 		minzoom: 9.5,
 		layout: {
-			'icon-image': ['get','icon'],
+			'icon-image': ['get', 'icon'],
 			'icon-size': 0.25,
 			'text-field': ['get', 'name'],
 			'text-offset': [0.7, 0],
@@ -67,6 +67,7 @@ export async function initializeStationsLayer({ map, store }) {
 	});
 
 	return {
+		id: 'stations',
 		name: '駅',
 		defaultEnabled: true,
 		enable() {
@@ -75,6 +76,6 @@ export async function initializeStationsLayer({ map, store }) {
 		disable() {
 			map.setLayoutProperty('stations', 'visibility', 'none')
 		},
-		update() {}
+		update() { }
 	}
 }

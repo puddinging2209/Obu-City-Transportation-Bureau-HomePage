@@ -26,6 +26,7 @@ export async function initializeGeolocationLayer({ map, store }) {
 	})
 
 	return {
+		id: 'geolocation',
 		name: '現在位置',
 		defaultEnabled: false,
 		enable() {

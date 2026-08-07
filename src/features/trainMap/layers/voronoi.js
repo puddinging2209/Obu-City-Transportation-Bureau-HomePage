@@ -81,6 +81,7 @@ export async function initializeVoronoiLayer({ map, store }) {
 	});
 
 	return {
+		id: 'voronoi',
 		name: '駅ログ範囲',
 		defaultEnabled: false,
 		enable() {

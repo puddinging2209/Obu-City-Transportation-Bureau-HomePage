@@ -84,6 +84,7 @@ export async function initializeTrainsLayer({ map, store }) {
 	})
 
 	return {
+		id: 'trains',
 		name: '列車',
 		defaultEnabled: true,
 		enable() {
