@@ -1269,7 +1269,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": true,
 					"exp": true,
 					"rap-exp": null,
@@ -1285,7 +1285,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": "some",
 					"exp": false,
 					"rap-exp": null,
@@ -1301,7 +1301,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": "some",
 					"exp": false,
 					"rap-exp": false,
@@ -1317,7 +1317,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": "some",
 					"exp": false,
 					"rap-exp": false,
@@ -1333,7 +1333,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": "some",
 					"exp": false,
 					"rap-exp": false,
@@ -1349,7 +1349,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": true,
 					"exp": true,
 					"rap-exp": false,
@@ -1365,7 +1365,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": "some",
 					"exp": false,
 					"rap-exp": false,
@@ -1381,7 +1381,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": true,
 					"exp": true,
 					"rap-exp": false,
@@ -1397,7 +1397,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": false,
 					"sub-exp": "some",
 					"exp": false,
 					"rap-exp": false,
@@ -1413,7 +1413,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": "some",
 					"exp": false,
 					"rap-exp": false,
@@ -1429,7 +1429,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": "some",
 					"sub-exp": "some",
 					"exp": false,
 					"rap-exp": false,
@@ -1445,7 +1445,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": true,
 					"exp": true,
 					"rap-exp": true,
@@ -1461,7 +1461,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": "some",
 					"sub-exp": true,
 					"exp": true,
 					"rap-exp": false,
@@ -1477,7 +1477,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": true,
 					"exp": true,
 					"rap-exp": true,
@@ -5845,7 +5845,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": false,
 					"rap-exp": false,
@@ -5861,7 +5861,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": true,
 					"rap-exp": false,
@@ -5877,7 +5877,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": false,
 					"rap-exp": false,
@@ -5893,7 +5893,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": true,
 					"rap-exp": true,
@@ -5909,7 +5909,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": false,
 					"rap-exp": false,
@@ -5925,7 +5925,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": false,
 					"rap-exp": false,
@@ -5941,7 +5941,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": false,
 					"rap-exp": false,
@@ -5957,7 +5957,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": true,
 					"rap-exp": false,
@@ -5973,7 +5973,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": false,
 					"rap-exp": false,
@@ -5989,7 +5989,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": true,
 					"rap-exp": true,
@@ -6005,7 +6005,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": false,
 					"rap-exp": false,
@@ -6021,7 +6021,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": true,
 					"rap-exp": false,
@@ -6037,7 +6037,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": false,
 					"rap-exp": false,
@@ -6053,7 +6053,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": false,
 					"rap-exp": false,
@@ -6069,7 +6069,7 @@
 					"loc": true,
 					"rap": null,
 					"com-sem-exp": null,
-					"sem-exp": null,
+					"sem-exp": true,
 					"sub-exp": null,
 					"exp": true,
 					"rap-exp": true,
@@ -9114,6 +9114,540 @@
 					"sub-exp": true,
 					"exp": true,
 					"rap-exp": true,
+					"com-exp": null,
+					"lim-exp": null,
+					"lin": null
+				}
+			}
+		]
+	},
+	"岡崎線": {
+		"name": "岡崎線",
+		"show": "岡崎線",
+		"code": "OZ",
+		"json": "OZ",
+		"color": "#E65100",
+		"type": "subway",
+		"isLoop": false,
+		"stations": [
+			{
+				"id": "kbn",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": false,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "kmb",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": false,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "mgn",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": false,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "kmr",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": false,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "wkz",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": true,
+					"exp": true,
+					"rap-exp": true,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "ysw",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": false,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "kug",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": false,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "fkj",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": false,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "kbr",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": true,
+					"exp": true,
+					"rap-exp": "some",
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "hkb",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": false,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "ozk",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": false,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "ozo",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": false,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "dmo",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": true,
+					"exp": true,
+					"rap-exp": true,
+					"com-exp": true,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "djj",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": true,
+					"exp": true,
+					"rap-exp": true,
+					"com-exp": true,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "igc",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": false,
+					"sub-exp": true,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "nom",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": false,
+					"sub-exp": true,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "hmd",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": false,
+					"sub-exp": true,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "ozh",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": false,
+					"sub-exp": true,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "hoz",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": true,
+					"exp": true,
+					"rap-exp": true,
+					"com-exp": true,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "iks",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": false,
+					"sub-exp": true,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "znd",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": false,
+					"sub-exp": true,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "tsk",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": true,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "onk",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": false,
+					"sub-exp": true,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "okz",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": true,
+					"exp": true,
+					"rap-exp": true,
+					"com-exp": true,
+					"lim-exp": null,
+					"lin": null
+				}
+			}
+		]
+	},
+	"岡崎線東公園支線": {
+		"name": "岡崎線東公園支線",
+		"show": "東公園線",
+		"code": "OZ",
+		"json": "OZa",
+		"color": "#E65100",
+		"type": "subway",
+		"isLoop": false,
+		"stations": [
+			{
+				"id": "djj",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": null,
+					"exp": null,
+					"rap-exp": null,
+					"com-exp": null,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "kmo",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": null,
+					"exp": null,
+					"rap-exp": null,
+					"com-exp": null,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "ida",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": null,
+					"exp": null,
+					"rap-exp": null,
+					"com-exp": null,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "igs",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": null,
+					"exp": null,
+					"rap-exp": null,
+					"com-exp": null,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "ing",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": null,
+					"exp": null,
+					"rap-exp": null,
+					"com-exp": null,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "oro",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": null,
+					"exp": null,
+					"rap-exp": null,
+					"com-exp": null,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "mtd",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": null,
+					"exp": null,
+					"rap-exp": null,
+					"com-exp": null,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
+				"id": "hko",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": null,
+					"com-sem-exp": null,
+					"sem-exp": true,
+					"sub-exp": null,
+					"exp": null,
+					"rap-exp": null,
 					"com-exp": null,
 					"lim-exp": null,
 					"lin": null
