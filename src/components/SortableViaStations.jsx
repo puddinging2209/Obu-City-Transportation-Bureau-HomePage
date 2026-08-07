@@ -78,7 +78,7 @@ export default function SortableViaStations({ handleChange, handleDelete, disabl
 					</IconButton>
 					<IconButton
 						aria-label='ドラッグ'
-						sx={{ alignSelf: 'center', cursor: 'grab' }}
+						sx={{ alignSelf: 'center', cursor: 'grab', touchAction: 'none' }}
 						ref={setActivatorNodeRef}
 						{...attributes}
 						{...listeners}
