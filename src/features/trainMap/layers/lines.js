@@ -35,6 +35,7 @@ export async function initializeLinesLayer({ map, store }) {
 	});
 
 	return {
+		id: 'lines',
 		name: '線路',
 		defaultEnabled: true,
 		enable() {
