@@ -1,5 +1,6 @@
 import linesData from '../../../data/lines.json';
 import stationsData from '../../../data/stations.json';
+import { stationLogAtom } from '../states/log';
 
 export async function initializeStationsLayer({ map, store }) {
 	const getStationPriority = stationData => {
@@ -10,10 +11,9 @@ export async function initializeStationsLayer({ map, store }) {
 				.filter(s => s).length
 		})) * stationData.routes.length + (stationData.directions.length === 1 ? 10 : 0)
 	}
-	const stationLogsVisitedList = new Set(JSON.parse(localStorage.getItem('visitedStations') || '[]').map(s => s.id))
-	map.addSource('stations', {
-		type: 'geojson',
-		data: {
+	const getFeatureCollection = () => {
+		const stationLogsVisitedList = new Set(store.get(stationLogAtom).map(s => s.id))
+		return {
 			type: 'FeatureCollection',
 			features: Object.entries(stationsData).map(([_, s]) => {
 				return {
@@ -30,6 +30,10 @@ export async function initializeStationsLayer({ map, store }) {
 				}
 			})
 		}
+	}
+	map.addSource('stations', {
+		type: 'geojson',
+		data: getFeatureCollection()
 	})
 	const subwayIcon = new Image();
 	await new Promise(resolve => {
@@ -65,6 +69,7 @@ export async function initializeStationsLayer({ map, store }) {
 			'text-halo-blur': 0
 		}
 	});
+	let unsubscribeFn = null
 
 	return {
 		id: 'stations',
@@ -72,9 +77,16 @@ export async function initializeStationsLayer({ map, store }) {
 		defaultEnabled: true,
 		enable() {
 			map.setLayoutProperty('stations', 'visibility', 'visible')
+			unsubscribeFn = store.sub(stationLogAtom, () => {
+				map.getSource('stations').setData(getFeatureCollection())
+			})
 		},
 		disable() {
 			map.setLayoutProperty('stations', 'visibility', 'none')
+			if (unsubscribeFn) {
+				unsubscribeFn()
+				unsubscribeFn = null
+			}
 		},
 		update() { }
 	}

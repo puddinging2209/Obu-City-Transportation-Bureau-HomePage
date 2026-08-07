@@ -1,3 +1,5 @@
+import { geolocationAtom } from '../states/geolocation'
+
 export async function initializeGeolocationLayer({ map, store }) {
 	let watchId = null
 	map.addSource('geolocation', {
@@ -41,6 +43,7 @@ export async function initializeGeolocationLayer({ map, store }) {
 						'visibility': 'visible'
 					}
 				})
+				store.set(geolocationAtom, [e.coords.latitude, e.coords.longitude])
 			}, null, { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 })
 			map.setLayoutProperty('geolocation', 'visibility', 'visible')
 		},
@@ -48,6 +51,7 @@ export async function initializeGeolocationLayer({ map, store }) {
 			if (watchId) {
 				navigator.geolocation.clearWatch(watchId)
 				watchId = null
+				store.set(geolocationAtom, null)
 			}
 			map.setLayoutProperty('geolocation', 'visibility', 'none')
 		},
