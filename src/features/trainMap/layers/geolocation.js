@@ -29,7 +29,7 @@ export async function initializeGeolocationLayer({ map, store }) {
 
 	return {
 		id: 'geolocation',
-		name: '現在位置',
+		name: '現在位置(駅ログ)',
 		defaultEnabled: false,
 		enable() {
 			watchId = navigator.geolocation.watchPosition(e => {
