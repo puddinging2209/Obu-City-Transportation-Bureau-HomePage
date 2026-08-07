@@ -8,6 +8,7 @@ import React from 'react';
 import Map from 'react-map-gl/maplibre';
 import { BottomSheet } from './components/BottomSheet';
 import { LayersControl } from './components/LayersControl';
+import { LoginButton } from './components/LoginButton';
 import { TimeControl } from './components/TimeControl';
 import { layers, layersEnabledAtom, updateLayerEnabledAtom } from './states/layers';
 import { setBottomSheetComponentAtom, setBottomSheetTitleAtom } from './states/sheet';
@@ -32,13 +33,14 @@ function TrainMap() {
 		mapEl.on('load', async () => {
 			const map = mapEl.getMap();
 			map.addControl(new maplibregl.NavigationControl());
+			map.addControl(new maplibregl.AttributionControl({ compact: true }), 'top-left')
 
 			for (const l of layers.toReversed()) {
 				const layer = await l({ map, store });
 				layersRef.current.push(layer);
 				const enabled = layersEnabled[layer.id] ?? layer.defaultEnabled
 				enabled ? layer.enable() : layer.disable();
-				updateLayerEnabled(layer.id,enabled )
+				updateLayerEnabled(layer.id, enabled)
 			}
 			layersRef.current.reverse();
 			setIsLoading(false);
@@ -92,8 +94,9 @@ function TrainMap() {
 				initialViewState={{
 					latitude: 35.0086145360,
 					longitude: 136.9621485834,
-					zoom: 10
+					zoom: 10,
 				}}
+				attributionControl={false}
 				mapStyle="https://tile.openstreetmap.jp/styles/maptiler-basic-ja/style.json"
 			/>
 			<Stack
@@ -118,6 +121,7 @@ function TrainMap() {
 				</Fab>
 			</Stack>
 			<BottomSheet></BottomSheet>
+			<LoginButton></LoginButton>
 		</Box>
 	)
 }

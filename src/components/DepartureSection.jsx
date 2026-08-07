@@ -52,8 +52,13 @@ export default function DepartureSection() {
 
 	const updateNearest = () => {
 		setLoadingNearest(true);
-		searchNearestStation()
-			.then((id) => {
+
+		navigator.geolocation.getCurrentPosition(
+			(pos) => {
+				const lat = pos.coords.latitude;
+				const lng = pos.coords.longitude;
+				const id = searchNearestStation({ lat, lng })
+
 				setLoadingNearest(false);
 				setNearestStation(id);
 				setNearestAtom(id);
@@ -61,11 +66,13 @@ export default function DepartureSection() {
 				const visited = localStorage.getItem('visitedStations') ? JSON.parse(localStorage.getItem('visitedStations')) : [];
 				if (visited.at(-1)?.id === id) return; // 同駅連続では更新しない
 				localStorage.setItem('visitedStations', JSON.stringify([...updateVisited(visited), { id, time: Date.now() }]));
-			})
-			.catch(() => {
+			},
+			(err) => {
 				setLoadingNearest(false);
 				alert('位置情報の取得に失敗しました');
-			});
+			},
+			{ enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+		)
 	};
 
 	React.useEffect(() => {
@@ -121,7 +128,7 @@ export default function DepartureSection() {
 								<div width='100%'>
 									<DepartureCard key={`near-${nearestStation}`} station={nearestStation} addButton />
 								</div>
-							:	<Card
+								: <Card
 									sx={{
 										width: { xs: '100%', md: 300 },
 										minHeight: 240,
@@ -157,7 +164,7 @@ export default function DepartureSection() {
 							<Box sx={{ mt: 2, width: { xs: '100%', md: 300 } }}>
 								{serchedStation ?
 									<DepartureCard key={`search-${serchedStation.value}`} station={serchedStation.value} addButton />
-								:	<Card
+									: <Card
 										sx={{
 											width: { xs: '100%', md: 300 },
 											minHeight: 240,

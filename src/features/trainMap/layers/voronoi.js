@@ -1,9 +1,9 @@
 import { Delaunay } from 'd3-delaunay';
 import stationsData from '../../../data/stations.json';
+import { stationLogAtom } from '../states/log';
 
 export async function initializeVoronoiLayer({ map, store }) {
 	const stations = Object.values(stationsData)
-	const stationLogsVisitedList = new Set(JSON.parse(localStorage.getItem('visitedStations') || '[]').map(s => s.id))
 
 	const lat0 = stations.reduce((s, p) => s + p.lat, 0) / stations.length;
 	const lng0 = stations.reduce((s, p) => s + p.lng, 0) / stations.length;
@@ -32,32 +32,37 @@ export async function initializeVoronoiLayer({ map, store }) {
 	const delaunay = Delaunay.from(xy);
 	const voronoi = delaunay.voronoi([xmin, ymin, xmax, ymax]);
 
-	const getColor = (id) => {
-		const isVisited = stationLogsVisitedList.has(id)
+	const getColor = (id, isVisited) => {
 		return '#' + id.split('').map(s =>
 			(Math.abs(Math.floor((parseInt(s, 36) - 10) / 25 * 127)) + (isVisited ? 128 : 0)).toString(16).padStart(2, '0')
 		).join('')
 	}
+	const cellPolygons = stations.map((_, i) => voronoi.cellPolygon(i))
 
-	const voronoiFeatures = [];
-	for (let i = 0; i < stations.length; i++) {
-		const cell = voronoi.cellPolygon(i);
-		if (!cell) continue;
-		const ring = cell.map(([x, y]) => toLngLat(x, y));
-		voronoiFeatures.push({
-			type: 'Feature',
-			properties: {
-				color: getColor(stations[i].id)
-			},
-			geometry: {
-				type: 'Polygon',
-				coordinates: [ring]
-			}
-		});
+	const getFeatureCollection = () => {
+		const stationLogsVisitedList = new Set(store.get(stationLogAtom).map(s => s.id))
+
+		const voronoiFeatures = [];
+		for (let i = 0; i < stations.length; i++) {
+			const cell = voronoi.cellPolygon(i);
+			if (!cell) continue;
+			const ring = cell.map(([x, y]) => toLngLat(x, y));
+			voronoiFeatures.push({
+				type: 'Feature',
+				id: stations[i].id,
+				properties: {
+					'color': getColor(stations[i].id, stationLogsVisitedList.has(stations[i].id)),
+				},
+				geometry: {
+					type: 'Polygon',
+					coordinates: [ring]
+				}
+			});
+		}
+		return { type: 'FeatureCollection', features: voronoiFeatures };
 	}
-	const voronoiGeojson = { type: 'FeatureCollection', features: voronoiFeatures };
 
-	map.addSource('voronoi', { type: 'geojson', data: voronoiGeojson });
+	map.addSource('voronoi', { type: 'geojson', data: getFeatureCollection() });
 
 	map.addLayer({
 		id: 'voronoi_fill',
@@ -79,6 +84,7 @@ export async function initializeVoronoiLayer({ map, store }) {
 			'line-opacity': 0.8
 		}
 	});
+	let unsubscribeFn = null
 
 	return {
 		id: 'voronoi',
@@ -87,10 +93,17 @@ export async function initializeVoronoiLayer({ map, store }) {
 		enable() {
 			map.setLayoutProperty('voronoi_fill', 'visibility', 'visible')
 			map.setLayoutProperty('voronoi_boundary', 'visibility', 'visible')
+			unsubscribeFn = store.sub(stationLogAtom, () => {
+				map.getSource('voronoi').setData(getFeatureCollection())
+			})
 		},
 		disable() {
 			map.setLayoutProperty('voronoi_fill', 'visibility', 'none')
 			map.setLayoutProperty('voronoi_boundary', 'visibility', 'none')
+			if (unsubscribeFn) {
+				unsubscribeFn()
+				unsubscribeFn = null
+			}
 		},
 		update() { }
 	}
