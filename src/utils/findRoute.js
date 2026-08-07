@@ -225,6 +225,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 			tie: transfer,
 		};
 	};
+	console.log(Object.keys(nodes).filter((code) => id(code) === id(startStation)));
 
 	Object.keys(nodes)
 		.filter((code) => id(code) === id(startStation))

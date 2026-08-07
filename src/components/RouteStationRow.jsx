@@ -37,7 +37,6 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
 				width: '100%',
 				overflow: 'visible',
 			}}
-			fullWidth
 		>
 			<Box
 				sx={{
@@ -49,7 +48,6 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
 					display: 'flex',
 					justifyContent: 'center',
 				}}
-				fullWidth
 			>
 				{lines.map((line, j) => {
 					const type = Object.values(types).find((t) => t.code === line);
