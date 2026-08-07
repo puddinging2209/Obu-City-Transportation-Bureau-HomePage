@@ -11,20 +11,6 @@
 			"長久手線",
 			"内田面線"
 		],
-		"directions": [
-			{
-				"route": "内田面線",
-				"stationName": "東新町"
-			},
-			{
-				"route": "内田面線",
-				"stationName": "惣作"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			}
-		],
 		"lat": 35.0277166,
 		"lng": 136.9922993,
 		"prefecture": "愛知県",
@@ -40,16 +26,6 @@
 		"roma": "Kitasaki-ōshima",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.0341029,
 		"lng": 136.9941701,
@@ -67,16 +43,6 @@
 		"routes": [
 			"長久手線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.0409185,
 		"lng": 136.9993983,
 		"prefecture": "愛知県",
@@ -92,16 +58,6 @@
 		"roma": "Biwagaike",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.0469206,
 		"lng": 137.0045878,
@@ -121,24 +77,6 @@
 			"長久手線",
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			},
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 35.05224,
 		"lng": 137.009732,
 		"prefecture": "愛知県",
@@ -154,16 +92,6 @@
 		"roma": "Toyoake-shi",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.0545475,
 		"lng": 137.0131163,
@@ -181,16 +109,6 @@
 		"routes": [
 			"長久手線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.0568163,
 		"lng": 137.0162392,
 		"prefecture": "愛知県",
@@ -206,16 +124,6 @@
 		"roma": "Jūsanzuka",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.0601059,
 		"lng": 137.0207363,
@@ -233,16 +141,6 @@
 		"routes": [
 			"長久手線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.0666313,
 		"lng": 137.0296582,
 		"prefecture": "愛知県",
@@ -258,16 +156,6 @@
 		"roma": "Wakaōjigawa",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.0734472,
 		"lng": 137.0349998,
@@ -285,16 +173,6 @@
 		"routes": [
 			"長久手線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.0832576,
 		"lng": 137.0402219,
 		"prefecture": "愛知県",
@@ -310,16 +188,6 @@
 		"roma": "Harukidai",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.0889271,
 		"lng": 137.0429267,
@@ -337,16 +205,6 @@
 		"routes": [
 			"長久手線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.0972572,
 		"lng": 137.0480292,
 		"prefecture": "愛知県",
@@ -362,16 +220,6 @@
 		"roma": "Tōgō",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.1041743,
 		"lng": 137.0521408,
@@ -389,16 +237,6 @@
 		"routes": [
 			"長久手線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.1093469,
 		"lng": 137.0517144,
 		"prefecture": "愛知県",
@@ -414,16 +252,6 @@
 		"roma": "Nisshin",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.1182368,
 		"lng": 137.0478033,
@@ -441,16 +269,6 @@
 		"routes": [
 			"長久手線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.1228768,
 		"lng": 137.0464401,
 		"prefecture": "愛知県",
@@ -466,16 +284,6 @@
 		"roma": "Nisshin-higashiyama",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.1263244,
 		"lng": 137.0456298,
@@ -493,16 +301,6 @@
 		"routes": [
 			"長久手線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.1313632,
 		"lng": 137.0448707,
 		"prefecture": "愛知県",
@@ -518,16 +316,6 @@
 		"roma": "Nisshin-hakusan",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.1408261,
 		"lng": 137.0435245,
@@ -545,16 +333,6 @@
 		"routes": [
 			"長久手線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.1441797,
 		"lng": 137.0414654,
 		"prefecture": "愛知県",
@@ -570,16 +348,6 @@
 		"roma": "Benten'ike",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.1486149,
 		"lng": 137.0396896,
@@ -597,16 +365,6 @@
 		"routes": [
 			"長久手線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.1555734,
 		"lng": 137.0385093,
 		"prefecture": "愛知県",
@@ -622,16 +380,6 @@
 		"roma": "Aichigakuindaigaku-mae",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.1615267,
 		"lng": 137.0420353,
@@ -649,16 +397,6 @@
 		"routes": [
 			"長久手線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.1713946,
 		"lng": 137.0485215,
 		"prefecture": "愛知県",
@@ -675,16 +413,6 @@
 		"routes": [
 			"長久手線"
 		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "長久手市"
-			},
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.1780178,
 		"lng": 137.0494509,
 		"prefecture": "愛知県",
@@ -700,12 +428,6 @@
 		"roma": "Nagakute-shi",
 		"routes": [
 			"長久手線"
-		],
-		"directions": [
-			{
-				"route": "長久手線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.1836169,
 		"lng": 137.0494643,
@@ -727,24 +449,6 @@
 			"緒川線",
 			"刈田川線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			},
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			}
-		],
 		"lat": 34.9911639,
 		"lng": 137.0086782,
 		"prefecture": "愛知県",
@@ -763,24 +467,6 @@
 			"大高線",
 			"刈谷環状線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷新栄町"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "日高"
-			}
-		],
 		"lat": 34.9963712,
 		"lng": 136.9958806,
 		"prefecture": "愛知県",
@@ -796,16 +482,6 @@
 		"roma": "Aizuma",
 		"routes": [
 			"大高線"
-		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
 		],
 		"lat": 34.99861,
 		"lng": 136.9899765,
@@ -825,24 +501,6 @@
 			"大高線",
 			"二ツ池線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "二ツ池線",
-				"stationName": "東緒川"
-			},
-			{
-				"route": "二ツ池線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0017679,
 		"lng": 136.9771789,
 		"prefecture": "愛知県",
@@ -860,24 +518,6 @@
 		"routes": [
 			"大高線",
 			"刈田川線"
-		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			},
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
 		],
 		"lat": 35.0086361,
 		"lng": 136.9682572,
@@ -897,24 +537,6 @@
 			"大高線",
 			"大府環状線"
 		],
-		"directions": [
-			{
-				"route": "大府環状線",
-				"stationName": "至学館大学前"
-			},
-			{
-				"route": "大府環状線",
-				"stationName": "大府"
-			},
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
-		],
 		"lat": 35.0110266,
 		"lng": 136.9655609,
 		"prefecture": "愛知県",
@@ -932,24 +554,6 @@
 		"routes": [
 			"大高線",
 			"東西線"
-		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
 		],
 		"lat": 35.017017,
 		"lng": 136.9597174,
@@ -969,24 +573,6 @@
 			"大高線",
 			"荒尾線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0262074,
 		"lng": 136.9578545,
 		"prefecture": "愛知県",
@@ -1005,24 +591,6 @@
 			"大高線",
 			"大府環状線"
 		],
-		"directions": [
-			{
-				"route": "大府環状線",
-				"stationName": "江端町"
-			},
-			{
-				"route": "大府環状線",
-				"stationName": "至学館大学前"
-			},
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
-		],
 		"lat": 35.0371056,
 		"lng": 136.954714,
 		"prefecture": "愛知県",
@@ -1039,16 +607,6 @@
 		"routes": [
 			"大高線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
-		],
 		"lat": 35.0488696,
 		"lng": 136.9519587,
 		"prefecture": "愛知県",
@@ -1064,16 +622,6 @@
 		"roma": "Minami-ōdaka",
 		"routes": [
 			"大高線"
-		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
 		],
 		"lat": 35.0554939,
 		"lng": 136.9485147,
@@ -1092,24 +640,6 @@
 		"routes": [
 			"大高線",
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 35.0621452,
 		"lng": 136.9450887,
@@ -1131,28 +661,6 @@
 			"外環線",
 			"南北線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.0696572,
 		"lng": 136.9399931,
 		"prefecture": "愛知県",
@@ -1170,20 +678,6 @@
 			"大高線",
 			"鳴海連絡線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "鳴海連絡線",
-				"stationName": "鳴海"
-			}
-		],
 		"lat": 35.07846,
 		"lng": 136.9445203,
 		"prefecture": "愛知県",
@@ -1199,16 +693,6 @@
 		"roma": "Motonaruo",
 		"routes": [
 			"大高線"
-		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
 		],
 		"lat": 35.0808722,
 		"lng": 136.9395267,
@@ -1226,16 +710,6 @@
 		"routes": [
 			"大高線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
-		],
 		"lat": 35.0845785,
 		"lng": 136.9345294,
 		"prefecture": "愛知県",
@@ -1251,16 +725,6 @@
 		"roma": "Minami-kasadera",
 		"routes": [
 			"大高線"
-		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
 		],
 		"lat": 35.090946,
 		"lng": 136.9310528,
@@ -1278,16 +742,6 @@
 		"routes": [
 			"大高線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
-		],
 		"lat": 35.0939479,
 		"lng": 136.9294534,
 		"prefecture": "愛知県",
@@ -1303,16 +757,6 @@
 		"roma": "Shin-kasadera",
 		"routes": [
 			"大高線"
-		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
 		],
 		"lat": 35.0978847,
 		"lng": 136.9273372,
@@ -1330,16 +774,6 @@
 		"routes": [
 			"大高線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
-		],
 		"lat": 35.1038027,
 		"lng": 136.9241992,
 		"prefecture": "愛知県",
@@ -1355,16 +789,6 @@
 		"roma": "Shioda",
 		"routes": [
 			"大高線"
-		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
 		],
 		"lat": 35.1080351,
 		"lng": 136.9230921,
@@ -1382,16 +806,6 @@
 		"routes": [
 			"大高線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
-		],
 		"lat": 35.1130587,
 		"lng": 136.9222818,
 		"prefecture": "愛知県",
@@ -1407,16 +821,6 @@
 		"roma": "Horita",
 		"routes": [
 			"大高線"
-		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
 		],
 		"lat": 35.1185567,
 		"lng": 136.9213906,
@@ -1434,16 +838,6 @@
 		"routes": [
 			"大高線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
-		],
 		"lat": 35.1237627,
 		"lng": 136.9205538,
 		"prefecture": "愛知県",
@@ -1459,16 +853,6 @@
 		"roma": "Ushimaki",
 		"routes": [
 			"大高線"
-		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
 		],
 		"lat": 35.1304902,
 		"lng": 136.9194847,
@@ -1486,16 +870,6 @@
 		"routes": [
 			"大高線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
-		],
 		"lat": 35.1400461,
 		"lng": 136.9182758,
 		"prefecture": "愛知県",
@@ -1511,16 +885,6 @@
 		"roma": "Shirakane",
 		"routes": [
 			"大高線"
-		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
 		],
 		"lat": 35.14713,
 		"lng": 136.9175478,
@@ -1538,16 +902,6 @@
 		"routes": [
 			"大高線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
-		],
 		"lat": 35.1560191,
 		"lng": 136.9162088,
 		"prefecture": "愛知県",
@@ -1564,16 +918,6 @@
 		"routes": [
 			"大高線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
-		],
 		"lat": 35.1613609,
 		"lng": 136.9154938,
 		"prefecture": "愛知県",
@@ -1589,16 +933,6 @@
 		"roma": "Yaba-chō",
 		"routes": [
 			"大高線"
-		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			}
 		],
 		"lat": 35.1638044,
 		"lng": 136.9095093,
@@ -1618,16 +952,6 @@
 			"大高線",
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大高線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・緒川植山"
-			}
-		],
 		"lat": 35.1708285,
 		"lng": 136.9089085,
 		"prefecture": "愛知県",
@@ -1646,16 +970,6 @@
 			"外環線",
 			"名和線"
 		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 35.0607441,
 		"lng": 136.9130319,
 		"prefecture": "愛知県",
@@ -1671,16 +985,6 @@
 		"roma": "Ōdaka-marunouchi",
 		"routes": [
 			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 35.0680507,
 		"lng": 136.9279034,
@@ -1698,20 +1002,6 @@
 		"routes": [
 			"外環線",
 			"鳴海連絡線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			},
-			{
-				"route": "鳴海連絡線",
-				"stationName": "上汐田"
-			}
 		],
 		"lat": 35.0768376,
 		"lng": 136.9482506,
@@ -1731,24 +1021,6 @@
 			"外環線",
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.0719997,
 		"lng": 136.95548,
 		"prefecture": "愛知県",
@@ -1764,16 +1036,6 @@
 		"roma": "Kamatogi",
 		"routes": [
 			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 35.0693428,
 		"lng": 136.966145,
@@ -1791,16 +1053,6 @@
 		"routes": [
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.0701073,
 		"lng": 136.9718577,
 		"prefecture": "愛知県",
@@ -1816,16 +1068,6 @@
 		"roma": "Ubakoyama",
 		"routes": [
 			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 35.0708354,
 		"lng": 136.9777154,
@@ -1843,16 +1085,6 @@
 		"routes": [
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.0709101,
 		"lng": 136.9842997,
 		"prefecture": "愛知県",
@@ -1869,16 +1101,6 @@
 		"routes": [
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.06976,
 		"lng": 136.9929327,
 		"prefecture": "愛知県",
@@ -1894,16 +1116,6 @@
 		"roma": "Magome-chō",
 		"routes": [
 			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 35.0645849,
 		"lng": 137.0007728,
@@ -1923,24 +1135,6 @@
 			"外環線",
 			"東西線"
 		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			},
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.0583455,
 		"lng": 137.0041537,
 		"prefecture": "愛知県",
@@ -1956,16 +1150,6 @@
 		"roma": "Misaki-chō",
 		"routes": [
 			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 35.0548811,
 		"lng": 137.0061732,
@@ -1983,16 +1167,6 @@
 		"routes": [
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.0512044,
 		"lng": 137.0152579,
 		"prefecture": "愛知県",
@@ -2008,16 +1182,6 @@
 		"roma": "Ōkute-chō",
 		"routes": [
 			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 35.0509909,
 		"lng": 137.0201758,
@@ -2035,16 +1199,6 @@
 		"routes": [
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.049772,
 		"lng": 137.029424,
 		"prefecture": "愛知県",
@@ -2060,16 +1214,6 @@
 		"roma": "Igaya-chō-minami",
 		"routes": [
 			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 35.0492387,
 		"lng": 137.0438994,
@@ -2087,16 +1231,6 @@
 		"routes": [
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.0484512,
 		"lng": 137.0553738,
 		"prefecture": "愛知県",
@@ -2113,16 +1247,6 @@
 		"routes": [
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.0466968,
 		"lng": 137.0604657,
 		"prefecture": "愛知県",
@@ -2138,16 +1262,6 @@
 		"roma": "Ishihata",
 		"routes": [
 			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 35.0447584,
 		"lng": 137.0634687,
@@ -2167,20 +1281,6 @@
 			"外環線",
 			"豊田線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			}
-		],
 		"lat": 35.0425696,
 		"lng": 137.0668162,
 		"prefecture": "愛知県",
@@ -2196,16 +1296,6 @@
 		"roma": "Ōshima-chō",
 		"routes": [
 			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和・三河渋谷"
-			}
 		],
 		"lat": 35.0387053,
 		"lng": 137.0631041,
@@ -2223,16 +1313,6 @@
 		"routes": [
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和・三河渋谷"
-			}
-		],
 		"lat": 35.032601,
 		"lng": 137.0571271,
 		"prefecture": "愛知県",
@@ -2248,16 +1328,6 @@
 		"roma": "Nakada-chō",
 		"routes": [
 			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和・三河渋谷"
-			}
 		],
 		"lat": 35.029353,
 		"lng": 137.0538775,
@@ -2275,16 +1345,6 @@
 		"routes": [
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和・三河渋谷"
-			}
-		],
 		"lat": 35.0257539,
 		"lng": 137.0523181,
 		"prefecture": "愛知県",
@@ -2300,16 +1360,6 @@
 		"roma": "Komashin-chō",
 		"routes": [
 			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和・三河渋谷"
-			}
 		],
 		"lat": 35.0219092,
 		"lng": 137.0496649,
@@ -2327,16 +1377,6 @@
 		"routes": [
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和・三河渋谷"
-			}
-		],
 		"lat": 35.0198618,
 		"lng": 137.0480971,
 		"prefecture": "愛知県",
@@ -2345,23 +1385,15 @@
 	},
 	"kbn": {
 		"code": [
-			"GK29"
+			"GK29",
+			"OZ01"
 		],
 		"name": "駒場町西",
 		"kana": "こまばちょうにし",
 		"roma": "Komaba-chō-nishi",
 		"routes": [
-			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和・三河渋谷"
-			}
+			"外環線",
+			"岡崎線"
 		],
 		"lat": 35.0166399,
 		"lng": 137.0502475,
@@ -2379,16 +1411,6 @@
 		"routes": [
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和・三河渋谷"
-			}
-		],
 		"lat": 35.014778,
 		"lng": 137.0463517,
 		"prefecture": "愛知県",
@@ -2405,16 +1427,6 @@
 		"routes": [
 			"外環線"
 		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和・三河渋谷"
-			}
-		],
 		"lat": 35.0114752,
 		"lng": 137.0450064,
 		"prefecture": "愛知県",
@@ -2430,16 +1442,6 @@
 		"roma": "Sakuragi",
 		"routes": [
 			"外環線"
-		],
-		"directions": [
-			{
-				"route": "外環線",
-				"stationName": "知立"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和・三河渋谷"
-			}
 		],
 		"lat": 35.0089851,
 		"lng": 137.0427332,
@@ -2461,20 +1463,6 @@
 			"緒川線",
 			"刈田川線知立支線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "刈田川線知立支線",
-				"stationName": "新富町"
-			},
-			{
-				"route": "外環線",
-				"stationName": "名和・三河渋谷"
-			}
-		],
 		"lat": 35.0060185,
 		"lng": 137.0412611,
 		"prefecture": "愛知県",
@@ -2495,28 +1483,6 @@
 			"刈田川急行線",
 			"大府環状線"
 		],
-		"directions": [
-			{
-				"route": "大府環状線",
-				"stationName": "至学館大学前"
-			},
-			{
-				"route": "大府環状線",
-				"stationName": "江端町"
-			},
-			{
-				"route": "刈田川急行線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川急行線",
-				"stationName": "太田川"
-			},
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 35.0085837,
 		"lng": 136.9618472,
 		"prefecture": "愛知県",
@@ -2536,28 +1502,6 @@
 			"刈田川線",
 			"大峯連絡線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			},
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			},
-			{
-				"route": "大峯連絡線",
-				"stationName": "江端町"
-			}
-		],
 		"lat": 35.0057094,
 		"lng": 136.952523,
 		"prefecture": "愛知県",
@@ -2573,16 +1517,6 @@
 		"roma": "Kōen-kita",
 		"routes": [
 			"半田線"
-		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
 		],
 		"lat": 35.0030276,
 		"lng": 136.9502712,
@@ -2600,16 +1534,6 @@
 		"routes": [
 			"半田線"
 		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
-		],
 		"lat": 34.9990336,
 		"lng": 136.9496892,
 		"prefecture": "愛知県",
@@ -2626,16 +1550,6 @@
 		"routes": [
 			"半田線"
 		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
-		],
 		"lat": 34.9921652,
 		"lng": 136.9515432,
 		"prefecture": "愛知県",
@@ -2651,16 +1565,6 @@
 		"roma": "Shin'ike",
 		"routes": [
 			"半田線"
-		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
 		],
 		"lat": 34.985137,
 		"lng": 136.9483538,
@@ -2680,24 +1584,6 @@
 			"半田線",
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 34.9791325,
 		"lng": 136.9461575,
 		"prefecture": "愛知県",
@@ -2713,16 +1599,6 @@
 		"roma": "Nishi-ishihama",
 		"routes": [
 			"半田線"
-		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
 		],
 		"lat": 34.9591968,
 		"lng": 136.9483972,
@@ -2740,16 +1616,6 @@
 		"routes": [
 			"半田線"
 		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
-		],
 		"lat": 34.9478996,
 		"lng": 136.9517261,
 		"prefecture": "愛知県",
@@ -2765,16 +1631,6 @@
 		"roma": "Midorigaoka",
 		"routes": [
 			"半田線"
-		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
 		],
 		"lat": 34.9344973,
 		"lng": 136.9518556,
@@ -2794,20 +1650,6 @@
 			"半田線",
 			"高浜線"
 		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			},
-			{
-				"route": "高浜線",
-				"stationName": "三河高浜"
-			}
-		],
 		"lat": 34.9283089,
 		"lng": 136.9545037,
 		"prefecture": "愛知県",
@@ -2823,16 +1665,6 @@
 		"roma": "Kamiike",
 		"routes": [
 			"半田線"
-		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
 		],
 		"lat": 34.9245788,
 		"lng": 136.9498835,
@@ -2850,16 +1682,6 @@
 		"routes": [
 			"半田線"
 		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
-		],
 		"lat": 34.9189897,
 		"lng": 136.9484061,
 		"prefecture": "愛知県",
@@ -2875,16 +1697,6 @@
 		"roma": "Kōshin-chō",
 		"routes": [
 			"半田線"
-		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
 		],
 		"lat": 34.9160115,
 		"lng": 136.945558,
@@ -2902,16 +1714,6 @@
 		"routes": [
 			"半田線"
 		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
-		],
 		"lat": 34.9131088,
 		"lng": 136.9438477,
 		"prefecture": "愛知県",
@@ -2927,16 +1729,6 @@
 		"roma": "Okkawa-yakushi",
 		"routes": [
 			"半田線"
-		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
 		],
 		"lat": 34.9090926,
 		"lng": 136.9418647,
@@ -2955,20 +1747,6 @@
 			"半田線",
 			"半田線住吉支線"
 		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			},
-			{
-				"route": "半田線住吉支線",
-				"stationName": "清城"
-			}
-		],
 		"lat": 34.904713,
 		"lng": 136.9395369,
 		"prefecture": "愛知県",
@@ -2984,16 +1762,6 @@
 		"roma": "Handa-ōhashi",
 		"routes": [
 			"半田線"
-		],
-		"directions": [
-			{
-				"route": "半田線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
 		],
 		"lat": 34.9010112,
 		"lng": 136.9364394,
@@ -3015,24 +1783,6 @@
 			"半滑線・空港線",
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "半田線",
-				"stationName": "大府"
-			}
-		],
 		"lat": 34.8928538,
 		"lng": 136.9372533,
 		"prefecture": "愛知県",
@@ -3051,24 +1801,6 @@
 			"半田線住吉支線",
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "半田線住吉支線",
-				"stationName": "清城"
-			},
-			{
-				"route": "半田線住吉支線",
-				"stationName": "乙川"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.9011671,
 		"lng": 136.9306596,
 		"prefecture": "愛知県",
@@ -3084,16 +1816,6 @@
 		"roma": "Sumiyoshi-chō",
 		"routes": [
 			"半田線住吉支線"
-		],
-		"directions": [
-			{
-				"route": "半田線住吉支線",
-				"stationName": "清城"
-			},
-			{
-				"route": "半田線住吉支線",
-				"stationName": "乙川"
-			}
 		],
 		"lat": 34.9009824,
 		"lng": 136.9239905,
@@ -3112,20 +1834,6 @@
 		"routes": [
 			"半田線住吉支線",
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			},
-			{
-				"route": "半田線住吉支線",
-				"stationName": "乙川"
-			}
 		],
 		"lat": 34.9001412,
 		"lng": 136.917242,
@@ -3150,36 +1858,6 @@
 			"荒尾線",
 			"大府環状線"
 		],
-		"directions": [
-			{
-				"route": "大府環状線",
-				"stationName": "共和"
-			},
-			{
-				"route": "大府環状線",
-				"stationName": "大府"
-			},
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "内田面線",
-				"stationName": "東新町"
-			},
-			{
-				"route": "内田面線",
-				"stationName": "惣作"
-			},
-			{
-				"route": "二ツ池線",
-				"stationName": "東緒川・於大公園西"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			}
-		],
 		"lat": 35.0329569,
 		"lng": 136.9706678,
 		"prefecture": "愛知県",
@@ -3198,24 +1876,6 @@
 			"名東線",
 			"大府環状線"
 		],
-		"directions": [
-			{
-				"route": "大府環状線",
-				"stationName": "共和"
-			},
-			{
-				"route": "大府環状線",
-				"stationName": "至学館大学前"
-			},
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0411112,
 		"lng": 136.9677978,
 		"prefecture": "愛知県",
@@ -3231,16 +1891,6 @@
 		"roma": "Nanryō",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0459006,
 		"lng": 136.9681412,
@@ -3258,16 +1908,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0495129,
 		"lng": 136.9698941,
 		"prefecture": "愛知県",
@@ -3283,16 +1923,6 @@
 		"roma": "Chōfukuji",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0522743,
 		"lng": 136.970156,
@@ -3310,16 +1940,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0556841,
 		"lng": 136.9701823,
 		"prefecture": "愛知県",
@@ -3335,16 +1955,6 @@
 		"roma": "Nagoyatandai-mae",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0608183,
 		"lng": 136.9698992,
@@ -3362,16 +1972,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0674214,
 		"lng": 136.9715021,
 		"prefecture": "愛知県",
@@ -3387,16 +1987,6 @@
 		"roma": "Torisumi",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.07633,
 		"lng": 136.9704663,
@@ -3414,16 +2004,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0797821,
 		"lng": 136.9739478,
 		"prefecture": "愛知県",
@@ -3439,16 +2019,6 @@
 		"roma": "Takinomizu",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0860351,
 		"lng": 136.9803388,
@@ -3466,16 +2036,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0909791,
 		"lng": 136.9853973,
 		"prefecture": "愛知県",
@@ -3491,16 +2051,6 @@
 		"roma": "Tokushige",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0951152,
 		"lng": 136.9987105,
@@ -3518,16 +2068,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.100516,
 		"lng": 137.0054551,
 		"prefecture": "愛知県",
@@ -3543,16 +2083,6 @@
 		"roma": "Hirabaridai",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.1044012,
 		"lng": 137.0075194,
@@ -3570,16 +2100,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.1108108,
 		"lng": 137.0035568,
 		"prefecture": "愛知県",
@@ -3595,16 +2115,6 @@
 		"roma": "Mukaigaoka",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.1143641,
 		"lng": 137.0034178,
@@ -3622,16 +2132,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.1192381,
 		"lng": 137.0057201,
 		"prefecture": "愛知県",
@@ -3647,16 +2147,6 @@
 		"roma": "Hirabari",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.1226023,
 		"lng": 137.0074476,
@@ -3674,16 +2164,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.1274189,
 		"lng": 137.0094582,
 		"prefecture": "愛知県",
@@ -3699,16 +2179,6 @@
 		"roma": "Umemori-nishi",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.1310802,
 		"lng": 137.0129741,
@@ -3726,16 +2196,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.133683,
 		"lng": 137.0154665,
 		"prefecture": "愛知県",
@@ -3751,16 +2211,6 @@
 		"roma": "Umemoridai-kita",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.137438,
 		"lng": 137.0149316,
@@ -3778,16 +2228,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.1404668,
 		"lng": 137.0152283,
 		"prefecture": "愛知県",
@@ -3803,16 +2243,6 @@
 		"roma": "Umemorizaka",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.1434313,
 		"lng": 137.0147036,
@@ -3830,16 +2260,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.149137,
 		"lng": 137.0144352,
 		"prefecture": "愛知県",
@@ -3855,16 +2275,6 @@
 		"roma": "Gokuraku",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.154319,
 		"lng": 137.0185221,
@@ -3882,16 +2292,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.1598856,
 		"lng": 137.0195836,
 		"prefecture": "愛知県",
@@ -3907,16 +2307,6 @@
 		"roma": "Sekobō",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.1650431,
 		"lng": 137.0174233,
@@ -3934,16 +2324,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.169276,
 		"lng": 137.0173387,
 		"prefecture": "愛知県",
@@ -3959,16 +2339,6 @@
 		"roma": "Himewaka-chō",
 		"routes": [
 			"名東線"
-		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "藤が丘"
-			},
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.174908,
 		"lng": 137.0204435,
@@ -3986,12 +2356,6 @@
 		"routes": [
 			"名東線"
 		],
-		"directions": [
-			{
-				"route": "名東線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.1819084,
 		"lng": 137.0210589,
 		"prefecture": "愛知県",
@@ -4007,16 +2371,6 @@
 		"roma": "Futatsuikekōen-mae",
 		"routes": [
 			"二ツ池線"
-		],
-		"directions": [
-			{
-				"route": "二ツ池線",
-				"stationName": "東緒川・於大公園西"
-			},
-			{
-				"route": "二ツ池線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0255245,
 		"lng": 136.9729088,
@@ -4036,24 +2390,6 @@
 			"二ツ池線",
 			"東西線"
 		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			},
-			{
-				"route": "二ツ池線",
-				"stationName": "東緒川・於大公園西"
-			},
-			{
-				"route": "二ツ池線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0200068,
 		"lng": 136.975827,
 		"prefecture": "愛知県",
@@ -4069,16 +2405,6 @@
 		"roma": "Medias-taiikukan-mae",
 		"routes": [
 			"二ツ池線"
-		],
-		"directions": [
-			{
-				"route": "二ツ池線",
-				"stationName": "東緒川・於大公園西"
-			},
-			{
-				"route": "二ツ池線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0134819,
 		"lng": 136.9739602,
@@ -4100,32 +2426,6 @@
 			"刈田川線",
 			"刈田川急行線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "若草・太田川"
-			},
-			{
-				"route": "刈田川急行線",
-				"stationName": "大府・太田川"
-			},
-			{
-				"route": "二ツ池線",
-				"stationName": "東緒川"
-			},
-			{
-				"route": "二ツ池線森岡支線",
-				"stationName": "於大公園西"
-			},
-			{
-				"route": "二ツ池線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0109116,
 		"lng": 136.9741343,
 		"prefecture": "愛知県",
@@ -4141,16 +2441,6 @@
 		"roma": "Morioka-kōgyōdanchi-minami",
 		"routes": [
 			"二ツ池線"
-		],
-		"directions": [
-			{
-				"route": "二ツ池線",
-				"stationName": "東緒川"
-			},
-			{
-				"route": "二ツ池線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 34.9950113,
 		"lng": 136.9770356,
@@ -4170,20 +2460,6 @@
 			"二ツ池線",
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			},
-			{
-				"route": "二ツ池線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 34.9835539,
 		"lng": 136.9756861,
 		"prefecture": "愛知県",
@@ -4199,16 +2475,6 @@
 		"roma": "Sumitomojūki-mae",
 		"routes": [
 			"二ツ池線森岡支線"
-		],
-		"directions": [
-			{
-				"route": "二ツ池線森岡支線",
-				"stationName": "於大公園西"
-			},
-			{
-				"route": "二ツ池線森岡支線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0041655,
 		"lng": 136.9696131,
@@ -4228,24 +2494,6 @@
 			"二ツ池線森岡支線",
 			"南北線"
 		],
-		"directions": [
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			},
-			{
-				"route": "二ツ池線森岡支線",
-				"stationName": "於大公園西"
-			},
-			{
-				"route": "二ツ池線森岡支線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 34.9991963,
 		"lng": 136.9651203,
 		"prefecture": "愛知県",
@@ -4262,16 +2510,6 @@
 		"routes": [
 			"二ツ池線森岡支線"
 		],
-		"directions": [
-			{
-				"route": "二ツ池線森岡支線",
-				"stationName": "於大公園西"
-			},
-			{
-				"route": "二ツ池線森岡支線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 34.9935876,
 		"lng": 136.9615249,
 		"prefecture": "愛知県",
@@ -4287,16 +2525,6 @@
 		"roma": "Kotobukiniku",
 		"routes": [
 			"二ツ池線森岡支線"
-		],
-		"directions": [
-			{
-				"route": "二ツ池線森岡支線",
-				"stationName": "於大公園西"
-			},
-			{
-				"route": "二ツ池線森岡支線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 34.9855055,
 		"lng": 136.9609114,
@@ -4315,20 +2543,6 @@
 		"routes": [
 			"二ツ池線森岡支線",
 			"緒川線"
-		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			},
-			{
-				"route": "二ツ池線森岡支線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 34.9784292,
 		"lng": 136.957809,
@@ -4351,28 +2565,6 @@
 			"刈田川急行線",
 			"惣作直通線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "若草・太田川"
-			},
-			{
-				"route": "刈田川急行線",
-				"stationName": "大府・太田川"
-			},
-			{
-				"route": "内田面線",
-				"stationName": "東新町・長久手市"
-			},
-			{
-				"route": "惣作直通線",
-				"stationName": "荒尾下畑"
-			}
-		],
 		"lat": 35.0128505,
 		"lng": 136.9831248,
 		"prefecture": "愛知県",
@@ -4389,16 +2581,6 @@
 		"routes": [
 			"内田面線"
 		],
-		"directions": [
-			{
-				"route": "内田面線",
-				"stationName": "東新町・長久手市"
-			},
-			{
-				"route": "内田面線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.0190786,
 		"lng": 136.986605,
 		"prefecture": "愛知県",
@@ -4414,16 +2596,6 @@
 		"roma": "Uchidamen",
 		"routes": [
 			"内田面線"
-		],
-		"directions": [
-			{
-				"route": "内田面線",
-				"stationName": "東新町・長久手市"
-			},
-			{
-				"route": "内田面線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.022692,
 		"lng": 136.9887668,
@@ -4443,24 +2615,6 @@
 			"内田面線",
 			"東西線"
 		],
-		"directions": [
-			{
-				"route": "内田面線",
-				"stationName": "東新町"
-			},
-			{
-				"route": "内田面線",
-				"stationName": "惣作"
-			},
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
-		],
 		"lat": 35.0309155,
 		"lng": 136.9848894,
 		"prefecture": "愛知県",
@@ -4477,16 +2631,6 @@
 		"routes": [
 			"内田面線"
 		],
-		"directions": [
-			{
-				"route": "内田面線",
-				"stationName": "東新町"
-			},
-			{
-				"route": "内田面線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.02969,
 		"lng": 136.9775455,
 		"prefecture": "愛知県",
@@ -4502,16 +2646,6 @@
 		"roma": "Kitayama-chō",
 		"routes": [
 			"内田面線"
-		],
-		"directions": [
-			{
-				"route": "内田面線",
-				"stationName": "東新町"
-			},
-			{
-				"route": "内田面線",
-				"stationName": "惣作"
-			}
 		],
 		"lat": 35.0348117,
 		"lng": 136.9651913,
@@ -4531,20 +2665,6 @@
 			"内田面線",
 			"大府環状線"
 		],
-		"directions": [
-			{
-				"route": "大府環状線",
-				"stationName": "共和"
-			},
-			{
-				"route": "大府環状線",
-				"stationName": "至学館大学前"
-			},
-			{
-				"route": "内田面線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.0386209,
 		"lng": 136.9594937,
 		"prefecture": "愛知県",
@@ -4560,16 +2680,6 @@
 		"roma": "Seikōji",
 		"routes": [
 			"南北線"
-		],
-		"directions": [
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			}
 		],
 		"lat": 35.0602714,
 		"lng": 136.9397807,
@@ -4587,16 +2697,6 @@
 		"routes": [
 			"南北線"
 		],
-		"directions": [
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			}
-		],
 		"lat": 35.0505343,
 		"lng": 136.9473298,
 		"prefecture": "愛知県",
@@ -4613,16 +2713,6 @@
 		"routes": [
 			"南北線"
 		],
-		"directions": [
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			}
-		],
 		"lat": 35.0416753,
 		"lng": 136.9496193,
 		"prefecture": "愛知県",
@@ -4638,16 +2728,6 @@
 		"roma": "kyōwa-sanchōme",
 		"routes": [
 			"南北線"
-		],
-		"directions": [
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			}
 		],
 		"lat": 35.0335212,
 		"lng": 136.9513967,
@@ -4667,24 +2747,6 @@
 			"南北線",
 			"荒尾線"
 		],
-		"directions": [
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0257231,
 		"lng": 136.9526537,
 		"prefecture": "愛知県",
@@ -4703,24 +2765,6 @@
 			"南北線",
 			"東西線"
 		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "至学館大学前"
-			},
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			}
-		],
 		"lat": 35.0183668,
 		"lng": 136.9528886,
 		"prefecture": "愛知県",
@@ -4737,16 +2781,6 @@
 		"routes": [
 			"南北線"
 		],
-		"directions": [
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			}
-		],
 		"lat": 35.0133452,
 		"lng": 136.9534395,
 		"prefecture": "愛知県",
@@ -4762,16 +2796,6 @@
 		"roma": "Ebata-chūō",
 		"routes": [
 			"南北線"
-		],
-		"directions": [
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			}
 		],
 		"lat": 35.0099467,
 		"lng": 136.954814,
@@ -4791,24 +2815,6 @@
 			"南北線",
 			"刈田川線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			}
-		],
 		"lat": 35.0048493,
 		"lng": 136.9576976,
 		"prefecture": "愛知県",
@@ -4824,16 +2830,6 @@
 		"roma": "Owari-morioka",
 		"routes": [
 			"南北線"
-		],
-		"directions": [
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			}
 		],
 		"lat": 34.9945627,
 		"lng": 136.9690397,
@@ -4851,16 +2847,6 @@
 		"routes": [
 			"南北線"
 		],
-		"directions": [
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			}
-		],
 		"lat": 34.9897725,
 		"lng": 136.9698981,
 		"prefecture": "愛知県",
@@ -4876,16 +2862,6 @@
 		"roma": "Miyatobashi",
 		"routes": [
 			"南北線"
-		],
-		"directions": [
-			{
-				"route": "南北線",
-				"stationName": "緒川"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			}
 		],
 		"lat": 34.9862004,
 		"lng": 136.9705384,
@@ -4905,20 +2881,6 @@
 			"南北線",
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			},
-			{
-				"route": "南北線",
-				"stationName": "大高"
-			}
-		],
 		"lat": 34.9812598,
 		"lng": 136.971778,
 		"prefecture": "愛知県",
@@ -4934,16 +2896,6 @@
 		"roma": "Kitayama",
 		"routes": [
 			"荒尾線"
-		],
-		"directions": [
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0288414,
 		"lng": 136.968106,
@@ -4961,16 +2913,6 @@
 		"routes": [
 			"荒尾線"
 		],
-		"directions": [
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0271007,
 		"lng": 136.9634715,
 		"prefecture": "愛知県",
@@ -4986,16 +2928,6 @@
 		"roma": "Shimodanomatsu",
 		"routes": [
 			"荒尾線"
-		],
-		"directions": [
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0257571,
 		"lng": 136.9471598,
@@ -5013,16 +2945,6 @@
 		"routes": [
 			"荒尾線"
 		],
-		"directions": [
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0287612,
 		"lng": 136.9426424,
 		"prefecture": "愛知県",
@@ -5038,16 +2960,6 @@
 		"roma": "Shirahaike",
 		"routes": [
 			"荒尾線"
-		],
-		"directions": [
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.029751,
 		"lng": 136.9367987,
@@ -5065,16 +2977,6 @@
 		"routes": [
 			"荒尾線"
 		],
-		"directions": [
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0297069,
 		"lng": 136.9322795,
 		"prefecture": "愛知県",
@@ -5091,16 +2993,6 @@
 		"routes": [
 			"荒尾線"
 		],
-		"directions": [
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.030764,
 		"lng": 136.9257758,
 		"prefecture": "愛知県",
@@ -5116,16 +3008,6 @@
 		"roma": "Arao-Ushiroyama",
 		"routes": [
 			"荒尾線"
-		],
-		"directions": [
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0332345,
 		"lng": 136.91959,
@@ -5145,24 +3027,6 @@
 			"荒尾線",
 			"名和線"
 		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0366686,
 		"lng": 136.9158699,
 		"prefecture": "愛知県",
@@ -5178,16 +3042,6 @@
 		"roma": "Arao-wakamiya",
 		"routes": [
 			"荒尾線"
-		],
-		"directions": [
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0386535,
 		"lng": 136.9121438,
@@ -5205,16 +3059,6 @@
 		"routes": [
 			"荒尾線"
 		],
-		"directions": [
-			{
-				"route": "荒尾線",
-				"stationName": "聚楽園"
-			},
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
-		],
 		"lat": 35.0398496,
 		"lng": 136.9071366,
 		"prefecture": "愛知県",
@@ -5230,12 +3074,6 @@
 		"roma": "Shūrakuen",
 		"routes": [
 			"荒尾線"
-		],
-		"directions": [
-			{
-				"route": "荒尾線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0421499,
 		"lng": 136.902902,
@@ -5256,24 +3094,6 @@
 			"刈田川線",
 			"刈田川線知立支線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			},
-			{
-				"route": "刈田川線知立支線",
-				"stationName": "知立"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			}
-		],
 		"lat": 35.0058341,
 		"lng": 137.0041137,
 		"prefecture": "愛知県",
@@ -5292,24 +3112,6 @@
 			"みよし線",
 			"刈谷環状線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "日高"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷青山"
-			}
-		],
 		"lat": 35.0125722,
 		"lng": 137.0053426,
 		"prefecture": "愛知県",
@@ -5325,16 +3127,6 @@
 		"roma": "Kariyashisōgōundōkōen",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.0175344,
 		"lng": 137.0062102,
@@ -5352,16 +3144,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.0226411,
 		"lng": 137.0077959,
 		"prefecture": "愛知県",
@@ -5377,16 +3159,6 @@
 		"roma": "Nishi-fujimatsu",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.0283717,
 		"lng": 137.0113621,
@@ -5404,16 +3176,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.0303341,
 		"lng": 137.0161803,
 		"prefecture": "愛知県",
@@ -5429,16 +3191,6 @@
 		"roma": "Imagawa-chō",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.0325824,
 		"lng": 137.0201331,
@@ -5456,16 +3208,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.0367152,
 		"lng": 137.0269008,
 		"prefecture": "愛知県",
@@ -5481,16 +3223,6 @@
 		"roma": "Fujimatsutoshokan-mae",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.0417992,
 		"lng": 137.0352107,
@@ -5508,16 +3240,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.0441078,
 		"lng": 137.0377669,
 		"prefecture": "愛知県",
@@ -5533,16 +3255,6 @@
 		"roma": "Aikyōdai-mae",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.0510169,
 		"lng": 137.0419344,
@@ -5560,16 +3272,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.0585761,
 		"lng": 137.0466685,
 		"prefecture": "愛知県",
@@ -5585,16 +3287,6 @@
 		"roma": "Tempaku",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.063925,
 		"lng": 137.0504228,
@@ -5612,16 +3304,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.068768,
 		"lng": 137.0524455,
 		"prefecture": "愛知県",
@@ -5637,16 +3319,6 @@
 		"roma": "Higashiarata",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.0756574,
 		"lng": 137.055306,
@@ -5664,16 +3336,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.0813586,
 		"lng": 137.0598086,
 		"prefecture": "愛知県",
@@ -5689,16 +3351,6 @@
 		"roma": "Miyoshi-araike",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.0866452,
 		"lng": 137.0649054,
@@ -5716,16 +3368,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.089928,
 		"lng": 137.0669663,
 		"prefecture": "愛知県",
@@ -5741,16 +3383,6 @@
 		"roma": "Miyoshi-shi",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.0883108,
 		"lng": 137.0730037,
@@ -5768,16 +3400,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.0910486,
 		"lng": 137.0798628,
 		"prefecture": "愛知県",
@@ -5793,16 +3415,6 @@
 		"roma": "Miyoshiike",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.0943618,
 		"lng": 137.084811,
@@ -5820,16 +3432,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.0979775,
 		"lng": 137.0889607,
 		"prefecture": "愛知県",
@@ -5845,16 +3447,6 @@
 		"roma": "Sakaigawa",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.1018202,
 		"lng": 137.0922892,
@@ -5872,16 +3464,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.1061778,
 		"lng": 137.0961707,
 		"prefecture": "愛知県",
@@ -5897,16 +3479,6 @@
 		"roma": "Ukigai",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.1111232,
 		"lng": 137.1004149,
@@ -5924,16 +3496,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.1167137,
 		"lng": 137.1052996,
 		"prefecture": "愛知県",
@@ -5949,16 +3511,6 @@
 		"roma": "Miyanomae",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.1199742,
 		"lng": 137.1068179,
@@ -5976,16 +3528,6 @@
 		"routes": [
 			"みよし線"
 		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "三好丘"
-			},
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.12246,
 		"lng": 137.1102229,
 		"prefecture": "愛知県",
@@ -6001,12 +3543,6 @@
 		"roma": "Miyoshigaoka",
 		"routes": [
 			"みよし線"
-		],
-		"directions": [
-			{
-				"route": "みよし線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.1272595,
 		"lng": 137.1103492,
@@ -6026,20 +3562,6 @@
 			"健康の森線",
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "健康の森線",
-				"stationName": "上浜田"
-			}
-		],
 		"lat": 34.9745576,
 		"lng": 136.9365159,
 		"prefecture": "愛知県",
@@ -6056,16 +3578,6 @@
 		"routes": [
 			"健康の森線"
 		],
-		"directions": [
-			{
-				"route": "健康の森線",
-				"stationName": "鰻池"
-			},
-			{
-				"route": "健康の森線",
-				"stationName": "上浜田"
-			}
-		],
 		"lat": 34.9850957,
 		"lng": 136.9423595,
 		"prefecture": "愛知県",
@@ -6081,16 +3593,6 @@
 		"roma": "Kenkōnomori-nishiguchi",
 		"routes": [
 			"健康の森線"
-		],
-		"directions": [
-			{
-				"route": "健康の森線",
-				"stationName": "鰻池"
-			},
-			{
-				"route": "健康の森線",
-				"stationName": "上浜田"
-			}
 		],
 		"lat": 34.9962115,
 		"lng": 136.9438425,
@@ -6111,28 +3613,6 @@
 			"刈田川線",
 			"刈田川急行線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "若草・刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			},
-			{
-				"route": "刈田川急行線",
-				"stationName": "大府・刈谷"
-			},
-			{
-				"route": "健康の森線",
-				"stationName": "鰻池"
-			},
-			{
-				"route": "健康の森線",
-				"stationName": "上浜田"
-			}
-		],
 		"lat": 35.0055952,
 		"lng": 136.9437882,
 		"prefecture": "愛知県",
@@ -6151,24 +3631,6 @@
 			"健康の森線",
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "健康の森線",
-				"stationName": "鰻池"
-			},
-			{
-				"route": "健康の森線",
-				"stationName": "上浜田"
-			}
-		],
 		"lat": 35.0101527,
 		"lng": 136.9422554,
 		"prefecture": "愛知県",
@@ -6185,16 +3647,6 @@
 		"routes": [
 			"健康の森線"
 		],
-		"directions": [
-			{
-				"route": "健康の森線",
-				"stationName": "鰻池"
-			},
-			{
-				"route": "健康の森線",
-				"stationName": "上浜田"
-			}
-		],
 		"lat": 35.0115895,
 		"lng": 136.9346827,
 		"prefecture": "愛知県",
@@ -6210,16 +3662,6 @@
 		"roma": "Shin'ishine",
 		"routes": [
 			"健康の森線"
-		],
-		"directions": [
-			{
-				"route": "健康の森線",
-				"stationName": "鰻池"
-			},
-			{
-				"route": "健康の森線",
-				"stationName": "上浜田"
-			}
 		],
 		"lat": 35.0161939,
 		"lng": 136.9189024,
@@ -6239,24 +3681,6 @@
 			"健康の森線",
 			"名和線"
 		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			},
-			{
-				"route": "健康の森線",
-				"stationName": "鰻池"
-			},
-			{
-				"route": "健康の森線",
-				"stationName": "上浜田"
-			}
-		],
 		"lat": 35.0196955,
 		"lng": 136.9122995,
 		"prefecture": "愛知県",
@@ -6273,16 +3697,6 @@
 		"routes": [
 			"健康の森線"
 		],
-		"directions": [
-			{
-				"route": "健康の森線",
-				"stationName": "鰻池"
-			},
-			{
-				"route": "健康の森線",
-				"stationName": "上浜田"
-			}
-		],
 		"lat": 35.0211575,
 		"lng": 136.8999083,
 		"prefecture": "愛知県",
@@ -6298,12 +3712,6 @@
 		"roma": "Kamihamada",
 		"routes": [
 			"健康の森線"
-		],
-		"directions": [
-			{
-				"route": "健康の森線",
-				"stationName": "鰻池"
-			}
 		],
 		"lat": 35.0247304,
 		"lng": 136.8936175,
@@ -6323,20 +3731,6 @@
 			"南港線(名港トリトンライン)",
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "湾岸長島"
-			}
-		],
 		"lat": 35.0369811,
 		"lng": 136.9396663,
 		"prefecture": "愛知県",
@@ -6352,16 +3746,6 @@
 		"roma": "Kitawarabi",
 		"routes": [
 			"南港線(名港トリトンライン)"
-		],
-		"directions": [
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "湾岸長島"
-			},
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "田面"
-			}
 		],
 		"lat": 35.0447647,
 		"lng": 136.9285416,
@@ -6379,16 +3763,6 @@
 		"routes": [
 			"南港線(名港トリトンライン)"
 		],
-		"directions": [
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "湾岸長島"
-			},
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "田面"
-			}
-		],
 		"lat": 35.0475536,
 		"lng": 136.915409,
 		"prefecture": "愛知県",
@@ -6404,16 +3778,6 @@
 		"roma": "Okamae",
 		"routes": [
 			"南港線(名港トリトンライン)"
-		],
-		"directions": [
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "湾岸長島"
-			},
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "田面"
-			}
 		],
 		"lat": 35.0490617,
 		"lng": 136.9105798,
@@ -6431,16 +3795,6 @@
 		"routes": [
 			"南港線(名港トリトンライン)"
 		],
-		"directions": [
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "湾岸長島"
-			},
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "田面"
-			}
-		],
 		"lat": 35.0517219,
 		"lng": 136.8977732,
 		"prefecture": "愛知県",
@@ -6456,16 +3810,6 @@
 		"roma": "Shiomi",
 		"routes": [
 			"南港線(名港トリトンライン)"
-		],
-		"directions": [
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "湾岸長島"
-			},
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "田面"
-			}
 		],
 		"lat": 35.054297,
 		"lng": 136.8699545,
@@ -6483,16 +3827,6 @@
 		"routes": [
 			"南港線(名港トリトンライン)"
 		],
-		"directions": [
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "湾岸長島"
-			},
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "田面"
-			}
-		],
 		"lat": 35.0494806,
 		"lng": 136.8472029,
 		"prefecture": "愛知県",
@@ -6508,16 +3842,6 @@
 		"roma": "Kamezaki-kitaura",
 		"routes": [
 			"高浜線"
-		],
-		"directions": [
-			{
-				"route": "高浜線",
-				"stationName": "三河高浜"
-			},
-			{
-				"route": "高浜線",
-				"stationName": "生見町"
-			}
 		],
 		"lat": 34.9246616,
 		"lng": 136.9624314,
@@ -6535,16 +3859,6 @@
 		"routes": [
 			"高浜線"
 		],
-		"directions": [
-			{
-				"route": "高浜線",
-				"stationName": "三河高浜"
-			},
-			{
-				"route": "高浜線",
-				"stationName": "生見町"
-			}
-		],
 		"lat": 34.9235339,
 		"lng": 136.9737382,
 		"prefecture": "愛知県",
@@ -6560,16 +3874,6 @@
 		"roma": "Takahama-hekikai",
 		"routes": [
 			"高浜線"
-		],
-		"directions": [
-			{
-				"route": "高浜線",
-				"stationName": "三河高浜"
-			},
-			{
-				"route": "高浜線",
-				"stationName": "生見町"
-			}
 		],
 		"lat": 34.9229321,
 		"lng": 136.9812816,
@@ -6587,16 +3891,6 @@
 		"routes": [
 			"高浜線"
 		],
-		"directions": [
-			{
-				"route": "高浜線",
-				"stationName": "三河高浜"
-			},
-			{
-				"route": "高浜線",
-				"stationName": "生見町"
-			}
-		],
 		"lat": 34.9274115,
 		"lng": 136.9836817,
 		"prefecture": "愛知県",
@@ -6613,12 +3907,6 @@
 		"routes": [
 			"高浜線"
 		],
-		"directions": [
-			{
-				"route": "高浜線",
-				"stationName": "生見町"
-			}
-		],
 		"lat": 34.930251,
 		"lng": 136.9901365,
 		"prefecture": "愛知県",
@@ -6634,16 +3922,6 @@
 		"roma": "Yawata-shinden",
 		"routes": [
 			"名和線"
-		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 34.9733531,
 		"lng": 136.9124146,
@@ -6666,28 +3944,6 @@
 			"緒川線",
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 34.9701345,
 		"lng": 136.9183676,
 		"prefecture": "愛知県",
@@ -6706,24 +3962,6 @@
 			"大府西線・八事線",
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.9731162,
 		"lng": 136.9235763,
 		"prefecture": "愛知県",
@@ -6739,16 +3977,6 @@
 		"roma": "Komeda-chō",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.9875287,
 		"lng": 136.9287788,
@@ -6766,16 +3994,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.9932686,
 		"lng": 136.9299689,
 		"prefecture": "愛知県",
@@ -6791,16 +4009,6 @@
 		"roma": "Kitayashiki",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 35.0000062,
 		"lng": 136.9304065,
@@ -6820,24 +4028,6 @@
 			"大府西線・八事線",
 			"刈田川線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 35.005275,
 		"lng": 136.9320259,
 		"prefecture": "愛知県",
@@ -6855,24 +4045,6 @@
 		"routes": [
 			"大府西線・八事線",
 			"東西線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
 		],
 		"lat": 35.0212118,
 		"lng": 136.9422239,
@@ -6893,28 +4065,6 @@
 			"大府環状線",
 			"南港線(名港トリトンライン)"
 		],
-		"directions": [
-			{
-				"route": "大府環状線",
-				"stationName": "江端町"
-			},
-			{
-				"route": "大府環状線",
-				"stationName": "共和"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "湾岸長島"
-			}
-		],
 		"lat": 35.0291322,
 		"lng": 136.9447347,
 		"prefecture": "愛知県",
@@ -6930,16 +4080,6 @@
 		"roma": "Gōdo",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 35.0470184,
 		"lng": 136.935985,
@@ -6957,16 +4097,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 35.054094,
 		"lng": 136.9387471,
 		"prefecture": "愛知県",
@@ -6982,16 +4112,6 @@
 		"roma": "Kamehara",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 35.0668942,
 		"lng": 136.9483561,
@@ -7009,16 +4129,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 35.0817324,
 		"lng": 136.9600884,
 		"prefecture": "愛知県",
@@ -7034,16 +4144,6 @@
 		"roma": "Shikayama",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 35.0881153,
 		"lng": 136.9637584,
@@ -7061,16 +4161,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 35.0916909,
 		"lng": 136.9631336,
 		"prefecture": "愛知県",
@@ -7086,16 +4176,6 @@
 		"roma": "Naruko-minami",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 35.0951043,
 		"lng": 136.9673178,
@@ -7113,16 +4193,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 35.0978146,
 		"lng": 136.9737492,
 		"prefecture": "愛知県",
@@ -7138,16 +4208,6 @@
 		"roma": "Aikawa",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 35.1025833,
 		"lng": 136.9740457,
@@ -7165,16 +4225,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 35.10772,
 		"lng": 136.9759148,
 		"prefecture": "愛知県",
@@ -7190,16 +4240,6 @@
 		"roma": "Hitotsuyamajūtaku",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 35.1132971,
 		"lng": 136.978303,
@@ -7217,16 +4257,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 35.1192656,
 		"lng": 136.9777168,
 		"prefecture": "愛知県",
@@ -7242,16 +4272,6 @@
 		"roma": "Shimadabashi",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 35.123609,
 		"lng": 136.9709301,
@@ -7269,16 +4289,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 35.1279168,
 		"lng": 136.9690369,
 		"prefecture": "愛知県",
@@ -7294,16 +4304,6 @@
 		"roma": "Omoteyama",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 35.1312727,
 		"lng": 136.9664851,
@@ -7321,16 +4321,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 35.1367896,
 		"lng": 136.9642203,
 		"prefecture": "愛知県",
@@ -7346,16 +4336,6 @@
 		"roma": "Chiryū-horikiri",
 		"routes": [
 			"緒川線"
-		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 35.0036534,
 		"lng": 137.0383437,
@@ -7373,16 +4353,6 @@
 		"routes": [
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 35.0016838,
 		"lng": 137.034231,
 		"prefecture": "愛知県",
@@ -7399,16 +4369,6 @@
 		"routes": [
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 34.9990084,
 		"lng": 137.0297103,
 		"prefecture": "愛知県",
@@ -7424,16 +4384,6 @@
 		"roma": "Shigehara",
 		"routes": [
 			"緒川線"
-		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 34.995287,
 		"lng": 137.0235133,
@@ -7453,24 +4403,6 @@
 			"緒川線",
 			"刈谷環状線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷青山"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷新栄町"
-			}
-		],
 		"lat": 34.9922778,
 		"lng": 137.0173715,
 		"prefecture": "愛知県",
@@ -7486,16 +4418,6 @@
 		"roma": "Nakayama-chō",
 		"routes": [
 			"緒川線"
-		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 34.9919613,
 		"lng": 137.0136665,
@@ -7513,16 +4435,6 @@
 		"routes": [
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 34.9906588,
 		"lng": 137.0023342,
 		"prefecture": "愛知県",
@@ -7538,16 +4450,6 @@
 		"roma": "Ōhamakaidō",
 		"routes": [
 			"緒川線"
-		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 34.9896698,
 		"lng": 136.9991122,
@@ -7567,24 +4469,6 @@
 			"緒川線",
 			"刈谷環状線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "一色町"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "日高"
-			}
-		],
 		"lat": 34.9874192,
 		"lng": 136.9954215,
 		"prefecture": "愛知県",
@@ -7600,16 +4484,6 @@
 		"roma": "Jūnenji",
 		"routes": [
 			"緒川線"
-		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 34.9858662,
 		"lng": 136.9922679,
@@ -7627,16 +4501,6 @@
 		"routes": [
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 34.9840639,
 		"lng": 136.9837716,
 		"prefecture": "愛知県",
@@ -7652,16 +4516,6 @@
 		"roma": "Chita-yawata",
 		"routes": [
 			"緒川線"
-		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 34.9696768,
 		"lng": 136.9145429,
@@ -7679,16 +4533,6 @@
 		"routes": [
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 34.9685197,
 		"lng": 136.9032402,
 		"prefecture": "愛知県",
@@ -7704,16 +4548,6 @@
 		"roma": "Sōriike",
 		"routes": [
 			"緒川線"
-		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 34.967965,
 		"lng": 136.88799,
@@ -7731,16 +4565,6 @@
 		"routes": [
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 34.9697142,
 		"lng": 136.8786357,
 		"prefecture": "愛知県",
@@ -7756,16 +4580,6 @@
 		"roma": "Gotanda",
 		"routes": [
 			"緒川線"
-		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 34.9715337,
 		"lng": 136.8739751,
@@ -7783,16 +4597,6 @@
 		"routes": [
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 34.973522,
 		"lng": 136.8706706,
 		"prefecture": "愛知県",
@@ -7808,16 +4612,6 @@
 		"roma": "Shinchihigashi-machi",
 		"routes": [
 			"緒川線"
-		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 34.9756684,
 		"lng": 136.8675084,
@@ -7837,24 +4631,6 @@
 			"緒川線",
 			"つつじが丘線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
-		],
 		"lat": 34.9808823,
 		"lng": 136.8630745,
 		"prefecture": "愛知県",
@@ -7870,16 +4646,6 @@
 		"roma": "Hamawaki",
 		"routes": [
 			"緒川線"
-		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 34.9859911,
 		"lng": 136.8605203,
@@ -7897,16 +4663,6 @@
 		"routes": [
 			"緒川線"
 		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "朝倉"
-			},
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 34.9902526,
 		"lng": 136.8627489,
 		"prefecture": "愛知県",
@@ -7922,12 +4678,6 @@
 		"roma": "Asakura",
 		"routes": [
 			"緒川線"
-		],
-		"directions": [
-			{
-				"route": "緒川線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 34.9934817,
 		"lng": 136.8630707,
@@ -7945,12 +4695,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			}
-		],
 		"lat": 34.8858857,
 		"lng": 136.9491574,
 		"prefecture": "愛知県",
@@ -7967,16 +4711,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
-		],
 		"lat": 34.890999,
 		"lng": 136.947663,
 		"prefecture": "愛知県",
@@ -7992,16 +4726,6 @@
 		"roma": "Tōyō-chō",
 		"routes": [
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
 		],
 		"lat": 34.8931535,
 		"lng": 136.9429776,
@@ -8021,24 +4745,6 @@
 			"半滑線・空港線",
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.8946364,
 		"lng": 136.9307949,
 		"prefecture": "愛知県",
@@ -8054,16 +4760,6 @@
 		"roma": "Chita-handa",
 		"routes": [
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
 		],
 		"lat": 34.8954269,
 		"lng": 136.9257586,
@@ -8081,16 +4777,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
-		],
 		"lat": 34.8962795,
 		"lng": 136.9192863,
 		"prefecture": "愛知県",
@@ -8106,16 +4792,6 @@
 		"roma": "Hiiragi-chō",
 		"routes": [
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
 		],
 		"lat": 34.9030466,
 		"lng": 136.9146507,
@@ -8133,16 +4809,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
-		],
 		"lat": 34.9050796,
 		"lng": 136.9114779,
 		"prefecture": "愛知県",
@@ -8158,16 +4824,6 @@
 		"roma": "Yanabe-nishi",
 		"routes": [
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
 		],
 		"lat": 34.9083791,
 		"lng": 136.9067197,
@@ -8185,16 +4841,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
-		],
 		"lat": 34.908377,
 		"lng": 136.8982764,
 		"prefecture": "愛知県",
@@ -8210,16 +4856,6 @@
 		"roma": "Shinsei-chō",
 		"routes": [
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
 		],
 		"lat": 34.9077856,
 		"lng": 136.8923612,
@@ -8237,16 +4873,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
-		],
 		"lat": 34.9083335,
 		"lng": 136.8857186,
 		"prefecture": "愛知県",
@@ -8262,16 +4888,6 @@
 		"roma": "Mitsuike",
 		"routes": [
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
 		],
 		"lat": 34.9075112,
 		"lng": 136.8713356,
@@ -8289,16 +4905,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
-		],
 		"lat": 34.9025707,
 		"lng": 136.8633909,
 		"prefecture": "愛知県",
@@ -8314,16 +4920,6 @@
 		"roma": "Asukadai-higashi",
 		"routes": [
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
 		],
 		"lat": 34.8997288,
 		"lng": 136.8569642,
@@ -8341,16 +4937,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
-		],
 		"lat": 34.8983551,
 		"lng": 136.852005,
 		"prefecture": "愛知県",
@@ -8366,16 +4952,6 @@
 		"roma": "Kitajō-kōen",
 		"routes": [
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
 		],
 		"lat": 34.8970102,
 		"lng": 136.8476933,
@@ -8393,16 +4969,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
-		],
 		"lat": 34.8929823,
 		"lng": 136.8429469,
 		"prefecture": "愛知県",
@@ -8418,16 +4984,6 @@
 		"roma": "Manekinekodōri",
 		"routes": [
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
 		],
 		"lat": 34.8910009,
 		"lng": 136.8396583,
@@ -8445,16 +5001,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
-		],
 		"lat": 34.8889637,
 		"lng": 136.8360588,
 		"prefecture": "愛知県",
@@ -8470,16 +5016,6 @@
 		"roma": "Tokoname-kyōtei",
 		"routes": [
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
 		],
 		"lat": 34.8869876,
 		"lng": 136.8298349,
@@ -8497,16 +5033,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
-		],
 		"lat": 34.8866576,
 		"lng": 136.8242291,
 		"prefecture": "愛知県",
@@ -8522,16 +5048,6 @@
 		"roma": "Rinkū-tokoname",
 		"routes": [
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
 		],
 		"lat": 34.8808454,
 		"lng": 136.8249055,
@@ -8549,16 +5065,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "中部国際空港"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
-		],
 		"lat": 34.8659242,
 		"lng": 136.8143014,
 		"prefecture": "愛知県",
@@ -8574,16 +5080,6 @@
 		"roma": "Centrair-terminal1",
 		"routes": [
 			"半滑線・空港線"
-		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "セントレア第2ターミナル"
-			},
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
 		],
 		"lat": 34.8592489,
 		"lng": 136.8158145,
@@ -8601,12 +5097,6 @@
 		"routes": [
 			"半滑線・空港線"
 		],
-		"directions": [
-			{
-				"route": "半滑線・空港線",
-				"stationName": "半田みなと"
-			}
-		],
 		"lat": 34.8556312,
 		"lng": 136.8165717,
 		"prefecture": "愛知県",
@@ -8622,16 +5112,6 @@
 		"roma": "Honda",
 		"routes": [
 			"豊田線"
-		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 35.0473016,
 		"lng": 137.0714171,
@@ -8649,16 +5129,6 @@
 		"routes": [
 			"豊田線"
 		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 35.0501991,
 		"lng": 137.0777826,
 		"prefecture": "愛知県",
@@ -8674,16 +5144,6 @@
 		"roma": "Miyaguro",
 		"routes": [
 			"豊田線"
-		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 35.0526023,
 		"lng": 137.0829714,
@@ -8701,16 +5161,6 @@
 		"routes": [
 			"豊田線"
 		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 35.0533903,
 		"lng": 137.0886263,
 		"prefecture": "愛知県",
@@ -8726,16 +5176,6 @@
 		"roma": "Takara",
 		"routes": [
 			"豊田線"
-		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 35.0574778,
 		"lng": 137.0959122,
@@ -8753,16 +5193,6 @@
 		"routes": [
 			"豊田線"
 		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 35.063689,
 		"lng": 137.1024654,
 		"prefecture": "愛知県",
@@ -8778,16 +5208,6 @@
 		"roma": "Tashiro-chō",
 		"routes": [
 			"豊田線"
-		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 35.0711925,
 		"lng": 137.1089004,
@@ -8805,16 +5225,6 @@
 		"routes": [
 			"豊田線"
 		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 35.0799434,
 		"lng": 137.1150411,
 		"prefecture": "愛知県",
@@ -8830,16 +5240,6 @@
 		"roma": "Toyota-tōshin-chō",
 		"routes": [
 			"豊田線"
-		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 35.0790412,
 		"lng": 137.1214754,
@@ -8857,16 +5257,6 @@
 		"routes": [
 			"豊田線"
 		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 35.0793765,
 		"lng": 137.1274358,
 		"prefecture": "愛知県",
@@ -8882,16 +5272,6 @@
 		"roma": "Hirokute-chō",
 		"routes": [
 			"豊田線"
-		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 35.081351,
 		"lng": 137.1326529,
@@ -8909,16 +5289,6 @@
 		"routes": [
 			"豊田線"
 		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 35.0827395,
 		"lng": 137.1383947,
 		"prefecture": "愛知県",
@@ -8934,16 +5304,6 @@
 		"roma": "Kozaka-chō",
 		"routes": [
 			"豊田線"
-		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 35.0862606,
 		"lng": 137.1441821,
@@ -8961,16 +5321,6 @@
 		"routes": [
 			"豊田線"
 		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 35.0872396,
 		"lng": 137.1545102,
 		"prefecture": "愛知県",
@@ -8986,16 +5336,6 @@
 		"roma": "Yahagigawa",
 		"routes": [
 			"豊田線"
-		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 35.0865616,
 		"lng": 137.1614666,
@@ -9013,16 +5353,6 @@
 		"routes": [
 			"豊田線"
 		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 35.0858216,
 		"lng": 137.1713794,
 		"prefecture": "愛知県",
@@ -9038,16 +5368,6 @@
 		"roma": "Ueno-chō",
 		"routes": [
 			"豊田線"
-		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 35.0866309,
 		"lng": 137.1783024,
@@ -9065,16 +5385,6 @@
 		"routes": [
 			"豊田線"
 		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "三河渋谷"
-			},
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
-		],
 		"lat": 35.086015,
 		"lng": 137.1848619,
 		"prefecture": "愛知県",
@@ -9090,12 +5400,6 @@
 		"roma": "Mikawa-shibuya",
 		"routes": [
 			"豊田線"
-		],
-		"directions": [
-			{
-				"route": "豊田線",
-				"stationName": "知立"
-			}
 		],
 		"lat": 35.0852682,
 		"lng": 137.1924994,
@@ -9115,24 +5419,6 @@
 			"刈谷環状線",
 			"刈田川線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷新栄町"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷青山"
-			}
-		],
 		"lat": 35.0058622,
 		"lng": 136.9973772,
 		"prefecture": "愛知県",
@@ -9148,16 +5434,6 @@
 		"roma": "Takakura",
 		"routes": [
 			"刈谷環状線"
-		],
-		"directions": [
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷新栄町"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷青山"
-			}
 		],
 		"lat": 34.9999713,
 		"lng": 136.9974806,
@@ -9175,16 +5451,6 @@
 		"routes": [
 			"刈谷環状線"
 		],
-		"directions": [
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷新栄町"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷青山"
-			}
-		],
 		"lat": 34.9928508,
 		"lng": 136.9950391,
 		"prefecture": "愛知県",
@@ -9200,16 +5466,6 @@
 		"roma": "Kariya-takamatsu",
 		"routes": [
 			"刈谷環状線"
-		],
-		"directions": [
-			{
-				"route": "刈谷環状線",
-				"stationName": "一色町"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷新栄町"
-			}
 		],
 		"lat": 34.9857098,
 		"lng": 137.0034994,
@@ -9227,16 +5483,6 @@
 		"routes": [
 			"刈谷環状線"
 		],
-		"directions": [
-			{
-				"route": "刈谷環状線",
-				"stationName": "一色町"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷新栄町"
-			}
-		],
 		"lat": 34.9863464,
 		"lng": 137.0087296,
 		"prefecture": "愛知県",
@@ -9252,16 +5498,6 @@
 		"roma": "Kariyakōtsūyūen-mae",
 		"routes": [
 			"刈谷環状線"
-		],
-		"directions": [
-			{
-				"route": "刈谷環状線",
-				"stationName": "一色町"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷新栄町"
-			}
 		],
 		"lat": 34.9866232,
 		"lng": 137.0141053,
@@ -9279,16 +5515,6 @@
 		"routes": [
 			"刈谷環状線"
 		],
-		"directions": [
-			{
-				"route": "刈谷環状線",
-				"stationName": "一色町"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷新栄町"
-			}
-		],
 		"lat": 34.9871817,
 		"lng": 137.017392,
 		"prefecture": "愛知県",
@@ -9305,16 +5531,6 @@
 		"routes": [
 			"刈谷環状線"
 		],
-		"directions": [
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷青山"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "一色町"
-			}
-		],
 		"lat": 34.9972269,
 		"lng": 137.0165168,
 		"prefecture": "愛知県",
@@ -9330,16 +5546,6 @@
 		"roma": "Aishinhonsha-mae",
 		"routes": [
 			"刈谷環状線"
-		],
-		"directions": [
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷青山"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "一色町"
-			}
 		],
 		"lat": 35.0001342,
 		"lng": 137.0161,
@@ -9359,24 +5565,6 @@
 			"刈谷環状線",
 			"刈田川線知立支線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線知立支線",
-				"stationName": "知立"
-			},
-			{
-				"route": "刈田川線知立支線",
-				"stationName": "新富町"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷青山"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "一色町"
-			}
-		],
 		"lat": 35.0059716,
 		"lng": 137.0149949,
 		"prefecture": "愛知県",
@@ -9392,16 +5580,6 @@
 		"roma": "Kariya-aoyama",
 		"routes": [
 			"刈谷環状線"
-		],
-		"directions": [
-			{
-				"route": "刈谷環状線",
-				"stationName": "日高"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "一色町"
-			}
 		],
 		"lat": 35.0086306,
 		"lng": 137.0153193,
@@ -9419,16 +5597,6 @@
 		"routes": [
 			"刈谷環状線"
 		],
-		"directions": [
-			{
-				"route": "刈谷環状線",
-				"stationName": "日高"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷青山"
-			}
-		],
 		"lat": 35.0112968,
 		"lng": 137.0111149,
 		"prefecture": "愛知県",
@@ -9444,16 +5612,6 @@
 		"roma": "Oyama",
 		"routes": [
 			"刈谷環状線"
-		],
-		"directions": [
-			{
-				"route": "刈谷環状線",
-				"stationName": "日高"
-			},
-			{
-				"route": "刈谷環状線",
-				"stationName": "刈谷青山"
-			}
 		],
 		"lat": 35.0108313,
 		"lng": 136.9969627,
@@ -9473,20 +5631,6 @@
 			"つつじが丘線",
 			"刈田川線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			}
-		],
 		"lat": 35.0114341,
 		"lng": 136.8995344,
 		"prefecture": "愛知県",
@@ -9504,20 +5648,6 @@
 			"つつじが丘線",
 			"与五八デルタ線"
 		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川"
-			},
-			{
-				"route": "与五八デルタ線",
-				"stationName": "北加木屋"
-			}
-		],
 		"lat": 35.0082894,
 		"lng": 136.8957282,
 		"prefecture": "愛知県",
@@ -9533,16 +5663,6 @@
 		"roma": "Nozakibashi",
 		"routes": [
 			"つつじが丘線"
-		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
 		],
 		"lat": 35.0030432,
 		"lng": 136.8886668,
@@ -9560,16 +5680,6 @@
 		"routes": [
 			"つつじが丘線"
 		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
-		],
 		"lat": 34.9973331,
 		"lng": 136.8833012,
 		"prefecture": "愛知県",
@@ -9585,16 +5695,6 @@
 		"roma": "Chōso-bashi",
 		"routes": [
 			"つつじが丘線"
-		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
 		],
 		"lat": 34.9928525,
 		"lng": 136.8774476,
@@ -9612,16 +5712,6 @@
 		"routes": [
 			"つつじが丘線"
 		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
-		],
 		"lat": 34.9867041,
 		"lng": 136.8730273,
 		"prefecture": "愛知県",
@@ -9637,16 +5727,6 @@
 		"roma": "Tsutsujigaoka",
 		"routes": [
 			"つつじが丘線"
-		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
 		],
 		"lat": 34.9834891,
 		"lng": 136.8703317,
@@ -9664,16 +5744,6 @@
 		"routes": [
 			"つつじが丘線"
 		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
-		],
 		"lat": 34.9813835,
 		"lng": 136.8683478,
 		"prefecture": "愛知県",
@@ -9689,16 +5759,6 @@
 		"roma": "Chūōtoshokan-mae",
 		"routes": [
 			"つつじが丘線"
-		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
 		],
 		"lat": 34.9737696,
 		"lng": 136.8571451,
@@ -9716,16 +5776,6 @@
 		"routes": [
 			"つつじが丘線"
 		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
-		],
 		"lat": 34.9699132,
 		"lng": 136.8544131,
 		"prefecture": "愛知県",
@@ -9741,16 +5791,6 @@
 		"roma": "Okinota",
 		"routes": [
 			"つつじが丘線"
-		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
 		],
 		"lat": 34.9684333,
 		"lng": 136.848552,
@@ -9768,16 +5808,6 @@
 		"routes": [
 			"つつじが丘線"
 		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
-		],
 		"lat": 34.9639007,
 		"lng": 136.8400734,
 		"prefecture": "愛知県",
@@ -9793,16 +5823,6 @@
 		"roma": "Maedaguchi",
 		"routes": [
 			"つつじが丘線"
-		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
 		],
 		"lat": 34.9599273,
 		"lng": 136.8370929,
@@ -9820,16 +5840,6 @@
 		"routes": [
 			"つつじが丘線"
 		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
-		],
 		"lat": 34.9543823,
 		"lng": 136.8322923,
 		"prefecture": "愛知県",
@@ -9845,12 +5855,6 @@
 		"roma": "Shinmaiko-guchi",
 		"routes": [
 			"つつじが丘線"
-		],
-		"directions": [
-			{
-				"route": "つつじが丘線",
-				"stationName": "太田川・北加木屋"
-			}
 		],
 		"lat": 34.9500316,
 		"lng": 136.8326956,
@@ -9868,16 +5872,6 @@
 		"routes": [
 			"刈田川線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "つつじが丘線",
-				"stationName": "新舞子口"
-			}
-		],
 		"lat": 35.0200135,
 		"lng": 136.8907714,
 		"prefecture": "愛知県",
@@ -9893,16 +5887,6 @@
 		"roma": "Hosoda",
 		"routes": [
 			"刈田川線"
-		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			}
 		],
 		"lat": 35.0170342,
 		"lng": 136.8993051,
@@ -9923,28 +5907,6 @@
 			"名和線",
 			"与五八デルタ線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			},
-			{
-				"route": "与五八デルタ線",
-				"stationName": "新舞子口"
-			},
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.0080417,
 		"lng": 136.9086204,
 		"prefecture": "愛知県",
@@ -9960,16 +5922,6 @@
 		"roma": "Yoshikawa",
 		"routes": [
 			"刈田川線"
-		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			}
 		],
 		"lat": 35.0051521,
 		"lng": 136.9232631,
@@ -9987,16 +5939,6 @@
 		"routes": [
 			"刈田川線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			}
-		],
 		"lat": 35.005876,
 		"lng": 136.9924228,
 		"prefecture": "愛知県",
@@ -10012,16 +5954,6 @@
 		"roma": "Maruta-chō",
 		"routes": [
 			"刈田川線"
-		],
-		"directions": [
-			{
-				"route": "刈田川線",
-				"stationName": "刈谷"
-			},
-			{
-				"route": "刈田川線",
-				"stationName": "太田川"
-			}
 		],
 		"lat": 34.9990596,
 		"lng": 137.00496,
@@ -10039,16 +5971,6 @@
 		"routes": [
 			"刈田川線知立支線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線知立支線",
-				"stationName": "知立"
-			},
-			{
-				"route": "刈田川線知立支線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.0061363,
 		"lng": 137.0105825,
 		"prefecture": "愛知県",
@@ -10065,16 +5987,6 @@
 		"routes": [
 			"刈田川線知立支線"
 		],
-		"directions": [
-			{
-				"route": "刈田川線知立支線",
-				"stationName": "知立"
-			},
-			{
-				"route": "刈田川線知立支線",
-				"stationName": "新富町"
-			}
-		],
 		"lat": 35.0051811,
 		"lng": 137.0229517,
 		"prefecture": "愛知県",
@@ -10090,16 +6002,6 @@
 		"roma": "Torii",
 		"routes": [
 			"刈田川線知立支線"
-		],
-		"directions": [
-			{
-				"route": "刈田川線知立支線",
-				"stationName": "知立"
-			},
-			{
-				"route": "刈田川線知立支線",
-				"stationName": "新富町"
-			}
 		],
 		"lat": 35.0045437,
 		"lng": 137.0299258,
@@ -10120,28 +6022,6 @@
 			"東西線",
 			"惣作直通線"
 		],
-		"directions": [
-			{
-				"route": "大府環状線",
-				"stationName": "至学館大学前"
-			},
-			{
-				"route": "大府環状線",
-				"stationName": "大府"
-			},
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			},
-			{
-				"route": "惣作直通線",
-				"stationName": "惣作"
-			}
-		],
 		"lat": 35.0188646,
 		"lng": 136.9681358,
 		"prefecture": "愛知県",
@@ -10157,16 +6037,6 @@
 		"roma": "Kajita-chō",
 		"routes": [
 			"大府環状線"
-		],
-		"directions": [
-			{
-				"route": "大府環状線",
-				"stationName": "共和"
-			},
-			{
-				"route": "大府環状線",
-				"stationName": "至学館大学前"
-			}
 		],
 		"lat": 35.0369782,
 		"lng": 136.9705605,
@@ -10186,24 +6056,6 @@
 			"大府環状線",
 			"東西線"
 		],
-		"directions": [
-			{
-				"route": "大府環状線",
-				"stationName": "江端町"
-			},
-			{
-				"route": "大府環状線",
-				"stationName": "共和"
-			},
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
-		],
 		"lat": 35.0193017,
 		"lng": 136.9478994,
 		"prefecture": "愛知県",
@@ -10221,20 +6073,6 @@
 			"大府環状線",
 			"大峯連絡線"
 		],
-		"directions": [
-			{
-				"route": "大府環状線",
-				"stationName": "大府"
-			},
-			{
-				"route": "大府環状線",
-				"stationName": "共和"
-			},
-			{
-				"route": "大峯連絡線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 35.0123565,
 		"lng": 136.9503483,
 		"prefecture": "愛知県",
@@ -10250,16 +6088,6 @@
 		"roma": "Ōmine",
 		"routes": [
 			"大府環状線"
-		],
-		"directions": [
-			{
-				"route": "大府環状線",
-				"stationName": "大府"
-			},
-			{
-				"route": "大府環状線",
-				"stationName": "江端町"
-			}
 		],
 		"lat": 35.0075487,
 		"lng": 136.9536522,
@@ -10277,16 +6105,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.8906102,
 		"lng": 136.9328219,
 		"prefecture": "愛知県",
@@ -10302,16 +6120,6 @@
 		"roma": "Minato-hommachi",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.8863605,
 		"lng": 136.9295545,
@@ -10329,16 +6137,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.8828401,
 		"lng": 136.9262085,
 		"prefecture": "愛知県",
@@ -10354,16 +6152,6 @@
 		"roma": "Gōdo-gawa",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.8789254,
 		"lng": 136.9233095,
@@ -10381,16 +6169,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.8743424,
 		"lng": 136.9207135,
 		"prefecture": "愛知県",
@@ -10406,16 +6184,6 @@
 		"roma": "Yūraku-chō",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.8701506,
 		"lng": 136.918548,
@@ -10433,16 +6201,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.8661045,
 		"lng": 136.9198307,
 		"prefecture": "愛知県",
@@ -10458,16 +6216,6 @@
 		"roma": "Shitamon",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.8591771,
 		"lng": 136.9204451,
@@ -10485,16 +6233,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.8530458,
 		"lng": 136.9224424,
 		"prefecture": "愛知県",
@@ -10510,16 +6248,6 @@
 		"roma": "Satonaka",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.8456566,
 		"lng": 136.9238661,
@@ -10537,16 +6265,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.8395027,
 		"lng": 136.9210546,
 		"prefecture": "愛知県",
@@ -10562,16 +6280,6 @@
 		"roma": "Uranoshima",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.8344866,
 		"lng": 136.9202433,
@@ -10591,20 +6299,6 @@
 			"師崎線",
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.8285761,
 		"lng": 136.9200409,
 		"prefecture": "愛知県",
@@ -10620,16 +6314,6 @@
 		"roma": "Kagota",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.8228998,
 		"lng": 136.9201665,
@@ -10647,16 +6331,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.8175997,
 		"lng": 136.920369,
 		"prefecture": "愛知県",
@@ -10672,16 +6346,6 @@
 		"roma": "Umenoki",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.8096621,
 		"lng": 136.9188215,
@@ -10699,16 +6363,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.8040898,
 		"lng": 136.9185255,
 		"prefecture": "愛知県",
@@ -10724,16 +6378,6 @@
 		"roma": "Kōwa-guchi",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.7981668,
 		"lng": 136.918889,
@@ -10751,16 +6395,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.7935243,
 		"lng": 136.9206474,
 		"prefecture": "愛知県",
@@ -10776,16 +6410,6 @@
 		"roma": "Kōwa",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.7772066,
 		"lng": 136.9129361,
@@ -10803,16 +6427,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.7697145,
 		"lng": 136.9140759,
 		"prefecture": "愛知県",
@@ -10828,16 +6442,6 @@
 		"roma": "Shin'urato",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.7653225,
 		"lng": 136.9178678,
@@ -10857,20 +6461,6 @@
 			"師崎線",
 			"内海線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			},
-			{
-				"route": "内海線",
-				"stationName": "内海海岸"
-			}
-		],
 		"lat": 34.7608963,
 		"lng": 136.9205918,
 		"prefecture": "愛知県",
@@ -10886,16 +6476,6 @@
 		"roma": "Mihama-nakahirai",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.7550052,
 		"lng": 136.9287749,
@@ -10913,16 +6493,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.7512413,
 		"lng": 136.9348525,
 		"prefecture": "愛知県",
@@ -10938,16 +6508,6 @@
 		"roma": "Yamadakaigan(Minamichitabyōin-mae)",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.7414134,
 		"lng": 136.9472187,
@@ -10965,16 +6525,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.7199687,
 		"lng": 136.9620954,
 		"prefecture": "愛知県",
@@ -10990,16 +6540,6 @@
 		"roma": "Katana",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.7124762,
 		"lng": 136.9679273,
@@ -11017,16 +6557,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.7074152,
 		"lng": 136.9684845,
 		"prefecture": "愛知県",
@@ -11042,16 +6572,6 @@
 		"roma": "Morozakigyokō",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.7042975,
 		"lng": 136.9734971,
@@ -11069,16 +6589,6 @@
 		"routes": [
 			"師崎線"
 		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "師崎港"
-			},
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
-		],
 		"lat": 34.7001626,
 		"lng": 136.9719332,
 		"prefecture": "愛知県",
@@ -11094,12 +6604,6 @@
 		"roma": "Morozakikō",
 		"routes": [
 			"師崎線"
-		],
-		"directions": [
-			{
-				"route": "師崎線",
-				"stationName": "半田市"
-			}
 		],
 		"lat": 34.6977474,
 		"lng": 136.970839,
@@ -11117,16 +6621,6 @@
 		"routes": [
 			"名和線"
 		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.0550405,
 		"lng": 136.9163057,
 		"prefecture": "愛知県",
@@ -11142,16 +6636,6 @@
 		"roma": "Minami-jinden",
 		"routes": [
 			"名和線"
-		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 35.0484904,
 		"lng": 136.9164127,
@@ -11169,16 +6653,6 @@
 		"routes": [
 			"名和線"
 		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 35.0434321,
 		"lng": 136.9173906,
 		"prefecture": "愛知県",
@@ -11194,16 +6668,6 @@
 		"roma": "Wakinota",
 		"routes": [
 			"名和線"
-		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 35.0321634,
 		"lng": 136.9142714,
@@ -11223,24 +6687,6 @@
 			"名和線",
 			"東西線"
 		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			},
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
-		],
 		"lat": 35.0253003,
 		"lng": 136.9140876,
 		"prefecture": "愛知県",
@@ -11256,16 +6702,6 @@
 		"roma": "Fushimibashi",
 		"routes": [
 			"名和線"
-		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 35.0148348,
 		"lng": 136.9107783,
@@ -11283,16 +6719,6 @@
 		"routes": [
 			"名和線"
 		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 34.9970203,
 		"lng": 136.9087513,
 		"prefecture": "愛知県",
@@ -11308,16 +6734,6 @@
 		"roma": "Minami-kagiya",
 		"routes": [
 			"名和線"
-		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			}
 		],
 		"lat": 34.9884189,
 		"lng": 136.9065651,
@@ -11335,16 +6751,6 @@
 		"routes": [
 			"名和線"
 		],
-		"directions": [
-			{
-				"route": "名和線",
-				"stationName": "緒川植山"
-			},
-			{
-				"route": "名和線",
-				"stationName": "名和"
-			}
-		],
 		"lat": 34.9811396,
 		"lng": 136.90833,
 		"prefecture": "愛知県",
@@ -11360,16 +6766,6 @@
 		"roma": "Kō-kujō",
 		"routes": [
 			"内海線"
-		],
-		"directions": [
-			{
-				"route": "内海線",
-				"stationName": "内海海岸"
-			},
-			{
-				"route": "内海線",
-				"stationName": "古布"
-			}
 		],
 		"lat": 34.7524207,
 		"lng": 136.9112451,
@@ -11387,16 +6783,6 @@
 		"routes": [
 			"内海線"
 		],
-		"directions": [
-			{
-				"route": "内海線",
-				"stationName": "内海海岸"
-			},
-			{
-				"route": "内海線",
-				"stationName": "古布"
-			}
-		],
 		"lat": 34.7466542,
 		"lng": 136.8995391,
 		"prefecture": "愛知県",
@@ -11412,16 +6798,6 @@
 		"roma": "Utsumi",
 		"routes": [
 			"内海線"
-		],
-		"directions": [
-			{
-				"route": "内海線",
-				"stationName": "内海海岸"
-			},
-			{
-				"route": "内海線",
-				"stationName": "古布"
-			}
 		],
 		"lat": 34.7455306,
 		"lng": 136.8754645,
@@ -11439,16 +6815,6 @@
 		"routes": [
 			"内海線"
 		],
-		"directions": [
-			{
-				"route": "内海線",
-				"stationName": "内海海岸"
-			},
-			{
-				"route": "内海線",
-				"stationName": "古布"
-			}
-		],
 		"lat": 34.7440812,
 		"lng": 136.8698746,
 		"prefecture": "愛知県",
@@ -11464,12 +6830,6 @@
 		"roma": "Utsumi-kaigan",
 		"routes": [
 			"内海線"
-		],
-		"directions": [
-			{
-				"route": "内海線",
-				"stationName": "古布"
-			}
 		],
 		"lat": 34.7393192,
 		"lng": 136.8680506,
@@ -11487,12 +6847,6 @@
 		"routes": [
 			"東西線"
 		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			}
-		],
 		"lat": 35.0302011,
 		"lng": 136.896807,
 		"prefecture": "愛知県",
@@ -11508,16 +6862,6 @@
 		"roma": "Ōikekōen",
 		"routes": [
 			"東西線"
-		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
 		],
 		"lat": 35.0280607,
 		"lng": 136.9023454,
@@ -11535,16 +6879,6 @@
 		"routes": [
 			"東西線"
 		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
-		],
 		"lat": 35.0242822,
 		"lng": 136.9197713,
 		"prefecture": "愛知県",
@@ -11560,16 +6894,6 @@
 		"roma": "Nagakuchi",
 		"routes": [
 			"東西線"
-		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
 		],
 		"lat": 35.0213468,
 		"lng": 136.9319019,
@@ -11587,16 +6911,6 @@
 		"routes": [
 			"東西線"
 		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
-		],
 		"lat": 35.0266095,
 		"lng": 136.983434,
 		"prefecture": "愛知県",
@@ -11612,16 +6926,6 @@
 		"roma": "Midorikōen",
 		"routes": [
 			"東西線"
-		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
 		],
 		"lat": 35.0380651,
 		"lng": 136.9857546,
@@ -11639,16 +6943,6 @@
 		"routes": [
 			"東西線"
 		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
-		],
 		"lat": 35.0437001,
 		"lng": 136.9900041,
 		"prefecture": "愛知県",
@@ -11664,16 +6958,6 @@
 		"roma": "Zengo",
 		"routes": [
 			"東西線"
-		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
 		],
 		"lat": 35.0517122,
 		"lng": 136.9963002,
@@ -11691,16 +6975,6 @@
 		"routes": [
 			"東西線"
 		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
-		],
 		"lat": 35.0632624,
 		"lng": 137.0073656,
 		"prefecture": "愛知県",
@@ -11716,16 +6990,6 @@
 		"roma": "Toyoakedanchi",
 		"routes": [
 			"東西線"
-		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
 		],
 		"lat": 35.0649593,
 		"lng": 137.0114326,
@@ -11743,16 +7007,6 @@
 		"routes": [
 			"東西線"
 		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "沓掛"
-			},
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
-		],
 		"lat": 35.0667274,
 		"lng": 137.0151557,
 		"prefecture": "愛知県",
@@ -11768,12 +7022,6 @@
 		"roma": "Kutsukake",
 		"routes": [
 			"東西線"
-		],
-		"directions": [
-			{
-				"route": "東西線",
-				"stationName": "荒尾下畑"
-			}
 		],
 		"lat": 35.0720277,
 		"lng": 137.0217726,
@@ -11791,16 +7039,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.9641249,
 		"lng": 136.9187445,
 		"prefecture": "愛知県",
@@ -11816,16 +7054,6 @@
 		"roma": "Maruikedai",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.961159,
 		"lng": 136.9218302,
@@ -11843,16 +7071,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.9584636,
 		"lng": 136.9249833,
 		"prefecture": "愛知県",
@@ -11868,16 +7086,6 @@
 		"roma": "Takanedai",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.954559,
 		"lng": 136.924916,
@@ -11895,16 +7103,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.9488173,
 		"lng": 136.9225936,
 		"prefecture": "愛知県",
@@ -11920,16 +7118,6 @@
 		"roma": "Arako",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.9435596,
 		"lng": 136.9218667,
@@ -11947,16 +7135,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.9381172,
 		"lng": 136.9218267,
 		"prefecture": "愛知県",
@@ -11972,16 +7150,6 @@
 		"roma": "Miyazu",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.9328018,
 		"lng": 136.9223236,
@@ -11999,16 +7167,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.9279844,
 		"lng": 136.9253645,
 		"prefecture": "愛知県",
@@ -12024,16 +7182,6 @@
 		"roma": "Hagi",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.9215108,
 		"lng": 136.9282675,
@@ -12051,16 +7199,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.9099368,
 		"lng": 136.9307503,
 		"prefecture": "愛知県",
@@ -12076,16 +7214,6 @@
 		"roma": "Handa-sumiyoshi",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.9057159,
 		"lng": 136.9307123,
@@ -12103,16 +7231,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.8900651,
 		"lng": 136.9274512,
 		"prefecture": "愛知県",
@@ -12128,16 +7246,6 @@
 		"roma": "Sakae-machi-nichōme",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.8867769,
 		"lng": 136.9248852,
@@ -12155,16 +7263,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.8829601,
 		"lng": 136.921902,
 		"prefecture": "愛知県",
@@ -12180,16 +7278,6 @@
 		"roma": "Shin-aoyama",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.878956,
 		"lng": 136.9187559,
@@ -12207,16 +7295,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.8751471,
 		"lng": 136.9137405,
 		"prefecture": "愛知県",
@@ -12232,16 +7310,6 @@
 		"roma": "Hōsei",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.8703422,
 		"lng": 136.9117589,
@@ -12259,16 +7327,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.8655972,
 		"lng": 136.9115867,
 		"prefecture": "愛知県",
@@ -12284,16 +7342,6 @@
 		"roma": "Hiraibata",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.8596884,
 		"lng": 136.9114635,
@@ -12311,16 +7359,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.8523969,
 		"lng": 136.9114174,
 		"prefecture": "愛知県",
@@ -12336,16 +7374,6 @@
 		"roma": "Chita-kōyō",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.8477808,
 		"lng": 136.9118694,
@@ -12363,16 +7391,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.8412773,
 		"lng": 136.9110291,
 		"prefecture": "愛知県",
@@ -12388,16 +7406,6 @@
 		"roma": "Taketoyo-chinju",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.8347721,
 		"lng": 136.9081713,
@@ -12415,16 +7423,6 @@
 		"routes": [
 			"阿久比線"
 		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
-		],
 		"lat": 34.8299544,
 		"lng": 136.9106299,
 		"prefecture": "愛知県",
@@ -12440,16 +7438,6 @@
 		"roma": "Fuki",
 		"routes": [
 			"阿久比線"
-		],
-		"directions": [
-			{
-				"route": "阿久比線",
-				"stationName": "新富貴"
-			},
-			{
-				"route": "阿久比線",
-				"stationName": "緒川植山"
-			}
 		],
 		"lat": 34.8301892,
 		"lng": 136.9167185,
@@ -12467,16 +7455,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・緒川植山"
-			}
-		],
 		"lat": 35.1401899,
 		"lng": 136.9592741,
 		"prefecture": "愛知県",
@@ -12492,16 +7470,6 @@
 		"roma": "Irinaka",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・緒川植山"
-			}
 		],
 		"lat": 35.1435054,
 		"lng": 136.9550516,
@@ -12519,16 +7487,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・緒川植山"
-			}
-		],
 		"lat": 35.1489173,
 		"lng": 136.9510707,
 		"prefecture": "愛知県",
@@ -12544,16 +7502,6 @@
 		"roma": "Yasudatōri",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・緒川植山"
-			}
 		],
 		"lat": 35.1538106,
 		"lng": 136.9459494,
@@ -12571,16 +7519,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・緒川植山"
-			}
-		],
 		"lat": 35.1576148,
 		"lng": 136.9397606,
 		"prefecture": "愛知県",
@@ -12596,16 +7534,6 @@
 		"roma": "Fukiage",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・緒川植山"
-			}
 		],
 		"lat": 35.1593502,
 		"lng": 136.9339301,
@@ -12623,16 +7551,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・緒川植山"
-			}
-		],
 		"lat": 35.1628042,
 		"lng": 136.9299175,
 		"prefecture": "愛知県",
@@ -12648,16 +7566,6 @@
 		"roma": "Kikuzato",
 		"routes": [
 			"大府西線・八事線"
-		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・緒川植山"
-			}
 		],
 		"lat": 35.1658263,
 		"lng": 136.9254163,
@@ -12675,16 +7583,6 @@
 		"routes": [
 			"大府西線・八事線"
 		],
-		"directions": [
-			{
-				"route": "大府西線・八事線",
-				"stationName": "栄町"
-			},
-			{
-				"route": "大府西線・八事線",
-				"stationName": "八事・緒川植山"
-			}
-		],
 		"lat": 35.1696117,
 		"lng": 136.9177721,
 		"prefecture": "愛知県",
@@ -12700,16 +7598,6 @@
 		"roma": "Tobishima-futō",
 		"routes": [
 			"南港線(名港トリトンライン)"
-		],
-		"directions": [
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "湾岸長島"
-			},
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "田面"
-			}
 		],
 		"lat": 35.0518561,
 		"lng": 136.8177671,
@@ -12727,16 +7615,6 @@
 		"routes": [
 			"南港線(名港トリトンライン)"
 		],
-		"directions": [
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "湾岸長島"
-			},
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "田面"
-			}
-		],
 		"lat": 35.0494672,
 		"lng": 136.7806752,
 		"prefecture": "愛知県",
@@ -12753,16 +7631,507 @@
 		"routes": [
 			"南港線(名港トリトンライン)"
 		],
-		"directions": [
-			{
-				"route": "南港線(名港トリトンライン)",
-				"stationName": "田面"
-			}
-		],
 		"lat": 35.0325205,
 		"lng": 136.7264469,
 		"prefecture": "三重県",
 		"city": "桑名市",
 		"id": "wng"
+	},
+	"kmb": {
+		"code": [
+			"OZ02"
+		],
+		"name": "駒場町",
+		"kana": "こまばちょう",
+		"roma": "Komaba-chō",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 35.0190327,
+		"lng": 137.0553958,
+		"prefecture": "愛知県",
+		"city": "豊田市",
+		"id": "kmb"
+	},
+	"mgn": {
+		"code": [
+			"OZ03"
+		],
+		"name": "向金",
+		"kana": "むかいがね",
+		"roma": "Mukaigane",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 35.0178107,
+		"lng": 137.0643869,
+		"prefecture": "愛知県",
+		"city": "豊田市",
+		"id": "mgn"
+	},
+	"kmr": {
+		"code": [
+			"OZ04"
+		],
+		"name": "小松原",
+		"kana": "こまつばら",
+		"roma": "Komatsubara",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 35.0161122,
+		"lng": 137.0767456,
+		"prefecture": "愛知県",
+		"city": "豊田市",
+		"id": "kmr"
+	},
+	"wkz": {
+		"code": [
+			"OZ05"
+		],
+		"name": "若園",
+		"kana": "わかぞの",
+		"roma": "Wakazono",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 35.0145273,
+		"lng": 137.0846095,
+		"prefecture": "愛知県",
+		"city": "豊田市",
+		"id": "wkz"
+	},
+	"ysw": {
+		"code": [
+			"OZ06"
+		],
+		"name": "吉原町",
+		"kana": "よしわらちょう",
+		"roma": "Yoshiwara-chō",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 35.0107838,
+		"lng": 137.0919939,
+		"prefecture": "愛知県",
+		"city": "豊田市",
+		"id": "ysw"
+	},
+	"kug": {
+		"code": [
+			"OZ07"
+		],
+		"name": "北歌口",
+		"kana": "きたうたぐち",
+		"roma": "Kitautaguchi",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 35.004231,
+		"lng": 137.0994101,
+		"prefecture": "愛知県",
+		"city": "安城市",
+		"id": "kug"
+	},
+	"fkj": {
+		"code": [
+			"OZ08"
+		],
+		"name": "福受町",
+		"kana": "ふくじゅちょう",
+		"roma": "Fukuju-chō",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9915647,
+		"lng": 137.1171649,
+		"prefecture": "愛知県",
+		"city": "豊田市",
+		"id": "fkj"
+	},
+	"kbr": {
+		"code": [
+			"OZ09"
+		],
+		"name": "小針",
+		"kana": "こばり",
+		"roma": "Kobari",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.98588,
+		"lng": 137.126683,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "kbr"
+	},
+	"hkb": {
+		"code": [
+			"OZ10"
+		],
+		"name": "東小針",
+		"kana": "ひがしこばり",
+		"roma": "Higashi-kobari",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9839358,
+		"lng": 137.1325482,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "hkb"
+	},
+	"ozk": {
+		"code": [
+			"OZ11"
+		],
+		"name": "岡崎北野",
+		"kana": "おかざききたの",
+		"roma": "Okazaki-kitano",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9838324,
+		"lng": 137.1397575,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "ozk"
+	},
+	"ozo": {
+		"code": [
+			"OZ12"
+		],
+		"name": "岡崎大橋",
+		"kana": "おかざきおおはし",
+		"roma": "Okazaki-ōhashi",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9831446,
+		"lng": 137.1489232,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "ozo"
+	},
+	"dmo": {
+		"code": [
+			"OZ13"
+		],
+		"name": "大門",
+		"kana": "だいもん",
+		"roma": "Daimon",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9820439,
+		"lng": 137.1547255,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "dmo"
+	},
+	"djj": {
+		"code": [
+			"OZ14"
+		],
+		"name": "大樹寺",
+		"kana": "だいじゅうじ",
+		"roma": "Daijūji",
+		"routes": [
+			"岡崎線",
+			"岡崎線東公園支線"
+		],
+		"lat": 34.9806834,
+		"lng": 137.1617646,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "djj"
+	},
+	"idr": {
+		"code": [
+			"OZ15"
+		],
+		"name": "井田荒居",
+		"kana": "いだあらい",
+		"roma": "Ida-arai",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9766657,
+		"lng": 137.1681103,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "idr"
+	},
+	"igc": {
+		"code": [
+			"OZ16"
+		],
+		"name": "伊賀町",
+		"kana": "いがちょう",
+		"roma": "Iga-chō",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9720593,
+		"lng": 137.1669214,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "igc"
+	},
+	"nom": {
+		"code": [
+			"OZ17"
+		],
+		"name": "能見",
+		"kana": "のみ",
+		"roma": "Nomi",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9667177,
+		"lng": 137.1633011,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "nom"
+	},
+	"hmd": {
+		"code": [
+			"OZ18"
+		],
+		"name": "本町通",
+		"kana": "ほんまちどおり",
+		"roma": "Hommachidōri",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.961566,
+		"lng": 137.1630576,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "hmd"
+	},
+	"ozh": {
+		"code": [
+			"OZ19"
+		],
+		"name": "岡崎公園東",
+		"kana": "おかざきこうえんひがし",
+		"roma": "Okazakikōen-higashi",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9570706,
+		"lng": 137.1639715,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "ozh"
+	},
+	"hoz": {
+		"code": [
+			"OZ20"
+		],
+		"name": "東岡崎",
+		"kana": "ひがしおかざき",
+		"roma": "Hikashi-okazaki",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9524344,
+		"lng": 137.1640716,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "hoz"
+	},
+	"iks": {
+		"code": [
+			"OZ21"
+		],
+		"name": "池下",
+		"kana": "いけした",
+		"roma": "Ikeshita",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9474308,
+		"lng": 137.1630369,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "iks"
+	},
+	"znd": {
+		"code": [
+			"OZ22"
+		],
+		"name": "銭堤",
+		"kana": "ぜにづつみ",
+		"roma": "Zenizutsumi",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9411059,
+		"lng": 137.1623382,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "znd"
+	},
+	"tsk": {
+		"code": [
+			"OZ23"
+		],
+		"name": "戸崎",
+		"kana": "とさき",
+		"roma": "Tosaki",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9365006,
+		"lng": 137.1613678,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "tsk"
+	},
+	"onk": {
+		"code": [
+			"OZ24"
+		],
+		"name": "岡崎中田",
+		"kana": "おかざきなかだ",
+		"roma": "Okazaki-nakada",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9307836,
+		"lng": 137.1598413,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "onk"
+	},
+	"okz": {
+		"code": [
+			"OZ25"
+		],
+		"name": "岡崎",
+		"kana": "おかざき",
+		"roma": "Okazaki",
+		"routes": [
+			"岡崎線"
+		],
+		"lat": 34.9256662,
+		"lng": 137.1580679,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "okz"
+	},
+	"kmo": {
+		"code": [
+			"OZ51"
+		],
+		"name": "鴨田",
+		"kana": "かもだ",
+		"roma": "Kamoda",
+		"routes": [
+			"岡崎線東公園支線"
+		],
+		"lat": 34.979199,
+		"lng": 137.1694874,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "kmo"
+	},
+	"ida": {
+		"code": [
+			"OZ52"
+		],
+		"name": "井田",
+		"kana": "いだ",
+		"roma": "Ida",
+		"routes": [
+			"岡崎線東公園支線"
+		],
+		"lat": 34.9776136,
+		"lng": 137.1749806,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "ida"
+	},
+	"igs": {
+		"code": [
+			"OZ53"
+		],
+		"name": "伊賀新町",
+		"kana": "いがしんまち",
+		"roma": "Igashimmachi",
+		"routes": [
+			"岡崎線東公園支線"
+		],
+		"lat": 34.9741342,
+		"lng": 137.1781431,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "igs"
+	},
+	"ing": {
+		"code": [
+			"OZ54"
+		],
+		"name": "稲熊",
+		"kana": "いなぐま",
+		"roma": "Inaguma",
+		"routes": [
+			"岡崎線東公園支線"
+		],
+		"lat": 34.9682059,
+		"lng": 137.1817637,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "ing"
+	},
+	"oro": {
+		"code": [
+			"OZ55"
+		],
+		"name": "小呂",
+		"kana": "おろ",
+		"roma": "Oro",
+		"routes": [
+			"岡崎線東公園支線"
+		],
+		"lat": 34.9621107,
+		"lng": 137.1859532,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "oro"
+	},
+	"mtd": {
+		"code": [
+			"OZ56"
+		],
+		"name": "三田田",
+		"kana": "みただ",
+		"roma": "Mitada",
+		"routes": [
+			"岡崎線東公園支線"
+		],
+		"lat": 34.9584685,
+		"lng": 137.1893873,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "mtd"
+	},
+	"hko": {
+		"code": [
+			"OZ57"
+		],
+		"name": "東公園",
+		"kana": "ひがしこうえん",
+		"roma": "Higashikōen",
+		"routes": [
+			"岡崎線東公園支線"
+		],
+		"lat": 34.9534402,
+		"lng": 137.1899048,
+		"prefecture": "愛知県",
+		"city": "岡崎市",
+		"id": "hko"
 	}
 }
