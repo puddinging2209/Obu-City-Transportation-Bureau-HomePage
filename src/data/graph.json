@@ -1,5242 +1,5552 @@
 [
-    {
-        "from": "kts",
-        "to": "kto",
-        "distance": 0.75
-    },
-    {
-        "from": "kto",
-        "to": "kts",
-        "distance": 0.75
-    },
-    {
-        "from": "kto",
-        "to": "owk",
-        "distance": 0.91
-    },
-    {
-        "from": "owk",
-        "to": "kto",
-        "distance": 0.91
-    },
-    {
-        "from": "owk",
-        "to": "bwg",
-        "distance": 0.82
-    },
-    {
-        "from": "bwg",
-        "to": "owk",
-        "distance": 0.82
-    },
-    {
-        "from": "bwg",
-        "to": "tkg",
-        "distance": 0.76
-    },
-    {
-        "from": "tkg",
-        "to": "bwg",
-        "distance": 0.76
-    },
-    {
-        "from": "tkg",
-        "to": "tyk",
-        "distance": 0.4
-    },
-    {
-        "from": "tyk",
-        "to": "tkg",
-        "distance": 0.4
-    },
-    {
-        "from": "tyk",
-        "to": "chk",
-        "distance": 0.39
-    },
-    {
-        "from": "chk",
-        "to": "tyk",
-        "distance": 0.39
-    },
-    {
-        "from": "chk",
-        "to": "jsd",
-        "distance": 0.55
-    },
-    {
-        "from": "jsd",
-        "to": "chk",
-        "distance": 0.55
-    },
-    {
-        "from": "jsd",
-        "to": "kmm",
-        "distance": 1.09
-    },
-    {
-        "from": "kmm",
-        "to": "jsd",
-        "distance": 1.09
-    },
-    {
-        "from": "kmm",
-        "to": "wko",
-        "distance": 0.92
-    },
-    {
-        "from": "wko",
-        "to": "kmm",
-        "distance": 0.92
-    },
-    {
-        "from": "wko",
-        "to": "smz",
-        "distance": 1.19
-    },
-    {
-        "from": "smz",
-        "to": "wko",
-        "distance": 1.19
-    },
-    {
-        "from": "smz",
-        "to": "hrd",
-        "distance": 0.68
-    },
-    {
-        "from": "hrd",
-        "to": "smz",
-        "distance": 0.68
-    },
-    {
-        "from": "hrd",
-        "to": "nki",
-        "distance": 1.04
-    },
-    {
-        "from": "nki",
-        "to": "hrd",
-        "distance": 1.04
-    },
-    {
-        "from": "nki",
-        "to": "tgo",
-        "distance": 0.86
-    },
-    {
-        "from": "tgo",
-        "to": "nki",
-        "distance": 0.86
-    },
-    {
-        "from": "tgo",
-        "to": "srt",
-        "distance": 0.58
-    },
-    {
-        "from": "srt",
-        "to": "tgo",
-        "distance": 0.58
-    },
-    {
-        "from": "srt",
-        "to": "nsn",
-        "distance": 1.07
-    },
-    {
-        "from": "nsn",
-        "to": "srt",
-        "distance": 1.07
-    },
-    {
-        "from": "nsn",
-        "to": "ord",
-        "distance": 0.53
-    },
-    {
-        "from": "ord",
-        "to": "nsn",
-        "distance": 0.53
-    },
-    {
-        "from": "ord",
-        "to": "nsi",
-        "distance": 0.39
-    },
-    {
-        "from": "nsi",
-        "to": "ord",
-        "distance": 0.39
-    },
-    {
-        "from": "nsi",
-        "to": "nss",
-        "distance": 0.57
-    },
-    {
-        "from": "nss",
-        "to": "nsi",
-        "distance": 0.57
-    },
-    {
-        "from": "nss",
-        "to": "nsa",
-        "distance": 1.08
-    },
-    {
-        "from": "nsa",
-        "to": "nss",
-        "distance": 1.08
-    },
-    {
-        "from": "nsa",
-        "to": "iws",
-        "distance": 0.42
-    },
-    {
-        "from": "iws",
-        "to": "nsa",
-        "distance": 0.42
-    },
-    {
-        "from": "iws",
-        "to": "bnt",
-        "distance": 0.53
-    },
-    {
-        "from": "bnt",
-        "to": "iws",
-        "distance": 0.53
-    },
-    {
-        "from": "bnt",
-        "to": "tky",
-        "distance": 0.79
-    },
-    {
-        "from": "tky",
-        "to": "bnt",
-        "distance": 0.79
-    },
-    {
-        "from": "tky",
-        "to": "aic",
-        "distance": 0.74
-    },
-    {
-        "from": "aic",
-        "to": "tky",
-        "distance": 0.74
-    },
-    {
-        "from": "aic",
-        "to": "ngk",
-        "distance": 1.38
-    },
-    {
-        "from": "ngk",
-        "to": "aic",
-        "distance": 1.38
-    },
-    {
-        "from": "ngk",
-        "to": "knr",
-        "distance": 0.74
-    },
-    {
-        "from": "knr",
-        "to": "ngk",
-        "distance": 0.74
-    },
-    {
-        "from": "knr",
-        "to": "nks",
-        "distance": 0.63
-    },
-    {
-        "from": "nks",
-        "to": "knr",
-        "distance": 0.63
-    },
-    {
-        "from": "kry",
-        "to": "krm",
-        "distance": 1.3
-    },
-    {
-        "from": "krm",
-        "to": "kry",
-        "distance": 1.3
-    },
-    {
-        "from": "krm",
-        "to": "aiz",
-        "distance": 0.6
-    },
-    {
-        "from": "aiz",
-        "to": "krm",
-        "distance": 0.6
-    },
-    {
-        "from": "aiz",
-        "to": "ash",
-        "distance": 1.23
-    },
-    {
-        "from": "ash",
-        "to": "aiz",
-        "distance": 1.23
-    },
-    {
-        "from": "ash",
-        "to": "wks",
-        "distance": 1.13
-    },
-    {
-        "from": "wks",
-        "to": "ash",
-        "distance": 1.13
-    },
-    {
-        "from": "wks",
-        "to": "obs",
-        "distance": 0.37
-    },
-    {
-        "from": "obs",
-        "to": "wks",
-        "distance": 0.37
-    },
-    {
-        "from": "obs",
-        "to": "chc",
-        "distance": 0.86
-    },
-    {
-        "from": "chc",
-        "to": "obs",
-        "distance": 0.86
-    },
-    {
-        "from": "chc",
-        "to": "oiw",
-        "distance": 1.04
-    },
-    {
-        "from": "oiw",
-        "to": "chc",
-        "distance": 1.04
-    },
-    {
-        "from": "oiw",
-        "to": "kyw",
-        "distance": 1.25
-    },
-    {
-        "from": "kyw",
-        "to": "oiw",
-        "distance": 1.25
-    },
-    {
-        "from": "kyw",
-        "to": "kkg",
-        "distance": 1.33
-    },
-    {
-        "from": "kkg",
-        "to": "kyw",
-        "distance": 1.33
-    },
-    {
-        "from": "kkg",
-        "to": "mod",
-        "distance": 0.81
-    },
-    {
-        "from": "mod",
-        "to": "kkg",
-        "distance": 0.81
-    },
-    {
-        "from": "mod",
-        "to": "ryn",
-        "distance": 0.81
-    },
-    {
-        "from": "ryn",
-        "to": "mod",
-        "distance": 0.81
-    },
-    {
-        "from": "ryn",
-        "to": "odk",
-        "distance": 0.96
-    },
-    {
-        "from": "odk",
-        "to": "ryn",
-        "distance": 0.96
-    },
-    {
-        "from": "odk",
-        "to": "kso",
-        "distance": 1.12
-    },
-    {
-        "from": "kso",
-        "to": "odk",
-        "distance": 1.12
-    },
-    {
-        "from": "kso",
-        "to": "mtn",
-        "distance": 0.51
-    },
-    {
-        "from": "mtn",
-        "to": "kso",
-        "distance": 0.51
-    },
-    {
-        "from": "mtn",
-        "to": "hsh",
-        "distance": 0.62
-    },
-    {
-        "from": "hsh",
-        "to": "mtn",
-        "distance": 0.62
-    },
-    {
-        "from": "hsh",
-        "to": "mks",
-        "distance": 0.77
-    },
-    {
-        "from": "mks",
-        "to": "hsh",
-        "distance": 0.77
-    },
-    {
-        "from": "mks",
-        "to": "mky",
-        "distance": 0.37
-    },
-    {
-        "from": "mky",
-        "to": "mks",
-        "distance": 0.37
-    },
-    {
-        "from": "mky",
-        "to": "sks",
-        "distance": 0.48
-    },
-    {
-        "from": "sks",
-        "to": "mky",
-        "distance": 0.48
-    },
-    {
-        "from": "sks",
-        "to": "ybt",
-        "distance": 0.72
-    },
-    {
-        "from": "ybt",
-        "to": "sks",
-        "distance": 0.72
-    },
-    {
-        "from": "ybt",
-        "to": "sod",
-        "distance": 0.48
-    },
-    {
-        "from": "sod",
-        "to": "ybt",
-        "distance": 0.48
-    },
-    {
-        "from": "sod",
-        "to": "mzn",
-        "distance": 0.56
-    },
-    {
-        "from": "mzn",
-        "to": "sod",
-        "distance": 0.56
-    },
-    {
-        "from": "mzn",
-        "to": "hrt",
-        "distance": 0.62
-    },
-    {
-        "from": "hrt",
-        "to": "mzn",
-        "distance": 0.62
-    },
-    {
-        "from": "hrt",
-        "to": "snk",
-        "distance": 0.59
-    },
-    {
-        "from": "snk",
-        "to": "hrt",
-        "distance": 0.59
-    },
-    {
-        "from": "snk",
-        "to": "usm",
-        "distance": 0.75
-    },
-    {
-        "from": "usm",
-        "to": "snk",
-        "distance": 0.75
-    },
-    {
-        "from": "usm",
-        "to": "tkj",
-        "distance": 1.07
-    },
-    {
-        "from": "tkj",
-        "to": "usm",
-        "distance": 1.07
-    },
-    {
-        "from": "tkj",
-        "to": "srk",
-        "distance": 0.79
-    },
-    {
-        "from": "srk",
-        "to": "tkj",
-        "distance": 0.79
-    },
-    {
-        "from": "srk",
-        "to": "trm",
-        "distance": 1
-    },
-    {
-        "from": "trm",
-        "to": "srk",
-        "distance": 1
-    },
-    {
-        "from": "trm",
-        "to": "chy",
-        "distance": 0.6
-    },
-    {
-        "from": "chy",
-        "to": "trm",
-        "distance": 0.6
-    },
-    {
-        "from": "chy",
-        "to": "yba",
-        "distance": 0.66
-    },
-    {
-        "from": "yba",
-        "to": "chy",
-        "distance": 0.66
-    },
-    {
-        "from": "yba",
-        "to": "ske",
-        "distance": 0.78
-    },
-    {
-        "from": "ske",
-        "to": "yba",
-        "distance": 0.78
-    },
-    {
-        "from": "nwa",
-        "to": "odm",
-        "distance": 1.75
-    },
-    {
-        "from": "odm",
-        "to": "nwa",
-        "distance": 1.75
-    },
-    {
-        "from": "odm",
-        "to": "odk",
-        "distance": 1.13
-    },
-    {
-        "from": "odk",
-        "to": "odm",
-        "distance": 1.13
-    },
-    {
-        "from": "odk",
-        "to": "nrm",
-        "distance": 1.14
-    },
-    {
-        "from": "nrm",
-        "to": "odk",
-        "distance": 1.14
-    },
-    {
-        "from": "nrm",
-        "to": "ryg",
-        "distance": 0.84
-    },
-    {
-        "from": "ryg",
-        "to": "nrm",
-        "distance": 0.84
-    },
-    {
-        "from": "ryg",
-        "to": "kmt",
-        "distance": 1.02
-    },
-    {
-        "from": "kmt",
-        "to": "ryg",
-        "distance": 1.02
-    },
-    {
-        "from": "kmt",
-        "to": "try",
-        "distance": 0.53
-    },
-    {
-        "from": "try",
-        "to": "kmt",
-        "distance": 0.53
-    },
-    {
-        "from": "try",
-        "to": "ubi",
-        "distance": 0.54
-    },
-    {
-        "from": "ubi",
-        "to": "try",
-        "distance": 0.54
-    },
-    {
-        "from": "ubi",
-        "to": "kkd",
-        "distance": 0.6
-    },
-    {
-        "from": "kkd",
-        "to": "ubi",
-        "distance": 0.6
-    },
-    {
-        "from": "kkd",
-        "to": "ckk",
-        "distance": 0.8
-    },
-    {
-        "from": "ckk",
-        "to": "kkd",
-        "distance": 0.8
-    },
-    {
-        "from": "ckk",
-        "to": "mgm",
-        "distance": 0.95
-    },
-    {
-        "from": "mgm",
-        "to": "ckk",
-        "distance": 0.95
-    },
-    {
-        "from": "mgm",
-        "to": "ftm",
-        "distance": 0.77
-    },
-    {
-        "from": "ftm",
-        "to": "mgm",
-        "distance": 0.77
-    },
-    {
-        "from": "ftm",
-        "to": "msk",
-        "distance": 0.43
-    },
-    {
-        "from": "msk",
-        "to": "ftm",
-        "distance": 0.43
-    },
-    {
-        "from": "msk",
-        "to": "tkg",
-        "distance": 0.44
-    },
-    {
-        "from": "tkg",
-        "to": "msk",
-        "distance": 0.44
-    },
-    {
-        "from": "tkg",
-        "to": "tys",
-        "distance": 0.53
-    },
-    {
-        "from": "tys",
-        "to": "tkg",
-        "distance": 0.53
-    },
-    {
-        "from": "tys",
-        "to": "okt",
-        "distance": 0.45
-    },
-    {
-        "from": "okt",
-        "to": "tys",
-        "distance": 0.45
-    },
-    {
-        "from": "okt",
-        "to": "nzk",
-        "distance": 0.86
-    },
-    {
-        "from": "nzk",
-        "to": "okt",
-        "distance": 0.86
-    },
-    {
-        "from": "nzk",
-        "to": "igm",
-        "distance": 1.33
-    },
-    {
-        "from": "igm",
-        "to": "nzk",
-        "distance": 1.33
-    },
-    {
-        "from": "igm",
-        "to": "mro",
-        "distance": 1.1
-    },
-    {
-        "from": "mro",
-        "to": "igm",
-        "distance": 1.1
-    },
-    {
-        "from": "mro",
-        "to": "nso",
-        "distance": 0.54
-    },
-    {
-        "from": "nso",
-        "to": "mro",
-        "distance": 0.54
-    },
-    {
-        "from": "nso",
-        "to": "ish",
-        "distance": 0.35
-    },
-    {
-        "from": "ish",
-        "to": "nso",
-        "distance": 0.35
-    },
-    {
-        "from": "ish",
-        "to": "ngd",
-        "distance": 0.36
-    },
-    {
-        "from": "ngd",
-        "to": "ish",
-        "distance": 0.36
-    },
-    {
-        "from": "ngd",
-        "to": "osh",
-        "distance": 0.54
-    },
-    {
-        "from": "osh",
-        "to": "ngd",
-        "distance": 0.54
-    },
-    {
-        "from": "osh",
-        "to": "nkf",
-        "distance": 0.87
-    },
-    {
-        "from": "nkf",
-        "to": "osh",
-        "distance": 0.87
-    },
-    {
-        "from": "nkf",
-        "to": "nkd",
-        "distance": 0.47
-    },
-    {
-        "from": "nkd",
-        "to": "nkf",
-        "distance": 0.47
-    },
-    {
-        "from": "nkd",
-        "to": "nkn",
-        "distance": 0.42
-    },
-    {
-        "from": "nkn",
-        "to": "nkd",
-        "distance": 0.42
-    },
-    {
-        "from": "nkn",
-        "to": "kms",
-        "distance": 0.5
-    },
-    {
-        "from": "kms",
-        "to": "nkn",
-        "distance": 0.5
-    },
-    {
-        "from": "kms",
-        "to": "mkk",
-        "distance": 0.29
-    },
-    {
-        "from": "mkk",
-        "to": "kms",
-        "distance": 0.29
-    },
-    {
-        "from": "mkk",
-        "to": "kbn",
-        "distance": 0.38
-    },
-    {
-        "from": "kbn",
-        "to": "mkk",
-        "distance": 0.38
-    },
-    {
-        "from": "kbn",
-        "to": "kbb",
-        "distance": 0.41
-    },
-    {
-        "from": "kbb",
-        "to": "kbn",
-        "distance": 0.41
-    },
-    {
-        "from": "kbb",
-        "to": "myn",
-        "distance": 0.39
-    },
-    {
-        "from": "myn",
-        "to": "kbb",
-        "distance": 0.39
-    },
-    {
-        "from": "myn",
-        "to": "skr",
-        "distance": 0.34
-    },
-    {
-        "from": "skr",
-        "to": "myn",
-        "distance": 0.34
-    },
-    {
-        "from": "skr",
-        "to": "chr",
-        "distance": 0.36
-    },
-    {
-        "from": "chr",
-        "to": "skr",
-        "distance": 0.36
-    },
-    {
-        "from": "obu",
-        "to": "obm",
-        "distance": 0.93
-    },
-    {
-        "from": "obm",
-        "to": "obu",
-        "distance": 0.93
-    },
-    {
-        "from": "obm",
-        "to": "knk",
-        "distance": 0.39
-    },
-    {
-        "from": "knk",
-        "to": "obm",
-        "distance": 0.39
-    },
-    {
-        "from": "knk",
-        "to": "iry",
-        "distance": 0.49
-    },
-    {
-        "from": "iry",
-        "to": "knk",
-        "distance": 0.49
-    },
-    {
-        "from": "iry",
-        "to": "knm",
-        "distance": 0.8
-    },
-    {
-        "from": "knm",
-        "to": "iry",
-        "distance": 0.8
-    },
-    {
-        "from": "knm",
-        "to": "sik",
-        "distance": 0.87
-    },
-    {
-        "from": "sik",
-        "to": "knm",
-        "distance": 0.87
-    },
-    {
-        "from": "sik",
-        "to": "oga",
-        "distance": 0.7
-    },
-    {
-        "from": "oga",
-        "to": "sik",
-        "distance": 0.7
-    },
-    {
-        "from": "oga",
-        "to": "nis",
-        "distance": 2.25
-    },
-    {
-        "from": "nis",
-        "to": "oga",
-        "distance": 2.25
-    },
-    {
-        "from": "nis",
-        "to": "fje",
-        "distance": 1.31
-    },
-    {
-        "from": "fje",
-        "to": "nis",
-        "distance": 1.31
-    },
-    {
-        "from": "fje",
-        "to": "mdr",
-        "distance": 1.52
-    },
-    {
-        "from": "mdr",
-        "to": "fje",
-        "distance": 1.52
-    },
-    {
-        "from": "mdr",
-        "to": "hem",
-        "distance": 0.74
-    },
-    {
-        "from": "hem",
-        "to": "mdr",
-        "distance": 0.74
-    },
-    {
-        "from": "hem",
-        "to": "kmi",
-        "distance": 0.64
-    },
-    {
-        "from": "kmi",
-        "to": "hem",
-        "distance": 0.64
-    },
-    {
-        "from": "kmi",
-        "to": "sch",
-        "distance": 0.63
-    },
-    {
-        "from": "sch",
-        "to": "kmi",
-        "distance": 0.63
-    },
-    {
-        "from": "sch",
-        "to": "ksn",
-        "distance": 0.43
-    },
-    {
-        "from": "ksn",
-        "to": "sch",
-        "distance": 0.43
-    },
-    {
-        "from": "ksn",
-        "to": "owh",
-        "distance": 0.36
-    },
-    {
-        "from": "owh",
-        "to": "ksn",
-        "distance": 0.36
-    },
-    {
-        "from": "owh",
-        "to": "owy",
-        "distance": 0.49
-    },
-    {
-        "from": "owy",
-        "to": "owh",
-        "distance": 0.49
-    },
-    {
-        "from": "owy",
-        "to": "okw",
-        "distance": 0.53
-    },
-    {
-        "from": "okw",
-        "to": "owy",
-        "distance": 0.53
-    },
-    {
-        "from": "okw",
-        "to": "hno",
-        "distance": 0.54
-    },
-    {
-        "from": "hno",
-        "to": "okw",
-        "distance": 0.54
-    },
-    {
-        "from": "hno",
-        "to": "hns",
-        "distance": 0.91
-    },
-    {
-        "from": "hns",
-        "to": "hno",
-        "distance": 0.91
-    },
-    {
-        "from": "okw",
-        "to": "akr",
-        "distance": 0.92
-    },
-    {
-        "from": "akr",
-        "to": "okw",
-        "distance": 0.92
-    },
-    {
-        "from": "akr",
-        "to": "smy",
-        "distance": 0.61
-    },
-    {
-        "from": "smy",
-        "to": "akr",
-        "distance": 0.61
-    },
-    {
-        "from": "smy",
-        "to": "sis",
-        "distance": 0.68
-    },
-    {
-        "from": "sis",
-        "to": "smy",
-        "distance": 0.68
-    },
-    {
-        "from": "shg",
-        "to": "bzy",
-        "distance": 1.01
-    },
-    {
-        "from": "bzy",
-        "to": "shg",
-        "distance": 1.01
-    },
-    {
-        "from": "bzy",
-        "to": "nry",
-        "distance": 0.53
-    },
-    {
-        "from": "nry",
-        "to": "bzy",
-        "distance": 0.53
-    },
-    {
-        "from": "nry",
-        "to": "okh",
-        "distance": 0.43
-    },
-    {
-        "from": "okh",
-        "to": "nry",
-        "distance": 0.43
-    },
-    {
-        "from": "okh",
-        "to": "cfk",
-        "distance": 0.31
-    },
-    {
-        "from": "cfk",
-        "to": "okh",
-        "distance": 0.31
-    },
-    {
-        "from": "cfk",
-        "to": "ksk",
-        "distance": 0.42
-    },
-    {
-        "from": "ksk",
-        "to": "cfk",
-        "distance": 0.42
-    },
-    {
-        "from": "ksk",
-        "to": "ngt",
-        "distance": 0.6
-    },
-    {
-        "from": "ngt",
-        "to": "ksk",
-        "distance": 0.6
-    },
-    {
-        "from": "ngt",
-        "to": "arm",
-        "distance": 0.76
-    },
-    {
-        "from": "arm",
-        "to": "ngt",
-        "distance": 0.76
-    },
-    {
-        "from": "arm",
-        "to": "trs",
-        "distance": 1.07
-    },
-    {
-        "from": "trs",
-        "to": "arm",
-        "distance": 1.07
-    },
-    {
-        "from": "trs",
-        "to": "ogg",
-        "distance": 0.5
-    },
-    {
-        "from": "ogg",
-        "to": "trs",
-        "distance": 0.5
-    },
-    {
-        "from": "ogg",
-        "to": "tkm",
-        "distance": 0.9
-    },
-    {
-        "from": "tkm",
-        "to": "ogg",
-        "distance": 0.9
-    },
-    {
-        "from": "tkm",
-        "to": "nrk",
-        "distance": 0.72
-    },
-    {
-        "from": "nrk",
-        "to": "tkm",
-        "distance": 0.72
-    },
-    {
-        "from": "nrk",
-        "to": "tsg",
-        "distance": 1.51
-    },
-    {
-        "from": "tsg",
-        "to": "nrk",
-        "distance": 1.51
-    },
-    {
-        "from": "tsg",
-        "to": "kmn",
-        "distance": 0.87
-    },
-    {
-        "from": "kmn",
-        "to": "tsg",
-        "distance": 0.87
-    },
-    {
-        "from": "kmn",
-        "to": "hbd",
-        "distance": 0.5
-    },
-    {
-        "from": "hbd",
-        "to": "kmn",
-        "distance": 0.5
-    },
-    {
-        "from": "hbd",
-        "to": "hbj",
-        "distance": 0.83
-    },
-    {
-        "from": "hbj",
-        "to": "hbd",
-        "distance": 0.83
-    },
-    {
-        "from": "hbj",
-        "to": "mki",
-        "distance": 0.39
-    },
-    {
-        "from": "mki",
-        "to": "hbj",
-        "distance": 0.39
-    },
-    {
-        "from": "mki",
-        "to": "hbm",
-        "distance": 0.59
-    },
-    {
-        "from": "hbm",
-        "to": "mki",
-        "distance": 0.59
-    },
-    {
-        "from": "hbm",
-        "to": "hrb",
-        "distance": 0.4
-    },
-    {
-        "from": "hrb",
-        "to": "hbm",
-        "distance": 0.4
-    },
-    {
-        "from": "hrb",
-        "to": "doj",
-        "distance": 0.57
-    },
-    {
-        "from": "doj",
-        "to": "hrb",
-        "distance": 0.57
-    },
-    {
-        "from": "doj",
-        "to": "mmn",
-        "distance": 0.52
-    },
-    {
-        "from": "mmn",
-        "to": "doj",
-        "distance": 0.52
-    },
-    {
-        "from": "mmn",
-        "to": "mmd",
-        "distance": 0.37
-    },
-    {
-        "from": "mmd",
-        "to": "mmn",
-        "distance": 0.37
-    },
-    {
-        "from": "mmd",
-        "to": "udk",
-        "distance": 0.42
-    },
-    {
-        "from": "udk",
-        "to": "mmd",
-        "distance": 0.42
-    },
-    {
-        "from": "udk",
-        "to": "hnb",
-        "distance": 0.34
-    },
-    {
-        "from": "hnb",
-        "to": "udk",
-        "distance": 0.34
-    },
-    {
-        "from": "hnb",
-        "to": "mmz",
-        "distance": 0.33
-    },
-    {
-        "from": "mmz",
-        "to": "hnb",
-        "distance": 0.33
-    },
-    {
-        "from": "mmz",
-        "to": "mkn",
-        "distance": 0.66
-    },
-    {
-        "from": "mkn",
-        "to": "mmz",
-        "distance": 0.66
-    },
-    {
-        "from": "mkn",
-        "to": "gkr",
-        "distance": 0.7
-    },
-    {
-        "from": "gkr",
-        "to": "mkn",
-        "distance": 0.7
-    },
-    {
-        "from": "gkr",
-        "to": "tbd",
-        "distance": 0.64
-    },
-    {
-        "from": "tbd",
-        "to": "gkr",
-        "distance": 0.64
-    },
-    {
-        "from": "tbd",
-        "to": "skb",
-        "distance": 0.62
-    },
-    {
-        "from": "skb",
-        "to": "tbd",
-        "distance": 0.62
-    },
-    {
-        "from": "skb",
-        "to": "ysh",
-        "distance": 0.51
-    },
-    {
-        "from": "ysh",
-        "to": "skb",
-        "distance": 0.51
-    },
-    {
-        "from": "ysh",
-        "to": "hmk",
-        "distance": 0.7
-    },
-    {
-        "from": "hmk",
-        "to": "ysh",
-        "distance": 0.7
-    },
-    {
-        "from": "hmk",
-        "to": "fjg",
-        "distance": 0.78
-    },
-    {
-        "from": "fjg",
-        "to": "hmk",
-        "distance": 0.78
-    },
-    {
-        "from": "shg",
-        "to": "fts",
-        "distance": 0.87
-    },
-    {
-        "from": "fts",
-        "to": "shg",
-        "distance": 0.87
-    },
-    {
-        "from": "fts",
-        "to": "hrk",
-        "distance": 0.66
-    },
-    {
-        "from": "hrk",
-        "to": "fts",
-        "distance": 0.66
-    },
-    {
-        "from": "hrk",
-        "to": "mds",
-        "distance": 0.76
-    },
-    {
-        "from": "mds",
-        "to": "hrk",
-        "distance": 0.76
-    },
-    {
-        "from": "mds",
-        "to": "dtc",
-        "distance": 0.29
-    },
-    {
-        "from": "dtc",
-        "to": "mds",
-        "distance": 0.29
-    },
-    {
-        "from": "dtc",
-        "to": "ash",
-        "distance": 1.12
-    },
-    {
-        "from": "ash",
-        "to": "dtc",
-        "distance": 1.12
-    },
-    {
-        "from": "ash",
-        "to": "mrk",
-        "distance": 0.76
-    },
-    {
-        "from": "mrk",
-        "to": "ash",
-        "distance": 0.76
-    },
-    {
-        "from": "mrk",
-        "to": "hog",
-        "distance": 1.28
-    },
-    {
-        "from": "hog",
-        "to": "mrk",
-        "distance": 1.28
-    },
-    {
-        "from": "dtc",
-        "to": "smt",
-        "distance": 0.87
-    },
-    {
-        "from": "smt",
-        "to": "dtc",
-        "distance": 0.87
-    },
-    {
-        "from": "smt",
-        "to": "yng",
-        "distance": 0.71
-    },
-    {
-        "from": "yng",
-        "to": "smt",
-        "distance": 0.71
-    },
-    {
-        "from": "yng",
-        "to": "mrn",
-        "distance": 0.73
-    },
-    {
-        "from": "mrn",
-        "to": "yng",
-        "distance": 0.73
-    },
-    {
-        "from": "mrn",
-        "to": "ktb",
-        "distance": 0.91
-    },
-    {
-        "from": "ktb",
-        "to": "mrn",
-        "distance": 0.91
-    },
-    {
-        "from": "ktb",
-        "to": "odn",
-        "distance": 0.9
-    },
-    {
-        "from": "odn",
-        "to": "ktb",
-        "distance": 0.9
-    },
-    {
-        "from": "sos",
-        "to": "usr",
-        "distance": 0.79
-    },
-    {
-        "from": "usr",
-        "to": "sos",
-        "distance": 0.79
-    },
-    {
-        "from": "usr",
-        "to": "udm",
-        "distance": 0.45
-    },
-    {
-        "from": "udm",
-        "to": "usr",
-        "distance": 0.45
-    },
-    {
-        "from": "udm",
-        "to": "kts",
-        "distance": 0.64
-    },
-    {
-        "from": "kts",
-        "to": "udm",
-        "distance": 0.64
-    },
-    {
-        "from": "kts",
-        "to": "ksd",
-        "distance": 0.82
-    },
-    {
-        "from": "ksd",
-        "to": "kts",
-        "distance": 0.82
-    },
-    {
-        "from": "ksd",
-        "to": "ftk",
-        "distance": 0.69
-    },
-    {
-        "from": "ftk",
-        "to": "ksd",
-        "distance": 0.69
-    },
-    {
-        "from": "ftk",
-        "to": "shg",
-        "distance": 0.75
-    },
-    {
-        "from": "shg",
-        "to": "ftk",
-        "distance": 0.75
-    },
-    {
-        "from": "shg",
-        "to": "ktc",
-        "distance": 0.55
-    },
-    {
-        "from": "ktc",
-        "to": "shg",
-        "distance": 0.55
-    },
-    {
-        "from": "ktc",
-        "to": "tsn",
-        "distance": 0.68
-    },
-    {
-        "from": "tsn",
-        "to": "ktc",
-        "distance": 0.68
-    },
-    {
-        "from": "odk",
-        "to": "skj",
-        "distance": 1.02
-    },
-    {
-        "from": "skj",
-        "to": "odk",
-        "distance": 1.02
-    },
-    {
-        "from": "skj",
-        "to": "kgn",
-        "distance": 1.35
-    },
-    {
-        "from": "kgn",
-        "to": "skj",
-        "distance": 1.35
-    },
-    {
-        "from": "kgn",
-        "to": "cya",
-        "distance": 1.03
-    },
-    {
-        "from": "cya",
-        "to": "kgn",
-        "distance": 1.03
-    },
-    {
-        "from": "cya",
-        "to": "kw3",
-        "distance": 0.93
-    },
-    {
-        "from": "kw3",
-        "to": "cya",
-        "distance": 0.93
-    },
-    {
-        "from": "kw3",
-        "to": "msh",
-        "distance": 0.88
-    },
-    {
-        "from": "msh",
-        "to": "kw3",
-        "distance": 0.88
-    },
-    {
-        "from": "msh",
-        "to": "hry",
-        "distance": 0.82
-    },
-    {
-        "from": "hry",
-        "to": "msh",
-        "distance": 0.82
-    },
-    {
-        "from": "hry",
-        "to": "kne",
-        "distance": 0.56
-    },
-    {
-        "from": "kne",
-        "to": "hry",
-        "distance": 0.56
-    },
-    {
-        "from": "kne",
-        "to": "ebc",
-        "distance": 0.4
-    },
-    {
-        "from": "ebc",
-        "to": "kne",
-        "distance": 0.4
-    },
-    {
-        "from": "ebc",
-        "to": "krn",
-        "distance": 0.62
-    },
-    {
-        "from": "krn",
-        "to": "ebc",
-        "distance": 0.62
-    },
-    {
-        "from": "krn",
-        "to": "yng",
-        "distance": 0.93
-    },
-    {
-        "from": "yng",
-        "to": "krn",
-        "distance": 0.93
-    },
-    {
-        "from": "yng",
-        "to": "owm",
-        "distance": 0.63
-    },
-    {
-        "from": "owm",
-        "to": "yng",
-        "distance": 0.63
-    },
-    {
-        "from": "owm",
-        "to": "ows",
-        "distance": 0.54
-    },
-    {
-        "from": "ows",
-        "to": "owm",
-        "distance": 0.54
-    },
-    {
-        "from": "ows",
-        "to": "myt",
-        "distance": 0.4
-    },
-    {
-        "from": "myt",
-        "to": "ows",
-        "distance": 0.4
-    },
-    {
-        "from": "myt",
-        "to": "ogw",
-        "distance": 0.58
-    },
-    {
-        "from": "ogw",
-        "to": "myt",
-        "distance": 0.58
-    },
-    {
-        "from": "stm",
-        "to": "sdn",
-        "distance": 0.77
-    },
-    {
-        "from": "sdn",
-        "to": "stm",
-        "distance": 0.77
-    },
-    {
-        "from": "sdn",
-        "to": "krs",
-        "distance": 0.56
-    },
-    {
-        "from": "krs",
-        "to": "sdn",
-        "distance": 0.56
-    },
-    {
-        "from": "krs",
-        "to": "kwi",
-        "distance": 0.59
-    },
-    {
-        "from": "kwi",
-        "to": "krs",
-        "distance": 0.59
-    },
-    {
-        "from": "kwi",
-        "to": "nfj",
-        "distance": 0.75
-    },
-    {
-        "from": "nfj",
-        "to": "kwi",
-        "distance": 0.75
-    },
-    {
-        "from": "nfj",
-        "to": "fjm",
-        "distance": 0.49
-    },
-    {
-        "from": "fjm",
-        "to": "nfj",
-        "distance": 0.49
-    },
-    {
-        "from": "fjm",
-        "to": "img",
-        "distance": 0.44
-    },
-    {
-        "from": "img",
-        "to": "fjm",
-        "distance": 0.44
-    },
-    {
-        "from": "img",
-        "to": "hzk",
-        "distance": 0.77
-    },
-    {
-        "from": "hzk",
-        "to": "img",
-        "distance": 0.77
-    },
-    {
-        "from": "hzk",
-        "to": "fjt",
-        "distance": 0.94
-    },
-    {
-        "from": "fjt",
-        "to": "hzk",
-        "distance": 0.94
-    },
-    {
-        "from": "fjt",
-        "to": "iwg",
-        "distance": 0.36
-    },
-    {
-        "from": "iwg",
-        "to": "fjt",
-        "distance": 0.36
-    },
-    {
-        "from": "iwg",
-        "to": "akd",
-        "distance": 0.86
-    },
-    {
-        "from": "akd",
-        "to": "iwg",
-        "distance": 0.86
-    },
-    {
-        "from": "akd",
-        "to": "igy",
-        "distance": 0.95
-    },
-    {
-        "from": "igy",
-        "to": "akd",
-        "distance": 0.95
-    },
-    {
-        "from": "igy",
-        "to": "tmp",
-        "distance": 0.69
-    },
-    {
-        "from": "tmp",
-        "to": "igy",
-        "distance": 0.69
-    },
-    {
-        "from": "tmp",
-        "to": "fkt",
-        "distance": 0.57
-    },
-    {
-        "from": "fkt",
-        "to": "tmp",
-        "distance": 0.57
-    },
-    {
-        "from": "fkt",
-        "to": "har",
-        "distance": 0.81
-    },
-    {
-        "from": "har",
-        "to": "fkt",
-        "distance": 0.81
-    },
-    {
-        "from": "har",
-        "to": "hnk",
-        "distance": 0.77
-    },
-    {
-        "from": "hnk",
-        "to": "har",
-        "distance": 0.77
-    },
-    {
-        "from": "hnk",
-        "to": "mar",
-        "distance": 0.76
-    },
-    {
-        "from": "mar",
-        "to": "hnk",
-        "distance": 0.76
-    },
-    {
-        "from": "mar",
-        "to": "mms",
-        "distance": 0.4
-    },
-    {
-        "from": "mms",
-        "to": "mar",
-        "distance": 0.4
-    },
-    {
-        "from": "mms",
-        "to": "mys",
-        "distance": 0.57
-    },
-    {
-        "from": "mys",
-        "to": "mms",
-        "distance": 0.57
-    },
-    {
-        "from": "mys",
-        "to": "med",
-        "distance": 0.7
-    },
-    {
-        "from": "med",
-        "to": "mys",
-        "distance": 0.7
-    },
-    {
-        "from": "med",
-        "to": "mik",
-        "distance": 0.59
-    },
-    {
-        "from": "mik",
-        "to": "med",
-        "distance": 0.59
-    },
-    {
-        "from": "mik",
-        "to": "azb",
-        "distance": 0.55
-    },
-    {
-        "from": "azb",
-        "to": "mik",
-        "distance": 0.55
-    },
-    {
-        "from": "azb",
-        "to": "skg",
-        "distance": 0.52
-    },
-    {
-        "from": "skg",
-        "to": "azb",
-        "distance": 0.52
-    },
-    {
-        "from": "skg",
-        "to": "ymg",
-        "distance": 0.61
-    },
-    {
-        "from": "ymg",
-        "to": "skg",
-        "distance": 0.61
-    },
-    {
-        "from": "ymg",
-        "to": "ukg",
-        "distance": 0.68
-    },
-    {
-        "from": "ukg",
-        "to": "ymg",
-        "distance": 0.68
-    },
-    {
-        "from": "ukg",
-        "to": "htt",
-        "distance": 0.77
-    },
-    {
-        "from": "htt",
-        "to": "ukg",
-        "distance": 0.77
-    },
-    {
-        "from": "htt",
-        "to": "mym",
-        "distance": 0.38
-    },
-    {
-        "from": "mym",
-        "to": "htt",
-        "distance": 0.38
-    },
-    {
-        "from": "mym",
-        "to": "mgs",
-        "distance": 0.43
-    },
-    {
-        "from": "mgs",
-        "to": "mym",
-        "distance": 0.43
-    },
-    {
-        "from": "mgs",
-        "to": "mgk",
-        "distance": 0.54
-    },
-    {
-        "from": "mgk",
-        "to": "mgs",
-        "distance": 0.54
-    },
-    {
-        "from": "unk",
-        "to": "okd",
-        "distance": 1.36
-    },
-    {
-        "from": "okd",
-        "to": "unk",
-        "distance": 1.36
-    },
-    {
-        "from": "okd",
-        "to": "kkn",
-        "distance": 1.25
-    },
-    {
-        "from": "kkn",
-        "to": "okd",
-        "distance": 1.25
-    },
-    {
-        "from": "kkn",
-        "to": "hnt",
-        "distance": 1.04
-    },
-    {
-        "from": "hnt",
-        "to": "kkn",
-        "distance": 1.04
-    },
-    {
-        "from": "hnt",
-        "to": "udo",
-        "distance": 0.55
-    },
-    {
-        "from": "udo",
-        "to": "hnt",
-        "distance": 0.55
-    },
-    {
-        "from": "udo",
-        "to": "und",
-        "distance": 0.7
-    },
-    {
-        "from": "und",
-        "to": "udo",
-        "distance": 0.7
-    },
-    {
-        "from": "und",
-        "to": "sin",
-        "distance": 1.55
-    },
-    {
-        "from": "sin",
-        "to": "und",
-        "distance": 1.55
-    },
-    {
-        "from": "sin",
-        "to": "fkc",
-        "distance": 0.9
-    },
-    {
-        "from": "fkc",
-        "to": "sin",
-        "distance": 0.9
-    },
-    {
-        "from": "fkc",
-        "to": "trt",
-        "distance": 1.15
-    },
-    {
-        "from": "trt",
-        "to": "fkc",
-        "distance": 1.15
-    },
-    {
-        "from": "trt",
-        "to": "kmh",
-        "distance": 0.7
-    },
-    {
-        "from": "kmh",
-        "to": "trt",
-        "distance": 0.7
-    },
-    {
-        "from": "seh",
-        "to": "ktw",
-        "distance": 1.36
-    },
-    {
-        "from": "ktw",
-        "to": "seh",
-        "distance": 1.36
-    },
-    {
-        "from": "ktw",
-        "to": "hnn",
-        "distance": 1.23
-    },
-    {
-        "from": "hnn",
-        "to": "ktw",
-        "distance": 1.23
-    },
-    {
-        "from": "hnn",
-        "to": "okm",
-        "distance": 0.48
-    },
-    {
-        "from": "okm",
-        "to": "hnn",
-        "distance": 0.48
-    },
-    {
-        "from": "okm",
-        "to": "smp",
-        "distance": 1.21
-    },
-    {
-        "from": "smp",
-        "to": "okm",
-        "distance": 1.21
-    },
-    {
-        "from": "smp",
-        "to": "som",
-        "distance": 2.56
-    },
-    {
-        "from": "som",
-        "to": "smp",
-        "distance": 2.56
-    },
-    {
-        "from": "som",
-        "to": "knj",
-        "distance": 2.23
-    },
-    {
-        "from": "knj",
-        "to": "som",
-        "distance": 2.23
-    },
-    {
-        "from": "hem",
-        "to": "kmz",
-        "distance": 0.86
-    },
-    {
-        "from": "kmz",
-        "to": "hem",
-        "distance": 0.86
-    },
-    {
-        "from": "kmz",
-        "to": "sns",
-        "distance": 1.04
-    },
-    {
-        "from": "sns",
-        "to": "kmz",
-        "distance": 1.04
-    },
-    {
-        "from": "sns",
-        "to": "tkh",
-        "distance": 0.67
-    },
-    {
-        "from": "tkh",
-        "to": "sns",
-        "distance": 0.67
-    },
-    {
-        "from": "tkh",
-        "to": "onn",
-        "distance": 0.58
-    },
-    {
-        "from": "onn",
-        "to": "tkh",
-        "distance": 0.58
-    },
-    {
-        "from": "onn",
-        "to": "mtk",
-        "distance": 0.68
-    },
-    {
-        "from": "mtk",
-        "to": "onn",
-        "distance": 0.68
-    },
-    {
-        "from": "ywt",
-        "to": "oue",
-        "distance": 0.79
-    },
-    {
-        "from": "oue",
-        "to": "ywt",
-        "distance": 0.79
-    },
-    {
-        "from": "oue",
-        "to": "ubk",
-        "distance": 0.58
-    },
-    {
-        "from": "ubk",
-        "to": "oue",
-        "distance": 0.58
-    },
-    {
-        "from": "ubk",
-        "to": "kmd",
-        "distance": 1.72
-    },
-    {
-        "from": "kmd",
-        "to": "ubk",
-        "distance": 1.72
-    },
-    {
-        "from": "kmd",
-        "to": "umk",
-        "distance": 0.66
-    },
-    {
-        "from": "umk",
-        "to": "kmd",
-        "distance": 0.66
-    },
-    {
-        "from": "umk",
-        "to": "kty",
-        "distance": 0.77
-    },
-    {
-        "from": "kty",
-        "to": "umk",
-        "distance": 0.77
-    },
-    {
-        "from": "kty",
-        "to": "myu",
-        "distance": 0.62
-    },
-    {
-        "from": "myu",
-        "to": "kty",
-        "distance": 0.62
-    },
-    {
-        "from": "myu",
-        "to": "udo",
-        "distance": 1.17
-    },
-    {
-        "from": "udo",
-        "to": "myu",
-        "distance": 1.17
-    },
-    {
-        "from": "udo",
-        "to": "msn",
-        "distance": 1.28
-    },
-    {
-        "from": "msn",
-        "to": "udo",
-        "distance": 1.28
-    },
-    {
-        "from": "msn",
-        "to": "tmo",
-        "distance": 0.99
-    },
-    {
-        "from": "tmo",
-        "to": "msn",
-        "distance": 0.99
-    },
-    {
-        "from": "tmo",
-        "to": "seh",
-        "distance": 0.98
-    },
-    {
-        "from": "seh",
-        "to": "tmo",
-        "distance": 0.98
-    },
-    {
-        "from": "seh",
-        "to": "gdo",
-        "distance": 1.22
-    },
-    {
-        "from": "gdo",
-        "to": "seh",
-        "distance": 1.22
-    },
-    {
-        "from": "gdo",
-        "to": "syk",
-        "distance": 0.84
-    },
-    {
-        "from": "syk",
-        "to": "gdo",
-        "distance": 0.84
-    },
-    {
-        "from": "syk",
-        "to": "ryn",
-        "distance": 1.14
-    },
-    {
-        "from": "ryn",
-        "to": "syk",
-        "distance": 1.14
-    },
-    {
-        "from": "ryn",
-        "to": "khr",
-        "distance": 0.63
-    },
-    {
-        "from": "khr",
-        "to": "ryn",
-        "distance": 0.63
-    },
-    {
-        "from": "khr",
-        "to": "ryg",
-        "distance": 0.89
-    },
-    {
-        "from": "ryg",
-        "to": "khr",
-        "distance": 0.89
-    },
-    {
-        "from": "ryg",
-        "to": "sim",
-        "distance": 1.16
-    },
-    {
-        "from": "sim",
-        "to": "ryg",
-        "distance": 1.16
-    },
-    {
-        "from": "sim",
-        "to": "sky",
-        "distance": 0.8
-    },
-    {
-        "from": "sky",
-        "to": "sim",
-        "distance": 0.8
-    },
-    {
-        "from": "sky",
-        "to": "nmk",
-        "distance": 0.41
-    },
-    {
-        "from": "nmk",
-        "to": "sky",
-        "distance": 0.41
-    },
-    {
-        "from": "nmk",
-        "to": "nkm",
-        "distance": 0.54
-    },
-    {
-        "from": "nkm",
-        "to": "nmk",
-        "distance": 0.54
-    },
-    {
-        "from": "nkm",
-        "to": "snn",
-        "distance": 0.68
-    },
-    {
-        "from": "snn",
-        "to": "nkm",
-        "distance": 0.68
-    },
-    {
-        "from": "snn",
-        "to": "akw",
-        "distance": 0.55
-    },
-    {
-        "from": "akw",
-        "to": "snn",
-        "distance": 0.55
-    },
-    {
-        "from": "akw",
-        "to": "aoy",
-        "distance": 0.6
-    },
-    {
-        "from": "aoy",
-        "to": "akw",
-        "distance": 0.6
-    },
-    {
-        "from": "aoy",
-        "to": "hts",
-        "distance": 0.67
-    },
-    {
-        "from": "hts",
-        "to": "aoy",
-        "distance": 0.67
-    },
-    {
-        "from": "hts",
-        "to": "smd",
-        "distance": 0.72
-    },
-    {
-        "from": "smd",
-        "to": "hts",
-        "distance": 0.72
-    },
-    {
-        "from": "smd",
-        "to": "smb",
-        "distance": 0.79
-    },
-    {
-        "from": "smb",
-        "to": "smd",
-        "distance": 0.79
-    },
-    {
-        "from": "smb",
-        "to": "ikm",
-        "distance": 0.51
-    },
-    {
-        "from": "ikm",
-        "to": "smb",
-        "distance": 0.51
-    },
-    {
-        "from": "ikm",
-        "to": "omt",
-        "distance": 0.44
-    },
-    {
-        "from": "omt",
-        "to": "ikm",
-        "distance": 0.44
-    },
-    {
-        "from": "omt",
-        "to": "ygt",
-        "distance": 0.75
-    },
-    {
-        "from": "ygt",
-        "to": "omt",
-        "distance": 0.75
-    },
-    {
-        "from": "chr",
-        "to": "chh",
-        "distance": 0.38
-    },
-    {
-        "from": "chh",
-        "to": "chr",
-        "distance": 0.38
-    },
-    {
-        "from": "chh",
-        "to": "hks",
-        "distance": 0.43
-    },
-    {
-        "from": "hks",
-        "to": "chh",
-        "distance": 0.43
-    },
-    {
-        "from": "hks",
-        "to": "ksg",
-        "distance": 0.51
-    },
-    {
-        "from": "ksg",
-        "to": "hks",
-        "distance": 0.51
-    },
-    {
-        "from": "ksg",
-        "to": "sgh",
-        "distance": 0.7
-    },
-    {
-        "from": "sgh",
-        "to": "ksg",
-        "distance": 0.7
-    },
-    {
-        "from": "sgh",
-        "to": "isk",
-        "distance": 0.67
-    },
-    {
-        "from": "isk",
-        "to": "sgh",
-        "distance": 0.67
-    },
-    {
-        "from": "isk",
-        "to": "nky",
-        "distance": 0.34
-    },
-    {
-        "from": "nky",
-        "to": "isk",
-        "distance": 0.34
-    },
-    {
-        "from": "nky",
-        "to": "kry",
-        "distance": 0.46
-    },
-    {
-        "from": "kry",
-        "to": "nky",
-        "distance": 0.46
-    },
-    {
-        "from": "kry",
-        "to": "tyo",
-        "distance": 0.59
-    },
-    {
-        "from": "tyo",
-        "to": "kry",
-        "distance": 0.59
-    },
-    {
-        "from": "tyo",
-        "to": "ohm",
-        "distance": 0.31
-    },
-    {
-        "from": "ohm",
-        "to": "tyo",
-        "distance": 0.31
-    },
-    {
-        "from": "ohm",
-        "to": "kss",
-        "distance": 0.42
-    },
-    {
-        "from": "kss",
-        "to": "ohm",
-        "distance": 0.42
-    },
-    {
-        "from": "kss",
-        "to": "jnj",
-        "distance": 0.34
-    },
-    {
-        "from": "jnj",
-        "to": "kss",
-        "distance": 0.34
-    },
-    {
-        "from": "jnj",
-        "to": "tkc",
-        "distance": 0.8
-    },
-    {
-        "from": "tkc",
-        "to": "jnj",
-        "distance": 0.8
-    },
-    {
-        "from": "tkc",
-        "to": "hog",
-        "distance": 0.74
-    },
-    {
-        "from": "hog",
-        "to": "tkc",
-        "distance": 0.74
-    },
-    {
-        "from": "hog",
-        "to": "ogw",
-        "distance": 0.45
-    },
-    {
-        "from": "ogw",
-        "to": "hog",
-        "distance": 0.45
-    },
-    {
-        "from": "ogw",
-        "to": "odn",
-        "distance": 1.41
-    },
-    {
-        "from": "odn",
-        "to": "ogw",
-        "distance": 1.41
-    },
-    {
-        "from": "odn",
-        "to": "oga",
-        "distance": 1.08
-    },
-    {
-        "from": "oga",
-        "to": "odn",
-        "distance": 1.08
-    },
-    {
-        "from": "oga",
-        "to": "unk",
-        "distance": 1.04
-    },
-    {
-        "from": "unk",
-        "to": "oga",
-        "distance": 1.04
-    },
-    {
-        "from": "unk",
-        "to": "ubk",
-        "distance": 1.21
-    },
-    {
-        "from": "ubk",
-        "to": "unk",
-        "distance": 1.21
-    },
-    {
-        "from": "ubk",
-        "to": "oue",
-        "distance": 0.58
-    },
-    {
-        "from": "oue",
-        "to": "ubk",
-        "distance": 0.58
-    },
-    {
-        "from": "oue",
-        "to": "cty",
-        "distance": 0.36
-    },
-    {
-        "from": "cty",
-        "to": "oue",
-        "distance": 0.36
-    },
-    {
-        "from": "cty",
-        "to": "nmg",
-        "distance": 1.12
-    },
-    {
-        "from": "nmg",
-        "to": "cty",
-        "distance": 1.12
-    },
-    {
-        "from": "nmg",
-        "to": "sri",
-        "distance": 1.44
-    },
-    {
-        "from": "sri",
-        "to": "nmg",
-        "distance": 1.44
-    },
-    {
-        "from": "sri",
-        "to": "umg",
-        "distance": 0.9
-    },
-    {
-        "from": "umg",
-        "to": "sri",
-        "distance": 0.9
-    },
-    {
-        "from": "umg",
-        "to": "gtn",
-        "distance": 0.47
-    },
-    {
-        "from": "gtn",
-        "to": "umg",
-        "distance": 0.47
-    },
-    {
-        "from": "gtn",
-        "to": "ctc",
-        "distance": 0.37
-    },
-    {
-        "from": "ctc",
-        "to": "gtn",
-        "distance": 0.37
-    },
-    {
-        "from": "ctc",
-        "to": "snc",
-        "distance": 0.38
-    },
-    {
-        "from": "snc",
-        "to": "ctc",
-        "distance": 0.38
-    },
-    {
-        "from": "snc",
-        "to": "cts",
-        "distance": 0.71
-    },
-    {
-        "from": "cts",
-        "to": "snc",
-        "distance": 0.71
-    },
-    {
-        "from": "cts",
-        "to": "hmw",
-        "distance": 0.61
-    },
-    {
-        "from": "hmw",
-        "to": "cts",
-        "distance": 0.61
-    },
-    {
-        "from": "hmw",
-        "to": "hgy",
-        "distance": 0.54
-    },
-    {
-        "from": "hgy",
-        "to": "hmw",
-        "distance": 0.54
-    },
-    {
-        "from": "hgy",
-        "to": "ask",
-        "distance": 0.41
-    },
-    {
-        "from": "ask",
-        "to": "hgy",
-        "distance": 0.41
-    },
-    {
-        "from": "hnm",
-        "to": "mzh",
-        "distance": 0.61
-    },
-    {
-        "from": "mzh",
-        "to": "hnm",
-        "distance": 0.61
-    },
-    {
-        "from": "mzh",
-        "to": "toy",
-        "distance": 0.5
-    },
-    {
-        "from": "toy",
-        "to": "mzh",
-        "distance": 0.5
-    },
-    {
-        "from": "toy",
-        "to": "hns",
-        "distance": 0.52
-    },
-    {
-        "from": "hns",
-        "to": "toy",
-        "distance": 0.52
-    },
-    {
-        "from": "hns",
-        "to": "hnd",
-        "distance": 0.63
-    },
-    {
-        "from": "hnd",
-        "to": "hns",
-        "distance": 0.63
-    },
-    {
-        "from": "hnd",
-        "to": "chn",
-        "distance": 0.47
-    },
-    {
-        "from": "chn",
-        "to": "hnd",
-        "distance": 0.47
-    },
-    {
-        "from": "chn",
-        "to": "krd",
-        "distance": 0.6
-    },
-    {
-        "from": "krd",
-        "to": "chn",
-        "distance": 0.6
-    },
-    {
-        "from": "krd",
-        "to": "sis",
-        "distance": 0.47
-    },
-    {
-        "from": "sis",
-        "to": "krd",
-        "distance": 0.47
-    },
-    {
-        "from": "sis",
-        "to": "hrg",
-        "distance": 0.4
-    },
-    {
-        "from": "hrg",
-        "to": "sis",
-        "distance": 0.4
-    },
-    {
-        "from": "hrg",
-        "to": "hyc",
-        "distance": 0.37
-    },
-    {
-        "from": "hyc",
-        "to": "hrg",
-        "distance": 0.37
-    },
-    {
-        "from": "hyc",
-        "to": "ynn",
-        "distance": 0.57
-    },
-    {
-        "from": "ynn",
-        "to": "hyc",
-        "distance": 0.57
-    },
-    {
-        "from": "ynn",
-        "to": "hri",
-        "distance": 0.78
-    },
-    {
-        "from": "hri",
-        "to": "ynn",
-        "distance": 0.78
-    },
-    {
-        "from": "hri",
-        "to": "sse",
-        "distance": 0.54
-    },
-    {
-        "from": "sse",
-        "to": "hri",
-        "distance": 0.54
-    },
-    {
-        "from": "sse",
-        "to": "hor",
-        "distance": 0.62
-    },
-    {
-        "from": "hor",
-        "to": "sse",
-        "distance": 0.62
-    },
-    {
-        "from": "hor",
-        "to": "mti",
-        "distance": 1.32
-    },
-    {
-        "from": "mti",
-        "to": "hor",
-        "distance": 1.32
-    },
-    {
-        "from": "mti",
-        "to": "kni",
-        "distance": 0.92
-    },
-    {
-        "from": "kni",
-        "to": "mti",
-        "distance": 0.92
-    },
-    {
-        "from": "kni",
-        "to": "asd",
-        "distance": 0.67
-    },
-    {
-        "from": "asd",
-        "to": "kni",
-        "distance": 0.67
-    },
-    {
-        "from": "asd",
-        "to": "stk",
-        "distance": 0.48
-    },
-    {
-        "from": "stk",
-        "to": "asd",
-        "distance": 0.48
-    },
-    {
-        "from": "stk",
-        "to": "ktj",
-        "distance": 0.43
-    },
-    {
-        "from": "ktj",
-        "to": "stk",
-        "distance": 0.43
-    },
-    {
-        "from": "ktj",
-        "to": "hrm",
-        "distance": 0.62
-    },
-    {
-        "from": "hrm",
-        "to": "ktj",
-        "distance": 0.62
-    },
-    {
-        "from": "hrm",
-        "to": "mnd",
-        "distance": 0.38
-    },
-    {
-        "from": "mnd",
-        "to": "hrm",
-        "distance": 0.38
-    },
-    {
-        "from": "mnd",
-        "to": "tkn",
-        "distance": 0.4
-    },
-    {
-        "from": "tkn",
-        "to": "mnd",
-        "distance": 0.4
-    },
-    {
-        "from": "tkn",
-        "to": "tkk",
-        "distance": 0.63
-    },
-    {
-        "from": "tkk",
-        "to": "tkn",
-        "distance": 0.63
-    },
-    {
-        "from": "tkk",
-        "to": "rnk",
-        "distance": 0.5
-    },
-    {
-        "from": "rnk",
-        "to": "tkk",
-        "distance": 0.5
-    },
-    {
-        "from": "rnk",
-        "to": "rnt",
-        "distance": 0.63
-    },
-    {
-        "from": "rnt",
-        "to": "rnk",
-        "distance": 0.63
-    },
-    {
-        "from": "rnt",
-        "to": "ctk",
-        "distance": 2.08
-    },
-    {
-        "from": "ctk",
-        "to": "rnt",
-        "distance": 2.08
-    },
-    {
-        "from": "ctk",
-        "to": "ct1",
-        "distance": 0.76
-    },
-    {
-        "from": "ct1",
-        "to": "ctk",
-        "distance": 0.76
-    },
-    {
-        "from": "ct1",
-        "to": "ct2",
-        "distance": 0.4
-    },
-    {
-        "from": "ct2",
-        "to": "ct1",
-        "distance": 0.4
-    },
-    {
-        "from": "ngd",
-        "to": "hon",
-        "distance": 0.68
-    },
-    {
-        "from": "hon",
-        "to": "ngd",
-        "distance": 0.68
-    },
-    {
-        "from": "hon",
-        "to": "ttm",
-        "distance": 0.66
-    },
-    {
-        "from": "ttm",
-        "to": "hon",
-        "distance": 0.66
-    },
-    {
-        "from": "ttm",
-        "to": "myg",
-        "distance": 0.55
-    },
-    {
-        "from": "myg",
-        "to": "ttm",
-        "distance": 0.55
-    },
-    {
-        "from": "myg",
-        "to": "hmt",
-        "distance": 0.54
-    },
-    {
-        "from": "hmt",
-        "to": "myg",
-        "distance": 0.54
-    },
-    {
-        "from": "hmt",
-        "to": "tkr",
-        "distance": 0.82
-    },
-    {
-        "from": "tkr",
-        "to": "hmt",
-        "distance": 0.82
-    },
-    {
-        "from": "tkr",
-        "to": "otb",
-        "distance": 0.92
-    },
-    {
-        "from": "otb",
-        "to": "tkr",
-        "distance": 0.92
-    },
-    {
-        "from": "otb",
-        "to": "tsr",
-        "distance": 1.03
-    },
-    {
-        "from": "tsr",
-        "to": "otb",
-        "distance": 1.03
-    },
-    {
-        "from": "tsr",
-        "to": "hsn",
-        "distance": 1.12
-    },
-    {
-        "from": "hsn",
-        "to": "tsr",
-        "distance": 1.12
-    },
-    {
-        "from": "hsn",
-        "to": "tts",
-        "distance": 0.59
-    },
-    {
-        "from": "tts",
-        "to": "hsn",
-        "distance": 0.59
-    },
-    {
-        "from": "tts",
-        "to": "krg",
-        "distance": 0.54
-    },
-    {
-        "from": "krg",
-        "to": "tts",
-        "distance": 0.54
-    },
-    {
-        "from": "krg",
-        "to": "hkt",
-        "distance": 0.53
-    },
-    {
-        "from": "hkt",
-        "to": "krg",
-        "distance": 0.53
-    },
-    {
-        "from": "hkt",
-        "to": "yts",
-        "distance": 0.55
-    },
-    {
-        "from": "yts",
-        "to": "hkt",
-        "distance": 0.55
-    },
-    {
-        "from": "yts",
-        "to": "kzk",
-        "distance": 0.74
-    },
-    {
-        "from": "kzk",
-        "to": "yts",
-        "distance": 0.74
-    },
-    {
-        "from": "kzk",
-        "to": "tyt",
-        "distance": 1.09
-    },
-    {
-        "from": "tyt",
-        "to": "kzk",
-        "distance": 1.09
-    },
-    {
-        "from": "tyt",
-        "to": "yhg",
-        "distance": 0.64
-    },
-    {
-        "from": "yhg",
-        "to": "tyt",
-        "distance": 0.64
-    },
-    {
-        "from": "yhg",
-        "to": "tst",
-        "distance": 0.9
-    },
-    {
-        "from": "tst",
-        "to": "yhg",
-        "distance": 0.9
-    },
-    {
-        "from": "tst",
-        "to": "uen",
-        "distance": 0.65
-    },
-    {
-        "from": "uen",
-        "to": "tst",
-        "distance": 0.65
-    },
-    {
-        "from": "uen",
-        "to": "kmg",
-        "distance": 0.6
-    },
-    {
-        "from": "kmg",
-        "to": "uen",
-        "distance": 0.6
-    },
-    {
-        "from": "kmg",
-        "to": "msb",
-        "distance": 0.7
-    },
-    {
-        "from": "msb",
-        "to": "kmg",
-        "distance": 0.7
-    },
-    {
-        "from": "hdk",
-        "to": "kkr",
-        "distance": 0.66
-    },
-    {
-        "from": "kkr",
-        "to": "hdk",
-        "distance": 0.66
-    },
-    {
-        "from": "kkr",
-        "to": "krm",
-        "distance": 0.43
-    },
-    {
-        "from": "krm",
-        "to": "kkr",
-        "distance": 0.43
-    },
-    {
-        "from": "krm",
-        "to": "skk",
-        "distance": 0.41
-    },
-    {
-        "from": "skk",
-        "to": "krm",
-        "distance": 0.41
-    },
-    {
-        "from": "skk",
-        "to": "kss",
-        "distance": 0.62
-    },
-    {
-        "from": "kss",
-        "to": "skk",
-        "distance": 0.62
-    },
-    {
-        "from": "kss",
-        "to": "krt",
-        "distance": 0.8
-    },
-    {
-        "from": "krt",
-        "to": "kss",
-        "distance": 0.8
-    },
-    {
-        "from": "krt",
-        "to": "ksm",
-        "distance": 0.48
-    },
-    {
-        "from": "ksm",
-        "to": "krt",
-        "distance": 0.48
-    },
-    {
-        "from": "ksm",
-        "to": "krk",
-        "distance": 0.5
-    },
-    {
-        "from": "krk",
-        "to": "ksm",
-        "distance": 0.5
-    },
-    {
-        "from": "krk",
-        "to": "sms",
-        "distance": 0.32
-    },
-    {
-        "from": "sms",
-        "to": "krk",
-        "distance": 0.32
-    },
-    {
-        "from": "sms",
-        "to": "isk",
-        "distance": 0.59
-    },
-    {
-        "from": "isk",
-        "to": "sms",
-        "distance": 0.59
-    },
-    {
-        "from": "isk",
-        "to": "shw",
-        "distance": 0.55
-    },
-    {
-        "from": "shw",
-        "to": "isk",
-        "distance": 0.55
-    },
-    {
-        "from": "shw",
-        "to": "ais",
-        "distance": 0.33
-    },
-    {
-        "from": "ais",
-        "to": "shw",
-        "distance": 0.33
-    },
-    {
-        "from": "ais",
-        "to": "ond",
-        "distance": 0.65
-    },
-    {
-        "from": "ond",
-        "to": "ais",
-        "distance": 0.65
-    },
-    {
-        "from": "ond",
-        "to": "kra",
-        "distance": 0.3
-    },
-    {
-        "from": "kra",
-        "to": "ond",
-        "distance": 0.3
-    },
-    {
-        "from": "kra",
-        "to": "aym",
-        "distance": 0.48
-    },
-    {
-        "from": "aym",
-        "to": "kra",
-        "distance": 0.48
-    },
-    {
-        "from": "aym",
-        "to": "sdn",
-        "distance": 0.55
-    },
-    {
-        "from": "sdn",
-        "to": "aym",
-        "distance": 0.55
-    },
-    {
-        "from": "sdn",
-        "to": "oym",
-        "distance": 0.85
-    },
-    {
-        "from": "oym",
-        "to": "sdn",
-        "distance": 0.85
-    },
-    {
-        "from": "oym",
-        "to": "hdk",
-        "distance": 0.57
-    },
-    {
-        "from": "hdk",
-        "to": "oym",
-        "distance": 0.57
-    },
-    {
-        "from": "ygh",
-        "to": "yks",
-        "distance": 0.5
-    },
-    {
-        "from": "yks",
-        "to": "ygh",
-        "distance": 0.5
-    },
-    {
-        "from": "yks",
-        "to": "nzb",
-        "distance": 0.87
-    },
-    {
-        "from": "nzb",
-        "to": "yks",
-        "distance": 0.87
-    },
-    {
-        "from": "nzb",
-        "to": "cth",
-        "distance": 0.81
-    },
-    {
-        "from": "cth",
-        "to": "nzb",
-        "distance": 0.81
-    },
-    {
-        "from": "cth",
-        "to": "chs",
-        "distance": 0.74
-    },
-    {
-        "from": "chs",
-        "to": "cth",
-        "distance": 0.74
-    },
-    {
-        "from": "chs",
-        "to": "skd",
-        "distance": 0.8
-    },
-    {
-        "from": "skd",
-        "to": "chs",
-        "distance": 0.8
-    },
-    {
-        "from": "skd",
-        "to": "ttj",
-        "distance": 0.43
-    },
-    {
-        "from": "ttj",
-        "to": "skd",
-        "distance": 0.43
-    },
-    {
-        "from": "ttj",
-        "to": "scd",
-        "distance": 0.3
-    },
-    {
-        "from": "scd",
-        "to": "ttj",
-        "distance": 0.3
-    },
-    {
-        "from": "scd",
-        "to": "cts",
-        "distance": 0.5
-    },
-    {
-        "from": "cts",
-        "to": "scd",
-        "distance": 0.5
-    },
-    {
-        "from": "cts",
-        "to": "cht",
-        "distance": 0.99
-    },
-    {
-        "from": "cht",
-        "to": "cts",
-        "distance": 0.99
-    },
-    {
-        "from": "cht",
-        "to": "mkg",
-        "distance": 0.53
-    },
-    {
-        "from": "mkg",
-        "to": "cht",
-        "distance": 0.53
-    },
-    {
-        "from": "mkg",
-        "to": "okn",
-        "distance": 0.56
-    },
-    {
-        "from": "okn",
-        "to": "mkg",
-        "distance": 0.56
-    },
-    {
-        "from": "okn",
-        "to": "hng",
-        "distance": 0.98
-    },
-    {
-        "from": "hng",
-        "to": "okn",
-        "distance": 0.98
-    },
-    {
-        "from": "hng",
-        "to": "mdg",
-        "distance": 0.52
-    },
-    {
-        "from": "mdg",
-        "to": "hng",
-        "distance": 0.52
-    },
-    {
-        "from": "mdg",
-        "to": "smk",
-        "distance": 0.75
-    },
-    {
-        "from": "smk",
-        "to": "mdg",
-        "distance": 0.75
-    },
-    {
-        "from": "smk",
-        "to": "smg",
-        "distance": 0.49
-    },
-    {
-        "from": "smg",
-        "to": "smk",
-        "distance": 0.49
-    },
-    {
-        "from": "tgw",
-        "to": "hsd",
-        "distance": 0.86
-    },
-    {
-        "from": "hsd",
-        "to": "tgw",
-        "distance": 0.86
-    },
-    {
-        "from": "hsd",
-        "to": "ygh",
-        "distance": 0.59
-    },
-    {
-        "from": "ygh",
-        "to": "hsd",
-        "distance": 0.59
-    },
-    {
-        "from": "ygh",
-        "to": "ktk",
-        "distance": 1.01
-    },
-    {
-        "from": "ktk",
-        "to": "ygh",
-        "distance": 1.01
-    },
-    {
-        "from": "ktk",
-        "to": "ysk",
-        "distance": 1.38
-    },
-    {
-        "from": "ysk",
-        "to": "ktk",
-        "distance": 1.38
-    },
-    {
-        "from": "ysk",
-        "to": "myu",
-        "distance": 0.8
-    },
-    {
-        "from": "myu",
-        "to": "ysk",
-        "distance": 0.8
-    },
-    {
-        "from": "myu",
-        "to": "hnt",
-        "distance": 1.08
-    },
-    {
-        "from": "hnt",
-        "to": "myu",
-        "distance": 1.08
-    },
-    {
-        "from": "hnt",
-        "to": "obm",
-        "distance": 0.8
-    },
-    {
-        "from": "obm",
-        "to": "hnt",
-        "distance": 0.8
-    },
-    {
-        "from": "obm",
-        "to": "krn",
-        "distance": 0.48
-    },
-    {
-        "from": "krn",
-        "to": "obm",
-        "distance": 0.48
-    },
-    {
-        "from": "krn",
-        "to": "wks",
-        "distance": 1.09
-    },
-    {
-        "from": "wks",
-        "to": "krn",
-        "distance": 1.09
-    },
-    {
-        "from": "wks",
-        "to": "dtc",
-        "distance": 0.61
-    },
-    {
-        "from": "dtc",
-        "to": "wks",
-        "distance": 0.61
-    },
-    {
-        "from": "dtc",
-        "to": "sos",
-        "distance": 0.87
-    },
-    {
-        "from": "sos",
-        "to": "dtc",
-        "distance": 0.87
-    },
-    {
-        "from": "sos",
-        "to": "nkc",
-        "distance": 1.2
-    },
-    {
-        "from": "nkc",
-        "to": "sos",
-        "distance": 1.2
-    },
-    {
-        "from": "nkc",
-        "to": "hdk",
-        "distance": 0.45
-    },
-    {
-        "from": "hdk",
-        "to": "nkc",
-        "distance": 0.45
-    },
-    {
-        "from": "hdk",
-        "to": "stm",
-        "distance": 0.61
-    },
-    {
-        "from": "stm",
-        "to": "hdk",
-        "distance": 0.61
-    },
-    {
-        "from": "stm",
-        "to": "mrt",
-        "distance": 0.76
-    },
-    {
-        "from": "mrt",
-        "to": "stm",
-        "distance": 0.76
-    },
-    {
-        "from": "mrt",
-        "to": "kry",
-        "distance": 0.98
-    },
-    {
-        "from": "kry",
-        "to": "mrt",
-        "distance": 0.98
-    },
-    {
-        "from": "hnt",
-        "to": "obu",
-        "distance": 1.71
-    },
-    {
-        "from": "obu",
-        "to": "hnt",
-        "distance": 1.71
-    },
-    {
-        "from": "obu",
-        "to": "dtc",
-        "distance": 1.16
-    },
-    {
-        "from": "dtc",
-        "to": "obu",
-        "distance": 1.16
-    },
-    {
-        "from": "dtc",
-        "to": "sos",
-        "distance": 0.86
-    },
-    {
-        "from": "sos",
-        "to": "dtc",
-        "distance": 0.86
-    },
-    {
-        "from": "stm",
-        "to": "kik",
-        "distance": 0.59
-    },
-    {
-        "from": "kik",
-        "to": "stm",
-        "distance": 0.59
-    },
-    {
-        "from": "kik",
-        "to": "ond",
-        "distance": 0.4
-    },
-    {
-        "from": "ond",
-        "to": "kik",
-        "distance": 0.4
-    },
-    {
-        "from": "ond",
-        "to": "kko",
-        "distance": 0.73
-    },
-    {
-        "from": "kko",
-        "to": "ond",
-        "distance": 0.73
-    },
-    {
-        "from": "kko",
-        "to": "tri",
-        "distance": 0.64
-    },
-    {
-        "from": "tri",
-        "to": "kko",
-        "distance": 0.64
-    },
-    {
-        "from": "tri",
-        "to": "chr",
-        "distance": 1.09
-    },
-    {
-        "from": "chr",
-        "to": "tri",
-        "distance": 1.09
-    },
-    {
-        "from": "obu",
-        "to": "obs",
-        "distance": 0.44
-    },
-    {
-        "from": "obs",
-        "to": "obu",
-        "distance": 0.44
-    },
-    {
-        "from": "obs",
-        "to": "ngn",
-        "distance": 0.93
-    },
-    {
-        "from": "ngn",
-        "to": "obs",
-        "distance": 0.93
-    },
-    {
-        "from": "ngn",
-        "to": "shg",
-        "distance": 1.6
-    },
-    {
-        "from": "shg",
-        "to": "ngn",
-        "distance": 1.6
-    },
-    {
-        "from": "shg",
-        "to": "kjt",
-        "distance": 0.45
-    },
-    {
-        "from": "kjt",
-        "to": "shg",
-        "distance": 0.45
-    },
-    {
-        "from": "kjt",
-        "to": "bzy",
-        "distance": 0.56
-    },
-    {
-        "from": "bzy",
-        "to": "kjt",
-        "distance": 0.56
-    },
-    {
-        "from": "bzy",
-        "to": "tsn",
-        "distance": 0.9
-    },
-    {
-        "from": "tsn",
-        "to": "bzy",
-        "distance": 0.9
-    },
-    {
-        "from": "tsn",
-        "to": "kyw",
-        "distance": 0.46
-    },
-    {
-        "from": "kyw",
-        "to": "tsn",
-        "distance": 0.46
-    },
-    {
-        "from": "kyw",
-        "to": "tmo",
-        "distance": 1.29
-    },
-    {
-        "from": "tmo",
-        "to": "kyw",
-        "distance": 1.29
-    },
-    {
-        "from": "tmo",
-        "to": "alb",
-        "distance": 1.22
-    },
-    {
-        "from": "alb",
-        "to": "tmo",
-        "distance": 1.22
-    },
-    {
-        "from": "alb",
-        "to": "ebt",
-        "distance": 0.81
-    },
-    {
-        "from": "ebt",
-        "to": "alb",
-        "distance": 0.81
-    },
-    {
-        "from": "ebt",
-        "to": "omn",
-        "distance": 0.62
-    },
-    {
-        "from": "omn",
-        "to": "ebt",
-        "distance": 0.62
-    },
-    {
-        "from": "omn",
-        "to": "obu",
-        "distance": 0.78
-    },
-    {
-        "from": "obu",
-        "to": "omn",
-        "distance": 0.78
-    },
-    {
-        "from": "hns",
-        "to": "mhc",
-        "distance": 0.52
-    },
-    {
-        "from": "mhc",
-        "to": "hns",
-        "distance": 0.52
-    },
-    {
-        "from": "mhc",
-        "to": "mnt",
-        "distance": 0.58
-    },
-    {
-        "from": "mnt",
-        "to": "mhc",
-        "distance": 0.58
-    },
-    {
-        "from": "mnt",
-        "to": "nrw",
-        "distance": 0.5
-    },
-    {
-        "from": "nrw",
-        "to": "mnt",
-        "distance": 0.5
-    },
-    {
-        "from": "nrw",
-        "to": "gdg",
-        "distance": 0.51
-    },
-    {
-        "from": "gdg",
-        "to": "nrw",
-        "distance": 0.51
-    },
-    {
-        "from": "gdg",
-        "to": "asm",
-        "distance": 0.56
-    },
-    {
-        "from": "asm",
-        "to": "gdg",
-        "distance": 0.56
-    },
-    {
-        "from": "asm",
-        "to": "yrk",
-        "distance": 0.52
-    },
-    {
-        "from": "yrk",
-        "to": "asm",
-        "distance": 0.52
-    },
-    {
-        "from": "yrk",
-        "to": "ikb",
-        "distance": 0.46
-    },
-    {
-        "from": "ikb",
-        "to": "yrk",
-        "distance": 0.46
-    },
-    {
-        "from": "ikb",
-        "to": "tmn",
-        "distance": 0.77
-    },
-    {
-        "from": "tmn",
-        "to": "ikb",
-        "distance": 0.77
-    },
-    {
-        "from": "tmn",
-        "to": "tkt",
-        "distance": 0.75
-    },
-    {
-        "from": "tkt",
-        "to": "tmn",
-        "distance": 0.75
-    },
-    {
-        "from": "tkt",
-        "to": "stn",
-        "distance": 0.85
-    },
-    {
-        "from": "stn",
-        "to": "tkt",
-        "distance": 0.85
-    },
-    {
-        "from": "stn",
-        "to": "hzm",
-        "distance": 0.74
-    },
-    {
-        "from": "hzm",
-        "to": "stn",
-        "distance": 0.74
-    },
-    {
-        "from": "hzm",
-        "to": "urn",
-        "distance": 0.57
-    },
-    {
-        "from": "urn",
-        "to": "hzm",
-        "distance": 0.57
-    },
-    {
-        "from": "urn",
-        "to": "sfk",
-        "distance": 0.66
-    },
-    {
-        "from": "sfk",
-        "to": "urn",
-        "distance": 0.66
-    },
-    {
-        "from": "sfk",
-        "to": "kgt",
-        "distance": 0.63
-    },
-    {
-        "from": "kgt",
-        "to": "sfk",
-        "distance": 0.63
-    },
-    {
-        "from": "kgt",
-        "to": "snt",
-        "distance": 0.59
-    },
-    {
-        "from": "snt",
-        "to": "kgt",
-        "distance": 0.59
-    },
-    {
-        "from": "snt",
-        "to": "umn",
-        "distance": 0.9
-    },
-    {
-        "from": "umn",
-        "to": "snt",
-        "distance": 0.9
-    },
-    {
-        "from": "umn",
-        "to": "ftt",
-        "distance": 0.62
-    },
-    {
-        "from": "ftt",
-        "to": "umn",
-        "distance": 0.62
-    },
-    {
-        "from": "ftt",
-        "to": "kwg",
-        "distance": 0.66
-    },
-    {
-        "from": "kwg",
-        "to": "ftt",
-        "distance": 0.66
-    },
-    {
-        "from": "kwg",
-        "to": "tks",
-        "distance": 0.58
-    },
-    {
-        "from": "tks",
-        "to": "kwg",
-        "distance": 0.58
-    },
-    {
-        "from": "tks",
-        "to": "kwa",
-        "distance": 1.99
-    },
-    {
-        "from": "kwa",
-        "to": "tks",
-        "distance": 1.99
-    },
-    {
-        "from": "kwa",
-        "to": "kwk",
-        "distance": 0.84
-    },
-    {
-        "from": "kwk",
-        "to": "kwa",
-        "distance": 0.84
-    },
-    {
-        "from": "kwk",
-        "to": "sur",
-        "distance": 0.61
-    },
-    {
-        "from": "sur",
-        "to": "kwk",
-        "distance": 0.61
-    },
-    {
-        "from": "sur",
-        "to": "koh",
-        "distance": 0.56
-    },
-    {
-        "from": "koh",
-        "to": "sur",
-        "distance": 0.56
-    },
-    {
-        "from": "koh",
-        "to": "mnh",
-        "distance": 1.06
-    },
-    {
-        "from": "mnh",
-        "to": "koh",
-        "distance": 1.06
-    },
-    {
-        "from": "mnh",
-        "to": "gjm",
-        "distance": 0.73
-    },
-    {
-        "from": "gjm",
-        "to": "mnh",
-        "distance": 0.73
-    },
-    {
-        "from": "gjm",
-        "to": "ymd",
-        "distance": 1.65
-    },
-    {
-        "from": "ymd",
-        "to": "gjm",
-        "distance": 1.65
-    },
-    {
-        "from": "ymd",
-        "to": "oik",
-        "distance": 2.8
-    },
-    {
-        "from": "oik",
-        "to": "ymd",
-        "distance": 2.8
-    },
-    {
-        "from": "oik",
-        "to": "ktn",
-        "distance": 1.09
-    },
-    {
-        "from": "ktn",
-        "to": "oik",
-        "distance": 1.09
-    },
-    {
-        "from": "ktn",
-        "to": "smr",
-        "distance": 0.59
-    },
-    {
-        "from": "smr",
-        "to": "ktn",
-        "distance": 0.59
-    },
-    {
-        "from": "smr",
-        "to": "mrg",
-        "distance": 0.61
-    },
-    {
-        "from": "mrg",
-        "to": "smr",
-        "distance": 0.61
-    },
-    {
-        "from": "mrg",
-        "to": "mrz",
-        "distance": 0.52
-    },
-    {
-        "from": "mrz",
-        "to": "mrg",
-        "distance": 0.52
-    },
-    {
-        "from": "mrz",
-        "to": "mzk",
-        "distance": 0.38
-    },
-    {
-        "from": "mzk",
-        "to": "mrz",
-        "distance": 0.38
-    },
-    {
-        "from": "nwa",
-        "to": "rnw",
-        "distance": 0.71
-    },
-    {
-        "from": "rnw",
-        "to": "nwa",
-        "distance": 0.71
-    },
-    {
-        "from": "rnw",
-        "to": "mjd",
-        "distance": 0.73
-    },
-    {
-        "from": "mjd",
-        "to": "rnw",
-        "distance": 0.73
-    },
-    {
-        "from": "mjd",
-        "to": "jtk",
-        "distance": 0.58
-    },
-    {
-        "from": "jtk",
-        "to": "mjd",
-        "distance": 0.58
-    },
-    {
-        "from": "jtk",
-        "to": "zgm",
-        "distance": 0.78
-    },
-    {
-        "from": "zgm",
-        "to": "jtk",
-        "distance": 0.78
-    },
-    {
-        "from": "zgm",
-        "to": "wkn",
-        "distance": 0.53
-    },
-    {
-        "from": "wkn",
-        "to": "zgm",
-        "distance": 0.53
-    },
-    {
-        "from": "wkn",
-        "to": "amm",
-        "distance": 0.77
-    },
-    {
-        "from": "amm",
-        "to": "wkn",
-        "distance": 0.77
-    },
-    {
-        "from": "amm",
-        "to": "fkc",
-        "distance": 0.64
-    },
-    {
-        "from": "fkc",
-        "to": "amm",
-        "distance": 0.64
-    },
-    {
-        "from": "fkc",
-        "to": "fsm",
-        "distance": 0.56
-    },
-    {
-        "from": "fsm",
-        "to": "fkc",
-        "distance": 0.56
-    },
-    {
-        "from": "fsm",
-        "to": "ktk",
-        "distance": 0.78
-    },
-    {
-        "from": "ktk",
-        "to": "fsm",
-        "distance": 0.78
-    },
-    {
-        "from": "ktk",
-        "to": "ust",
-        "distance": 1.24
-    },
-    {
-        "from": "ust",
-        "to": "ktk",
-        "distance": 1.24
-    },
-    {
-        "from": "ust",
-        "to": "mnk",
-        "distance": 0.98
-    },
-    {
-        "from": "mnk",
-        "to": "ust",
-        "distance": 0.98
-    },
-    {
-        "from": "mnk",
-        "to": "nkh",
-        "distance": 0.83
-    },
-    {
-        "from": "nkh",
-        "to": "mnk",
-        "distance": 0.83
-    },
-    {
-        "from": "nkh",
-        "to": "ywt",
-        "distance": 0.95
-    },
-    {
-        "from": "ywt",
-        "to": "nkh",
-        "distance": 0.95
-    },
-    {
-        "from": "koh",
-        "to": "kjo",
-        "distance": 1.51
-    },
-    {
-        "from": "kjo",
-        "to": "koh",
-        "distance": 1.51
-    },
-    {
-        "from": "kjo",
-        "to": "ucd",
-        "distance": 1.41
-    },
-    {
-        "from": "ucd",
-        "to": "kjo",
-        "distance": 1.41
-    },
-    {
-        "from": "ucd",
-        "to": "utm",
-        "distance": 2.26
-    },
-    {
-        "from": "utm",
-        "to": "ucd",
-        "distance": 2.26
-    },
-    {
-        "from": "utm",
-        "to": "wsk",
-        "distance": 0.56
-    },
-    {
-        "from": "wsk",
-        "to": "utm",
-        "distance": 0.56
-    },
-    {
-        "from": "wsk",
-        "to": "utk",
-        "distance": 0.55
-    },
-    {
-        "from": "utk",
-        "to": "wsk",
-        "distance": 0.55
-    },
-    {
-        "from": "ars",
-        "to": "okk",
-        "distance": 0.56
-    },
-    {
-        "from": "okk",
-        "to": "ars",
-        "distance": 0.56
-    },
-    {
-        "from": "okk",
-        "to": "amm",
-        "distance": 1.12
-    },
-    {
-        "from": "amm",
-        "to": "okk",
-        "distance": 1.12
-    },
-    {
-        "from": "amm",
-        "to": "kfn",
-        "distance": 0.52
-    },
-    {
-        "from": "kfn",
-        "to": "amm",
-        "distance": 0.52
-    },
-    {
-        "from": "kfn",
-        "to": "gkt",
-        "distance": 1.19
-    },
-    {
-        "from": "gkt",
-        "to": "kfn",
-        "distance": 1.19
-    },
-    {
-        "from": "gkt",
-        "to": "msn",
-        "distance": 0.95
-    },
-    {
-        "from": "msn",
-        "to": "gkt",
-        "distance": 0.95
-    },
-    {
-        "from": "msn",
-        "to": "alb",
-        "distance": 0.56
-    },
-    {
-        "from": "alb",
-        "to": "msn",
-        "distance": 0.56
-    },
-    {
-        "from": "alb",
-        "to": "hry",
-        "distance": 0.46
-    },
-    {
-        "from": "hry",
-        "to": "alb",
-        "distance": 0.46
-    },
-    {
-        "from": "hry",
-        "to": "chc",
-        "distance": 0.66
-    },
-    {
-        "from": "chc",
-        "to": "hry",
-        "distance": 0.66
-    },
-    {
-        "from": "chc",
-        "to": "ngn",
-        "distance": 0.82
-    },
-    {
-        "from": "ngn",
-        "to": "chc",
-        "distance": 0.82
-    },
-    {
-        "from": "ngn",
-        "to": "hrk",
-        "distance": 0.79
-    },
-    {
-        "from": "hrk",
-        "to": "ngn",
-        "distance": 0.79
-    },
-    {
-        "from": "hrk",
-        "to": "tti",
-        "distance": 1.01
-    },
-    {
-        "from": "tti",
-        "to": "hrk",
-        "distance": 1.01
-    },
-    {
-        "from": "tti",
-        "to": "ksd",
-        "distance": 0.5
-    },
-    {
-        "from": "ksd",
-        "to": "tti",
-        "distance": 0.5
-    },
-    {
-        "from": "ksd",
-        "to": "mdk",
-        "distance": 0.91
-    },
-    {
-        "from": "mdk",
-        "to": "ksd",
-        "distance": 0.91
-    },
-    {
-        "from": "mdk",
-        "to": "szy",
-        "distance": 0.75
-    },
-    {
-        "from": "szy",
-        "to": "mdk",
-        "distance": 0.75
-    },
-    {
-        "from": "szy",
-        "to": "zng",
-        "distance": 1.06
-    },
-    {
-        "from": "zng",
-        "to": "szy",
-        "distance": 1.06
-    },
-    {
-        "from": "zng",
-        "to": "ftm",
-        "distance": 1.04
-    },
-    {
-        "from": "ftm",
-        "to": "zng",
-        "distance": 1.04
-    },
-    {
-        "from": "ftm",
-        "to": "fmd",
-        "distance": 0.62
-    },
-    {
-        "from": "fmd",
-        "to": "ftm",
-        "distance": 0.62
-    },
-    {
-        "from": "fmd",
-        "to": "tyd",
-        "distance": 0.44
-    },
-    {
-        "from": "tyd",
-        "to": "fmd",
-        "distance": 0.44
-    },
-    {
-        "from": "tyd",
-        "to": "wkm",
-        "distance": 0.4
-    },
-    {
-        "from": "wkm",
-        "to": "tyd",
-        "distance": 0.4
-    },
-    {
-        "from": "wkm",
-        "to": "kkk",
-        "distance": 0.86
-    },
-    {
-        "from": "kkk",
-        "to": "wkm",
-        "distance": 0.86
-    },
-    {
-        "from": "sos",
-        "to": "ngn",
-        "distance": 1.58
-    },
-    {
-        "from": "ngn",
-        "to": "sos",
-        "distance": 1.58
-    },
-    {
-        "from": "ktk",
-        "to": "yks",
-        "distance": 1.23
-    },
-    {
-        "from": "yks",
-        "to": "ktk",
-        "distance": 1.23
-    },
-    {
-        "from": "nrm",
-        "to": "kso",
-        "distance": 0.39
-    },
-    {
-        "from": "kso",
-        "to": "nrm",
-        "distance": 0.39
-    },
-    {
-        "from": "ebt",
-        "to": "obm",
-        "distance": 0.77
-    },
-    {
-        "from": "obm",
-        "to": "ebt",
-        "distance": 0.77
-    },
-    {
-        "from": "shg",
-        "to": "ktm",
-        "distance": 0.58
-    },
-    {
-        "from": "ktm",
-        "to": "shg",
-        "distance": 0.58
-    },
-    {
-        "from": "gnk",
-        "to": "ktm",
-        "distance": 0.47
-    },
-    {
-        "from": "ktm",
-        "to": "gnk",
-        "distance": 0.47
-    },
-    {
-        "from": "gnk",
-        "to": "oiw",
-        "distance": 0.53
-    },
-    {
-        "from": "oiw",
-        "to": "gnk",
-        "distance": 0.53
-    },
-    {
-        "from": "msh",
-        "to": "oiw",
-        "distance": 0.47
-    },
-    {
-        "from": "oiw",
-        "to": "msh",
-        "distance": 0.47
-    },
-    {
-        "from": "msh",
-        "to": "smn",
-        "distance": 0.51
-    },
-    {
-        "from": "smn",
-        "to": "msh",
-        "distance": 0.51
-    },
-    {
-        "from": "nkt",
-        "to": "smn",
-        "distance": 0.54
-    },
-    {
-        "from": "smn",
-        "to": "nkt",
-        "distance": 0.54
-    },
-    {
-        "from": "nkt",
-        "to": "srh",
-        "distance": 0.56
-    },
-    {
-        "from": "srh",
-        "to": "nkt",
-        "distance": 0.56
-    },
-    {
-        "from": "isi",
-        "to": "srh",
-        "distance": 0.43
-    },
-    {
-        "from": "srh",
-        "to": "isi",
-        "distance": 0.43
-    },
-    {
-        "from": "isi",
-        "to": "smo",
-        "distance": 0.63
-    },
-    {
-        "from": "smo",
-        "to": "isi",
-        "distance": 0.63
-    },
-    {
-        "from": "aru",
-        "to": "smo",
-        "distance": 0.63
-    },
-    {
-        "from": "smo",
-        "to": "aru",
-        "distance": 0.63
-    },
-    {
-        "from": "aru",
-        "to": "zgm",
-        "distance": 0.51
-    },
-    {
-        "from": "zgm",
-        "to": "aru",
-        "distance": 0.51
-    },
-    {
-        "from": "arw",
-        "to": "zgm",
-        "distance": 0.41
-    },
-    {
-        "from": "zgm",
-        "to": "arw",
-        "distance": 0.41
-    },
-    {
-        "from": "arw",
-        "to": "aro",
-        "distance": 0.48
-    },
-    {
-        "from": "aro",
-        "to": "arw",
-        "distance": 0.48
-    },
-    {
-        "from": "shr",
-        "to": "aro",
-        "distance": 0.49
-    },
-    {
-        "from": "aro",
-        "to": "shr",
-        "distance": 0.49
-    },
-    {
-        "from": "ygt",
-        "to": "hrj",
-        "distance": 0.51
-    },
-    {
-        "from": "hrj",
-        "to": "ygt",
-        "distance": 0.51
-    },
-    {
-        "from": "irn",
-        "to": "hrj",
-        "distance": 0.54
-    },
-    {
-        "from": "hrj",
-        "to": "irn",
-        "distance": 0.54
-    },
-    {
-        "from": "irn",
-        "to": "kwn",
-        "distance": 0.72
-    },
-    {
-        "from": "kwn",
-        "to": "irn",
-        "distance": 0.72
-    },
-    {
-        "from": "ysd",
-        "to": "kwn",
-        "distance": 0.75
-    },
-    {
-        "from": "kwn",
-        "to": "ysd",
-        "distance": 0.75
-    },
-    {
-        "from": "ysd",
-        "to": "hro",
-        "distance": 0.71
-    },
-    {
-        "from": "hro",
-        "to": "ysd",
-        "distance": 0.71
-    },
-    {
-        "from": "fkg",
-        "to": "hro",
-        "distance": 0.58
-    },
-    {
-        "from": "hro",
-        "to": "fkg",
-        "distance": 0.58
-    },
-    {
-        "from": "fkg",
-        "to": "mck",
-        "distance": 0.53
-    },
-    {
-        "from": "mck",
-        "to": "fkg",
-        "distance": 0.53
-    },
-    {
-        "from": "kkz",
-        "to": "mck",
-        "distance": 0.53
-    },
-    {
-        "from": "mck",
-        "to": "kkz",
-        "distance": 0.53
-    },
-    {
-        "from": "kkz",
-        "to": "ssk",
-        "distance": 0.82
-    },
-    {
-        "from": "ssk",
-        "to": "kkz",
-        "distance": 0.82
-    },
-    {
-        "from": "ske",
-        "to": "ssk",
-        "distance": 0.83
-    },
-    {
-        "from": "ssk",
-        "to": "ske",
-        "distance": 0.83
-    },
-    {
-        "from": "oue",
-        "to": "kmk",
-        "distance": 0.77
-    },
-    {
-        "from": "kmk",
-        "to": "oue",
-        "distance": 0.77
-    },
-    {
-        "from": "mri",
-        "to": "kmk",
-        "distance": 0.47
-    },
-    {
-        "from": "kmk",
-        "to": "mri",
-        "distance": 0.47
-    },
-    {
-        "from": "mri",
-        "to": "hgo",
-        "distance": 0.42
-    },
-    {
-        "from": "hgo",
-        "to": "mri",
-        "distance": 0.42
-    },
-    {
-        "from": "tkd",
-        "to": "hgo",
-        "distance": 0.56
-    },
-    {
-        "from": "hgo",
-        "to": "tkd",
-        "distance": 0.56
-    },
-    {
-        "from": "tkd",
-        "to": "fks",
-        "distance": 0.79
-    },
-    {
-        "from": "fks",
-        "to": "tkd",
-        "distance": 0.79
-    },
-    {
-        "from": "ark",
-        "to": "fks",
-        "distance": 0.59
-    },
-    {
-        "from": "fks",
-        "to": "ark",
-        "distance": 0.59
-    },
-    {
-        "from": "ark",
-        "to": "kth",
-        "distance": 0.6
-    },
-    {
-        "from": "kth",
-        "to": "ark",
-        "distance": 0.6
-    },
-    {
-        "from": "myz",
-        "to": "kth",
-        "distance": 0.6
-    },
-    {
-        "from": "kth",
-        "to": "myz",
-        "distance": 0.6
-    },
-    {
-        "from": "myz",
-        "to": "knd",
-        "distance": 0.61
-    },
-    {
-        "from": "knd",
-        "to": "myz",
-        "distance": 0.61
-    },
-    {
-        "from": "hgi",
-        "to": "knd",
-        "distance": 0.77
-    },
-    {
-        "from": "knd",
-        "to": "hgi",
-        "distance": 0.77
-    },
-    {
-        "from": "hgi",
-        "to": "ynh",
-        "distance": 1.33
-    },
-    {
-        "from": "ynh",
-        "to": "hgi",
-        "distance": 1.33
-    },
-    {
-        "from": "hds",
-        "to": "ynh",
-        "distance": 0.47
-    },
-    {
-        "from": "ynh",
-        "to": "hds",
-        "distance": 0.47
-    },
-    {
-        "from": "hds",
-        "to": "akr",
-        "distance": 0.51
-    },
-    {
-        "from": "akr",
-        "to": "hds",
-        "distance": 0.51
-    },
-    {
-        "from": "hnd",
-        "to": "akr",
-        "distance": 0.72
-    },
-    {
-        "from": "akr",
-        "to": "hnd",
-        "distance": 0.72
-    },
-    {
-        "from": "hnd",
-        "to": "hdn",
-        "distance": 0.59
-    },
-    {
-        "from": "hdn",
-        "to": "hnd",
-        "distance": 0.59
-    },
-    {
-        "from": "sk2",
-        "to": "hdn",
-        "distance": 0.43
-    },
-    {
-        "from": "hdn",
-        "to": "sk2",
-        "distance": 0.43
-    },
-    {
-        "from": "sk2",
-        "to": "sk4",
-        "distance": 0.51
-    },
-    {
-        "from": "sk4",
-        "to": "sk2",
-        "distance": 0.51
-    },
-    {
-        "from": "say",
-        "to": "sk4",
-        "distance": 0.53
-    },
-    {
-        "from": "sk4",
-        "to": "say",
-        "distance": 0.53
-    },
-    {
-        "from": "say",
-        "to": "hnz",
-        "distance": 0.71
-    },
-    {
-        "from": "hnz",
-        "to": "say",
-        "distance": 0.71
-    },
-    {
-        "from": "hso",
-        "to": "hnz",
-        "distance": 0.57
-    },
-    {
-        "from": "hnz",
-        "to": "hso",
-        "distance": 0.57
-    },
-    {
-        "from": "hso",
-        "to": "kgr",
-        "distance": 0.53
-    },
-    {
-        "from": "kgr",
-        "to": "hso",
-        "distance": 0.53
-    },
-    {
-        "from": "hbt",
-        "to": "kgr",
-        "distance": 0.66
-    },
-    {
-        "from": "kgr",
-        "to": "hbt",
-        "distance": 0.66
-    },
-    {
-        "from": "hbt",
-        "to": "ttn",
-        "distance": 0.81
-    },
-    {
-        "from": "ttn",
-        "to": "hbt",
-        "distance": 0.81
-    },
-    {
-        "from": "cky",
-        "to": "ttn",
-        "distance": 0.52
-    },
-    {
-        "from": "ttn",
-        "to": "cky",
-        "distance": 0.52
-    },
-    {
-        "from": "cky",
-        "to": "dmn",
-        "distance": 0.73
-    },
-    {
-        "from": "dmn",
-        "to": "cky",
-        "distance": 0.73
-    },
-    {
-        "from": "ttc",
-        "to": "dmn",
-        "distance": 0.78
-    },
-    {
-        "from": "dmn",
-        "to": "ttc",
-        "distance": 0.78
-    },
-    {
-        "from": "ttc",
-        "to": "fkm",
-        "distance": 0.68
-    },
-    {
-        "from": "fkm",
-        "to": "ttc",
-        "distance": 0.68
-    },
-    {
-        "from": "fki",
-        "to": "fkm",
-        "distance": 0.56
-    },
-    {
-        "from": "fkm",
-        "to": "fki",
-        "distance": 0.56
-    },
-    {
-        "from": "fki",
-        "to": "sfk",
-        "distance": 0.42
-    },
-    {
-        "from": "sfk",
-        "to": "fki",
-        "distance": 0.42
-    },
-    {
-        "from": "knj",
-        "to": "tbs",
-        "distance": 2.8
-    },
-    {
-        "from": "tbs",
-        "to": "knj",
-        "distance": 2.8
-    },
-    {
-        "from": "nkb",
-        "to": "tbs",
-        "distance": 3.4
-    },
-    {
-        "from": "tbs",
-        "to": "nkb",
-        "distance": 3.4
-    },
-    {
-        "from": "nkb",
-        "to": "wng",
-        "distance": 5.3
-    },
-    {
-        "from": "wng",
-        "to": "nkb",
-        "distance": 5.3
-    }
+	{
+		"from": "kts",
+		"to": "kto",
+		"distance": 0.75
+	},
+	{
+		"from": "kto",
+		"to": "kts",
+		"distance": 0.75
+	},
+	{
+		"from": "kto",
+		"to": "owk",
+		"distance": 0.91
+	},
+	{
+		"from": "owk",
+		"to": "kto",
+		"distance": 0.91
+	},
+	{
+		"from": "owk",
+		"to": "bwg",
+		"distance": 0.82
+	},
+	{
+		"from": "bwg",
+		"to": "owk",
+		"distance": 0.82
+	},
+	{
+		"from": "bwg",
+		"to": "tkg",
+		"distance": 0.76
+	},
+	{
+		"from": "tkg",
+		"to": "bwg",
+		"distance": 0.76
+	},
+	{
+		"from": "tkg",
+		"to": "tyk",
+		"distance": 0.4
+	},
+	{
+		"from": "tyk",
+		"to": "tkg",
+		"distance": 0.4
+	},
+	{
+		"from": "tyk",
+		"to": "chk",
+		"distance": 0.39
+	},
+	{
+		"from": "chk",
+		"to": "tyk",
+		"distance": 0.39
+	},
+	{
+		"from": "chk",
+		"to": "jsd",
+		"distance": 0.55
+	},
+	{
+		"from": "jsd",
+		"to": "chk",
+		"distance": 0.55
+	},
+	{
+		"from": "jsd",
+		"to": "kmm",
+		"distance": 1.09
+	},
+	{
+		"from": "kmm",
+		"to": "jsd",
+		"distance": 1.09
+	},
+	{
+		"from": "kmm",
+		"to": "wko",
+		"distance": 0.92
+	},
+	{
+		"from": "wko",
+		"to": "kmm",
+		"distance": 0.92
+	},
+	{
+		"from": "wko",
+		"to": "smz",
+		"distance": 1.19
+	},
+	{
+		"from": "smz",
+		"to": "wko",
+		"distance": 1.19
+	},
+	{
+		"from": "smz",
+		"to": "hrd",
+		"distance": 0.68
+	},
+	{
+		"from": "hrd",
+		"to": "smz",
+		"distance": 0.68
+	},
+	{
+		"from": "hrd",
+		"to": "nki",
+		"distance": 1.04
+	},
+	{
+		"from": "nki",
+		"to": "hrd",
+		"distance": 1.04
+	},
+	{
+		"from": "nki",
+		"to": "tgo",
+		"distance": 0.86
+	},
+	{
+		"from": "tgo",
+		"to": "nki",
+		"distance": 0.86
+	},
+	{
+		"from": "tgo",
+		"to": "srt",
+		"distance": 0.58
+	},
+	{
+		"from": "srt",
+		"to": "tgo",
+		"distance": 0.58
+	},
+	{
+		"from": "srt",
+		"to": "nsn",
+		"distance": 1.07
+	},
+	{
+		"from": "nsn",
+		"to": "srt",
+		"distance": 1.07
+	},
+	{
+		"from": "nsn",
+		"to": "ord",
+		"distance": 0.53
+	},
+	{
+		"from": "ord",
+		"to": "nsn",
+		"distance": 0.53
+	},
+	{
+		"from": "ord",
+		"to": "nsi",
+		"distance": 0.39
+	},
+	{
+		"from": "nsi",
+		"to": "ord",
+		"distance": 0.39
+	},
+	{
+		"from": "nsi",
+		"to": "nss",
+		"distance": 0.57
+	},
+	{
+		"from": "nss",
+		"to": "nsi",
+		"distance": 0.57
+	},
+	{
+		"from": "nss",
+		"to": "nsa",
+		"distance": 1.08
+	},
+	{
+		"from": "nsa",
+		"to": "nss",
+		"distance": 1.08
+	},
+	{
+		"from": "nsa",
+		"to": "iws",
+		"distance": 0.42
+	},
+	{
+		"from": "iws",
+		"to": "nsa",
+		"distance": 0.42
+	},
+	{
+		"from": "iws",
+		"to": "bnt",
+		"distance": 0.53
+	},
+	{
+		"from": "bnt",
+		"to": "iws",
+		"distance": 0.53
+	},
+	{
+		"from": "bnt",
+		"to": "tky",
+		"distance": 0.79
+	},
+	{
+		"from": "tky",
+		"to": "bnt",
+		"distance": 0.79
+	},
+	{
+		"from": "tky",
+		"to": "aic",
+		"distance": 0.74
+	},
+	{
+		"from": "aic",
+		"to": "tky",
+		"distance": 0.74
+	},
+	{
+		"from": "aic",
+		"to": "ngk",
+		"distance": 1.38
+	},
+	{
+		"from": "ngk",
+		"to": "aic",
+		"distance": 1.38
+	},
+	{
+		"from": "ngk",
+		"to": "knr",
+		"distance": 0.74
+	},
+	{
+		"from": "knr",
+		"to": "ngk",
+		"distance": 0.74
+	},
+	{
+		"from": "knr",
+		"to": "nks",
+		"distance": 0.63
+	},
+	{
+		"from": "nks",
+		"to": "knr",
+		"distance": 0.63
+	},
+	{
+		"from": "kry",
+		"to": "krm",
+		"distance": 1.3
+	},
+	{
+		"from": "krm",
+		"to": "kry",
+		"distance": 1.3
+	},
+	{
+		"from": "krm",
+		"to": "aiz",
+		"distance": 0.6
+	},
+	{
+		"from": "aiz",
+		"to": "krm",
+		"distance": 0.6
+	},
+	{
+		"from": "aiz",
+		"to": "ash",
+		"distance": 1.23
+	},
+	{
+		"from": "ash",
+		"to": "aiz",
+		"distance": 1.23
+	},
+	{
+		"from": "ash",
+		"to": "wks",
+		"distance": 1.13
+	},
+	{
+		"from": "wks",
+		"to": "ash",
+		"distance": 1.13
+	},
+	{
+		"from": "wks",
+		"to": "obs",
+		"distance": 0.37
+	},
+	{
+		"from": "obs",
+		"to": "wks",
+		"distance": 0.37
+	},
+	{
+		"from": "obs",
+		"to": "chc",
+		"distance": 0.86
+	},
+	{
+		"from": "chc",
+		"to": "obs",
+		"distance": 0.86
+	},
+	{
+		"from": "chc",
+		"to": "oiw",
+		"distance": 1.04
+	},
+	{
+		"from": "oiw",
+		"to": "chc",
+		"distance": 1.04
+	},
+	{
+		"from": "oiw",
+		"to": "kyw",
+		"distance": 1.25
+	},
+	{
+		"from": "kyw",
+		"to": "oiw",
+		"distance": 1.25
+	},
+	{
+		"from": "kyw",
+		"to": "kkg",
+		"distance": 1.33
+	},
+	{
+		"from": "kkg",
+		"to": "kyw",
+		"distance": 1.33
+	},
+	{
+		"from": "kkg",
+		"to": "mod",
+		"distance": 0.81
+	},
+	{
+		"from": "mod",
+		"to": "kkg",
+		"distance": 0.81
+	},
+	{
+		"from": "mod",
+		"to": "ryn",
+		"distance": 0.81
+	},
+	{
+		"from": "ryn",
+		"to": "mod",
+		"distance": 0.81
+	},
+	{
+		"from": "ryn",
+		"to": "odk",
+		"distance": 0.96
+	},
+	{
+		"from": "odk",
+		"to": "ryn",
+		"distance": 0.96
+	},
+	{
+		"from": "odk",
+		"to": "kso",
+		"distance": 1.12
+	},
+	{
+		"from": "kso",
+		"to": "odk",
+		"distance": 1.12
+	},
+	{
+		"from": "kso",
+		"to": "mtn",
+		"distance": 0.51
+	},
+	{
+		"from": "mtn",
+		"to": "kso",
+		"distance": 0.51
+	},
+	{
+		"from": "mtn",
+		"to": "hsh",
+		"distance": 0.62
+	},
+	{
+		"from": "hsh",
+		"to": "mtn",
+		"distance": 0.62
+	},
+	{
+		"from": "hsh",
+		"to": "mks",
+		"distance": 0.77
+	},
+	{
+		"from": "mks",
+		"to": "hsh",
+		"distance": 0.77
+	},
+	{
+		"from": "mks",
+		"to": "mky",
+		"distance": 0.37
+	},
+	{
+		"from": "mky",
+		"to": "mks",
+		"distance": 0.37
+	},
+	{
+		"from": "mky",
+		"to": "sks",
+		"distance": 0.48
+	},
+	{
+		"from": "sks",
+		"to": "mky",
+		"distance": 0.48
+	},
+	{
+		"from": "sks",
+		"to": "ybt",
+		"distance": 0.72
+	},
+	{
+		"from": "ybt",
+		"to": "sks",
+		"distance": 0.72
+	},
+	{
+		"from": "ybt",
+		"to": "sod",
+		"distance": 0.48
+	},
+	{
+		"from": "sod",
+		"to": "ybt",
+		"distance": 0.48
+	},
+	{
+		"from": "sod",
+		"to": "mzn",
+		"distance": 0.56
+	},
+	{
+		"from": "mzn",
+		"to": "sod",
+		"distance": 0.56
+	},
+	{
+		"from": "mzn",
+		"to": "hrt",
+		"distance": 0.62
+	},
+	{
+		"from": "hrt",
+		"to": "mzn",
+		"distance": 0.62
+	},
+	{
+		"from": "hrt",
+		"to": "snk",
+		"distance": 0.59
+	},
+	{
+		"from": "snk",
+		"to": "hrt",
+		"distance": 0.59
+	},
+	{
+		"from": "snk",
+		"to": "usm",
+		"distance": 0.75
+	},
+	{
+		"from": "usm",
+		"to": "snk",
+		"distance": 0.75
+	},
+	{
+		"from": "usm",
+		"to": "tkj",
+		"distance": 1.07
+	},
+	{
+		"from": "tkj",
+		"to": "usm",
+		"distance": 1.07
+	},
+	{
+		"from": "tkj",
+		"to": "srk",
+		"distance": 0.79
+	},
+	{
+		"from": "srk",
+		"to": "tkj",
+		"distance": 0.79
+	},
+	{
+		"from": "srk",
+		"to": "trm",
+		"distance": 1
+	},
+	{
+		"from": "trm",
+		"to": "srk",
+		"distance": 1
+	},
+	{
+		"from": "trm",
+		"to": "chy",
+		"distance": 0.6
+	},
+	{
+		"from": "chy",
+		"to": "trm",
+		"distance": 0.6
+	},
+	{
+		"from": "chy",
+		"to": "yba",
+		"distance": 0.66
+	},
+	{
+		"from": "yba",
+		"to": "chy",
+		"distance": 0.66
+	},
+	{
+		"from": "yba",
+		"to": "ske",
+		"distance": 0.78
+	},
+	{
+		"from": "ske",
+		"to": "yba",
+		"distance": 0.78
+	},
+	{
+		"from": "nwa",
+		"to": "odm",
+		"distance": 1.75
+	},
+	{
+		"from": "odm",
+		"to": "nwa",
+		"distance": 1.75
+	},
+	{
+		"from": "odm",
+		"to": "odk",
+		"distance": 1.13
+	},
+	{
+		"from": "odk",
+		"to": "odm",
+		"distance": 1.13
+	},
+	{
+		"from": "odk",
+		"to": "nrm",
+		"distance": 1.14
+	},
+	{
+		"from": "nrm",
+		"to": "odk",
+		"distance": 1.14
+	},
+	{
+		"from": "nrm",
+		"to": "ryg",
+		"distance": 0.84
+	},
+	{
+		"from": "ryg",
+		"to": "nrm",
+		"distance": 0.84
+	},
+	{
+		"from": "ryg",
+		"to": "kmt",
+		"distance": 1.02
+	},
+	{
+		"from": "kmt",
+		"to": "ryg",
+		"distance": 1.02
+	},
+	{
+		"from": "kmt",
+		"to": "try",
+		"distance": 0.53
+	},
+	{
+		"from": "try",
+		"to": "kmt",
+		"distance": 0.53
+	},
+	{
+		"from": "try",
+		"to": "ubi",
+		"distance": 0.54
+	},
+	{
+		"from": "ubi",
+		"to": "try",
+		"distance": 0.54
+	},
+	{
+		"from": "ubi",
+		"to": "kkd",
+		"distance": 0.6
+	},
+	{
+		"from": "kkd",
+		"to": "ubi",
+		"distance": 0.6
+	},
+	{
+		"from": "kkd",
+		"to": "ckk",
+		"distance": 0.8
+	},
+	{
+		"from": "ckk",
+		"to": "kkd",
+		"distance": 0.8
+	},
+	{
+		"from": "ckk",
+		"to": "mgm",
+		"distance": 0.95
+	},
+	{
+		"from": "mgm",
+		"to": "ckk",
+		"distance": 0.95
+	},
+	{
+		"from": "mgm",
+		"to": "ftm",
+		"distance": 0.77
+	},
+	{
+		"from": "ftm",
+		"to": "mgm",
+		"distance": 0.77
+	},
+	{
+		"from": "ftm",
+		"to": "msk",
+		"distance": 0.43
+	},
+	{
+		"from": "msk",
+		"to": "ftm",
+		"distance": 0.43
+	},
+	{
+		"from": "msk",
+		"to": "tkg",
+		"distance": 0.44
+	},
+	{
+		"from": "tkg",
+		"to": "msk",
+		"distance": 0.44
+	},
+	{
+		"from": "tkg",
+		"to": "tys",
+		"distance": 0.53
+	},
+	{
+		"from": "tys",
+		"to": "tkg",
+		"distance": 0.53
+	},
+	{
+		"from": "tys",
+		"to": "okt",
+		"distance": 0.45
+	},
+	{
+		"from": "okt",
+		"to": "tys",
+		"distance": 0.45
+	},
+	{
+		"from": "okt",
+		"to": "nzk",
+		"distance": 0.86
+	},
+	{
+		"from": "nzk",
+		"to": "okt",
+		"distance": 0.86
+	},
+	{
+		"from": "nzk",
+		"to": "igm",
+		"distance": 1.33
+	},
+	{
+		"from": "igm",
+		"to": "nzk",
+		"distance": 1.33
+	},
+	{
+		"from": "igm",
+		"to": "mro",
+		"distance": 1.1
+	},
+	{
+		"from": "mro",
+		"to": "igm",
+		"distance": 1.1
+	},
+	{
+		"from": "mro",
+		"to": "nso",
+		"distance": 0.54
+	},
+	{
+		"from": "nso",
+		"to": "mro",
+		"distance": 0.54
+	},
+	{
+		"from": "nso",
+		"to": "ish",
+		"distance": 0.35
+	},
+	{
+		"from": "ish",
+		"to": "nso",
+		"distance": 0.35
+	},
+	{
+		"from": "ish",
+		"to": "ngd",
+		"distance": 0.36
+	},
+	{
+		"from": "ngd",
+		"to": "ish",
+		"distance": 0.36
+	},
+	{
+		"from": "ngd",
+		"to": "osh",
+		"distance": 0.54
+	},
+	{
+		"from": "osh",
+		"to": "ngd",
+		"distance": 0.54
+	},
+	{
+		"from": "osh",
+		"to": "nkf",
+		"distance": 0.87
+	},
+	{
+		"from": "nkf",
+		"to": "osh",
+		"distance": 0.87
+	},
+	{
+		"from": "nkf",
+		"to": "nkd",
+		"distance": 0.47
+	},
+	{
+		"from": "nkd",
+		"to": "nkf",
+		"distance": 0.47
+	},
+	{
+		"from": "nkd",
+		"to": "nkn",
+		"distance": 0.42
+	},
+	{
+		"from": "nkn",
+		"to": "nkd",
+		"distance": 0.42
+	},
+	{
+		"from": "nkn",
+		"to": "kms",
+		"distance": 0.5
+	},
+	{
+		"from": "kms",
+		"to": "nkn",
+		"distance": 0.5
+	},
+	{
+		"from": "kms",
+		"to": "mkk",
+		"distance": 0.29
+	},
+	{
+		"from": "mkk",
+		"to": "kms",
+		"distance": 0.29
+	},
+	{
+		"from": "mkk",
+		"to": "kbn",
+		"distance": 0.38
+	},
+	{
+		"from": "kbn",
+		"to": "mkk",
+		"distance": 0.38
+	},
+	{
+		"from": "kbn",
+		"to": "kbb",
+		"distance": 0.41
+	},
+	{
+		"from": "kbb",
+		"to": "kbn",
+		"distance": 0.41
+	},
+	{
+		"from": "kbb",
+		"to": "myn",
+		"distance": 0.39
+	},
+	{
+		"from": "myn",
+		"to": "kbb",
+		"distance": 0.39
+	},
+	{
+		"from": "myn",
+		"to": "skr",
+		"distance": 0.34
+	},
+	{
+		"from": "skr",
+		"to": "myn",
+		"distance": 0.34
+	},
+	{
+		"from": "skr",
+		"to": "chr",
+		"distance": 0.36
+	},
+	{
+		"from": "chr",
+		"to": "skr",
+		"distance": 0.36
+	},
+	{
+		"from": "obu",
+		"to": "obm",
+		"distance": 0.93
+	},
+	{
+		"from": "obm",
+		"to": "obu",
+		"distance": 0.93
+	},
+	{
+		"from": "obm",
+		"to": "knk",
+		"distance": 0.39
+	},
+	{
+		"from": "knk",
+		"to": "obm",
+		"distance": 0.39
+	},
+	{
+		"from": "knk",
+		"to": "iry",
+		"distance": 0.49
+	},
+	{
+		"from": "iry",
+		"to": "knk",
+		"distance": 0.49
+	},
+	{
+		"from": "iry",
+		"to": "knm",
+		"distance": 0.8
+	},
+	{
+		"from": "knm",
+		"to": "iry",
+		"distance": 0.8
+	},
+	{
+		"from": "knm",
+		"to": "sik",
+		"distance": 0.87
+	},
+	{
+		"from": "sik",
+		"to": "knm",
+		"distance": 0.87
+	},
+	{
+		"from": "sik",
+		"to": "oga",
+		"distance": 0.7
+	},
+	{
+		"from": "oga",
+		"to": "sik",
+		"distance": 0.7
+	},
+	{
+		"from": "oga",
+		"to": "nis",
+		"distance": 2.25
+	},
+	{
+		"from": "nis",
+		"to": "oga",
+		"distance": 2.25
+	},
+	{
+		"from": "nis",
+		"to": "fje",
+		"distance": 1.31
+	},
+	{
+		"from": "fje",
+		"to": "nis",
+		"distance": 1.31
+	},
+	{
+		"from": "fje",
+		"to": "mdr",
+		"distance": 1.52
+	},
+	{
+		"from": "mdr",
+		"to": "fje",
+		"distance": 1.52
+	},
+	{
+		"from": "mdr",
+		"to": "hem",
+		"distance": 0.74
+	},
+	{
+		"from": "hem",
+		"to": "mdr",
+		"distance": 0.74
+	},
+	{
+		"from": "hem",
+		"to": "kmi",
+		"distance": 0.64
+	},
+	{
+		"from": "kmi",
+		"to": "hem",
+		"distance": 0.64
+	},
+	{
+		"from": "kmi",
+		"to": "sch",
+		"distance": 0.63
+	},
+	{
+		"from": "sch",
+		"to": "kmi",
+		"distance": 0.63
+	},
+	{
+		"from": "sch",
+		"to": "ksn",
+		"distance": 0.43
+	},
+	{
+		"from": "ksn",
+		"to": "sch",
+		"distance": 0.43
+	},
+	{
+		"from": "ksn",
+		"to": "owh",
+		"distance": 0.36
+	},
+	{
+		"from": "owh",
+		"to": "ksn",
+		"distance": 0.36
+	},
+	{
+		"from": "owh",
+		"to": "owy",
+		"distance": 0.49
+	},
+	{
+		"from": "owy",
+		"to": "owh",
+		"distance": 0.49
+	},
+	{
+		"from": "owy",
+		"to": "okw",
+		"distance": 0.53
+	},
+	{
+		"from": "okw",
+		"to": "owy",
+		"distance": 0.53
+	},
+	{
+		"from": "okw",
+		"to": "hno",
+		"distance": 0.54
+	},
+	{
+		"from": "hno",
+		"to": "okw",
+		"distance": 0.54
+	},
+	{
+		"from": "hno",
+		"to": "hns",
+		"distance": 0.91
+	},
+	{
+		"from": "hns",
+		"to": "hno",
+		"distance": 0.91
+	},
+	{
+		"from": "okw",
+		"to": "akr",
+		"distance": 0.92
+	},
+	{
+		"from": "akr",
+		"to": "okw",
+		"distance": 0.92
+	},
+	{
+		"from": "akr",
+		"to": "smy",
+		"distance": 0.61
+	},
+	{
+		"from": "smy",
+		"to": "akr",
+		"distance": 0.61
+	},
+	{
+		"from": "smy",
+		"to": "sis",
+		"distance": 0.68
+	},
+	{
+		"from": "sis",
+		"to": "smy",
+		"distance": 0.68
+	},
+	{
+		"from": "shg",
+		"to": "bzy",
+		"distance": 1.01
+	},
+	{
+		"from": "bzy",
+		"to": "shg",
+		"distance": 1.01
+	},
+	{
+		"from": "bzy",
+		"to": "nry",
+		"distance": 0.53
+	},
+	{
+		"from": "nry",
+		"to": "bzy",
+		"distance": 0.53
+	},
+	{
+		"from": "nry",
+		"to": "okh",
+		"distance": 0.43
+	},
+	{
+		"from": "okh",
+		"to": "nry",
+		"distance": 0.43
+	},
+	{
+		"from": "okh",
+		"to": "cfk",
+		"distance": 0.31
+	},
+	{
+		"from": "cfk",
+		"to": "okh",
+		"distance": 0.31
+	},
+	{
+		"from": "cfk",
+		"to": "ksk",
+		"distance": 0.42
+	},
+	{
+		"from": "ksk",
+		"to": "cfk",
+		"distance": 0.42
+	},
+	{
+		"from": "ksk",
+		"to": "ngt",
+		"distance": 0.6
+	},
+	{
+		"from": "ngt",
+		"to": "ksk",
+		"distance": 0.6
+	},
+	{
+		"from": "ngt",
+		"to": "arm",
+		"distance": 0.76
+	},
+	{
+		"from": "arm",
+		"to": "ngt",
+		"distance": 0.76
+	},
+	{
+		"from": "arm",
+		"to": "trs",
+		"distance": 1.07
+	},
+	{
+		"from": "trs",
+		"to": "arm",
+		"distance": 1.07
+	},
+	{
+		"from": "trs",
+		"to": "ogg",
+		"distance": 0.5
+	},
+	{
+		"from": "ogg",
+		"to": "trs",
+		"distance": 0.5
+	},
+	{
+		"from": "ogg",
+		"to": "tkm",
+		"distance": 0.9
+	},
+	{
+		"from": "tkm",
+		"to": "ogg",
+		"distance": 0.9
+	},
+	{
+		"from": "tkm",
+		"to": "nrk",
+		"distance": 0.72
+	},
+	{
+		"from": "nrk",
+		"to": "tkm",
+		"distance": 0.72
+	},
+	{
+		"from": "nrk",
+		"to": "tsg",
+		"distance": 1.51
+	},
+	{
+		"from": "tsg",
+		"to": "nrk",
+		"distance": 1.51
+	},
+	{
+		"from": "tsg",
+		"to": "kmn",
+		"distance": 0.87
+	},
+	{
+		"from": "kmn",
+		"to": "tsg",
+		"distance": 0.87
+	},
+	{
+		"from": "kmn",
+		"to": "hbd",
+		"distance": 0.5
+	},
+	{
+		"from": "hbd",
+		"to": "kmn",
+		"distance": 0.5
+	},
+	{
+		"from": "hbd",
+		"to": "hbj",
+		"distance": 0.83
+	},
+	{
+		"from": "hbj",
+		"to": "hbd",
+		"distance": 0.83
+	},
+	{
+		"from": "hbj",
+		"to": "mki",
+		"distance": 0.39
+	},
+	{
+		"from": "mki",
+		"to": "hbj",
+		"distance": 0.39
+	},
+	{
+		"from": "mki",
+		"to": "hbm",
+		"distance": 0.59
+	},
+	{
+		"from": "hbm",
+		"to": "mki",
+		"distance": 0.59
+	},
+	{
+		"from": "hbm",
+		"to": "hrb",
+		"distance": 0.4
+	},
+	{
+		"from": "hrb",
+		"to": "hbm",
+		"distance": 0.4
+	},
+	{
+		"from": "hrb",
+		"to": "doj",
+		"distance": 0.57
+	},
+	{
+		"from": "doj",
+		"to": "hrb",
+		"distance": 0.57
+	},
+	{
+		"from": "doj",
+		"to": "mmn",
+		"distance": 0.52
+	},
+	{
+		"from": "mmn",
+		"to": "doj",
+		"distance": 0.52
+	},
+	{
+		"from": "mmn",
+		"to": "mmd",
+		"distance": 0.37
+	},
+	{
+		"from": "mmd",
+		"to": "mmn",
+		"distance": 0.37
+	},
+	{
+		"from": "mmd",
+		"to": "udk",
+		"distance": 0.42
+	},
+	{
+		"from": "udk",
+		"to": "mmd",
+		"distance": 0.42
+	},
+	{
+		"from": "udk",
+		"to": "hnb",
+		"distance": 0.34
+	},
+	{
+		"from": "hnb",
+		"to": "udk",
+		"distance": 0.34
+	},
+	{
+		"from": "hnb",
+		"to": "mmz",
+		"distance": 0.33
+	},
+	{
+		"from": "mmz",
+		"to": "hnb",
+		"distance": 0.33
+	},
+	{
+		"from": "mmz",
+		"to": "mkn",
+		"distance": 0.66
+	},
+	{
+		"from": "mkn",
+		"to": "mmz",
+		"distance": 0.66
+	},
+	{
+		"from": "mkn",
+		"to": "gkr",
+		"distance": 0.7
+	},
+	{
+		"from": "gkr",
+		"to": "mkn",
+		"distance": 0.7
+	},
+	{
+		"from": "gkr",
+		"to": "tbd",
+		"distance": 0.64
+	},
+	{
+		"from": "tbd",
+		"to": "gkr",
+		"distance": 0.64
+	},
+	{
+		"from": "tbd",
+		"to": "skb",
+		"distance": 0.62
+	},
+	{
+		"from": "skb",
+		"to": "tbd",
+		"distance": 0.62
+	},
+	{
+		"from": "skb",
+		"to": "ysh",
+		"distance": 0.51
+	},
+	{
+		"from": "ysh",
+		"to": "skb",
+		"distance": 0.51
+	},
+	{
+		"from": "ysh",
+		"to": "hmk",
+		"distance": 0.7
+	},
+	{
+		"from": "hmk",
+		"to": "ysh",
+		"distance": 0.7
+	},
+	{
+		"from": "hmk",
+		"to": "fjg",
+		"distance": 0.78
+	},
+	{
+		"from": "fjg",
+		"to": "hmk",
+		"distance": 0.78
+	},
+	{
+		"from": "shg",
+		"to": "fts",
+		"distance": 0.87
+	},
+	{
+		"from": "fts",
+		"to": "shg",
+		"distance": 0.87
+	},
+	{
+		"from": "fts",
+		"to": "hrk",
+		"distance": 0.66
+	},
+	{
+		"from": "hrk",
+		"to": "fts",
+		"distance": 0.66
+	},
+	{
+		"from": "hrk",
+		"to": "mds",
+		"distance": 0.76
+	},
+	{
+		"from": "mds",
+		"to": "hrk",
+		"distance": 0.76
+	},
+	{
+		"from": "mds",
+		"to": "dtc",
+		"distance": 0.29
+	},
+	{
+		"from": "dtc",
+		"to": "mds",
+		"distance": 0.29
+	},
+	{
+		"from": "dtc",
+		"to": "ash",
+		"distance": 1.12
+	},
+	{
+		"from": "ash",
+		"to": "dtc",
+		"distance": 1.12
+	},
+	{
+		"from": "ash",
+		"to": "mrk",
+		"distance": 0.76
+	},
+	{
+		"from": "mrk",
+		"to": "ash",
+		"distance": 0.76
+	},
+	{
+		"from": "mrk",
+		"to": "hog",
+		"distance": 1.28
+	},
+	{
+		"from": "hog",
+		"to": "mrk",
+		"distance": 1.28
+	},
+	{
+		"from": "dtc",
+		"to": "smt",
+		"distance": 0.87
+	},
+	{
+		"from": "smt",
+		"to": "dtc",
+		"distance": 0.87
+	},
+	{
+		"from": "smt",
+		"to": "yng",
+		"distance": 0.71
+	},
+	{
+		"from": "yng",
+		"to": "smt",
+		"distance": 0.71
+	},
+	{
+		"from": "yng",
+		"to": "mrn",
+		"distance": 0.73
+	},
+	{
+		"from": "mrn",
+		"to": "yng",
+		"distance": 0.73
+	},
+	{
+		"from": "mrn",
+		"to": "ktb",
+		"distance": 0.91
+	},
+	{
+		"from": "ktb",
+		"to": "mrn",
+		"distance": 0.91
+	},
+	{
+		"from": "ktb",
+		"to": "odn",
+		"distance": 0.9
+	},
+	{
+		"from": "odn",
+		"to": "ktb",
+		"distance": 0.9
+	},
+	{
+		"from": "sos",
+		"to": "usr",
+		"distance": 0.79
+	},
+	{
+		"from": "usr",
+		"to": "sos",
+		"distance": 0.79
+	},
+	{
+		"from": "usr",
+		"to": "udm",
+		"distance": 0.45
+	},
+	{
+		"from": "udm",
+		"to": "usr",
+		"distance": 0.45
+	},
+	{
+		"from": "udm",
+		"to": "kts",
+		"distance": 0.64
+	},
+	{
+		"from": "kts",
+		"to": "udm",
+		"distance": 0.64
+	},
+	{
+		"from": "kts",
+		"to": "ksd",
+		"distance": 0.82
+	},
+	{
+		"from": "ksd",
+		"to": "kts",
+		"distance": 0.82
+	},
+	{
+		"from": "ksd",
+		"to": "ftk",
+		"distance": 0.69
+	},
+	{
+		"from": "ftk",
+		"to": "ksd",
+		"distance": 0.69
+	},
+	{
+		"from": "ftk",
+		"to": "shg",
+		"distance": 0.75
+	},
+	{
+		"from": "shg",
+		"to": "ftk",
+		"distance": 0.75
+	},
+	{
+		"from": "shg",
+		"to": "ktc",
+		"distance": 0.55
+	},
+	{
+		"from": "ktc",
+		"to": "shg",
+		"distance": 0.55
+	},
+	{
+		"from": "ktc",
+		"to": "tsn",
+		"distance": 0.68
+	},
+	{
+		"from": "tsn",
+		"to": "ktc",
+		"distance": 0.68
+	},
+	{
+		"from": "odk",
+		"to": "skj",
+		"distance": 1.02
+	},
+	{
+		"from": "skj",
+		"to": "odk",
+		"distance": 1.02
+	},
+	{
+		"from": "skj",
+		"to": "kgn",
+		"distance": 1.35
+	},
+	{
+		"from": "kgn",
+		"to": "skj",
+		"distance": 1.35
+	},
+	{
+		"from": "kgn",
+		"to": "cya",
+		"distance": 1.03
+	},
+	{
+		"from": "cya",
+		"to": "kgn",
+		"distance": 1.03
+	},
+	{
+		"from": "cya",
+		"to": "kw3",
+		"distance": 0.93
+	},
+	{
+		"from": "kw3",
+		"to": "cya",
+		"distance": 0.93
+	},
+	{
+		"from": "kw3",
+		"to": "msh",
+		"distance": 0.88
+	},
+	{
+		"from": "msh",
+		"to": "kw3",
+		"distance": 0.88
+	},
+	{
+		"from": "msh",
+		"to": "hry",
+		"distance": 0.82
+	},
+	{
+		"from": "hry",
+		"to": "msh",
+		"distance": 0.82
+	},
+	{
+		"from": "hry",
+		"to": "kne",
+		"distance": 0.56
+	},
+	{
+		"from": "kne",
+		"to": "hry",
+		"distance": 0.56
+	},
+	{
+		"from": "kne",
+		"to": "ebc",
+		"distance": 0.4
+	},
+	{
+		"from": "ebc",
+		"to": "kne",
+		"distance": 0.4
+	},
+	{
+		"from": "ebc",
+		"to": "krn",
+		"distance": 0.62
+	},
+	{
+		"from": "krn",
+		"to": "ebc",
+		"distance": 0.62
+	},
+	{
+		"from": "krn",
+		"to": "yng",
+		"distance": 0.93
+	},
+	{
+		"from": "yng",
+		"to": "krn",
+		"distance": 0.93
+	},
+	{
+		"from": "yng",
+		"to": "owm",
+		"distance": 0.63
+	},
+	{
+		"from": "owm",
+		"to": "yng",
+		"distance": 0.63
+	},
+	{
+		"from": "owm",
+		"to": "ows",
+		"distance": 0.54
+	},
+	{
+		"from": "ows",
+		"to": "owm",
+		"distance": 0.54
+	},
+	{
+		"from": "ows",
+		"to": "myt",
+		"distance": 0.4
+	},
+	{
+		"from": "myt",
+		"to": "ows",
+		"distance": 0.4
+	},
+	{
+		"from": "myt",
+		"to": "ogw",
+		"distance": 0.58
+	},
+	{
+		"from": "ogw",
+		"to": "myt",
+		"distance": 0.58
+	},
+	{
+		"from": "stm",
+		"to": "sdn",
+		"distance": 0.77
+	},
+	{
+		"from": "sdn",
+		"to": "stm",
+		"distance": 0.77
+	},
+	{
+		"from": "sdn",
+		"to": "krs",
+		"distance": 0.56
+	},
+	{
+		"from": "krs",
+		"to": "sdn",
+		"distance": 0.56
+	},
+	{
+		"from": "krs",
+		"to": "kwi",
+		"distance": 0.59
+	},
+	{
+		"from": "kwi",
+		"to": "krs",
+		"distance": 0.59
+	},
+	{
+		"from": "kwi",
+		"to": "nfj",
+		"distance": 0.75
+	},
+	{
+		"from": "nfj",
+		"to": "kwi",
+		"distance": 0.75
+	},
+	{
+		"from": "nfj",
+		"to": "fjm",
+		"distance": 0.49
+	},
+	{
+		"from": "fjm",
+		"to": "nfj",
+		"distance": 0.49
+	},
+	{
+		"from": "fjm",
+		"to": "img",
+		"distance": 0.44
+	},
+	{
+		"from": "img",
+		"to": "fjm",
+		"distance": 0.44
+	},
+	{
+		"from": "img",
+		"to": "hzk",
+		"distance": 0.77
+	},
+	{
+		"from": "hzk",
+		"to": "img",
+		"distance": 0.77
+	},
+	{
+		"from": "hzk",
+		"to": "fjt",
+		"distance": 0.94
+	},
+	{
+		"from": "fjt",
+		"to": "hzk",
+		"distance": 0.94
+	},
+	{
+		"from": "fjt",
+		"to": "iwg",
+		"distance": 0.36
+	},
+	{
+		"from": "iwg",
+		"to": "fjt",
+		"distance": 0.36
+	},
+	{
+		"from": "iwg",
+		"to": "akd",
+		"distance": 0.86
+	},
+	{
+		"from": "akd",
+		"to": "iwg",
+		"distance": 0.86
+	},
+	{
+		"from": "akd",
+		"to": "igy",
+		"distance": 0.95
+	},
+	{
+		"from": "igy",
+		"to": "akd",
+		"distance": 0.95
+	},
+	{
+		"from": "igy",
+		"to": "tmp",
+		"distance": 0.69
+	},
+	{
+		"from": "tmp",
+		"to": "igy",
+		"distance": 0.69
+	},
+	{
+		"from": "tmp",
+		"to": "fkt",
+		"distance": 0.57
+	},
+	{
+		"from": "fkt",
+		"to": "tmp",
+		"distance": 0.57
+	},
+	{
+		"from": "fkt",
+		"to": "har",
+		"distance": 0.81
+	},
+	{
+		"from": "har",
+		"to": "fkt",
+		"distance": 0.81
+	},
+	{
+		"from": "har",
+		"to": "hnk",
+		"distance": 0.77
+	},
+	{
+		"from": "hnk",
+		"to": "har",
+		"distance": 0.77
+	},
+	{
+		"from": "hnk",
+		"to": "mar",
+		"distance": 0.76
+	},
+	{
+		"from": "mar",
+		"to": "hnk",
+		"distance": 0.76
+	},
+	{
+		"from": "mar",
+		"to": "mms",
+		"distance": 0.4
+	},
+	{
+		"from": "mms",
+		"to": "mar",
+		"distance": 0.4
+	},
+	{
+		"from": "mms",
+		"to": "mys",
+		"distance": 0.57
+	},
+	{
+		"from": "mys",
+		"to": "mms",
+		"distance": 0.57
+	},
+	{
+		"from": "mys",
+		"to": "med",
+		"distance": 0.7
+	},
+	{
+		"from": "med",
+		"to": "mys",
+		"distance": 0.7
+	},
+	{
+		"from": "med",
+		"to": "mik",
+		"distance": 0.59
+	},
+	{
+		"from": "mik",
+		"to": "med",
+		"distance": 0.59
+	},
+	{
+		"from": "mik",
+		"to": "azb",
+		"distance": 0.55
+	},
+	{
+		"from": "azb",
+		"to": "mik",
+		"distance": 0.55
+	},
+	{
+		"from": "azb",
+		"to": "skg",
+		"distance": 0.52
+	},
+	{
+		"from": "skg",
+		"to": "azb",
+		"distance": 0.52
+	},
+	{
+		"from": "skg",
+		"to": "ymg",
+		"distance": 0.61
+	},
+	{
+		"from": "ymg",
+		"to": "skg",
+		"distance": 0.61
+	},
+	{
+		"from": "ymg",
+		"to": "ukg",
+		"distance": 0.68
+	},
+	{
+		"from": "ukg",
+		"to": "ymg",
+		"distance": 0.68
+	},
+	{
+		"from": "ukg",
+		"to": "htt",
+		"distance": 0.77
+	},
+	{
+		"from": "htt",
+		"to": "ukg",
+		"distance": 0.77
+	},
+	{
+		"from": "htt",
+		"to": "mym",
+		"distance": 0.38
+	},
+	{
+		"from": "mym",
+		"to": "htt",
+		"distance": 0.38
+	},
+	{
+		"from": "mym",
+		"to": "mgs",
+		"distance": 0.43
+	},
+	{
+		"from": "mgs",
+		"to": "mym",
+		"distance": 0.43
+	},
+	{
+		"from": "mgs",
+		"to": "mgk",
+		"distance": 0.54
+	},
+	{
+		"from": "mgk",
+		"to": "mgs",
+		"distance": 0.54
+	},
+	{
+		"from": "unk",
+		"to": "okd",
+		"distance": 1.36
+	},
+	{
+		"from": "okd",
+		"to": "unk",
+		"distance": 1.36
+	},
+	{
+		"from": "okd",
+		"to": "kkn",
+		"distance": 1.25
+	},
+	{
+		"from": "kkn",
+		"to": "okd",
+		"distance": 1.25
+	},
+	{
+		"from": "kkn",
+		"to": "hnt",
+		"distance": 1.04
+	},
+	{
+		"from": "hnt",
+		"to": "kkn",
+		"distance": 1.04
+	},
+	{
+		"from": "hnt",
+		"to": "udo",
+		"distance": 0.55
+	},
+	{
+		"from": "udo",
+		"to": "hnt",
+		"distance": 0.55
+	},
+	{
+		"from": "udo",
+		"to": "und",
+		"distance": 0.7
+	},
+	{
+		"from": "und",
+		"to": "udo",
+		"distance": 0.7
+	},
+	{
+		"from": "und",
+		"to": "sin",
+		"distance": 1.55
+	},
+	{
+		"from": "sin",
+		"to": "und",
+		"distance": 1.55
+	},
+	{
+		"from": "sin",
+		"to": "fkc",
+		"distance": 0.9
+	},
+	{
+		"from": "fkc",
+		"to": "sin",
+		"distance": 0.9
+	},
+	{
+		"from": "fkc",
+		"to": "trt",
+		"distance": 1.15
+	},
+	{
+		"from": "trt",
+		"to": "fkc",
+		"distance": 1.15
+	},
+	{
+		"from": "trt",
+		"to": "kmh",
+		"distance": 0.7
+	},
+	{
+		"from": "kmh",
+		"to": "trt",
+		"distance": 0.7
+	},
+	{
+		"from": "seh",
+		"to": "ktw",
+		"distance": 1.36
+	},
+	{
+		"from": "ktw",
+		"to": "seh",
+		"distance": 1.36
+	},
+	{
+		"from": "ktw",
+		"to": "hnn",
+		"distance": 1.23
+	},
+	{
+		"from": "hnn",
+		"to": "ktw",
+		"distance": 1.23
+	},
+	{
+		"from": "hnn",
+		"to": "okm",
+		"distance": 0.48
+	},
+	{
+		"from": "okm",
+		"to": "hnn",
+		"distance": 0.48
+	},
+	{
+		"from": "okm",
+		"to": "smp",
+		"distance": 1.21
+	},
+	{
+		"from": "smp",
+		"to": "okm",
+		"distance": 1.21
+	},
+	{
+		"from": "smp",
+		"to": "som",
+		"distance": 2.56
+	},
+	{
+		"from": "som",
+		"to": "smp",
+		"distance": 2.56
+	},
+	{
+		"from": "som",
+		"to": "knj",
+		"distance": 2.23
+	},
+	{
+		"from": "knj",
+		"to": "som",
+		"distance": 2.23
+	},
+	{
+		"from": "hem",
+		"to": "kmz",
+		"distance": 0.86
+	},
+	{
+		"from": "kmz",
+		"to": "hem",
+		"distance": 0.86
+	},
+	{
+		"from": "kmz",
+		"to": "sns",
+		"distance": 1.04
+	},
+	{
+		"from": "sns",
+		"to": "kmz",
+		"distance": 1.04
+	},
+	{
+		"from": "sns",
+		"to": "tkh",
+		"distance": 0.67
+	},
+	{
+		"from": "tkh",
+		"to": "sns",
+		"distance": 0.67
+	},
+	{
+		"from": "tkh",
+		"to": "onn",
+		"distance": 0.58
+	},
+	{
+		"from": "onn",
+		"to": "tkh",
+		"distance": 0.58
+	},
+	{
+		"from": "onn",
+		"to": "mtk",
+		"distance": 0.68
+	},
+	{
+		"from": "mtk",
+		"to": "onn",
+		"distance": 0.68
+	},
+	{
+		"from": "ywt",
+		"to": "oue",
+		"distance": 0.79
+	},
+	{
+		"from": "oue",
+		"to": "ywt",
+		"distance": 0.79
+	},
+	{
+		"from": "oue",
+		"to": "ubk",
+		"distance": 0.58
+	},
+	{
+		"from": "ubk",
+		"to": "oue",
+		"distance": 0.58
+	},
+	{
+		"from": "ubk",
+		"to": "kmd",
+		"distance": 1.72
+	},
+	{
+		"from": "kmd",
+		"to": "ubk",
+		"distance": 1.72
+	},
+	{
+		"from": "kmd",
+		"to": "umk",
+		"distance": 0.66
+	},
+	{
+		"from": "umk",
+		"to": "kmd",
+		"distance": 0.66
+	},
+	{
+		"from": "umk",
+		"to": "kty",
+		"distance": 0.77
+	},
+	{
+		"from": "kty",
+		"to": "umk",
+		"distance": 0.77
+	},
+	{
+		"from": "kty",
+		"to": "myu",
+		"distance": 0.62
+	},
+	{
+		"from": "myu",
+		"to": "kty",
+		"distance": 0.62
+	},
+	{
+		"from": "myu",
+		"to": "udo",
+		"distance": 1.17
+	},
+	{
+		"from": "udo",
+		"to": "myu",
+		"distance": 1.17
+	},
+	{
+		"from": "udo",
+		"to": "msn",
+		"distance": 1.28
+	},
+	{
+		"from": "msn",
+		"to": "udo",
+		"distance": 1.28
+	},
+	{
+		"from": "msn",
+		"to": "tmo",
+		"distance": 0.99
+	},
+	{
+		"from": "tmo",
+		"to": "msn",
+		"distance": 0.99
+	},
+	{
+		"from": "tmo",
+		"to": "seh",
+		"distance": 0.98
+	},
+	{
+		"from": "seh",
+		"to": "tmo",
+		"distance": 0.98
+	},
+	{
+		"from": "seh",
+		"to": "gdo",
+		"distance": 1.22
+	},
+	{
+		"from": "gdo",
+		"to": "seh",
+		"distance": 1.22
+	},
+	{
+		"from": "gdo",
+		"to": "syk",
+		"distance": 0.84
+	},
+	{
+		"from": "syk",
+		"to": "gdo",
+		"distance": 0.84
+	},
+	{
+		"from": "syk",
+		"to": "ryn",
+		"distance": 1.14
+	},
+	{
+		"from": "ryn",
+		"to": "syk",
+		"distance": 1.14
+	},
+	{
+		"from": "ryn",
+		"to": "khr",
+		"distance": 0.63
+	},
+	{
+		"from": "khr",
+		"to": "ryn",
+		"distance": 0.63
+	},
+	{
+		"from": "khr",
+		"to": "ryg",
+		"distance": 0.89
+	},
+	{
+		"from": "ryg",
+		"to": "khr",
+		"distance": 0.89
+	},
+	{
+		"from": "ryg",
+		"to": "sim",
+		"distance": 1.16
+	},
+	{
+		"from": "sim",
+		"to": "ryg",
+		"distance": 1.16
+	},
+	{
+		"from": "sim",
+		"to": "sky",
+		"distance": 0.8
+	},
+	{
+		"from": "sky",
+		"to": "sim",
+		"distance": 0.8
+	},
+	{
+		"from": "sky",
+		"to": "nmk",
+		"distance": 0.41
+	},
+	{
+		"from": "nmk",
+		"to": "sky",
+		"distance": 0.41
+	},
+	{
+		"from": "nmk",
+		"to": "nkm",
+		"distance": 0.54
+	},
+	{
+		"from": "nkm",
+		"to": "nmk",
+		"distance": 0.54
+	},
+	{
+		"from": "nkm",
+		"to": "snn",
+		"distance": 0.68
+	},
+	{
+		"from": "snn",
+		"to": "nkm",
+		"distance": 0.68
+	},
+	{
+		"from": "snn",
+		"to": "akw",
+		"distance": 0.55
+	},
+	{
+		"from": "akw",
+		"to": "snn",
+		"distance": 0.55
+	},
+	{
+		"from": "akw",
+		"to": "aoy",
+		"distance": 0.6
+	},
+	{
+		"from": "aoy",
+		"to": "akw",
+		"distance": 0.6
+	},
+	{
+		"from": "aoy",
+		"to": "hts",
+		"distance": 0.67
+	},
+	{
+		"from": "hts",
+		"to": "aoy",
+		"distance": 0.67
+	},
+	{
+		"from": "hts",
+		"to": "smd",
+		"distance": 0.72
+	},
+	{
+		"from": "smd",
+		"to": "hts",
+		"distance": 0.72
+	},
+	{
+		"from": "smd",
+		"to": "smb",
+		"distance": 0.79
+	},
+	{
+		"from": "smb",
+		"to": "smd",
+		"distance": 0.79
+	},
+	{
+		"from": "smb",
+		"to": "ikm",
+		"distance": 0.51
+	},
+	{
+		"from": "ikm",
+		"to": "smb",
+		"distance": 0.51
+	},
+	{
+		"from": "ikm",
+		"to": "omt",
+		"distance": 0.44
+	},
+	{
+		"from": "omt",
+		"to": "ikm",
+		"distance": 0.44
+	},
+	{
+		"from": "omt",
+		"to": "ygt",
+		"distance": 0.75
+	},
+	{
+		"from": "ygt",
+		"to": "omt",
+		"distance": 0.75
+	},
+	{
+		"from": "chr",
+		"to": "chh",
+		"distance": 0.38
+	},
+	{
+		"from": "chh",
+		"to": "chr",
+		"distance": 0.38
+	},
+	{
+		"from": "chh",
+		"to": "hks",
+		"distance": 0.43
+	},
+	{
+		"from": "hks",
+		"to": "chh",
+		"distance": 0.43
+	},
+	{
+		"from": "hks",
+		"to": "ksg",
+		"distance": 0.51
+	},
+	{
+		"from": "ksg",
+		"to": "hks",
+		"distance": 0.51
+	},
+	{
+		"from": "ksg",
+		"to": "sgh",
+		"distance": 0.7
+	},
+	{
+		"from": "sgh",
+		"to": "ksg",
+		"distance": 0.7
+	},
+	{
+		"from": "sgh",
+		"to": "isk",
+		"distance": 0.67
+	},
+	{
+		"from": "isk",
+		"to": "sgh",
+		"distance": 0.67
+	},
+	{
+		"from": "isk",
+		"to": "nky",
+		"distance": 0.34
+	},
+	{
+		"from": "nky",
+		"to": "isk",
+		"distance": 0.34
+	},
+	{
+		"from": "nky",
+		"to": "kry",
+		"distance": 0.46
+	},
+	{
+		"from": "kry",
+		"to": "nky",
+		"distance": 0.46
+	},
+	{
+		"from": "kry",
+		"to": "tyo",
+		"distance": 0.59
+	},
+	{
+		"from": "tyo",
+		"to": "kry",
+		"distance": 0.59
+	},
+	{
+		"from": "tyo",
+		"to": "ohm",
+		"distance": 0.31
+	},
+	{
+		"from": "ohm",
+		"to": "tyo",
+		"distance": 0.31
+	},
+	{
+		"from": "ohm",
+		"to": "kss",
+		"distance": 0.42
+	},
+	{
+		"from": "kss",
+		"to": "ohm",
+		"distance": 0.42
+	},
+	{
+		"from": "kss",
+		"to": "jnj",
+		"distance": 0.34
+	},
+	{
+		"from": "jnj",
+		"to": "kss",
+		"distance": 0.34
+	},
+	{
+		"from": "jnj",
+		"to": "tkc",
+		"distance": 0.8
+	},
+	{
+		"from": "tkc",
+		"to": "jnj",
+		"distance": 0.8
+	},
+	{
+		"from": "tkc",
+		"to": "hog",
+		"distance": 0.74
+	},
+	{
+		"from": "hog",
+		"to": "tkc",
+		"distance": 0.74
+	},
+	{
+		"from": "hog",
+		"to": "ogw",
+		"distance": 0.45
+	},
+	{
+		"from": "ogw",
+		"to": "hog",
+		"distance": 0.45
+	},
+	{
+		"from": "ogw",
+		"to": "odn",
+		"distance": 1.41
+	},
+	{
+		"from": "odn",
+		"to": "ogw",
+		"distance": 1.41
+	},
+	{
+		"from": "odn",
+		"to": "oga",
+		"distance": 1.08
+	},
+	{
+		"from": "oga",
+		"to": "odn",
+		"distance": 1.08
+	},
+	{
+		"from": "oga",
+		"to": "unk",
+		"distance": 1.04
+	},
+	{
+		"from": "unk",
+		"to": "oga",
+		"distance": 1.04
+	},
+	{
+		"from": "unk",
+		"to": "ubk",
+		"distance": 1.21
+	},
+	{
+		"from": "ubk",
+		"to": "unk",
+		"distance": 1.21
+	},
+	{
+		"from": "ubk",
+		"to": "oue",
+		"distance": 0.58
+	},
+	{
+		"from": "oue",
+		"to": "ubk",
+		"distance": 0.58
+	},
+	{
+		"from": "oue",
+		"to": "cty",
+		"distance": 0.36
+	},
+	{
+		"from": "cty",
+		"to": "oue",
+		"distance": 0.36
+	},
+	{
+		"from": "cty",
+		"to": "nmg",
+		"distance": 1.12
+	},
+	{
+		"from": "nmg",
+		"to": "cty",
+		"distance": 1.12
+	},
+	{
+		"from": "nmg",
+		"to": "sri",
+		"distance": 1.44
+	},
+	{
+		"from": "sri",
+		"to": "nmg",
+		"distance": 1.44
+	},
+	{
+		"from": "sri",
+		"to": "umg",
+		"distance": 0.9
+	},
+	{
+		"from": "umg",
+		"to": "sri",
+		"distance": 0.9
+	},
+	{
+		"from": "umg",
+		"to": "gtn",
+		"distance": 0.47
+	},
+	{
+		"from": "gtn",
+		"to": "umg",
+		"distance": 0.47
+	},
+	{
+		"from": "gtn",
+		"to": "ctc",
+		"distance": 0.37
+	},
+	{
+		"from": "ctc",
+		"to": "gtn",
+		"distance": 0.37
+	},
+	{
+		"from": "ctc",
+		"to": "snc",
+		"distance": 0.38
+	},
+	{
+		"from": "snc",
+		"to": "ctc",
+		"distance": 0.38
+	},
+	{
+		"from": "snc",
+		"to": "cts",
+		"distance": 0.71
+	},
+	{
+		"from": "cts",
+		"to": "snc",
+		"distance": 0.71
+	},
+	{
+		"from": "cts",
+		"to": "hmw",
+		"distance": 0.61
+	},
+	{
+		"from": "hmw",
+		"to": "cts",
+		"distance": 0.61
+	},
+	{
+		"from": "hmw",
+		"to": "hgy",
+		"distance": 0.54
+	},
+	{
+		"from": "hgy",
+		"to": "hmw",
+		"distance": 0.54
+	},
+	{
+		"from": "hgy",
+		"to": "ask",
+		"distance": 0.41
+	},
+	{
+		"from": "ask",
+		"to": "hgy",
+		"distance": 0.41
+	},
+	{
+		"from": "hnm",
+		"to": "mzh",
+		"distance": 0.61
+	},
+	{
+		"from": "mzh",
+		"to": "hnm",
+		"distance": 0.61
+	},
+	{
+		"from": "mzh",
+		"to": "toy",
+		"distance": 0.5
+	},
+	{
+		"from": "toy",
+		"to": "mzh",
+		"distance": 0.5
+	},
+	{
+		"from": "toy",
+		"to": "hns",
+		"distance": 0.52
+	},
+	{
+		"from": "hns",
+		"to": "toy",
+		"distance": 0.52
+	},
+	{
+		"from": "hns",
+		"to": "hnd",
+		"distance": 0.63
+	},
+	{
+		"from": "hnd",
+		"to": "hns",
+		"distance": 0.63
+	},
+	{
+		"from": "hnd",
+		"to": "chn",
+		"distance": 0.47
+	},
+	{
+		"from": "chn",
+		"to": "hnd",
+		"distance": 0.47
+	},
+	{
+		"from": "chn",
+		"to": "krd",
+		"distance": 0.6
+	},
+	{
+		"from": "krd",
+		"to": "chn",
+		"distance": 0.6
+	},
+	{
+		"from": "krd",
+		"to": "sis",
+		"distance": 0.47
+	},
+	{
+		"from": "sis",
+		"to": "krd",
+		"distance": 0.47
+	},
+	{
+		"from": "sis",
+		"to": "hrg",
+		"distance": 0.4
+	},
+	{
+		"from": "hrg",
+		"to": "sis",
+		"distance": 0.4
+	},
+	{
+		"from": "hrg",
+		"to": "hyc",
+		"distance": 0.37
+	},
+	{
+		"from": "hyc",
+		"to": "hrg",
+		"distance": 0.37
+	},
+	{
+		"from": "hyc",
+		"to": "ynn",
+		"distance": 0.57
+	},
+	{
+		"from": "ynn",
+		"to": "hyc",
+		"distance": 0.57
+	},
+	{
+		"from": "ynn",
+		"to": "hri",
+		"distance": 0.78
+	},
+	{
+		"from": "hri",
+		"to": "ynn",
+		"distance": 0.78
+	},
+	{
+		"from": "hri",
+		"to": "sse",
+		"distance": 0.54
+	},
+	{
+		"from": "sse",
+		"to": "hri",
+		"distance": 0.54
+	},
+	{
+		"from": "sse",
+		"to": "hor",
+		"distance": 0.62
+	},
+	{
+		"from": "hor",
+		"to": "sse",
+		"distance": 0.62
+	},
+	{
+		"from": "hor",
+		"to": "mti",
+		"distance": 1.32
+	},
+	{
+		"from": "mti",
+		"to": "hor",
+		"distance": 1.32
+	},
+	{
+		"from": "mti",
+		"to": "kni",
+		"distance": 0.92
+	},
+	{
+		"from": "kni",
+		"to": "mti",
+		"distance": 0.92
+	},
+	{
+		"from": "kni",
+		"to": "asd",
+		"distance": 0.67
+	},
+	{
+		"from": "asd",
+		"to": "kni",
+		"distance": 0.67
+	},
+	{
+		"from": "asd",
+		"to": "stk",
+		"distance": 0.48
+	},
+	{
+		"from": "stk",
+		"to": "asd",
+		"distance": 0.48
+	},
+	{
+		"from": "stk",
+		"to": "ktj",
+		"distance": 0.43
+	},
+	{
+		"from": "ktj",
+		"to": "stk",
+		"distance": 0.43
+	},
+	{
+		"from": "ktj",
+		"to": "hrm",
+		"distance": 0.62
+	},
+	{
+		"from": "hrm",
+		"to": "ktj",
+		"distance": 0.62
+	},
+	{
+		"from": "hrm",
+		"to": "mnd",
+		"distance": 0.38
+	},
+	{
+		"from": "mnd",
+		"to": "hrm",
+		"distance": 0.38
+	},
+	{
+		"from": "mnd",
+		"to": "tkn",
+		"distance": 0.4
+	},
+	{
+		"from": "tkn",
+		"to": "mnd",
+		"distance": 0.4
+	},
+	{
+		"from": "tkn",
+		"to": "tkk",
+		"distance": 0.63
+	},
+	{
+		"from": "tkk",
+		"to": "tkn",
+		"distance": 0.63
+	},
+	{
+		"from": "tkk",
+		"to": "rnk",
+		"distance": 0.5
+	},
+	{
+		"from": "rnk",
+		"to": "tkk",
+		"distance": 0.5
+	},
+	{
+		"from": "rnk",
+		"to": "rnt",
+		"distance": 0.63
+	},
+	{
+		"from": "rnt",
+		"to": "rnk",
+		"distance": 0.63
+	},
+	{
+		"from": "rnt",
+		"to": "ctk",
+		"distance": 2.08
+	},
+	{
+		"from": "ctk",
+		"to": "rnt",
+		"distance": 2.08
+	},
+	{
+		"from": "ctk",
+		"to": "ct1",
+		"distance": 0.76
+	},
+	{
+		"from": "ct1",
+		"to": "ctk",
+		"distance": 0.76
+	},
+	{
+		"from": "ct1",
+		"to": "ct2",
+		"distance": 0.4
+	},
+	{
+		"from": "ct2",
+		"to": "ct1",
+		"distance": 0.4
+	},
+	{
+		"from": "ngd",
+		"to": "hon",
+		"distance": 0.68
+	},
+	{
+		"from": "hon",
+		"to": "ngd",
+		"distance": 0.68
+	},
+	{
+		"from": "hon",
+		"to": "ttm",
+		"distance": 0.66
+	},
+	{
+		"from": "ttm",
+		"to": "hon",
+		"distance": 0.66
+	},
+	{
+		"from": "ttm",
+		"to": "myg",
+		"distance": 0.55
+	},
+	{
+		"from": "myg",
+		"to": "ttm",
+		"distance": 0.55
+	},
+	{
+		"from": "myg",
+		"to": "hmt",
+		"distance": 0.54
+	},
+	{
+		"from": "hmt",
+		"to": "myg",
+		"distance": 0.54
+	},
+	{
+		"from": "hmt",
+		"to": "tkr",
+		"distance": 0.82
+	},
+	{
+		"from": "tkr",
+		"to": "hmt",
+		"distance": 0.82
+	},
+	{
+		"from": "tkr",
+		"to": "otb",
+		"distance": 0.92
+	},
+	{
+		"from": "otb",
+		"to": "tkr",
+		"distance": 0.92
+	},
+	{
+		"from": "otb",
+		"to": "tsr",
+		"distance": 1.03
+	},
+	{
+		"from": "tsr",
+		"to": "otb",
+		"distance": 1.03
+	},
+	{
+		"from": "tsr",
+		"to": "hsn",
+		"distance": 1.12
+	},
+	{
+		"from": "hsn",
+		"to": "tsr",
+		"distance": 1.12
+	},
+	{
+		"from": "hsn",
+		"to": "tts",
+		"distance": 0.59
+	},
+	{
+		"from": "tts",
+		"to": "hsn",
+		"distance": 0.59
+	},
+	{
+		"from": "tts",
+		"to": "krg",
+		"distance": 0.54
+	},
+	{
+		"from": "krg",
+		"to": "tts",
+		"distance": 0.54
+	},
+	{
+		"from": "krg",
+		"to": "hkt",
+		"distance": 0.53
+	},
+	{
+		"from": "hkt",
+		"to": "krg",
+		"distance": 0.53
+	},
+	{
+		"from": "hkt",
+		"to": "yts",
+		"distance": 0.55
+	},
+	{
+		"from": "yts",
+		"to": "hkt",
+		"distance": 0.55
+	},
+	{
+		"from": "yts",
+		"to": "kzk",
+		"distance": 0.74
+	},
+	{
+		"from": "kzk",
+		"to": "yts",
+		"distance": 0.74
+	},
+	{
+		"from": "kzk",
+		"to": "tyt",
+		"distance": 1.09
+	},
+	{
+		"from": "tyt",
+		"to": "kzk",
+		"distance": 1.09
+	},
+	{
+		"from": "tyt",
+		"to": "yhg",
+		"distance": 0.64
+	},
+	{
+		"from": "yhg",
+		"to": "tyt",
+		"distance": 0.64
+	},
+	{
+		"from": "yhg",
+		"to": "tst",
+		"distance": 0.9
+	},
+	{
+		"from": "tst",
+		"to": "yhg",
+		"distance": 0.9
+	},
+	{
+		"from": "tst",
+		"to": "uen",
+		"distance": 0.65
+	},
+	{
+		"from": "uen",
+		"to": "tst",
+		"distance": 0.65
+	},
+	{
+		"from": "uen",
+		"to": "kmg",
+		"distance": 0.6
+	},
+	{
+		"from": "kmg",
+		"to": "uen",
+		"distance": 0.6
+	},
+	{
+		"from": "kmg",
+		"to": "msb",
+		"distance": 0.7
+	},
+	{
+		"from": "msb",
+		"to": "kmg",
+		"distance": 0.7
+	},
+	{
+		"from": "hdk",
+		"to": "kkr",
+		"distance": 0.66
+	},
+	{
+		"from": "kkr",
+		"to": "hdk",
+		"distance": 0.66
+	},
+	{
+		"from": "kkr",
+		"to": "krm",
+		"distance": 0.43
+	},
+	{
+		"from": "krm",
+		"to": "kkr",
+		"distance": 0.43
+	},
+	{
+		"from": "krm",
+		"to": "skk",
+		"distance": 0.41
+	},
+	{
+		"from": "skk",
+		"to": "krm",
+		"distance": 0.41
+	},
+	{
+		"from": "skk",
+		"to": "kss",
+		"distance": 0.62
+	},
+	{
+		"from": "kss",
+		"to": "skk",
+		"distance": 0.62
+	},
+	{
+		"from": "kss",
+		"to": "krt",
+		"distance": 0.8
+	},
+	{
+		"from": "krt",
+		"to": "kss",
+		"distance": 0.8
+	},
+	{
+		"from": "krt",
+		"to": "ksm",
+		"distance": 0.48
+	},
+	{
+		"from": "ksm",
+		"to": "krt",
+		"distance": 0.48
+	},
+	{
+		"from": "ksm",
+		"to": "krk",
+		"distance": 0.5
+	},
+	{
+		"from": "krk",
+		"to": "ksm",
+		"distance": 0.5
+	},
+	{
+		"from": "krk",
+		"to": "sms",
+		"distance": 0.32
+	},
+	{
+		"from": "sms",
+		"to": "krk",
+		"distance": 0.32
+	},
+	{
+		"from": "sms",
+		"to": "isk",
+		"distance": 0.59
+	},
+	{
+		"from": "isk",
+		"to": "sms",
+		"distance": 0.59
+	},
+	{
+		"from": "isk",
+		"to": "shw",
+		"distance": 0.55
+	},
+	{
+		"from": "shw",
+		"to": "isk",
+		"distance": 0.55
+	},
+	{
+		"from": "shw",
+		"to": "ais",
+		"distance": 0.33
+	},
+	{
+		"from": "ais",
+		"to": "shw",
+		"distance": 0.33
+	},
+	{
+		"from": "ais",
+		"to": "ond",
+		"distance": 0.65
+	},
+	{
+		"from": "ond",
+		"to": "ais",
+		"distance": 0.65
+	},
+	{
+		"from": "ond",
+		"to": "kra",
+		"distance": 0.3
+	},
+	{
+		"from": "kra",
+		"to": "ond",
+		"distance": 0.3
+	},
+	{
+		"from": "kra",
+		"to": "aym",
+		"distance": 0.48
+	},
+	{
+		"from": "aym",
+		"to": "kra",
+		"distance": 0.48
+	},
+	{
+		"from": "aym",
+		"to": "sdn",
+		"distance": 0.55
+	},
+	{
+		"from": "sdn",
+		"to": "aym",
+		"distance": 0.55
+	},
+	{
+		"from": "sdn",
+		"to": "oym",
+		"distance": 0.85
+	},
+	{
+		"from": "oym",
+		"to": "sdn",
+		"distance": 0.85
+	},
+	{
+		"from": "oym",
+		"to": "hdk",
+		"distance": 0.57
+	},
+	{
+		"from": "hdk",
+		"to": "oym",
+		"distance": 0.57
+	},
+	{
+		"from": "ygh",
+		"to": "yks",
+		"distance": 0.5
+	},
+	{
+		"from": "yks",
+		"to": "ygh",
+		"distance": 0.5
+	},
+	{
+		"from": "yks",
+		"to": "nzb",
+		"distance": 0.87
+	},
+	{
+		"from": "nzb",
+		"to": "yks",
+		"distance": 0.87
+	},
+	{
+		"from": "nzb",
+		"to": "cth",
+		"distance": 0.81
+	},
+	{
+		"from": "cth",
+		"to": "nzb",
+		"distance": 0.81
+	},
+	{
+		"from": "cth",
+		"to": "chs",
+		"distance": 0.74
+	},
+	{
+		"from": "chs",
+		"to": "cth",
+		"distance": 0.74
+	},
+	{
+		"from": "chs",
+		"to": "skd",
+		"distance": 0.8
+	},
+	{
+		"from": "skd",
+		"to": "chs",
+		"distance": 0.8
+	},
+	{
+		"from": "skd",
+		"to": "ttj",
+		"distance": 0.43
+	},
+	{
+		"from": "ttj",
+		"to": "skd",
+		"distance": 0.43
+	},
+	{
+		"from": "ttj",
+		"to": "scd",
+		"distance": 0.3
+	},
+	{
+		"from": "scd",
+		"to": "ttj",
+		"distance": 0.3
+	},
+	{
+		"from": "scd",
+		"to": "cts",
+		"distance": 0.5
+	},
+	{
+		"from": "cts",
+		"to": "scd",
+		"distance": 0.5
+	},
+	{
+		"from": "cts",
+		"to": "cht",
+		"distance": 0.99
+	},
+	{
+		"from": "cht",
+		"to": "cts",
+		"distance": 0.99
+	},
+	{
+		"from": "cht",
+		"to": "mkg",
+		"distance": 0.53
+	},
+	{
+		"from": "mkg",
+		"to": "cht",
+		"distance": 0.53
+	},
+	{
+		"from": "mkg",
+		"to": "okn",
+		"distance": 0.56
+	},
+	{
+		"from": "okn",
+		"to": "mkg",
+		"distance": 0.56
+	},
+	{
+		"from": "okn",
+		"to": "hng",
+		"distance": 0.98
+	},
+	{
+		"from": "hng",
+		"to": "okn",
+		"distance": 0.98
+	},
+	{
+		"from": "hng",
+		"to": "mdg",
+		"distance": 0.52
+	},
+	{
+		"from": "mdg",
+		"to": "hng",
+		"distance": 0.52
+	},
+	{
+		"from": "mdg",
+		"to": "smk",
+		"distance": 0.75
+	},
+	{
+		"from": "smk",
+		"to": "mdg",
+		"distance": 0.75
+	},
+	{
+		"from": "smk",
+		"to": "smg",
+		"distance": 0.49
+	},
+	{
+		"from": "smg",
+		"to": "smk",
+		"distance": 0.49
+	},
+	{
+		"from": "tgw",
+		"to": "hsd",
+		"distance": 0.86
+	},
+	{
+		"from": "hsd",
+		"to": "tgw",
+		"distance": 0.86
+	},
+	{
+		"from": "hsd",
+		"to": "ygh",
+		"distance": 0.59
+	},
+	{
+		"from": "ygh",
+		"to": "hsd",
+		"distance": 0.59
+	},
+	{
+		"from": "ygh",
+		"to": "ktk",
+		"distance": 1.01
+	},
+	{
+		"from": "ktk",
+		"to": "ygh",
+		"distance": 1.01
+	},
+	{
+		"from": "ktk",
+		"to": "ysk",
+		"distance": 1.38
+	},
+	{
+		"from": "ysk",
+		"to": "ktk",
+		"distance": 1.38
+	},
+	{
+		"from": "ysk",
+		"to": "myu",
+		"distance": 0.8
+	},
+	{
+		"from": "myu",
+		"to": "ysk",
+		"distance": 0.8
+	},
+	{
+		"from": "myu",
+		"to": "hnt",
+		"distance": 1.08
+	},
+	{
+		"from": "hnt",
+		"to": "myu",
+		"distance": 1.08
+	},
+	{
+		"from": "hnt",
+		"to": "obm",
+		"distance": 0.8
+	},
+	{
+		"from": "obm",
+		"to": "hnt",
+		"distance": 0.8
+	},
+	{
+		"from": "obm",
+		"to": "krn",
+		"distance": 0.48
+	},
+	{
+		"from": "krn",
+		"to": "obm",
+		"distance": 0.48
+	},
+	{
+		"from": "krn",
+		"to": "wks",
+		"distance": 1.09
+	},
+	{
+		"from": "wks",
+		"to": "krn",
+		"distance": 1.09
+	},
+	{
+		"from": "wks",
+		"to": "dtc",
+		"distance": 0.61
+	},
+	{
+		"from": "dtc",
+		"to": "wks",
+		"distance": 0.61
+	},
+	{
+		"from": "dtc",
+		"to": "sos",
+		"distance": 0.87
+	},
+	{
+		"from": "sos",
+		"to": "dtc",
+		"distance": 0.87
+	},
+	{
+		"from": "sos",
+		"to": "nkc",
+		"distance": 1.2
+	},
+	{
+		"from": "nkc",
+		"to": "sos",
+		"distance": 1.2
+	},
+	{
+		"from": "nkc",
+		"to": "hdk",
+		"distance": 0.45
+	},
+	{
+		"from": "hdk",
+		"to": "nkc",
+		"distance": 0.45
+	},
+	{
+		"from": "hdk",
+		"to": "stm",
+		"distance": 0.61
+	},
+	{
+		"from": "stm",
+		"to": "hdk",
+		"distance": 0.61
+	},
+	{
+		"from": "stm",
+		"to": "mrt",
+		"distance": 0.76
+	},
+	{
+		"from": "mrt",
+		"to": "stm",
+		"distance": 0.76
+	},
+	{
+		"from": "mrt",
+		"to": "kry",
+		"distance": 0.98
+	},
+	{
+		"from": "kry",
+		"to": "mrt",
+		"distance": 0.98
+	},
+	{
+		"from": "hnt",
+		"to": "obu",
+		"distance": 1.71
+	},
+	{
+		"from": "obu",
+		"to": "hnt",
+		"distance": 1.71
+	},
+	{
+		"from": "obu",
+		"to": "dtc",
+		"distance": 1.16
+	},
+	{
+		"from": "dtc",
+		"to": "obu",
+		"distance": 1.16
+	},
+	{
+		"from": "dtc",
+		"to": "sos",
+		"distance": 0.86
+	},
+	{
+		"from": "sos",
+		"to": "dtc",
+		"distance": 0.86
+	},
+	{
+		"from": "stm",
+		"to": "kik",
+		"distance": 0.59
+	},
+	{
+		"from": "kik",
+		"to": "stm",
+		"distance": 0.59
+	},
+	{
+		"from": "kik",
+		"to": "ond",
+		"distance": 0.4
+	},
+	{
+		"from": "ond",
+		"to": "kik",
+		"distance": 0.4
+	},
+	{
+		"from": "ond",
+		"to": "kko",
+		"distance": 0.73
+	},
+	{
+		"from": "kko",
+		"to": "ond",
+		"distance": 0.73
+	},
+	{
+		"from": "kko",
+		"to": "tri",
+		"distance": 0.64
+	},
+	{
+		"from": "tri",
+		"to": "kko",
+		"distance": 0.64
+	},
+	{
+		"from": "tri",
+		"to": "chr",
+		"distance": 1.09
+	},
+	{
+		"from": "chr",
+		"to": "tri",
+		"distance": 1.09
+	},
+	{
+		"from": "obu",
+		"to": "obs",
+		"distance": 0.44
+	},
+	{
+		"from": "obs",
+		"to": "obu",
+		"distance": 0.44
+	},
+	{
+		"from": "obs",
+		"to": "ngn",
+		"distance": 0.93
+	},
+	{
+		"from": "ngn",
+		"to": "obs",
+		"distance": 0.93
+	},
+	{
+		"from": "ngn",
+		"to": "shg",
+		"distance": 1.6
+	},
+	{
+		"from": "shg",
+		"to": "ngn",
+		"distance": 1.6
+	},
+	{
+		"from": "shg",
+		"to": "kjt",
+		"distance": 0.45
+	},
+	{
+		"from": "kjt",
+		"to": "shg",
+		"distance": 0.45
+	},
+	{
+		"from": "kjt",
+		"to": "bzy",
+		"distance": 0.56
+	},
+	{
+		"from": "bzy",
+		"to": "kjt",
+		"distance": 0.56
+	},
+	{
+		"from": "bzy",
+		"to": "tsn",
+		"distance": 0.9
+	},
+	{
+		"from": "tsn",
+		"to": "bzy",
+		"distance": 0.9
+	},
+	{
+		"from": "tsn",
+		"to": "kyw",
+		"distance": 0.46
+	},
+	{
+		"from": "kyw",
+		"to": "tsn",
+		"distance": 0.46
+	},
+	{
+		"from": "kyw",
+		"to": "tmo",
+		"distance": 1.29
+	},
+	{
+		"from": "tmo",
+		"to": "kyw",
+		"distance": 1.29
+	},
+	{
+		"from": "tmo",
+		"to": "alb",
+		"distance": 1.22
+	},
+	{
+		"from": "alb",
+		"to": "tmo",
+		"distance": 1.22
+	},
+	{
+		"from": "alb",
+		"to": "ebt",
+		"distance": 0.81
+	},
+	{
+		"from": "ebt",
+		"to": "alb",
+		"distance": 0.81
+	},
+	{
+		"from": "ebt",
+		"to": "omn",
+		"distance": 0.62
+	},
+	{
+		"from": "omn",
+		"to": "ebt",
+		"distance": 0.62
+	},
+	{
+		"from": "omn",
+		"to": "obu",
+		"distance": 0.78
+	},
+	{
+		"from": "obu",
+		"to": "omn",
+		"distance": 0.78
+	},
+	{
+		"from": "hns",
+		"to": "mhc",
+		"distance": 0.52
+	},
+	{
+		"from": "mhc",
+		"to": "hns",
+		"distance": 0.52
+	},
+	{
+		"from": "mhc",
+		"to": "mnt",
+		"distance": 0.58
+	},
+	{
+		"from": "mnt",
+		"to": "mhc",
+		"distance": 0.58
+	},
+	{
+		"from": "mnt",
+		"to": "nrw",
+		"distance": 0.5
+	},
+	{
+		"from": "nrw",
+		"to": "mnt",
+		"distance": 0.5
+	},
+	{
+		"from": "nrw",
+		"to": "gdg",
+		"distance": 0.51
+	},
+	{
+		"from": "gdg",
+		"to": "nrw",
+		"distance": 0.51
+	},
+	{
+		"from": "gdg",
+		"to": "asm",
+		"distance": 0.56
+	},
+	{
+		"from": "asm",
+		"to": "gdg",
+		"distance": 0.56
+	},
+	{
+		"from": "asm",
+		"to": "yrk",
+		"distance": 0.52
+	},
+	{
+		"from": "yrk",
+		"to": "asm",
+		"distance": 0.52
+	},
+	{
+		"from": "yrk",
+		"to": "ikb",
+		"distance": 0.46
+	},
+	{
+		"from": "ikb",
+		"to": "yrk",
+		"distance": 0.46
+	},
+	{
+		"from": "ikb",
+		"to": "tmn",
+		"distance": 0.77
+	},
+	{
+		"from": "tmn",
+		"to": "ikb",
+		"distance": 0.77
+	},
+	{
+		"from": "tmn",
+		"to": "tkt",
+		"distance": 0.75
+	},
+	{
+		"from": "tkt",
+		"to": "tmn",
+		"distance": 0.75
+	},
+	{
+		"from": "tkt",
+		"to": "stn",
+		"distance": 0.85
+	},
+	{
+		"from": "stn",
+		"to": "tkt",
+		"distance": 0.85
+	},
+	{
+		"from": "stn",
+		"to": "hzm",
+		"distance": 0.74
+	},
+	{
+		"from": "hzm",
+		"to": "stn",
+		"distance": 0.74
+	},
+	{
+		"from": "hzm",
+		"to": "urn",
+		"distance": 0.57
+	},
+	{
+		"from": "urn",
+		"to": "hzm",
+		"distance": 0.57
+	},
+	{
+		"from": "urn",
+		"to": "sfk",
+		"distance": 0.66
+	},
+	{
+		"from": "sfk",
+		"to": "urn",
+		"distance": 0.66
+	},
+	{
+		"from": "sfk",
+		"to": "kgt",
+		"distance": 0.63
+	},
+	{
+		"from": "kgt",
+		"to": "sfk",
+		"distance": 0.63
+	},
+	{
+		"from": "kgt",
+		"to": "snt",
+		"distance": 0.59
+	},
+	{
+		"from": "snt",
+		"to": "kgt",
+		"distance": 0.59
+	},
+	{
+		"from": "snt",
+		"to": "umn",
+		"distance": 0.9
+	},
+	{
+		"from": "umn",
+		"to": "snt",
+		"distance": 0.9
+	},
+	{
+		"from": "umn",
+		"to": "ftt",
+		"distance": 0.62
+	},
+	{
+		"from": "ftt",
+		"to": "umn",
+		"distance": 0.62
+	},
+	{
+		"from": "ftt",
+		"to": "kwg",
+		"distance": 0.66
+	},
+	{
+		"from": "kwg",
+		"to": "ftt",
+		"distance": 0.66
+	},
+	{
+		"from": "kwg",
+		"to": "tks",
+		"distance": 0.58
+	},
+	{
+		"from": "tks",
+		"to": "kwg",
+		"distance": 0.58
+	},
+	{
+		"from": "tks",
+		"to": "kwa",
+		"distance": 1.99
+	},
+	{
+		"from": "kwa",
+		"to": "tks",
+		"distance": 1.99
+	},
+	{
+		"from": "kwa",
+		"to": "kwk",
+		"distance": 0.84
+	},
+	{
+		"from": "kwk",
+		"to": "kwa",
+		"distance": 0.84
+	},
+	{
+		"from": "kwk",
+		"to": "sur",
+		"distance": 0.61
+	},
+	{
+		"from": "sur",
+		"to": "kwk",
+		"distance": 0.61
+	},
+	{
+		"from": "sur",
+		"to": "koh",
+		"distance": 0.56
+	},
+	{
+		"from": "koh",
+		"to": "sur",
+		"distance": 0.56
+	},
+	{
+		"from": "koh",
+		"to": "mnh",
+		"distance": 1.06
+	},
+	{
+		"from": "mnh",
+		"to": "koh",
+		"distance": 1.06
+	},
+	{
+		"from": "mnh",
+		"to": "gjm",
+		"distance": 0.73
+	},
+	{
+		"from": "gjm",
+		"to": "mnh",
+		"distance": 0.73
+	},
+	{
+		"from": "gjm",
+		"to": "ymd",
+		"distance": 1.65
+	},
+	{
+		"from": "ymd",
+		"to": "gjm",
+		"distance": 1.65
+	},
+	{
+		"from": "ymd",
+		"to": "oik",
+		"distance": 2.8
+	},
+	{
+		"from": "oik",
+		"to": "ymd",
+		"distance": 2.8
+	},
+	{
+		"from": "oik",
+		"to": "ktn",
+		"distance": 1.09
+	},
+	{
+		"from": "ktn",
+		"to": "oik",
+		"distance": 1.09
+	},
+	{
+		"from": "ktn",
+		"to": "smr",
+		"distance": 0.59
+	},
+	{
+		"from": "smr",
+		"to": "ktn",
+		"distance": 0.59
+	},
+	{
+		"from": "smr",
+		"to": "mrg",
+		"distance": 0.61
+	},
+	{
+		"from": "mrg",
+		"to": "smr",
+		"distance": 0.61
+	},
+	{
+		"from": "mrg",
+		"to": "mrz",
+		"distance": 0.52
+	},
+	{
+		"from": "mrz",
+		"to": "mrg",
+		"distance": 0.52
+	},
+	{
+		"from": "mrz",
+		"to": "mzk",
+		"distance": 0.38
+	},
+	{
+		"from": "mzk",
+		"to": "mrz",
+		"distance": 0.38
+	},
+	{
+		"from": "nwa",
+		"to": "rnw",
+		"distance": 0.71
+	},
+	{
+		"from": "rnw",
+		"to": "nwa",
+		"distance": 0.71
+	},
+	{
+		"from": "rnw",
+		"to": "mjd",
+		"distance": 0.73
+	},
+	{
+		"from": "mjd",
+		"to": "rnw",
+		"distance": 0.73
+	},
+	{
+		"from": "mjd",
+		"to": "jtk",
+		"distance": 0.58
+	},
+	{
+		"from": "jtk",
+		"to": "mjd",
+		"distance": 0.58
+	},
+	{
+		"from": "jtk",
+		"to": "zgm",
+		"distance": 0.78
+	},
+	{
+		"from": "zgm",
+		"to": "jtk",
+		"distance": 0.78
+	},
+	{
+		"from": "zgm",
+		"to": "wkn",
+		"distance": 0.53
+	},
+	{
+		"from": "wkn",
+		"to": "zgm",
+		"distance": 0.53
+	},
+	{
+		"from": "wkn",
+		"to": "amm",
+		"distance": 0.77
+	},
+	{
+		"from": "amm",
+		"to": "wkn",
+		"distance": 0.77
+	},
+	{
+		"from": "amm",
+		"to": "fkc",
+		"distance": 0.64
+	},
+	{
+		"from": "fkc",
+		"to": "amm",
+		"distance": 0.64
+	},
+	{
+		"from": "fkc",
+		"to": "fsm",
+		"distance": 0.56
+	},
+	{
+		"from": "fsm",
+		"to": "fkc",
+		"distance": 0.56
+	},
+	{
+		"from": "fsm",
+		"to": "ktk",
+		"distance": 0.78
+	},
+	{
+		"from": "ktk",
+		"to": "fsm",
+		"distance": 0.78
+	},
+	{
+		"from": "ktk",
+		"to": "ust",
+		"distance": 1.24
+	},
+	{
+		"from": "ust",
+		"to": "ktk",
+		"distance": 1.24
+	},
+	{
+		"from": "ust",
+		"to": "mnk",
+		"distance": 0.98
+	},
+	{
+		"from": "mnk",
+		"to": "ust",
+		"distance": 0.98
+	},
+	{
+		"from": "mnk",
+		"to": "nkh",
+		"distance": 0.83
+	},
+	{
+		"from": "nkh",
+		"to": "mnk",
+		"distance": 0.83
+	},
+	{
+		"from": "nkh",
+		"to": "ywt",
+		"distance": 0.95
+	},
+	{
+		"from": "ywt",
+		"to": "nkh",
+		"distance": 0.95
+	},
+	{
+		"from": "koh",
+		"to": "kjo",
+		"distance": 1.51
+	},
+	{
+		"from": "kjo",
+		"to": "koh",
+		"distance": 1.51
+	},
+	{
+		"from": "kjo",
+		"to": "ucd",
+		"distance": 1.41
+	},
+	{
+		"from": "ucd",
+		"to": "kjo",
+		"distance": 1.41
+	},
+	{
+		"from": "ucd",
+		"to": "utm",
+		"distance": 2.26
+	},
+	{
+		"from": "utm",
+		"to": "ucd",
+		"distance": 2.26
+	},
+	{
+		"from": "utm",
+		"to": "wsk",
+		"distance": 0.56
+	},
+	{
+		"from": "wsk",
+		"to": "utm",
+		"distance": 0.56
+	},
+	{
+		"from": "wsk",
+		"to": "utk",
+		"distance": 0.55
+	},
+	{
+		"from": "utk",
+		"to": "wsk",
+		"distance": 0.55
+	},
+	{
+		"from": "ars",
+		"to": "okk",
+		"distance": 0.56
+	},
+	{
+		"from": "okk",
+		"to": "ars",
+		"distance": 0.56
+	},
+	{
+		"from": "okk",
+		"to": "amm",
+		"distance": 1.12
+	},
+	{
+		"from": "amm",
+		"to": "okk",
+		"distance": 1.12
+	},
+	{
+		"from": "amm",
+		"to": "kfn",
+		"distance": 0.52
+	},
+	{
+		"from": "kfn",
+		"to": "amm",
+		"distance": 0.52
+	},
+	{
+		"from": "kfn",
+		"to": "gkt",
+		"distance": 1.19
+	},
+	{
+		"from": "gkt",
+		"to": "kfn",
+		"distance": 1.19
+	},
+	{
+		"from": "gkt",
+		"to": "msn",
+		"distance": 0.95
+	},
+	{
+		"from": "msn",
+		"to": "gkt",
+		"distance": 0.95
+	},
+	{
+		"from": "msn",
+		"to": "alb",
+		"distance": 0.56
+	},
+	{
+		"from": "alb",
+		"to": "msn",
+		"distance": 0.56
+	},
+	{
+		"from": "alb",
+		"to": "hry",
+		"distance": 0.46
+	},
+	{
+		"from": "hry",
+		"to": "alb",
+		"distance": 0.46
+	},
+	{
+		"from": "hry",
+		"to": "chc",
+		"distance": 0.66
+	},
+	{
+		"from": "chc",
+		"to": "hry",
+		"distance": 0.66
+	},
+	{
+		"from": "chc",
+		"to": "ngn",
+		"distance": 0.82
+	},
+	{
+		"from": "ngn",
+		"to": "chc",
+		"distance": 0.82
+	},
+	{
+		"from": "ngn",
+		"to": "hrk",
+		"distance": 0.79
+	},
+	{
+		"from": "hrk",
+		"to": "ngn",
+		"distance": 0.79
+	},
+	{
+		"from": "hrk",
+		"to": "tti",
+		"distance": 1.01
+	},
+	{
+		"from": "tti",
+		"to": "hrk",
+		"distance": 1.01
+	},
+	{
+		"from": "tti",
+		"to": "ksd",
+		"distance": 0.5
+	},
+	{
+		"from": "ksd",
+		"to": "tti",
+		"distance": 0.5
+	},
+	{
+		"from": "ksd",
+		"to": "mdk",
+		"distance": 0.91
+	},
+	{
+		"from": "mdk",
+		"to": "ksd",
+		"distance": 0.91
+	},
+	{
+		"from": "mdk",
+		"to": "szy",
+		"distance": 0.75
+	},
+	{
+		"from": "szy",
+		"to": "mdk",
+		"distance": 0.75
+	},
+	{
+		"from": "szy",
+		"to": "zng",
+		"distance": 1.06
+	},
+	{
+		"from": "zng",
+		"to": "szy",
+		"distance": 1.06
+	},
+	{
+		"from": "zng",
+		"to": "ftm",
+		"distance": 1.04
+	},
+	{
+		"from": "ftm",
+		"to": "zng",
+		"distance": 1.04
+	},
+	{
+		"from": "ftm",
+		"to": "fmd",
+		"distance": 0.62
+	},
+	{
+		"from": "fmd",
+		"to": "ftm",
+		"distance": 0.62
+	},
+	{
+		"from": "fmd",
+		"to": "tyd",
+		"distance": 0.44
+	},
+	{
+		"from": "tyd",
+		"to": "fmd",
+		"distance": 0.44
+	},
+	{
+		"from": "tyd",
+		"to": "wkm",
+		"distance": 0.4
+	},
+	{
+		"from": "wkm",
+		"to": "tyd",
+		"distance": 0.4
+	},
+	{
+		"from": "wkm",
+		"to": "kkk",
+		"distance": 0.86
+	},
+	{
+		"from": "kkk",
+		"to": "wkm",
+		"distance": 0.86
+	},
+	{
+		"from": "sos",
+		"to": "ngn",
+		"distance": 1.58
+	},
+	{
+		"from": "ngn",
+		"to": "sos",
+		"distance": 1.58
+	},
+	{
+		"from": "ktk",
+		"to": "yks",
+		"distance": 1.23
+	},
+	{
+		"from": "yks",
+		"to": "ktk",
+		"distance": 1.23
+	},
+	{
+		"from": "nrm",
+		"to": "kso",
+		"distance": 0.39
+	},
+	{
+		"from": "kso",
+		"to": "nrm",
+		"distance": 0.39
+	},
+	{
+		"from": "ebt",
+		"to": "obm",
+		"distance": 0.77
+	},
+	{
+		"from": "obm",
+		"to": "ebt",
+		"distance": 0.77
+	},
+	{
+		"from": "shg",
+		"to": "ktm",
+		"distance": 0.58
+	},
+	{
+		"from": "ktm",
+		"to": "shg",
+		"distance": 0.58
+	},
+	{
+		"from": "gnk",
+		"to": "ktm",
+		"distance": 0.47
+	},
+	{
+		"from": "ktm",
+		"to": "gnk",
+		"distance": 0.47
+	},
+	{
+		"from": "gnk",
+		"to": "oiw",
+		"distance": 0.53
+	},
+	{
+		"from": "oiw",
+		"to": "gnk",
+		"distance": 0.53
+	},
+	{
+		"from": "msh",
+		"to": "oiw",
+		"distance": 0.47
+	},
+	{
+		"from": "oiw",
+		"to": "msh",
+		"distance": 0.47
+	},
+	{
+		"from": "msh",
+		"to": "smn",
+		"distance": 0.51
+	},
+	{
+		"from": "smn",
+		"to": "msh",
+		"distance": 0.51
+	},
+	{
+		"from": "nkt",
+		"to": "smn",
+		"distance": 0.54
+	},
+	{
+		"from": "smn",
+		"to": "nkt",
+		"distance": 0.54
+	},
+	{
+		"from": "nkt",
+		"to": "srh",
+		"distance": 0.56
+	},
+	{
+		"from": "srh",
+		"to": "nkt",
+		"distance": 0.56
+	},
+	{
+		"from": "isi",
+		"to": "srh",
+		"distance": 0.43
+	},
+	{
+		"from": "srh",
+		"to": "isi",
+		"distance": 0.43
+	},
+	{
+		"from": "isi",
+		"to": "smo",
+		"distance": 0.63
+	},
+	{
+		"from": "smo",
+		"to": "isi",
+		"distance": 0.63
+	},
+	{
+		"from": "aru",
+		"to": "smo",
+		"distance": 0.63
+	},
+	{
+		"from": "smo",
+		"to": "aru",
+		"distance": 0.63
+	},
+	{
+		"from": "aru",
+		"to": "zgm",
+		"distance": 0.51
+	},
+	{
+		"from": "zgm",
+		"to": "aru",
+		"distance": 0.51
+	},
+	{
+		"from": "arw",
+		"to": "zgm",
+		"distance": 0.41
+	},
+	{
+		"from": "zgm",
+		"to": "arw",
+		"distance": 0.41
+	},
+	{
+		"from": "arw",
+		"to": "aro",
+		"distance": 0.48
+	},
+	{
+		"from": "aro",
+		"to": "arw",
+		"distance": 0.48
+	},
+	{
+		"from": "shr",
+		"to": "aro",
+		"distance": 0.49
+	},
+	{
+		"from": "aro",
+		"to": "shr",
+		"distance": 0.49
+	},
+	{
+		"from": "ygt",
+		"to": "hrj",
+		"distance": 0.51
+	},
+	{
+		"from": "hrj",
+		"to": "ygt",
+		"distance": 0.51
+	},
+	{
+		"from": "irn",
+		"to": "hrj",
+		"distance": 0.54
+	},
+	{
+		"from": "hrj",
+		"to": "irn",
+		"distance": 0.54
+	},
+	{
+		"from": "irn",
+		"to": "kwn",
+		"distance": 0.72
+	},
+	{
+		"from": "kwn",
+		"to": "irn",
+		"distance": 0.72
+	},
+	{
+		"from": "ysd",
+		"to": "kwn",
+		"distance": 0.75
+	},
+	{
+		"from": "kwn",
+		"to": "ysd",
+		"distance": 0.75
+	},
+	{
+		"from": "ysd",
+		"to": "hro",
+		"distance": 0.71
+	},
+	{
+		"from": "hro",
+		"to": "ysd",
+		"distance": 0.71
+	},
+	{
+		"from": "fkg",
+		"to": "hro",
+		"distance": 0.58
+	},
+	{
+		"from": "hro",
+		"to": "fkg",
+		"distance": 0.58
+	},
+	{
+		"from": "fkg",
+		"to": "mck",
+		"distance": 0.53
+	},
+	{
+		"from": "mck",
+		"to": "fkg",
+		"distance": 0.53
+	},
+	{
+		"from": "kkz",
+		"to": "mck",
+		"distance": 0.53
+	},
+	{
+		"from": "mck",
+		"to": "kkz",
+		"distance": 0.53
+	},
+	{
+		"from": "kkz",
+		"to": "ssk",
+		"distance": 0.82
+	},
+	{
+		"from": "ssk",
+		"to": "kkz",
+		"distance": 0.82
+	},
+	{
+		"from": "ske",
+		"to": "ssk",
+		"distance": 0.83
+	},
+	{
+		"from": "ssk",
+		"to": "ske",
+		"distance": 0.83
+	},
+	{
+		"from": "oue",
+		"to": "kmk",
+		"distance": 0.77
+	},
+	{
+		"from": "kmk",
+		"to": "oue",
+		"distance": 0.77
+	},
+	{
+		"from": "mri",
+		"to": "kmk",
+		"distance": 0.47
+	},
+	{
+		"from": "kmk",
+		"to": "mri",
+		"distance": 0.47
+	},
+	{
+		"from": "mri",
+		"to": "hgo",
+		"distance": 0.42
+	},
+	{
+		"from": "hgo",
+		"to": "mri",
+		"distance": 0.42
+	},
+	{
+		"from": "tkd",
+		"to": "hgo",
+		"distance": 0.56
+	},
+	{
+		"from": "hgo",
+		"to": "tkd",
+		"distance": 0.56
+	},
+	{
+		"from": "tkd",
+		"to": "fks",
+		"distance": 0.79
+	},
+	{
+		"from": "fks",
+		"to": "tkd",
+		"distance": 0.79
+	},
+	{
+		"from": "ark",
+		"to": "fks",
+		"distance": 0.59
+	},
+	{
+		"from": "fks",
+		"to": "ark",
+		"distance": 0.59
+	},
+	{
+		"from": "ark",
+		"to": "kth",
+		"distance": 0.6
+	},
+	{
+		"from": "kth",
+		"to": "ark",
+		"distance": 0.6
+	},
+	{
+		"from": "myz",
+		"to": "kth",
+		"distance": 0.6
+	},
+	{
+		"from": "kth",
+		"to": "myz",
+		"distance": 0.6
+	},
+	{
+		"from": "myz",
+		"to": "knd",
+		"distance": 0.61
+	},
+	{
+		"from": "knd",
+		"to": "myz",
+		"distance": 0.61
+	},
+	{
+		"from": "hgi",
+		"to": "knd",
+		"distance": 0.77
+	},
+	{
+		"from": "knd",
+		"to": "hgi",
+		"distance": 0.77
+	},
+	{
+		"from": "hgi",
+		"to": "ynh",
+		"distance": 1.33
+	},
+	{
+		"from": "ynh",
+		"to": "hgi",
+		"distance": 1.33
+	},
+	{
+		"from": "hds",
+		"to": "ynh",
+		"distance": 0.47
+	},
+	{
+		"from": "ynh",
+		"to": "hds",
+		"distance": 0.47
+	},
+	{
+		"from": "hds",
+		"to": "akr",
+		"distance": 0.51
+	},
+	{
+		"from": "akr",
+		"to": "hds",
+		"distance": 0.51
+	},
+	{
+		"from": "hnd",
+		"to": "akr",
+		"distance": 0.72
+	},
+	{
+		"from": "akr",
+		"to": "hnd",
+		"distance": 0.72
+	},
+	{
+		"from": "hnd",
+		"to": "hdn",
+		"distance": 0.59
+	},
+	{
+		"from": "hdn",
+		"to": "hnd",
+		"distance": 0.59
+	},
+	{
+		"from": "sk2",
+		"to": "hdn",
+		"distance": 0.43
+	},
+	{
+		"from": "hdn",
+		"to": "sk2",
+		"distance": 0.43
+	},
+	{
+		"from": "sk2",
+		"to": "sk4",
+		"distance": 0.51
+	},
+	{
+		"from": "sk4",
+		"to": "sk2",
+		"distance": 0.51
+	},
+	{
+		"from": "say",
+		"to": "sk4",
+		"distance": 0.53
+	},
+	{
+		"from": "sk4",
+		"to": "say",
+		"distance": 0.53
+	},
+	{
+		"from": "say",
+		"to": "hnz",
+		"distance": 0.71
+	},
+	{
+		"from": "hnz",
+		"to": "say",
+		"distance": 0.71
+	},
+	{
+		"from": "hso",
+		"to": "hnz",
+		"distance": 0.57
+	},
+	{
+		"from": "hnz",
+		"to": "hso",
+		"distance": 0.57
+	},
+	{
+		"from": "hso",
+		"to": "kgr",
+		"distance": 0.53
+	},
+	{
+		"from": "kgr",
+		"to": "hso",
+		"distance": 0.53
+	},
+	{
+		"from": "hbt",
+		"to": "kgr",
+		"distance": 0.66
+	},
+	{
+		"from": "kgr",
+		"to": "hbt",
+		"distance": 0.66
+	},
+	{
+		"from": "hbt",
+		"to": "ttn",
+		"distance": 0.81
+	},
+	{
+		"from": "ttn",
+		"to": "hbt",
+		"distance": 0.81
+	},
+	{
+		"from": "cky",
+		"to": "ttn",
+		"distance": 0.52
+	},
+	{
+		"from": "ttn",
+		"to": "cky",
+		"distance": 0.52
+	},
+	{
+		"from": "cky",
+		"to": "dmn",
+		"distance": 0.73
+	},
+	{
+		"from": "dmn",
+		"to": "cky",
+		"distance": 0.73
+	},
+	{
+		"from": "ttc",
+		"to": "dmn",
+		"distance": 0.78
+	},
+	{
+		"from": "dmn",
+		"to": "ttc",
+		"distance": 0.78
+	},
+	{
+		"from": "ttc",
+		"to": "fkm",
+		"distance": 0.68
+	},
+	{
+		"from": "fkm",
+		"to": "ttc",
+		"distance": 0.68
+	},
+	{
+		"from": "fki",
+		"to": "fkm",
+		"distance": 0.56
+	},
+	{
+		"from": "fkm",
+		"to": "fki",
+		"distance": 0.56
+	},
+	{
+		"from": "fki",
+		"to": "sfk",
+		"distance": 0.42
+	},
+	{
+		"from": "sfk",
+		"to": "fki",
+		"distance": 0.42
+	},
+	{
+		"from": "knj",
+		"to": "tbs",
+		"distance": 2.8
+	},
+	{
+		"from": "tbs",
+		"to": "knj",
+		"distance": 2.8
+	},
+	{
+		"from": "nkb",
+		"to": "tbs",
+		"distance": 3.4
+	},
+	{
+		"from": "tbs",
+		"to": "nkb",
+		"distance": 3.4
+	},
+	{
+		"from": "nkb",
+		"to": "wng",
+		"distance": 5.3
+	},
+	{
+		"from": "wng",
+		"to": "nkb",
+		"distance": 5.3
+	},
+	{
+		"from": "kmb",
+		"to": "kbn",
+		"distance": 0.54
+	},
+	{
+		"from": "kbn",
+		"to": "kmb",
+		"distance": 0.54
+	},
+	{
+		"from": "kmb",
+		"to": "mgn",
+		"distance": 0.84
+	},
+	{
+		"from": "mgn",
+		"to": "kmb",
+		"distance": 0.84
+	},
+	{
+		"from": "kmr",
+		"to": "mgn",
+		"distance": 1.15
+	},
+	{
+		"from": "mgn",
+		"to": "kmr",
+		"distance": 1.15
+	},
+	{
+		"from": "kmr",
+		"to": "wkz",
+		"distance": 0.76
+	},
+	{
+		"from": "wkz",
+		"to": "kmr",
+		"distance": 0.76
+	},
+	{
+		"from": "ysw",
+		"to": "wkz",
+		"distance": 0.79
+	},
+	{
+		"from": "wkz",
+		"to": "ysw",
+		"distance": 0.79
+	},
+	{
+		"from": "ysw",
+		"to": "kug",
+		"distance": 1.00
+	},
+	{
+		"from": "kug",
+		"to": "ysw",
+		"distance": 1.00
+	},
+	{
+		"from": "fkj",
+		"to": "kug",
+		"distance": 2.17
+	},
+	{
+		"from": "kug",
+		"to": "fkj",
+		"distance": 2.17
+	},
+	{
+		"from": "fkj",
+		"to": "kbr",
+		"distance": 1.07
+	},
+	{
+		"from": "kbr",
+		"to": "fkj",
+		"distance": 1.07
+	},
+	{
+		"from": "hkb",
+		"to": "kbr",
+		"distance": 0.59
+	},
+	{
+		"from": "kbr",
+		"to": "hkb",
+		"distance": 0.59
+	},
+	{
+		"from": "hkb",
+		"to": "ozk",
+		"distance": 0.65
+	},
+	{
+		"from": "ozk",
+		"to": "hkb",
+		"distance": 0.65
+	},
+	{
+		"from": "ozo",
+		"to": "ozk",
+		"distance": 0.84
+	},
+	{
+		"from": "ozk",
+		"to": "ozo",
+		"distance": 0.84
+	},
+	{
+		"from": "ozo",
+		"to": "dmo",
+		"distance": 0.54
+	},
+	{
+		"from": "dmo",
+		"to": "ozo",
+		"distance": 0.54
+	},
+	{
+		"from": "djj",
+		"to": "dmo",
+		"distance": 0.66
+	},
+	{
+		"from": "dmo",
+		"to": "djj",
+		"distance": 0.66
+	},
+	{
+		"from": "djj",
+		"to": "idr",
+		"distance": 0.79
+	},
+	{
+		"from": "idr",
+		"to": "djj",
+		"distance": 0.79
+	},
+	{
+		"from": "igc",
+		"to": "idr",
+		"distance": 0.54
+	},
+	{
+		"from": "idr",
+		"to": "igc",
+		"distance": 0.54
+	},
+	{
+		"from": "igc",
+		"to": "nom",
+		"distance": 0.69
+	},
+	{
+		"from": "nom",
+		"to": "igc",
+		"distance": 0.69
+	},
+	{
+		"from": "hmd",
+		"to": "nom",
+		"distance": 0.58
+	},
+	{
+		"from": "nom",
+		"to": "hmd",
+		"distance": 0.58
+	},
+	{
+		"from": "hmd",
+		"to": "ozh",
+		"distance": 0.52
+	},
+	{
+		"from": "ozh",
+		"to": "hmd",
+		"distance": 0.52
+	},
+	{
+		"from": "hoz",
+		"to": "ozh",
+		"distance": 0.52
+	},
+	{
+		"from": "ozh",
+		"to": "hoz",
+		"distance": 0.52
+	},
+	{
+		"from": "hoz",
+		"to": "iks",
+		"distance": 0.56
+	},
+	{
+		"from": "iks",
+		"to": "hoz",
+		"distance": 0.56
+	},
+	{
+		"from": "znd",
+		"to": "iks",
+		"distance": 0.71
+	},
+	{
+		"from": "iks",
+		"to": "znd",
+		"distance": 0.71
+	},
+	{
+		"from": "znd",
+		"to": "tsk",
+		"distance": 0.52
+	},
+	{
+		"from": "tsk",
+		"to": "znd",
+		"distance": 0.52
+	},
+	{
+		"from": "onk",
+		"to": "tsk",
+		"distance": 0.65
+	},
+	{
+		"from": "tsk",
+		"to": "onk",
+		"distance": 0.65
+	},
+	{
+		"from": "onk",
+		"to": "okz",
+		"distance": 0.60
+	},
+	{
+		"from": "okz",
+		"to": "onk",
+		"distance": 0.60
+	},
+	{
+		"from": "djj",
+		"to": "kmo",
+		"distance": 0.72
+	},
+	{
+		"from": "kmo",
+		"to": "djj",
+		"distance": 0.72
+	},
+	{
+		"from": "ida",
+		"to": "kmo",
+		"distance": 0.54
+	},
+	{
+		"from": "kmo",
+		"to": "ida",
+		"distance": 0.54
+	},
+	{
+		"from": "ida",
+		"to": "igs",
+		"distance": 0.49
+	},
+	{
+		"from": "igs",
+		"to": "ida",
+		"distance": 0.49
+	},
+	{
+		"from": "ing",
+		"to": "igs",
+		"distance": 0.74
+	},
+	{
+		"from": "igs",
+		"to": "ing",
+		"distance": 0.74
+	},
+	{
+		"from": "ing",
+		"to": "oro",
+		"distance": 0.78
+	},
+	{
+		"from": "oro",
+		"to": "ing",
+		"distance": 0.78
+	},
+	{
+		"from": "mtd",
+		"to": "oro",
+		"distance": 0.52
+	},
+	{
+		"from": "oro",
+		"to": "mtd",
+		"distance": 0.52
+	},
+	{
+		"from": "mtd",
+		"to": "hko",
+		"distance": 0.55
+	},
+	{
+		"from": "hko",
+		"to": "mtd",
+		"distance": 0.55
+	}
 ]

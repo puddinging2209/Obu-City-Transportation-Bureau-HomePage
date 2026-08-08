@@ -1,9 +1,7 @@
-import { Typography } from "@mui/material";
+import { Typography } from '@mui/material';
 
 function About() {
-    return (
-        <Typography variant="h6">準備中...</Typography>
-    )
+	return <Typography variant='h6'>準備中...</Typography>;
 }
 
-export default About
+export default About;

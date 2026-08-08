@@ -1,85 +1,100 @@
-// vite.config.js から注入される変数を受け取る
-const CACHE_NAME = __OUD_CACHE_NAME__;
+import { CacheableResponsePlugin } from 'workbox-cacheable-response';
+import { precacheAndRoute } from 'workbox-precaching';
+import { registerRoute } from 'workbox-routing';
+import { NetworkFirst } from 'workbox-strategies';
 
-// VitePWAがビルド時にマニフェストを注入するプレースホルダー
+const CACHE_NAME = __OUD_CACHE_NAME__;
 const precacheManifest = self.__WB_MANIFEST;
 
-self.addEventListener('install', () => {
-    self.skipWaiting();
-});
+precacheAndRoute(precacheManifest);
 
+self.addEventListener('install', () => self.skipWaiting());
+
+// 古いキャッシュグループ（旧 CACHE_NAME）の丸ごと削除
 self.addEventListener('activate', (e) => {
-    e.waitUntil(
-        caches.keys().then((names) => {
-            const isValidCache = /^oud-cache-[a-f0-9]+$/.test(CACHE_NAME);
-
-            if (!isValidCache) {
-                console.log('[SW] CACHE_NAME is unknown, keep existing caches');
-                return;
-            }
-
-            return Promise.all(
-                names
-                    .filter((name) => name.startsWith('oud-cache') && name !== CACHE_NAME)
-                    .map((name) => {
-                        console.log(`[SW] Deleting old cache: ${name}`);
-                        return caches.delete(name);
-                    }),
-            );
-        }),
-    );
-
-    e.waitUntil(self.clients.claim());
+	e.waitUntil(
+		caches.keys().then((names) => {
+			return Promise.all(
+				names
+					.filter((name) => name.startsWith('oud-cache') && name !== CACHE_NAME)
+					.map((name) => {
+						console.log(`[SW] 不要な古いキャッシュグループを削除: ${name}`);
+						return caches.delete(name);
+					}),
+			);
+		}),
+	);
+	e.waitUntil(self.clients.claim());
 });
 
-/* OUD JSONのみキャッシュ - manifest.jsonは除外 */
-self.addEventListener('fetch', (event) => {
-    const url = new URL(event.request.url);
+// 💡 旧ハッシュ付きファイル & クエリなしの旧ファイルを自動削除するカスタムプラグイン
+const cleanOldHashPlugin = {
+	cacheDidUpdate: async ({ cacheName, request }) => {
+		const cache = await caches.open(cacheName);
+		const keys = await cache.keys();
+		const currentUrl = new URL(request.url);
 
-    // 既存の /oud/ 以外のリクエストはWorkboxのプリキャッシュ処理に任せる
-    if (!url.pathname.includes('/oud/')) return;
+		for (const req of keys) {
+			const reqUrl = new URL(req.url);
 
-    if (url.pathname.endsWith('/oud/manifest.json')) {
-        event.respondWith(networkFirst(event.request));
-        return;
-    }
+			// パスが一致し、完全なURL(クエリ含)が異なるものを消去
+			if (reqUrl.pathname === currentUrl.pathname && reqUrl.href !== currentUrl.href) {
+				console.log(`[SW] 古いキャッシュ（旧ハッシュ）を削除: ${reqUrl.href}`);
+				await cache.delete(req);
+			}
+		}
+	},
+};
 
-    event.respondWith(cacheFirst(event.request));
-});
+// A) manifest.json -> NetworkFirst (ブラウザの disk cache をバイパス)
+registerRoute(
+	({ url }) => url.pathname.includes('/oud/') && url.pathname.endsWith('manifest.json'),
+	new NetworkFirst({
+		cacheName: CACHE_NAME,
+		networkTimeoutSeconds: 3,
+		fetchOptions: {
+			cache: 'no-cache', // ブラウザの HTTP ディスクキャッシュを強制無視する
+		},
+		plugins: [
+			new CacheableResponsePlugin({
+				statuses: [0, 200],
+			}),
+		],
+	}),
+);
 
-async function networkFirst(request) {
-    try {
-        const response = await fetch(request);
-        if (response.ok) return response;
-    } catch (err) {
-        console.log('[SW] Failed to fetch manifest.json from network');
-    }
+// B) 各路線 JSON (*.json) -> NetworkFirst + 旧ファイル自動消去
+registerRoute(
+	({ url }) => url.pathname.includes('/oud/') && !url.pathname.endsWith('manifest.json'),
+	new NetworkFirst({
+		cacheName: CACHE_NAME,
+		networkTimeoutSeconds: 3,
+		fetchOptions: {
+			cache: 'no-cache', // ブラウザの HTTP ディスクキャッシュを強制無視する
+		},
+		plugins: [
+			new CacheableResponsePlugin({
+				statuses: [0, 200],
+			}),
+			cleanOldHashPlugin,
+		],
+	}),
+);
 
-    const cache = await caches.open(CACHE_NAME);
-    const cached = await cache.match(request);
-    return cached || new Response('Not found', { status: 404 });
-}
-
-async function cacheFirst(request) {
-    const keys = await caches.keys();
-    const existingCache = keys.find((k) => k.startsWith('oud-cache'));
-    const targetCache = existingCache || CACHE_NAME;
-
-    const cache = await caches.open(targetCache);
-    const cached = await cache.match(request);
-    if (cached) return cached;
-
-    const fresh = await fetch(request);
-    await cache.put(request, fresh.clone());
-    return fresh;
-}
-
-/* クライアントからのメッセージを受け取ってキャッシュをクリア */
+// 4. Message イベントハンドラ（キャッシュクリア・スキップ用）
 self.addEventListener('message', (event) => {
-    if (event.data && event.data.type === 'CLEAR_CACHE') {
-        caches.delete(CACHE_NAME).then(() => {
-            console.log('[SW] Cache cleared by client');
-            event.ports.postMessage({ success: true });
-        });
-    }
+	if (!event.data || !event.data.type) return;
+
+	if (event.data.type === 'CLEAR_CACHE') {
+		caches.delete(CACHE_NAME).then(() => {
+			console.log('[SW] Cache cleared by client');
+			if (event.ports && event.ports[0]) event.ports[0].postMessage({ success: true });
+		});
+		return;
+	}
+
+	if (event.data.type === 'SKIP_WAITING') {
+		self.skipWaiting();
+		return;
+	}
 });

@@ -7,12 +7,12 @@ import { fetchOud } from './oudFileLoader.js';
 let dias = {};
 
 export function resolveRosen(rosen) {
-    if (lines?.[rosen]) return lines[rosen].json;
+	if (lines?.[rosen]) return lines[rosen].json;
 
-    const found = Object.values(lines).find((l) => l.code === rosen);
-    if (found) return found.json;
+	const found = Object.values(lines).find((l) => l.code === rosen);
+	if (found) return found.json;
 
-    return rosen;
+	return rosen;
 }
 
 /**
@@ -21,485 +21,208 @@ export function resolveRosen(rosen) {
  * @returns {Promise<Object>} ダイヤグラムオブジェクト
  */
 export async function dia(rosen) {
-    const code = resolveRosen(rosen);
+	const code = resolveRosen(rosen);
 
-    if (dias[code]) return dias[code];
+	if (dias[code]) return dias[code];
 
-    const diagram = await fetchOud(code);
-    dias[code] = diagram;
-    return diagram;
+	const diagram = await fetchOud(code);
+	dias[code] = diagram;
+	return diagram;
 }
 
 function indexofFromStation(diagram, station, rosen, direction) {
-    const exceptions = [
-        {
-            exc: { station: 'obu', direction: { route: '大府環状線', stationName: '江端町' } },
-            return: 12,
-        },
-        {
-            exc: { station: 'hdk', direction: { route: '刈谷環状線', stationName: '刈谷青山' } },
-            return: 17,
-        },
-        {
-            exc: { station: 'shg', direction: { route: '名東線', stationName: '藤が丘' } },
-            return: 0,
-        },
-        {
-            exc: {
-                station: 'dtc',
-                direction: { route: '二ツ池線森岡支線', stationName: '於大公園西' },
-            },
-            return: 8,
-        },
-        {
-            exc: { station: 'nrm', direction: { route: '鳴海連絡線', stationName: '上汐田' } },
-            return: 1,
-        },
-        {
-            exc: { station: 'kso', direction: { route: '鳴海連絡線', stationName: '鳴海' } },
-            return: 0,
-        },
-        {
-            exc: { station: 'ebt', direction: { route: '大峯連絡線', stationName: '半田市' } },
-            return: 0,
-        },
-        {
-            exc: { station: 'okw', direction: { route: '半田線', stationName: '大府' } },
-            return: 17,
-        },
-        {
-            exc: { station: 'okw', direction: { route: '半田線住吉支線', stationName: '清城' } },
-            return: 17,
-        },
-        {
-            exc: {
-                station: 'tmo',
-                direction: { route: '南港線(名港トリトンライン)', stationName: '湾岸長島' },
-            },
-            return: 0,
-        },
-    ];
+	const exceptions = [
+		{
+			exc: { station: 'obu', direction: { line: '大府環状線', id: 'ebt' } },
+			return: 12,
+		},
+		{
+			exc: { station: 'hdk', direction: { line: '刈谷環状線', id: 'kra' } },
+			return: 17,
+		},
+		{
+			exc: { station: 'shg', direction: { line: '名東線', id: 'fjg' } },
+			return: 0,
+		},
+		{
+			exc: {
+				station: 'dtc',
+				direction: { line: '二ツ池線森岡支線', id: 'odn' },
+			},
+			return: 8,
+		},
+		{
+			exc: { station: 'nrm', direction: { line: '鳴海連絡線', id: 'kso' } },
+			return: 1,
+		},
+		{
+			exc: { station: 'kso', direction: { line: '鳴海連絡線', id: 'nrm' } },
+			return: 0,
+		},
+		{
+			exc: { station: 'ebt', direction: { line: '大峯連絡線', id: 'obm' } },
+			return: 0,
+		},
+		{
+			exc: { station: 'okw', direction: { line: '半田線', id: 'obu' } },
+			return: 17,
+		},
+		{
+			exc: { station: 'okw', direction: { line: '半田線住吉支線', id: 'sis' } },
+			return: 17,
+		},
+		{
+			exc: {
+				station: 'tmo',
+				direction: { line: '南港線(名港トリトンライン)', id: 'wng' },
+			},
+			return: 0,
+		},
+		{
+			exc: { station: 'sos', direction: { line: '惣作直通線', id: 'ngn' } },
+			return: 10,
+		},
+		{
+			exc: { station: 'ngn', direction: { line: '惣作直通線', id: 'sos' } },
+			return: 9,
+		},
+		{
+			exc: { station: 'ngn', direction: { line: '東西線', id: 'ars' } },
+			return: 9,
+		},
+	];
 
-    const exception = exceptions.find(
-        (exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }),
-    );
-    if (exception) {
-        return exception.return;
-    }
+	const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
+	if (exception) {
+		return exception.return;
+	}
 
-    return diagram.railway.stations.findIndex(
-        (sta) => sta.name == id_number(station).find((value) => value.includes(rosen)),
-    );
+	return diagram.railway.stations.findIndex((sta) => sta.name == id_number(station).find((value) => value.includes(rosen)));
 }
 
 function codeofToStation(station, direction, rosen) {
-    const exceptions = [
-        {
-            exc: { station: 'ebt', direction: { route: '大府環状線', stationName: '大府' } },
-            return: 'OL01a',
-        },
-        {
-            exc: { station: 'omn', direction: { route: '大府環状線', stationName: '大府' } },
-            return: 'OL01a',
-        },
-        {
-            exc: {
-                station: 'akr',
-                direction: { route: '半田線住吉支線', stationName: '乙川' },
-            },
-            return: 'HD17a',
-        },
-        {
-            exc: { station: 'smy', direction: { route: '半田線住吉支線', stationName: '乙川' } },
-            return: 'HD17a',
-        },
-        {
-            exc: { station: 'sis', direction: { route: '半田線住吉支線', stationName: '乙川' } },
-            return: 'HD17a',
-        },
-        {
-            exc: { station: 'kso', direction: { route: '鳴海連絡線', stationName: '鳴海' } },
-            return: 'GK04a',
-        },
-        {
-            exc: { station: 'nrm', direction: { route: '鳴海連絡線', stationName: '上汐田' } },
-            return: 'OD14a',
-        },
-        {
-            exc: { station: 'obm', direction: { route: '大峯連絡線', stationName: '江端町' } },
-            return: 'OL11a',
-        },
-    ];
+	const exceptions = [
+		{
+			exc: { station: 'ebt', direction: { line: '大府環状線', id: 'obu' } },
+			return: 'OL01a',
+		},
+		{
+			exc: { station: 'omn', direction: { line: '大府環状線', id: 'obu' } },
+			return: 'OL01a',
+		},
+		{
+			exc: {
+				station: 'akr',
+				direction: { line: '半田線住吉支線', id: 'okw' },
+			},
+			return: 'HD17a',
+		},
+		{
+			exc: { station: 'smy', direction: { line: '半田線住吉支線', id: 'okw' } },
+			return: 'HD17a',
+		},
+		{
+			exc: { station: 'sis', direction: { line: '半田線住吉支線', id: 'okw' } },
+			return: 'HD17a',
+		},
+		{
+			exc: { station: 'kso', direction: { line: '鳴海連絡線', id: 'nrm' } },
+			return: 'GK04a',
+		},
+		{
+			exc: { station: 'nrm', direction: { line: '鳴海連絡線', id: 'kso' } },
+			return: 'OD14a',
+		},
+		{
+			exc: { station: 'obm', direction: { line: '大峯連絡線', id: 'ebt' } },
+			return: 'OL11a',
+		},
+		{
+			exc: { station: 'sos', direction: { line: '惣作直通線', id: 'ngn' } },
+			return: 'TZ10a',
+		},
+	];
 
-    const exception = exceptions.find(
-        (exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }),
-    );
-    if (exception) {
-        return exception.return;
-    }
+	const exception = exceptions.find((exc) => JSON.stringify(exc.exc) == JSON.stringify({ station, direction }));
+	if (exception) {
+		return exception.return;
+	}
 
-    return name_number(direction.stationName.split('・')[0]).find((value) => value.includes(rosen));
-}
-
-function fromStop(diagram, busStop, direction) {
-    const exceptions = [
-        {
-            exc: {
-                busStop: '大府駅東',
-                direction: { route: '東コース', stationName: 'メディアス体育館おおぶ' },
-            },
-            return: 2,
-        },
-        {
-            exc: {
-                busStop: '大府駅東',
-                direction: { route: '東コース', stationName: '追分町六丁目' },
-            },
-            return: 32,
-        },
-        {
-            exc: {
-                busStop: '共和駅西',
-                direction: { route: '西コース', stationName: 'メディアス体育館おおぶ' },
-            },
-            return: 33,
-        },
-        {
-            exc: {
-                busStop: '大府駅西',
-                direction: { route: '南コース', stationName: '長寿医療研究センター' },
-            },
-            return: 35,
-        },
-        {
-            exc: { busStop: '共和駅東', direction: { route: '北コース', stationName: '口無大池' } },
-            return: 34,
-        },
-        {
-            exc: {
-                busStop: '大府市役所',
-                direction: { route: '中央コース', stationName: 'おおぶ文化交流の杜' },
-            },
-            return: 24,
-        },
-        {
-            exc: {
-                busStop: '大府市役所',
-                direction: { route: 'サクラコース', stationName: 'げんきの郷' },
-            },
-            return: 32,
-        },
-        {
-            exc: {
-                busStop: '大府駅東',
-                direction: { route: 'ツツジコース', stationName: 'げんきの郷' },
-            },
-            return: 34,
-        },
-    ];
-    const exception = exceptions.find(
-        (exc) => JSON.stringify(exc.exc) == JSON.stringify({ busStop, direction }),
-    );
-    if (exception) {
-        return exception.return;
-    }
-    return diagram.railway.stations.findIndex((stop) => stop.name == busStop);
-}
-
-function toStop(diagram, busStop, direction) {
-    return diagram.railway.stations.findIndex(
-        (stop) => stop.name == direction.stationName.split('・')[0],
-    );
-}
-
-function busIndex(diagram, busStop, direction) {
-    const exceptions = [
-        {
-            exc: {
-                busStop: '大府駅東',
-                direction: { route: '東コース', stationName: '長寿医療研究センター' },
-            },
-            return: [
-                { from: 0, to: 1 },
-                { from: 2, to: 1 },
-            ],
-        },
-        {
-            exc: {
-                busStop: '長寿医療研究センター',
-                direction: { route: '東コース', stationName: '大府駅東' },
-            },
-            return: [
-                { from: 1, to: 0 },
-                { from: 1, to: 2 },
-            ],
-        },
-        {
-            exc: {
-                busStop: '大府駅東',
-                direction: { route: '中央コース', stationName: '大府市役所' },
-            },
-            return: [
-                { from: 0, to: 1 },
-                { from: 25, to: 24 },
-            ],
-        },
-        {
-            exc: {
-                busStop: '大府市役所',
-                direction: { route: '中央コース', stationName: '大府駅東' },
-            },
-            return: [
-                { from: 1, to: 0 },
-                { from: 24, to: 25 },
-            ],
-        },
-        {
-            exc: {
-                busStop: '大府市役所',
-                direction: { route: 'サクラコース', stationName: '大府駅東' },
-            },
-            return: [
-                { from: 1, to: 0 },
-                { from: 32, to: 33 },
-            ],
-        },
-        {
-            exc: {
-                busStop: '北崎町一丁目',
-                direction: { route: '東コース', stationName: '名鉄前後駅' },
-            },
-            return: [
-                { from: 15, to: 18 },
-                { from: 21, to: 18 },
-            ],
-        },
-        {
-            exc: {
-                busStop: '北崎町一丁目',
-                direction: { route: '北コース', stationName: '名鉄前後駅' },
-            },
-            return: [
-                { from: 14, to: 17 },
-                { from: 20, to: 17 },
-            ],
-        },
-        {
-            exc: {
-                busStop: '大府みどり公園',
-                direction: { route: '東コース', stationName: '名鉄前後駅' },
-            },
-            return: [
-                { from: 16, to: 18 },
-                { from: 20, to: 18 },
-            ],
-        },
-        {
-            exc: {
-                busStop: '大府みどり公園',
-                direction: { route: '北コース', stationName: '名鉄前後駅' },
-            },
-            return: [
-                { from: 15, to: 17 },
-                { from: 19, to: 17 },
-            ],
-        },
-        {
-            exc: {
-                busStop: '星城高校北',
-                direction: { route: '東コース', stationName: '名鉄前後駅' },
-            },
-            return: [
-                { from: 17, to: 18 },
-                { from: 29, to: 18 },
-            ],
-        },
-        {
-            exc: {
-                busStop: '星城高校北',
-                direction: { route: '北コース', stationName: '名鉄前後駅' },
-            },
-            return: [
-                { from: 16, to: 17 },
-                { from: 18, to: 17 },
-            ],
-        },
-        {
-            exc: {
-                busStop: '星城高校東',
-                direction: { route: '東コース', stationName: '追分町六丁目' },
-            },
-            return: [{ from: 19, to: 29 }],
-        },
-        {
-            exc: {
-                busStop: '星城高校東',
-                direction: { route: '東コース', stationName: 'メディアス体育館おおぶ' },
-            },
-            return: [{ from: 17, to: 7 }],
-        },
-        {
-            exc: {
-                busStop: '星城高校東',
-                direction: { route: '北コース', stationName: '口無大池' },
-            },
-            return: [{ from: 18, to: 26 }],
-        },
-        {
-            exc: {
-                busStop: '星城高校東',
-                direction: { route: '北コース', stationName: '二ツ池セレトナ' },
-            },
-            return: [{ from: 16, to: 13 }],
-        },
-    ];
-    const exception = exceptions.find(
-        (exc) => JSON.stringify(exc.exc) == JSON.stringify({ busStop, direction }),
-    );
-    if (exception) {
-        return exception.return;
-    }
-
-    let from = [fromStop(diagram, busStop, direction)];
-    let to = [toStop(diagram, busStop, direction)];
-    return from.map((_, i) => ({ from: from[i], to: to[i] }));
+	return name_number(direction.id.split('・')[0]).find((value) => value.includes(rosen));
 }
 
 function mergeMultilayerTrain(deps) {
-    let result = [];
-    for (let i = 0; i < deps.length; i++) {
-        const dep = deps[i];
-        if (
-            i < deps.length - 1 &&
-            Math.abs(Number(deps[i].train.number) - Number(deps[i + 1].train.number)) === 100 &&
-            deps[i].time === deps[i + 1].time
-        ) {
-            if (deps[i].terminal !== deps[i + 1].terminal)
-                result.push({
-                    ...dep,
-                    terminal: `${dep.terminal}・${deps[i + 1].terminal}`,
-                    multilayer: true,
-                    train: [dep.train, deps[i + 1].train],
-                });
-            else
-                result.push({
-                    ...dep,
-                    multilayer: false,
-                    train: dep.train,
-                });
-        } else if (
-            i > 0 &&
-            Math.abs(Number(deps[i - 1].train.number) - Number(deps[i].train.number)) === 100 &&
-            deps[i - 1].time === deps[i].time
-        ) {
-            continue;
-        } else result.push(dep);
-    }
-    return result;
+	let result = [];
+	for (let i = 0; i < deps.length; i++) {
+		const dep = deps[i];
+		if (
+			i < deps.length - 1 &&
+			Math.abs(Number(deps[i].train.number) - Number(deps[i + 1].train.number)) === 100 &&
+			deps[i].time === deps[i + 1].time
+		) {
+			if (deps[i].terminal !== deps[i + 1].terminal)
+				result.push({
+					...dep,
+					terminal: `${dep.terminal}・${deps[i + 1].terminal}`,
+					multilayer: true,
+					train: [dep.train, deps[i + 1].train],
+				});
+			else
+				result.push({
+					...dep,
+					multilayer: false,
+					train: dep.train,
+				});
+		} else if (i > 0 && Math.abs(Number(deps[i - 1].train.number) - Number(deps[i].train.number)) === 100 && deps[i - 1].time === deps[i].time) {
+			continue;
+		} else result.push(dep);
+	}
+	return result;
 }
 
-async function searchDeparture(sta, direction) {
-    if (sta.role === 'station') {
-        const station = sta.id;
-        const diagram = await dia(lines[direction.route].json);
-        const rosen = lines[direction.route].code;
-        const stationIndex = indexofFromStation(diagram, station, rosen, direction);
-        const toCode = codeofToStation(station, direction, rosen);
-        const numofStations = diagram.railway.stations.length;
-        const d =
-            stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == toCode) ? 0 : 1;
-        let departures = diagram.railway.diagrams[0].trains[d].filter(
-            (tra) =>
-                tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]
-                    ?.stopType === 1 &&
-                tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]
-                    ?.departure != null &&
-                tra.timetable._data[d === 0 ? stationIndex + 1 : numofStations - stationIndex] !=
-                    null,
-        );
-        if (rosen === 'KT') {
-            if (direction.route === '刈田川急行線' && ['hnt', 'dtc', 'sos'].includes(station)) {
-                departures = departures.filter((tra) => tra.timetable._data[9]?.stopType === 1);
-            } else if (direction.route === '刈田川線' && direction.stationName.includes('若草')) {
-                departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
-            }
-        } else if (rosen === 'HD') {
-            if (
-                direction.route === '半田線' &&
-                station === 'obm' &&
-                direction.stationName === '大府'
-            ) {
-                departures = departures.filter(
-                    (tra) => tra.timetable._data[d === 0 ? 1 : 28]?.stopType === 1,
-                );
-            } else if (direction.route === '大峯連絡線' && station === 'obm') {
-                departures = departures.filter(
-                    (tra) => tra.timetable._data[d === 0 ? 1 : 28]?.stopType === 2,
-                );
-            }
-        }
-        const result = departures
-            .map((tra) => {
-                const time =
-                    tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]
-                        ?.departure;
-                return {
-                    terminal: terminal(tra, diagram),
-                    typeName: typeName(tra, diagram),
-                    time: adjustTime(time),
-                    multilayer: false,
-                    train: tra,
-                };
-            })
-            .sort((a, b) => adjustTime(a.time) - adjustTime(b.time));
-        return mergeMultilayerTrain(result);
-    } else if (sta.role === 'busStop') {
-        const busStop = sta.name;
-        let routes = direction.route.split('/');
-        const directions = routes.map((route) => {
-            return { route: route, stationName: direction.stationName };
-        });
-        let departures = await Promise.all(
-            routes.map(async (route, i) => {
-                const diagram = await dia(route);
-                const index = busIndex(diagram, busStop, {
-                    ...directions[i],
-                    stationName:
-                        directions[i].stationName.split('・')[
-                            busStop === '大府駅東' && route === 'サクラコース' ? 1 : 0
-                        ],
-                });
-                return index
-                    .map((index) => {
-                        const d = index.from < index.to ? 0 : 1;
-                        const numofStations = diagram.railway.stations.length;
-                        const filtered = diagram.railway.diagrams[0].trains[d].filter(
-                            (bus) =>
-                                bus.timetable._data[
-                                    d === 0 ? index.from : numofStations - 1 - index.from
-                                ]?.stopType === 1 &&
-                                bus.timetable._data[
-                                    d === 0 ? index.from : numofStations - 1 - index.from
-                                ]?.departure != null,
-                        );
-                        return filtered.map((tra) => {
-                            const time =
-                                tra.timetable._data[
-                                    d === 0 ? index.from : numofStations - 1 - index.from
-                                ]?.departure;
-                            return {
-                                terminal: d === 0 ? '左まわり' : '右まわり',
-                                typeName: typeName(tra, diagram),
-                                time: adjustTime(time),
-                                train: tra,
-                            };
-                        });
-                    })
-                    .flat();
-            }),
-        );
-
-        return departures.flat().sort((a, b) => a.time - b.time);
-    }
+/**
+ * 駅と方向から発車案内を取得
+ * 	@param {string} station 駅id
+ * 	@param {{line: string, id: string}} direction 方向
+ */
+async function searchDeparture(station, direction) {
+	const diagram = await dia(lines[direction.line].json);
+	const rosen = lines[direction.line].code;
+	const stationIndex = indexofFromStation(diagram, station, rosen, direction);
+	const toCode = codeofToStation(station, direction, rosen);
+	const numofStations = diagram.railway.stations.length;
+	const d = stationIndex < diagram.railway.stations.findIndex((sta) => sta.name == toCode) ? 0 : 1;
+	let departures = diagram.railway.diagrams[0].trains[d].filter(
+		(tra) =>
+			tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]?.stopType === 1 &&
+			tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]?.departure !== undefined &&
+			tra.timetable._data[d === 0 ? stationIndex + 1 : numofStations - stationIndex],
+	);
+	if (rosen === 'KT') {
+		if (direction.line === '刈田川急行線' && station !== 'obu') {
+			departures = departures.filter((tra) => tra.timetable._data[9]?.stopType === 1);
+		} else if (direction.line === '刈田川線' && ((station === 'hnt' && d === 0) || (['dtc', 'sos'].includes(station) && d === 1))) {
+			departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
+		}
+	} else if (rosen === 'HD') {
+		if (direction.line === '半田線' && station === 'obm' && direction.id === 'obu') {
+			departures = departures.filter((tra) => tra.timetable._data[d === 0 ? 1 : 28]?.stopType === 1);
+		} else if (direction.line === '大峯連絡線' && station === 'obm') {
+			departures = departures.filter((tra) => tra.timetable._data[d === 0 ? 1 : 28]?.stopType !== 1);
+		}
+	}
+	const result = departures
+		.map((tra) => {
+			const time = tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]?.departure;
+			return {
+				terminal: terminal(tra, diagram),
+				typeName: typeName(tra, diagram),
+				time: adjustTime(time),
+				multilayer: false,
+				train: tra,
+			};
+		})
+		.sort((a, b) => adjustTime(a.time) - adjustTime(b.time));
+	return mergeMultilayerTrain(result);
 }
 export { searchDeparture };
