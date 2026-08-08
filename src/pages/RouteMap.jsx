@@ -16,106 +16,92 @@ import operationalRoutes from '../data/operationalRoutes.json';
 
 const routeList = Object.values(operationalRoutes);
 const routeById = routeList.reduce((acc, route) => {
-    acc[route.id] = route;
-    return acc;
+	acc[route.id] = route;
+	return acc;
 }, {});
 const defaultRouteId = 'KT';
 
 function RouteMap() {
-    const [isOpenLightbox, setIsOpenLightbox] = React.useState(false);
-    const [selectedLine, setSelectedLine] = useQueryState('line', {
-        defaultValue: defaultRouteId,
-        serialize: (value) => value,
-        parse: (value) => value,
-    });
-    const [imageSize, setImageSize] = React.useState('');
+	const [isOpenLightbox, setIsOpenLightbox] = React.useState(false);
+	const [selectedLine, setSelectedLine] = useQueryState('line', {
+		defaultValue: defaultRouteId,
+		serialize: (value) => value,
+		parse: (value) => value,
+	});
+	const [imageSize, setImageSize] = React.useState('');
 
-    React.useEffect(() => {
-        const fetchImageSize = async () => {
-            try {
-                const response = await fetch(import.meta.env.BASE_URL + 'routeMap/202605.png', {
-                    method: 'HEAD',
-                });
-                const size = response.headers.get('content-length');
-                if (size) {
-                    const sizeInMB = (parseInt(size) / (1024 * 1024)).toFixed(1);
-                    setImageSize(` (${sizeInMB}MB)`);
-                }
-            } catch (error) {
-                console.error('Failed to fetch image size:', error);
-            }
-        };
-        fetchImageSize();
-    }, []);
+	React.useEffect(() => {
+		const fetchImageSize = async () => {
+			try {
+				const response = await fetch(import.meta.env.BASE_URL + 'routeMap/202608.png', {
+					method: 'HEAD',
+				});
+				const size = response.headers.get('content-length');
+				if (size) {
+					const sizeInMB = (parseInt(size) / (1024 * 1024)).toFixed(1);
+					setImageSize(` (${sizeInMB}MB)`);
+				}
+			} catch (error) {
+				console.error('Failed to fetch image size:', error);
+			}
+		};
+		fetchImageSize();
+	}, []);
 
-    const resolveRouteId = (routeIdOrLineName) => {
-        if (routeById[routeIdOrLineName]) {
-            return routeIdOrLineName;
-        }
+	const resolveRouteId = (routeIdOrLineName) => {
+		if (routeById[routeIdOrLineName]) {
+			return routeIdOrLineName;
+		}
 
-        const found = routeList.find((route) => route.segments[0]?.line === routeIdOrLineName);
-        return found ? found.id : defaultRouteId;
-    };
+		const found = routeList.find((route) => route.segments[0]?.line === routeIdOrLineName);
+		return found ? found.id : defaultRouteId;
+	};
 
-    const handleLineChange = (routeIdOrLineName) => {
-        setSelectedLine(resolveRouteId(routeIdOrLineName));
-    };
+	const handleLineChange = (routeIdOrLineName) => {
+		setSelectedLine(resolveRouteId(routeIdOrLineName));
+	};
 
-    const selectedRoute = routeById[resolveRouteId(selectedLine)];
-    const line = selectedRoute?.segments?.[0] ? lines[selectedRoute.segments[0].line] : null;
+	const selectedRoute = routeById[resolveRouteId(selectedLine)];
+	const line = selectedRoute?.segments?.[0] ? lines[selectedRoute.segments[0].line] : null;
 
-    const stations = React.useMemo(() => buildRouteStations(selectedRoute), [line, selectedRoute]);
+	const stations = React.useMemo(() => buildRouteStations(selectedRoute), [line, selectedRoute]);
 
-    return (
-        <div style={{ alignItems: 'center' }}>
-            <Typography variant='h6'>路線図</Typography>
-            <Stack sx={{ width: { xs: '100%', md: '70%' }, overflowX: 'auto', mx: 'auto' }}>
-                <Button
-                    variant='contained'
-                    size='large'
-                    onClick={() => setIsOpenLightbox(true)}
-                    sx={{ mt: 2 }}
-                >
-                    全線路線図を表示
-                </Button>
-                <Button
-                    variant='outlined'
-                    size='large'
-                    onClick={() => {
-                        const link = document.createElement('a');
-                        link.href = import.meta.env.BASE_URL + 'routeMap/202605.png';
-                        link.download = '大府市営地下鉄全線.png';
-                        link.click();
-                    }}
-                    sx={{ mt: 2 }}
-                >
-                    全線路線図をダウンロード{imageSize}
-                </Button>
-            </Stack>
-            <Lightbox
-                open={isOpenLightbox}
-                close={() => setIsOpenLightbox(false)}
-                slides={[{ src: import.meta.env.BASE_URL + 'routeMap/202605.png' }]}
-                plugins={[Zoom]}
-                carousel={{ finite: true }}
-                render={{
-                    buttonPrev: () => null,
-                    buttonNext: () => null,
-                }}
-            />
-            <RouteSelector
-                routes={routeList}
-                selected={selectedLine}
-                onLineChange={handleLineChange}
-            />
-            <EachRouteMap
-                line={line}
-                stations={stations}
-                route={selectedRoute}
-                onClick={(route) => handleLineChange(route)}
-            />
-        </div>
-    );
+	return (
+		<div style={{ alignItems: 'center' }}>
+			<Typography variant='h6'>路線図</Typography>
+			<Stack sx={{ width: { xs: '100%', md: '70%' }, overflowX: 'auto', mx: 'auto' }}>
+				<Button variant='contained' size='large' onClick={() => setIsOpenLightbox(true)} sx={{ mt: 2 }}>
+					全線路線図を表示
+				</Button>
+				<Button
+					variant='outlined'
+					size='large'
+					onClick={() => {
+						const link = document.createElement('a');
+						link.href = import.meta.env.BASE_URL + 'routeMap/202608.png';
+						link.download = '大府市営地下鉄全線.png';
+						link.click();
+					}}
+					sx={{ mt: 2 }}
+				>
+					全線路線図をダウンロード{imageSize}
+				</Button>
+			</Stack>
+			<Lightbox
+				open={isOpenLightbox}
+				close={() => setIsOpenLightbox(false)}
+				slides={[{ src: import.meta.env.BASE_URL + 'routeMap/202608.png' }]}
+				plugins={[Zoom]}
+				carousel={{ finite: true }}
+				render={{
+					buttonPrev: () => null,
+					buttonNext: () => null,
+				}}
+			/>
+			<RouteSelector routes={routeList} selected={selectedLine} onLineChange={handleLineChange} />
+			<EachRouteMap line={line} stations={stations} route={selectedRoute} onClick={(route) => handleLineChange(route)} />
+		</div>
+	);
 }
 
 export default RouteMap;
