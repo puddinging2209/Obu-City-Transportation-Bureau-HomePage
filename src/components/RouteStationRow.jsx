@@ -3,6 +3,7 @@ import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 
 import getDirections from '../utils/getDirections.js';
+import getOperationalStationsMap from '../utils/operationalRoutesCache.js';
 
 import stationData from '../data/stations.json';
 import types from '../data/types.json';

@@ -7,7 +7,7 @@ import RouteStationRow from './RouteStationRow';
 import operationalRoutes from '../data/operationalRoutes.json';
 import typesData from '../data/types.json';
 
-function EachRouteMap({ line, onClick }) {
+function EachRouteMap({ line, onClick, route }) {
 	if (!line) {
 		return <Typography sx={{ mt: 2 }}>路線を選択してください。</Typography>;
 	}
