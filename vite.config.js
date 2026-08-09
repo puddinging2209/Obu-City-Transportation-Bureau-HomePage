@@ -35,12 +35,15 @@ export default defineConfig({
 	plugins: [
 		react(),
 		VitePWA({
-			strategies: 'generateSW',
+			strategies: 'injectManifest',
 			srcDir: 'src',
 			outDir: 'docs',
 			filename: 'sw.js',
 			injectRegister: 'inline',
 			registerType: 'autoUpdate',
+			injectManifest: {
+				rollupFormat: 'iife',
+			},
 			workbox: {
 				globPatterns: ['**/*.{js,css,html,ico,png,svg,txt}'],
 				runtimeCaching: [

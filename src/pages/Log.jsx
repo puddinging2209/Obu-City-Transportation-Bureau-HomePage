@@ -139,9 +139,7 @@ function StationGroupAccordion({ title, stationIds, logs }) {
 								return (
 									<TableRow key={`${title}${stationId}`}>
 										<TableCell>{stations[stationId].name}</TableCell>
-										<TableCell>
-											{latestVisitTime ? `最終訪問 : ${dayjs(latestVisitTime).format('YYYY/MM/DD HH:mm')}` : '未訪問'}
-										</TableCell>
+										<TableCell>{latestVisitTime ? dayjs(latestVisitTime).format('YYYY/MM/DD HH:mm') : '未訪問'}</TableCell>
 										<TableCell>{`${visitCount} 回`}</TableCell>
 									</TableRow>
 								);
@@ -190,7 +188,7 @@ export default function Log() {
 				</Typography>
 			</Box>
 			<Box>
-				<Tabs value={mode} onChange={(_, v) => setMode(v)}>
+				<Tabs value={mode} onChange={(_, v) => setMode(v)} variant='scrollable'>
 					<Tab label='履歴一覧' value={0} />
 					<Tab label='路線別' value={1} />
 					<Tab label='市町村別' value={2} />
@@ -203,6 +201,7 @@ export default function Log() {
 						<Table>
 							<TableHead>
 								<TableRow>
+									<TableCell />
 									<TableCell>タイムスタンプ</TableCell>
 									<TableCell>駅</TableCell>
 								</TableRow>
@@ -210,7 +209,12 @@ export default function Log() {
 							<TableBody>
 								{logs.map((log, i) => (
 									<TableRow key={`${i}-${log.time}`} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-										<TableCell>{dayjs(log.time).format('YYYY/MM/DD HH:mm')}</TableCell>
+										<TableCell>
+											{logs.findLastIndex((l) => l.id === log.id) === i && <Typography color='red'>新</Typography>}
+										</TableCell>
+										<TableCell>
+											<Typography>{dayjs(log.time).format('YYYY/MM/DD HH:mm')}</Typography>
+										</TableCell>
 										<TableCell>{stations[log.id]?.name}</TableCell>
 									</TableRow>
 								))}

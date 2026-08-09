@@ -1,14 +1,18 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
+import { useAtomValue } from 'jotai';
 
 import OverflowMarquee from './OverflowMarquee.jsx';
 
+import { settingsAtom } from '../utils/Atom.js';
 import { toTimeString } from '../utils/Time.js';
 
 import lines from '../data/lines.json';
 
 function StopRow({ stop, emphasized = false, className = '' }) {
 	const theme = useTheme();
+	const showSeconds = useAtomValue(settingsAtom).showSeconds;
+	const timeWidth = 42 * (!showSeconds ? 1 : 1.6);
 	return (
 		<div className={className}>
 			<Box
@@ -46,7 +50,7 @@ function StopRow({ stop, emphasized = false, className = '' }) {
 								{/* 到着時刻 */}
 								<Grid
 									sx={{
-										flex: '0 0 42px',
+										flex: `0 0 ${timeWidth}px`,
 										textAlign: 'center',
 									}}
 								>
@@ -58,7 +62,7 @@ function StopRow({ stop, emphasized = false, className = '' }) {
 								{/* 発車時刻 */}
 								<Grid
 									sx={{
-										flex: '0 0 42px',
+										flex: `0 0 ${timeWidth}px`,
 										textAlign: 'center',
 									}}
 								>
@@ -67,7 +71,7 @@ function StopRow({ stop, emphasized = false, className = '' }) {
 									</Typography>
 								</Grid>
 							</Grid>
-						:	<Box sx={{ width: '42px', textAlign: 'center' }}>
+						:	<Box sx={{ width: timeWidth, textAlign: 'center' }}>
 								<Typography variant='body2'>通過</Typography>
 							</Box>
 						}

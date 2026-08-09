@@ -9,9 +9,10 @@ import formatStops from './formatStops.js';
 let dias = {};
 const fastTrainCache = new Map();
 
-function getFastTrainCacheKey(nowsecond, fromsta, tosta, mode, tokkyu, visited) {
+function getFastTrainCacheKey(nowsecond, fromsta, tosta, mode, tokkyu, visited, allowedRepeatStations) {
 	const visitedSignature = [...new Set((visited ?? []).filter(Boolean))].sort().join('|');
-	return `${fromsta}|${tosta}|${mode}|${tokkyu}|${nowsecond}|${visitedSignature}`;
+	const allowedSignature = [...new Set((allowedRepeatStations ?? []).map((station) => id(station)).filter(Boolean))].sort().join('|');
+	return `${fromsta}|${tosta}|${mode}|${tokkyu}|${nowsecond}|${visitedSignature}|${allowedSignature}`;
 }
 
 async function readOud(json) {
@@ -31,12 +32,13 @@ async function readOud(json) {
  * @param {0|1} mode mode
  * @returns {Array<{to: string, arr: number, dep: number}>} to駅名、到着時刻、出発時刻
  */
-export async function searchOtherStops(station, fromTime, time, train, passing, mode) {
+export async function searchOtherStops(station, fromTime, time, train, passing, mode, allowedRepeatStations = []) {
 	const stops = await formatStops(nodes[station].json, train);
 
 	const froms = stops.filter((sta) => sta.id === id(station)).map((sta) => stops.indexOf(sta));
 	if (froms.length === 0) return [];
 	const step = mode === 0 ? 1 : -1;
+	const allowedRepeatStationIds = new Set((allowedRepeatStations ?? []).map((station) => id(station)).filter(Boolean));
 
 	const result = [];
 	froms.forEach((from) => {
@@ -44,7 +46,8 @@ export async function searchOtherStops(station, fromTime, time, train, passing, 
 		const viaRosen = [];
 		for (let i = from + step; i >= 0 && i < stops.length; i += step) {
 			const stop = stops[i];
-			if (passing.some((sta) => id(sta) == stop.id)) break;
+			const stopId = id(stop.id);
+			if (passing.some((sta) => id(sta) === stopId && !allowedRepeatStationIds.has(stopId))) break;
 			newVisited.push(stop.id);
 			const lineName = stop.lineName;
 			if (!viaRosen.includes(lineName)) viaRosen.push(lineName);
@@ -75,14 +78,15 @@ export async function searchOtherStops(station, fromTime, time, train, passing, 
  * @param {Array<String>} visited 既に経由した駅リスト（ナンバリング）
  * @returns {{train: Object, arr: Number, dep: Number, type: String, terminal: String, passing: Array<String>}} 最速の列車情報 {train, arr, dep, type, terminal}
  */
-export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, visited) {
+export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, visited, allowedRepeatStations = []) {
 	const nowsecond = adjustTime(nowtime);
-	const cacheKey = getFastTrainCacheKey(nowsecond, fromsta, tosta, mode, tokkyu, visited);
+	const cacheKey = getFastTrainCacheKey(nowsecond, fromsta, tosta, mode, tokkyu, visited, allowedRepeatStations);
 	if (fastTrainCache.has(cacheKey)) {
-		return fastTrainCache.get(cacheKey);
+		return fastTrainCache.get(cacheKey).map((item) => ({ ...item }));
 	}
 
 	const visitedSet = new Set((visited ?? []).filter(Boolean));
+	const allowedRepeatStationIds = new Set((allowedRepeatStations ?? []).map((station) => id(station)).filter(Boolean));
 
 	if (nodes[fromsta].json === nodes[tosta].json) {
 		const dia = await readOud(nodes[fromsta].json);
@@ -120,7 +124,13 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
 
 							passing.push(station);
 						});
-						if ((tokkyu || (!tokkyu && type != '特急' && type != 'ライナー')) && !passing.some((station) => visitedSet.has(station))) {
+						if (
+							(tokkyu || (!tokkyu && type != '特急' && type != 'ライナー')) &&
+							!passing.some((station) => {
+								const stationId = id(station);
+								return stationId && visitedSet.has(stationId) && !allowedRepeatStationIds.has(stationId);
+							})
+						) {
 							fastests.push({
 								train: train,
 								arr: arrTime,
@@ -136,9 +146,6 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
 									return b.dep - a.dep || b.arr - a.arr;
 								}
 							});
-							if (fastests.length > 3) {
-								fastests.pop();
-							}
 						}
 					}
 				}
@@ -204,7 +211,13 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
 								passing.push(station);
 							}
 						});
-						if (tokkyu || (type != '特急' && type != 'ライナー')) {
+						if (
+							(tokkyu || (type != '特急' && type != 'ライナー')) &&
+							!passing.some((station) => {
+								const stationId = id(station);
+								return stationId && visitedSet.has(stationId) && !allowedRepeatStationIds.has(stationId);
+							})
+						) {
 							fastests.push({
 								train: fromTrain,
 								arr: arrTime,
@@ -220,9 +233,6 @@ export async function searchFastestTrain(nowtime, fromsta, tosta, mode, tokkyu, 
 									return b.dep - a.dep || b.arr - a.arr;
 								}
 							});
-							if (fastests.length > 3) {
-								fastests.pop();
-							}
 						}
 					}
 				}

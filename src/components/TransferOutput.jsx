@@ -4,7 +4,7 @@ import { Box, Button, Card, CardContent, Stack, Typography } from '@mui/material
 import { useTheme } from '@mui/material/styles';
 import { useAtomValue, useSetAtom } from 'jotai';
 
-import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
+import { addMyStationAtom, myStationsAtom, settingsAtom } from '../utils/Atom.js';
 import { label } from '../utils/Station.js';
 import { toTimeString } from '../utils/Time.js';
 import TrainStopsDialog from './TrainStopsDialog.jsx';
@@ -28,6 +28,8 @@ export default function TransferOutput({ result }) {
 
 	const [showDialog, setShowDialog] = React.useState(false);
 	const [pushed, setPushed] = React.useState(null);
+
+	const settings = useAtomValue(settingsAtom);
 
 	if (!segments || segments.length === 0) return null;
 
@@ -70,7 +72,8 @@ export default function TransferOutput({ result }) {
 								fontWeight='bold'
 							>{`${toTimeString(segments[0].depTime)}発 ${toTimeString(segments.at(-1).arrTime)}着`}</Typography>
 							<Typography variant='body1'>
-								{requiredTime.h > 0 ? `所要時間：${requiredTime.h}時間 ${requiredTime.m}分` : `所要時間：${requiredTime.m}分`}
+								{(requiredTime.h > 0 ? `所要時間：${requiredTime.h}時間 ${requiredTime.m}分` : `所要時間：${requiredTime.m}分`) +
+									(settings.showSeconds ? ` ${requiredTime.s}秒` : '')}
 							</Typography>
 						</Box>
 						<Stack direction='column' gap={0.5} alignItems='flex-end'>
@@ -160,9 +163,12 @@ function StationBox({ arrTime, depTime, StationId, disableArrTime = false, disab
 	const myStations = useAtomValue(myStationsAtom);
 	const setMyStations = useSetAtom(addMyStationAtom);
 
+	const showSeconds = useAtomValue(settingsAtom).showSeconds;
+	const timeWidth = 42 * (!showSeconds ? 1 : 1.6);
+
 	return (
 		<Box sx={{ width: '100%', display: 'flex', borderRadius: 1, p: 1, gap: 1 }} bgcolor={theme.palette.mode === 'light' ? '#DDD' : '#333'}>
-			<Box sx={{ flex: '0 0 42px', textAlign: 'center' }}>
+			<Box sx={{ flex: `0 0 ${timeWidth}px`, textAlign: 'center' }}>
 				<Typography variant='body1'>{disableArrTime ? '出発' : toTimeString(arrTime)}</Typography>
 				<Typography variant='body1'>{disableDepTime ? '到着' : toTimeString(depTime)}</Typography>
 			</Box>

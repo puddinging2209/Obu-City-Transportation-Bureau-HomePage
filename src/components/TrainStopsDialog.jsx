@@ -2,9 +2,11 @@ import React from 'react';
 
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Tab, Tabs, Typography } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
+import { useAtomValue } from 'jotai';
 
 import StopRow from './StopRow.jsx';
 
+import { settingsAtom } from '../utils/Atom.js';
 import formatStops from '../utils/formatStops.js';
 import { label } from '../utils/Station.js';
 import { LineContext } from './DepartureCard.jsx';
@@ -15,6 +17,9 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 	const [stops, setStops] = React.useState([]);
 	const [multilayer, setMultilayer] = React.useState(0);
 	const theme = useTheme();
+
+	const showSeconds = useAtomValue(settingsAtom).showSeconds;
+	const timeWidth = 42 * (!showSeconds ? 1 : 1.6);
 
 	React.useEffect(() => {
 		if (isShowDialog) {
@@ -87,7 +92,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 				<Grid container wrap='nowrap' alignItems='center' columnGap={0.5} gap={2} sx={{ justifyContent: 'flex-end' }}>
 					<Grid
 						sx={{
-							flex: '0 0 42px',
+							flex: `0 0 ${timeWidth}px`,
 							textAlign: 'center',
 						}}
 					>
@@ -98,7 +103,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 
 					<Grid
 						sx={{
-							flex: '0 0 42px',
+							flex: `0 0 ${timeWidth}px`,
 							textAlign: 'center',
 						}}
 					>

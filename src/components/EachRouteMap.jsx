@@ -63,7 +63,7 @@ function EachRouteMap({ line, onClick }) {
 						pl: '8px',
 					}}
 				>
-					{types.map((type) => (
+					{types.map((type, i) => (
 						<Box
 							sx={{
 								width: 30,
@@ -71,6 +71,7 @@ function EachRouteMap({ line, onClick }) {
 								display: 'flex',
 								alignItems: 'flex-end',
 							}}
+							key={i}
 						>
 							<Typography
 								variant='subtitle1'
@@ -85,7 +86,7 @@ function EachRouteMap({ line, onClick }) {
 						</Box>
 					))}
 				</Stack>
-				<Box sx={{ position: 'relative', minWidth: types.length * 30 + 48 + 160 }} fullWidth>
+				<Box sx={{ position: 'relative', minWidth: types.length * 30 + 48 + 160 }}>
 					{stations.map((station, index) => (
 						<RouteStationRow key={station.id || index} line={line} i={index} stations={stations} lines={types} onClick={onClick} />
 					))}
