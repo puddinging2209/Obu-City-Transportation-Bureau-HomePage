@@ -2,10 +2,12 @@ import React from 'react';
 
 import { Box, Chip, Grid, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { useAtomValue } from 'jotai';
 
 import OverflowMarquee from './OverflowMarquee.jsx';
 import TrainStopsDialog from './TrainStopsDialog.jsx';
 
+import { settingsAtom } from '../utils/Atom.js';
 import { label } from '../utils/Station.js';
 import { toTimeString } from '../utils/Time.js';
 
@@ -15,6 +17,8 @@ function DepartureRow({ dep, needId = false, station }) {
 	const theme = useTheme();
 
 	const [isShowDialog, setIsShowDialog] = React.useState(false);
+	const showSeconds = useAtomValue(settingsAtom).showSeconds;
+	const timeWidth = 42 * (!showSeconds ? 1 : 1.6);
 
 	return (
 		<>
@@ -66,7 +70,7 @@ function DepartureRow({ dep, needId = false, station }) {
 					{/* 時刻 */}
 					<Grid
 						sx={{
-							flex: '0 0 42px',
+							flex: `0 0 ${timeWidth}px`,
 							textAlign: 'right',
 						}}
 					>

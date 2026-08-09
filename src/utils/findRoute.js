@@ -1,14 +1,19 @@
 import reconstructByState from './formatRoute.js';
 import getDistance from './getDistance.js';
+import getFare from './getFare.js';
 import { searchFastestTrain, searchOtherStops } from './searchFastestTrain.js';
 import { code, id } from './Station.js';
 
 import edges from '../data/edges.json';
+import fareExceptions from '../data/fareExceptions.json';
 import nodes from '../data/nodes.json';
 import stations from '../data/stations.json';
 import walkPath from '../data/walkPath.json';
 
 const MAX_SPEED = (35 * 1000) / 3600; // m/s for heuristic
+const allowDuplicateSections = fareExceptions?.allowDuplicates ?? [];
+const SHORT_ROUTE_THRESHOLD = 15 * 1000; // 15km までは重みを強めずに精度優先
+const LONG_ROUTE_THRESHOLD = 30 * 1000; // 30km 以上ではヒューリスティックを強める
 
 // ==== 隣接リスト作成 ====
 const graph = {};
@@ -123,6 +128,40 @@ function setKey(sta, set) {
 	return `${id(sta)}@${[...set].sort().join(',')}`;
 }
 
+function findAllowedDuplicateRule(station, nextStation, visitedArray) {
+	const nextStationId = id(nextStation);
+	if (!nextStationId) return null;
+
+	const visitedIds = (visitedArray ?? []).map((s) => id(s)).filter(Boolean);
+	const currentLine = nodes[station]?.json;
+	const targetLine = nodes[nextStation]?.json;
+
+	return (
+		allowDuplicateSections.find((rule) => {
+			const fromId = id(rule.fromSta);
+			const toId = id(rule.toSta);
+			if (!fromId || !toId) return false;
+
+			const fromIndex = visitedIds.lastIndexOf(fromId);
+			const toIndex = visitedIds.lastIndexOf(toId);
+			if (fromIndex === -1 || toIndex === -1 || toIndex <= fromIndex) return false;
+
+			return [currentLine, targetLine].some((line) => rule.lines.includes(line));
+		}) ?? null
+	);
+}
+
+function containsInOrder(parent, sub) {
+	let subIndex = 0;
+	for (const item of parent) {
+		if (item === sub[subIndex]) {
+			subIndex++;
+			if (subIndex === sub.length) return true;
+		}
+	}
+	return sub.length === 0;
+}
+
 /**
  * 経路を探索し、経路の詳細を返す
  * @param {string} start 出発駅（ナンバリング）
@@ -131,11 +170,11 @@ function setKey(sta, set) {
  * @param {number} mode 出発時刻から検索(0) or 到着時刻から検索(1)
  * @param {boolean} tokkyu 有料列車（特急 or ライナー）を許可するかどうか
  * @param {boolean} allowOuterTransfer 改札外乗り換えを許可するかどうか
- * @default allowOuterTransfer = false
+ * @defaultValue allowOuterTransfer = false
  * @returns {[{train: string, from: string, to: string, depTime: number, arrTime: number, terminal: string, typeName: string, line: string}, ...]} 経路の詳細情報の配列
  */
 
-export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu, allowOuterTransfer = false) {
+export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu, allowOuterTransfer = false, passStations = []) {
 	const pq = new MinHeap();
 
 	const bestTime = {};
@@ -162,19 +201,38 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 	const startStation = mode === 0 ? code(start) : code(goal);
 	const goalStation = mode === 0 ? code(goal) : code(start);
 
-	const distance = getDistance(start, goal);
+	const distance = getDistance(id(start), id(goal));
 
-	const makePriority = (time, station, transfer) => ({
-		priority: Math.abs(time - baseTime) + heuristic(station, goalStation),
-		tie: transfer,
-	});
+	const header = {
+		from: id(start),
+		to: id(goal),
+		distance,
+		fare: getFare(distance),
+	};
+
+	const makePriority = (time, station, transfer) => {
+		const h = heuristic(station, goalStation);
+		let heuristicWeight = 1;
+
+		if (distance >= LONG_ROUTE_THRESHOLD) {
+			heuristicWeight = 1.6;
+		} else if (distance >= SHORT_ROUTE_THRESHOLD) {
+			heuristicWeight = 1.2;
+		}
+
+		return {
+			priority: Math.abs(time - baseTime) + h * heuristicWeight,
+			tie: transfer,
+		};
+	};
+	console.log(Object.keys(nodes).filter((code) => id(code) === id(startStation)));
 
 	Object.keys(nodes)
 		.filter((code) => id(code) === id(startStation))
 		.forEach((code) => {
-			const startVisited = new Set([code]);
-
 			const staId = id(code);
+
+			const startVisited = new Set([staId]);
 			const visitedIndex = getVisitedIndex(staId, startVisited);
 
 			const startStateId = makeStateId(code, 'transfer', visitedIndex);
@@ -206,8 +264,18 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 
 		// === ゴール ===
 		if (id(station) === id(goalStation) && phase === 'ride') {
-			goalStateId = curStateId;
-			break;
+			if (
+				containsInOrder(
+					[...visited],
+					passStations.map((s) => id(s)),
+				)
+			) {
+				goalStateId = curStateId;
+				header.visited = [...visited].map((s) => id(s));
+				break;
+			} else {
+				continue;
+			}
 		}
 
 		// === 枝切り(?) ===
@@ -294,7 +362,10 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 				for (const { node: nextStation } of graph[station] ?? []) {
 					// 不正乗車、ダメゼッタイ
 					const visitedArray = [...visited];
-					if (visitedArray.some((s) => id(s) === id(nextStation))) continue;
+					const duplicateRule = findAllowedDuplicateRule(station, nextStation, visitedArray);
+					if (visitedArray.includes(id(nextStation)) && !duplicateRule) continue;
+
+					const searchVisited = visitedArray;
 
 					const results = await searchFastestTrain(
 						time,
@@ -302,8 +373,9 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 						mode === 0 ? nextStation : station,
 						mode,
 						tokkyu,
-						visitedArray,
-					);
+						searchVisited,
+						duplicateRule ? [id(duplicateRule.fromSta)] : [],
+					).then((res) => res.slice(0, Math.max(3, Math.ceil(getDistance(id(station), id(goalStation)) / 12))));
 
 					for (const result of results) {
 						if (!result?.train) continue;
@@ -313,8 +385,9 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 							mode === 0 ? result.dep : result.arr,
 							mode === 0 ? result.arr : result.dep,
 							result.train,
-							visitedArray,
+							searchVisited,
 							mode,
+							duplicateRule ? [id(duplicateRule.fromSta)] : [],
 						);
 
 						for (const { to, arr, dep, newVisited: visited, viaRosen } of other) {
@@ -327,19 +400,19 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 
 							const nextStateId = makeStateId(to, 'ride', visitedIndex);
 
+							const newTransfer =
+								used[curStateId]?.train?.number !== result.train?.number ||
+								used[curStateId]?.train?.number === '' ||
+								result?.train?.number === '';
+							const nextTransfer = transfer + Number(newTransfer);
+
 							if (
 								(bestTime[nextStateId] === undefined ||
 									(mode === 0 && nextTime < bestTime[nextStateId]) ||
 									(mode === 1 && nextTime > bestTime[nextStateId]) ||
-									(nextTime === bestTime[nextStateId] && bestTransfer[nextStateId] > transfer + 1)) &&
+									(nextTime === bestTime[nextStateId] && bestTransfer[nextStateId] > nextTransfer)) &&
 								isForward(station, to, goalStation, 10000)
 							) {
-								const newTransfer =
-									used[curStateId]?.train?.number !== result.train?.number ||
-									used[curStateId]?.train?.number === '' ||
-									result?.train?.number === '';
-								const nextTransfer = transfer + Number(newTransfer);
-
 								bestTime[nextStateId] = nextTime;
 								bestTransfer[nextStateId] = nextTransfer;
 								previous[nextStateId] = curStateId;
@@ -350,6 +423,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 									from: station,
 									to: to,
 									viaRosen,
+									lastRosen: result.lastRosen,
 								};
 
 								pq.push({
@@ -369,5 +443,5 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 	}
 
 	if (!goalStateId) return null;
-	return reconstructByState(goalStateId, previous, used, distance, mode);
+	return reconstructByState(goalStateId, previous, used, mode, header);
 }

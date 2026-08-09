@@ -2,6 +2,8 @@ import { Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 
+import getDirections from '../utils/getDirections.js';
+
 import stationData from '../data/stations.json';
 import types from '../data/types.json';
 
@@ -13,7 +15,7 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
 	const isEven = i % 2 === 0;
 
 	const linkTo = (sta, line) => {
-		const dId = stationData[sta].directions.findIndex((d) => d.route === line);
+		const dId = getDirections(sta).findIndex((d) => d.route === line);
 		navigate(`/timetable?station=${sta}&direction=${dId === -1 ? 0 : dId}`);
 	};
 
@@ -32,10 +34,9 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
 					: '#222',
 				minHeight: 64,
 				minWidth: 'fit-content',
-				width: '100%', //lines.length * 30 + 48 + 160,
+				width: '100%',
 				overflow: 'visible',
 			}}
-			fullWidth
 		>
 			<Box
 				sx={{
@@ -47,7 +48,6 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
 					display: 'flex',
 					justifyContent: 'center',
 				}}
-				fullWidth
 			>
 				{lines.map((line, j) => {
 					const type = Object.values(types).find((t) => t.code === line);

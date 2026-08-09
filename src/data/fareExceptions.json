@@ -1,0 +1,44 @@
+{
+	"allowDuplicates": [
+		{
+			"lines": [
+				"KT",
+				"TT"
+			],
+			"fromSta": "ygh",
+			"toSta": "tgw"
+		},
+		{
+			"lines": [
+				"GK",
+				"TY"
+			],
+			"fromSta": "ngd",
+			"toSta": "nkd"
+		},
+		{
+			"lines": [
+				"ON",
+				"TR"
+			],
+			"fromSta": "seh",
+			"toSta": "tmo"
+		},
+		{
+			"lines": [
+				"OG",
+				"ON"
+			],
+			"fromSta": "ubk",
+			"toSta": "oue"
+		},
+		{
+			"lines": [
+				"GK",
+				"OZ"
+			],
+			"fromSta": "kbn",
+			"toSta": "myn"
+		}
+	]
+}

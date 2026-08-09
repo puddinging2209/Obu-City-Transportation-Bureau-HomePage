@@ -12,7 +12,7 @@ export function id_number(id) {
 
 export function name(text) {
 	if (nodes[text]) {
-		return nodes[text].name;
+		return stations[nodes[text].id]?.name;
 	} else if (stations[text]) return stations[text].name;
 	else if (Object.values(stations).find((s) => s.name === text)) return text;
 	return null;

@@ -1,3428 +1,3022 @@
 {
-    "NK01": {
-        "name": "北崎",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "kts"
-    },
-    "NK02": {
-        "name": "北崎大島",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "kto"
-    },
-    "NK03": {
-        "name": "大脇",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "owk"
-    },
-    "NK04": {
-        "name": "琵琶ヶ池",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "bwg"
-    },
-    "NK05": {
-        "name": "高鴨",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "tkg"
-    },
-    "NK06": {
-        "name": "豊明市",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "tyk"
-    },
-    "NK07": {
-        "name": "中央公園",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "chk"
-    },
-    "NK08": {
-        "name": "十三塚",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "jsd"
-    },
-    "NK09": {
-        "name": "沓掛町森前",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "kmm"
-    },
-    "NK10": {
-        "name": "若王子川",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "wko"
-    },
-    "NK11": {
-        "name": "清水ケ根",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "smz"
-    },
-    "NK12": {
-        "name": "春木台",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "hrd"
-    },
-    "NK13": {
-        "name": "猫池",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "nki"
-    },
-    "NK14": {
-        "name": "東郷",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "tgo"
-    },
-    "NK15": {
-        "name": "白鳥",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "srt"
-    },
-    "NK16": {
-        "name": "日進",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "nsn"
-    },
-    "NK17": {
-        "name": "折戸寺脇",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "ord"
-    },
-    "NK18": {
-        "name": "日進東山",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "nsi"
-    },
-    "NK19": {
-        "name": "日進市",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "nss"
-    },
-    "NK20": {
-        "name": "日進白山",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "nsa"
-    },
-    "NK21": {
-        "name": "岩崎城",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "iws"
-    },
-    "NK22": {
-        "name": "弁天池",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "bnt"
-    },
-    "NK23": {
-        "name": "竹の山",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "tky"
-    },
-    "NK24": {
-        "name": "愛知学院大学前",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "aic"
-    },
-    "NK25": {
-        "name": "長久手",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "ngk"
-    },
-    "NK26": {
-        "name": "香流川",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "knr"
-    },
-    "NK27": {
-        "name": "長久手市",
-        "line": "長久手線",
-        "json": "NK",
-        "id": "nks"
-    },
-    "OD01": {
-        "name": "刈谷",
-        "line": "大高線",
-        "json": "OD",
-        "id": "kry"
-    },
-    "OD02": {
-        "name": "宝町",
-        "line": "大高線",
-        "json": "OD",
-        "id": "krm"
-    },
-    "OD03": {
-        "name": "逢妻",
-        "line": "大高線",
-        "json": "OD",
-        "id": "aiz"
-    },
-    "OD04": {
-        "name": "朝日町",
-        "line": "大高線",
-        "json": "OD",
-        "id": "ash"
-    },
-    "OD05": {
-        "name": "若草",
-        "line": "大高線",
-        "json": "OD",
-        "id": "wks"
-    },
-    "OD06": {
-        "name": "大府市役所前",
-        "line": "大高線",
-        "json": "OD",
-        "id": "obs"
-    },
-    "OD07": {
-        "name": "中央町",
-        "line": "大高線",
-        "json": "OD",
-        "id": "chc"
-    },
-    "OD08": {
-        "name": "追分町",
-        "line": "大高線",
-        "json": "OD",
-        "id": "oiw"
-    },
-    "OD09": {
-        "name": "共和",
-        "line": "大高線",
-        "json": "OD",
-        "id": "kyw"
-    },
-    "OD10": {
-        "name": "水主ヶ池",
-        "line": "大高線",
-        "json": "OD",
-        "id": "kkg"
-    },
-    "OD11": {
-        "name": "南大高",
-        "line": "大高線",
-        "json": "OD",
-        "id": "mod"
-    },
-    "OD12": {
-        "name": "大高緑地西",
-        "line": "大高線",
-        "json": "OD",
-        "id": "ryn"
-    },
-    "OD13": {
-        "name": "大高",
-        "line": "大高線",
-        "json": "OD",
-        "id": "odk"
-    },
-    "OD14": {
-        "name": "上汐田",
-        "line": "大高線",
-        "json": "OD",
-        "id": "kso"
-    },
-    "OD15": {
-        "name": "元鳴尾",
-        "line": "大高線",
-        "json": "OD",
-        "id": "mtn"
-    },
-    "OD16": {
-        "name": "星崎",
-        "line": "大高線",
-        "json": "OD",
-        "id": "hsh"
-    },
-    "OD17": {
-        "name": "南笠寺",
-        "line": "大高線",
-        "json": "OD",
-        "id": "mks"
-    },
-    "OD18": {
-        "name": "南区役所前",
-        "line": "大高線",
-        "json": "OD",
-        "id": "mky"
-    },
-    "OD19": {
-        "name": "新笠寺",
-        "line": "大高線",
-        "json": "OD",
-        "id": "sks"
-    },
-    "OD20": {
-        "name": "呼続",
-        "line": "大高線",
-        "json": "OD",
-        "id": "ybt"
-    },
-    "OD21": {
-        "name": "汐田",
-        "line": "大高線",
-        "json": "OD",
-        "id": "sod"
-    },
-    "OD22": {
-        "name": "明前町",
-        "line": "大高線",
-        "json": "OD",
-        "id": "mzn"
-    },
-    "OD23": {
-        "name": "堀田",
-        "line": "大高線",
-        "json": "OD",
-        "id": "hrt"
-    },
-    "OD24": {
-        "name": "新開町",
-        "line": "大高線",
-        "json": "OD",
-        "id": "snk"
-    },
-    "OD25": {
-        "name": "牛巻",
-        "line": "大高線",
-        "json": "OD",
-        "id": "usm"
-    },
-    "OD26": {
-        "name": "高辻",
-        "line": "大高線",
-        "json": "OD",
-        "id": "tkj"
-    },
-    "OD27": {
-        "name": "白金",
-        "line": "大高線",
-        "json": "OD",
-        "id": "srk"
-    },
-    "OD28": {
-        "name": "鶴舞",
-        "line": "大高線",
-        "json": "OD",
-        "id": "trm"
-    },
-    "OD29": {
-        "name": "千代田",
-        "line": "大高線",
-        "json": "OD",
-        "id": "chy"
-    },
-    "OD30": {
-        "name": "矢場町",
-        "line": "大高線",
-        "json": "OD",
-        "id": "yba"
-    },
-    "OD31": {
-        "name": "栄町",
-        "line": "大高線",
-        "json": "OD",
-        "id": "ske"
-    },
-    "GK01": {
-        "name": "名和",
-        "line": "外環線",
-        "json": "GK",
-        "id": "nwa"
-    },
-    "GK02": {
-        "name": "大高丸ノ内",
-        "line": "外環線",
-        "json": "GK",
-        "id": "odm"
-    },
-    "GK03": {
-        "name": "大高",
-        "line": "外環線",
-        "json": "GK",
-        "id": "odk"
-    },
-    "GK04": {
-        "name": "鳴海",
-        "line": "外環線",
-        "json": "GK",
-        "id": "nrm"
-    },
-    "GK05": {
-        "name": "大高緑地口",
-        "line": "外環線",
-        "json": "GK",
-        "id": "ryg"
-    },
-    "GK06": {
-        "name": "鎌研",
-        "line": "外環線",
-        "json": "GK",
-        "id": "kmt"
-    },
-    "GK07": {
-        "name": "東陵",
-        "line": "外環線",
-        "json": "GK",
-        "id": "try"
-    },
-    "GK08": {
-        "name": "姥子山",
-        "line": "外環線",
-        "json": "GK",
-        "id": "ubi"
-    },
-    "GK09": {
-        "name": "鎌倉台",
-        "line": "外環線",
-        "json": "GK",
-        "id": "kkd"
-    },
-    "GK10": {
-        "name": "中京競馬北",
-        "line": "外環線",
-        "json": "GK",
-        "id": "ckk"
-    },
-    "GK11": {
-        "name": "間米町",
-        "line": "外環線",
-        "json": "GK",
-        "id": "mgm"
-    },
-    "GK12": {
-        "name": "二村台南",
-        "line": "外環線",
-        "json": "GK",
-        "id": "ftm"
-    },
-    "GK13": {
-        "name": "三崎町",
-        "line": "外環線",
-        "json": "GK",
-        "id": "msk"
-    },
-    "GK14": {
-        "name": "高鴨",
-        "line": "外環線",
-        "json": "GK",
-        "id": "tkg"
-    },
-    "GK15": {
-        "name": "豊明新田",
-        "line": "外環線",
-        "json": "GK",
-        "id": "tys"
-    },
-    "GK16": {
-        "name": "大久伝町",
-        "line": "外環線",
-        "json": "GK",
-        "id": "okt"
-    },
-    "GK17": {
-        "name": "西境本郷",
-        "line": "外環線",
-        "json": "GK",
-        "id": "nzk"
-    },
-    "GK18": {
-        "name": "井ヶ谷町南",
-        "line": "外環線",
-        "json": "GK",
-        "id": "igm"
-    },
-    "GK19": {
-        "name": "丸岡",
-        "line": "外環線",
-        "json": "GK",
-        "id": "mro"
-    },
-    "GK20": {
-        "name": "西岡町",
-        "line": "外環線",
-        "json": "GK",
-        "id": "nso"
-    },
-    "GK21": {
-        "name": "石畑",
-        "line": "外環線",
-        "json": "GK",
-        "id": "ish"
-    },
-    "GK22": {
-        "name": "長土井",
-        "line": "外環線",
-        "json": "GK",
-        "id": "ngd"
-    },
-    "GK23": {
-        "name": "大島町",
-        "line": "外環線",
-        "json": "GK",
-        "id": "osh"
-    },
-    "GK24": {
-        "name": "中田古屋敷",
-        "line": "外環線",
-        "json": "GK",
-        "id": "nkf"
-    },
-    "GK25": {
-        "name": "中田町",
-        "line": "外環線",
-        "json": "GK",
-        "id": "nkd"
-    },
-    "GK26": {
-        "name": "中田日進",
-        "line": "外環線",
-        "json": "GK",
-        "id": "nkn"
-    },
-    "GK27": {
-        "name": "駒新町",
-        "line": "外環線",
-        "json": "GK",
-        "id": "kms"
-    },
-    "GK28": {
-        "name": "三河金山",
-        "line": "外環線",
-        "json": "GK",
-        "id": "mkk"
-    },
-    "GK29": {
-        "name": "駒場町西",
-        "line": "外環線",
-        "json": "GK",
-        "id": "kbn"
-    },
-    "GK30": {
-        "name": "駒場橋",
-        "line": "外環線",
-        "json": "GK",
-        "id": "kbb"
-    },
-    "GK31": {
-        "name": "宮腰",
-        "line": "外環線",
-        "json": "GK",
-        "id": "myn"
-    },
-    "GK32": {
-        "name": "桜木",
-        "line": "外環線",
-        "json": "GK",
-        "id": "skr"
-    },
-    "GK33": {
-        "name": "知立",
-        "line": "外環線",
-        "json": "GK",
-        "id": "chr"
-    },
-    "HD01": {
-        "name": "大府",
-        "line": "半田線",
-        "json": "HD",
-        "id": "obu"
-    },
-    "HD02": {
-        "name": "大府森岡",
-        "line": "半田線",
-        "json": "HD",
-        "id": "obm"
-    },
-    "HD03": {
-        "name": "公園北",
-        "line": "半田線",
-        "json": "HD",
-        "id": "knk"
-    },
-    "HD04": {
-        "name": "医療センター",
-        "line": "半田線",
-        "json": "HD",
-        "id": "iry"
-    },
-    "HD05": {
-        "name": "公園南",
-        "line": "半田線",
-        "json": "HD",
-        "id": "knm"
-    },
-    "HD06": {
-        "name": "新池",
-        "line": "半田線",
-        "json": "HD",
-        "id": "sik"
-    },
-    "HD07": {
-        "name": "緒川相生",
-        "line": "半田線",
-        "json": "HD",
-        "id": "oga"
-    },
-    "HD08": {
-        "name": "西石浜",
-        "line": "半田線",
-        "json": "HD",
-        "id": "nis"
-    },
-    "HD09": {
-        "name": "藤江",
-        "line": "半田線",
-        "json": "HD",
-        "id": "fje"
-    },
-    "HD10": {
-        "name": "緑ヶ丘",
-        "line": "半田線",
-        "json": "HD",
-        "id": "mdr"
-    },
-    "HD11": {
-        "name": "生見町",
-        "line": "半田線",
-        "json": "HD",
-        "id": "hem"
-    },
-    "HD12": {
-        "name": "上池",
-        "line": "半田線",
-        "json": "HD",
-        "id": "kmi"
-    },
-    "HD13": {
-        "name": "七本木池",
-        "line": "半田線",
-        "json": "HD",
-        "id": "sch"
-    },
-    "HD14": {
-        "name": "庚申町",
-        "line": "半田線",
-        "json": "HD",
-        "id": "ksn"
-    },
-    "HD15": {
-        "name": "乙川畑田",
-        "line": "半田線",
-        "json": "HD",
-        "id": "owh"
-    },
-    "HD16": {
-        "name": "乙川薬師",
-        "line": "半田線",
-        "json": "HD",
-        "id": "owy"
-    },
-    "HD17": {
-        "name": "乙川",
-        "line": "半田線",
-        "json": "HD",
-        "id": "okw"
-    },
-    "HD18": {
-        "name": "半田大橋",
-        "line": "半田線",
-        "json": "HD",
-        "id": "hno"
-    },
-    "HD19": {
-        "name": "半田市",
-        "line": "半田線",
-        "json": "HD",
-        "id": "hns"
-    },
-    "HD17a": {
-        "name": "乙川",
-        "line": "半田線",
-        "json": "HD",
-        "id": "okw"
-    },
-    "HD20": {
-        "name": "半田赤レンガ",
-        "line": "半田線",
-        "json": "HD",
-        "id": "akr"
-    },
-    "HD21": {
-        "name": "住吉町",
-        "line": "半田線",
-        "json": "HD",
-        "id": "smy"
-    },
-    "HD22": {
-        "name": "清城",
-        "line": "半田線",
-        "json": "HD",
-        "id": "sis"
-    },
-    "OL04a": {
-        "name": "至学館大学前",
-        "line": "名東線",
-        "json": "MT",
-        "id": "shg"
-    },
-    "MT01": {
-        "name": "坊主山",
-        "line": "名東線",
-        "json": "MT",
-        "id": "bzy"
-    },
-    "MT02": {
-        "name": "南陵",
-        "line": "名東線",
-        "json": "MT",
-        "id": "nry"
-    },
-    "MT03": {
-        "name": "桶狭間",
-        "line": "名東線",
-        "json": "MT",
-        "id": "okh"
-    },
-    "MT04": {
-        "name": "長福寺",
-        "line": "名東線",
-        "json": "MT",
-        "id": "cfk"
-    },
-    "MT05": {
-        "name": "古戦場公園前",
-        "line": "名東線",
-        "json": "MT",
-        "id": "ksk"
-    },
-    "MT06": {
-        "name": "名古屋短大前",
-        "line": "名東線",
-        "json": "MT",
-        "id": "ngt"
-    },
-    "MT07": {
-        "name": "有松",
-        "line": "名東線",
-        "json": "MT",
-        "id": "arm"
-    },
-    "MT08": {
-        "name": "鳥澄",
-        "line": "名東線",
-        "json": "MT",
-        "id": "trs"
-    },
-    "MT09": {
-        "name": "扇川",
-        "line": "名東線",
-        "json": "MT",
-        "id": "ogg"
-    },
-    "MT10": {
-        "name": "滝ノ水",
-        "line": "名東線",
-        "json": "MT",
-        "id": "tkm"
-    },
-    "MT11": {
-        "name": "鳴丘",
-        "line": "名東線",
-        "json": "MT",
-        "id": "nrk"
-    },
-    "MT12": {
-        "name": "徳重",
-        "line": "名東線",
-        "json": "MT",
-        "id": "tsg"
-    },
-    "MT13": {
-        "name": "神ノ倉",
-        "line": "名東線",
-        "json": "MT",
-        "id": "kmn"
-    },
-    "MT14": {
-        "name": "平針台",
-        "line": "名東線",
-        "json": "MT",
-        "id": "hbd"
-    },
-    "MT15": {
-        "name": "平針住宅",
-        "line": "名東線",
-        "json": "MT",
-        "id": "hbj"
-    },
-    "MT16": {
-        "name": "向が丘",
-        "line": "名東線",
-        "json": "MT",
-        "id": "mki"
-    },
-    "MT17": {
-        "name": "平針南",
-        "line": "名東線",
-        "json": "MT",
-        "id": "hbm"
-    },
-    "MT18": {
-        "name": "平針",
-        "line": "名東線",
-        "json": "MT",
-        "id": "hrb"
-    },
-    "MT19": {
-        "name": "大応寺",
-        "line": "名東線",
-        "json": "MT",
-        "id": "doj"
-    },
-    "MT20": {
-        "name": "梅森西",
-        "line": "名東線",
-        "json": "MT",
-        "id": "mmn"
-    },
-    "MT21": {
-        "name": "梅森台",
-        "line": "名東線",
-        "json": "MT",
-        "id": "mmd"
-    },
-    "MT22": {
-        "name": "梅森台北",
-        "line": "名東線",
-        "json": "MT",
-        "id": "udk"
-    },
-    "MT23": {
-        "name": "東名古屋病院",
-        "line": "名東線",
-        "json": "MT",
-        "id": "hnb"
-    },
-    "MT24": {
-        "name": "梅森坂",
-        "line": "名東線",
-        "json": "MT",
-        "id": "mmz"
-    },
-    "MT25": {
-        "name": "牧野ヶ池東",
-        "line": "名東線",
-        "json": "MT",
-        "id": "mkn"
-    },
-    "MT26": {
-        "name": "極楽",
-        "line": "名東線",
-        "json": "MT",
-        "id": "gkr"
-    },
-    "MT27": {
-        "name": "高針台",
-        "line": "名東線",
-        "json": "MT",
-        "id": "tbd"
-    },
-    "MT28": {
-        "name": "勢子坊",
-        "line": "名東線",
-        "json": "MT",
-        "id": "skb"
-    },
-    "MT29": {
-        "name": "社が丘",
-        "line": "名東線",
-        "json": "MT",
-        "id": "ysh"
-    },
-    "MT30": {
-        "name": "姫若町",
-        "line": "名東線",
-        "json": "MT",
-        "id": "hmk"
-    },
-    "MT31": {
-        "name": "藤が丘",
-        "line": "名東線",
-        "json": "MT",
-        "id": "fjg"
-    },
-    "FT01": {
-        "name": "至学館大学前",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "shg"
-    },
-    "FT02": {
-        "name": "二ツ池公園前",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "fts"
-    },
-    "FT03": {
-        "name": "平子",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "hrk"
-    },
-    "FT04": {
-        "name": "メディアス体育館前",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "mds"
-    },
-    "FT05": {
-        "name": "大東町",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "dtc"
-    },
-    "FT06": {
-        "name": "朝日町",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "ash"
-    },
-    "FT07": {
-        "name": "森岡工業団地南",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "mrk"
-    },
-    "FT08": {
-        "name": "東緒川",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "hog"
-    },
-    "FT05a": {
-        "name": "大東町",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "dtc"
-    },
-    "FT09": {
-        "name": "住友重機前",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "smt"
-    },
-    "FT10": {
-        "name": "柳ケ坪",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "yng"
-    },
-    "FT11": {
-        "name": "森岡中町",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "mrn"
-    },
-    "FT12": {
-        "name": "寿二区",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "ktb"
-    },
-    "FT13": {
-        "name": "於大公園西",
-        "line": "二ツ池線",
-        "json": "FT",
-        "id": "odn"
-    },
-    "UD01": {
-        "name": "惣作",
-        "line": "内田面線",
-        "json": "UD",
-        "id": "sos"
-    },
-    "UD02": {
-        "name": "後田",
-        "line": "内田面線",
-        "json": "UD",
-        "id": "usr"
-    },
-    "UD03": {
-        "name": "内田面",
-        "line": "内田面線",
-        "json": "UD",
-        "id": "udm"
-    },
-    "UD04": {
-        "name": "北崎",
-        "line": "内田面線",
-        "json": "UD",
-        "id": "kts"
-    },
-    "UD05": {
-        "name": "樫塚",
-        "line": "内田面線",
-        "json": "UD",
-        "id": "ksd"
-    },
-    "UD06": {
-        "name": "二ツ池北",
-        "line": "内田面線",
-        "json": "UD",
-        "id": "ftk"
-    },
-    "UD07": {
-        "name": "至学館大学前",
-        "line": "内田面線",
-        "json": "UD",
-        "id": "shg"
-    },
-    "UD08": {
-        "name": "北山町",
-        "line": "内田面線",
-        "json": "UD",
-        "id": "ktc"
-    },
-    "UD09": {
-        "name": "東新町",
-        "line": "内田面線",
-        "json": "UD",
-        "id": "tsn"
-    },
-    "NB01": {
-        "name": "大高",
-        "line": "南北線",
-        "json": "NB",
-        "id": "odk"
-    },
-    "NB02": {
-        "name": "正光寺",
-        "line": "南北線",
-        "json": "NB",
-        "id": "skj"
-    },
-    "NB03": {
-        "name": "水主ヶ池西",
-        "line": "南北線",
-        "json": "NB",
-        "id": "kgn"
-    },
-    "NB04": {
-        "name": "茶屋",
-        "line": "南北線",
-        "json": "NB",
-        "id": "cya"
-    },
-    "NB05": {
-        "name": "共和三丁目",
-        "line": "南北線",
-        "json": "NB",
-        "id": "kw3"
-    },
-    "NB06": {
-        "name": "明成一屋",
-        "line": "南北線",
-        "json": "NB",
-        "id": "msh"
-    },
-    "NB07": {
-        "name": "柊山",
-        "line": "南北線",
-        "json": "NB",
-        "id": "hry"
-    },
-    "NB08": {
-        "name": "県営大府住宅",
-        "line": "南北線",
-        "json": "NB",
-        "id": "kne"
-    },
-    "NB09": {
-        "name": "江端中央",
-        "line": "南北線",
-        "json": "NB",
-        "id": "ebc"
-    },
-    "NB10": {
-        "name": "鞍流瀬川",
-        "line": "南北線",
-        "json": "NB",
-        "id": "krn"
-    },
-    "NB11": {
-        "name": "柳ケ坪",
-        "line": "南北線",
-        "json": "NB",
-        "id": "yng"
-    },
-    "NB12": {
-        "name": "尾張森岡",
-        "line": "南北線",
-        "json": "NB",
-        "id": "owm"
-    },
-    "NB13": {
-        "name": "緒川塩田",
-        "line": "南北線",
-        "json": "NB",
-        "id": "ows"
-    },
-    "NB14": {
-        "name": "宮戸橋",
-        "line": "南北線",
-        "json": "NB",
-        "id": "myt"
-    },
-    "NB15": {
-        "name": "緒川",
-        "line": "南北線",
-        "json": "NB",
-        "id": "ogw"
-    },
-    "MY01": {
-        "name": "新富町",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "stm"
-    },
-    "MY02": {
-        "name": "新田町",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "sdn"
-    },
-    "MY03": {
-        "name": "刈谷市総合運動公園",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "krs"
-    },
-    "MY04": {
-        "name": "古和井",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "kwi"
-    },
-    "MY05": {
-        "name": "西富士松",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "nfj"
-    },
-    "MY06": {
-        "name": "富士松",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "fjm"
-    },
-    "MY07": {
-        "name": "今川町",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "img"
-    },
-    "MY08": {
-        "name": "東境松本",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "hzk"
-    },
-    "MY09": {
-        "name": "富士松図書館前",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "fjt"
-    },
-    "MY10": {
-        "name": "岩ヶ池",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "iwg"
-    },
-    "MY11": {
-        "name": "愛教大前",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "akd"
-    },
-    "MY12": {
-        "name": "井ヶ谷",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "igy"
-    },
-    "MY13": {
-        "name": "天白",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "tmp"
-    },
-    "MY14": {
-        "name": "福田",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "fkt"
-    },
-    "MY15": {
-        "name": "東荒田",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "har"
-    },
-    "MY16": {
-        "name": "半野木",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "hnk"
-    },
-    "MY17": {
-        "name": "三好荒池",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "mar"
-    },
-    "MY18": {
-        "name": "三好森下",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "mms"
-    },
-    "MY19": {
-        "name": "みよし市",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "mys"
-    },
-    "MY20": {
-        "name": "前田",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "med"
-    },
-    "MY21": {
-        "name": "三好池",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "mik"
-    },
-    "MY22": {
-        "name": "莇生町",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "azb"
-    },
-    "MY23": {
-        "name": "境川",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "skg"
-    },
-    "MY24": {
-        "name": "蓬平地",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "ymg"
-    },
-    "MY25": {
-        "name": "福谷",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "ukg"
-    },
-    "MY26": {
-        "name": "花立",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "htt"
-    },
-    "MY27": {
-        "name": "宮ノ前",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "mym"
-    },
-    "MY28": {
-        "name": "三好丘三丁目",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "mgs"
-    },
-    "MY29": {
-        "name": "三好丘",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "mgk"
-    },
-    "KM01": {
-        "name": "鰻池",
-        "line": "健康の森線",
-        "json": "KM",
-        "id": "unk"
-    },
-    "KM02": {
-        "name": "岡田川",
-        "line": "健康の森線",
-        "json": "KM",
-        "id": "okd"
-    },
-    "KM03": {
-        "name": "健康の森西口",
-        "line": "健康の森線",
-        "json": "KM",
-        "id": "kkn"
-    },
-    "KM04": {
-        "name": "半月町",
-        "line": "健康の森線",
-        "json": "KM",
-        "id": "hnt"
-    },
-    "KM05": {
-        "name": "ウド",
-        "line": "健康の森線",
-        "json": "KM",
-        "id": "udo"
-    },
-    "KM06": {
-        "name": "上野台",
-        "line": "健康の森線",
-        "json": "KM",
-        "id": "und"
-    },
-    "KM07": {
-        "name": "新石根",
-        "line": "健康の森線",
-        "json": "KM",
-        "id": "sin"
-    },
-    "KM08": {
-        "name": "富木島中央",
-        "line": "健康の森線",
-        "json": "KM",
-        "id": "fkc"
-    },
-    "KM09": {
-        "name": "寺下",
-        "line": "健康の森線",
-        "json": "KM",
-        "id": "trt"
-    },
-    "KM10": {
-        "name": "上浜田",
-        "line": "健康の森線",
-        "json": "KM",
-        "id": "kmh"
-    },
-    "TR01": {
-        "name": "末広",
-        "line": "南港線(名港トリトンライン)",
-        "json": "TR",
-        "id": "seh"
-    },
-    "TR02": {
-        "name": "北蕨",
-        "line": "南港線(名港トリトンライン)",
-        "json": "TR",
-        "id": "ktw"
-    },
-    "TR03": {
-        "name": "日向根",
-        "line": "南港線(名港トリトンライン)",
-        "json": "TR",
-        "id": "hnn"
-    },
-    "TR04": {
-        "name": "岡前",
-        "line": "南港線(名港トリトンライン)",
-        "json": "TR",
-        "id": "okm"
-    },
-    "TR05": {
-        "name": "新宝",
-        "line": "南港線(名港トリトンライン)",
-        "json": "TR",
-        "id": "smp"
-    },
-    "TR06": {
-        "name": "潮見",
-        "line": "南港線(名港トリトンライン)",
-        "json": "TR",
-        "id": "som"
-    },
-    "TR07": {
-        "name": "金城ふ頭",
-        "line": "南港線(名港トリトンライン)",
-        "json": "TR",
-        "id": "knj"
-    },
-    "TM01": {
-        "name": "生見町",
-        "line": "高浜線",
-        "json": "TM",
-        "id": "hem"
-    },
-    "TM02": {
-        "name": "亀崎北浦",
-        "line": "高浜線",
-        "json": "TM",
-        "id": "kmz"
-    },
-    "TM03": {
-        "name": "洲の崎",
-        "line": "高浜線",
-        "json": "TM",
-        "id": "sns"
-    },
-    "TM04": {
-        "name": "高浜碧海",
-        "line": "高浜線",
-        "json": "TM",
-        "id": "tkh"
-    },
-    "TM05": {
-        "name": "恩任寺",
-        "line": "高浜線",
-        "json": "TM",
-        "id": "onn"
-    },
-    "TM06": {
-        "name": "三河高浜",
-        "line": "高浜線",
-        "json": "TM",
-        "id": "mtk"
-    },
-    "NW15": {
-        "name": "緒川植山",
-        "line": "名和線",
-        "json": "NW",
-        "id": "oue"
-    },
-    "ON02": {
-        "name": "緒川植山",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "oue"
-    },
-    "ON03": {
-        "name": "姥池",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "ubk"
-    },
-    "ON04": {
-        "name": "米田町",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "kmd"
-    },
-    "ON05": {
-        "name": "馬池町",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "umk"
-    },
-    "ON06": {
-        "name": "北屋敷",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "kty"
-    },
-    "ON07": {
-        "name": "宮内町",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "myu"
-    },
-    "ON08": {
-        "name": "ウド",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "udo"
-    },
-    "ON09": {
-        "name": "前新切",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "msn"
-    },
-    "ON10": {
-        "name": "田面",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "tmo"
-    },
-    "ON11": {
-        "name": "末広",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "seh"
-    },
-    "ON12": {
-        "name": "神戸",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "gdo"
-    },
-    "ON13": {
-        "name": "炭焼",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "syk"
-    },
-    "ON14": {
-        "name": "大高緑地西",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "ryn"
-    },
-    "ON15": {
-        "name": "亀原",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "khr"
-    },
-    "ON16": {
-        "name": "大高緑地口",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "ryg"
-    },
-    "ON17": {
-        "name": "潮見が丘",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "sim"
-    },
-    "ON18": {
-        "name": "鹿山",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "sky"
-    },
-    "ON19": {
-        "name": "新海池",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "nmk"
-    },
-    "ON20": {
-        "name": "鳴子南",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "nkm"
-    },
-    "ON21": {
-        "name": "篠の風",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "snn"
-    },
-    "ON22": {
-        "name": "相川",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "akw"
-    },
-    "ON23": {
-        "name": "相生山東",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "aoy"
-    },
-    "ON24": {
-        "name": "一ツ山住宅",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "hts"
-    },
-    "ON25": {
-        "name": "島田",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "smd"
-    },
-    "ON26": {
-        "name": "島田橋",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "smb"
-    },
-    "ON27": {
-        "name": "池見",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "ikm"
-    },
-    "ON28": {
-        "name": "表山",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "omt"
-    },
-    "ON29": {
-        "name": "八事",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "ygt"
-    },
-    "ON30": {
-        "name": "広路町",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "hrj"
-    },
-    "ON31": {
-        "name": "いりなか",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "irn"
-    },
-    "ON32": {
-        "name": "川名公園",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "kwn"
-    },
-    "ON33": {
-        "name": "安田通",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "ysd"
-    },
-    "ON34": {
-        "name": "春岡",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "hro"
-    },
-    "ON35": {
-        "name": "吹上",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "fkg"
-    },
-    "ON36": {
-        "name": "南千種",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "mck"
-    },
-    "ON37": {
-        "name": "菊里",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "kkz"
-    },
-    "ON38": {
-        "name": "新栄町",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "ssk"
-    },
-    "ON39": {
-        "name": "栄町",
-        "line": "大府西線・八事線",
-        "json": "ON",
-        "id": "ske"
-    },
-    "OG01": {
-        "name": "知立",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "chr"
-    },
-    "OG02": {
-        "name": "知立堀切",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "chh"
-    },
-    "OG03": {
-        "name": "東上重原",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "hks"
-    },
-    "OG04": {
-        "name": "上重原",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "ksg"
-    },
-    "OG05": {
-        "name": "重原",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "sgh"
-    },
-    "OG06": {
-        "name": "一色町",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "isk"
-    },
-    "OG07": {
-        "name": "中山町",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "nky"
-    },
-    "OG08": {
-        "name": "刈谷",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "kry"
-    },
-    "OG09": {
-        "name": "東陽町",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "tyo"
-    },
-    "OG10": {
-        "name": "大浜街道",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "ohm"
-    },
-    "OG11": {
-        "name": "刈谷新栄町",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "kss"
-    },
-    "OG12": {
-        "name": "十念寺",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "jnj"
-    },
-    "OG13": {
-        "name": "司町",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "tkc"
-    },
-    "OG14": {
-        "name": "東緒川",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "hog"
-    },
-    "OG15": {
-        "name": "緒川",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "ogw"
-    },
-    "OG16": {
-        "name": "於大公園西",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "odn"
-    },
-    "OG17": {
-        "name": "緒川相生",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "oga"
-    },
-    "OG18": {
-        "name": "鰻池",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "unk"
-    },
-    "OG19": {
-        "name": "姥池",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "ubk"
-    },
-    "OG20": {
-        "name": "緒川植山",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "oue"
-    },
-    "OG21": {
-        "name": "知多八幡",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "cty"
-    },
-    "OG22": {
-        "name": "七曲公園",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "nmg"
-    },
-    "OG23": {
-        "name": "佐布里池",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "sri"
-    },
-    "OG24": {
-        "name": "梅が丘",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "umg"
-    },
-    "OG25": {
-        "name": "五反田",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "gtn"
-    },
-    "OG26": {
-        "name": "知多新知",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "ctc"
-    },
-    "OG27": {
-        "name": "新知東町",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "snc"
-    },
-    "OG28": {
-        "name": "知多市保健センター",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "cts"
-    },
-    "OG29": {
-        "name": "浜脇",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "hmw"
-    },
-    "OG30": {
-        "name": "東屋敷",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "hgy"
-    },
-    "OG31": {
-        "name": "朝倉",
-        "line": "緒川線",
-        "json": "OG",
-        "id": "ask"
-    },
-    "HK01": {
-        "name": "半田みなと",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "hnm"
-    },
-    "HK02": {
-        "name": "瑞穂町",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "mzh"
-    },
-    "HK03": {
-        "name": "東洋町",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "toy"
-    },
-    "HK04": {
-        "name": "半田市",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "hns"
-    },
-    "HK05": {
-        "name": "半田",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "hnd"
-    },
-    "HK06": {
-        "name": "知多半田",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "chn"
-    },
-    "HK07": {
-        "name": "雁宿公園",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "krd"
-    },
-    "HK08": {
-        "name": "清城",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "sis"
-    },
-    "HK09": {
-        "name": "柊町",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "hrg"
-    },
-    "HK10": {
-        "name": "柊四丁目",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "hyc"
-    },
-    "HK11": {
-        "name": "岩滑西",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "ynn"
-    },
-    "HK12": {
-        "name": "平井町",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "hri"
-    },
-    "HK13": {
-        "name": "新生町",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "sse"
-    },
-    "HK14": {
-        "name": "宝来町",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "hor"
-    },
-    "HK15": {
-        "name": "三ツ池",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "mti"
-    },
-    "HK16": {
-        "name": "金色",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "kni"
-    },
-    "HK17": {
-        "name": "飛香台東",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "asd"
-    },
-    "HK18": {
-        "name": "新常滑",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "stk"
-    },
-    "HK19": {
-        "name": "北条公園",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "ktj"
-    },
-    "HK20": {
-        "name": "原松町",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "hrm"
-    },
-    "HK21": {
-        "name": "招き猫通り",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "mnd"
-    },
-    "HK22": {
-        "name": "常滑",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "tkn"
-    },
-    "HK23": {
-        "name": "常滑競艇",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "tkk"
-    },
-    "HK24": {
-        "name": "りんくうビーチ",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "rnk"
-    },
-    "HK25": {
-        "name": "りんくう常滑",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "rnt"
-    },
-    "HK26": {
-        "name": "セントレア北",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "ctk"
-    },
-    "HK27": {
-        "name": "セントレア第1ターミナル",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "ct1"
-    },
-    "HK28": {
-        "name": "セントレア第2ターミナル",
-        "line": "半滑線・空港線",
-        "json": "HK",
-        "id": "ct2"
-    },
-    "TY01": {
-        "name": "長土井",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "ngd"
-    },
-    "TY02": {
-        "name": "本田",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "hon"
-    },
-    "TY03": {
-        "name": "堤本町",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "ttm"
-    },
-    "TY04": {
-        "name": "宮畔",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "myg"
-    },
-    "TY05": {
-        "name": "平松",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "hmt"
-    },
-    "TY06": {
-        "name": "宝",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "tkr"
-    },
-    "TY07": {
-        "name": "大坪",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "otb"
-    },
-    "TY08": {
-        "name": "田代町",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "tsr"
-    },
-    "TY09": {
-        "name": "本新町",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "hsn"
-    },
-    "TY10": {
-        "name": "豊田東新町",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "tts"
-    },
-    "TY11": {
-        "name": "衣ヶ原",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "krg"
-    },
-    "TY12": {
-        "name": "広久手町",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "hkt"
-    },
-    "TY13": {
-        "name": "八迫山",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "yts"
-    },
-    "TY14": {
-        "name": "小坂町",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "kzk"
-    },
-    "TY15": {
-        "name": "豊田市",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "tyt"
-    },
-    "TY16": {
-        "name": "矢作川",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "yhg"
-    },
-    "TY17": {
-        "name": "豊田スタジアム前",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "tst"
-    },
-    "TY18": {
-        "name": "上野町",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "uen"
-    },
-    "TY19": {
-        "name": "加茂川公園",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "kmg"
-    },
-    "TY20": {
-        "name": "三河渋谷",
-        "line": "豊田線",
-        "json": "TY",
-        "id": "msb"
-    },
-    "KL01": {
-        "name": "日高",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "hdk"
-    },
-    "KL02": {
-        "name": "高倉",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "kkr"
-    },
-    "KL03": {
-        "name": "宝町",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "krm"
-    },
-    "KL04": {
-        "name": "織機本社前",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "skk"
-    },
-    "KL05": {
-        "name": "刈谷新栄町",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "kss"
-    },
-    "KL06": {
-        "name": "刈谷高松",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "krt"
-    },
-    "KL07": {
-        "name": "刈谷住吉",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "ksm"
-    },
-    "KL08": {
-        "name": "刈谷交通遊園前",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "krk"
-    },
-    "KL09": {
-        "name": "下重原",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "sms"
-    },
-    "KL10": {
-        "name": "一色町",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "isk"
-    },
-    "KL11": {
-        "name": "昭和町",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "shw"
-    },
-    "KL12": {
-        "name": "アイシン本社前",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "ais"
-    },
-    "KL13": {
-        "name": "恩田",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "ond"
-    },
-    "KL14": {
-        "name": "刈谷青山",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "kra"
-    },
-    "KL15": {
-        "name": "青山公園西",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "aym"
-    },
-    "KL16": {
-        "name": "新田町",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "sdn"
-    },
-    "KL17": {
-        "name": "小山",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "oym"
-    },
-    "KL01a": {
-        "name": "日高",
-        "line": "刈谷環状線",
-        "json": "KL",
-        "id": "hdk"
-    },
-    "TT01": {
-        "name": "与五八",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "ygh"
-    },
-    "TT02": {
-        "name": "横須賀高校前",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "yks"
-    },
-    "TT03": {
-        "name": "野崎橋",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "nzb"
-    },
-    "TT04": {
-        "name": "知多平野",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "cth"
-    },
-    "TT05": {
-        "name": "長曽橋",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "chs"
-    },
-    "TT06": {
-        "name": "朝倉団地",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "skd"
-    },
-    "TT07": {
-        "name": "つつじが丘",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "ttj"
-    },
-    "TT08": {
-        "name": "新知台",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "scd"
-    },
-    "TT09": {
-        "name": "知多市保健センター",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "cts"
-    },
-    "TT10": {
-        "name": "中央図書館前",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "cht"
-    },
-    "TT11": {
-        "name": "美城ケ根",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "mkg"
-    },
-    "TT12": {
-        "name": "沖ノ田",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "okn"
-    },
-    "TT13": {
-        "name": "日長堀田",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "hng"
-    },
-    "TT14": {
-        "name": "前田口",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "mdg"
-    },
-    "TT15": {
-        "name": "新舞子北",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "smk"
-    },
-    "TT16": {
-        "name": "新舞子口",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "smg"
-    },
-    "KT01": {
-        "name": "太田川",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "tgw"
-    },
-    "KT02": {
-        "name": "細田",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "hsd"
-    },
-    "KT03": {
-        "name": "与五八",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "ygh"
-    },
-    "KT04": {
-        "name": "北加木屋",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "ktk"
-    },
-    "KT05": {
-        "name": "吉川",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "ysk"
-    },
-    "KT06": {
-        "name": "宮内町",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "myu"
-    },
-    "KT07": {
-        "name": "半月町",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "hnt"
-    },
-    "KT08": {
-        "name": "大府森岡",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "obm"
-    },
-    "KT09": {
-        "name": "鞍流瀬川",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "krn"
-    },
-    "KT10": {
-        "name": "若草",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "wks"
-    },
-    "KT11": {
-        "name": "大東町",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "dtc"
-    },
-    "KT12": {
-        "name": "惣作",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "sos"
-    },
-    "KT13": {
-        "name": "中手町",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "nkc"
-    },
-    "KT14": {
-        "name": "日高",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "hdk"
-    },
-    "KT15": {
-        "name": "新富町",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "stm"
-    },
-    "KT16": {
-        "name": "丸田町",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "mrt"
-    },
-    "KT17": {
-        "name": "刈谷",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "kry"
-    },
-    "KT00": {
-        "name": "大府",
-        "line": "刈田川線",
-        "json": "KT",
-        "id": "obu"
-    },
-    "KT15a": {
-        "name": "新富町",
-        "line": "刈田川線知立支線",
-        "json": "KTa",
-        "id": "stm"
-    },
-    "KT18": {
-        "name": "刈谷池田",
-        "line": "刈田川線知立支線",
-        "json": "KTa",
-        "id": "kik"
-    },
-    "KT19": {
-        "name": "恩田",
-        "line": "刈田川線知立支線",
-        "json": "KTa",
-        "id": "ond"
-    },
-    "KT20": {
-        "name": "狩野公園",
-        "line": "刈田川線知立支線",
-        "json": "KTa",
-        "id": "kko"
-    },
-    "KT21": {
-        "name": "鳥居",
-        "line": "刈田川線知立支線",
-        "json": "KTa",
-        "id": "tri"
-    },
-    "KT22": {
-        "name": "知立",
-        "line": "刈田川線知立支線",
-        "json": "KTa",
-        "id": "chr"
-    },
-    "OL01": {
-        "name": "大府",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "obu"
-    },
-    "OL02": {
-        "name": "大府市役所前",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "obs"
-    },
-    "OL03": {
-        "name": "長根",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "ngn"
-    },
-    "OL04": {
-        "name": "至学館大学前",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "shg"
-    },
-    "OL05": {
-        "name": "梶田町",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "kjt"
-    },
-    "OL06": {
-        "name": "坊主山",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "bzy"
-    },
-    "OL07": {
-        "name": "東新町",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "tsn"
-    },
-    "OL08": {
-        "name": "共和",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "kyw"
-    },
-    "OL09": {
-        "name": "田面",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "tmo"
-    },
-    "OL10": {
-        "name": "アローブ前",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "alb"
-    },
-    "OL11": {
-        "name": "江端町",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "ebt"
-    },
-    "OL12": {
-        "name": "大峯",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "omn"
-    },
-    "OL01a": {
-        "name": "大府",
-        "line": "大府環状線",
-        "json": "OL",
-        "id": "obu"
-    },
-    "MR01": {
-        "name": "半田市",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "hns"
-    },
-    "MR02": {
-        "name": "南本町",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "mhc"
-    },
-    "MR03": {
-        "name": "港本町",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "mnt"
-    },
-    "MR04": {
-        "name": "成岩本町",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "nrw"
-    },
-    "MR05": {
-        "name": "神戸川",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "gdg"
-    },
-    "MR06": {
-        "name": "旭町",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "asm"
-    },
-    "MR07": {
-        "name": "有楽町",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "yrk"
-    },
-    "MR08": {
-        "name": "石川橋",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "ikb"
-    },
-    "MR09": {
-        "name": "下門",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "tmn"
-    },
-    "MR10": {
-        "name": "武豊",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "tkt"
-    },
-    "MR11": {
-        "name": "里中",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "stn"
-    },
-    "MR12": {
-        "name": "廻間",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "hzm"
-    },
-    "MR13": {
-        "name": "浦之島",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "urn"
-    },
-    "MR14": {
-        "name": "新富貴",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "sfk"
-    },
-    "MR15": {
-        "name": "篭田",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "kgt"
-    },
-    "MR16": {
-        "name": "三反田",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "snt"
-    },
-    "MR17": {
-        "name": "梅之木",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "umn"
-    },
-    "MR18": {
-        "name": "布土",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "ftt"
-    },
-    "MR19": {
-        "name": "河和口",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "kwg"
-    },
-    "MR20": {
-        "name": "時志",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "tks"
-    },
-    "MR21": {
-        "name": "河和",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "kwa"
-    },
-    "MR22": {
-        "name": "河和上前田",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "kwk"
-    },
-    "MR23": {
-        "name": "新浦戸",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "sur"
-    },
-    "MR24": {
-        "name": "古布",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "koh"
-    },
-    "MR25": {
-        "name": "美浜中平井",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "mnh"
-    },
-    "MR26": {
-        "name": "郷島",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "gjm"
-    },
-    "MR27": {
-        "name": "山田海岸",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "ymd"
-    },
-    "MR28": {
-        "name": "大井港",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "oik"
-    },
-    "MR29": {
-        "name": "片名",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "ktn"
-    },
-    "MR30": {
-        "name": "新師崎",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "smr"
-    },
-    "MR31": {
-        "name": "師崎漁港",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "mrg"
-    },
-    "MR32": {
-        "name": "師崎",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "mrz"
-    },
-    "MR33": {
-        "name": "師崎港",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "mzk"
-    },
-    "NW01": {
-        "name": "名和",
-        "line": "名和線",
-        "json": "NW",
-        "id": "nwa"
-    },
-    "NW02": {
-        "name": "龍ノ脇",
-        "line": "名和線",
-        "json": "NW",
-        "id": "rnw"
-    },
-    "NW03": {
-        "name": "南神田",
-        "line": "名和線",
-        "json": "NW",
-        "id": "mjd"
-    },
-    "NW04": {
-        "name": "寺徳",
-        "line": "名和線",
-        "json": "NW",
-        "id": "jtk"
-    },
-    "NW05": {
-        "name": "寿鎌",
-        "line": "名和線",
-        "json": "NW",
-        "id": "zgm"
-    },
-    "NW06": {
-        "name": "脇ノ田",
-        "line": "名和線",
-        "json": "NW",
-        "id": "wkn"
-    },
-    "NW07": {
-        "name": "荒尾町南",
-        "line": "名和線",
-        "json": "NW",
-        "id": "amm"
-    },
-    "NW08": {
-        "name": "富木島中央",
-        "line": "名和線",
-        "json": "NW",
-        "id": "fkc"
-    },
-    "NW09": {
-        "name": "伏見橋",
-        "line": "名和線",
-        "json": "NW",
-        "id": "fsm"
-    },
-    "NW10": {
-        "name": "北加木屋",
-        "line": "名和線",
-        "json": "NW",
-        "id": "ktk"
-    },
-    "NW11": {
-        "name": "丑寅海斗",
-        "line": "名和線",
-        "json": "NW",
-        "id": "ust"
-    },
-    "NW12": {
-        "name": "南加木屋",
-        "line": "名和線",
-        "json": "NW",
-        "id": "mnk"
-    },
-    "NW13": {
-        "name": "中平地",
-        "line": "名和線",
-        "json": "NW",
-        "id": "nkh"
-    },
-    "NW14": {
-        "name": "八幡新田",
-        "line": "名和線",
-        "json": "NW",
-        "id": "ywt"
-    },
-    "UM01": {
-        "name": "古布",
-        "line": "内海線",
-        "json": "UM",
-        "id": "koh"
-    },
-    "UM02": {
-        "name": "古布九条",
-        "line": "内海線",
-        "json": "UM",
-        "id": "kjo"
-    },
-    "UM03": {
-        "name": "内田",
-        "line": "内海線",
-        "json": "UM",
-        "id": "ucd"
-    },
-    "UM04": {
-        "name": "内海",
-        "line": "内海線",
-        "json": "UM",
-        "id": "utm"
-    },
-    "UM05": {
-        "name": "早稲倉",
-        "line": "内海線",
-        "json": "UM",
-        "id": "wsk"
-    },
-    "UM06": {
-        "name": "内海海岸",
-        "line": "内海線",
-        "json": "UM",
-        "id": "utk"
-    },
-    "TZ01": {
-        "name": "荒尾下畑",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "ars"
-    },
-    "TZ02": {
-        "name": "大池公園",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "okk"
-    },
-    "TZ03": {
-        "name": "荒尾町南",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "amm"
-    },
-    "TZ04": {
-        "name": "貴船",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "kfn"
-    },
-    "TZ05": {
-        "name": "長口",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "gkt"
-    },
-    "TZ06": {
-        "name": "前新切",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "msn"
-    },
-    "TZ07": {
-        "name": "アローブ前",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "alb"
-    },
-    "TZ08": {
-        "name": "柊山",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "hry"
-    },
-    "TZ09": {
-        "name": "中央町",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "chc"
-    },
-    "TZ10": {
-        "name": "長根",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "ngn"
-    },
-    "TZ11": {
-        "name": "平子",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "hrk"
-    },
-    "TZ12": {
-        "name": "辰池",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "tti"
-    },
-    "TZ13": {
-        "name": "樫塚",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "ksd"
-    },
-    "TZ14": {
-        "name": "みどり公園",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "mdk"
-    },
-    "TZ15": {
-        "name": "新左山",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "szy"
-    },
-    "TZ16": {
-        "name": "前後",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "zng"
-    },
-    "TZ17": {
-        "name": "二村台南",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "ftm"
-    },
-    "TZ18": {
-        "name": "二村台",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "fmd"
-    },
-    "TZ19": {
-        "name": "豊明団地",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "tyd"
-    },
-    "TZ20": {
-        "name": "若宮",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "wkm"
-    },
-    "TZ21": {
-        "name": "沓掛",
-        "line": "東西線",
-        "json": "TZ",
-        "id": "kkk"
-    },
-    "TZ00": {
-        "name": "惣作",
-        "line": "惣作直通線",
-        "json": "TZ",
-        "id": "sos"
-    },
-    "TZ10a": {
-        "name": "長根",
-        "line": "惣作直通線",
-        "json": "TZ",
-        "id": "ngn"
-    },
-    "KT04a": {
-        "name": "北加木屋",
-        "line": "与五八デルタ線",
-        "json": "TT",
-        "id": "ktk"
-    },
-    "TT02a": {
-        "name": "横須賀高校前",
-        "line": "与五八デルタ線",
-        "json": "TT",
-        "id": "yks"
-    },
-    "GK04a": {
-        "name": "鳴海",
-        "line": "鳴海連絡線",
-        "json": "GK",
-        "id": "nrm"
-    },
-    "OD14a": {
-        "name": "上汐田",
-        "line": "鳴海連絡線",
-        "json": "GK",
-        "id": "kso"
-    },
-    "OL11a": {
-        "name": "江端町",
-        "line": "大峯連絡線",
-        "json": "HD",
-        "id": "ebt"
-    },
-    "HD02a": {
-        "name": "大府森岡",
-        "line": "大峯連絡線",
-        "json": "HD",
-        "id": "obm"
-    },
-    "KT01a": {
-        "name": "太田川",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "tgw"
-    },
-    "KT02a": {
-        "name": "細田",
-        "line": "つつじが丘線",
-        "json": "TT",
-        "id": "hsd"
-    },
-    "HD17b": {
-        "name": "乙川",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "okw"
-    },
-    "HD18a": {
-        "name": "半田大橋",
-        "line": "師崎線",
-        "json": "MR",
-        "id": "hno"
-    },
-    "KT17a": {
-        "name": "刈谷",
-        "line": "みよし線",
-        "json": "MY",
-        "id": "kry"
-    },
-    "AR01": {
-        "name": "至学館大学前",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "shg"
-    },
-    "AR02": {
-        "name": "北山",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "ktm"
-    },
-    "AR03": {
-        "name": "長根北",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "gnk"
-    },
-    "AR04": {
-        "name": "追分町",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "oiw"
-    },
-    "AR05": {
-        "name": "明成一屋",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "msh"
-    },
-    "AR06": {
-        "name": "下田ノ松",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "smn"
-    },
-    "AR07": {
-        "name": "長草天神社",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "nkt"
-    },
-    "AR08": {
-        "name": "白魦池",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "srh"
-    },
-    "AR09": {
-        "name": "石原",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "isi"
-    },
-    "AR10": {
-        "name": "下大脇",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "smo"
-    },
-    "AR11": {
-        "name": "荒尾後山",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "aru"
-    },
-    "AR12": {
-        "name": "寿鎌",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "zgm"
-    },
-    "AR13": {
-        "name": "荒尾若宮",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "arw"
-    },
-    "AR14": {
-        "name": "荒尾大城",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "aro"
-    },
-    "AR15": {
-        "name": "聚楽園",
-        "line": "荒尾線",
-        "json": "AR",
-        "id": "shr"
-    },
-    "ON10a": {
-        "name": "田面",
-        "line": "南港線(名港トリトンライン)",
-        "json": "TR",
-        "id": "tmo"
-    },
-    "AG01": {
-        "name": "緒川植山",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "oue"
-    },
-    "AG02": {
-        "name": "釜池",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "kmk"
-    },
-    "AG03": {
-        "name": "丸池台",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "mri"
-    },
-    "AG04": {
-        "name": "東ヶ丘",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "hgo"
-    },
-    "AG05": {
-        "name": "高根台",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "tkd"
-    },
-    "AG06": {
-        "name": "福住",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "fks"
-    },
-    "AG07": {
-        "name": "荒古",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "ark"
-    },
-    "AG08": {
-        "name": "狐平井",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "kth"
-    },
-    "AG09": {
-        "name": "宮津",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "myz"
-    },
-    "AG10": {
-        "name": "蟹田橋",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "knd"
-    },
-    "AG11": {
-        "name": "萩",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "hgi"
-    },
-    "AG12": {
-        "name": "岩滑東",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "ynh"
-    },
-    "AG13": {
-        "name": "半田住吉",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "hds"
-    },
-    "AG14": {
-        "name": "半田赤レンガ",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "akr"
-    },
-    "AG15": {
-        "name": "半田",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "hnd"
-    },
-    "AG16": {
-        "name": "半田中町",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "hdn"
-    },
-    "AG17": {
-        "name": "栄町二丁目",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "sk2"
-    },
-    "AG18": {
-        "name": "栄町四丁目",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "sk4"
-    },
-    "AG19": {
-        "name": "新青山",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "say"
-    },
-    "AG20": {
-        "name": "花園町",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "hnz"
-    },
-    "AG21": {
-        "name": "豊成",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "hso"
-    },
-    "AG22": {
-        "name": "鹿狩池",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "kgr"
-    },
-    "AG23": {
-        "name": "平井畑",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "hbt"
-    },
-    "AG24": {
-        "name": "武豊中根",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "ttn"
-    },
-    "AG25": {
-        "name": "知多向陽",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "cky"
-    },
-    "AG26": {
-        "name": "大門田",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "dmn"
-    },
-    "AG27": {
-        "name": "武豊鎮守",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "ttc"
-    },
-    "AG28": {
-        "name": "富貴宮前",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "fkm"
-    },
-    "AG29": {
-        "name": "富貴",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "fki"
-    },
-    "AG30": {
-        "name": "新富貴",
-        "line": "阿久比線",
-        "json": "AG",
-        "id": "sfk"
-    },
-    "TR08": {
-        "name": "飛島ふ頭",
-        "line": "南港線(名港トリトンライン)",
-        "json": "TR",
-        "id": "tbs"
-    },
-    "TR09": {
-        "name": "名古屋競馬場",
-        "line": "南港線(名港トリトンライン)",
-        "json": "TR",
-        "id": "nkb"
-    },
-    "TR10": {
-        "name": "湾岸長島",
-        "line": "南港線(名港トリトンライン)",
-        "json": "TR",
-        "id": "wng"
-    },
-    "GK07a": {
-        "name": "東陵",
-        "line": "徒歩経路",
-        "json": "walkPath",
-        "id": "try"
-    },
-    "MT07a": {
-        "name": "有松",
-        "line": "徒歩経路",
-        "json": "walkPath",
-        "id": "arm"
-    },
-    "GK18a": {
-        "name": "井ヶ谷町南",
-        "line": "徒歩経路",
-        "json": "walkPath",
-        "id": "igm"
-    },
-    "MY11a": {
-        "name": "愛教大前",
-        "line": "徒歩経路",
-        "json": "walkPath",
-        "id": "akd"
-    },
-    "TR03a": {
-        "name": "日向根",
-        "line": "徒歩経路",
-        "json": "walkPath",
-        "id": "hnn"
-    },
-    "NW03a": {
-        "name": "南神田",
-        "line": "徒歩経路",
-        "json": "walkPath",
-        "id": "mjd"
-    },
-    "NB05a": {
-        "name": "共和三丁目",
-        "line": "徒歩経路",
-        "json": "walkPath",
-        "id": "kw3"
-    },
-    "OL08a": {
-        "name": "共和",
-        "line": "徒歩経路",
-        "json": "walkPath",
-        "id": "kyw"
-    },
-    "AR07a": {
-        "name": "長草天神社",
-        "line": "徒歩経路",
-        "json": "walkPath",
-        "id": "nkt"
-    },
-    "OL09a": {
-        "name": "田面",
-        "line": "徒歩経路",
-        "json": "walkPath",
-        "id": "tmo"
-    }
+	"NK01": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "kts"
+	},
+	"NK02": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "kto"
+	},
+	"NK03": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "owk"
+	},
+	"NK04": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "bwg"
+	},
+	"NK05": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "tkg"
+	},
+	"NK06": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "tyk"
+	},
+	"NK07": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "chk"
+	},
+	"NK08": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "jsd"
+	},
+	"NK09": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "kmm"
+	},
+	"NK10": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "wko"
+	},
+	"NK11": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "smz"
+	},
+	"NK12": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "hrd"
+	},
+	"NK13": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "nki"
+	},
+	"NK14": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "tgo"
+	},
+	"NK15": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "srt"
+	},
+	"NK16": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "nsn"
+	},
+	"NK17": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "ord"
+	},
+	"NK18": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "nsi"
+	},
+	"NK19": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "nss"
+	},
+	"NK20": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "nsa"
+	},
+	"NK21": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "iws"
+	},
+	"NK22": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "bnt"
+	},
+	"NK23": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "tky"
+	},
+	"NK24": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "aic"
+	},
+	"NK25": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "ngk"
+	},
+	"NK26": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "knr"
+	},
+	"NK27": {
+		"line": "長久手線",
+		"json": "NK",
+		"id": "nks"
+	},
+	"OD01": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "kry"
+	},
+	"OD02": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "krm"
+	},
+	"OD03": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "aiz"
+	},
+	"OD04": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "ash"
+	},
+	"OD05": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "wks"
+	},
+	"OD06": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "obs"
+	},
+	"OD07": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "chc"
+	},
+	"OD08": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "oiw"
+	},
+	"OD09": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "kyw"
+	},
+	"OD10": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "kkg"
+	},
+	"OD11": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "mod"
+	},
+	"OD12": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "ryn"
+	},
+	"OD13": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "odk"
+	},
+	"OD14": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "kso"
+	},
+	"OD15": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "mtn"
+	},
+	"OD16": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "hsh"
+	},
+	"OD17": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "mks"
+	},
+	"OD18": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "mky"
+	},
+	"OD19": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "sks"
+	},
+	"OD20": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "ybt"
+	},
+	"OD21": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "sod"
+	},
+	"OD22": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "mzn"
+	},
+	"OD23": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "hrt"
+	},
+	"OD24": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "snk"
+	},
+	"OD25": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "usm"
+	},
+	"OD26": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "tkj"
+	},
+	"OD27": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "srk"
+	},
+	"OD28": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "trm"
+	},
+	"OD29": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "chy"
+	},
+	"OD30": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "yba"
+	},
+	"OD31": {
+		"line": "大高線",
+		"json": "OD",
+		"id": "ske"
+	},
+	"GK01": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "nwa"
+	},
+	"GK02": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "odm"
+	},
+	"GK03": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "odk"
+	},
+	"GK04": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "nrm"
+	},
+	"GK05": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "ryg"
+	},
+	"GK06": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "kmt"
+	},
+	"GK07": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "try"
+	},
+	"GK08": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "ubi"
+	},
+	"GK09": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "kkd"
+	},
+	"GK10": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "ckk"
+	},
+	"GK11": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "mgm"
+	},
+	"GK12": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "ftm"
+	},
+	"GK13": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "msk"
+	},
+	"GK14": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "tkg"
+	},
+	"GK15": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "tys"
+	},
+	"GK16": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "okt"
+	},
+	"GK17": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "nzk"
+	},
+	"GK18": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "igm"
+	},
+	"GK19": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "mro"
+	},
+	"GK20": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "nso"
+	},
+	"GK21": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "ish"
+	},
+	"GK22": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "ngd"
+	},
+	"GK23": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "osh"
+	},
+	"GK24": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "nkf"
+	},
+	"GK25": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "nkd"
+	},
+	"GK26": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "nkn"
+	},
+	"GK27": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "kms"
+	},
+	"GK28": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "mkk"
+	},
+	"GK29": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "kbn"
+	},
+	"GK30": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "kbb"
+	},
+	"GK31": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "myn"
+	},
+	"GK32": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "skr"
+	},
+	"GK33": {
+		"line": "外環線",
+		"json": "GK",
+		"id": "chr"
+	},
+	"HD01": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "obu"
+	},
+	"HD02": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "obm"
+	},
+	"HD03": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "knk"
+	},
+	"HD04": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "iry"
+	},
+	"HD05": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "knm"
+	},
+	"HD06": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "sik"
+	},
+	"HD07": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "oga"
+	},
+	"HD08": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "nis"
+	},
+	"HD09": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "fje"
+	},
+	"HD10": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "mdr"
+	},
+	"HD11": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "hem"
+	},
+	"HD12": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "kmi"
+	},
+	"HD13": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "sch"
+	},
+	"HD14": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "ksn"
+	},
+	"HD15": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "owh"
+	},
+	"HD16": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "owy"
+	},
+	"HD17": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "okw"
+	},
+	"HD18": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "hno"
+	},
+	"HD19": {
+		"line": "半田線",
+		"json": "HD",
+		"id": "hns"
+	},
+	"HD17a": {
+		"line": "半田線住吉支線",
+		"json": "HD",
+		"id": "okw"
+	},
+	"HD20": {
+		"line": "半田線住吉支線",
+		"json": "HD",
+		"id": "akr"
+	},
+	"HD21": {
+		"line": "半田線住吉支線",
+		"json": "HD",
+		"id": "smy"
+	},
+	"HD22": {
+		"line": "半田線住吉支線",
+		"json": "HD",
+		"id": "sis"
+	},
+	"OL04a": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "shg"
+	},
+	"MT01": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "bzy"
+	},
+	"MT02": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "nry"
+	},
+	"MT03": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "okh"
+	},
+	"MT04": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "cfk"
+	},
+	"MT05": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "ksk"
+	},
+	"MT06": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "ngt"
+	},
+	"MT07": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "arm"
+	},
+	"MT08": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "trs"
+	},
+	"MT09": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "ogg"
+	},
+	"MT10": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "tkm"
+	},
+	"MT11": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "nrk"
+	},
+	"MT12": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "tsg"
+	},
+	"MT13": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "kmn"
+	},
+	"MT14": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "hbd"
+	},
+	"MT15": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "hbj"
+	},
+	"MT16": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "mki"
+	},
+	"MT17": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "hbm"
+	},
+	"MT18": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "hrb"
+	},
+	"MT19": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "doj"
+	},
+	"MT20": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "mmn"
+	},
+	"MT21": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "mmd"
+	},
+	"MT22": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "udk"
+	},
+	"MT23": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "hnb"
+	},
+	"MT24": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "mmz"
+	},
+	"MT25": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "mkn"
+	},
+	"MT26": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "gkr"
+	},
+	"MT27": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "tbd"
+	},
+	"MT28": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "skb"
+	},
+	"MT29": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "ysh"
+	},
+	"MT30": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "hmk"
+	},
+	"MT31": {
+		"line": "名東線",
+		"json": "MT",
+		"id": "fjg"
+	},
+	"FT01": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "shg"
+	},
+	"FT02": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "fts"
+	},
+	"FT03": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "hrk"
+	},
+	"FT04": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "mds"
+	},
+	"FT05": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "dtc"
+	},
+	"FT06": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "ash"
+	},
+	"FT07": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "mrk"
+	},
+	"FT08": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "hog"
+	},
+	"FT05a": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "dtc"
+	},
+	"FT09": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "smt"
+	},
+	"FT10": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "yng"
+	},
+	"FT11": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "mrn"
+	},
+	"FT12": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "ktb"
+	},
+	"FT13": {
+		"line": "二ツ池線",
+		"json": "FT",
+		"id": "odn"
+	},
+	"UD01": {
+		"line": "内田面線",
+		"json": "UD",
+		"id": "sos"
+	},
+	"UD02": {
+		"line": "内田面線",
+		"json": "UD",
+		"id": "usr"
+	},
+	"UD03": {
+		"line": "内田面線",
+		"json": "UD",
+		"id": "udm"
+	},
+	"UD04": {
+		"line": "内田面線",
+		"json": "UD",
+		"id": "kts"
+	},
+	"UD05": {
+		"line": "内田面線",
+		"json": "UD",
+		"id": "ksd"
+	},
+	"UD06": {
+		"line": "内田面線",
+		"json": "UD",
+		"id": "ftk"
+	},
+	"UD07": {
+		"line": "内田面線",
+		"json": "UD",
+		"id": "shg"
+	},
+	"UD08": {
+		"line": "内田面線",
+		"json": "UD",
+		"id": "ktc"
+	},
+	"UD09": {
+		"line": "内田面線",
+		"json": "UD",
+		"id": "tsn"
+	},
+	"NB01": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "odk"
+	},
+	"NB02": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "skj"
+	},
+	"NB03": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "kgn"
+	},
+	"NB04": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "cya"
+	},
+	"NB05": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "kw3"
+	},
+	"NB06": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "msh"
+	},
+	"NB07": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "hry"
+	},
+	"NB08": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "kne"
+	},
+	"NB09": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "ebc"
+	},
+	"NB10": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "krn"
+	},
+	"NB11": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "yng"
+	},
+	"NB12": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "owm"
+	},
+	"NB13": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "ows"
+	},
+	"NB14": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "myt"
+	},
+	"NB15": {
+		"line": "南北線",
+		"json": "NB",
+		"id": "ogw"
+	},
+	"MY01": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "stm"
+	},
+	"MY02": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "sdn"
+	},
+	"MY03": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "krs"
+	},
+	"MY04": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "kwi"
+	},
+	"MY05": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "nfj"
+	},
+	"MY06": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "fjm"
+	},
+	"MY07": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "img"
+	},
+	"MY08": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "hzk"
+	},
+	"MY09": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "fjt"
+	},
+	"MY10": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "iwg"
+	},
+	"MY11": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "akd"
+	},
+	"MY12": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "igy"
+	},
+	"MY13": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "tmp"
+	},
+	"MY14": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "fkt"
+	},
+	"MY15": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "har"
+	},
+	"MY16": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "hnk"
+	},
+	"MY17": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "mar"
+	},
+	"MY18": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "mms"
+	},
+	"MY19": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "mys"
+	},
+	"MY20": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "med"
+	},
+	"MY21": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "mik"
+	},
+	"MY22": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "azb"
+	},
+	"MY23": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "skg"
+	},
+	"MY24": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "ymg"
+	},
+	"MY25": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "ukg"
+	},
+	"MY26": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "htt"
+	},
+	"MY27": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "mym"
+	},
+	"MY28": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "mgs"
+	},
+	"MY29": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "mgk"
+	},
+	"KM01": {
+		"line": "健康の森線",
+		"json": "KM",
+		"id": "unk"
+	},
+	"KM02": {
+		"line": "健康の森線",
+		"json": "KM",
+		"id": "okd"
+	},
+	"KM03": {
+		"line": "健康の森線",
+		"json": "KM",
+		"id": "kkn"
+	},
+	"KM04": {
+		"line": "健康の森線",
+		"json": "KM",
+		"id": "hnt"
+	},
+	"KM05": {
+		"line": "健康の森線",
+		"json": "KM",
+		"id": "udo"
+	},
+	"KM06": {
+		"line": "健康の森線",
+		"json": "KM",
+		"id": "und"
+	},
+	"KM07": {
+		"line": "健康の森線",
+		"json": "KM",
+		"id": "sin"
+	},
+	"KM08": {
+		"line": "健康の森線",
+		"json": "KM",
+		"id": "fkc"
+	},
+	"KM09": {
+		"line": "健康の森線",
+		"json": "KM",
+		"id": "trt"
+	},
+	"KM10": {
+		"line": "健康の森線",
+		"json": "KM",
+		"id": "kmh"
+	},
+	"TR01": {
+		"line": "南港線(名港トリトンライン)",
+		"json": "TR",
+		"id": "seh"
+	},
+	"TR02": {
+		"line": "南港線(名港トリトンライン)",
+		"json": "TR",
+		"id": "ktw"
+	},
+	"TR03": {
+		"line": "南港線(名港トリトンライン)",
+		"json": "TR",
+		"id": "hnn"
+	},
+	"TR04": {
+		"line": "南港線(名港トリトンライン)",
+		"json": "TR",
+		"id": "okm"
+	},
+	"TR05": {
+		"line": "南港線(名港トリトンライン)",
+		"json": "TR",
+		"id": "smp"
+	},
+	"TR06": {
+		"line": "南港線(名港トリトンライン)",
+		"json": "TR",
+		"id": "som"
+	},
+	"TR07": {
+		"line": "南港線(名港トリトンライン)",
+		"json": "TR",
+		"id": "knj"
+	},
+	"TM01": {
+		"line": "高浜線",
+		"json": "TM",
+		"id": "hem"
+	},
+	"TM02": {
+		"line": "高浜線",
+		"json": "TM",
+		"id": "kmz"
+	},
+	"TM03": {
+		"line": "高浜線",
+		"json": "TM",
+		"id": "sns"
+	},
+	"TM04": {
+		"line": "高浜線",
+		"json": "TM",
+		"id": "tkh"
+	},
+	"TM05": {
+		"line": "高浜線",
+		"json": "TM",
+		"id": "onn"
+	},
+	"TM06": {
+		"line": "高浜線",
+		"json": "TM",
+		"id": "mtk"
+	},
+	"NW15": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "oue"
+	},
+	"ON02": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "oue"
+	},
+	"ON03": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "ubk"
+	},
+	"ON04": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "kmd"
+	},
+	"ON05": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "umk"
+	},
+	"ON06": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "kty"
+	},
+	"ON07": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "myu"
+	},
+	"ON08": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "udo"
+	},
+	"ON09": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "msn"
+	},
+	"ON10": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "tmo"
+	},
+	"ON11": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "seh"
+	},
+	"ON12": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "gdo"
+	},
+	"ON13": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "syk"
+	},
+	"ON14": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "ryn"
+	},
+	"ON15": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "khr"
+	},
+	"ON16": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "ryg"
+	},
+	"ON17": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "sim"
+	},
+	"ON18": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "sky"
+	},
+	"ON19": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "nmk"
+	},
+	"ON20": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "nkm"
+	},
+	"ON21": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "snn"
+	},
+	"ON22": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "akw"
+	},
+	"ON23": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "aoy"
+	},
+	"ON24": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "hts"
+	},
+	"ON25": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "smd"
+	},
+	"ON26": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "smb"
+	},
+	"ON27": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "ikm"
+	},
+	"ON28": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "omt"
+	},
+	"ON29": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "ygt"
+	},
+	"ON30": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "hrj"
+	},
+	"ON31": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "irn"
+	},
+	"ON32": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "kwn"
+	},
+	"ON33": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "ysd"
+	},
+	"ON34": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "hro"
+	},
+	"ON35": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "fkg"
+	},
+	"ON36": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "mck"
+	},
+	"ON37": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "kkz"
+	},
+	"ON38": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "ssk"
+	},
+	"ON39": {
+		"line": "大府西線・八事線",
+		"json": "ON",
+		"id": "ske"
+	},
+	"OG01": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "chr"
+	},
+	"OG02": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "chh"
+	},
+	"OG03": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "hks"
+	},
+	"OG04": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "ksg"
+	},
+	"OG05": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "sgh"
+	},
+	"OG06": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "isk"
+	},
+	"OG07": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "nky"
+	},
+	"OG08": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "kry"
+	},
+	"OG09": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "tyo"
+	},
+	"OG10": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "ohm"
+	},
+	"OG11": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "kss"
+	},
+	"OG12": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "jnj"
+	},
+	"OG13": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "tkc"
+	},
+	"OG14": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "hog"
+	},
+	"OG15": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "ogw"
+	},
+	"OG16": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "odn"
+	},
+	"OG17": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "oga"
+	},
+	"OG18": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "unk"
+	},
+	"OG19": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "ubk"
+	},
+	"OG20": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "oue"
+	},
+	"OG21": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "cty"
+	},
+	"OG22": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "nmg"
+	},
+	"OG23": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "sri"
+	},
+	"OG24": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "umg"
+	},
+	"OG25": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "gtn"
+	},
+	"OG26": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "ctc"
+	},
+	"OG27": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "snc"
+	},
+	"OG28": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "cts"
+	},
+	"OG29": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "hmw"
+	},
+	"OG30": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "hgy"
+	},
+	"OG31": {
+		"line": "緒川線",
+		"json": "OG",
+		"id": "ask"
+	},
+	"HK01": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "hnm"
+	},
+	"HK02": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "mzh"
+	},
+	"HK03": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "toy"
+	},
+	"HK04": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "hns"
+	},
+	"HK05": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "hnd"
+	},
+	"HK06": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "chn"
+	},
+	"HK07": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "krd"
+	},
+	"HK08": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "sis"
+	},
+	"HK09": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "hrg"
+	},
+	"HK10": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "hyc"
+	},
+	"HK11": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "ynn"
+	},
+	"HK12": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "hri"
+	},
+	"HK13": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "sse"
+	},
+	"HK14": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "hor"
+	},
+	"HK15": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "mti"
+	},
+	"HK16": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "kni"
+	},
+	"HK17": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "asd"
+	},
+	"HK18": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "stk"
+	},
+	"HK19": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "ktj"
+	},
+	"HK20": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "hrm"
+	},
+	"HK21": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "mnd"
+	},
+	"HK22": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "tkn"
+	},
+	"HK23": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "tkk"
+	},
+	"HK24": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "rnk"
+	},
+	"HK25": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "rnt"
+	},
+	"HK26": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "ctk"
+	},
+	"HK27": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "ct1"
+	},
+	"HK28": {
+		"line": "半滑線・空港線",
+		"json": "HK",
+		"id": "ct2"
+	},
+	"TY01": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "ngd"
+	},
+	"TY02": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "hon"
+	},
+	"TY03": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "ttm"
+	},
+	"TY04": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "myg"
+	},
+	"TY05": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "hmt"
+	},
+	"TY06": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "tkr"
+	},
+	"TY07": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "otb"
+	},
+	"TY08": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "tsr"
+	},
+	"TY09": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "hsn"
+	},
+	"TY10": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "tts"
+	},
+	"TY11": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "krg"
+	},
+	"TY12": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "hkt"
+	},
+	"TY13": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "yts"
+	},
+	"TY14": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "kzk"
+	},
+	"TY15": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "tyt"
+	},
+	"TY16": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "yhg"
+	},
+	"TY17": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "tst"
+	},
+	"TY18": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "uen"
+	},
+	"TY19": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "kmg"
+	},
+	"TY20": {
+		"line": "豊田線",
+		"json": "TY",
+		"id": "msb"
+	},
+	"KL01": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "hdk"
+	},
+	"KL02": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "kkr"
+	},
+	"KL03": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "krm"
+	},
+	"KL04": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "skk"
+	},
+	"KL05": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "kss"
+	},
+	"KL06": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "krt"
+	},
+	"KL07": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "ksm"
+	},
+	"KL08": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "krk"
+	},
+	"KL09": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "sms"
+	},
+	"KL10": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "isk"
+	},
+	"KL11": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "shw"
+	},
+	"KL12": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "ais"
+	},
+	"KL13": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "ond"
+	},
+	"KL14": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "kra"
+	},
+	"KL15": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "aym"
+	},
+	"KL16": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "sdn"
+	},
+	"KL17": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "oym"
+	},
+	"KL01a": {
+		"line": "刈谷環状線",
+		"json": "KL",
+		"id": "hdk"
+	},
+	"TT01": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "ygh"
+	},
+	"TT02": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "yks"
+	},
+	"TT03": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "nzb"
+	},
+	"TT04": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "cth"
+	},
+	"TT05": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "chs"
+	},
+	"TT06": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "skd"
+	},
+	"TT07": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "ttj"
+	},
+	"TT08": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "scd"
+	},
+	"TT09": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "cts"
+	},
+	"TT10": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "cht"
+	},
+	"TT11": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "mkg"
+	},
+	"TT12": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "okn"
+	},
+	"TT13": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "hng"
+	},
+	"TT14": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "mdg"
+	},
+	"TT15": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "smk"
+	},
+	"TT16": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "smg"
+	},
+	"KT01": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "tgw"
+	},
+	"KT02": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "hsd"
+	},
+	"KT03": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "ygh"
+	},
+	"KT04": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "ktk"
+	},
+	"KT05": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "ysk"
+	},
+	"KT06": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "myu"
+	},
+	"KT07": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "hnt"
+	},
+	"KT08": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "obm"
+	},
+	"KT09": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "krn"
+	},
+	"KT10": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "wks"
+	},
+	"KT11": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "dtc"
+	},
+	"KT12": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "sos"
+	},
+	"KT13": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "nkc"
+	},
+	"KT14": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "hdk"
+	},
+	"KT15": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "stm"
+	},
+	"KT16": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "mrt"
+	},
+	"KT17": {
+		"line": "刈田川線",
+		"json": "KT",
+		"id": "kry"
+	},
+	"KT00": {
+		"line": "刈田川急行線",
+		"json": "KT",
+		"id": "obu"
+	},
+	"KT15a": {
+		"line": "刈田川線知立支線",
+		"json": "KTa",
+		"id": "stm"
+	},
+	"KT18": {
+		"line": "刈田川線知立支線",
+		"json": "KTa",
+		"id": "kik"
+	},
+	"KT19": {
+		"line": "刈田川線知立支線",
+		"json": "KTa",
+		"id": "ond"
+	},
+	"KT20": {
+		"line": "刈田川線知立支線",
+		"json": "KTa",
+		"id": "kko"
+	},
+	"KT21": {
+		"line": "刈田川線知立支線",
+		"json": "KTa",
+		"id": "tri"
+	},
+	"KT22": {
+		"line": "刈田川線知立支線",
+		"json": "KTa",
+		"id": "chr"
+	},
+	"OL01": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "obu"
+	},
+	"OL02": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "obs"
+	},
+	"OL03": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "ngn"
+	},
+	"OL04": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "shg"
+	},
+	"OL05": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "kjt"
+	},
+	"OL06": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "bzy"
+	},
+	"OL07": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "tsn"
+	},
+	"OL08": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "kyw"
+	},
+	"OL09": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "tmo"
+	},
+	"OL10": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "alb"
+	},
+	"OL11": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "ebt"
+	},
+	"OL12": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "omn"
+	},
+	"OL01a": {
+		"line": "大府環状線",
+		"json": "OL",
+		"id": "obu"
+	},
+	"MR01": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "hns"
+	},
+	"MR02": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "mhc"
+	},
+	"MR03": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "mnt"
+	},
+	"MR04": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "nrw"
+	},
+	"MR05": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "gdg"
+	},
+	"MR06": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "asm"
+	},
+	"MR07": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "yrk"
+	},
+	"MR08": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "ikb"
+	},
+	"MR09": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "tmn"
+	},
+	"MR10": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "tkt"
+	},
+	"MR11": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "stn"
+	},
+	"MR12": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "hzm"
+	},
+	"MR13": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "urn"
+	},
+	"MR14": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "sfk"
+	},
+	"MR15": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "kgt"
+	},
+	"MR16": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "snt"
+	},
+	"MR17": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "umn"
+	},
+	"MR18": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "ftt"
+	},
+	"MR19": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "kwg"
+	},
+	"MR20": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "tks"
+	},
+	"MR21": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "kwa"
+	},
+	"MR22": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "kwk"
+	},
+	"MR23": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "sur"
+	},
+	"MR24": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "koh"
+	},
+	"MR25": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "mnh"
+	},
+	"MR26": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "gjm"
+	},
+	"MR27": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "ymd"
+	},
+	"MR28": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "oik"
+	},
+	"MR29": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "ktn"
+	},
+	"MR30": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "smr"
+	},
+	"MR31": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "mrg"
+	},
+	"MR32": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "mrz"
+	},
+	"MR33": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "mzk"
+	},
+	"NW01": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "nwa"
+	},
+	"NW02": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "rnw"
+	},
+	"NW03": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "mjd"
+	},
+	"NW04": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "jtk"
+	},
+	"NW05": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "zgm"
+	},
+	"NW06": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "wkn"
+	},
+	"NW07": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "amm"
+	},
+	"NW08": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "fkc"
+	},
+	"NW09": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "fsm"
+	},
+	"NW10": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "ktk"
+	},
+	"NW11": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "ust"
+	},
+	"NW12": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "mnk"
+	},
+	"NW13": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "nkh"
+	},
+	"NW14": {
+		"line": "名和線",
+		"json": "NW",
+		"id": "ywt"
+	},
+	"UM01": {
+		"line": "内海線",
+		"json": "UM",
+		"id": "koh"
+	},
+	"UM02": {
+		"line": "内海線",
+		"json": "UM",
+		"id": "kjo"
+	},
+	"UM03": {
+		"line": "内海線",
+		"json": "UM",
+		"id": "ucd"
+	},
+	"UM04": {
+		"line": "内海線",
+		"json": "UM",
+		"id": "utm"
+	},
+	"UM05": {
+		"line": "内海線",
+		"json": "UM",
+		"id": "wsk"
+	},
+	"UM06": {
+		"line": "内海線",
+		"json": "UM",
+		"id": "utk"
+	},
+	"TZ01": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "ars"
+	},
+	"TZ02": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "okk"
+	},
+	"TZ03": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "amm"
+	},
+	"TZ04": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "kfn"
+	},
+	"TZ05": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "gkt"
+	},
+	"TZ06": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "msn"
+	},
+	"TZ07": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "alb"
+	},
+	"TZ08": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "hry"
+	},
+	"TZ09": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "chc"
+	},
+	"TZ10": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "ngn"
+	},
+	"TZ11": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "hrk"
+	},
+	"TZ12": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "tti"
+	},
+	"TZ13": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "ksd"
+	},
+	"TZ14": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "mdk"
+	},
+	"TZ15": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "szy"
+	},
+	"TZ16": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "zng"
+	},
+	"TZ17": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "ftm"
+	},
+	"TZ18": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "fmd"
+	},
+	"TZ19": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "tyd"
+	},
+	"TZ20": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "wkm"
+	},
+	"TZ21": {
+		"line": "東西線",
+		"json": "TZ",
+		"id": "kkk"
+	},
+	"TZ00": {
+		"line": "惣作直通線",
+		"json": "TZ",
+		"id": "sos"
+	},
+	"TZ10a": {
+		"line": "惣作直通線",
+		"json": "TZ",
+		"id": "ngn"
+	},
+	"KT04a": {
+		"line": "与五八デルタ線",
+		"json": "TT",
+		"id": "ktk"
+	},
+	"TT02a": {
+		"line": "与五八デルタ線",
+		"json": "TT",
+		"id": "yks"
+	},
+	"GK04a": {
+		"line": "鳴海連絡線",
+		"json": "GK",
+		"id": "nrm"
+	},
+	"OD14a": {
+		"line": "鳴海連絡線",
+		"json": "GK",
+		"id": "kso"
+	},
+	"OL11a": {
+		"line": "大峯連絡線",
+		"json": "HD",
+		"id": "ebt"
+	},
+	"HD02a": {
+		"line": "大峯連絡線",
+		"json": "HD",
+		"id": "obm"
+	},
+	"KT01a": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "tgw"
+	},
+	"KT02a": {
+		"line": "つつじが丘線",
+		"json": "TT",
+		"id": "hsd"
+	},
+	"HD17b": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "okw"
+	},
+	"HD18a": {
+		"line": "師崎線",
+		"json": "MR",
+		"id": "hno"
+	},
+	"KT17a": {
+		"line": "みよし線",
+		"json": "MY",
+		"id": "kry"
+	},
+	"AR01": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "shg"
+	},
+	"AR02": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "ktm"
+	},
+	"AR03": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "gnk"
+	},
+	"AR04": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "oiw"
+	},
+	"AR05": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "msh"
+	},
+	"AR06": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "smn"
+	},
+	"AR07": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "nkt"
+	},
+	"AR08": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "srh"
+	},
+	"AR09": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "isi"
+	},
+	"AR10": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "smo"
+	},
+	"AR11": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "aru"
+	},
+	"AR12": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "zgm"
+	},
+	"AR13": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "arw"
+	},
+	"AR14": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "aro"
+	},
+	"AR15": {
+		"line": "荒尾線",
+		"json": "AR",
+		"id": "shr"
+	},
+	"ON10a": {
+		"line": "南港線(名港トリトンライン)",
+		"json": "TR",
+		"id": "tmo"
+	},
+	"AG01": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "oue"
+	},
+	"AG02": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "kmk"
+	},
+	"AG03": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "mri"
+	},
+	"AG04": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "hgo"
+	},
+	"AG05": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "tkd"
+	},
+	"AG06": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "fks"
+	},
+	"AG07": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "ark"
+	},
+	"AG08": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "kth"
+	},
+	"AG09": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "myz"
+	},
+	"AG10": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "knd"
+	},
+	"AG11": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "hgi"
+	},
+	"AG12": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "ynh"
+	},
+	"AG13": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "hds"
+	},
+	"AG14": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "akr"
+	},
+	"AG15": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "hnd"
+	},
+	"AG16": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "hdn"
+	},
+	"AG17": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "sk2"
+	},
+	"AG18": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "sk4"
+	},
+	"AG19": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "say"
+	},
+	"AG20": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "hnz"
+	},
+	"AG21": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "hso"
+	},
+	"AG22": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "kgr"
+	},
+	"AG23": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "hbt"
+	},
+	"AG24": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "ttn"
+	},
+	"AG25": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "cky"
+	},
+	"AG26": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "dmn"
+	},
+	"AG27": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "ttc"
+	},
+	"AG28": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "fkm"
+	},
+	"AG29": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "fki"
+	},
+	"AG30": {
+		"line": "阿久比線",
+		"json": "AG",
+		"id": "sfk"
+	},
+	"TR08": {
+		"line": "南港線(名港トリトンライン)",
+		"json": "TR",
+		"id": "tbs"
+	},
+	"TR09": {
+		"line": "南港線(名港トリトンライン)",
+		"json": "TR",
+		"id": "nkb"
+	},
+	"TR10": {
+		"line": "南港線(名港トリトンライン)",
+		"json": "TR",
+		"id": "wng"
+	},
+	"GK07a": {
+		"line": "徒歩経路",
+		"json": "walkPath",
+		"id": "try"
+	},
+	"MT07a": {
+		"line": "徒歩経路",
+		"json": "walkPath",
+		"id": "arm"
+	},
+	"GK18a": {
+		"line": "徒歩経路",
+		"json": "walkPath",
+		"id": "igm"
+	},
+	"MY11a": {
+		"line": "徒歩経路",
+		"json": "walkPath",
+		"id": "akd"
+	},
+	"TR03a": {
+		"line": "徒歩経路",
+		"json": "walkPath",
+		"id": "hnn"
+	},
+	"NW03a": {
+		"line": "徒歩経路",
+		"json": "walkPath",
+		"id": "mjd"
+	},
+	"NB05a": {
+		"line": "徒歩経路",
+		"json": "walkPath",
+		"id": "kw3"
+	},
+	"OL08a": {
+		"line": "徒歩経路",
+		"json": "walkPath",
+		"id": "kyw"
+	},
+	"AR07a": {
+		"line": "徒歩経路",
+		"json": "walkPath",
+		"id": "nkt"
+	},
+	"OL09a": {
+		"line": "徒歩経路",
+		"json": "walkPath",
+		"id": "tmo"
+	},
+	"OZ01": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "kbn"
+	},
+	"OZ02": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "kmb"
+	},
+	"OZ03": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "mgn"
+	},
+	"OZ04": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "kmr"
+	},
+	"OZ05": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "wkz"
+	},
+	"OZ06": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "ysw"
+	},
+	"OZ07": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "kug"
+	},
+	"OZ08": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "fkj"
+	},
+	"OZ09": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "kbr"
+	},
+	"OZ10": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "hkb"
+	},
+	"OZ11": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "ozk"
+	},
+	"OZ12": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "ozo"
+	},
+	"OZ13": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "dmo"
+	},
+	"OZ14": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "djj"
+	},
+	"OZ15": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "idr"
+	},
+	"OZ16": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "igc"
+	},
+	"OZ17": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "nom"
+	},
+	"OZ18": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "hmd"
+	},
+	"OZ19": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "ozh"
+	},
+	"OZ20": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "hoz"
+	},
+	"OZ21": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "iks"
+	},
+	"OZ22": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "znd"
+	},
+	"OZ23": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "tsk"
+	},
+	"OZ24": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "onk"
+	},
+	"OZ25": {
+		"line": "岡崎線",
+		"json": "OZ",
+		"id": "okz"
+	},
+	"OZ14a": {
+		"line": "岡崎線東公園支線",
+		"json": "OZa",
+		"id": "djj"
+	},
+	"OZ51": {
+		"line": "岡崎線東公園支線",
+		"json": "OZa",
+		"id": "kmo"
+	},
+	"OZ52": {
+		"line": "岡崎線東公園支線",
+		"json": "OZa",
+		"id": "ida"
+	},
+	"OZ53": {
+		"line": "岡崎線東公園支線",
+		"json": "OZa",
+		"id": "igs"
+	},
+	"OZ54": {
+		"line": "岡崎線東公園支線",
+		"json": "OZa",
+		"id": "ing"
+	},
+	"OZ55": {
+		"line": "岡崎線東公園支線",
+		"json": "OZa",
+		"id": "oro"
+	},
+	"OZ56": {
+		"line": "岡崎線東公園支線",
+		"json": "OZa",
+		"id": "mtd"
+	},
+	"OZ57": {
+		"line": "岡崎線東公園支線",
+		"json": "OZa",
+		"id": "hko"
+	}
 }

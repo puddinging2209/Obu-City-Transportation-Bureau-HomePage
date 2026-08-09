@@ -60,7 +60,7 @@ function indexofFromStation(diagram, station, rosen, direction) {
 			return: 0,
 		},
 		{
-			exc: { station: 'ebt', direction: { line: '大峯連絡線', id: 'hns' } },
+			exc: { station: 'ebt', direction: { line: '大峯連絡線', id: 'obm' } },
 			return: 0,
 		},
 		{
@@ -77,6 +77,18 @@ function indexofFromStation(diagram, station, rosen, direction) {
 				direction: { line: '南港線(名港トリトンライン)', id: 'wng' },
 			},
 			return: 0,
+		},
+		{
+			exc: { station: 'sos', direction: { line: '惣作直通線', id: 'ngn' } },
+			return: 10,
+		},
+		{
+			exc: { station: 'ngn', direction: { line: '惣作直通線', id: 'sos' } },
+			return: 9,
+		},
+		{
+			exc: { station: 'ngn', direction: { line: '東西線', id: 'ars' } },
+			return: 9,
 		},
 	];
 
@@ -124,6 +136,10 @@ function codeofToStation(station, direction, rosen) {
 		{
 			exc: { station: 'obm', direction: { line: '大峯連絡線', id: 'ebt' } },
 			return: 'OL11a',
+		},
+		{
+			exc: { station: 'sos', direction: { line: '惣作直通線', id: 'ngn' } },
+			return: 'TZ10a',
 		},
 	];
 

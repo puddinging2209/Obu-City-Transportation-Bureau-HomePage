@@ -3,8 +3,10 @@ import { atom } from 'jotai';
 import { id } from './Station.js';
 
 export const settingsAtom = atom(
-	JSON.parse(localStorage.getItem('settings')) ?? {
+	{
 		theme: 'light',
+		showSeconds: false,
+		...JSON.parse(localStorage.getItem('settings')),
 	},
 	(get, set, settings) => {
 		localStorage.setItem('settings', JSON.stringify(settings));
@@ -29,3 +31,5 @@ export const addMyStationAtom = atom(null, (get, set, s) => {
 export const nearestStationAtom = atom(null);
 
 export const isOpenDrawerAtom = atom(false);
+
+export const resultAtom = atom([]);
