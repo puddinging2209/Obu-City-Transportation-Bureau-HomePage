@@ -1,5 +1,6 @@
 import linesData from '../../../data/lines.json';
 import stationsData from '../../../data/stations.json';
+import getDirections from '../../../utils/getDirections';
 import { stationLogAtom } from '../states/log';
 
 export async function initializeStationsLayer({ map, store }) {
@@ -9,7 +10,7 @@ export async function initializeStationsLayer({ map, store }) {
 			return Object.values(linesData[r].stations
 				.find(s => s.id === stationData.id)?.types ?? {})
 				.filter(s => s).length
-		})) * stationData.routes.length + (stationData.directions.length === 1 ? 10 : 0)
+		})) * stationData.routes.length + (getDirections(stationData.id).length === 1 ? 10 : 0)
 	}
 	const getFeatureCollection = () => {
 		const stationLogsVisitedList = new Set(store.get(stationLogAtom).map(s => s.id))
