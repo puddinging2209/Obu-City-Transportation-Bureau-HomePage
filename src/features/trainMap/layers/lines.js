@@ -1,5 +1,13 @@
+import lineAliasesData from '../../../data/lineAliases.json';
 import linesData from '../../../data/lines.json';
 import lineShapeData from '../../../data/lineShape.json';
+
+function getAliasesName(name) {
+	for (const [k, v] of Object.entries(lineAliasesData)) {
+		if (v.includes(name)) return k
+	}
+	return name
+}
 
 export async function initializeLinesLayer({ map, store }) {
 	map.addSource('lines', {
@@ -10,7 +18,7 @@ export async function initializeLinesLayer({ map, store }) {
 				return {
 					type: 'Feature',
 					properties: {
-						color: linesData[name]?.color ?? '#999999'
+						color: linesData[getAliasesName(name)]?.color ?? '#999999'
 					},
 					geometry: {
 						type: 'LineString',
@@ -44,6 +52,6 @@ export async function initializeLinesLayer({ map, store }) {
 		disable() {
 			map.setLayoutProperty('lines', 'visibility', 'none')
 		},
-		update() {}
+		update() { }
 	}
 }
