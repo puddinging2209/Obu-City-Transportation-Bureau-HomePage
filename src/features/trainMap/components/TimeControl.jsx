@@ -1,5 +1,5 @@
 import SyncIcon from '@mui/icons-material/Sync';
-import { IconButton, Slider, Stack, Tooltip, Typography } from '@mui/material';
+import { Box, IconButton, Slider, Stack, Tooltip, Typography } from '@mui/material';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
@@ -9,18 +9,42 @@ import React from 'react';
 import { CompactButton, CompactInput } from '../../../components/Compact';
 import { setSecondAtom, setSpeedAtom, syncRealTimeAtom, timeAtom } from '../states/time';
 
+const MemorizedTimePicker = React.memo(({ setSecond }) => {
+	return (
+		<LocalizationProvider dateAdapter={AdapterDayjs}>
+			<TimePicker
+				sx={{
+					'& .MuiPickersOutlinedInput-root': {
+						padding: '8px'
+					},
+					'& .MuiPickersSectionList-root': {
+						display: 'none'
+					},
+					'& .MuiInputAdornment-root': {
+						margin: 0,
+						width: '24px'
+					},
+					'& .MuiButtonBase-root': {
+						padding: 0
+					}
+				}}
+				ampm={false}
+				views={['hours', 'minutes', 'seconds']}
+				onChange={d => setSecond(d.hour() * 3600 + d.minute() * 60 + d.second())}
+			></TimePicker>
+		</LocalizationProvider>
+	)
+})
+
 export function TimeControl() {
 	const [timeState, setTimeState] = useAtom(timeAtom)
 	const setSecond = useSetAtom(setSecondAtom)
 	const setSpeed = useSetAtom(setSpeedAtom)
 	const syncRealTime = useSetAtom(syncRealTimeAtom)
 	const [displayTime, setDisplayTime] = React.useState(0)
-	const [isEditing, setIsEditing] = React.useState(false)
+	const [timePickerValue, setTimePickerValue] = React.useState(dayjs())
 
 	React.useEffect(() => {
-		if (isEditing) {
-			return
-		}
 		let id
 		const tick = () => {
 			setDisplayTime(Math.floor((timeState.baseSimulationTime + (performance.now() - timeState.startAt) * timeState.speedRate / 1000) % (60 * 60 * 24)))
@@ -28,33 +52,21 @@ export function TimeControl() {
 		}
 		id = requestAnimationFrame(tick);
 		return () => cancelAnimationFrame(id)
-	}, [timeState, isEditing])
+	}, [timeState])
 
 	return (
 		<Stack spacing={1}>
-			<Stack direction='row' alignItems='center' spacing={1}>
+			<Box spacing={1} gridTemplateColumns='40px 1fr 40px' sx={{ display: 'grid', alignItems: 'center' }}>
 				<Tooltip title='現実時間と同期'>
 					<IconButton onClick={syncRealTime}>
 						<SyncIcon></SyncIcon>
 					</IconButton>
 				</Tooltip>
-				<LocalizationProvider dateAdapter={AdapterDayjs}>
-					<TimePicker
-						sx={{
-							width: '100%',
-							'& .MuiPickersSectionList-root': {
-								padding: '8px 0'
-							}
-						}}
-						ampm={false}
-						views={['hours', 'minutes', 'seconds']}
-						value={dayjs().set('hour', Math.floor(displayTime / 3600)).set('minute', Math.floor((displayTime % 3600) / 60)).set('second', Math.floor(displayTime % 60))}
-						onChange={d => setSecond(d.hour() * 3600 + d.minute() * 60 + d.second())}
-						onOpen={() => setIsEditing(true)}
-						onClose={() => setIsEditing(false)}
-					></TimePicker>
-				</LocalizationProvider>
-			</Stack>
+				<Typography fontSize='1.65rem' fontFamily='monospace'>
+					{Math.floor(displayTime / 3600)}:{String(Math.floor((displayTime % 3600) / 60)).padStart(2, '0')}:{String(displayTime % 60).padStart(2, '0')}
+				</Typography>
+				<MemorizedTimePicker setSecond={setSecond}></MemorizedTimePicker>
+			</Box>
 			<Slider
 				size='small'
 				valueLabelDisplay='off'
