@@ -1,7 +1,9 @@
 export async function initializeObuLayer({ map, store }) {
+	const data = await (await fetch('./geojson/obu_city.geojson')).json()
+
 	map.addSource('obu_city', {
 		type: 'geojson',
-		data: './geojson/obu_city.geojson'
+		data
 	})
 	map.addLayer({
 		id: 'obu_city_fill',

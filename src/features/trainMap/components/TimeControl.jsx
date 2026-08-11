@@ -23,7 +23,7 @@ export function TimeControl() {
 		}
 		let id
 		const tick = () => {
-			setDisplayTime((timeState.baseSimulationTime + (performance.now() - timeState.startAt) * timeState.speedRate / 1000) % (60 * 60 * 24))
+			setDisplayTime(Math.floor((timeState.baseSimulationTime + (performance.now() - timeState.startAt) * timeState.speedRate / 1000) % (60 * 60 * 24)))
 			id = requestAnimationFrame(tick)
 		}
 		id = requestAnimationFrame(tick);

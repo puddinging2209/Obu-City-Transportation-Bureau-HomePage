@@ -11,7 +11,7 @@ import { LayersControl } from './components/LayersControl';
 import { LoginButton } from './components/LoginButton';
 import { TimeControl } from './components/TimeControl';
 import { layers, layersEnabledAtom, updateLayerEnabledAtom } from './states/layers';
-import { setBottomSheetComponentAtom, setBottomSheetTitleAtom } from './states/sheet';
+import { clearBottomSheetAtom, setBottomSheetComponentAtom, setBottomSheetTitleAtom } from './states/sheet';
 import { timeAtom } from './states/time';
 
 function TrainMap() {
@@ -25,6 +25,7 @@ function TrainMap() {
 	const timeState = useAtomValue(timeAtom)
 	const setBottomSheetContent = useSetAtom(setBottomSheetComponentAtom)
 	const setBottomSheetTitle = useSetAtom(setBottomSheetTitleAtom)
+	const clearBottomSheet = useSetAtom(clearBottomSheetAtom)
 
 	const mapHandle = (mapEl) => {
 		if (!mapEl) {
@@ -36,11 +37,18 @@ function TrainMap() {
 			map.addControl(new maplibregl.AttributionControl({ compact: true }), 'top-left')
 
 			for (const l of layers.toReversed()) {
-				const layer = await l({ map, store });
-				layersRef.current.push(layer);
-				const enabled = layersEnabled[layer.id] ?? layer.defaultEnabled
-				enabled ? layer.enable() : layer.disable();
-				updateLayerEnabled(layer.id, enabled)
+				try {
+					const layer = await l({ map, store });
+					if (!layer) {
+						continue
+					}
+					layersRef.current.push(layer);
+					const enabled = layersEnabled[layer.id] ?? layer.defaultEnabled
+					enabled ? layer.enable() : layer.disable();
+					updateLayerEnabled(layer.id, enabled)
+				} catch (e) {
+					console.error(e)
+				}
 			}
 			layersRef.current.reverse();
 			setIsLoading(false);
@@ -69,6 +77,7 @@ function TrainMap() {
 		return () => {
 			node.style.padding = null
 			node.style.paddingBottom = null
+			clearBottomSheet()
 		}
 	}, [containerRef])
 
@@ -83,7 +92,7 @@ function TrainMap() {
 				width: "100%",
 				height: "100%",
 				background: "#00000044",
-				zIndex: 1,
+				zIndex: 1052,
 				justifyContent: "center",
 				alignItems: "center"
 			}}>
