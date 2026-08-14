@@ -43,6 +43,7 @@ export default defineConfig({
 			registerType: 'autoUpdate',
 			injectManifest: {
 				rollupFormat: 'iife',
+				maximumFileSizeToCacheInBytes: 5000000,
 			},
 			workbox: {
 				globPatterns: ['**/*.{js,css,html,ico,png,svg,txt}'],
