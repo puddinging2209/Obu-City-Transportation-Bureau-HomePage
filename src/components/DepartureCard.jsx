@@ -14,7 +14,7 @@ import OverflowMarquee from './OverflowMarquee.jsx';
 import lines from '../data/lines.json';
 
 import getDirections from '../utils/getDirections.js';
-import { searchDeparture } from '../utils/readOud.js';
+import { getDeparture } from '../utils/readOud.js';
 import { label } from '../utils/Station.js';
 import { nowsecond } from '../utils/Time.js';
 
@@ -31,7 +31,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 
 	React.useEffect(() => {
 		setLoading(true);
-		searchDeparture(station, directionOptions[direction]).then((deps) => {
+		getDeparture(station, directionOptions[direction]).then((deps) => {
 			setDepartures(deps);
 			setLoading(false);
 		});

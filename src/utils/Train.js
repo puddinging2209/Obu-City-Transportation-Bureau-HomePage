@@ -21,9 +21,46 @@ export function terminal(train, diagram) {
 	return label(result);
 }
 
-export function typeName(train, diagram) {
-	const result = diagram.railway.trainTypes[train.type].name;
-	if (result === '普通 ') return '普通';
-	if (result === 'たこつぼ') return '特急';
-	return result;
+/**
+ * 列車の種別名(日本名)を返す
+ * @param {Object} train 列車オブジェクト
+ * @param {Object} diagram ダイヤグラム
+ * @param {string} station 駅名(その駅地点での種別(種別変更を考慮))
+ * @returns {string} 種別名
+ */
+export function typeName(train, diagram, station = null) {
+	const typeToNormalized = (type) => {
+		if (type === '普通 ') return '普通';
+		if (type === 'たこつぼ') return '特急';
+		return type;
+	};
+
+	if (train.note?.match(/から|まで/)) {
+		const border = train.note.includes('まで') ? 'to' : 'from';
+		const typeChange = {
+			sta: train.note.split(/から|まで/)[0].trim(),
+			type: train.note.split(/から|まで/)[1].trim(),
+			mode: border,
+		};
+		const staIndex = diagram.railway.stations.findIndex((sta) => id(sta.name) === id(station));
+		const changeStaIndex = diagram.railway.stations.findIndex((sta) => id(sta.name) === id(typeChange.sta));
+		console.log(staIndex, changeStaIndex, train.direction);
+		if (staIndex !== -1 && changeStaIndex !== -1) {
+			if (train.direction === 0 ? staIndex < changeStaIndex : staIndex > changeStaIndex) {
+				if (typeChange.mode === 'to') {
+					return typeToNormalized(typeChange.type);
+				} else {
+					return typeToNormalized(diagram.railway.trainTypes[train.type].name);
+				}
+			} else {
+				if (typeChange.mode === 'from') {
+					return typeToNormalized(typeChange.type);
+				} else {
+					return typeToNormalized(diagram.railway.trainTypes[train.type].name);
+				}
+			}
+		}
+	}
+
+	return typeToNormalized(diagram.railway.trainTypes[train.type].name);
 }

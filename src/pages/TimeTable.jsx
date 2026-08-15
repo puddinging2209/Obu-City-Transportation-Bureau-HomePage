@@ -26,7 +26,7 @@ import getDirections from '../utils/getDirections.js';
 import stations from '../data/stations.json';
 import types from '../data/types.json';
 
-import { searchDeparture } from '../utils/readOud.js';
+import { getDeparture } from '../utils/readOud.js';
 import { label } from '../utils/Station.js';
 
 function TimeTable() {
@@ -61,7 +61,7 @@ function TimeTable() {
 			setDirection(desiredDirection);
 		}
 		setLoading(true);
-		searchDeparture(station, directionOptions[desiredDirection]).then((deps) => {
+		getDeparture(station, directionOptions[desiredDirection]).then((deps) => {
 			setDepartures(divideDeps(deps));
 			setLoading(false);
 		});
@@ -70,7 +70,7 @@ function TimeTable() {
 	React.useEffect(() => {
 		if (station && directionOptions[direction]) {
 			setLoading(true);
-			searchDeparture(station, directionOptions[direction])
+			getDeparture(station, directionOptions[direction])
 				.then((deps) => setDepartures(divideDeps(deps)))
 				.catch(() => {
 					setDepartures(Array.from({ length: 27 }, () => []));

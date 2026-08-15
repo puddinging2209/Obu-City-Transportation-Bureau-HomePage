@@ -185,7 +185,7 @@ function mergeMultilayerTrain(deps) {
  * 	@param {string} station 駅id
  * 	@param {{line: string, id: string}} direction 方向
  */
-async function searchDeparture(station, direction) {
+async function getDeparture(station, direction) {
 	const diagram = await dia(lines[direction.line].json);
 	const rosen = lines[direction.line].code;
 	const stationIndex = indexofFromStation(diagram, station, rosen, direction);
@@ -216,7 +216,7 @@ async function searchDeparture(station, direction) {
 			const time = tra.timetable._data[d === 0 ? stationIndex : numofStations - 1 - stationIndex]?.departure;
 			return {
 				terminal: terminal(tra, diagram),
-				typeName: typeName(tra, diagram),
+				typeName: typeName(tra, diagram, station),
 				time: adjustTime(time),
 				multilayer: false,
 				train: tra,
@@ -225,4 +225,4 @@ async function searchDeparture(station, direction) {
 		.sort((a, b) => adjustTime(a.time) - adjustTime(b.time));
 	return mergeMultilayerTrain(result);
 }
-export { searchDeparture };
+export { getDeparture };
