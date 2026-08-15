@@ -44,7 +44,6 @@ export function typeName(train, diagram, station = null) {
 		};
 		const staIndex = diagram.railway.stations.findIndex((sta) => id(sta.name) === id(station));
 		const changeStaIndex = diagram.railway.stations.findIndex((sta) => id(sta.name) === id(typeChange.sta));
-		console.log(staIndex, changeStaIndex, train.direction);
 		if (staIndex !== -1 && changeStaIndex !== -1) {
 			if (train.direction === 0 ? staIndex < changeStaIndex : staIndex > changeStaIndex) {
 				if (typeChange.mode === 'to') {
