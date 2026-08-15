@@ -1,119 +1,136 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
+import { useAtomValue } from 'jotai';
+import linesData from '../../../data/lines.json';
 import routesData from '../../../data/routes.json';
 import typesData from '../../../data/types.json';
-import linesData from '../../../data/lines.json';
+import { settingsAtom } from '../../../utils/Atom';
 import { name } from '../../../utils/Station';
+import { toTimeString as getTime } from '../../../utils/Time';
 
 export function TrainInfo({ train }) {
-	const getTime = (sec) => {
-		return `${String(Math.floor(sec / 3600)).padStart(2, '0')}:${String(Math.floor((sec % 3600) / 60)).padStart(2, '0')}`
-	}
+	const { showSeconds } = useAtomValue(settingsAtom);
 
-	const route = routesData.routes[routesData.trains[train.number]]
-	const length = route.flat().reduce((p, c) => p + c.length, 0)
-	const stations = train.stops.map((s, i) => ({ ...s, index: i }))
-	const stops = stations.filter(s => s.stopType === 'stop')
+	const route = routesData.routes[routesData.trains[train.number]];
+	const length = route.flat().reduce((p, c) => p + c.length, 0);
+	const stations = train.stops.map((s, i) => ({ ...s, index: i }));
+	const stops = stations.filter((s) => s.stopType === 'stop');
 
 	return (
 		<Stack>
 			<Stack alignItems='flex-start'>
 				<Typography>{train.number}</Typography>
-				<Typography variant='h6' textAlign='left'>{typesData[train.type].name} {name(stations.at(-1).id)}行き</Typography>
-				<Typography>{(length / 1000).toFixed(2)}km {getTime(stations[0].dep)}発 → {getTime(stations.at(-1).arr)}着</Typography>
-				<Typography>{stops.length - 1} / {stations.length - 1}駅停車 {(length / 1000 / (stations.at(-1).arr - stations[0].dep) * 3600).toFixed(2)}km/h</Typography>
+				<Typography variant='h6' textAlign='left'>
+					{typesData[train.type].name} {name(stations.at(-1).id)}行き
+				</Typography>
+				<Typography>
+					{(length / 1000).toFixed(2)}km {getTime(stations[0].dep)}発 → {getTime(stations.at(-1).arr)}着
+				</Typography>
+				<Typography>
+					{stops.length - 1} / {stations.length - 1}駅停車 {((length / 1000 / (stations.at(-1).arr - stations[0].dep)) * 3600).toFixed(2)}
+					km/h
+				</Typography>
 			</Stack>
-			<Stack sx={{
-				paddingBlock: '16px'
-			}}>
-				{
-					stops.map((s, i) => {
-						const segmentLength = route[i]?.reduce?.((p, c) => p + c.length, 0)
-						const segmentDuration = stops[i + 1]?.arr - s.dep
+			<Stack
+				sx={{
+					paddingBlock: '16px',
+				}}
+			>
+				{stops.map((s, i) => {
+					const segmentLength = route[i]?.reduce?.((p, c) => p + c.length, 0);
+					const segmentDuration = stops[i + 1]?.arr - s.dep;
 
-						return (
-							<Box key={i}>
+					return (
+						<Box key={i}>
+							<Box
+								gridTemplateColumns={`24px ${showSeconds ? '4' : '3'}rem 1fr`}
+								gap='6px'
+								sx={{
+									display: 'grid',
+									height: '0px',
+									alignContent: 'center',
+								}}
+							>
 								<Box
-									gridTemplateColumns='24px 3rem 1fr'
-									gap='6px'
 									sx={{
-										display: 'grid',
-										height: '0px',
-										alignContent: 'center'
+										display: 'flex',
+										justifyContent: 'center',
+										alignItems: 'center',
 									}}
 								>
 									<Box
 										sx={{
-											display: 'flex',
-											justifyContent: 'center',
-											alignItems: 'center'
+											width: '16px',
+											aspectRatio: '1/1',
+											borderRadius: '100%',
+											background: 'white',
+											outline: 'solid 2px black',
+											zIndex: 1,
 										}}
-									>
-										<Box
-											sx={{
-												width: '16px',
-												aspectRatio: '1/1',
-												borderRadius: '100%',
-												background: 'white',
-												outline: 'solid 2px black',
-												zIndex: 1
-											}}
-										>
-										</Box>
-									</Box>
-									<Stack direction='column'>
-										{s.arr ? <Typography>{getTime(s.arr)}</Typography> : <></>}
-										{s.dep ? <Typography>{getTime(s.dep)}</Typography> : <></>}
-									</Stack>
+									></Box>
+								</Box>
+								<Stack direction='column'>
+									{s.arr ?
+										<Typography>{getTime(s.arr)}</Typography>
+									:	<></>}
+									{s.dep ?
+										<Typography>{getTime(s.dep)}</Typography>
+									:	<></>}
+								</Stack>
+								<Box
+									sx={{
+										display: 'flex',
+										alignItems: 'center',
+									}}
+								>
+									<Typography textAlign='left'>{name(s.id)}</Typography>
+								</Box>
+							</Box>
+							{stops[i + 1] ?
+								<Grid
+									gridTemplateColumns='24px 1fr'
+									gap='36px'
+									sx={{
+										display: 'grid',
+										height: '128px',
+									}}
+								>
 									<Box
 										sx={{
-											display: 'flex',
-											alignItems: 'center'
-										}}
-									>
-										<Typography textAlign='left'>{name(s.id)}</Typography>
-									</Box>
-								</Box>
-								{stops[i + 1]
-									? <Grid
-										gridTemplateColumns='24px 1fr'
-										gap='36px'
-										sx={{
-											display: 'grid',
-											height: '128px'
-										}}
-									>
-										<Box sx={{
 											height: '100%',
 											display: 'flex',
-											justifyContent: 'center'
-										}}>
-											<Box
-												sx={{
-													width: '8px',
-													height: '100%',
-													background: linesData[s.lineName]?.color ?? '#999999'
-												}}
-											></Box>
-										</Box>
+											justifyContent: 'center',
+										}}
+									>
 										<Box
 											sx={{
+												width: '8px',
 												height: '100%',
-												display: 'flex',
-												flexDirection: 'column',
-												justifyContent: 'center',
-												alignItems: 'flex-start'
+												background: linesData[s.lineName]?.color ?? '#999999',
 											}}
-										>
-											<Typography>{(segmentLength / 1000).toFixed(2)}km {Math.floor(segmentDuration / 60)}分</Typography>
-											<Typography>{stops[i + 1].index - s.index - 1}駅 {(segmentLength / 1000 / segmentDuration * 3600).toFixed(2)}km/h</Typography>
-										</Box>
-									</Grid>
-									: <></>}
-							</Box>
-						)
-					})
-				}
+										></Box>
+									</Box>
+									<Box
+										sx={{
+											height: '100%',
+											display: 'flex',
+											flexDirection: 'column',
+											justifyContent: 'center',
+											alignItems: 'flex-start',
+										}}
+									>
+										<Typography>
+											{(segmentLength / 1000).toFixed(2)}km {Math.floor(segmentDuration / 60)}分
+										</Typography>
+										<Typography>
+											{stops[i + 1].index - s.index - 1}駅 {((segmentLength / 1000 / segmentDuration) * 3600).toFixed(2)}km/h
+										</Typography>
+									</Box>
+								</Grid>
+							:	<></>}
+						</Box>
+					);
+				})}
 			</Stack>
-		</Stack >
-	)
+		</Stack>
+	);
 }
