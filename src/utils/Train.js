@@ -35,31 +35,31 @@ export function typeName(train, diagram, station = null) {
 		return type;
 	};
 
-	if (train.note?.match(/から|まで/)) {
-		const border = train.note.includes('まで') ? 'to' : 'from';
-		const typeChange = {
-			sta: train.note.split(/から|まで/)[0].trim(),
-			type: train.note.split(/から|まで/)[1].trim(),
-			mode: border,
-		};
-		const staIndex = diagram.railway.stations.findIndex((sta) => id(sta.name) === id(station));
-		const changeStaIndex = diagram.railway.stations.findIndex((sta) => id(sta.name) === id(typeChange.sta));
-		if (staIndex !== -1 && changeStaIndex !== -1) {
-			if (train.direction === 0 ? staIndex < changeStaIndex : staIndex > changeStaIndex) {
-				if (typeChange.mode === 'to') {
-					return typeToNormalized(typeChange.type);
+	const notes = train.note.split(',');
+	let type = typeToNormalized(diagram.railway.trainTypes[train.type].name);
+	notes.forEach((note) => {
+		if (train.note?.match(/から|まで/)) {
+			const border = train.note.includes('まで') ? 'to' : 'from';
+			const typeChange = {
+				sta: note.split(/から|まで/)[0].trim(),
+				type: note.split(/から|まで/)[1].trim(),
+				mode: border,
+			};
+			const staIndex = diagram.railway.stations.findIndex((sta) => id(sta.name) === id(station));
+			const changeStaIndex = diagram.railway.stations.findIndex((sta) => id(sta.name) === id(typeChange.sta));
+			if (staIndex !== -1 && changeStaIndex !== -1) {
+				if (train.direction === 0 ? staIndex < changeStaIndex : staIndex > changeStaIndex) {
+					if (typeChange.mode === 'to') {
+						type = typeToNormalized(typeChange.type);
+					}
 				} else {
-					return typeToNormalized(diagram.railway.trainTypes[train.type].name);
-				}
-			} else {
-				if (typeChange.mode === 'from') {
-					return typeToNormalized(typeChange.type);
-				} else {
-					return typeToNormalized(diagram.railway.trainTypes[train.type].name);
+					if (typeChange.mode === 'from') {
+						type = typeToNormalized(typeChange.type);
+					}
 				}
 			}
 		}
-	}
+	});
 
-	return typeToNormalized(diagram.railway.trainTypes[train.type].name);
+	return type;
 }
