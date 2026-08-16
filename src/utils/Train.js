@@ -35,11 +35,11 @@ export function typeName(train, diagram, station = null) {
 		return type;
 	};
 
-	const notes = train.note.split(',');
+	const notes = train.note?.split(',') ?? [];
 	let type = typeToNormalized(diagram.railway.trainTypes[train.type].name);
 	notes.forEach((note) => {
-		if (train.note?.match(/から|まで/)) {
-			const border = train.note.includes('まで') ? 'to' : 'from';
+		if (note.match(/から|まで/)) {
+			const border = note.includes('まで') ? 'to' : 'from';
 			const typeChange = {
 				sta: note.split(/から|まで/)[0].trim(),
 				type: note.split(/から|まで/)[1].trim(),
