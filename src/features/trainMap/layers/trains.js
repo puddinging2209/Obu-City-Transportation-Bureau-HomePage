@@ -28,7 +28,6 @@ export async function initializeTrainsLayer({ map, store }) {
 	};
 
 	const isMobile = checkIsMobile();
-	console.log(isMobile);
 
 	const worker = new TrainMapWorker();
 	const ouds = await Promise.all(
