@@ -297,7 +297,7 @@ export default async function formatStops(line, train) {
 			});
 		} else if (i > 0 && preResult[i - 1].id === preResult[i].id) {
 			continue;
-		} else if ((preResult[i].id === 'obu' || preResult[i].id === 'ktk') && preResult[i].stopType === 'pass') {
+		} else if (preResult[i].id === 'obu' && preResult[i].stopType === 'pass') {
 			continue;
 		} else if (
 			linesData[preResult[i].lineName].code === 'KT' &&

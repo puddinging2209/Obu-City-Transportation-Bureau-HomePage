@@ -15,6 +15,11 @@ export function TrainInfo({ train }) {
 	const stations = train.stops.map((s, i) => ({ ...s, index: i }));
 	const stops = stations.filter((s) => s.stopType === 'stop');
 
+	const scrollToDep = () => {
+		const el = document.getElementsByClassName('emphasized')[0];
+		if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	};
+
 	return (
 		<Stack>
 			<Stack alignItems='flex-start'>
@@ -38,6 +43,8 @@ export function TrainInfo({ train }) {
 				{stops.map((s, i) => {
 					const segmentLength = route[i]?.reduce?.((p, c) => p + c.length, 0);
 					const segmentDuration = stops[i + 1]?.arr - s.dep;
+
+					const isCurrent = false;
 
 					return (
 						<Box key={i}>
