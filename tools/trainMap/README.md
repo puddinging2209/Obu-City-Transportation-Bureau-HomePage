@@ -10,11 +10,11 @@
 ```bash
 cd tools/trainMap
 
-npm install
+(npm install)
 (node toJson.mjs)
 node trains.mjs
 
-pip install scipy numpy --break-system-packages   # 未インストールの場合
+(pip install scipy numpy --break-system-packages)   # 未インストールの場合
 python main.py [<データディレクトリ(任意)>] [<出力先(任意)>]
 # 例:
 python main.py
