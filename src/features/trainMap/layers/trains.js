@@ -88,11 +88,6 @@ export async function initializeTrainsLayer({ map, store }) {
 						const train = data.data.find((t) => t.number === e.object?.id);
 						if (train) {
 							showTrainInfo(train);
-							console.log(
-								train.stops,
-								// .map((s) => (s.stopType === 'stop' ? [label(s.id), toTimeString(s.arr), toTimeString(s.dep)] : null))
-								// .filter((s) => s),
-							);
 						}
 					},
 				});
