@@ -6,7 +6,7 @@ import typesData from '../../data/types.json';
 
 const typeExceptions = {
 	'普通 ': '普通',
-	たこつぼ: '特急',
+	'たこつぼ': '特急',
 };
 
 const typePriorities = Object.fromEntries(Object.keys(typesData).map((d, i) => [d, i]));
@@ -33,10 +33,10 @@ function normalizeSec(sec) {
 
 /**
  * 路線内の始発時刻と終着時刻を返す
- * @param {Train} train 列車オブジェクト
- * @returns {[number, number]} [始発時刻, 終着時刻]
+ * @param {object} train 列車オブジェクト
+ * @returns {[number, number]} [始発時刻, 終着時刻, 平均時刻]
  */
-const getTrainTimeRange = (train) => {
+function getTrainTimeRange(train) {
 	const timetable = train.timetable;
 	const startAt = normalizeSec(timetable._data[timetable.firstStationIndex].departure);
 	const endAt = normalizeSec(timetable._data[timetable.terminalStationIndex].arrival ?? timetable._data[timetable.terminalStationIndex].departure);
@@ -44,7 +44,7 @@ const getTrainTimeRange = (train) => {
 };
 
 const stationIdCache = new Map();
-const getStationId = (numbering) => {
+function getStationId(numbering) {
 	if (stationIdCache.has(numbering)) return stationIdCache.get(numbering);
 	const numberingNormalized = numbering.substring(0, 4);
 	const id = stations.find((s) => s.code.includes(numberingNormalized) || s.name === numberingNormalized)?.id;
@@ -52,7 +52,7 @@ const getStationId = (numbering) => {
 	return id;
 };
 
-const searchStops = (train, lineCode) => {
+function searchStops(train, lineCode)  {
 	return train.timetable._data
 		.map((sta, i) => {
 			const stationId = sta?.stationId;
@@ -72,7 +72,7 @@ const searchStops = (train, lineCode) => {
 		.filter((sta) => sta !== null);
 };
 
-const sortTrains = (trains) => {
+function sortTrains(trains) {
 	const sorted = trains.sort((a, b) => getTrainTimeRange(a.train)[2] - getTrainTimeRange(b.train)[2]);
 	for (let i = 0; i < sorted.length; i++) {
 		if (sorted[i].train.operations.some((o) => o.outerType === 'A')) {
@@ -87,7 +87,7 @@ const sortTrains = (trains) => {
 	return sorted;
 };
 
-const formatStops = (trains) => {
+function formatStops(trains) {
 	const sorted = sortTrains(trains);
 	const timetables = sorted.flatMap((t) => searchStops(t.train, t.lineCode));
 	const result = [];
@@ -112,18 +112,13 @@ const formatStops = (trains) => {
 				timetables[i].id === 'chr')
 		) {
 			continue;
-		} else if (i > 0 && timetables[i].id === 'kry' && timetables[i].lineName === '刈田川線' && timetables[i - 1].lineName === '外環線')
-			result.push({
-				...timetables[i],
-				lineName: '緒川線',
-			});
-		else result.push(timetables[i]);
+		} else result.push(timetables[i]);
 	}
 
 	return result;
 };
 
-const setTrains = (ouds) => {
+function setTrains(ouds) {
 	const trainsGroupByNumber = {};
 	const sequenceNumbers = {};
 	for (const oud of ouds) {
@@ -166,7 +161,7 @@ const setTrains = (ouds) => {
 	trains = new Set(trainsGroupByType.flat());
 };
 
-const calcPositions = (sec) => {
+function calcPositions(sec) {
 	const results = [];
 	for (const train of trains) {
 		if (!(train.startAt <= sec && sec <= train.endAt)) {

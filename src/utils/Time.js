@@ -19,6 +19,7 @@ export function toTime(seconds) {
 }
 
 export function toTimeString(seconds) {
+	if (!seconds) return '-';
 	const { showSeconds } = store.get(settingsAtom);
 	const timeObj = toTime(Number(seconds));
 	const hStr = String(timeObj.h);
