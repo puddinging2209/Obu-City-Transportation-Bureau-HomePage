@@ -2,3 +2,5 @@ docs/
 dist/
 node_modules/
 tools/temp/
+__pycache__/
+*.kml

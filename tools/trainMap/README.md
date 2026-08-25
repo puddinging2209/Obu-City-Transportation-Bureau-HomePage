@@ -11,9 +11,9 @@ node toJson.mjs
 node trains.mjs
 
 pip install scipy numpy --break-system-packages   # 未インストールの場合
-python3 main.py <データディレクトリ> <出力先>
+python main.py [<データディレクトリ(任意)>] [<出力先(任意)>]
 # 例:
-python3 main.py ./ ./routes.json
+python main.py
 ```
 
 ## 処理の流れ
