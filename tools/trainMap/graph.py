@@ -10,7 +10,6 @@
 物理距離(重み)を持つ。両方向に通行可能(逆走可)。
 """
 from collections import defaultdict
-
 from geo import dist
 
 STATION_PARALLEL_EXCLUDE_M = 300.0  # 投影点が路線の内側(沿線/並行)の場合の除外距離しきい値
@@ -42,7 +41,36 @@ def is_loop_line(line):
     return dist(line.xy[0], line.xy[-1]) <= LOOP_CLOSURE_EPS_M
 
 
-def build_full_graph(lines, junction_nodes, stations, extra_station_routes=None):
+def resolve_line_names(names, lines, line_aliases):
+    """
+    駅のroutes(や lineName)に書かれた路線名のリストを、実際に lineShape.json に
+    存在する路線名のリストに解決する。
+
+    stations.json側では「A線」とまとめて書かれていても、lineShape.json側では
+    形状データの都合で「B線」「C線」のように分割されていることがあるため、
+    line_aliases (例: {"A線": ["B線", "C線"]}) が指定されていれば、
+    lines に存在しない名前をエイリアスとして展開する。
+
+    - nameがそのままlinesに存在すればそのまま採用
+    - 存在しないがline_aliasesにキーとして登録されていれば、対応する
+      実際の路線名(複数可)に展開する
+    - どちらにも該当しない名前は無視する(未知の路線名として黙って除外)
+    戻り値: 重複を除いた実際の路線名のリスト(順序維持)
+    """
+    line_aliases = line_aliases or {}
+    resolved = []
+    for name in names:
+        if name in lines:
+            resolved.append(name)
+        elif name in line_aliases:
+            for real_name in line_aliases[name]:
+                if real_name in lines:
+                    resolved.append(real_name)
+        # どちらにも無ければ無視(未知の路線名)
+    return list(dict.fromkeys(resolved))
+
+
+def build_full_graph(lines, junction_nodes, stations, extra_station_routes=None, line_aliases=None):
     """
     lines: {name: LineShapeData}
     junction_nodes: [{"lines": {line_name: ratio, ...}, "xy": (x,y)}, ...]  (build_graph.build_junction_nodesの出力)
@@ -52,12 +80,19 @@ def build_full_graph(lines, junction_nodes, stations, extra_station_routes=None)
         実際に使われている(路線,駅)組み合わせを追加でスナップ対象にするための補完情報。
         (例: 急行線と各停線が同じ駅を通るのに、駅側のroutesには急行線側しか
         書かれていない、といったメタデータの抜け漏れに対応するため)
+    line_aliases: {alias_name: [real_line_name, ...]}  省略可。
+        stations.jsonのroutesではまとめて1つの路線名(例:「A線」)として書かれて
+        いても、lineShape.json側では形状データの都合で複数の路線(例:「B線」
+        「C線」)に分かれている場合に、その対応関係を教えるための設定。
+        エイリアス名はlinesに存在しない名前として扱われ、対応する実際の
+        路線名すべてに展開してスナップを試みる。
 
     戻り値: (Graph, station_node_map, junction_node_ids, excluded)
       station_node_map: {station_id: {line_name: node_id}}  駅がスナップされた各路線上のノードid
       excluded: [(station_id, line_name, distance, is_edge), ...] 除外基準により無視されたroutes記載
     """
     extra_station_routes = extra_station_routes or {}
+    line_aliases = line_aliases or {}
     g = Graph()
 
     # --- ノードID割当: 分岐/合流ノード ---
@@ -98,9 +133,10 @@ def build_full_graph(lines, junction_nodes, stations, extra_station_routes=None)
     excluded = []  # デバッグ表示用: (station_id, line_name, distance, is_edge)
     for sid, sdata in stations.items():
         lat, lng = sdata["lat"], sdata["lng"]
-        route_names = list(dict.fromkeys(
+        raw_route_names = list(dict.fromkeys(
             list(sdata.get("routes", [])) + list(extra_station_routes.get(sid, []))
         ))
+        route_names = resolve_line_names(raw_route_names, lines, line_aliases)
         for line_name in route_names:
             if line_name not in lines:
                 continue
