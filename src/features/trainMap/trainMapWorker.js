@@ -6,7 +6,7 @@ import typesData from '../../data/types.json';
 
 const typeExceptions = {
 	'普通 ': '普通',
-	'たこつぼ': '特急',
+	たこつぼ: '特急',
 };
 
 const typePriorities = Object.fromEntries(Object.keys(typesData).map((d, i) => [d, i]));
@@ -41,7 +41,7 @@ function getTrainTimeRange(train) {
 	const startAt = normalizeSec(timetable._data[timetable.firstStationIndex].departure);
 	const endAt = normalizeSec(timetable._data[timetable.terminalStationIndex].arrival ?? timetable._data[timetable.terminalStationIndex].departure);
 	return [startAt, endAt, (startAt + endAt) / 2];
-};
+}
 
 const stationIdCache = new Map();
 function getStationId(numbering) {
@@ -50,9 +50,9 @@ function getStationId(numbering) {
 	const id = stations.find((s) => s.code.includes(numberingNormalized) || s.name === numberingNormalized)?.id;
 	stationIdCache.set(numbering, id);
 	return id;
-};
+}
 
-function searchStops(train, lineCode)  {
+function searchStops(train, lineCode) {
 	return train.timetable._data
 		.map((sta, i) => {
 			const stationId = sta?.stationId;
@@ -70,22 +70,12 @@ function searchStops(train, lineCode)  {
 			};
 		})
 		.filter((sta) => sta !== null);
-};
+}
 
 function sortTrains(trains) {
 	const sorted = trains.sort((a, b) => getTrainTimeRange(a.train)[2] - getTrainTimeRange(b.train)[2]);
-	for (let i = 0; i < sorted.length; i++) {
-		if (sorted[i].train.operations.some((o) => o.outerType === 'A')) {
-			if (sorted[i + 1] && !sorted[i + 1].train.operations.some((o) => o.outerType === 'B')) {
-				sorted[i].train.timetable._data = [];
-			}
-		}
-		if (sorted[i].train.operations.some((o) => o.outerType === 'B')) {
-			if (sorted[i - 1] && !sorted[i - 1].train.operations.some((o) => o.outerType === 'A')) sorted[i].train.timetable._data = [];
-		}
-	}
 	return sorted;
-};
+}
 
 function formatStops(trains) {
 	const sorted = sortTrains(trains);
@@ -116,7 +106,7 @@ function formatStops(trains) {
 	}
 
 	return result;
-};
+}
 
 function setTrains(ouds) {
 	const trainsGroupByNumber = {};
@@ -159,7 +149,7 @@ function setTrains(ouds) {
 		});
 	}
 	trains = new Set(trainsGroupByType.flat());
-};
+}
 
 function calcPositions(sec) {
 	const results = [];
@@ -225,7 +215,7 @@ function calcPositions(sec) {
 			}
 		})();
 		// if (targetRate < 0 || 1 < targetRate)
-		if (!targetRate && !targetSegment) {
+		if (targetRate == null && !targetSegment) {
 			continue;
 		}
 		const lineName = targetSegment.line;
@@ -249,7 +239,7 @@ function calcPositions(sec) {
 		});
 	}
 	return results;
-};
+}
 
 self.addEventListener('message', ({ data }) => {
 	switch (data.type) {
