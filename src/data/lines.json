@@ -8905,7 +8905,7 @@
 					"sem-exp": null,
 					"sub-exp": true,
 					"exp": true,
-					"rap-exp": false,
+					"rap-exp": "some",
 					"com-exp": null,
 					"lim-exp": null,
 					"lin": null
