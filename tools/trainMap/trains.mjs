@@ -57,7 +57,7 @@ function getStationId(numbering) {
 	return id;
 }
 
-function searchStops(train, lineCode) {
+function searchStops(train, lineCode, index) {
 	return train.timetable._data
 		.map((sta, i) => {
 			const stationId = sta?.stationId;
@@ -65,11 +65,13 @@ function searchStops(train, lineCode) {
 			if (lineCode == 'KT' && stationId === 'chr') return null;
 			if (lineCode == 'MR' && (stationId === 'okw' || stationId === 'hno')) return null;
 			if (lineCode == 'NK' && (stationId === 'kyw' || stationId === 'tmo')) return null;
+			if (lineCode == 'TT' && (stationId === 'tgw' || stationId === 'hsd')) return null;
+			if (lineCode == 'MY' && stationId === 'kry') return null;
 			if (![1, 2].includes(sta.stopType)) return null;
 			return {
 				id: stationId,
 				stopType: sta.stopType === 1 ? 'stop' : 'pass',
-				arr: sta.arrival ?? null,
+				arr: sta.arrival ?? (!(index === 0 && i === train.timetable.firstStationIndex) ? sta.departure : null) ?? null,
 				dep: sta.departure ?? null,
 				lineName: sta.lineName,
 			};
@@ -84,7 +86,7 @@ function sortTrains(trains) {
 
 function formatStops(trains) {
 	const sorted = sortTrains(trains);
-	const timetables = sorted.flatMap((t) => searchStops(t.train, t.lineCode));
+	const timetables = sorted.flatMap((t, i) => searchStops(t.train, t.lineCode, i));
 	const result = [];
 	for (let i = 0; i < timetables.length; i++) {
 		if (i < timetables.length - 2 && timetables[i].id === timetables[i + 1].id) {
