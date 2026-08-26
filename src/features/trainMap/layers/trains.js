@@ -88,6 +88,7 @@ export async function initializeTrainsLayer({ map, store }) {
 						const train = data.data.find((t) => t.number === e.object?.id);
 						if (train) {
 							showTrainInfo(train);
+							console.log(train);
 						}
 					},
 				});
