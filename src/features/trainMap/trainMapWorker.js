@@ -221,7 +221,8 @@ function calcPositions(sec) {
 			continue;
 		}
 		const lineName = targetSegment.line;
-		const lineRate = (targetSegment.to - targetSegment.from) * targetRate + targetSegment.from;
+		// lineRate が 1 だとなぜか消える
+		const lineRate = Math.min((targetSegment.to - targetSegment.from) * targetRate + targetSegment.from, 0.999999999999999);
 		const shapeData = lineShapeData[lineName];
 		const coordinate = (() => {
 			for (let i = 1; i < shapeData.length; i++) {
