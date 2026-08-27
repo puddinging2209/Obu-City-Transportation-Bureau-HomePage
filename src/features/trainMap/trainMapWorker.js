@@ -52,7 +52,7 @@ function getStationId(numbering) {
 	return id;
 };
 
-function searchStops(train, lineCode)  {
+function searchStops(train, lineCode) {
 	return train.timetable._data
 		.map((sta, i) => {
 			const stationId = sta?.stationId;
@@ -161,6 +161,19 @@ function setTrains(ouds) {
 	trains = new Set(trainsGroupByType.flat());
 };
 
+function getBearing([lon1, lat1], [lon2, lat2]) {
+	const φ1 = lat1 * Math.PI / 180
+	const φ2 = lat2 * Math.PI / 180
+	const Δλ = (lon2 - lon1) * Math.PI / 180
+
+	const y = Math.sin(Δλ) * Math.cos(φ2)
+	const x =
+		Math.cos(φ1) * Math.sin(φ2) -
+		Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ)
+
+	return Math.atan2(y, x)
+}
+
 function calcPositions(sec) {
 	const results = [];
 	for (const train of trains) {
@@ -230,22 +243,29 @@ function calcPositions(sec) {
 		}
 		const lineName = targetSegment.line;
 		const lineRate = (targetSegment.to - targetSegment.from) * targetRate + targetSegment.from;
+		const isReversed = (targetSegment.to - targetSegment.from) < 0
 		const shapeData = lineShapeData[lineName];
-		const coordinate = (() => {
+		const { coordinate, angle } = (() => {
 			for (let i = 1; i < shapeData.length; i++) {
 				if (lineRate <= shapeData[i][2]) {
 					const remain = lineRate - shapeData[i - 1][2];
 					const segmentRate = remain / (shapeData[i][2] - shapeData[i - 1][2]);
-					return [
-						(shapeData[i][0] - shapeData[i - 1][0]) * segmentRate + shapeData[i - 1][0],
-						(shapeData[i][1] - shapeData[i - 1][1]) * segmentRate + shapeData[i - 1][1],
-					];
+					const radian = 2 * Math.PI - Math.atan2(shapeData[i][1] - shapeData[i - 1][1], shapeData[i][0] - shapeData[i - 1][0]) + (isReversed ? Math.PI : 0);
+					return {
+						coordinate: [
+							(shapeData[i][0] - shapeData[i - 1][0]) * segmentRate + shapeData[i - 1][0],
+							(shapeData[i][1] - shapeData[i - 1][1]) * segmentRate + shapeData[i - 1][1],
+						],
+						angle: radian * 180 / Math.PI,
+					};
 				}
 			}
+			return { coordinate: null, angle: null }
 		})();
 		results.push({
 			...train,
 			coordinate,
+			angle
 		});
 	}
 	return results;

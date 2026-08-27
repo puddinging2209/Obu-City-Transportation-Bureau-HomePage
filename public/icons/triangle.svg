@@ -1,0 +1,79 @@
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 1200 100"
+	width="1200"
+	height="100"
+>
+	<path
+		d="M50 10 L80 90 L20 90 Z"
+		fill="#000"
+		stroke="white"
+		stroke-width="10"
+	/>
+	<path
+		d="M150 10 L180 90 L120 90 Z"
+		fill="#000"
+		stroke="white"
+		stroke-width="10"
+	/>
+	<path
+		d="M250 10 L280 90 L220 90 Z"
+		fill="#000"
+		stroke="white"
+		stroke-width="10"
+	/>
+	<path
+		d="M350 10 L380 90 L320 90 Z"
+		fill="#0000DC"
+		stroke="white"
+		stroke-width="10"
+	/>
+	<path
+		d="M450 10 L480 90 L420 90 Z"
+		fill="#84C255"
+		stroke="white"
+		stroke-width="10"
+	/>
+	<path
+		d="M550 10 L580 90 L520 90 Z"
+		fill="#84C255"
+		stroke="white"
+		stroke-width="10"
+	/>
+	<path
+		d="M650 10 L680 90 L620 90 Z"
+		fill="#008C00"
+		stroke="white"
+		stroke-width="10"
+	/>
+	<path
+		d="M750 10 L780 90 L720 90 Z"
+		fill="#00CBD5"
+		stroke="white"
+		stroke-width="10"
+	/>
+	<path
+		d="M850 10 L880 90 L820 90 Z"
+		fill="#DC0000"
+		stroke="white"
+		stroke-width="10"
+	/>
+	<path
+		d="M950 10 L980 90 L920 90 Z"
+		fill="#FFDC00"
+		stroke="white"
+		stroke-width="10"
+	/>
+	<path
+		d="M1050 10 L1080 90 L1020 90 Z"
+		fill="#FF0000"
+		stroke="white"
+		stroke-width="10"
+	/>
+	<path
+		d="M1150 10 L1180 90 L1120 90 Z"
+		fill="#FF0000"
+		stroke="white"
+		stroke-width="10"
+	/>
+</svg>
