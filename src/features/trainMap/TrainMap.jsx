@@ -1,7 +1,7 @@
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LayersIcon from '@mui/icons-material/Layers';
 import { Box, CircularProgress, Fab, Stack } from '@mui/material';
-import { useAtomValue, useSetAtom, useStore } from 'jotai';
+import { Provider, useAtomValue, useSetAtom, useStore } from 'jotai';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import React from 'react';
@@ -11,7 +11,7 @@ import { LayersControl } from './components/LayersControl';
 import { LoginButton } from './components/LoginButton';
 import { TimeControl } from './components/TimeControl';
 import { layers, layersEnabledAtom, updateLayerEnabledAtom } from './states/layers';
-import { clearBottomSheetAtom, setBottomSheetComponentAtom, setBottomSheetTitleAtom, trackingTrainAtom } from './states/sheet';
+import { clearBottomSheetAtom, setBottomSheetComponentAtom, setBottomSheetTitleAtom, store as sheetStore, trackingTrainAtom } from './states/sheet';
 import { timeAtom } from './states/time';
 
 function TrainMap() {
@@ -26,7 +26,7 @@ function TrainMap() {
 	const setBottomSheetContent = useSetAtom(setBottomSheetComponentAtom);
 	const setBottomSheetTitle = useSetAtom(setBottomSheetTitleAtom);
 	const clearBottomSheet = useSetAtom(clearBottomSheetAtom);
-	const trackingTrain = useAtomValue(trackingTrainAtom);
+	const trackingTrain = useAtomValue(trackingTrainAtom, { store: sheetStore });
 	const isTrackingRef = React.useRef(false);
 
 	const mapHandle = (mapEl) => {
@@ -86,7 +86,7 @@ function TrainMap() {
 				if (layersEnabled[l.id]) l.update(sec);
 			});
 			syncCameraToPoint(mapHandle, trackingTrain.coordinates.toReversed());
-			console.log(trackingTrain);
+			// console.log(trackingTrain);
 			id = requestAnimationFrame(tick);
 		};
 		id = requestAnimationFrame(tick);
@@ -107,62 +107,64 @@ function TrainMap() {
 	}, [containerRef]);
 
 	return (
-		<Box ref={containerRef} sx={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
-			{isLoading ?
-				<Box
+		<Provider store={sheetStore}>
+			<Box ref={containerRef} sx={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
+				{isLoading ?
+					<Box
+						sx={{
+							position: 'absolute',
+							display: 'flex',
+							width: '100%',
+							height: '100%',
+							background: '#00000044',
+							zIndex: 1052,
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}
+					>
+						<CircularProgress></CircularProgress>
+					</Box>
+				:	<></>}
+				<Map
+					ref={mapHandle}
+					initialViewState={{
+						latitude: 35.008614536,
+						longitude: 136.9621485834,
+						zoom: 10,
+					}}
+					attributionControl={false}
+					onDragStart={onDragStart}
+					mapStyle='https://tile.openstreetmap.jp/styles/maptiler-basic-ja/style.json'
+				/>
+				<Stack
 					sx={{
 						position: 'absolute',
-						display: 'flex',
-						width: '100%',
-						height: '100%',
-						background: '#00000044',
-						zIndex: 1052,
-						justifyContent: 'center',
-						alignItems: 'center',
+						left: '16px',
+						bottom: '16px',
 					}}
+					spacing={2}
 				>
-					<CircularProgress></CircularProgress>
-				</Box>
-			:	<></>}
-			<Map
-				ref={mapHandle}
-				initialViewState={{
-					latitude: 35.008614536,
-					longitude: 136.9621485834,
-					zoom: 10,
-				}}
-				attributionControl={false}
-				onDragStart={onDragStart}
-				mapStyle='https://tile.openstreetmap.jp/styles/maptiler-basic-ja/style.json'
-			/>
-			<Stack
-				sx={{
-					position: 'absolute',
-					left: '16px',
-					bottom: '16px',
-				}}
-				spacing={2}
-			>
-				<Fab
-					onClick={() => {
-						setBottomSheetContent(LayersControl, { layers: layersRef.current });
-						setBottomSheetTitle('レイヤー表示');
-					}}
-				>
-					<LayersIcon></LayersIcon>
-				</Fab>
-				<Fab
-					onClick={() => {
-						setBottomSheetContent(TimeControl);
-						setBottomSheetTitle('時間操作');
-					}}
-				>
-					<AccessTimeIcon></AccessTimeIcon>
-				</Fab>
-			</Stack>
-			<BottomSheet></BottomSheet>
-			<LoginButton></LoginButton>
-		</Box>
+					<Fab
+						onClick={() => {
+							setBottomSheetContent(LayersControl, { layers: layersRef.current });
+							setBottomSheetTitle('レイヤー表示');
+						}}
+					>
+						<LayersIcon></LayersIcon>
+					</Fab>
+					<Fab
+						onClick={() => {
+							setBottomSheetContent(TimeControl);
+							setBottomSheetTitle('時間操作');
+						}}
+					>
+						<AccessTimeIcon></AccessTimeIcon>
+					</Fab>
+				</Stack>
+				<BottomSheet></BottomSheet>
+				<LoginButton></LoginButton>
+			</Box>
+		</Provider>
 	);
 }
 
