@@ -84,6 +84,7 @@ export async function initializeTrainsLayer({ map, store }) {
 					getColor: (d) => d.color,
 					getAngle: (d) => d.angle,
 					getSize: () => (isMobile ? 30 : 26),
+					billboard: false,
 
 					updateTriggers: {
 						getPosition: data.sec,
