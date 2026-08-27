@@ -770,32 +770,32 @@
 		"id": "hog"
 	},
 	"FT05a": {
-		"line": "二ツ池線",
+		"line": "二ツ池線森岡支線",
 		"json": "FT",
 		"id": "dtc"
 	},
 	"FT09": {
-		"line": "二ツ池線",
+		"line": "二ツ池線森岡支線",
 		"json": "FT",
 		"id": "smt"
 	},
 	"FT10": {
-		"line": "二ツ池線",
+		"line": "二ツ池線森岡支線",
 		"json": "FT",
 		"id": "yng"
 	},
 	"FT11": {
-		"line": "二ツ池線",
+		"line": "二ツ池線森岡支線",
 		"json": "FT",
 		"id": "mrn"
 	},
 	"FT12": {
-		"line": "二ツ池線",
+		"line": "二ツ池線森岡支線",
 		"json": "FT",
 		"id": "ktb"
 	},
 	"FT13": {
-		"line": "二ツ池線",
+		"line": "二ツ池線森岡支線",
 		"json": "FT",
 		"id": "odn"
 	},
