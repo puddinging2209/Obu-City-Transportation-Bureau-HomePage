@@ -1,4 +1,4 @@
-import { ScatterplotLayer } from '@deck.gl/layers';
+import { IconLayer } from '@deck.gl/layers';
 import { MapboxOverlay } from '@deck.gl/mapbox';
 import { createTheme } from '@mui/material';
 import linesData from '../../../data/lines.json';
@@ -19,9 +19,6 @@ function checkIsMobile() {
 }
 
 export async function initializeTrainsLayer({ map, store }) {
-	const hexToRgb = (hex) => {
-		return [parseInt(hex.substring(1, 3), 16), parseInt(hex.substring(3, 5), 16), parseInt(hex.substring(5, 7), 16)];
-	};
 	const showTrainInfo = (train) => {
 		store.set(setBottomSheetComponentAtom, TrainInfo, { train });
 		store.set(setBottomSheetTitleAtom, '列車情報');
@@ -61,28 +58,30 @@ export async function initializeTrainsLayer({ map, store }) {
 					.filter((t) => t.coordinate)
 					.map((t) => ({
 						id: t.number,
+						type: t.type,
 						position: t.coordinate.reverse(),
-						color: [...hexToRgb(typesData[t.type]?.color ?? '#ff00ff'), 255],
+						angle: t.angle,
 					}));
-				const layer = new ScatterplotLayer({
+				const layer = new IconLayer({
 					id: 'trains',
 					data: points,
 					pickable: true,
 
+					iconAtlas: './icons/triangle.svg',
+					iconMapping: Object.fromEntries(Object.values(typesData).map((t, i) => [t.name, {
+						x: i * 100,
+						y: 0,
+						width: 100,
+						height: 100,
+					}])),
+					getIcon: (d) => d.type,
 					getPosition: (d) => d.position,
-					getFillColor: (d) => d.color,
-					getLineColor: [255, 255, 255, 255],
-
-					stroked: true,
-					filled: true,
-					radiusUnits: 'pixels',
-					getRadius: isMobile ? 8 : 6,
-					lineWidthUnits: 'pixels',
-					getLineWidth: 1.5,
+					getColor: (d) => d.color,
+					getAngle: (d) => d.angle,
+					getSize: () => isMobile ? 30 : 26,
 
 					updateTriggers: {
 						getPosition: data.sec,
-						getFillColor: data.sec,
 					},
 					onClick: (e) => {
 						const train = data.data.find((t) => t.number === e.object?.id);
