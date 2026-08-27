@@ -1,10 +1,9 @@
-import { createStore } from 'jotai';
 import linesData from '../../data/lines.json';
 import lineShapeData from '../../data/lineShape.json';
 import routesData from '../../data/routes.json';
 import stationsData from '../../data/stations.json';
 import typesData from '../../data/types.json';
-import { trackingTrainAtom } from './states/sheet';
+import { sheetStore, trackingTrainAtom } from './states/sheet';
 
 const typeExceptions = {
 	'普通 ': '普通',
@@ -19,8 +18,6 @@ const lineCodeNameMap = Object.fromEntries(
 		.reverse()
 		.map((l) => [l.code, l.name]),
 );
-
-const store = createStore();
 
 let trains = null;
 
@@ -157,17 +154,6 @@ function setTrains(ouds) {
 	trains = new Set(trainsGroupByType.flat());
 }
 
-function getBearing([lon1, lat1], [lon2, lat2]) {
-	const φ1 = (lat1 * Math.PI) / 180;
-	const φ2 = (lat2 * Math.PI) / 180;
-	const Δλ = ((lon2 - lon1) * Math.PI) / 180;
-
-	const y = Math.sin(Δλ) * Math.cos(φ2);
-	const x = Math.cos(φ1) * Math.sin(φ2) - Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ);
-
-	return Math.atan2(y, x);
-}
-
 function calcPositions(sec) {
 	const results = [];
 	for (const train of trains) {
@@ -266,7 +252,7 @@ function calcPositions(sec) {
 			angle,
 		});
 		if (coordinate && store.get(trackingTrainAtom)?.number === train.number) {
-			store.set(trackingTrainAtom, {
+			sheetStore.set(trackingTrainAtom, {
 				number: train.number,
 				coordinate,
 			});

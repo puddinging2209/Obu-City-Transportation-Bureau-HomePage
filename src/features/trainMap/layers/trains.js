@@ -5,7 +5,7 @@ import linesData from '../../../data/lines.json';
 import typesData from '../../../data/types.json';
 import { dia } from '../.././../utils/readOud';
 import { TrainInfo } from '../components/TrainInfo';
-import { setBottomSheetComponentAtom, setBottomSheetTitleAtom, trackingTrainAtom } from '../states/sheet';
+import { setBottomSheetComponentAtom, setBottomSheetTitleAtom, store as sheetStore, trackingTrainAtom } from '../states/sheet';
 import TrainMapWorker from '../trainMapWorker?worker';
 
 const theme = createTheme();
@@ -92,12 +92,13 @@ export async function initializeTrainsLayer({ map, store }) {
 					onClick: (e) => {
 						const train = data.data.find((t) => t.number === e.object?.id);
 						if (train) {
-							console.log(train);
-							showTrainInfo(train);
-							store.set(trackingTrainAtom, {
+							console.log({
 								number: train.number,
 								coordinate: train.coordinate,
 							});
+							showTrainInfo(train);
+							// ここでstore.setしたい
+							sheetStore.set(trackingTrainAtom, train);
 						}
 					},
 				});

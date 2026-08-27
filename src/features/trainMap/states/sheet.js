@@ -1,4 +1,4 @@
-import { atom } from 'jotai';
+import { atom, createStore } from 'jotai';
 import { atomWithReset, RESET } from 'jotai/utils';
 
 export const bottomSheetContent = atomWithReset({
@@ -19,6 +19,7 @@ export const setBottomSheetTitleAtom = atom(null, (get, set, title) => {
 
 export const clearBottomSheetAtom = atom(null, (get, set) => set(bottomSheetContent, RESET));
 
+export const store = createStore();
 export const trackingTrainAtom = atom({
 	number: null,
 	coordinates: [],
