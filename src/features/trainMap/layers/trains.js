@@ -68,17 +68,23 @@ export async function initializeTrainsLayer({ map, store }) {
 					pickable: true,
 
 					iconAtlas: './icons/triangle.svg',
-					iconMapping: Object.fromEntries(Object.values(typesData).map((t, i) => [t.name, {
-						x: i * 100,
-						y: 0,
-						width: 100,
-						height: 100,
-					}])),
+					iconMapping: Object.fromEntries(
+						Object.values(typesData).map((t, i) => [
+							t.name,
+							{
+								x: i * 100,
+								y: 0,
+								width: 100,
+								height: 100,
+							},
+						]),
+					),
 					getIcon: (d) => d.type,
 					getPosition: (d) => d.position,
 					getColor: (d) => d.color,
 					getAngle: (d) => d.angle,
-					getSize: () => isMobile ? 30 : 26,
+					getSize: () => (isMobile ? 30 : 26),
+					billboard: false,
 
 					updateTriggers: {
 						getPosition: data.sec,
