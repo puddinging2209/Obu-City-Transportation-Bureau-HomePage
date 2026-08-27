@@ -11,7 +11,7 @@ function EachRouteMap({ line, onClick }) {
 		return <Typography sx={{ mt: 2 }}>路線を選択してください。</Typography>;
 	}
 
-	const { name, stations } = line;
+	const { isLoop, stations } = line;
 	const [types, setTypes] = React.useState([]);
 
 	React.useEffect(() => {
@@ -88,8 +88,9 @@ function EachRouteMap({ line, onClick }) {
 				</Stack>
 				<Box sx={{ position: 'relative', minWidth: types.length * 30 + 48 + 160 }}>
 					{stations.map((station, index) => (
-						<RouteStationRow key={station.id || index} line={line} i={index} stations={stations} lines={types} onClick={onClick} />
+						<RouteStationRow key={station.id || index} line={line} index={index} stations={stations} lines={types} onClick={onClick} />
 					))}
+					{isLoop && <RouteStationRow line={line} index={stations.length} stations={stations} lines={types} onClick={onClick} />}
 				</Box>
 			</Box>
 		</Stack>

@@ -7,12 +7,15 @@ import getDirections from '../utils/getDirections.js';
 import stationData from '../data/stations.json';
 import types from '../data/types.json';
 
-function RouteStationRow({ i, line, stations, lines, onClick }) {
+function RouteStationRow({ index, line, stations, lines, onClick }) {
 	const navigate = useNavigate();
 	const theme = useTheme();
 
+	const i = index % stations.length;
 	const station = stations[i];
-	const isEven = i % 2 === 0;
+	const isEven = index % 2 === 0;
+
+	const isLoop = line.isLoop;
 
 	const linkTo = (sta, line) => {
 		const dId = getDirections(sta).findIndex((d) => d.route === line);
@@ -51,9 +54,9 @@ function RouteStationRow({ i, line, stations, lines, onClick }) {
 			>
 				{lines.map((line, j) => {
 					const type = Object.values(types).find((t) => t.code === line);
-					const preStopType = stations[i - 1]?.types?.[line] ?? null;
+					const preStopType = stations[index - 1]?.types?.[line] ?? null;
 					const stopType = station.types?.[line];
-					const nextStopType = stations[i + 1]?.types?.[line] ?? null;
+					const nextStopType = stations[isLoop && index === stations.length - 1 ? 0 : index + 1]?.types?.[line] ?? null;
 					return (
 						<>
 							{stopType !== null && preStopType !== null && (
