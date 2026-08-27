@@ -1,16 +1,24 @@
 import CloseIcon from '@mui/icons-material/Close';
 import { Box, IconButton, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { useAtomValue, useSetAtom } from 'jotai';
-import { bottomSheetContent, clearBottomSheetAtom, isBottomSheetOpenAtom, setBottomSheetComponentAtom, setBottomSheetTitleAtom } from '../states/sheet';
+import {
+	bottomSheetContent,
+	clearBottomSheetAtom,
+	isBottomSheetOpenAtom,
+	setBottomSheetComponentAtom,
+	setBottomSheetTitleAtom,
+	trackingTrainAtom,
+} from '../states/sheet';
 
 export function BottomSheet() {
-	const theme = useTheme()
-	const bottomSheet = useAtomValue(bottomSheetContent)
-	const isBottomSheetOpen = useAtomValue(isBottomSheetOpenAtom)
-	const setBottomSheetContent = useSetAtom(setBottomSheetComponentAtom)
-	const setBottomSheetTitle = useSetAtom(setBottomSheetTitleAtom)
-	const clearBottomSheet = useSetAtom(clearBottomSheetAtom)
-	const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+	const theme = useTheme();
+	const bottomSheet = useAtomValue(bottomSheetContent);
+	const isBottomSheetOpen = useAtomValue(isBottomSheetOpenAtom);
+	const setBottomSheetContent = useSetAtom(setBottomSheetComponentAtom);
+	const setBottomSheetTitle = useSetAtom(setBottomSheetTitleAtom);
+	const clearBottomSheet = useSetAtom(clearBottomSheetAtom);
+	const setTrackingTrain = useSetAtom(trackingTrainAtom);
+	const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
 	return (
 		<Stack
@@ -25,7 +33,7 @@ export function BottomSheet() {
 				bgcolor: theme.palette.background.default,
 				zIndex: 1051,
 				translate: isBottomSheetOpen ? '0% 0%' : '0% 100%',
-				transition: 'translate .1s'
+				transition: 'translate .1s',
 			}}
 			spacing={1}
 		>
@@ -38,7 +46,16 @@ export function BottomSheet() {
 				}}
 			>
 				<Typography>{bottomSheet.title}</Typography>
-				<IconButton size='small' onClick={clearBottomSheet}>
+				<IconButton
+					size='small'
+					onClick={() => {
+						clearBottomSheet();
+						setTrackingTrain({
+							number: null,
+							coordinate: [],
+						});
+					}}
+				>
 					<CloseIcon></CloseIcon>
 				</IconButton>
 			</Stack>
@@ -46,13 +63,13 @@ export function BottomSheet() {
 				sx={{
 					height: '100%',
 					overflowX: 'hidden',
-					overflowY: 'auto'
+					overflowY: 'auto',
 				}}
 			>
-				{isBottomSheetOpen ? (
+				{isBottomSheetOpen ?
 					<bottomSheet.component {...bottomSheet.props}></bottomSheet.component>
-				) : <></>}
+				:	<></>}
 			</Box>
 		</Stack>
-	)
+	);
 }

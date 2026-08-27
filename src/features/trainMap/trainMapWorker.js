@@ -1,12 +1,14 @@
+import { createStore } from 'jotai';
 import linesData from '../../data/lines.json';
 import lineShapeData from '../../data/lineShape.json';
 import routesData from '../../data/routes.json';
 import stationsData from '../../data/stations.json';
 import typesData from '../../data/types.json';
+import { trackingTrainAtom } from './states/sheet';
 
 const typeExceptions = {
 	'普通 ': '普通',
-	'たこつぼ': '特急',
+	たこつぼ: '特急',
 };
 
 const typePriorities = Object.fromEntries(Object.keys(typesData).map((d, i) => [d, i]));
@@ -17,6 +19,8 @@ const lineCodeNameMap = Object.fromEntries(
 		.reverse()
 		.map((l) => [l.code, l.name]),
 );
+
+const store = createStore();
 
 let trains = null;
 
@@ -41,7 +45,7 @@ function getTrainTimeRange(train) {
 	const startAt = normalizeSec(timetable._data[timetable.firstStationIndex].departure);
 	const endAt = normalizeSec(timetable._data[timetable.terminalStationIndex].arrival ?? timetable._data[timetable.terminalStationIndex].departure);
 	return [startAt, endAt, (startAt + endAt) / 2];
-};
+}
 
 const stationIdCache = new Map();
 function getStationId(numbering) {
@@ -50,7 +54,7 @@ function getStationId(numbering) {
 	const id = stations.find((s) => s.code.includes(numberingNormalized) || s.name === numberingNormalized)?.id;
 	stationIdCache.set(numbering, id);
 	return id;
-};
+}
 
 function searchStops(train, lineCode) {
 	return train.timetable._data
@@ -70,7 +74,7 @@ function searchStops(train, lineCode) {
 			};
 		})
 		.filter((sta) => sta !== null);
-};
+}
 
 function sortTrains(trains) {
 	const sorted = trains.sort((a, b) => getTrainTimeRange(a.train)[2] - getTrainTimeRange(b.train)[2]);
@@ -85,7 +89,7 @@ function sortTrains(trains) {
 		}
 	}
 	return sorted;
-};
+}
 
 function formatStops(trains) {
 	const sorted = sortTrains(trains);
@@ -116,7 +120,7 @@ function formatStops(trains) {
 	}
 
 	return result;
-};
+}
 
 function setTrains(ouds) {
 	const trainsGroupByNumber = {};
@@ -159,19 +163,6 @@ function setTrains(ouds) {
 		});
 	}
 	trains = new Set(trainsGroupByType.flat());
-};
-
-function getBearing([lon1, lat1], [lon2, lat2]) {
-	const φ1 = lat1 * Math.PI / 180
-	const φ2 = lat2 * Math.PI / 180
-	const Δλ = (lon2 - lon1) * Math.PI / 180
-
-	const y = Math.sin(Δλ) * Math.cos(φ2)
-	const x =
-		Math.cos(φ1) * Math.sin(φ2) -
-		Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ)
-
-	return Math.atan2(y, x)
 }
 
 function calcPositions(sec) {
@@ -243,33 +234,42 @@ function calcPositions(sec) {
 		}
 		const lineName = targetSegment.line;
 		const lineRate = (targetSegment.to - targetSegment.from) * targetRate + targetSegment.from;
-		const isReversed = (targetSegment.to - targetSegment.from) < 0
+		const isReversed = targetSegment.to - targetSegment.from < 0;
 		const shapeData = lineShapeData[lineName];
 		const { coordinate, angle } = (() => {
 			for (let i = 1; i < shapeData.length; i++) {
 				if (lineRate <= shapeData[i][2]) {
 					const remain = lineRate - shapeData[i - 1][2];
 					const segmentRate = remain / (shapeData[i][2] - shapeData[i - 1][2]);
-					const radian = 2 * Math.PI - Math.atan2(shapeData[i][1] - shapeData[i - 1][1], shapeData[i][0] - shapeData[i - 1][0]) + (isReversed ? Math.PI : 0);
+					const radian =
+						2 * Math.PI -
+						Math.atan2(shapeData[i][1] - shapeData[i - 1][1], shapeData[i][0] - shapeData[i - 1][0]) +
+						(isReversed ? Math.PI : 0);
 					return {
 						coordinate: [
 							(shapeData[i][0] - shapeData[i - 1][0]) * segmentRate + shapeData[i - 1][0],
 							(shapeData[i][1] - shapeData[i - 1][1]) * segmentRate + shapeData[i - 1][1],
 						],
-						angle: radian * 180 / Math.PI,
+						angle: (radian * 180) / Math.PI,
 					};
 				}
 			}
-			return { coordinate: null, angle: null }
+			return { coordinate: null, angle: null };
 		})();
 		results.push({
 			...train,
 			coordinate,
-			angle
+			angle,
 		});
+		if (coordinate && store.get(trackingTrainAtom)?.number === train.number) {
+			store.set(trackingTrainAtom, {
+				number: train.number,
+				coordinate,
+			});
+		}
 	}
 	return results;
-};
+}
 
 self.addEventListener('message', ({ data }) => {
 	switch (data.type) {

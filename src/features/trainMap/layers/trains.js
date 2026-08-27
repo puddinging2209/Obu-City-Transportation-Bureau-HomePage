@@ -5,7 +5,7 @@ import linesData from '../../../data/lines.json';
 import typesData from '../../../data/types.json';
 import { dia } from '../.././../utils/readOud';
 import { TrainInfo } from '../components/TrainInfo';
-import { setBottomSheetComponentAtom, setBottomSheetTitleAtom } from '../states/sheet';
+import { setBottomSheetComponentAtom, setBottomSheetTitleAtom, trackingTrainAtom } from '../states/sheet';
 import TrainMapWorker from '../trainMapWorker?worker';
 
 const theme = createTheme();
@@ -68,17 +68,22 @@ export async function initializeTrainsLayer({ map, store }) {
 					pickable: true,
 
 					iconAtlas: './icons/triangle.svg',
-					iconMapping: Object.fromEntries(Object.values(typesData).map((t, i) => [t.name, {
-						x: i * 100,
-						y: 0,
-						width: 100,
-						height: 100,
-					}])),
+					iconMapping: Object.fromEntries(
+						Object.values(typesData).map((t, i) => [
+							t.name,
+							{
+								x: i * 100,
+								y: 0,
+								width: 100,
+								height: 100,
+							},
+						]),
+					),
 					getIcon: (d) => d.type,
 					getPosition: (d) => d.position,
 					getColor: (d) => d.color,
 					getAngle: (d) => d.angle,
-					getSize: () => isMobile ? 30 : 26,
+					getSize: () => (isMobile ? 30 : 26),
 
 					updateTriggers: {
 						getPosition: data.sec,
@@ -86,7 +91,12 @@ export async function initializeTrainsLayer({ map, store }) {
 					onClick: (e) => {
 						const train = data.data.find((t) => t.number === e.object?.id);
 						if (train) {
+							console.log(train);
 							showTrainInfo(train);
+							store.set(trackingTrainAtom, {
+								number: train.number,
+								coordinate: train.coordinate,
+							});
 						}
 					},
 				});
