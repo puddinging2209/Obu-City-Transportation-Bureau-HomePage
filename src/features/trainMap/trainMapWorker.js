@@ -56,7 +56,7 @@ function getStationId(numbering) {
 	return id;
 }
 
-function searchStops(train, lineCode) {
+function searchStops(train, lineCode, index) {
 	return train.timetable._data
 		.map((sta, i) => {
 			const stationId = sta?.stationId;
@@ -64,11 +64,13 @@ function searchStops(train, lineCode) {
 			if (lineCode == 'KT' && stationId === 'chr') return null;
 			if (lineCode == 'MR' && (stationId === 'okw' || stationId === 'hno')) return null;
 			if (lineCode == 'NK' && (stationId === 'kyw' || stationId === 'tmo')) return null;
+			if (lineCode == 'TT' && (stationId === 'tgw' || stationId === 'hsd')) return null;
+			if (lineCode == 'MY' && stationId === 'kry') return null;
 			if (![1, 2].includes(sta.stopType)) return null;
 			return {
 				id: stationId,
 				stopType: sta.stopType === 1 ? 'stop' : 'pass',
-				arr: sta.arrival ?? null,
+				arr: sta.arrival ?? (!(index === 0 && i === train.timetable.firstStationIndex) ? sta.departure : null) ?? null,
 				dep: sta.departure ?? null,
 				lineName: sta.lineName,
 			};
@@ -78,22 +80,12 @@ function searchStops(train, lineCode) {
 
 function sortTrains(trains) {
 	const sorted = trains.sort((a, b) => getTrainTimeRange(a.train)[2] - getTrainTimeRange(b.train)[2]);
-	for (let i = 0; i < sorted.length; i++) {
-		if (sorted[i].train.operations.some((o) => o.outerType === 'A')) {
-			if (sorted[i + 1] && !sorted[i + 1].train.operations.some((o) => o.outerType === 'B')) {
-				sorted[i].train.timetable._data = [];
-			}
-		}
-		if (sorted[i].train.operations.some((o) => o.outerType === 'B')) {
-			if (sorted[i - 1] && !sorted[i - 1].train.operations.some((o) => o.outerType === 'A')) sorted[i].train.timetable._data = [];
-		}
-	}
 	return sorted;
 }
 
 function formatStops(trains) {
 	const sorted = sortTrains(trains);
-	const timetables = sorted.flatMap((t) => searchStops(t.train, t.lineCode));
+	const timetables = sorted.flatMap((t, i) => searchStops(t.train, t.lineCode, i));
 	const result = [];
 	for (let i = 0; i < timetables.length; i++) {
 		if (i < timetables.length - 2 && timetables[i].id === timetables[i + 1].id) {
@@ -165,6 +157,17 @@ function setTrains(ouds) {
 	trains = new Set(trainsGroupByType.flat());
 }
 
+function getBearing([lon1, lat1], [lon2, lat2]) {
+	const φ1 = (lat1 * Math.PI) / 180;
+	const φ2 = (lat2 * Math.PI) / 180;
+	const Δλ = ((lon2 - lon1) * Math.PI) / 180;
+
+	const y = Math.sin(Δλ) * Math.cos(φ2);
+	const x = Math.cos(φ1) * Math.sin(φ2) - Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ);
+
+	return Math.atan2(y, x);
+}
+
 function calcPositions(sec) {
 	const results = [];
 	for (const train of trains) {
@@ -180,10 +183,10 @@ function calcPositions(sec) {
 		let stoppedCount = 0;
 		for (const stop of train.stops) {
 			segmentData.push(stop);
-			if (stop.stopType === 'pass') {
+			if (stop.dep == null && stop.arr == null) {
 				continue;
 			}
-			if (stop.arr <= sec && sec <= stop.dep) {
+			if (stop.arr <= sec && sec < stop.dep) {
 				segmentData.length = 0;
 				segmentData.push(stop);
 				break;
@@ -229,11 +232,12 @@ function calcPositions(sec) {
 			}
 		})();
 		// if (targetRate < 0 || 1 < targetRate)
-		if (!targetRate && !targetSegment) {
+		if (targetRate == null && !targetSegment) {
 			continue;
 		}
 		const lineName = targetSegment.line;
-		const lineRate = (targetSegment.to - targetSegment.from) * targetRate + targetSegment.from;
+		// lineRate が 1 だとなぜか消える
+		const lineRate = Math.min((targetSegment.to - targetSegment.from) * targetRate + targetSegment.from, 0.999999999999999);
 		const isReversed = targetSegment.to - targetSegment.from < 0;
 		const shapeData = lineShapeData[lineName];
 		const { coordinate, angle } = (() => {

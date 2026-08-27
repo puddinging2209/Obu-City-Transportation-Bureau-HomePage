@@ -44,8 +44,6 @@ export function TrainInfo({ train }) {
 					const segmentLength = route[i]?.reduce?.((p, c) => p + c.length, 0);
 					const segmentDuration = stops[i + 1]?.arr - s.dep;
 
-					const isCurrent = false;
-
 					return (
 						<Box key={i}>
 							<Box
@@ -112,9 +110,9 @@ export function TrainInfo({ train }) {
 											sx={{
 												width: '8px',
 												height: '100%',
-												background: linesData[s.lineName]?.color ?? '#999999',
+												background: linesData[stops[i + 1].lineName]?.color ?? '#999999',
 											}}
-										></Box>
+										/>
 									</Box>
 									<Box
 										sx={{

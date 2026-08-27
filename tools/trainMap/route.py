@@ -150,7 +150,7 @@ def compute_train_route(graph, station_node_map, stops, max_lines=4):
       [[{"line","from","to","length"}, ...], [{...}, ...], ...]
       1つ目の配列が「始発→最初の停車駅」、2つ目が「最初の停車駅→次の停車駅」、
       ...、最後が「最後から2番目の停車駅→終点」に対応する。
-      (通過駅<stopType=="pass">は区切りには使われず、直前の区間に含まれる)
+      (時刻が設定されていない駅 dep == None or arr == None は区切りには使われず、直前の区間に含まれる)
     """
     if len(stops) < 2:
         return []
@@ -206,10 +206,10 @@ def compute_train_route(graph, station_node_map, stops, max_lines=4):
         cur_node = info["prev"]
         stage_idx -= 1
 
-    # 停車駅(stopType=="stop")ごとに分割する。始発と終点は常に区切りとする。
+    # 時刻が設定されている駅ごとに分割する。始発と終点は常に区切りとする。
     boundaries = {0, len(stops) - 1}
     for i in range(1, len(stops) - 1):
-        if stops[i].get("stopType") == "stop":
+        if stops[i].get("arr") != None and stops[i].get("dep") != None:
             boundaries.add(i)
     boundaries = sorted(boundaries)
 

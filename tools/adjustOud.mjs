@@ -26,8 +26,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const TEMP_DIR = path.resolve(__dirname, 'temp');
-// const OUT_DIR = path.resolve(__dirname, '../public/oud');
-const OUT_DIR = path.resolve(__dirname, './temp');
+const OUT_DIR = path.resolve(__dirname, '../public/oud');
 
 // ========= CLI引数 =========
 const line = process.argv[2];
