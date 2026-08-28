@@ -5,7 +5,7 @@ import routesData from '../../../data/routes.json';
 import typesData from '../../../data/types.json';
 import { settingsAtom } from '../../../utils/Atom';
 import { name } from '../../../utils/Station';
-import { toTimeString as getTime } from '../../../utils/Time';
+import { toTimeString as getTime, toTime } from '../../../utils/Time';
 
 export function TrainInfo({ train }) {
 	const { showSeconds } = useAtomValue(settingsAtom);
@@ -42,7 +42,8 @@ export function TrainInfo({ train }) {
 			>
 				{stops.map((s, i) => {
 					const segmentLength = route[i]?.reduce?.((p, c) => p + c.length, 0);
-					const segmentDuration = stops[i + 1]?.arr - s.dep;
+					const segmentDurationSec = stops[i + 1]?.arr - s.dep;
+					const segmentDuration = toTime(segmentDurationSec);
 
 					return (
 						<Box key={i}>
@@ -124,10 +125,12 @@ export function TrainInfo({ train }) {
 										}}
 									>
 										<Typography>
-											{(segmentLength / 1000).toFixed(2)}km {Math.floor(segmentDuration / 60)}分
+											{(segmentLength / 1000).toFixed(2)}km {segmentDuration.h > 0 && `${segmentDuration.h}時間`}
+											{segmentDuration.m > 0 && `${segmentDuration.m}分`}
+											{showSeconds && segmentDuration.s > 0 && `${segmentDuration.s}秒`}
 										</Typography>
 										<Typography>
-											{stops[i + 1].index - s.index - 1}駅 {((segmentLength / 1000 / segmentDuration) * 3600).toFixed(2)}km/h
+											{stops[i + 1].index - s.index - 1}駅 {((segmentLength / 1000 / segmentDurationSec) * 3600).toFixed(2)}km/h
 										</Typography>
 									</Box>
 								</Grid>
