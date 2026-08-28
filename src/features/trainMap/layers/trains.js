@@ -18,7 +18,7 @@ function checkIsMobile() {
 	return window.matchMedia(query.replace(/^@media\s*/, '')).matches;
 }
 
-export async function initializeTrainsLayer({ map, store }) {
+export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdateActiveTrain }) {
 	const showTrainInfo = (train) => {
 		store.set(setBottomSheetComponentAtom, TrainInfo, { train });
 		store.set(setBottomSheetTitleAtom, '列車情報');
@@ -62,6 +62,12 @@ export async function initializeTrainsLayer({ map, store }) {
 						position: t.coordinate.reverse(),
 						angle: t.angle,
 					}));
+
+				// ★【追加】現在ポップアップ表示対象の列車があれば、最新の座標をReact側に通知する
+				if (onUpdateActiveTrain) {
+					onUpdateActiveTrain({ points, sec: data.sec });
+				}
+
 				const layer = new IconLayer({
 					id: 'trains',
 					data: points,
@@ -92,7 +98,15 @@ export async function initializeTrainsLayer({ map, store }) {
 					onClick: (e) => {
 						const train = data.data.find((t) => t.number === e.object?.id);
 						if (train) {
-							showTrainInfo(train);
+							// showTrainInfo(train);
+
+							// ★【追加】クリックされた列車の情報をReactのStateへ渡す
+							onSelectTrain({
+								sec: data.sec,
+								id: e.object.id,
+								position: e.object.position,
+								rawTrainData: train, // ★ ボタンを押した時にボトムシートへ渡せるよう、元データを保持
+							});
 							console.log(train);
 						}
 					},
