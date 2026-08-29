@@ -17,8 +17,12 @@ import {
 	DialogActions,
 	DialogContent,
 	DialogTitle,
+	FormControl,
 	FormControlLabel,
+	FormLabel,
 	IconButton,
+	Radio,
+	RadioGroup,
 	Slider,
 	Stack,
 	ToggleButton,
@@ -56,6 +60,7 @@ export default function TransferInput({ onSearch, loading }) {
 		transferTime: 30,
 		viaStations: [],
 		enableViaStations: false,
+		heuristicMode: 'normal',
 	});
 
 	const [sortActiveId, setSortActiveId] = React.useState(null);
@@ -488,6 +493,14 @@ export default function TransferInput({ onSearch, loading }) {
 								max={120}
 							/>
 						</Stack>
+						<FormControl>
+							<FormLabel>検索モード</FormLabel>
+							<RadioGroup row value={options.heuristicMode} onChange={(e) => setOptions({ ...options, heuristicMode: e.target.value })}>
+								<FormControlLabel value='light' control={<Radio />} label='最軽量' />
+								<FormControlLabel value='medium' control={<Radio />} label='軽量' />
+								<FormControlLabel value='normal' control={<Radio />} label='通常' />
+							</RadioGroup>
+						</FormControl>
 					</Stack>
 				</DialogContent>
 				<DialogActions>

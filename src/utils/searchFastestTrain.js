@@ -25,14 +25,13 @@ async function readOud(json) {
 /**
  * 同じ列車で行ける駅の到着、出発時刻を探す
  * @param {string} station 出発駅
- * @param {number} fromTime 出発時刻
  * @param {number} time 時刻
  * @param {Object} train 乗車電
  * @param {Array<string>} passing 経由駅
  * @param {0|1} mode mode
  * @returns {Array<{to: string, arr: number, dep: number}>} to駅名、到着時刻、出発時刻
  */
-export async function searchOtherStops(station, fromTime, time, train, passing, mode, allowedRepeatStations = []) {
+export async function searchOtherStops(station, time, train, passing, mode, allowedRepeatStations = []) {
 	const stops = await formatStops(nodes[station].json, train);
 
 	const froms = stops.filter((sta) => sta.id === id(station)).map((sta) => stops.indexOf(sta));
