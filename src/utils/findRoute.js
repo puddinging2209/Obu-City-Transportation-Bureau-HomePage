@@ -1,5 +1,5 @@
 import reconstructByState from './formatRoute.js';
-import getDistance from './getDistance.js';
+import getD from './getDistance.js';
 import getFare from './getFare.js';
 import { searchFastestTrain, searchOtherStops } from './searchFastestTrain.js';
 import { code, id } from './Station.js';
@@ -14,6 +14,26 @@ const MAX_SPEED = (35 * 1000) / 3600; // m/s for heuristic
 const allowDuplicateSections = fareExceptions?.allowDuplicates ?? [];
 const SHORT_ROUTE_THRESHOLD = 15 * 1000; // 15km までは重みを強めずに精度優先
 const LONG_ROUTE_THRESHOLD = 30 * 1000; // 30km 以上ではヒューリスティックを強める
+
+const heuristicWeights = {
+	light: [1.5, 1.7, 2.5],
+	medium: [1.2, 1.4, 1.6],
+	normal: [1, 1.6, 1.8],
+};
+
+const distanceCache = new Map();
+
+function getDistanceCacheKey(couple) {
+	return couple.map(id).sort().join(',');
+}
+
+function getDistance(s1, s2) {
+	const key = getDistanceCacheKey([s1, s2]);
+	if (distanceCache.has(key)) return distanceCache.get(key);
+	const result = getD(s1, s2);
+	distanceCache.set(key, result);
+	return result;
+}
 
 // ==== 隣接リスト作成 ====
 const graph = {};
@@ -169,12 +189,13 @@ function containsInOrder(parent, sub) {
  * @param {number} baseTime 出発時刻（mode=0）または到着時刻（mode=1）
  * @param {number} mode 出発時刻から検索(0) or 到着時刻から検索(1)
  * @param {boolean} tokkyu 有料列車（特急 or ライナー）を許可するかどうか
+ * @param {string} heuristicMode ヒューリスティックの重み (light, medium, normal)
  * @param {boolean} allowOuterTransfer 改札外乗り換えを許可するかどうか
  * @defaultValue allowOuterTransfer = false
  * @returns {[{train: string, from: string, to: string, depTime: number, arrTime: number, terminal: string, typeName: string, line: string}, ...]} 経路の詳細情報の配列
  */
 
-export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu, allowOuterTransfer = false, passStations = []) {
+export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu, heuristicMode, allowOuterTransfer = false, passStations = []) {
 	const pq = new MinHeap();
 
 	const bestTime = {};
@@ -212,12 +233,12 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 
 	const makePriority = (time, station, transfer) => {
 		const h = heuristic(station, goalStation);
-		let heuristicWeight = 1;
+		let heuristicWeight = heuristicWeights[heuristicMode][0];
 
 		if (distance >= LONG_ROUTE_THRESHOLD) {
-			heuristicWeight = 1.6;
+			heuristicWeight = heuristicWeights[heuristicMode][2];
 		} else if (distance >= SHORT_ROUTE_THRESHOLD) {
-			heuristicWeight = 1.2;
+			heuristicWeight = heuristicWeights[heuristicMode][1];
 		}
 
 		return {
@@ -382,7 +403,6 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 						const other = await searchOtherStops(
 							mode === 0 ? station : nextStation,
 							mode === 0 ? result.dep : result.arr,
-							mode === 0 ? result.arr : result.dep,
 							result.train,
 							searchVisited,
 							mode,

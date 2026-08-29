@@ -14,13 +14,20 @@ function Transfer() {
 	const [result, setResult] = useAtom(resultAtom);
 	const [loading, setLoading] = React.useState(false);
 
-	const searchTransfer = async (from, to, baseTime, mode, { transferTime, tokkyu, allowOuterTransfer, viaStations, enableViaStations }) => {
+	const searchTransfer = async (
+		from,
+		to,
+		baseTime,
+		mode,
+		{ transferTime, tokkyu, allowOuterTransfer, viaStations, enableViaStations, heuristicMode },
+	) => {
 		if (!from || !to) return;
 		setLoading(true);
 		let segments = [];
+		console.log(heuristicMode);
 		try {
 			if (!enableViaStations || viaStations.length === 0) {
-				segments = [await dijkstra(from, to, adjustTime(baseTime), mode, transferTime - 1, tokkyu, allowOuterTransfer)];
+				segments = [await dijkstra(from, to, adjustTime(baseTime), mode, transferTime - 1, tokkyu, heuristicMode, allowOuterTransfer)];
 			} else {
 				const stations = [from, ...viaStations.map((s) => s.value.value), to];
 				let time = baseTime;
@@ -32,6 +39,7 @@ function Transfer() {
 						mode,
 						transferTime - 1,
 						tokkyu,
+						heuristicMode,
 						allowOuterTransfer,
 					);
 					time = segment.segments.at(-1).arrTime + viaStations[i]?.options?.stayingTime * 60 ?? 0;
