@@ -2,12 +2,13 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CloseIcon from '@mui/icons-material/Close';
 import LayersIcon from '@mui/icons-material/Layers';
 import { Box, Button, CircularProgress, Fab, IconButton, Stack, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { useAtomValue, useSetAtom, useStore } from 'jotai';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import React from 'react';
 import Map, { Popup } from 'react-map-gl/maplibre';
-import { name } from '../../utils/Station';
+import { label } from '../../utils/Station';
 import { toTimeString } from '../../utils/Time';
 import { BottomSheet } from './components/BottomSheet';
 import { LayersControl } from './components/LayersControl';
@@ -21,7 +22,7 @@ import { timeAtom } from './states/time';
 function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet }) {
 	const sec = train.sec < 10800 ? train.sec + 86400 : train.sec;
 	const type = train.rawTrainData.type;
-	const terminal = name(train.rawTrainData.stops.at(-1).id);
+	const terminal = train.rawTrainData.stops.at(-1).id !== 'ct2' ? label(train.rawTrainData.stops.at(-1).id) : '中部国際空港';
 	const currentStop = train.rawTrainData.stops.find((s) => s.arr && s.dep && s.arr <= sec && sec < s.dep) ?? null;
 	const currentSegment =
 		currentStop ? null : (
@@ -36,6 +37,8 @@ function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet }) {
 				return null;
 			})()
 		);
+
+	const theme = useTheme();
 	return (
 		<Popup
 			longitude={train.position[0]}
@@ -46,6 +49,17 @@ function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet }) {
 			closeOnClick={false}
 			onClose={() => setActiveTrain(null)}
 		>
+			{/* MapLibreの標準CSSをMUIのテーマカラーに上書きするグローバルstyle */}
+			<style>{`
+				.maplibregl-popup-content {
+					background-color: ${theme.palette.background.paper} !important;
+					box-shadow: ${theme.shadows[4]} !important;
+				}
+				/* 下の三角形（吹き出しの矢印）の色もテーマに合わせる */
+				.maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+					border-top-color: ${theme.palette.background.paper} !important;
+				}
+			`}</style>
 			<Box
 				sx={{
 					p: 0.5,
@@ -74,7 +88,7 @@ function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet }) {
 				{currentStop ?
 					<>
 						<Typography sx={{ fontSize: '14px' }} noWrap>
-							{name(currentStop.id)}駅 停車中
+							{label(currentStop.id)} 停車中
 						</Typography>
 						<Typography
 							sx={{ fontSize: '13px' }}
@@ -82,10 +96,11 @@ function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet }) {
 						>{`${toTimeString(currentStop.arr)} > ${toTimeString(currentStop.dep)}`}</Typography>
 					</>
 				:	<>
-						<Typography
-							sx={{ fontSize: '14px' }}
-							noWrap
-						>{`${name(currentSegment[0].id)}駅 > ${name(currentSegment[1].id)}駅`}</Typography>
+						<Typography sx={{ fontSize: '14px', wordBreak: 'keep-all' }}>
+							{`${label(currentSegment[0].id)} >`}
+							<wbr />
+							{`${label(currentSegment[1].id)}`}
+						</Typography>
 						<Typography
 							sx={{ fontSize: '13px' }}
 							noWrap
