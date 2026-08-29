@@ -41,7 +41,7 @@ export function TrainInfo({ train }) {
 				}}
 			>
 				{stops.map((s, i) => {
-					const segmentLength = route[i]?.reduce((p, c) => p + c.length, 0);
+					const segmentLength = route[i]?.reduce?.((p, c) => p + c.length, 0);
 					const segmentDurationSec = stops[i + 1]?.arr - s.dep;
 					const segmentDuration = toTime(segmentDurationSec);
 
