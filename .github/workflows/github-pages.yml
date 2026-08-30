@@ -40,6 +40,10 @@ jobs:
                   cache: 'npm'
             - name: Install dependencies
               run: npm ci
+            - name: Get Latest Commit Info
+              run: |
+                  # 最新の短縮コミットハッシュとメッセージを取得
+                  echo "VITE_COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
             - name: Build
               run: npm run build
             - name: Setup Pages

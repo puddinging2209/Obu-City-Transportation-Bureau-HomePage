@@ -1,4 +1,4 @@
-import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, SwipeableDrawer } from '@mui/material';
+import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, SwipeableDrawer, Typography } from '@mui/material';
 import { useAtom } from 'jotai';
 import { useNavigate } from 'react-router-dom';
 
@@ -36,6 +36,9 @@ function Drawer() {
 		{ name: '設定', icon: <SettingsIcon />, path: '/settings' },
 	];
 
+	// 環境変数からコミット情報を取得（ローカル環境では undefined になります）
+	const commitHash = import.meta.env.VITE_COMMIT_HASH || 'local';
+
 	function handleNavigate(path) {
 		navigate(path);
 		setIsOpen(false);
@@ -65,6 +68,11 @@ function Drawer() {
 						</ListItem>
 					))}
 				</List>
+				<Stack sx={{ position: 'absolute', bottom: 0, pb: 2 }}>
+					<Typography variant='body2' sx={{ mt: 2, ml: 2, color: 'text.secondary' }}>
+						{`commit: ${commitHash.slice(0, 7)}`}
+					</Typography>
+				</Stack>
 			</Box>
 		);
 	}

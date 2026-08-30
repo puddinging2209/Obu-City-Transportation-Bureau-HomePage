@@ -4,9 +4,18 @@ import { id } from './Station.js';
 
 export const settingsAtom = atom(
 	{
-		theme: 'light',
-		showSeconds: false,
-		...JSON.parse(localStorage.getItem('settings')),
+		general: {
+			theme: 'light',
+			showSeconds: false,
+		},
+		map: {
+			updateInterval: 0,
+		},
+		...(localStorage.getItem('settings')?.includes('general') ?
+			JSON.parse(localStorage.getItem('settings'))
+		:	{
+				general: JSON.parse(localStorage.getItem('settings')),
+			}),
 	},
 	(get, set, settings) => {
 		localStorage.setItem('settings', JSON.stringify(settings));

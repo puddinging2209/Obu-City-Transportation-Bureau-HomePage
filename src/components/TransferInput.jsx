@@ -66,7 +66,7 @@ export default function TransferInput({ onSearch, loading }) {
 	const [sortActiveId, setSortActiveId] = React.useState(null);
 	const [openOption, setOpenOption] = React.useState(false);
 
-	const showSeconds = useAtomValue(settingsAtom).showSeconds;
+	const showSeconds = useAtomValue(settingsAtom).general.showSeconds;
 
 	const writeQuery = (options) => {
 		const params = new URLSearchParams();
@@ -78,6 +78,7 @@ export default function TransferInput({ onSearch, loading }) {
 				String(options.transferTime).padStart(2, 0) +
 				(options.tokkyu ? 't' : 'f') +
 				(options.allowOuterTransfer ? 't' : 'f') +
+				options.heuristicMode[0] +
 				options.to.value +
 				(options.enableViaStations ?
 					options.viaStations
@@ -96,6 +97,12 @@ export default function TransferInput({ onSearch, loading }) {
 			l: 'last',
 		};
 
+		const heuristicModes = {
+			n: 'normal',
+			m: 'medium',
+			l: 'light',
+		};
+
 		if (!p) return null;
 
 		const from = toSelecterOption(p.slice(0, 3));
@@ -106,12 +113,13 @@ export default function TransferInput({ onSearch, loading }) {
 		const transferTime = Number(p.slice(9, 11));
 		const tokkyu = p.slice(11, 12) === 't';
 		const allowOuterTransfer = p.slice(12, 13) === 't';
-		const to = toSelecterOption(p.slice(13, 16));
-		const enableViaStations = p.length > 16;
+		const heuristicMode = heuristicModes[p.slice(13, 14)];
+		const to = toSelecterOption(p.slice(14, 17));
+		const enableViaStations = p.length > 17;
 		const viaStations =
 			enableViaStations ?
 				p
-					.slice(16)
+					.slice(17)
 					.match(/.{1,6}/g)
 					.map((s) => ({
 						id: crypto.randomUUID(),
@@ -123,7 +131,7 @@ export default function TransferInput({ onSearch, loading }) {
 					}))
 			:	[];
 
-		return { from, to, timeType, time, tokkyu, allowOuterTransfer, transferTime, enableViaStations, viaStations };
+		return { from, to, timeType, time, tokkyu, allowOuterTransfer, transferTime, enableViaStations, heuristicMode, viaStations };
 	};
 
 	React.useEffect(() => {

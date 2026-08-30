@@ -17,7 +17,7 @@ function DepartureRow({ dep, needId = false, station }) {
 	const theme = useTheme();
 
 	const [isShowDialog, setIsShowDialog] = React.useState(false);
-	const showSeconds = useAtomValue(settingsAtom).showSeconds;
+	const showSeconds = useAtomValue(settingsAtom).general.showSeconds;
 	const timeWidth = 42 * (!showSeconds ? 1 : 1.6);
 
 	return (

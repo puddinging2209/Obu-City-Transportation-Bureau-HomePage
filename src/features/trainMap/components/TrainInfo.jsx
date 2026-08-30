@@ -8,7 +8,7 @@ import { name } from '../../../utils/Station';
 import { toTimeString as getTime, toTime } from '../../../utils/Time';
 
 export function TrainInfo({ train }) {
-	const { showSeconds } = useAtomValue(settingsAtom);
+	const { showSeconds } = useAtomValue(settingsAtom).general;
 
 	const route = routesData.routes[routesData.trains[train.number]];
 	const length = route.flat().reduce((p, c) => p + c.length, 0);

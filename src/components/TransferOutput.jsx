@@ -73,7 +73,7 @@ export default function TransferOutput({ result }) {
 							>{`${toTimeString(segments[0].depTime)}発 ${toTimeString(segments.at(-1).arrTime)}着`}</Typography>
 							<Typography variant='body1'>
 								{(requiredTime.h > 0 ? `所要時間：${requiredTime.h}時間 ${requiredTime.m}分` : `所要時間：${requiredTime.m}分`) +
-									(settings.showSeconds ? ` ${requiredTime.s}秒` : '')}
+									(settings.general.showSeconds ? ` ${requiredTime.s}秒` : '')}
 							</Typography>
 						</Box>
 						<Stack direction='column' gap={0.5} alignItems='flex-end'>
@@ -163,7 +163,7 @@ function StationBox({ arrTime, depTime, StationId, disableArrTime = false, disab
 	const myStations = useAtomValue(myStationsAtom);
 	const setMyStations = useSetAtom(addMyStationAtom);
 
-	const showSeconds = useAtomValue(settingsAtom).showSeconds;
+	const showSeconds = useAtomValue(settingsAtom).general.showSeconds;
 	const timeWidth = 42 * (!showSeconds ? 1 : 1.6);
 
 	return (
