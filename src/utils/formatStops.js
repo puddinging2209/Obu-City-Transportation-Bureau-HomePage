@@ -54,7 +54,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 		before: [],
 		after: [],
 	};
-	if (depth > 10 || train.number == '') return result;
+	if (depth > 10 || (train.number == '' && !train.note.includes('次'))) return result;
 	if (first) {
 		const lines = Array.from(
 			new Set(
@@ -154,6 +154,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 		}
 	}
 	if (last) {
+		const number = train.note?.includes('次') ? train.note.replace('次', '') : train.number;
 		const lines = Array.from(
 			new Set(
 				Object.values(nodes)
@@ -163,7 +164,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 		)
 			.filter(
 				(route) =>
-					numberList[resolveRosen(route)]?.includes(String(train.number)) &&
+					numberList[resolveRosen(route)]?.includes(String(number)) &&
 					(resolveRosen(route) != resolveRosen(line) ||
 						(linesData[route].isLoop && [linesData[route].stations[0].id, linesData[route].stations.at(-1).id].includes(last))),
 			)
@@ -180,7 +181,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 						diagram.railway.stations.findIndex((sta) => id(sta.name) === last)
 					:	diagram.railway.stations.toReversed().findIndex((sta) => id(sta.name) === last);
 				return (
-					d.number == train.number &&
+					d.number == number &&
 					(!(
 						Object.values(linesData).find((l) => l.json === resolveRosen(diagram.railway.name))?.isLoop ||
 						Object.values(linesData).find((l) => l.json === resolveRosen(line))?.isLoop
@@ -199,7 +200,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 					:	afterDiagram.railway.stations.toReversed().findIndex((sta) => id(sta.name) === last);
 				if (afterIndex === -1) return false;
 				return (
-					d.number == train.number &&
+					d.number == number &&
 					(!(
 						Object.values(linesData).find((l) => l.json === resolveRosen(afterDiagram.railway.name))?.isLoop ||
 						Object.values(linesData).find((l) => l.json === resolveRosen(line))?.isLoop
