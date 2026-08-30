@@ -32,11 +32,11 @@ function Layout() {
 	const theme = createTheme({
 		palette: {
 			mode:
-				settings.theme === 'system' ?
+				settings.general.theme === 'system' ?
 					window.matchMedia('(prefers-color-scheme: dark)').matches ?
 						'dark'
 					:	'light'
-				:	settings.theme,
+				:	settings.general.theme,
 		},
 		shape: {
 			borderRadius: 8,

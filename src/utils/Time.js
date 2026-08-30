@@ -20,7 +20,7 @@ export function toTime(seconds) {
 
 export function toTimeString(seconds) {
 	if (seconds == null) return '-';
-	const { showSeconds } = store.get(settingsAtom);
+	const { showSeconds } = store.get(settingsAtom).general;
 	const timeObj = toTime(Number(seconds));
 	const hStr = String(timeObj.h);
 	const mStr = String(timeObj.m).padStart(2, '0');

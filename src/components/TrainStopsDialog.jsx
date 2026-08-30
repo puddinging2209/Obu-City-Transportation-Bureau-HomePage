@@ -18,7 +18,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 	const [multilayer, setMultilayer] = React.useState(0);
 	const theme = useTheme();
 
-	const showSeconds = useAtomValue(settingsAtom).showSeconds;
+	const showSeconds = useAtomValue(settingsAtom).general.showSeconds;
 	const timeWidth = 42 * (!showSeconds ? 1 : 1.6);
 
 	React.useEffect(() => {

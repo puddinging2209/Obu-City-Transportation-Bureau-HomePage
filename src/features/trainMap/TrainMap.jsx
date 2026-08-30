@@ -1,124 +1,21 @@
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import CloseIcon from '@mui/icons-material/Close';
 import LayersIcon from '@mui/icons-material/Layers';
-import { Box, Button, CircularProgress, Fab, IconButton, Stack, Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { Box, CircularProgress, Fab, Stack } from '@mui/material';
 import { useAtomValue, useSetAtom, useStore } from 'jotai';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import React from 'react';
-import Map, { Popup } from 'react-map-gl/maplibre';
-import { label } from '../../utils/Station';
-import { toTimeString } from '../../utils/Time';
+import Map from 'react-map-gl/maplibre';
+import { settingsAtom } from '../../utils/Atom';
 import { BottomSheet } from './components/BottomSheet';
 import { LayersControl } from './components/LayersControl';
 import { LoginButton } from './components/LoginButton';
 import { TimeControl } from './components/TimeControl';
 import { TrainInfo } from './components/TrainInfo';
+import TrainPopup from './components/TrainPopup';
 import { layers, layersEnabledAtom, updateLayerEnabledAtom } from './states/layers';
 import { clearBottomSheetAtom, setBottomSheetComponentAtom, setBottomSheetTitleAtom } from './states/sheet';
 import { timeAtom } from './states/time';
-
-function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet }) {
-	const sec = train.sec < 10800 ? train.sec + 86400 : train.sec;
-	const type = train.rawTrainData.type;
-	const terminal = train.rawTrainData.stops.at(-1).id !== 'ct2' ? label(train.rawTrainData.stops.at(-1).id) : '中部国際空港';
-	const currentStop = train.rawTrainData.stops.find((s) => s.arr && s.dep && s.arr <= sec && sec < s.dep) ?? null;
-	const currentSegment =
-		currentStop ? null : (
-			(() => {
-				const stops = train.rawTrainData.stops;
-				const j = stops.findIndex((s) => s.stopType === 'stop' && s.arr && sec < s.arr);
-				for (let i = j - 1; i >= 0; i--) {
-					if (stops[i].dep && stops[i].stopType === 'stop') {
-						return [stops[i], stops[j]];
-					}
-				}
-				return null;
-			})()
-		);
-
-	const theme = useTheme();
-	return (
-		<Popup
-			longitude={train.position[0]}
-			latitude={train.position[1]}
-			anchor='bottom'
-			offset={15}
-			closeButton={false}
-			closeOnClick={false}
-			onClose={() => setActiveTrain(null)}
-		>
-			{/* MapLibreの標準CSSをMUIのテーマカラーに上書きするグローバルstyle */}
-			<style>{`
-				.maplibregl-popup-content {
-					background-color: ${theme.palette.background.paper} !important;
-					box-shadow: ${theme.shadows[4]} !important;
-				}
-				/* 下の三角形（吹き出しの矢印）の色もテーマに合わせる */
-				.maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
-					border-top-color: ${theme.palette.background.paper} !important;
-				}
-			`}</style>
-			<Box
-				sx={{
-					p: 0.5,
-				}}
-			>
-				<IconButton
-					size='medium'
-					onClick={() => setActiveTrain(null)}
-					sx={{
-						position: 'absolute',
-						top: 0,
-						right: 0,
-						color: '#666',
-						p: 1,
-					}}
-				>
-					<CloseIcon fontSize='small' />
-				</IconButton>
-
-				<Typography sx={{ fontSize: '14px' }} noWrap>
-					{train.id}
-				</Typography>
-				<Typography sx={{ fontSize: '16px', fontWeight: 'bold' }} noWrap>
-					{type} {terminal}行
-				</Typography>
-				{currentStop ?
-					<>
-						<Typography sx={{ fontSize: '14px' }} noWrap>
-							{label(currentStop.id)} 停車中
-						</Typography>
-						<Typography
-							sx={{ fontSize: '13px' }}
-							noWrap
-						>{`${toTimeString(currentStop.arr)} > ${toTimeString(currentStop.dep)}`}</Typography>
-					</>
-				:	<>
-						<Typography sx={{ fontSize: '14px', wordBreak: 'keep-all' }}>
-							{`${label(currentSegment[0].id)} >`}
-							<wbr />
-							{`${label(currentSegment[1].id)}`}
-						</Typography>
-						<Typography
-							sx={{ fontSize: '13px' }}
-							noWrap
-						>{`${toTimeString(currentSegment[0].dep)} > ${toTimeString(currentSegment[1].arr)}`}</Typography>
-					</>
-				}
-				<Button
-					variant='contained'
-					size='small'
-					sx={{ fontSize: '11px', py: 0.2, mt: 0.5 }}
-					onClick={() => handleOpenBottomSheet(train.rawTrainData)}
-				>
-					詳細を見る
-				</Button>
-			</Box>
-		</Popup>
-	);
-}
 
 function TrainMap() {
 	const date = new Date();
@@ -132,6 +29,8 @@ function TrainMap() {
 	const setBottomSheetContent = useSetAtom(setBottomSheetComponentAtom);
 	const setBottomSheetTitle = useSetAtom(setBottomSheetTitleAtom);
 	const clearBottomSheet = useSetAtom(clearBottomSheetAtom);
+
+	const { updateInterval } = useAtomValue(settingsAtom).map;
 
 	// ★ 追従ポップアップ用のState
 	const [activeTrain, setActiveTrain] = React.useState(null); // { id, position: [lng, lat], type, rawTrainData }
@@ -201,11 +100,15 @@ function TrainMap() {
 
 	React.useEffect(() => {
 		let id;
-		const tick = () => {
-			const sec = (timeState.baseSimulationTime + ((performance.now() - timeState.startAt) * timeState.speedRate) / 1000) % (60 * 60 * 24);
-			layersRef.current.forEach((l) => {
-				if (layersEnabled[l.id]) l.update(sec);
-			});
+		let latestUpdatedAt = 0;
+		const tick = (now) => {
+			if (now - latestUpdatedAt >= updateInterval) {
+				const sec = (timeState.baseSimulationTime + ((performance.now() - timeState.startAt) * timeState.speedRate) / 1000) % (60 * 60 * 24);
+				layersRef.current.forEach((l) => {
+					if (layersEnabled[l.id]) l.update(sec);
+				});
+				latestUpdatedAt = now;
+			}
 			id = requestAnimationFrame(tick);
 		};
 		id = requestAnimationFrame(tick);

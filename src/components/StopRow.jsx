@@ -11,7 +11,7 @@ import lines from '../data/lines.json';
 
 function StopRow({ stop, emphasized = false, className = '' }) {
 	const theme = useTheme();
-	const showSeconds = useAtomValue(settingsAtom).showSeconds;
+	const showSeconds = useAtomValue(settingsAtom).general.showSeconds;
 	const timeWidth = 42 * (!showSeconds ? 1 : 1.6);
 	return (
 		<div className={className}>
