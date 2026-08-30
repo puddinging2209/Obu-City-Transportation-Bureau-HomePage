@@ -97,7 +97,7 @@ function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet }) {
 					</>
 				:	<>
 						<Typography sx={{ fontSize: '14px', wordBreak: 'keep-all' }}>
-							{`${label(currentSegment[0].id)} >`}
+							{`${label(currentSegment[0].id)} > `}
 							<wbr />
 							{`${label(currentSegment[1].id)}`}
 						</Typography>
