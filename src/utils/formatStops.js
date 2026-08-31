@@ -54,7 +54,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 		before: [],
 		after: [],
 	};
-	if (depth > 10 || (train.number == '' && !train.note.includes('次'))) return result;
+	if (depth > 10 || (train.number == '' && !train.note?.includes('次'))) return result;
 	if (first) {
 		const lines = Array.from(
 			new Set(
