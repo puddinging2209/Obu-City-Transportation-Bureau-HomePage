@@ -1,4 +1,4 @@
-import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, SwipeableDrawer, Typography } from '@mui/material';
+import { Box, Divider, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, SwipeableDrawer, Typography } from '@mui/material';
 import { useAtom } from 'jotai';
 import { useNavigate } from 'react-router-dom';
 
@@ -69,9 +69,16 @@ function Drawer() {
 					))}
 				</List>
 				<Stack sx={{ position: 'absolute', bottom: 0, pb: 2 }}>
-					<Typography variant='body2' sx={{ mt: 2, ml: 2, color: 'text.secondary' }}>
-						{`commit: ${commitHash.slice(0, 7)}`}
-					</Typography>
+					<Link
+						href='https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage'
+						target='_blank'
+						rel='noopener noreferrer'
+						underline='none'
+					>
+						<Typography variant='body2' sx={{ mt: 2, ml: 2, color: 'text.secondary' }}>
+							{`commit: ${commitHash.slice(0, 7)}`}
+						</Typography>
+					</Link>
 				</Stack>
 			</Box>
 		);
