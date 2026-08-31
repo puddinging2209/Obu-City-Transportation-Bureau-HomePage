@@ -84,6 +84,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 				if (beforeIndex === -1) return false;
 				return (
 					d.number == train.number &&
+					d.timetable._data[beforeIndex]?.stopType === train.timetable._data[afterIndex]?.stopType &&
 					(!(
 						Object.values(linesData).find((l) => l.json === resolveRosen(diagram.railway.name))?.isLoop ||
 						Object.values(linesData).find((l) => l.json === resolveRosen(line))?.isLoop
@@ -113,12 +114,18 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 				);
 			});
 
+			const averageTime =
+				(before.timetable._data[before.timetable.firstStationIndex]?.departure +
+					before.timetable._data[before.timetable.terminalStationIndex]?.arrival ??
+					before.timetable._data[before.timetable.terminalStationIndex]?.departure) / 2;
+
 			if (
 				checked.some(
 					(c) =>
 						c.line === beforeDiagram.railway.name &&
 						c.firstStationIndex === before.timetable.firstStationIndex &&
-						c.terminalStationIndex === before.timetable.terminalStationIndex,
+						c.terminalStationIndex === before.timetable.terminalStationIndex &&
+						c.time === averageTime,
 				)
 			) {
 				return result;
@@ -145,6 +152,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 							line: beforeDiagram.railway.name,
 							firstStationIndex: before.timetable.firstStationIndex,
 							terminalStationIndex: before.timetable.terminalStationIndex,
+							time: averageTime,
 						},
 					],
 					depth + 1,
@@ -182,6 +190,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 					:	diagram.railway.stations.toReversed().findIndex((sta) => id(sta.name) === last);
 				return (
 					d.number == number &&
+					d.timetable._data[afterIndex].stopType === train.timetable._data[beforeIndex].stopType &&
 					(!(
 						Object.values(linesData).find((l) => l.json === resolveRosen(diagram.railway.name))?.isLoop ||
 						Object.values(linesData).find((l) => l.json === resolveRosen(line))?.isLoop
@@ -211,12 +220,18 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 				);
 			});
 
+			const averageTime =
+				(after.timetable._data[after.timetable.firstStationIndex]?.departure +
+					after.timetable._data[after.timetable.terminalStationIndex]?.arrival ??
+					after.timetable._data[after.timetable.terminalStationIndex]?.departure) / 2;
+
 			if (
 				checked.some(
 					(c) =>
 						c.line === afterDiagram.railway.name &&
 						c.firstStationIndex === after.timetable.firstStationIndex &&
-						c.terminalStationIndex === after.timetable.terminalStationIndex,
+						c.terminalStationIndex === after.timetable.terminalStationIndex &&
+						c.time === averageTime,
 				)
 			) {
 				return result;
@@ -243,6 +258,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 							line: afterDiagram.railway.name,
 							firstStationIndex: after.timetable.firstStationIndex,
 							terminalStationIndex: after.timetable.terminalStationIndex,
+							time: averageTime,
 						},
 					],
 					depth + 1,
