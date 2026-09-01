@@ -91,7 +91,12 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 					) ||
 						(d.timetable._data[beforeIndex]?.arrival ?
 							adjustTime(d.timetable._data[beforeIndex]?.arrival) < adjustTime(train.timetable._data[afterIndex]?.departure)
-						:	adjustTime(d.timetable._data[beforeIndex]?.departure) <= adjustTime(train.timetable._data[afterIndex]?.departure)))
+						:	adjustTime(d.timetable._data[beforeIndex]?.departure) <= adjustTime(train.timetable._data[afterIndex]?.departure))) &&
+					Math.abs(
+						adjustTime(train.timetable._data[afterIndex]?.departure) -
+							adjustTime(d.timetable._data[beforeIndex]?.arrival ?? d.timetable._data[beforeIndex]?.departure),
+					) <=
+						60 * 15
 				);
 			});
 		});
@@ -197,7 +202,12 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 					) ||
 						(train.timetable._data[beforeIndex]?.arrival ?
 							adjustTime(d.timetable._data[afterIndex]?.departure) > adjustTime(train.timetable._data[beforeIndex]?.arrival)
-						:	adjustTime(d.timetable._data[afterIndex]?.departure) >= adjustTime(train.timetable._data[beforeIndex]?.departure)))
+						:	adjustTime(d.timetable._data[afterIndex]?.departure) >= adjustTime(train.timetable._data[beforeIndex]?.departure))) &&
+					Math.abs(
+						adjustTime(d.timetable._data[afterIndex]?.departure) -
+							adjustTime(train.timetable._data[beforeIndex]?.arrival ?? train.timetable._data[beforeIndex]?.departure),
+					) <=
+						60 * 15
 				);
 			});
 		});
