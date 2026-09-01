@@ -11,11 +11,13 @@ export const settingsAtom = atom(
 		map: {
 			updateInterval: 0,
 		},
-		...(localStorage.getItem('settings')?.includes('general') ?
-			JSON.parse(localStorage.getItem('settings'))
-		:	{
-				general: JSON.parse(localStorage.getItem('settings')),
-			}),
+		...(localStorage.getItem('settings') ?
+			localStorage.getItem('settings')?.includes('general') ?
+				JSON.parse(localStorage.getItem('settings'))
+			:	{
+					general: JSON.parse(localStorage.getItem('settings')),
+				}
+		:	{}),
 	},
 	(get, set, settings) => {
 		localStorage.setItem('settings', JSON.stringify(settings));
