@@ -52,7 +52,7 @@ function getStationId(numbering) {
 	return id;
 }
 
-function searchStops(train, lineCode, index) {
+function searchStops(train, lineCode, prevArr, index) {
 	return train.timetable._data
 		.map((sta, i) => {
 			const stationId = sta?.stationId;
@@ -63,12 +63,14 @@ function searchStops(train, lineCode, index) {
 			if (lineCode == 'TT' && (stationId === 'tgw' || stationId === 'hsd')) return null;
 			if (lineCode == 'MY' && stationId === 'kry') return null;
 			if (![1, 2].includes(sta.stopType)) return null;
+			const nextTrainNum = i === train.timetable._data.length - 1 && train.note?.includes('次') ? train.note.replace('次', '') : null;
 			return {
 				id: stationId,
 				stopType: sta.stopType === 1 ? 'stop' : 'pass',
-				arr: sta.arrival ?? (!(index === 0 && i === train.timetable.firstStationIndex) ? sta.departure : null) ?? null,
+				arr: sta.arrival ?? (!(index === 0 && i === train.timetable.firstStationIndex) ? sta.departure : prevArr) ?? null,
 				dep: sta.departure ?? null,
 				lineName: sta.lineName,
+				nextTrainNum,
 			};
 		})
 		.filter((sta) => sta !== null);
@@ -81,7 +83,7 @@ function sortTrains(trains) {
 
 function formatStops(trains) {
 	const sorted = sortTrains(trains);
-	const timetables = sorted.flatMap((t, i) => searchStops(t.train, t.lineCode, i));
+	const timetables = sorted.flatMap((t, i) => searchStops(t.train, t.lineCode, t.prevArr, i));
 	const result = [];
 	for (let i = 0; i < timetables.length; i++) {
 		if (i < timetables.length - 2 && timetables[i].id === timetables[i + 1].id) {
@@ -126,11 +128,14 @@ function setTrains(ouds) {
 			});
 			sequenceNumbers[lineCode] ??= 0;
 			const number = train.number || String(lineCode + sequenceNumbers[lineCode]++);
+			const prevTrain = oud.railway.diagrams[0].trains.flat().find((t) => t.note === '次' + number);
+			const prevArr = prevTrain?.timetable._data[prevTrain.timetable.terminalStationIndex].arrival ?? null;
 			trainsGroupByNumber[number] ??= [];
 			trainsGroupByNumber[number].push({
 				train,
 				lineCode,
 				type: oud.railway.trainTypes[train.type].name,
+				prevArr,
 			});
 		}
 	}
@@ -141,13 +146,15 @@ function setTrains(ouds) {
 			continue;
 		}
 		const type = typeExceptions[train[0].type] ?? train[0].type;
+		const nextTrainNum = stops.at(-1).nextTrainNum;
 		trainsGroupByType[typePriorities[type]] ??= [];
 		trainsGroupByType[typePriorities[type]].push({
-			stops,
+			stops: stops.map(({ nextTrainNum, ...rest }) => rest),
 			type,
 			number,
-			startAt: stops[0].dep,
+			startAt: stops[0].arr ?? stops[0].dep,
 			endAt: stops.at(-1).arr,
+			nextTrainNum,
 		});
 	}
 	trains = new Set(trainsGroupByType.flat());
@@ -210,6 +217,9 @@ function calcPositions(sec) {
 				};
 			} /* 移動中 */ else {
 				const segmentRoutes = routes[stoppedCount - 1];
+				if (!segmentRoutes) {
+					console.log(train);
+				}
 				const lengthSum = segmentRoutes.reduce((s, c) => s + c.length, 0);
 				const pos = lengthSum * rate;
 				let sum = 0;
