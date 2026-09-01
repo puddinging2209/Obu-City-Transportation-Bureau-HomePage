@@ -5,7 +5,19 @@ import { Popup } from 'react-map-gl/maplibre';
 import { label } from '../../../utils/Station';
 import { toTimeString } from '../../../utils/Time';
 
+function normalizePopupPosition(position) {
+	if (!Array.isArray(position) || position.length < 2) {
+		return [0, 0];
+	}
+	const [first, second] = position;
+	if (Math.abs(first) <= 90 && Math.abs(second) > 90) {
+		return [second, first];
+	}
+	return [first, second];
+}
+
 export default function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet }) {
+	const position = React.useMemo(() => normalizePopupPosition(train.position), [train.position]);
 	const sec = train.sec < 10800 ? train.sec + 86400 : train.sec;
 	const type = train.rawTrainData.type;
 	const terminal = React.useMemo(
@@ -30,8 +42,8 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 	const theme = useTheme();
 	return (
 		<Popup
-			longitude={train.position[0]}
-			latitude={train.position[1]}
+			longitude={position[0]}
+			latitude={position[1]}
 			anchor='bottom'
 			offset={15}
 			closeButton={false}

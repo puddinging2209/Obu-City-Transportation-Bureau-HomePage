@@ -63,22 +63,41 @@ function TrainMap() {
 						onSelectTrain: (trainInfo) => {
 							setActiveTrain(trainInfo);
 						},
-						onUpdateActiveTrain: ({ points, sec }) => {
+						onUpdateActiveTrain: ({ points, trains, sec }) => {
 							if (!activeTrainIdRef.current) return;
 
-							// 配列(points)から現在追跡中のIDの列車を探して座標を追従させる
 							const currentTrain = points.find((p) => p.id === activeTrainIdRef.current);
 							if (currentTrain) {
 								setActiveTrain((prev) => {
 									if (!prev) return null;
 									if (prev.position[0] === currentTrain.position[0] && prev.position[1] === currentTrain.position[1]) {
-										return { ...prev, sec }; // 座標が変わっていなければState更新をスキップ
+										return { ...prev, sec };
 									}
 									return { ...prev, sec, position: currentTrain.position };
 								});
-							} else {
-								setActiveTrain(null); // データから消えたらポップアップを閉じる
+								return;
 							}
+
+							setActiveTrain((prev) => {
+								if (!prev) return null;
+								const nextTrainNumber = prev.rawTrainData?.nextTrainNum;
+								if (!nextTrainNumber) {
+									return null;
+								}
+
+								const nextTrain = trains?.find((t) => String(t.number) === String(nextTrainNumber));
+								if (!nextTrain) {
+									return null;
+								}
+
+								return {
+									id: nextTrain.number,
+									sec,
+									position: [...nextTrain.coordinate].reverse(),
+									type: nextTrain.type,
+									rawTrainData: nextTrain,
+								};
+							});
 						},
 					});
 

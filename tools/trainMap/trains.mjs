@@ -57,7 +57,7 @@ function getStationId(numbering) {
 	return id;
 }
 
-function searchStops(train, lineCode, index) {
+function searchStops(train, lineCode, prevArr, index) {
 	return train.timetable._data
 		.map((sta, i) => {
 			const stationId = sta?.stationId;
@@ -71,7 +71,7 @@ function searchStops(train, lineCode, index) {
 			return {
 				id: stationId,
 				stopType: sta.stopType === 1 ? 'stop' : 'pass',
-				arr: sta.arrival ?? (!(index === 0 && i === train.timetable.firstStationIndex) ? sta.departure : null) ?? null,
+				arr: sta.arrival ?? (!(index === 0 && i === train.timetable.firstStationIndex) ? sta.departure : prevArr) ?? null,
 				dep: sta.departure ?? null,
 				lineName: sta.lineName,
 			};
@@ -86,7 +86,7 @@ function sortTrains(trains) {
 
 function formatStops(trains) {
 	const sorted = sortTrains(trains);
-	const timetables = sorted.flatMap((t, i) => searchStops(t.train, t.lineCode, i));
+	const timetables = sorted.flatMap((t, i) => searchStops(t.train, t.lineCode, t.prevArr, i));
 	const result = [];
 	for (let i = 0; i < timetables.length; i++) {
 		if (i < timetables.length - 2 && timetables[i].id === timetables[i + 1].id) {
@@ -136,11 +136,14 @@ function setTrains(ouds) {
 			});
 			sequenceNumbers[lineCode] ??= 0;
 			const number = train.number || String(lineCode + sequenceNumbers[lineCode]++);
+			const prevTrain = oud.railway.diagrams[0].trains.flat().find((t) => t.note === '次' + number);
+			const prevArr = prevTrain?.timetable._data[prevTrain.timetable.terminalStationIndex].arrival ?? null;
 			trainsGroupByNumber[number] ??= [];
 			trainsGroupByNumber[number].push({
 				train,
 				lineCode,
 				type: oud.railway.trainTypes[train.type].name,
+				prevArr,
 			});
 		}
 	}

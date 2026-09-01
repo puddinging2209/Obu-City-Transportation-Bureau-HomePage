@@ -8,7 +8,7 @@ from build_graph import build_junction_nodes, load_lines
 from graph import build_full_graph
 from route import RouteNotFound, compute_train_route, dedup_routes
 
-MAX_LINES_PER_LEG = 4  # 隣接駅間で経由する路線数の上限(調整可能)
+MAX_LINES_PER_LEG = 5  # 隣接駅間で経由する路線数の上限(調整可能)
 
 
 def load_line_aliases(data_dir):
