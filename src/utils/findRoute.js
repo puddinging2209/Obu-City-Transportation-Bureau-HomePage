@@ -12,13 +12,11 @@ import walkPath from '../data/walkPath.json';
 
 const MAX_SPEED = (35 * 1000) / 3600; // m/s for heuristic
 const allowDuplicateSections = fareExceptions?.allowDuplicates ?? [];
-const SHORT_ROUTE_THRESHOLD = 15 * 1000; // 15km までは重みを強めずに精度優先
-const LONG_ROUTE_THRESHOLD = 30 * 1000; // 30km 以上ではヒューリスティックを強める
 
 const heuristicWeights = {
-	light: [1.5, 1.7, 2.5],
-	medium: [1.2, 1.4, 1.6],
-	normal: [1, 1.6, 1.8],
+	light: 2,
+	medium: 1.5,
+	normal: 1.1,
 };
 
 const distanceCache = new Map();
@@ -233,13 +231,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 
 	const makePriority = (time, station, transfer) => {
 		const h = heuristic(station, goalStation);
-		let heuristicWeight = heuristicWeights[heuristicMode][0];
-
-		if (distance >= LONG_ROUTE_THRESHOLD) {
-			heuristicWeight = heuristicWeights[heuristicMode][2];
-		} else if (distance >= SHORT_ROUTE_THRESHOLD) {
-			heuristicWeight = heuristicWeights[heuristicMode][1];
-		}
+		let heuristicWeight = heuristicWeights[heuristicMode];
 
 		return {
 			priority: Math.abs(time - baseTime) + h * heuristicWeight,
