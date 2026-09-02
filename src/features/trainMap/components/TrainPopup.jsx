@@ -1,4 +1,5 @@
 import CloseIcon from '@mui/icons-material/Close';
+import LocationPinIcon from '@mui/icons-material/LocationPin';
 import { Box, Button, IconButton, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import { Popup } from 'react-map-gl/maplibre';
@@ -16,7 +17,7 @@ function normalizePopupPosition(position) {
 	return [first, second];
 }
 
-export default function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet }) {
+export default function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet, isTracking, setIsTracking }) {
 	const position = React.useMemo(() => normalizePopupPosition(train.position), [train.position]);
 	const sec = train.sec < 10800 ? train.sec + 86400 : train.sec;
 	const type = train.rawTrainData.type;
@@ -66,6 +67,21 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 					p: 0.5,
 				}}
 			>
+				<IconButton
+					size='medium'
+					onClick={() => {
+						setIsTracking((prev) => !prev);
+					}}
+					sx={{
+						position: 'absolute',
+						top: 0,
+						left: 0,
+						color: isTracking ? '#36f' : '#0a0',
+						p: 1,
+					}}
+				>
+					<LocationPinIcon />
+				</IconButton>
 				<IconButton
 					size='medium'
 					onClick={() => setActiveTrain(null)}

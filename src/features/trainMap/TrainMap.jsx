@@ -21,6 +21,7 @@ function TrainMap() {
 	const date = new Date();
 	const store = useStore();
 	const containerRef = React.useRef();
+	const mapRef = React.useRef(null);
 	const layersRef = React.useRef([]);
 	const [isLoading, setIsLoading] = React.useState(true);
 	const layersEnabled = useAtomValue(layersEnabledAtom);
@@ -34,6 +35,9 @@ function TrainMap() {
 
 	// ★ 追従ポップアップ用のState
 	const [activeTrain, setActiveTrain] = React.useState(null); // { id, position: [lng, lat], type, rawTrainData }
+	const [isTracking, setIsTracking] = React.useState(false);
+	const isTrackingRef = React.useRef(isTracking);
+	isTrackingRef.current = isTracking;
 
 	// ★ イベントリスナー内で常に最新の activeTrain.id を参照できるようにするためのRef
 	const activeTrainIdRef = React.useRef(null);
@@ -49,6 +53,7 @@ function TrainMap() {
 		if (!mapEl) {
 			return;
 		}
+		mapRef.current = mapEl;
 		mapEl.on('load', async () => {
 			const map = mapEl.getMap();
 			map.addControl(new maplibregl.NavigationControl());
@@ -75,6 +80,9 @@ function TrainMap() {
 									}
 									return { ...prev, sec, position: currentTrain.position };
 								});
+								if (isTrackingRef.current) {
+									jumpToPos(currentTrain.position);
+								}
 								return;
 							}
 
@@ -88,6 +96,10 @@ function TrainMap() {
 								const nextTrain = trains?.find((t) => String(t.number) === String(nextTrainNumber));
 								if (!nextTrain) {
 									return null;
+								}
+
+								if (isTrackingRef.current) {
+									jumpToPos([...nextTrain.coordinate].toReversed());
 								}
 
 								return {
@@ -147,6 +159,11 @@ function TrainMap() {
 		};
 	}, [containerRef]);
 
+	function jumpToPos(pos) {
+		if (!pos) return;
+		mapRef.current?.getMap().jumpTo({ center: pos, essential: true });
+	}
+
 	return (
 		<Box ref={containerRef} sx={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
 			{isLoading ?
@@ -177,7 +194,13 @@ function TrainMap() {
 			>
 				{/* ★ activeTrainが存在するときだけポップアップを表示 */}
 				{activeTrain && (
-					<TrainPopup train={activeTrain} setActiveTrain={setActiveTrain} handleOpenBottomSheet={handleOpenBottomSheet}></TrainPopup>
+					<TrainPopup
+						train={activeTrain}
+						setActiveTrain={setActiveTrain}
+						handleOpenBottomSheet={handleOpenBottomSheet}
+						isTracking={isTracking}
+						setIsTracking={setIsTracking}
+					></TrainPopup>
 				)}
 			</Map>
 			<Stack
