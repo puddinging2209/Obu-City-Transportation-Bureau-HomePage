@@ -191,6 +191,7 @@ function TrainMap() {
 				}}
 				attributionControl={false}
 				mapStyle='https://tile.openstreetmap.jp/styles/maptiler-basic-ja/style.json'
+				onDragStart={() => setIsTracking(false)}
 			>
 				{/* ★ activeTrainが存在するときだけポップアップを表示 */}
 				{activeTrain && (
