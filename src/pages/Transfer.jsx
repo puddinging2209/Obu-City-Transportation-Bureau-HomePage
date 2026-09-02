@@ -24,7 +24,6 @@ function Transfer() {
 		if (!from || !to) return;
 		setLoading(true);
 		let segments = [];
-		console.log(heuristicMode);
 		try {
 			if (!enableViaStations || viaStations.length === 0) {
 				segments = [await dijkstra(from, to, adjustTime(baseTime), mode, transferTime - 1, tokkyu, heuristicMode, allowOuterTransfer)];
