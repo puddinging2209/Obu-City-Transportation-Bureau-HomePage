@@ -38,6 +38,8 @@ function TrainMap() {
 	const [isTracking, setIsTracking] = React.useState(false);
 	const isTrackingRef = React.useRef(isTracking);
 	isTrackingRef.current = isTracking;
+	const isPointerDownRef = React.useRef(false);
+	const pointerStartRef = React.useRef(null);
 
 	// ★ イベントリスナー内で常に最新の activeTrain.id を参照できるようにするためのRef
 	const activeTrainIdRef = React.useRef(null);
@@ -80,7 +82,7 @@ function TrainMap() {
 									}
 									return { ...prev, sec, position: currentTrain.position };
 								});
-								if (isTrackingRef.current) {
+								if (isTrackingRef.current && !isPointerDownRef.current) {
 									jumpToPos(currentTrain.position);
 								}
 								return;
@@ -98,7 +100,7 @@ function TrainMap() {
 									return null;
 								}
 
-								if (isTrackingRef.current) {
+								if (isTrackingRef.current && !isPointerDownRef.current) {
 									jumpToPos(nextTrain.coordinate);
 								}
 
@@ -165,6 +167,29 @@ function TrainMap() {
 		mapRef.current?.getMap().jumpTo({ center: pos, essential: true });
 	}
 
+	function startPointerInteraction(event) {
+		isPointerDownRef.current = true;
+		pointerStartRef.current = event.point;
+	}
+
+	function updatePointerInteraction(event) {
+		if (!isPointerDownRef.current || !pointerStartRef.current) return;
+		if (!isTrackingRef.current) return;
+
+		const dx = event.point.x - pointerStartRef.current.x;
+		const dy = event.point.y - pointerStartRef.current.y;
+		if (dx * dx + dy * dy >= 16) {
+			isPointerDownRef.current = false;
+			pointerStartRef.current = null;
+			setIsTracking(false);
+		}
+	}
+
+	function endPointerInteraction() {
+		isPointerDownRef.current = false;
+		pointerStartRef.current = null;
+	}
+
 	return (
 		<Box ref={containerRef} sx={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
 			{isLoading ?
@@ -192,6 +217,13 @@ function TrainMap() {
 				}}
 				attributionControl={false}
 				mapStyle='https://tile.openstreetmap.jp/styles/maptiler-basic-ja/style.json'
+				onMouseDown={startPointerInteraction}
+				onMouseMove={updatePointerInteraction}
+				onMouseUp={endPointerInteraction}
+				onMouseLeave={endPointerInteraction}
+				onTouchStart={startPointerInteraction}
+				onTouchMove={updatePointerInteraction}
+				onTouchEnd={endPointerInteraction}
 				onDragStart={() => setIsTracking(false)}
 			>
 				{/* ★ activeTrainが存在するときだけポップアップを表示 */}
