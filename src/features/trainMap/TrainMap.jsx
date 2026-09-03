@@ -99,7 +99,7 @@ function TrainMap() {
 								}
 
 								if (isTrackingRef.current) {
-									jumpToPos([...nextTrain.coordinate].toReversed());
+									jumpToPos(nextTrain.coordinate);
 								}
 
 								return {
@@ -161,6 +161,7 @@ function TrainMap() {
 
 	function jumpToPos(pos) {
 		if (!pos) return;
+		console.log(pos);
 		mapRef.current?.getMap().jumpTo({ center: pos, essential: true });
 	}
 
