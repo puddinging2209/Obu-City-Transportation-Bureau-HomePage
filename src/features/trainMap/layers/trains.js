@@ -97,6 +97,13 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 					onClick: (e) => {
 						const train = data.data.find((t) => t.number === e.object?.id);
 						if (train) {
+							const stoppedTrains =
+								train.stoppingSta ?
+									data.data
+										.filter((t) => t.stoppingSta === train.stoppingSta)
+										.map((t) => ({ ...t, position: [...t.coordinate].reverse() }))
+								:	[];
+
 							// showTrainInfo(train);
 
 							// ★【追加】クリックされた列車の情報をReactのStateへ渡す
@@ -105,6 +112,7 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 								id: e.object.id,
 								position: e.object.position,
 								rawTrainData: train, // ★ ボタンを押した時にボトムシートへ渡せるよう、元データを保持
+								stoppedTrains,
 							});
 							console.log(train);
 						}
