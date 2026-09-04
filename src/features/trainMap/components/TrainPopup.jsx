@@ -159,7 +159,7 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 				<DialogTitle>{label(train.rawTrainData.stoppingSta)}に停車中の列車</DialogTitle>
 				<List disablePadding>
 					{train.stoppedTrains
-						.sort((a, b) => a.stops.find((s) => s.id === currentStop?.id).dep - b.stops.find((s) => s.id === currentStop?.id).dep)
+						?.sort((a, b) => a.stops.find((s) => s.id === currentStop?.id).dep - b.stops.find((s) => s.id === currentStop?.id).dep)
 						.map((stoppedTrain) => {
 							const stoppedTrainTerminal =
 								stoppedTrain.stops.at(-1).id !== 'ct2' ? label(stoppedTrain.stops.at(-1).id) : '中部国際空港';
