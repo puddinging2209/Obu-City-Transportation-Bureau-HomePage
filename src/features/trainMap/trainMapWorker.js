@@ -192,9 +192,11 @@ function calcPositions(sec) {
 			if (stop.arr <= sec && sec < stop.dep) {
 				segmentData.length = 0;
 				segmentData.push(stop);
+				train.stoppingSta = stop.id;
 				break;
 			}
 			if (sec < stop.arr) {
+				train.stoppingSta = null;
 				break;
 			}
 			if (stop.dep <= sec) {

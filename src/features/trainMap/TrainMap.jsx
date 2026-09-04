@@ -17,6 +17,20 @@ import { layers, layersEnabledAtom, updateLayerEnabledAtom } from './states/laye
 import { clearBottomSheetAtom, setBottomSheetComponentAtom, setBottomSheetTitleAtom } from './states/sheet';
 import { timeAtom } from './states/time';
 
+function getStoppedTrains(trains, stoppingSta, previousStoppedTrains = []) {
+	if (!stoppingSta) return [];
+
+	const stoppedTrains = trains.filter((train) => train.stoppingSta === stoppingSta);
+	if (
+		stoppedTrains.length === previousStoppedTrains.length &&
+		stoppedTrains.every((train, index) => train.number === previousStoppedTrains[index].number)
+	) {
+		return previousStoppedTrains;
+	}
+
+	return stoppedTrains.map((train) => ({ ...train, position: [...train.coordinate].reverse() }));
+}
+
 function TrainMap() {
 	const date = new Date();
 	const store = useStore();
@@ -51,6 +65,16 @@ function TrainMap() {
 		setBottomSheetTitle('列車情報');
 	};
 
+	const handleSwitchTrain = (nextTrain, stoppedTrains) => {
+		setActiveTrain((prev) => ({
+			...prev,
+			id: nextTrain.number,
+			position: nextTrain.position,
+			rawTrainData: nextTrain,
+			stoppedTrains,
+		}));
+	};
+
 	const mapHandle = (mapEl) => {
 		if (!mapEl) {
 			return;
@@ -77,10 +101,12 @@ function TrainMap() {
 							if (currentTrain) {
 								setActiveTrain((prev) => {
 									if (!prev) return null;
+									const currentTrainData = trains.find((train) => train.number === activeTrainIdRef.current);
+									const stoppedTrains = getStoppedTrains(trains, currentTrainData?.stoppingSta, prev.stoppedTrains);
 									if (prev.position[0] === currentTrain.position[0] && prev.position[1] === currentTrain.position[1]) {
-										return { ...prev, sec };
+										return { ...prev, sec, stoppedTrains };
 									}
-									return { ...prev, sec, position: currentTrain.position };
+									return { ...prev, sec, position: currentTrain.position, stoppedTrains };
 								});
 								if (isTrackingRef.current && !isPointerDownRef.current) {
 									jumpToPos(currentTrain.position);
@@ -232,6 +258,7 @@ function TrainMap() {
 						train={activeTrain}
 						setActiveTrain={setActiveTrain}
 						handleOpenBottomSheet={handleOpenBottomSheet}
+						handleSwitchTrain={handleSwitchTrain}
 						isTracking={isTracking}
 						setIsTracking={setIsTracking}
 					></TrainPopup>
