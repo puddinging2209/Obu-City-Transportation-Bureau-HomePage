@@ -89,7 +89,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 						Object.values(linesData).find((l) => l.json === resolveRosen(diagram.railway.name))?.isLoop ||
 						Object.values(linesData).find((l) => l.json === resolveRosen(line))?.isLoop
 					) ||
-						(d.timetable._data[beforeIndex]?.arrival ?
+						(d.timetable._data[beforeIndex]?.stopType === 1 ?
 							adjustTime(d.timetable._data[beforeIndex]?.arrival) < adjustTime(train.timetable._data[afterIndex]?.departure)
 						:	adjustTime(d.timetable._data[beforeIndex]?.departure) <= adjustTime(train.timetable._data[afterIndex]?.departure))) &&
 					Math.abs(
@@ -113,7 +113,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 						Object.values(linesData).find((l) => l.json === resolveRosen(beforeDiagram.railway.name))?.isLoop ||
 						Object.values(linesData).find((l) => l.json === resolveRosen(line))?.isLoop
 					) ||
-						(d.timetable._data[beforeIndex]?.arrival ?
+						(d.timetable._data[beforeIndex]?.stopType === 1 ?
 							adjustTime(d.timetable._data[beforeIndex]?.arrival) < adjustTime(train.timetable._data[afterIndex]?.departure)
 						:	adjustTime(d.timetable._data[beforeIndex]?.departure) <= adjustTime(train.timetable._data[afterIndex]?.departure)))
 				);
@@ -195,12 +195,12 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 					:	diagram.railway.stations.toReversed().findIndex((sta) => id(sta.name) === last);
 				return (
 					d.number == number &&
-					d.timetable._data[afterIndex].stopType === train.timetable._data[beforeIndex].stopType &&
+					d.timetable._data[afterIndex]?.stopType === train.timetable._data[beforeIndex]?.stopType &&
 					(!(
 						Object.values(linesData).find((l) => l.json === resolveRosen(diagram.railway.name))?.isLoop ||
 						Object.values(linesData).find((l) => l.json === resolveRosen(line))?.isLoop
 					) ||
-						(train.timetable._data[beforeIndex]?.arrival ?
+						(train.timetable._data[beforeIndex]?.stopType === 1 ?
 							adjustTime(d.timetable._data[afterIndex]?.departure) > adjustTime(train.timetable._data[beforeIndex]?.arrival)
 						:	adjustTime(d.timetable._data[afterIndex]?.departure) >= adjustTime(train.timetable._data[beforeIndex]?.departure))) &&
 					Math.abs(
@@ -224,7 +224,7 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 						Object.values(linesData).find((l) => l.json === resolveRosen(afterDiagram.railway.name))?.isLoop ||
 						Object.values(linesData).find((l) => l.json === resolveRosen(line))?.isLoop
 					) ||
-						(train.timetable._data[beforeIndex]?.arrival ?
+						(train.timetable._data[beforeIndex]?.stopType === 1 ?
 							adjustTime(d.timetable._data[afterIndex]?.departure) > adjustTime(train.timetable._data[beforeIndex]?.arrival)
 						:	adjustTime(d.timetable._data[afterIndex]?.departure) >= adjustTime(train.timetable._data[beforeIndex]?.departure)))
 				);
