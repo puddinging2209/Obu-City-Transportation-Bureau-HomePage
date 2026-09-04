@@ -277,6 +277,15 @@ function calcPositions(sec) {
 	return results;
 }
 
+function getStoppedTrainIndicesByStation(trains) {
+	const indicesByStation = {};
+	for (const [index, train] of trains.entries()) {
+		if (!train.stoppingSta) continue;
+		(indicesByStation[train.stoppingSta] ??= []).push(index);
+	}
+	return indicesByStation;
+}
+
 self.addEventListener('message', ({ data }) => {
 	switch (data.type) {
 		case 'setOuds': {
@@ -287,9 +296,11 @@ self.addEventListener('message', ({ data }) => {
 			break;
 		}
 		case 'calcPosition': {
+			const trains = calcPositions(normalizeSec(data.sec));
 			self.postMessage({
 				type: 'calcPositionResult',
-				data: calcPositions(normalizeSec(data.sec)),
+				data: trains,
+				stoppedTrainIndicesByStation: getStoppedTrainIndicesByStation(trains),
 				sec: data.sec,
 			});
 		}

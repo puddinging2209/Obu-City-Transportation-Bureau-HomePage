@@ -54,17 +54,19 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 	worker.addEventListener('message', ({ data }) => {
 		switch (data.type) {
 			case 'calcPositionResult': {
-				const trains = data.data.filter((t) => t.coordinate);
-				const points = trains.map((t) => ({
-					id: t.number,
-					type: t.type,
-					position: t.coordinate.reverse(),
-					angle: t.angle,
-				}));
+				const trains = data.data;
+				const points = trains
+					.filter((t) => t.coordinate)
+					.map((t) => ({
+						id: t.number,
+						type: t.type,
+						position: t.coordinate.reverse(),
+						angle: t.angle,
+					}));
 
 				// ★【追加】現在ポップアップ表示対象の列車があれば、最新の座標をReact側に通知する
 				if (onUpdateActiveTrain) {
-					onUpdateActiveTrain({ points, trains, sec: data.sec });
+					onUpdateActiveTrain({ points, trains, stoppedTrainIndicesByStation: data.stoppedTrainIndicesByStation, sec: data.sec });
 				}
 
 				const layer = new IconLayer({
@@ -99,8 +101,8 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 						if (train) {
 							const stoppedTrains =
 								train.stoppingSta ?
-									data.data
-										.filter((t) => t.stoppingSta === train.stoppingSta)
+									(data.stoppedTrainIndicesByStation?.[train.stoppingSta] ?? [])
+										.map((index) => data.data[index])
 										.map((t) => ({ ...t, position: [...t.coordinate].reverse() }))
 								:	[];
 

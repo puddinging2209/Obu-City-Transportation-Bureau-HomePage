@@ -17,10 +17,10 @@ import { layers, layersEnabledAtom, updateLayerEnabledAtom } from './states/laye
 import { clearBottomSheetAtom, setBottomSheetComponentAtom, setBottomSheetTitleAtom } from './states/sheet';
 import { timeAtom } from './states/time';
 
-function getStoppedTrains(trains, stoppingSta, previousStoppedTrains = []) {
+function getStoppedTrains(trains, stoppingSta, stoppedTrainIndicesByStation, previousStoppedTrains = []) {
 	if (!stoppingSta) return [];
 
-	const stoppedTrains = trains.filter((train) => train.stoppingSta === stoppingSta);
+	const stoppedTrains = (stoppedTrainIndicesByStation?.[stoppingSta] ?? []).map((index) => trains[index]);
 	if (
 		stoppedTrains.length === previousStoppedTrains.length &&
 		stoppedTrains.every((train, index) => train.number === previousStoppedTrains[index].number)
@@ -94,7 +94,7 @@ function TrainMap() {
 						onSelectTrain: (trainInfo) => {
 							setActiveTrain(trainInfo);
 						},
-						onUpdateActiveTrain: ({ points, trains, sec }) => {
+						onUpdateActiveTrain: ({ points, trains, stoppedTrainIndicesByStation, sec }) => {
 							if (!activeTrainIdRef.current) return;
 
 							const currentTrain = points.find((p) => p.id === activeTrainIdRef.current);
@@ -102,7 +102,12 @@ function TrainMap() {
 								setActiveTrain((prev) => {
 									if (!prev) return null;
 									const currentTrainData = trains.find((train) => train.number === activeTrainIdRef.current);
-									const stoppedTrains = getStoppedTrains(trains, currentTrainData?.stoppingSta, prev.stoppedTrains);
+									const stoppedTrains = getStoppedTrains(
+										trains,
+										currentTrainData?.stoppingSta,
+										stoppedTrainIndicesByStation,
+										prev.stoppedTrains,
+									);
 									if (prev.position[0] === currentTrain.position[0] && prev.position[1] === currentTrain.position[1]) {
 										return { ...prev, sec, stoppedTrains };
 									}
