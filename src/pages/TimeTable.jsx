@@ -234,13 +234,17 @@ function TimeTable() {
 					</TableBody>
 				</Table>
 			</TableContainer>
-			<Stack sx={{ mt: 2 }} direction='row' justifyContent='left' gap={2}>
-				凡例：
-				{Array.from(terminals).map(([letter, terminal], i) => (
-					<Typography variant='body1' key={i}>
-						{letter}: {terminal}
-					</Typography>
-				))}
+			<Stack sx={{ mt: 2 }} gap={1} direction='row'>
+				<Typography variant='body1' sx={{ flex: '0 0 auto' }} noWrap>
+					凡例：
+				</Typography>
+				<Stack direction='row' justifyContent='left' gap={2} flexWrap='wrap' useFlexGap>
+					{Array.from(terminals).map(([letter, terminal], i) => (
+						<Typography variant='body1' key={i}>
+							{letter}: {terminal}
+						</Typography>
+					))}
+				</Stack>
 			</Stack>
 
 			{pushed && isShowDialog && (
