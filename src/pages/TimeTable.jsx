@@ -24,7 +24,7 @@ import TrainStopsDialog from '../components/TrainStopsDialog.jsx';
 import getDirections from '../utils/getDirections.js';
 
 import stations from '../data/stations.json';
-import types from '../data/types.json';
+import typesData from '../data/types.json';
 
 import { getDeparture } from '../utils/readOud.js';
 import { label } from '../utils/Station.js';
@@ -39,9 +39,25 @@ function TimeTable() {
 	const [pushed, setPushed] = React.useState(null);
 	const [isShowDialog, setIsShowDialog] = React.useState(false);
 
+	const [terminals, setTerminals] = React.useState(new Map());
+
 	const theme = useTheme();
 
 	const directionOptions = React.useMemo(() => getDirections(station), [station]);
+
+	function addTerminalShortName(terminal) {
+		for (const letter of terminal) {
+			if (terminals.get(letter) !== terminal) {
+				if (terminals.has(letter)) {
+					continue;
+				} else {
+					terminals.set(letter, terminal);
+					setTerminals(new Map(terminals));
+					return letter;
+				}
+			} else return letter;
+		}
+	}
 
 	function divideDeps(deps) {
 		let result = Array.from({ length: 27 }, () => []);
@@ -56,11 +72,12 @@ function TimeTable() {
 
 	React.useEffect(() => {
 		if (!station) return;
-		const desiredDirection = directionOptions[direction] ? direction : 0;
+		const desiredDirection = 0; // directionOptions[direction] ? direction : 0;
 		if (desiredDirection !== direction) {
 			setDirection(desiredDirection);
 		}
 		setLoading(true);
+		setTerminals(new Map());
 		getDeparture(station, directionOptions[desiredDirection]).then((deps) => {
 			setDepartures(divideDeps(deps));
 			setLoading(false);
@@ -70,6 +87,7 @@ function TimeTable() {
 	React.useEffect(() => {
 		if (station && directionOptions[direction]) {
 			setLoading(true);
+			setTerminals(new Map());
 			getDeparture(station, directionOptions[direction])
 				.then((deps) => setDepartures(divideDeps(deps)))
 				.catch(() => {
@@ -169,6 +187,10 @@ function TimeTable() {
 											{deps.map((dep, j) => {
 												const strong = dep.typeName === '特急';
 												const frame = dep.typeName === 'ライナー' || dep.typeName === '各駅停車';
+												const TerminalShortName = dep.terminal
+													.split('・')
+													.map((t) => addTerminalShortName(t))
+													.join('・');
 												return (
 													<Button
 														onClick={() => {
@@ -185,20 +207,20 @@ function TimeTable() {
 														>
 															<Box
 																sx={{
-																	background: strong ? types[dep.typeName]?.color : '',
-																	border: frame ? `1px solid ${types[dep.typeName]?.color}` : '',
+																	background: strong ? typesData[dep.typeName]?.color : '',
+																	border: frame ? `1px solid ${typesData[dep.typeName]?.color}` : '',
 																}}
 															>
-																<Typography color={strong ? 'white' : types[dep.typeName]?.color} variant='h6'>
+																<Typography color={strong ? 'white' : typesData[dep.typeName]?.color} variant='h6'>
 																	{String(dep.min).padStart(2, '0')}
 																</Typography>
 															</Box>
 															<Typography
-																color={types[dep.typeName]?.color}
+																color={typesData[dep.typeName]?.color}
 																sx={{ whiteSpace: 'nowrap' }}
 																variant='body6'
 															>
-																{label(dep.terminal)[0]}
+																{TerminalShortName}
 															</Typography>
 														</Box>
 													</Button>
@@ -212,6 +234,14 @@ function TimeTable() {
 					</TableBody>
 				</Table>
 			</TableContainer>
+			<Stack sx={{ mt: 2 }} direction='row' justifyContent='left' gap={2}>
+				凡例：
+				{Array.from(terminals).map(([letter, terminal], i) => (
+					<Typography variant='body1' key={i}>
+						{letter}: {terminal}
+					</Typography>
+				))}
+			</Stack>
 
 			{pushed && isShowDialog && (
 				<TrainStopsDialog
