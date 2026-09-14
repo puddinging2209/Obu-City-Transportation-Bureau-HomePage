@@ -39,25 +39,9 @@ function TimeTable() {
 	const [pushed, setPushed] = React.useState(null);
 	const [isShowDialog, setIsShowDialog] = React.useState(false);
 
-	const [terminals, setTerminals] = React.useState(new Map());
-
 	const theme = useTheme();
 
 	const directionOptions = React.useMemo(() => getDirections(station), [station]);
-
-	function addTerminalShortName(terminal) {
-		for (const letter of terminal) {
-			if (terminals.get(letter) !== terminal) {
-				if (terminals.has(letter)) {
-					continue;
-				} else {
-					terminals.set(letter, terminal);
-					setTerminals(new Map(terminals));
-					return letter;
-				}
-			} else return letter;
-		}
-	}
 
 	function divideDeps(deps) {
 		let result = Array.from({ length: 27 }, () => []);
@@ -77,7 +61,6 @@ function TimeTable() {
 			setDirection(desiredDirection);
 		}
 		setLoading(true);
-		setTerminals(new Map());
 		getDeparture(station, directionOptions[desiredDirection]).then((deps) => {
 			setDepartures(divideDeps(deps));
 			setLoading(false);
@@ -87,7 +70,6 @@ function TimeTable() {
 	React.useEffect(() => {
 		if (station && directionOptions[direction]) {
 			setLoading(true);
-			setTerminals(new Map());
 			getDeparture(station, directionOptions[direction])
 				.then((deps) => setDepartures(divideDeps(deps)))
 				.catch(() => {
@@ -97,6 +79,69 @@ function TimeTable() {
 				.finally(() => setLoading(false));
 		}
 	}, [direction]);
+
+	const { terminalLabels, terminalEntries } = React.useMemo(() => {
+		const terminalCounts = {};
+		const getTerminalParts = (terminal) => {
+			if (terminal.includes('・')) return terminal.split('・');
+			if (terminal.includes('経由')) return terminal.split('経由');
+			return [terminal];
+		};
+		const getShortNameCandidates = (terminal) => {
+			let letters = terminal.replace(/新|(三河)/, '');
+			if (terminal.includes('大府環状線')) letters = '環';
+			if (terminal.includes('中部国際空港')) letters = '空';
+			return letters;
+		};
+
+		for (const deps of departures) {
+			for (const dep of deps) {
+				for (const terminal of getTerminalParts(dep.terminal)) {
+					terminalCounts[terminal] = (terminalCounts[terminal] ?? 0) + 1;
+				}
+			}
+		}
+
+		const terminalMap = {};
+		const usedLetters = {};
+		const terminalShortNames = {};
+		const addTerminalShortName = (terminal) => {
+			if (terminalShortNames[terminal]) return terminalShortNames[terminal];
+
+			const letters = getShortNameCandidates(terminal);
+
+			for (const letter of letters) {
+				if (!usedLetters[letter]) {
+					usedLetters[letter] = terminal;
+					terminalShortNames[terminal] = letter;
+					terminalMap[letter] = { label: terminal, count: terminalCounts[terminal] };
+					return letter;
+				}
+			}
+			return terminal;
+		};
+
+		Object.keys(terminalCounts)
+			.sort((a, b) => terminalCounts[b] - terminalCounts[a])
+			.forEach(addTerminalShortName);
+
+		const labels = departures.map((deps) =>
+			deps.map((dep) => {
+				if (dep.terminal.includes('・')) {
+					return dep.terminal.split('・').map(addTerminalShortName).join('・');
+				}
+				if (dep.terminal.includes('経由')) {
+					return dep.terminal.split('経由').map(addTerminalShortName).toReversed().join('(') + ')';
+				}
+				return addTerminalShortName(dep.terminal);
+			}),
+		);
+
+		return {
+			terminalLabels: labels,
+			terminalEntries: Object.entries(terminalMap),
+		};
+	}, [departures]);
 
 	return (
 		<>
@@ -187,10 +232,6 @@ function TimeTable() {
 											{deps.map((dep, j) => {
 												const strong = dep.typeName === '特急';
 												const frame = dep.typeName === 'ライナー' || dep.typeName === '各駅停車';
-												const TerminalShortName = dep.terminal
-													.split('・')
-													.map((t) => addTerminalShortName(t))
-													.join('・');
 												return (
 													<Button
 														onClick={() => {
@@ -220,7 +261,7 @@ function TimeTable() {
 																sx={{ whiteSpace: 'nowrap' }}
 																variant='body6'
 															>
-																{TerminalShortName}
+																{terminalLabels[i][j]}
 															</Typography>
 														</Box>
 													</Button>
@@ -234,18 +275,20 @@ function TimeTable() {
 					</TableBody>
 				</Table>
 			</TableContainer>
-			<Stack sx={{ mt: 2 }} gap={1} direction='row'>
-				<Typography variant='body1' sx={{ flex: '0 0 auto' }} noWrap>
-					凡例：
-				</Typography>
-				<Stack direction='row' justifyContent='left' gap={2} flexWrap='wrap' useFlexGap>
-					{Array.from(terminals).map(([letter, terminal], i) => (
-						<Typography variant='body1' key={i}>
-							{letter}: {terminal}
-						</Typography>
-					))}
+			{!loading && (
+				<Stack sx={{ mt: 2 }} gap={1} direction='row'>
+					<Typography variant='body1' sx={{ flex: '0 0 auto' }} noWrap>
+						凡例：
+					</Typography>
+					<Stack direction='row' justifyContent='left' gap={2} flexWrap='wrap' useFlexGap>
+						{terminalEntries.map(([letter, { label: terminal }], i) => (
+							<Typography variant='body1' key={i}>
+								{letter}: {terminal}
+							</Typography>
+						))}
+					</Stack>
 				</Stack>
-			</Stack>
+			)}
 
 			{pushed && isShowDialog && (
 				<TrainStopsDialog
