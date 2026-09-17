@@ -1,0 +1,68 @@
+{
+	"all": {
+		"ratio": [
+			{
+				"ratio": 0,
+				"title": "はじめての大府市営地下鉄",
+				"id": "0000"
+			},
+			{
+				"ratio": 33.4,
+				"title": "なんでや阪神関係ないやろ",
+				"id": "0001"
+			},
+			{
+				"ratio": 50,
+				"title": "イスファハーン",
+				"id": "0002"
+			},
+			{
+				"ratio": 100,
+				"title": "マスター・オブ・大府市営地下鉄",
+				"id": "0003"
+			}
+		]
+	},
+	"eachLine": {
+		"ratio": [
+			{
+				"ratio": 0,
+				"title": "初めての_LINE_",
+				"id": "1000"
+			},
+			{
+				"ratio": 100,
+				"title": "_LINE_の覇者",
+				"id": "1001"
+			}
+		]
+	},
+	"eachPrefecture": {
+		"ratio": [
+			{
+				"ratio": 0,
+				"title": "はじめての_PREFECTURE_",
+				"id": "2000"
+			},
+			{
+				"ratio": 100,
+				"title": "マスター・オブ・_PREFECTURE_",
+				"id": "2001"
+			}
+		]
+	},
+	"eachCity": {
+		"ratio": [
+			{
+				"ratio": 0,
+				"title": "はじめての_CITY_",
+				"id": "3000"
+			},
+			{
+				"ratio": 100,
+				"title": "マスター・オブ・_CITY_",
+				"id": "3001"
+			}
+		]
+	}
+}
