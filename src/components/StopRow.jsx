@@ -4,7 +4,7 @@ import { useAtomValue } from 'jotai';
 
 import OverflowMarquee from './OverflowMarquee.jsx';
 
-import { settingsAtom } from '../utils/Atom.js';
+import { settingsAtom } from '../atom/atom.js';
 import { toTimeString } from '../utils/Time.js';
 
 import lines from '../data/lines.json';

@@ -20,7 +20,8 @@ import {
 	Typography,
 } from '@mui/material';
 
-import { addMyStationAtom, myStationsAtom, nearestStationAtom } from '../utils/Atom.js';
+import { addMyStationAtom, myStationsAtom, nearestStationAtom } from '../atom/atom.js';
+import { addToStationLogAtom, stationLogAtom } from '../atom/log.js';
 import searchNearestStation from '../utils/searchNearestStation.js';
 
 import DepartureCard from './DepartureCard.jsx';
@@ -36,22 +37,15 @@ export default function DepartureSection() {
 	const myStations = useAtomValue(myStationsAtom);
 	const addMyStation = useSetAtom(addMyStationAtom);
 
+	const stationLog = useAtomValue(stationLogAtom);
+	const addToStationLog = useSetAtom(addToStationLogAtom);
+
 	const [nearestStation, setNearestStation] = React.useState(null);
 
 	const [nearestAtom, setNearestAtom] = useAtom(nearestStationAtom);
 	const [loadingNearest, setLoadingNearest] = React.useState(false);
 
 	const [isOpenSnackbar, setIsOpenSnackbar] = React.useState(false);
-
-	const updateVisited = (visited) => {
-		const updated = [];
-		for (const i in visited) {
-			const v = visited[i];
-			if (visited[i - 1]?.id === v.id) continue; // 同駅連続では更新しない
-			updated.push(v);
-		}
-		return updated;
-	};
 
 	const updateNearest = () => {
 		setLoadingNearest(true);
@@ -60,24 +54,21 @@ export default function DepartureSection() {
 			(pos) => {
 				const lat = pos.coords.latitude;
 				const lng = pos.coords.longitude;
-				const id = searchNearestStation({ lat, lng })
+				const id = searchNearestStation({ lat, lng });
 
 				setLoadingNearest(false);
 				setNearestStation(id);
 				setNearestAtom(id);
 
-				const visited = localStorage.getItem('visitedStations') ? JSON.parse(localStorage.getItem('visitedStations')) : [];
-				if (visited.at(-1)?.id === id) return; // 同駅連続では更新しない
-				const newVisited = [...updateVisited(visited).toSorted((v1, v2) => v1.time - v2.time), { id, time: Date.now() }];
-				localStorage.setItem('visitedStations', JSON.stringify(newVisited));
-				if (newVisited.filter((v) => v.id === id).length === 1) setIsOpenSnackbar(true);
+				addToStationLog(id);
+				if (!new Set(stationLog.map((s) => s.id)).has(id)) setIsOpenSnackbar(true);
 			},
 			(err) => {
 				setLoadingNearest(false);
 				alert('位置情報の取得に失敗しました');
 			},
-			{ enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
-		)
+			{ enableHighAccuracy: true, timeout: 10000, maximumAge: 0 },
+		);
 	};
 
 	React.useEffect(() => {
@@ -133,7 +124,7 @@ export default function DepartureSection() {
 								<div width='100%'>
 									<DepartureCard key={`near-${nearestStation}`} station={nearestStation} addButton />
 								</div>
-								: <Card
+							:	<Card
 									sx={{
 										width: { xs: '100%', md: 300 },
 										minHeight: 240,
@@ -169,7 +160,7 @@ export default function DepartureSection() {
 							<Box sx={{ mt: 2, width: { xs: '100%', md: 300 } }}>
 								{serchedStation ?
 									<DepartureCard key={`search-${serchedStation.value}`} station={serchedStation.value} addButton />
-									: <Card
+								:	<Card
 										sx={{
 											width: { xs: '100%', md: 300 },
 											minHeight: 240,

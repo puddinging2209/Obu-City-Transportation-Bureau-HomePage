@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { getDefaultStore } from 'jotai';
 
-import { settingsAtom } from '../utils/Atom.js';
+import { settingsAtom } from '../atom/atom.js';
 
 const store = getDefaultStore();
 

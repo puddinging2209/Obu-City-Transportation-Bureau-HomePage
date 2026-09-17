@@ -1,6 +1,6 @@
 import { atom } from 'jotai';
 
-import { id } from './Station.js';
+import { id } from '../utils/Station.js';
 
 export const settingsAtom = atom(
 	{
@@ -44,3 +44,14 @@ export const nearestStationAtom = atom(null);
 export const isOpenDrawerAtom = atom(false);
 
 export const resultAtom = atom([]);
+
+export const titlesAtom = atom(localStorage.getItem('titles') ? JSON.parse(localStorage.getItem('titles')) : []);
+
+export const addTitleAtom = atom(null, (get, set, title) => {
+	const prev = get(titlesAtom);
+	if (prev.includes(title)) return;
+	const after = [...prev, title];
+
+	set(titlesAtom, after);
+	localStorage.setItem('titles', JSON.stringify(after));
+});

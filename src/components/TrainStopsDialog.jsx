@@ -6,7 +6,7 @@ import { useAtomValue } from 'jotai';
 
 import StopRow from './StopRow.jsx';
 
-import { settingsAtom } from '../utils/Atom.js';
+import { settingsAtom } from '../atom/atom.js';
 import formatStops from '../utils/formatStops.js';
 import { label } from '../utils/Station.js';
 import { LineContext } from './DepartureCard.jsx';

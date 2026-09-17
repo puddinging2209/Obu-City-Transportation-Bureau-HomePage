@@ -4,7 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Box, Button, Card, CardContent, CircularProgress, IconButton, MenuItem, Select, Stack, Typography } from '@mui/material';
 import { useAtom, useSetAtom } from 'jotai';
 
-import { addMyStationAtom, myStationsAtom } from '../utils/Atom.js';
+import { addMyStationAtom, myStationsAtom } from '../atom/atom.js';
 
 import DepartureListDialog from './DepartureListDialog.jsx';
 import DepartureRow from './DepartureRow.jsx';
