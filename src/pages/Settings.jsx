@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Card, CardContent, Checkbox, Stack, Tab, Tabs, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useAtom } from 'jotai';
-import { settingsAtom } from '../utils/Atom.js';
+import { settingsAtom } from '../atom/atom.js';
 
 function Settings() {
 	const [settings, setSettings] = useAtom(settingsAtom);

@@ -13,7 +13,7 @@ import TrainIcon from '@mui/icons-material/Train';
 
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
-import { isOpenDrawerAtom } from '../utils/Atom';
+import { isOpenDrawerAtom } from '../atom/atom.js';
 
 function Drawer() {
 	const navigate = useNavigate();

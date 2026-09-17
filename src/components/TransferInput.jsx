@@ -38,7 +38,7 @@ import { useAtom, useAtomValue } from 'jotai';
 import SortableViaStations, { DraggingItem } from './SortableViaStations.jsx';
 import StationSelecter, { StationSelectButtons, toSelecterOption } from './StationSelecter.jsx';
 
-import { resultAtom, settingsAtom } from '../utils/Atom.js';
+import { resultAtom, settingsAtom } from '../atom/atom.js';
 import { toSeconds } from '../utils/Time.js';
 
 import stations from '../data/stations.json';

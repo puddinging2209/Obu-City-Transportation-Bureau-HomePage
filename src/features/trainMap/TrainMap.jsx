@@ -6,7 +6,7 @@ import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import React from 'react';
 import Map from 'react-map-gl/maplibre';
-import { settingsAtom } from '../../utils/Atom';
+import { settingsAtom } from '../../atom/atom.js';
 import { BottomSheet } from './components/BottomSheet';
 import { LayersControl } from './components/LayersControl';
 import { LoginButton } from './components/LoginButton';

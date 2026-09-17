@@ -3,7 +3,7 @@ import { useAtomValue } from 'jotai';
 import linesData from '../../../data/lines.json';
 import routesData from '../../../data/routes.json';
 import typesData from '../../../data/types.json';
-import { settingsAtom } from '../../../utils/Atom';
+import { settingsAtom } from '../../../atom/atom.js';
 import { name } from '../../../utils/Station';
 import { toTimeString as getTime, toTime } from '../../../utils/Time';
 
