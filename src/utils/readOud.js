@@ -41,7 +41,7 @@ function indexofFromStation(diagram, station, rosen, direction) {
 			return: 17,
 		},
 		{
-			exc: { station: 'shg', direction: { line: 'mt', id: 'fjg' } },
+			exc: { station: 'shg', direction: { line: 'mt', id: 'tsg' } },
 			return: 0,
 		},
 		{
