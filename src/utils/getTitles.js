@@ -44,7 +44,6 @@ export function getTitle(id) {
 	if (id.startsWith('1')) {
 		const titleId = id.slice(0, 4);
 		const lineId = id.slice(4);
-		console.log(titleId, lineId);
 		return titlesData.eachLine.ratio.find((t) => t.id === titleId)?.title?.replace('_LINE_', linesData[lineId].name);
 	}
 	if (id.startsWith('2')) {

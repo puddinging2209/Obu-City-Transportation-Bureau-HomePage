@@ -15,7 +15,7 @@ const stations = Object.values(stationsData);
 const lineCodeNameMap = Object.fromEntries(
 	Object.values(linesData)
 		.reverse()
-		.map((l) => [l.code, l.name]),
+		.map((l) => [l.code, l.id]),
 );
 
 let trains = null;

@@ -8,7 +8,7 @@ const typesData = JSON.parse(fs.readFileSync('./../../src/data/types.json'));
 const lineCodeNameMap = Object.fromEntries(
 	Object.values(linesData)
 		.reverse()
-		.map((l) => [l.code, l.name]),
+		.map((l) => [l.code, l.id]),
 );
 
 const typeExceptions = {

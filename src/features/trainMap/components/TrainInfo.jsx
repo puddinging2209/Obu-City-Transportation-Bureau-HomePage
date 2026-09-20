@@ -1,9 +1,9 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
 import { useAtomValue } from 'jotai';
+import { settingsAtom } from '../../../atom/atom.js';
 import linesData from '../../../data/lines.json';
 import routesData from '../../../data/routes.json';
 import typesData from '../../../data/types.json';
-import { settingsAtom } from '../../../atom/atom.js';
 import { name } from '../../../utils/Station';
 import { toTimeString as getTime, toTime } from '../../../utils/Time';
 
@@ -14,6 +14,14 @@ export function TrainInfo({ train }) {
 	const length = route.flat().reduce((p, c) => p + c.length, 0);
 	const stations = train.stops.map((s, i) => ({ ...s, index: i }));
 	const stops = stations.filter((s) => s.stopType === 'stop');
+	const consideredPassesCount = stops.map((s) => {
+		let count = 0;
+		for (let i = s.index + 1; i < stations.length; i++) {
+			if (stations[i].stopType === 'stop') return count;
+			if (stations[i].stopType === 'pass' && stations[i].arr != null && stations[i].dep != null) count++;
+		}
+		return count;
+	});
 
 	const scrollToDep = () => {
 		const el = document.getElementsByClassName('emphasized')[0];
@@ -41,7 +49,14 @@ export function TrainInfo({ train }) {
 				}}
 			>
 				{stops.map((s, i) => {
-					const segmentLength = route[i]?.reduce?.((p, c) => p + c.length, 0);
+					const gap = consideredPassesCount.reduce((p, c, index) => {
+						if (index < i) return p + c;
+						return p;
+					});
+					const segmentLength = route
+						.slice(i + gap, i + gap + consideredPassesCount[i] + 1)
+						?.flat()
+						.reduce?.((p, c) => p + c.length, 0);
 					const segmentDurationSec = stops[i + 1]?.arr - s.dep;
 					const segmentDuration = toTime(segmentDurationSec);
 
