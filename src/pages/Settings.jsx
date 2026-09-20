@@ -1,13 +1,18 @@
 import React from 'react';
 
-import { Box, Card, CardContent, Checkbox, Stack, Tab, Tabs, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
+import { Box, Card, CardContent, Checkbox, MenuItem, Select, Stack, Tab, Tabs, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useAtom } from 'jotai';
+import { parseAsInteger, useQueryState } from 'nuqs';
 import { settingsAtom } from '../atom/atom.js';
+import { getTitle } from '../utils/getTitles.js';
 
 function Settings() {
 	const [settings, setSettings] = useAtom(settingsAtom);
-	const [tabValue, setTabValue] = React.useState(0);
+
+	const [tabValue, setTabValue] = useQueryState('tab', parseAsInteger.withDefault(0));
+	const [title, setTitle] = React.useState(window.localStorage.getItem('title') ?? '');
+	const titleIds = JSON.parse(window.localStorage.getItem('titles') ?? '[]');
 
 	const theme = useTheme();
 
@@ -21,11 +26,11 @@ function Settings() {
 		);
 	};
 
-	const handleTabChange = (event, newValue) => {
+	const handleTabChange = (_, newValue) => {
 		setTabValue(newValue);
 	};
 
-	const handleThemeChange = (event, newTheme) => {
+	const handleThemeChange = (_, newTheme) => {
 		if (newTheme !== null) {
 			setSettings({ ...settings, general: { ...settings.general, theme: newTheme } });
 		}
@@ -41,6 +46,7 @@ function Settings() {
 				<Tabs value={tabValue} onChange={handleTabChange}>
 					<Tab label='一般' />
 					<Tab label='地図' />
+					<Tab label='称号' />
 				</Tabs>
 			</Box>
 
@@ -81,6 +87,31 @@ function Settings() {
 								<ToggleButton value='100'>100ms</ToggleButton>
 							</ToggleButtonGroup>
 						</Stack>
+					</CardContent>
+				</Card>
+			</TabPanel>
+			<TabPanel value={tabValue} index={2}>
+				<Card sx={{ borderRadius: `0 0 ${theme.shape.borderRadius}px ${theme.shape.borderRadius}px` }}>
+					<CardContent>
+						{titleIds.length > 0 ?
+							<Stack direction='row' justifyContent='space-between' alignItems='center'>
+								称号の変更
+								<Select
+									value={title}
+									onChange={(e) => {
+										setTitle(e.target.value);
+										window.localStorage.setItem('title', e.target.value);
+									}}
+									size='small'
+								>
+									{titleIds.map((title) => (
+										<MenuItem value={title} key={title}>
+											{getTitle(title)}
+										</MenuItem>
+									))}
+								</Select>
+							</Stack>
+						:	<Typography>称号がまだありません</Typography>}
 					</CardContent>
 				</Card>
 			</TabPanel>

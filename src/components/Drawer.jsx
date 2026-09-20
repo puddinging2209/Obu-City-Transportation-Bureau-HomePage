@@ -1,4 +1,17 @@
-import { Box, Divider, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, SwipeableDrawer, Typography } from '@mui/material';
+import {
+	Box,
+	Button,
+	Divider,
+	Link,
+	List,
+	ListItem,
+	ListItemButton,
+	ListItemIcon,
+	ListItemText,
+	Stack,
+	SwipeableDrawer,
+	Typography,
+} from '@mui/material';
 import { useAtom } from 'jotai';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,11 +27,14 @@ import TrainIcon from '@mui/icons-material/Train';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 import { isOpenDrawerAtom } from '../atom/atom.js';
+import { getTitle } from '../utils/getTitles.js';
 
 function Drawer() {
 	const navigate = useNavigate();
 
 	const [isOpen, setIsOpen] = useAtom(isOpenDrawerAtom);
+
+	const titleId = window.localStorage.getItem('title');
 
 	const listItems = [
 		{ name: 'ホーム', icon: <HomeIcon />, path: '/home' },
@@ -68,7 +84,13 @@ function Drawer() {
 						</ListItem>
 					))}
 				</List>
-				<Stack sx={{ position: 'absolute', bottom: 0, pb: 2 }}>
+				<Stack direction='column' gap={1} sx={{ position: 'absolute', bottom: 0, pb: 2 }}>
+					<Button onClick={() => navigate('/settings?tab=2')} sx={{ pl: 2, pt: 1, color: 'text.primary', textAlign: 'left' }}>
+						<Stack direction='column'>
+							<Typography variant='h6'>現在の称号</Typography>
+							<Typography variant='body1'>{getTitle(titleId)}</Typography>
+						</Stack>
+					</Button>
 					<Link
 						href='https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage'
 						target='_blank'

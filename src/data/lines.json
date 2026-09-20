@@ -1,9 +1,10 @@
 {
-	"長久手線": {
+	"nk": {
 		"name": "長久手線",
 		"show": "長久手線",
 		"code": "NK",
 		"json": "NK",
+		"id": "nk",
 		"color": "#5D6CFF",
 		"type": "subway",
 		"isLoop": false,
@@ -442,11 +443,12 @@
 			}
 		]
 	},
-	"大高線": {
+	"od": {
 		"name": "大高線",
 		"show": "大高線",
 		"code": "OD",
 		"json": "OD",
+		"id": "od",
 		"color": "#FF9000",
 		"type": "subway",
 		"isLoop": false,
@@ -949,11 +951,12 @@
 			}
 		]
 	},
-	"外環線": {
+	"gk": {
 		"name": "外環線",
 		"show": "外環線",
 		"code": "GK",
 		"json": "GK",
+		"id": "gk",
 		"color": "#60A331",
 		"type": "subway",
 		"isLoop": false,
@@ -1488,11 +1491,12 @@
 			}
 		]
 	},
-	"半田線": {
+	"hd": {
 		"name": "半田線",
 		"show": "半田線",
 		"code": "HD",
 		"json": "HD",
+		"id": "hd",
 		"color": "#FFD600",
 		"type": "subway",
 		"isLoop": false,
@@ -1803,11 +1807,12 @@
 			}
 		]
 	},
-	"半田線住吉支線": {
+	"hds": {
 		"name": "半田線住吉支線",
 		"show": "半田線",
 		"code": "HD",
 		"json": "HD",
+		"id": "hds",
 		"color": "#FFD600",
 		"type": "subway",
 		"isLoop": false,
@@ -1878,11 +1883,12 @@
 			}
 		]
 	},
-	"名東線": {
+	"mt": {
 		"name": "名東線",
 		"show": "名東線",
 		"code": "MT",
 		"json": "MT",
+		"id": "mt",
 		"color": "#9BEA81",
 		"type": "subway",
 		"isLoop": false,
@@ -2401,11 +2407,12 @@
 			}
 		]
 	},
-	"二ツ池線": {
+	"ft": {
 		"name": "二ツ池線",
 		"show": "二ツ池線",
 		"code": "FT",
 		"json": "FT",
+		"id": "ft",
 		"color": "#A86700",
 		"type": "subway",
 		"isLoop": false,
@@ -2540,11 +2547,12 @@
 			}
 		]
 	},
-	"二ツ池線森岡支線": {
+	"ftm": {
 		"name": "二ツ池線森岡支線",
 		"show": "二ツ池線",
 		"code": "FT",
 		"json": "FT",
+		"id": "ftm",
 		"color": "#A86700",
 		"type": "subway",
 		"isLoop": false,
@@ -2647,11 +2655,12 @@
 			}
 		]
 	},
-	"内田面線": {
+	"ud": {
 		"name": "内田面線",
 		"show": "内田面線",
 		"code": "UD",
 		"json": "NK",
+		"id": "ud",
 		"color": "#00E0FF",
 		"type": "subway",
 		"isLoop": false,
@@ -2802,11 +2811,12 @@
 			}
 		]
 	},
-	"南北線": {
+	"nb": {
 		"name": "南北線",
 		"show": "南北線",
 		"code": "NB",
 		"json": "NB",
+		"id": "nb",
 		"color": "#FF0071",
 		"type": "subway",
 		"isLoop": false,
@@ -3053,11 +3063,12 @@
 			}
 		]
 	},
-	"荒尾線": {
+	"ar": {
 		"name": "荒尾線",
 		"show": "荒尾線",
 		"code": "AR",
 		"json": "AR",
+		"id": "ar",
 		"color": "#EDA39C",
 		"type": "subway",
 		"isLoop": false,
@@ -3304,11 +3315,12 @@
 			}
 		]
 	},
-	"みよし線": {
+	"my": {
 		"name": "みよし線",
 		"show": "みよし線",
 		"code": "MY",
 		"json": "MY",
+		"id": "my",
 		"color": "#EA88FF",
 		"type": "subway",
 		"isLoop": false,
@@ -3779,11 +3791,12 @@
 			}
 		]
 	},
-	"健康の森線": {
+	"km": {
 		"name": "健康の森線",
 		"show": "健康の森線",
 		"code": "KM",
 		"json": "KM",
+		"id": "km",
 		"color": "#FFEA00",
 		"type": "subway",
 		"isLoop": false,
@@ -3950,11 +3963,12 @@
 			}
 		]
 	},
-	"南港線(名港トリトンライン)": {
+	"tr": {
 		"name": "南港線(名港トリトンライン)",
 		"show": "名港トリトンライン",
 		"code": "TR",
 		"json": "TR",
+		"id": "tr",
 		"color": "#0097A7",
 		"type": "subway",
 		"isLoop": false,
@@ -4137,11 +4151,12 @@
 			}
 		]
 	},
-	"高浜線": {
+	"tm": {
 		"name": "高浜線",
 		"show": "高浜線",
 		"code": "TM",
 		"json": "HD",
+		"id": "tm",
 		"color": "#A700A7",
 		"type": "subway",
 		"isLoop": false,
@@ -4244,11 +4259,12 @@
 			}
 		]
 	},
-	"大府西線・八事線": {
-		"name": "大府西線・八事線",
+	"on": {
+		"name": "大府西線",
 		"show": "大府西線",
 		"code": "ON",
 		"json": "ON",
+		"id": "on",
 		"color": "#FF0101",
 		"type": "subway",
 		"isLoop": false,
@@ -4863,11 +4879,12 @@
 			}
 		]
 	},
-	"緒川線": {
+	"og": {
 		"name": "緒川線",
 		"show": "緒川線",
 		"code": "OG",
 		"json": "OG",
+		"id": "og",
 		"color": "#969696",
 		"type": "subway",
 		"isLoop": false,
@@ -5370,11 +5387,12 @@
 			}
 		]
 	},
-	"半滑線・空港線": {
+	"hk": {
 		"name": "半滑線・空港線",
 		"show": "半滑線",
 		"code": "HK",
 		"json": "HK",
+		"id": "hk",
 		"color": "#0288D1",
 		"type": "subway",
 		"isLoop": false,
@@ -5829,11 +5847,12 @@
 			}
 		]
 	},
-	"豊田線": {
+	"ty": {
 		"name": "豊田線",
 		"show": "豊田線",
 		"code": "TY",
 		"json": "TY",
+		"id": "ty",
 		"color": "#87CEAC",
 		"type": "subway",
 		"isLoop": false,
@@ -6160,11 +6179,12 @@
 			}
 		]
 	},
-	"刈谷環状線": {
+	"kl": {
 		"name": "刈谷環状線",
 		"show": "刈谷環状線",
 		"code": "KL",
 		"json": "KL",
+		"id": "kl",
 		"color": "#FFC200",
 		"type": "subway",
 		"isLoop": true,
@@ -6447,11 +6467,12 @@
 			}
 		]
 	},
-	"つつじが丘線": {
+	"tt": {
 		"name": "つつじが丘線",
 		"show": "つつじが丘線",
 		"code": "TT",
 		"json": "TT",
+		"id": "tt",
 		"color": "#018300",
 		"type": "subway",
 		"isLoop": false,
@@ -6714,11 +6735,12 @@
 			}
 		]
 	},
-	"刈田川線": {
+	"kt": {
 		"name": "刈田川線",
 		"show": "刈田川線",
 		"code": "KT",
 		"json": "KT",
+		"id": "kt",
 		"color": "#003DFF",
 		"type": "subway",
 		"isLoop": false,
@@ -6997,11 +7019,12 @@
 			}
 		]
 	},
-	"刈田川急行線": {
+	"ktr": {
 		"name": "刈田川急行線",
 		"show": "刈田川線",
 		"code": "KT",
 		"json": "KT",
+		"id": "ktr",
 		"color": "#003DFF",
 		"type": "subway",
 		"isLoop": false,
@@ -7072,11 +7095,12 @@
 			}
 		]
 	},
-	"刈田川線知立支線": {
+	"ktc": {
 		"name": "刈田川線知立支線",
 		"show": "知立線",
 		"code": "KT",
-		"json": "KTa",
+		"json": "KTc",
+		"id": "ktc",
 		"color": "#003DFF",
 		"type": "subway",
 		"isLoop": false,
@@ -7179,11 +7203,12 @@
 			}
 		]
 	},
-	"大府環状線": {
+	"ol": {
 		"name": "大府環状線",
 		"show": "大府環状線",
 		"code": "OL",
 		"json": "OL",
+		"id": "ol",
 		"color": "#08FF00",
 		"type": "subway",
 		"isLoop": true,
@@ -7386,11 +7411,12 @@
 			}
 		]
 	},
-	"師崎線": {
+	"mr": {
 		"name": "師崎線",
 		"show": "師崎線",
 		"code": "MR",
 		"json": "MR",
+		"id": "mr",
 		"color": "#A1C2FA",
 		"type": "subway",
 		"isLoop": false,
@@ -7925,11 +7951,12 @@
 			}
 		]
 	},
-	"名和線": {
+	"nw": {
 		"name": "名和線",
 		"show": "名和線",
 		"code": "NW",
 		"json": "NW",
+		"id": "nw",
 		"color": "#DE00FF",
 		"type": "subway",
 		"isLoop": false,
@@ -8176,11 +8203,12 @@
 			}
 		]
 	},
-	"内海線": {
+	"um": {
 		"name": "内海線",
 		"show": "内海線",
 		"code": "UM",
 		"json": "MR",
+		"id": "um",
 		"color": "#FFFF8D",
 		"type": "subway",
 		"isLoop": false,
@@ -8283,11 +8311,12 @@
 			}
 		]
 	},
-	"東西線": {
+	"tz": {
 		"name": "東西線",
 		"show": "東西線",
 		"code": "TZ",
 		"json": "TZ",
+		"id": "tz",
 		"color": "#FF66AE",
 		"type": "subway",
 		"isLoop": false,
@@ -8630,11 +8659,12 @@
 			}
 		]
 	},
-	"阿久比線": {
+	"ag": {
 		"name": "阿久比線",
 		"show": "阿久比線",
 		"code": "AG",
 		"json": "AG",
+		"id": "ag",
 		"color": "#FF0101",
 		"type": "subway",
 		"isLoop": false,
@@ -9121,11 +9151,12 @@
 			}
 		]
 	},
-	"岡崎線": {
+	"oz": {
 		"name": "岡崎線",
 		"show": "岡崎線",
 		"code": "OZ",
 		"json": "OZ",
+		"id": "oz",
 		"color": "#E65100",
 		"type": "subway",
 		"isLoop": false,
@@ -9516,11 +9547,12 @@
 			}
 		]
 	},
-	"岡崎線東公園支線": {
+	"ozh": {
 		"name": "岡崎線東公園支線",
 		"show": "東公園線",
 		"code": "OZ",
-		"json": "OZa",
+		"json": "OZh",
+		"id": "ozh",
 		"color": "#E65100",
 		"type": "subway",
 		"isLoop": false,
@@ -9655,11 +9687,12 @@
 			}
 		]
 	},
-	"惣作直通線": {
+	"sos": {
 		"name": "惣作直通線",
 		"show": "東西線",
 		"code": "TZ",
 		"json": "TZ",
+		"id": "sos",
 		"color": "#FF66AE",
 		"type": "subway",
 		"isLoop": false,
@@ -9698,11 +9731,12 @@
 			}
 		]
 	},
-	"与五八デルタ線": {
+	"ygh": {
 		"name": "与五八デルタ線",
 		"show": "つつじが丘線",
 		"code": "TT",
 		"json": "TT",
+		"id": "ygh",
 		"color": "#018300",
 		"type": "subway",
 		"isLoop": false,
@@ -9741,11 +9775,12 @@
 			}
 		]
 	},
-	"鳴海連絡線": {
+	"nrm": {
 		"name": "鳴海連絡線",
 		"show": "外環線",
 		"code": "OD",
 		"json": "GK",
+		"id": "nrm",
 		"color": "#FF9000",
 		"type": "subway",
 		"isLoop": false,
@@ -9784,11 +9819,12 @@
 			}
 		]
 	},
-	"大峯連絡線": {
+	"omn": {
 		"name": "大峯連絡線",
 		"show": "半田線",
 		"code": "HD",
 		"json": "HD",
+		"id": "omn",
 		"color": "#FFD600",
 		"type": "subway",
 		"isLoop": false,
