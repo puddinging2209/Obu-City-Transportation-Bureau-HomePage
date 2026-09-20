@@ -24,6 +24,7 @@ function searchStops(diagram, train) {
 			if (diagram.railway.name == 'KT' && stationId === 'chr') return null;
 			if (diagram.railway.name == 'MR' && (stationId === 'okw' || stationId === 'hno')) return null;
 			if (diagram.railway.name == 'NK' && (stationId === 'kyw' || stationId === 'tmo')) return null;
+			if (diagram.railway.name == 'TT' && stationId === 'ktk' && sta.stopType === 2) return null;
 			if (sta.stopType === 1) {
 				return {
 					name: stationName,
@@ -141,9 +142,9 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 			result.before.unshift(...beforeStops.slice(0, lastIndex !== -1 ? lastIndex + 1 : beforeStops.length));
 			if (
 				before.operations.some((op) => op.outerType === 'B') ||
-				(result.before[0].id === 'kry' && result.before[0].lineName === '刈田川線') ||
-				(result.before[0].id === 'hns' && result.before[0].lineName === '師崎線') ||
-				(result.before[0].id === 'tsn' && result.before[0].lineName === '内田面線')
+				(result.before[0].id === 'kry' && result.before[0].lineName === 'kt') ||
+				(result.before[0].id === 'hns' && result.before[0].lineName === 'mr') ||
+				(result.before[0].id === 'tsn' && result.before[0].lineName === 'ud')
 			) {
 				const befores = await searchOuter(
 					before,
@@ -252,9 +253,9 @@ async function searchOuter(train, first, last, line, baseDiagram, checked = [], 
 			result.after.push(...afterStops.slice(firstIndex, afterStops.length));
 			if (
 				after.operations.some((op) => op.outerType === 'A') ||
-				(result.after.at(-1).id === 'kry' && result.after.at(-1).lineName === '刈田川線') ||
-				(result.after.at(-1).id === 'hns' && result.after.at(-1).lineName === '師崎線') ||
-				(result.after.at(-1).id === 'tsn' && result.after.at(-1).lineName === '内田面線')
+				(result.after.at(-1).id === 'kry' && result.after.at(-1).lineName === 'kt') ||
+				(result.after.at(-1).id === 'hns' && result.after.at(-1).lineName === 'mr') ||
+				(result.after.at(-1).id === 'tsn' && result.after.at(-1).lineName === 'ud')
 			) {
 				const afters = await searchOuter(
 					after,
@@ -298,14 +299,14 @@ export default async function formatStops(line, train) {
 
 	const before =
 		train.operations.some((op) => op.outerType === 'B') ||
-		(inner[0].id === 'kry' && inner[0].lineName === '刈田川線') ||
-		(inner[0].id === 'hns' && inner[0].lineName === '師崎線') ||
-		(inner[0].id === 'tsn' && inner[0].lineName === '内田面線');
+		(inner[0].id === 'kry' && inner[0].lineName === 'kt') ||
+		(inner[0].id === 'hns' && inner[0].lineName === 'mr') ||
+		(inner[0].id === 'tsn' && inner[0].lineName === 'ud');
 	const after =
 		train.operations.some((op) => op.outerType === 'A') ||
-		(inner.at(-1).id === 'kry' && inner.at(-1).lineName === '刈田川線') ||
-		(inner.at(-1).id === 'hns' && inner.at(-1).lineName === '師崎線') ||
-		(inner.at(-1).id === 'tsn' && inner.at(-1).lineName === '内田面線');
+		(inner.at(-1).id === 'kry' && inner.at(-1).lineName === 'kt') ||
+		(inner.at(-1).id === 'hns' && inner.at(-1).lineName === 'mr') ||
+		(inner.at(-1).id === 'tsn' && inner.at(-1).lineName === 'ud');
 
 	const outer = await searchOuter(train, before ? inner[0].id : null, after ? inner.at(-1).id : null, line, innerDiagram);
 

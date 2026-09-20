@@ -3,21 +3,21 @@
 		"ratio": [
 			{
 				"ratio": 0,
-				"title": "はじめての大府市営地下鉄",
+				"title": "はじめまして大府市営地下鉄",
 				"id": "0000"
 			},
 			{
-				"ratio": 33.4,
+				"ratio": 0.334,
 				"title": "なんでや阪神関係ないやろ",
 				"id": "0001"
 			},
 			{
-				"ratio": 50,
+				"ratio": 0.5,
 				"title": "イスファハーン",
 				"id": "0002"
 			},
 			{
-				"ratio": 100,
+				"ratio": 1,
 				"title": "マスター・オブ・大府市営地下鉄",
 				"id": "0003"
 			}
@@ -27,12 +27,12 @@
 		"ratio": [
 			{
 				"ratio": 0,
-				"title": "初めての_LINE_",
+				"title": "はじめまして_LINE_",
 				"id": "1000"
 			},
 			{
-				"ratio": 100,
-				"title": "_LINE_の覇者",
+				"ratio": 1,
+				"title": "マスター・オブ・_LINE_",
 				"id": "1001"
 			}
 		]
@@ -41,11 +41,11 @@
 		"ratio": [
 			{
 				"ratio": 0,
-				"title": "はじめての_PREFECTURE_",
+				"title": "はじめまして_PREFECTURE_",
 				"id": "2000"
 			},
 			{
-				"ratio": 100,
+				"ratio": 1,
 				"title": "マスター・オブ・_PREFECTURE_",
 				"id": "2001"
 			}
@@ -55,11 +55,11 @@
 		"ratio": [
 			{
 				"ratio": 0,
-				"title": "はじめての_CITY_",
+				"title": "はじめまして_CITY_",
 				"id": "3000"
 			},
 			{
-				"ratio": 100,
+				"ratio": 1,
 				"title": "マスター・オブ・_CITY_",
 				"id": "3001"
 			}

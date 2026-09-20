@@ -33,61 +33,61 @@ export async function dia(rosen) {
 function indexofFromStation(diagram, station, rosen, direction) {
 	const exceptions = [
 		{
-			exc: { station: 'obu', direction: { line: '大府環状線', id: 'ebt' } },
+			exc: { station: 'obu', direction: { line: 'ol', id: 'ebt' } },
 			return: 12,
 		},
 		{
-			exc: { station: 'hdk', direction: { line: '刈谷環状線', id: 'kra' } },
+			exc: { station: 'hdk', direction: { line: 'kl', id: 'kra' } },
 			return: 17,
 		},
 		{
-			exc: { station: 'shg', direction: { line: '名東線', id: 'fjg' } },
+			exc: { station: 'shg', direction: { line: 'mt', id: 'fjg' } },
 			return: 0,
 		},
 		{
 			exc: {
 				station: 'dtc',
-				direction: { line: '二ツ池線森岡支線', id: 'odn' },
+				direction: { line: 'ftm', id: 'odn' },
 			},
 			return: 8,
 		},
 		{
-			exc: { station: 'nrm', direction: { line: '鳴海連絡線', id: 'kso' } },
+			exc: { station: 'nrm', direction: { line: 'nrm', id: 'kso' } },
 			return: 1,
 		},
 		{
-			exc: { station: 'kso', direction: { line: '鳴海連絡線', id: 'nrm' } },
+			exc: { station: 'kso', direction: { line: 'nrm', id: 'nrm' } },
 			return: 0,
 		},
 		{
-			exc: { station: 'ebt', direction: { line: '大峯連絡線', id: 'obm' } },
+			exc: { station: 'ebt', direction: { line: 'omn', id: 'obm' } },
 			return: 0,
 		},
 		{
-			exc: { station: 'okw', direction: { line: '半田線', id: 'obu' } },
+			exc: { station: 'okw', direction: { line: 'hd', id: 'obu' } },
 			return: 17,
 		},
 		{
-			exc: { station: 'okw', direction: { line: '半田線住吉支線', id: 'sis' } },
+			exc: { station: 'okw', direction: { line: 'hds', id: 'sis' } },
 			return: 17,
 		},
 		{
 			exc: {
 				station: 'tmo',
-				direction: { line: '南港線(名港トリトンライン)', id: 'wng' },
+				direction: { line: 'tr', id: 'wng' },
 			},
 			return: 0,
 		},
 		{
-			exc: { station: 'sos', direction: { line: '惣作直通線', id: 'ngn' } },
+			exc: { station: 'sos', direction: { line: 'sos', id: 'ngn' } },
 			return: 10,
 		},
 		{
-			exc: { station: 'ngn', direction: { line: '惣作直通線', id: 'sos' } },
+			exc: { station: 'ngn', direction: { line: 'sos', id: 'sos' } },
 			return: 9,
 		},
 		{
-			exc: { station: 'ngn', direction: { line: '東西線', id: 'ars' } },
+			exc: { station: 'ngn', direction: { line: 'tz', id: 'ars' } },
 			return: 9,
 		},
 	];
@@ -103,42 +103,42 @@ function indexofFromStation(diagram, station, rosen, direction) {
 function codeofToStation(station, direction, rosen) {
 	const exceptions = [
 		{
-			exc: { station: 'ebt', direction: { line: '大府環状線', id: 'obu' } },
+			exc: { station: 'ebt', direction: { line: 'ol', id: 'obu' } },
 			return: 'OL01a',
 		},
 		{
-			exc: { station: 'omn', direction: { line: '大府環状線', id: 'obu' } },
+			exc: { station: 'omn', direction: { line: 'ol', id: 'obu' } },
 			return: 'OL01a',
 		},
 		{
 			exc: {
 				station: 'akr',
-				direction: { line: '半田線住吉支線', id: 'okw' },
+				direction: { line: 'hds', id: 'okw' },
 			},
 			return: 'HD17a',
 		},
 		{
-			exc: { station: 'smy', direction: { line: '半田線住吉支線', id: 'okw' } },
+			exc: { station: 'smy', direction: { line: 'hds', id: 'okw' } },
 			return: 'HD17a',
 		},
 		{
-			exc: { station: 'sis', direction: { line: '半田線住吉支線', id: 'okw' } },
+			exc: { station: 'sis', direction: { line: 'hds', id: 'okw' } },
 			return: 'HD17a',
 		},
 		{
-			exc: { station: 'kso', direction: { line: '鳴海連絡線', id: 'nrm' } },
+			exc: { station: 'kso', direction: { line: 'nrm', id: 'nrm' } },
 			return: 'GK04a',
 		},
 		{
-			exc: { station: 'nrm', direction: { line: '鳴海連絡線', id: 'kso' } },
+			exc: { station: 'nrm', direction: { line: 'nrm', id: 'kso' } },
 			return: 'OD14a',
 		},
 		{
-			exc: { station: 'obm', direction: { line: '大峯連絡線', id: 'ebt' } },
+			exc: { station: 'obm', direction: { line: 'omn', id: 'ebt' } },
 			return: 'OL11a',
 		},
 		{
-			exc: { station: 'sos', direction: { line: '惣作直通線', id: 'ngn' } },
+			exc: { station: 'sos', direction: { line: 'sos', id: 'ngn' } },
 			return: 'TZ10a',
 		},
 	];
@@ -199,15 +199,15 @@ async function getDeparture(station, direction) {
 			tra.timetable._data[d === 0 ? stationIndex + 1 : numofStations - stationIndex],
 	);
 	if (rosen === 'KT') {
-		if (direction.line === '刈田川急行線' && station !== 'obu') {
+		if (direction.line === 'ktr' && station !== 'obu') {
 			departures = departures.filter((tra) => tra.timetable._data[9]?.stopType === 1);
-		} else if (direction.line === '刈田川線' && ((station === 'hnt' && d === 0) || (['dtc', 'sos'].includes(station) && d === 1))) {
+		} else if (direction.line === 'kt' && ((station === 'hnt' && d === 0) || (['dtc', 'sos'].includes(station) && d === 1))) {
 			departures = departures.filter((tra) => tra.timetable._data[9]?.stopType !== 1);
 		}
 	} else if (rosen === 'HD') {
-		if (direction.line === '半田線' && station === 'obm' && direction.id === 'obu') {
+		if (direction.line === 'hd' && station === 'obm' && direction.id === 'obu') {
 			departures = departures.filter((tra) => tra.timetable._data[d === 0 ? 1 : 28]?.stopType === 1);
-		} else if (direction.line === '大峯連絡線' && station === 'obm') {
+		} else if (direction.line === 'omn' && station === 'obm') {
 			departures = departures.filter((tra) => tra.timetable._data[d === 0 ? 1 : 28]?.stopType !== 1);
 		}
 	}

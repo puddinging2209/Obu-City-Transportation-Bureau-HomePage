@@ -60,7 +60,7 @@ function searchStops(train, lineCode, prevArr, index) {
 			if (lineCode == 'KT' && stationId === 'chr') return null;
 			if (lineCode == 'MR' && (stationId === 'okw' || stationId === 'hno')) return null;
 			if (lineCode == 'NK' && (stationId === 'kyw' || stationId === 'tmo')) return null;
-			if (lineCode == 'TT' && (stationId === 'tgw' || stationId === 'hsd')) return null;
+			if (lineCode == 'TT' && (stationId === 'tgw' || stationId === 'hsd' || (stationId === 'ktk' && sta.stopType === 2))) return null;
 			if (lineCode == 'MY' && stationId === 'kry') return null;
 			if (![1, 2].includes(sta.stopType)) return null;
 			const nextTrainNum = i === train.timetable._data.length - 1 && train.note?.includes('次') ? train.note.replace('次', '') : null;
