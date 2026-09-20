@@ -88,7 +88,7 @@ function Drawer() {
 					<Button onClick={() => navigate('/settings?tab=2')} sx={{ pl: 2, pt: 1, color: 'text.primary', textAlign: 'left' }}>
 						<Stack direction='column'>
 							<Typography variant='h6'>現在の称号</Typography>
-							<Typography variant='body1'>{getTitle(titleId)}</Typography>
+							<Typography variant='body1'>{getTitle(titleId) ?? 'ぬん'}</Typography>
 						</Stack>
 					</Button>
 					<Link
