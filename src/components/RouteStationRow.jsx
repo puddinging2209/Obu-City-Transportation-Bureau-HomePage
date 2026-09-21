@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import getDirections from '../utils/getDirections.js';
 
+import linesData from '../data/lines.json';
 import stationData from '../data/stations.json';
 import types from '../data/types.json';
 
@@ -116,7 +117,7 @@ function RouteStationRow({ index, line, stations, lines, onClick }) {
 				})}
 			</Box>
 			<Stack sx={{ ml: 1 }}>
-				<Stack sx={{ flex: 1, minWidth: 0 }}>
+				<Stack direction='row' gap={2} sx={{ flex: 1, minWidth: 0 }}>
 					<Box
 						onClick={() => linkTo(station.id, line.name)}
 						sx={{
@@ -138,8 +139,11 @@ function RouteStationRow({ index, line, stations, lines, onClick }) {
 							{stationData[station.id].name}
 						</Typography>
 					</Box>
+					<Stack sx={{ justifyContent: 'center', color: 'text.secondary' }}>
+						<Typography variant='body2'>{stationData[station.id].kana}</Typography>
+					</Stack>
 				</Stack>
-				{stationData[station.id].routes.filter((route) => route !== line.name).length > 0 && (
+				{stationData[station.id].routes.filter((route) => route !== line.id).length > 0 && (
 					<Stack direction='row' sx={{ mt: 0, alignItems: 'center' }}>
 						<Typography
 							variant='body2'
@@ -157,7 +161,7 @@ function RouteStationRow({ index, line, stations, lines, onClick }) {
 						</Typography>
 						<Stack direction='row'>
 							{stationData[station.id].routes
-								.filter((route) => route !== line.name)
+								.filter((route) => route !== line.id)
 								.map((route) => (
 									<Box key={route} size='small' sx={{ ml: 1, cursor: 'pointer' }} onClick={() => onClick(route)}>
 										<Typography
@@ -172,7 +176,7 @@ function RouteStationRow({ index, line, stations, lines, onClick }) {
 												textOverflow: 'ellipsis',
 											}}
 										>
-											{route}
+											{linesData[route].name}
 										</Typography>
 									</Box>
 								))}
