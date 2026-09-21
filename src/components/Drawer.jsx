@@ -28,6 +28,7 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 import { isOpenDrawerAtom } from '../atom/atom.js';
 import { getTitle } from '../utils/getTitles.js';
+import giveTitle from '../utils/giveTitle.js';
 
 function Drawer() {
 	const navigate = useNavigate();
@@ -85,10 +86,16 @@ function Drawer() {
 					))}
 				</List>
 				<Stack direction='column' gap={1} sx={{ position: 'absolute', bottom: 0, pb: 2 }}>
-					<Button onClick={() => navigate('/settings?tab=2')} sx={{ pl: 2, pt: 1, color: 'text.primary', textAlign: 'left' }}>
+					<Button
+						onClick={() => {
+							giveTitle();
+							navigate('/settings?tab=2');
+						}}
+						sx={{ pl: 2, pt: 1, color: 'text.primary', textAlign: 'left' }}
+					>
 						<Stack direction='column'>
 							<Typography variant='h6'>現在の称号</Typography>
-							<Typography variant='body1'>{getTitle(titleId) ?? 'ぬん'}</Typography>
+							<Typography variant='body1'>{getTitle(titleId) ?? 'なし'}</Typography>
 						</Stack>
 					</Button>
 					<Link
