@@ -6,6 +6,10 @@ const prefectures = [...new Set(Object.values(stationsData).map((s) => s.prefect
 const cities = [...new Set(Object.values(stationsData).map((s) => [s.prefecture, s.city]))];
 
 export default function giveTitle(visiteds) {
+	if (!visiteds?.length) visiteds = JSON.parse(window.localStorage.getItem('visitedStations') ?? '[]');
+
+	if (visiteds.length === 0) return;
+
 	const titles = JSON.parse(window.localStorage.getItem('titles') ?? '[]');
 	const visitedIds = [...new Set(visiteds.map((v) => v.id))];
 
