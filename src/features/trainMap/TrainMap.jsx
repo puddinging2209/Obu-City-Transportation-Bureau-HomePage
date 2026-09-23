@@ -194,7 +194,6 @@ function TrainMap() {
 
 	function jumpToPos(pos) {
 		if (!pos) return;
-		console.log(pos);
 		mapRef.current?.getMap().jumpTo({ center: pos, essential: true });
 	}
 
