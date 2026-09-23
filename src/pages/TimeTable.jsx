@@ -89,7 +89,7 @@ function TimeTable() {
 		};
 		const getShortNameCandidates = (terminal) => {
 			let letters = terminal.replace(/新|(三河)/, '');
-			if (terminal.includes('ol')) letters = '環';
+			if (terminal.includes('大府環状線')) letters = '環';
 			if (terminal.includes('中部国際空港')) letters = '空';
 			return letters;
 		};
