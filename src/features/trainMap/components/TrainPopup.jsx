@@ -4,6 +4,7 @@ import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import { Box, Button, Dialog, DialogTitle, IconButton, List, ListItemButton, ListItemText, Stack, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import { Popup } from 'react-map-gl/maplibre';
+import linesData from '../../../data/lines.json';
 import { label } from '../../../utils/Station';
 import { toTimeString } from '../../../utils/Time';
 
@@ -156,7 +157,7 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 				</Stack>
 			</Box>
 			<Dialog open={isStoppedTrainDialogOpen} onClose={() => setIsStoppedTrainDialogOpen(false)} fullWidth maxWidth='xs'>
-				<DialogTitle>{label(train.rawTrainData.stoppingSta)}に停車中の列車</DialogTitle>
+				<DialogTitle>{label(currentStop?.id)}に停車中の列車</DialogTitle>
 				<List disablePadding>
 					{train.stoppedTrains
 						?.sort((a, b) => a.stops.find((s) => s.id === currentStop?.id).dep - b.stops.find((s) => s.id === currentStop?.id).dep)
@@ -185,7 +186,7 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 								>
 									<ListItemText
 										primary={`${toTimeString(currentStop?.dep)}発 ${stoppedTrain.type} ${stoppedTrainTerminal}行${isSelected ? '（選択中）' : ''}`}
-										secondary={`${lineName} ${stoppedTrain.number}`}
+										secondary={`${linesData[lineName].show} ${stoppedTrain.number}`}
 									/>
 								</ListItemButton>
 							);
