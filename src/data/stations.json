@@ -13,9 +13,8 @@
 		],
 		"lat": 35.0277166,
 		"lng": 136.9922993,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "kts"
+		"id": "kts",
+		"govId": "232238"
 	},
 	"kto": {
 		"code": [
@@ -29,9 +28,8 @@
 		],
 		"lat": 35.0341029,
 		"lng": 136.9941701,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "kto"
+		"id": "kto",
+		"govId": "232238"
 	},
 	"owk": {
 		"code": [
@@ -45,9 +43,8 @@
 		],
 		"lat": 35.0409185,
 		"lng": 136.9993983,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "owk"
+		"id": "owk",
+		"govId": "232297"
 	},
 	"bwg": {
 		"code": [
@@ -61,9 +58,8 @@
 		],
 		"lat": 35.0469206,
 		"lng": 137.0045878,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "bwg"
+		"id": "bwg",
+		"govId": "232297"
 	},
 	"tkg": {
 		"code": [
@@ -79,9 +75,8 @@
 		],
 		"lat": 35.05224,
 		"lng": 137.009732,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "tkg"
+		"id": "tkg",
+		"govId": "232297"
 	},
 	"tyk": {
 		"code": [
@@ -95,9 +90,8 @@
 		],
 		"lat": 35.0545475,
 		"lng": 137.0131163,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "tyk"
+		"id": "tyk",
+		"govId": "232297"
 	},
 	"chk": {
 		"code": [
@@ -111,9 +105,8 @@
 		],
 		"lat": 35.0568163,
 		"lng": 137.0162392,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "chk"
+		"id": "chk",
+		"govId": "232297"
 	},
 	"jsd": {
 		"code": [
@@ -127,9 +120,8 @@
 		],
 		"lat": 35.0601059,
 		"lng": 137.0207363,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "jsd"
+		"id": "jsd",
+		"govId": "232297"
 	},
 	"kmm": {
 		"code": [
@@ -143,9 +135,8 @@
 		],
 		"lat": 35.0666313,
 		"lng": 137.0296582,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "kmm"
+		"id": "kmm",
+		"govId": "232297"
 	},
 	"wko": {
 		"code": [
@@ -159,9 +150,8 @@
 		],
 		"lat": 35.0734472,
 		"lng": 137.0349998,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "wko"
+		"id": "wko",
+		"govId": "232297"
 	},
 	"smz": {
 		"code": [
@@ -175,9 +165,8 @@
 		],
 		"lat": 35.0832576,
 		"lng": 137.0402219,
-		"prefecture": "ai",
-		"city": "tg",
-		"id": "smz"
+		"id": "smz",
+		"govId": "233021"
 	},
 	"hrd": {
 		"code": [
@@ -191,9 +180,8 @@
 		],
 		"lat": 35.0889271,
 		"lng": 137.0429267,
-		"prefecture": "ai",
-		"city": "tg",
-		"id": "hrd"
+		"id": "hrd",
+		"govId": "233021"
 	},
 	"nki": {
 		"code": [
@@ -207,9 +195,8 @@
 		],
 		"lat": 35.0972572,
 		"lng": 137.0480292,
-		"prefecture": "ai",
-		"city": "tg",
-		"id": "nki"
+		"id": "nki",
+		"govId": "233021"
 	},
 	"tgo": {
 		"code": [
@@ -223,9 +210,8 @@
 		],
 		"lat": 35.1041743,
 		"lng": 137.0521408,
-		"prefecture": "ai",
-		"city": "tg",
-		"id": "tgo"
+		"id": "tgo",
+		"govId": "233021"
 	},
 	"srt": {
 		"code": [
@@ -239,9 +225,8 @@
 		],
 		"lat": 35.1093469,
 		"lng": 137.0517144,
-		"prefecture": "ai",
-		"city": "tg",
-		"id": "srt"
+		"id": "srt",
+		"govId": "233021"
 	},
 	"nsn": {
 		"code": [
@@ -255,9 +240,8 @@
 		],
 		"lat": 35.1182368,
 		"lng": 137.0478033,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "nsn"
+		"id": "nsn",
+		"govId": "232301"
 	},
 	"ord": {
 		"code": [
@@ -271,9 +255,8 @@
 		],
 		"lat": 35.1228768,
 		"lng": 137.0464401,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "ord"
+		"id": "ord",
+		"govId": "232301"
 	},
 	"nsi": {
 		"code": [
@@ -287,9 +270,8 @@
 		],
 		"lat": 35.1263244,
 		"lng": 137.0456298,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "nsi"
+		"id": "nsi",
+		"govId": "232301"
 	},
 	"nss": {
 		"code": [
@@ -303,9 +285,8 @@
 		],
 		"lat": 35.1313632,
 		"lng": 137.0448707,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "nss"
+		"id": "nss",
+		"govId": "232301"
 	},
 	"nsa": {
 		"code": [
@@ -319,9 +300,8 @@
 		],
 		"lat": 35.1408261,
 		"lng": 137.0435245,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "nsa"
+		"id": "nsa",
+		"govId": "232301"
 	},
 	"iws": {
 		"code": [
@@ -335,9 +315,8 @@
 		],
 		"lat": 35.1441797,
 		"lng": 137.0414654,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "iws"
+		"id": "iws",
+		"govId": "232301"
 	},
 	"bnt": {
 		"code": [
@@ -351,9 +330,8 @@
 		],
 		"lat": 35.1486149,
 		"lng": 137.0396896,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "bnt"
+		"id": "bnt",
+		"govId": "232301"
 	},
 	"tky": {
 		"code": [
@@ -367,9 +345,8 @@
 		],
 		"lat": 35.1555734,
 		"lng": 137.0385093,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "tky"
+		"id": "tky",
+		"govId": "232301"
 	},
 	"aic": {
 		"code": [
@@ -383,9 +360,8 @@
 		],
 		"lat": 35.1615267,
 		"lng": 137.0420353,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "aic"
+		"id": "aic",
+		"govId": "232301"
 	},
 	"ngk": {
 		"code": [
@@ -399,9 +375,8 @@
 		],
 		"lat": 35.1713946,
 		"lng": 137.0485215,
-		"prefecture": "ai",
-		"city": "nk",
-		"id": "ngk"
+		"id": "ngk",
+		"govId": "232386"
 	},
 	"knr": {
 		"code": [
@@ -415,9 +390,8 @@
 		],
 		"lat": 35.1780178,
 		"lng": 137.0494509,
-		"prefecture": "ai",
-		"city": "nk",
-		"id": "knr"
+		"id": "knr",
+		"govId": "232386"
 	},
 	"nks": {
 		"code": [
@@ -431,9 +405,8 @@
 		],
 		"lat": 35.1836169,
 		"lng": 137.0494643,
-		"prefecture": "ai",
-		"city": "nk",
-		"id": "nks"
+		"id": "nks",
+		"govId": "232386"
 	},
 	"kry": {
 		"code": [
@@ -451,9 +424,8 @@
 		],
 		"lat": 34.9911639,
 		"lng": 137.0086782,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "kry"
+		"id": "kry",
+		"govId": "232106"
 	},
 	"krm": {
 		"code": [
@@ -469,9 +441,8 @@
 		],
 		"lat": 34.9963712,
 		"lng": 136.9958806,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "krm"
+		"id": "krm",
+		"govId": "232106"
 	},
 	"aiz": {
 		"code": [
@@ -485,9 +456,8 @@
 		],
 		"lat": 34.99861,
 		"lng": 136.9899765,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "aiz"
+		"id": "aiz",
+		"govId": "232106"
 	},
 	"ash": {
 		"code": [
@@ -503,9 +473,8 @@
 		],
 		"lat": 35.0017679,
 		"lng": 136.9771789,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "ash"
+		"id": "ash",
+		"govId": "232238"
 	},
 	"wks": {
 		"code": [
@@ -521,9 +490,8 @@
 		],
 		"lat": 35.0086361,
 		"lng": 136.9682572,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "wks"
+		"id": "wks",
+		"govId": "232238"
 	},
 	"obs": {
 		"code": [
@@ -539,9 +507,8 @@
 		],
 		"lat": 35.0110266,
 		"lng": 136.9655609,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "obs"
+		"id": "obs",
+		"govId": "232238"
 	},
 	"chc": {
 		"code": [
@@ -557,9 +524,8 @@
 		],
 		"lat": 35.017017,
 		"lng": 136.9597174,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "chc"
+		"id": "chc",
+		"govId": "232238"
 	},
 	"oiw": {
 		"code": [
@@ -575,9 +541,8 @@
 		],
 		"lat": 35.0262074,
 		"lng": 136.9578545,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "oiw"
+		"id": "oiw",
+		"govId": "232238"
 	},
 	"kyw": {
 		"code": [
@@ -593,9 +558,8 @@
 		],
 		"lat": 35.0371056,
 		"lng": 136.954714,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "kyw"
+		"id": "kyw",
+		"govId": "232238"
 	},
 	"kkg": {
 		"code": [
@@ -609,9 +573,8 @@
 		],
 		"lat": 35.0488696,
 		"lng": 136.9519587,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "kkg"
+		"id": "kkg",
+		"govId": "231002"
 	},
 	"mod": {
 		"code": [
@@ -625,9 +588,8 @@
 		],
 		"lat": 35.0554939,
 		"lng": 136.9485147,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "mod"
+		"id": "mod",
+		"govId": "231002"
 	},
 	"ryn": {
 		"code": [
@@ -643,9 +605,8 @@
 		],
 		"lat": 35.0621452,
 		"lng": 136.9450887,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ryn"
+		"id": "ryn",
+		"govId": "231002"
 	},
 	"odk": {
 		"code": [
@@ -663,9 +624,8 @@
 		],
 		"lat": 35.0696572,
 		"lng": 136.9399931,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "odk"
+		"id": "odk",
+		"govId": "231002"
 	},
 	"kso": {
 		"code": [
@@ -680,9 +640,8 @@
 		],
 		"lat": 35.07846,
 		"lng": 136.9445203,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "kso"
+		"id": "kso",
+		"govId": "231002"
 	},
 	"mtn": {
 		"code": [
@@ -696,9 +655,8 @@
 		],
 		"lat": 35.0808722,
 		"lng": 136.9395267,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "mtn"
+		"id": "mtn",
+		"govId": "231002"
 	},
 	"hsh": {
 		"code": [
@@ -712,9 +670,8 @@
 		],
 		"lat": 35.0845785,
 		"lng": 136.9345294,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "hsh"
+		"id": "hsh",
+		"govId": "231002"
 	},
 	"mks": {
 		"code": [
@@ -728,9 +685,8 @@
 		],
 		"lat": 35.090946,
 		"lng": 136.9310528,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "mks"
+		"id": "mks",
+		"govId": "231002"
 	},
 	"mky": {
 		"code": [
@@ -744,9 +700,8 @@
 		],
 		"lat": 35.0939479,
 		"lng": 136.9294534,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "mky"
+		"id": "mky",
+		"govId": "231002"
 	},
 	"sks": {
 		"code": [
@@ -760,9 +715,8 @@
 		],
 		"lat": 35.0978847,
 		"lng": 136.9273372,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "sks"
+		"id": "sks",
+		"govId": "231002"
 	},
 	"ybt": {
 		"code": [
@@ -776,9 +730,8 @@
 		],
 		"lat": 35.1038027,
 		"lng": 136.9241992,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ybt"
+		"id": "ybt",
+		"govId": "231002"
 	},
 	"sod": {
 		"code": [
@@ -792,9 +745,8 @@
 		],
 		"lat": 35.1080351,
 		"lng": 136.9230921,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "sod"
+		"id": "sod",
+		"govId": "231002"
 	},
 	"mzn": {
 		"code": [
@@ -808,9 +760,8 @@
 		],
 		"lat": 35.1130587,
 		"lng": 136.9222818,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "mzn"
+		"id": "mzn",
+		"govId": "231002"
 	},
 	"hrt": {
 		"code": [
@@ -824,9 +775,8 @@
 		],
 		"lat": 35.1185567,
 		"lng": 136.9213906,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "hrt"
+		"id": "hrt",
+		"govId": "231002"
 	},
 	"snk": {
 		"code": [
@@ -840,9 +790,8 @@
 		],
 		"lat": 35.1237627,
 		"lng": 136.9205538,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "snk"
+		"id": "snk",
+		"govId": "231002"
 	},
 	"usm": {
 		"code": [
@@ -856,9 +805,8 @@
 		],
 		"lat": 35.1304902,
 		"lng": 136.9194847,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "usm"
+		"id": "usm",
+		"govId": "231002"
 	},
 	"tkj": {
 		"code": [
@@ -872,9 +820,8 @@
 		],
 		"lat": 35.1400461,
 		"lng": 136.9182758,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "tkj"
+		"id": "tkj",
+		"govId": "231002"
 	},
 	"srk": {
 		"code": [
@@ -888,9 +835,8 @@
 		],
 		"lat": 35.14713,
 		"lng": 136.9175478,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "srk"
+		"id": "srk",
+		"govId": "231002"
 	},
 	"trm": {
 		"code": [
@@ -904,9 +850,8 @@
 		],
 		"lat": 35.1560191,
 		"lng": 136.9162088,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "trm"
+		"id": "trm",
+		"govId": "231002"
 	},
 	"chy": {
 		"code": [
@@ -920,9 +865,8 @@
 		],
 		"lat": 35.1613609,
 		"lng": 136.9154938,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "chy"
+		"id": "chy",
+		"govId": "231002"
 	},
 	"yba": {
 		"code": [
@@ -936,9 +880,8 @@
 		],
 		"lat": 35.1638044,
 		"lng": 136.9095093,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "yba"
+		"id": "yba",
+		"govId": "231002"
 	},
 	"ske": {
 		"code": [
@@ -954,9 +897,8 @@
 		],
 		"lat": 35.1708285,
 		"lng": 136.9089085,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ske"
+		"id": "ske",
+		"govId": "231002"
 	},
 	"nwa": {
 		"code": [
@@ -972,9 +914,8 @@
 		],
 		"lat": 35.0607441,
 		"lng": 136.9130319,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "nwa"
+		"id": "nwa",
+		"govId": "232220"
 	},
 	"odm": {
 		"code": [
@@ -988,9 +929,8 @@
 		],
 		"lat": 35.0680507,
 		"lng": 136.9279034,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "odm"
+		"id": "odm",
+		"govId": "231002"
 	},
 	"nrm": {
 		"code": [
@@ -1005,9 +945,8 @@
 		],
 		"lat": 35.0768376,
 		"lng": 136.9482506,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "nrm"
+		"id": "nrm",
+		"govId": "231002"
 	},
 	"ryg": {
 		"code": [
@@ -1023,9 +962,8 @@
 		],
 		"lat": 35.0719997,
 		"lng": 136.95548,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ryg"
+		"id": "ryg",
+		"govId": "231002"
 	},
 	"kmt": {
 		"code": [
@@ -1039,9 +977,8 @@
 		],
 		"lat": 35.0693428,
 		"lng": 136.966145,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "kmt"
+		"id": "kmt",
+		"govId": "231002"
 	},
 	"try": {
 		"code": [
@@ -1055,9 +992,8 @@
 		],
 		"lat": 35.0701073,
 		"lng": 136.9718577,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "try"
+		"id": "try",
+		"govId": "231002"
 	},
 	"ubi": {
 		"code": [
@@ -1071,9 +1007,8 @@
 		],
 		"lat": 35.0708354,
 		"lng": 136.9777154,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ubi"
+		"id": "ubi",
+		"govId": "231002"
 	},
 	"kkd": {
 		"code": [
@@ -1087,9 +1022,8 @@
 		],
 		"lat": 35.0709101,
 		"lng": 136.9842997,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "kkd"
+		"id": "kkd",
+		"govId": "231002"
 	},
 	"ckk": {
 		"code": [
@@ -1103,9 +1037,8 @@
 		],
 		"lat": 35.06976,
 		"lng": 136.9929327,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "ckk"
+		"id": "ckk",
+		"govId": "232297"
 	},
 	"mgm": {
 		"code": [
@@ -1119,9 +1052,8 @@
 		],
 		"lat": 35.0645849,
 		"lng": 137.0007728,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "mgm"
+		"id": "mgm",
+		"govId": "232297"
 	},
 	"ftm": {
 		"code": [
@@ -1137,9 +1069,8 @@
 		],
 		"lat": 35.0583455,
 		"lng": 137.0041537,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "ftm"
+		"id": "ftm",
+		"govId": "232297"
 	},
 	"msk": {
 		"code": [
@@ -1153,9 +1084,8 @@
 		],
 		"lat": 35.0548811,
 		"lng": 137.0061732,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "msk"
+		"id": "msk",
+		"govId": "232297"
 	},
 	"tys": {
 		"code": [
@@ -1169,9 +1099,8 @@
 		],
 		"lat": 35.0512044,
 		"lng": 137.0152579,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "tys"
+		"id": "tys",
+		"govId": "232297"
 	},
 	"okt": {
 		"code": [
@@ -1185,9 +1114,8 @@
 		],
 		"lat": 35.0509909,
 		"lng": 137.0201758,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "okt"
+		"id": "okt",
+		"govId": "232297"
 	},
 	"nzk": {
 		"code": [
@@ -1201,9 +1129,8 @@
 		],
 		"lat": 35.049772,
 		"lng": 137.029424,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "nzk"
+		"id": "nzk",
+		"govId": "232106"
 	},
 	"igm": {
 		"code": [
@@ -1217,9 +1144,8 @@
 		],
 		"lat": 35.0492387,
 		"lng": 137.0438994,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "igm"
+		"id": "igm",
+		"govId": "232106"
 	},
 	"mro": {
 		"code": [
@@ -1233,9 +1159,8 @@
 		],
 		"lat": 35.0484512,
 		"lng": 137.0553738,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "mro"
+		"id": "mro",
+		"govId": "232106"
 	},
 	"nso": {
 		"code": [
@@ -1249,9 +1174,8 @@
 		],
 		"lat": 35.0466968,
 		"lng": 137.0604657,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "nso"
+		"id": "nso",
+		"govId": "232114"
 	},
 	"ish": {
 		"code": [
@@ -1265,9 +1189,8 @@
 		],
 		"lat": 35.0447584,
 		"lng": 137.0634687,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "ish"
+		"id": "ish",
+		"govId": "232114"
 	},
 	"ngd": {
 		"code": [
@@ -1283,9 +1206,8 @@
 		],
 		"lat": 35.0425696,
 		"lng": 137.0668162,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "ngd"
+		"id": "ngd",
+		"govId": "232114"
 	},
 	"osh": {
 		"code": [
@@ -1299,9 +1221,8 @@
 		],
 		"lat": 35.0387053,
 		"lng": 137.0631041,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "osh"
+		"id": "osh",
+		"govId": "232114"
 	},
 	"nkf": {
 		"code": [
@@ -1315,9 +1236,8 @@
 		],
 		"lat": 35.032601,
 		"lng": 137.0571271,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "nkf"
+		"id": "nkf",
+		"govId": "232114"
 	},
 	"nkd": {
 		"code": [
@@ -1331,9 +1251,8 @@
 		],
 		"lat": 35.029353,
 		"lng": 137.0538775,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "nkd"
+		"id": "nkd",
+		"govId": "232114"
 	},
 	"nkn": {
 		"code": [
@@ -1347,9 +1266,8 @@
 		],
 		"lat": 35.0257539,
 		"lng": 137.0523181,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "nkn"
+		"id": "nkn",
+		"govId": "232114"
 	},
 	"kms": {
 		"code": [
@@ -1363,9 +1281,8 @@
 		],
 		"lat": 35.0219092,
 		"lng": 137.0496649,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "kms"
+		"id": "kms",
+		"govId": "232114"
 	},
 	"mkk": {
 		"code": [
@@ -1379,9 +1296,8 @@
 		],
 		"lat": 35.0198618,
 		"lng": 137.0480971,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "mkk"
+		"id": "mkk",
+		"govId": "232114"
 	},
 	"kbn": {
 		"code": [
@@ -1397,9 +1313,8 @@
 		],
 		"lat": 35.0166399,
 		"lng": 137.0502475,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "kbn"
+		"id": "kbn",
+		"govId": "232114"
 	},
 	"kbb": {
 		"code": [
@@ -1413,9 +1328,8 @@
 		],
 		"lat": 35.014778,
 		"lng": 137.0463517,
-		"prefecture": "ai",
-		"city": "cr",
-		"id": "kbb"
+		"id": "kbb",
+		"govId": "232254"
 	},
 	"myn": {
 		"code": [
@@ -1429,9 +1343,8 @@
 		],
 		"lat": 35.0114752,
 		"lng": 137.0450064,
-		"prefecture": "ai",
-		"city": "cr",
-		"id": "myn"
+		"id": "myn",
+		"govId": "232254"
 	},
 	"skr": {
 		"code": [
@@ -1445,9 +1358,8 @@
 		],
 		"lat": 35.0089851,
 		"lng": 137.0427332,
-		"prefecture": "ai",
-		"city": "cr",
-		"id": "skr"
+		"id": "skr",
+		"govId": "232254"
 	},
 	"chr": {
 		"code": [
@@ -1465,9 +1377,8 @@
 		],
 		"lat": 35.0060185,
 		"lng": 137.0412611,
-		"prefecture": "ai",
-		"city": "cr",
-		"id": "chr"
+		"id": "chr",
+		"govId": "232254"
 	},
 	"obu": {
 		"code": [
@@ -1485,9 +1396,8 @@
 		],
 		"lat": 35.0085837,
 		"lng": 136.9618472,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "obu"
+		"id": "obu",
+		"govId": "232238"
 	},
 	"obm": {
 		"code": [
@@ -1504,9 +1414,8 @@
 		],
 		"lat": 35.0057094,
 		"lng": 136.952523,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "obm"
+		"id": "obm",
+		"govId": "232238"
 	},
 	"knk": {
 		"code": [
@@ -1520,9 +1429,8 @@
 		],
 		"lat": 35.0030276,
 		"lng": 136.9502712,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "knk"
+		"id": "knk",
+		"govId": "232238"
 	},
 	"iry": {
 		"code": [
@@ -1536,9 +1444,8 @@
 		],
 		"lat": 34.9990336,
 		"lng": 136.9496892,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "iry"
+		"id": "iry",
+		"govId": "232238"
 	},
 	"knm": {
 		"code": [
@@ -1552,9 +1459,8 @@
 		],
 		"lat": 34.9921652,
 		"lng": 136.9515432,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "knm"
+		"id": "knm",
+		"govId": "234427"
 	},
 	"sik": {
 		"code": [
@@ -1568,9 +1474,8 @@
 		],
 		"lat": 34.985137,
 		"lng": 136.9483538,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "sik"
+		"id": "sik",
+		"govId": "234427"
 	},
 	"oga": {
 		"code": [
@@ -1586,9 +1491,8 @@
 		],
 		"lat": 34.9791325,
 		"lng": 136.9461575,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "oga"
+		"id": "oga",
+		"govId": "234427"
 	},
 	"nis": {
 		"code": [
@@ -1602,9 +1506,8 @@
 		],
 		"lat": 34.9591968,
 		"lng": 136.9483972,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "nis"
+		"id": "nis",
+		"govId": "234427"
 	},
 	"fje": {
 		"code": [
@@ -1618,9 +1521,8 @@
 		],
 		"lat": 34.9478996,
 		"lng": 136.9517261,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "fje"
+		"id": "fje",
+		"govId": "234427"
 	},
 	"mdr": {
 		"code": [
@@ -1634,9 +1536,8 @@
 		],
 		"lat": 34.9344973,
 		"lng": 136.9518556,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "mdr"
+		"id": "mdr",
+		"govId": "232050"
 	},
 	"hem": {
 		"code": [
@@ -1652,9 +1553,8 @@
 		],
 		"lat": 34.9283089,
 		"lng": 136.9545037,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hem"
+		"id": "hem",
+		"govId": "232050"
 	},
 	"kmi": {
 		"code": [
@@ -1668,9 +1568,8 @@
 		],
 		"lat": 34.9245788,
 		"lng": 136.9498835,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "kmi"
+		"id": "kmi",
+		"govId": "232050"
 	},
 	"sch": {
 		"code": [
@@ -1684,9 +1583,8 @@
 		],
 		"lat": 34.9189897,
 		"lng": 136.9484061,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "sch"
+		"id": "sch",
+		"govId": "232050"
 	},
 	"ksn": {
 		"code": [
@@ -1700,9 +1598,8 @@
 		],
 		"lat": 34.9160115,
 		"lng": 136.945558,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "ksn"
+		"id": "ksn",
+		"govId": "232050"
 	},
 	"owh": {
 		"code": [
@@ -1716,9 +1613,8 @@
 		],
 		"lat": 34.9131088,
 		"lng": 136.9438477,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "owh"
+		"id": "owh",
+		"govId": "232050"
 	},
 	"owy": {
 		"code": [
@@ -1732,9 +1628,8 @@
 		],
 		"lat": 34.9090926,
 		"lng": 136.9418647,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "owy"
+		"id": "owy",
+		"govId": "232050"
 	},
 	"okw": {
 		"code": [
@@ -1749,9 +1644,8 @@
 		],
 		"lat": 34.904713,
 		"lng": 136.9395369,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "okw"
+		"id": "okw",
+		"govId": "232050"
 	},
 	"hno": {
 		"code": [
@@ -1765,9 +1659,8 @@
 		],
 		"lat": 34.9010112,
 		"lng": 136.9364394,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hno"
+		"id": "hno",
+		"govId": "232050"
 	},
 	"hns": {
 		"code": [
@@ -1785,9 +1678,8 @@
 		],
 		"lat": 34.8928538,
 		"lng": 136.9372533,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hns"
+		"id": "hns",
+		"govId": "232050"
 	},
 	"akr": {
 		"code": [
@@ -1803,9 +1695,8 @@
 		],
 		"lat": 34.9011671,
 		"lng": 136.9306596,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "akr"
+		"id": "akr",
+		"govId": "232050"
 	},
 	"smy": {
 		"code": [
@@ -1819,9 +1710,8 @@
 		],
 		"lat": 34.9009824,
 		"lng": 136.9239905,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "smy"
+		"id": "smy",
+		"govId": "232050"
 	},
 	"sis": {
 		"code": [
@@ -1837,9 +1727,8 @@
 		],
 		"lat": 34.9001412,
 		"lng": 136.917242,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "sis"
+		"id": "sis",
+		"govId": "232050"
 	},
 	"shg": {
 		"code": [
@@ -1860,9 +1749,8 @@
 		],
 		"lat": 35.0329569,
 		"lng": 136.9706678,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "shg"
+		"id": "shg",
+		"govId": "232238"
 	},
 	"bzy": {
 		"code": [
@@ -1878,9 +1766,8 @@
 		],
 		"lat": 35.0411112,
 		"lng": 136.9677978,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "bzy"
+		"id": "bzy",
+		"govId": "232238"
 	},
 	"nry": {
 		"code": [
@@ -1894,9 +1781,8 @@
 		],
 		"lat": 35.0459006,
 		"lng": 136.9681412,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "nry"
+		"id": "nry",
+		"govId": "231002"
 	},
 	"okh": {
 		"code": [
@@ -1910,9 +1796,8 @@
 		],
 		"lat": 35.0495129,
 		"lng": 136.9698941,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "okh"
+		"id": "okh",
+		"govId": "231002"
 	},
 	"cfk": {
 		"code": [
@@ -1926,9 +1811,8 @@
 		],
 		"lat": 35.0522743,
 		"lng": 136.970156,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "cfk"
+		"id": "cfk",
+		"govId": "231002"
 	},
 	"ksk": {
 		"code": [
@@ -1942,9 +1826,8 @@
 		],
 		"lat": 35.0556841,
 		"lng": 136.9701823,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ksk"
+		"id": "ksk",
+		"govId": "231002"
 	},
 	"ngt": {
 		"code": [
@@ -1958,9 +1841,8 @@
 		],
 		"lat": 35.0608183,
 		"lng": 136.9698992,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ngt"
+		"id": "ngt",
+		"govId": "231002"
 	},
 	"arm": {
 		"code": [
@@ -1974,9 +1856,8 @@
 		],
 		"lat": 35.0674214,
 		"lng": 136.9715021,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "arm"
+		"id": "arm",
+		"govId": "231002"
 	},
 	"trs": {
 		"code": [
@@ -1990,9 +1871,8 @@
 		],
 		"lat": 35.07633,
 		"lng": 136.9704663,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "trs"
+		"id": "trs",
+		"govId": "231002"
 	},
 	"ogg": {
 		"code": [
@@ -2006,9 +1886,8 @@
 		],
 		"lat": 35.0797821,
 		"lng": 136.9739478,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ogg"
+		"id": "ogg",
+		"govId": "231002"
 	},
 	"tkm": {
 		"code": [
@@ -2022,9 +1901,8 @@
 		],
 		"lat": 35.0860351,
 		"lng": 136.9803388,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "tkm"
+		"id": "tkm",
+		"govId": "231002"
 	},
 	"nrk": {
 		"code": [
@@ -2038,9 +1916,8 @@
 		],
 		"lat": 35.0909791,
 		"lng": 136.9853973,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "nrk"
+		"id": "nrk",
+		"govId": "231002"
 	},
 	"tsg": {
 		"code": [
@@ -2054,9 +1931,8 @@
 		],
 		"lat": 35.0951152,
 		"lng": 136.9987105,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "tsg"
+		"id": "tsg",
+		"govId": "231002"
 	},
 	"kmn": {
 		"code": [
@@ -2070,9 +1946,8 @@
 		],
 		"lat": 35.100516,
 		"lng": 137.0054551,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "kmn"
+		"id": "kmn",
+		"govId": "231002"
 	},
 	"hbd": {
 		"code": [
@@ -2086,9 +1961,8 @@
 		],
 		"lat": 35.1044012,
 		"lng": 137.0075194,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "hbd"
+		"id": "hbd",
+		"govId": "231002"
 	},
 	"hbj": {
 		"code": [
@@ -2102,9 +1976,8 @@
 		],
 		"lat": 35.1108108,
 		"lng": 137.0035568,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "hbj"
+		"id": "hbj",
+		"govId": "231002"
 	},
 	"mki": {
 		"code": [
@@ -2118,9 +1991,8 @@
 		],
 		"lat": 35.1143641,
 		"lng": 137.0034178,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "mki"
+		"id": "mki",
+		"govId": "231002"
 	},
 	"hbm": {
 		"code": [
@@ -2134,9 +2006,8 @@
 		],
 		"lat": 35.1192381,
 		"lng": 137.0057201,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "hbm"
+		"id": "hbm",
+		"govId": "231002"
 	},
 	"hrb": {
 		"code": [
@@ -2150,9 +2021,8 @@
 		],
 		"lat": 35.1226023,
 		"lng": 137.0074476,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "hrb"
+		"id": "hrb",
+		"govId": "231002"
 	},
 	"doj": {
 		"code": [
@@ -2166,9 +2036,8 @@
 		],
 		"lat": 35.1274189,
 		"lng": 137.0094582,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "doj"
+		"id": "doj",
+		"govId": "232301"
 	},
 	"mmn": {
 		"code": [
@@ -2182,9 +2051,8 @@
 		],
 		"lat": 35.1310802,
 		"lng": 137.0129741,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "mmn"
+		"id": "mmn",
+		"govId": "232301"
 	},
 	"mmd": {
 		"code": [
@@ -2198,9 +2066,8 @@
 		],
 		"lat": 35.133683,
 		"lng": 137.0154665,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "mmd"
+		"id": "mmd",
+		"govId": "232301"
 	},
 	"udk": {
 		"code": [
@@ -2214,9 +2081,8 @@
 		],
 		"lat": 35.137438,
 		"lng": 137.0149316,
-		"prefecture": "ai",
-		"city": "ns",
-		"id": "udk"
+		"id": "udk",
+		"govId": "232301"
 	},
 	"hnb": {
 		"code": [
@@ -2230,9 +2096,8 @@
 		],
 		"lat": 35.1404668,
 		"lng": 137.0152283,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "hnb"
+		"id": "hnb",
+		"govId": "231002"
 	},
 	"mmz": {
 		"code": [
@@ -2246,9 +2111,8 @@
 		],
 		"lat": 35.1434313,
 		"lng": 137.0147036,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "mmz"
+		"id": "mmz",
+		"govId": "231002"
 	},
 	"mkn": {
 		"code": [
@@ -2262,9 +2126,8 @@
 		],
 		"lat": 35.149137,
 		"lng": 137.0144352,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "mkn"
+		"id": "mkn",
+		"govId": "231002"
 	},
 	"gkr": {
 		"code": [
@@ -2278,9 +2141,8 @@
 		],
 		"lat": 35.154319,
 		"lng": 137.0185221,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "gkr"
+		"id": "gkr",
+		"govId": "231002"
 	},
 	"tbd": {
 		"code": [
@@ -2294,9 +2156,8 @@
 		],
 		"lat": 35.1598856,
 		"lng": 137.0195836,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "tbd"
+		"id": "tbd",
+		"govId": "231002"
 	},
 	"skb": {
 		"code": [
@@ -2310,9 +2171,8 @@
 		],
 		"lat": 35.1650431,
 		"lng": 137.0174233,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "skb"
+		"id": "skb",
+		"govId": "231002"
 	},
 	"ysh": {
 		"code": [
@@ -2326,9 +2186,8 @@
 		],
 		"lat": 35.169276,
 		"lng": 137.0173387,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ysh"
+		"id": "ysh",
+		"govId": "231002"
 	},
 	"hmk": {
 		"code": [
@@ -2342,9 +2201,8 @@
 		],
 		"lat": 35.174908,
 		"lng": 137.0204435,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "hmk"
+		"id": "hmk",
+		"govId": "231002"
 	},
 	"fjg": {
 		"code": [
@@ -2358,9 +2216,8 @@
 		],
 		"lat": 35.1819084,
 		"lng": 137.0210589,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "fjg"
+		"id": "fjg",
+		"govId": "231002"
 	},
 	"fts": {
 		"code": [
@@ -2374,9 +2231,8 @@
 		],
 		"lat": 35.0255245,
 		"lng": 136.9729088,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "fts"
+		"id": "fts",
+		"govId": "232238"
 	},
 	"hrk": {
 		"code": [
@@ -2392,9 +2248,8 @@
 		],
 		"lat": 35.0200068,
 		"lng": 136.975827,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "hrk"
+		"id": "hrk",
+		"govId": "232238"
 	},
 	"mds": {
 		"code": [
@@ -2408,9 +2263,8 @@
 		],
 		"lat": 35.0134819,
 		"lng": 136.9739602,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "mds"
+		"id": "mds",
+		"govId": "232238"
 	},
 	"dtc": {
 		"code": [
@@ -2428,9 +2282,8 @@
 		],
 		"lat": 35.0109116,
 		"lng": 136.9741343,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "dtc"
+		"id": "dtc",
+		"govId": "232238"
 	},
 	"mrk": {
 		"code": [
@@ -2444,9 +2297,8 @@
 		],
 		"lat": 34.9950113,
 		"lng": 136.9770356,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "mrk"
+		"id": "mrk",
+		"govId": "234427"
 	},
 	"hog": {
 		"code": [
@@ -2462,9 +2314,8 @@
 		],
 		"lat": 34.9835539,
 		"lng": 136.9756861,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "hog"
+		"id": "hog",
+		"govId": "234427"
 	},
 	"smt": {
 		"code": [
@@ -2478,9 +2329,8 @@
 		],
 		"lat": 35.0041655,
 		"lng": 136.9696131,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "smt"
+		"id": "smt",
+		"govId": "232238"
 	},
 	"yng": {
 		"code": [
@@ -2496,9 +2346,8 @@
 		],
 		"lat": 34.9991963,
 		"lng": 136.9651203,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "yng"
+		"id": "yng",
+		"govId": "234427"
 	},
 	"mrn": {
 		"code": [
@@ -2512,9 +2361,8 @@
 		],
 		"lat": 34.9935876,
 		"lng": 136.9615249,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "mrn"
+		"id": "mrn",
+		"govId": "234427"
 	},
 	"ktb": {
 		"code": [
@@ -2528,9 +2376,8 @@
 		],
 		"lat": 34.9855055,
 		"lng": 136.9609114,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "ktb"
+		"id": "ktb",
+		"govId": "234427"
 	},
 	"odn": {
 		"code": [
@@ -2546,9 +2393,8 @@
 		],
 		"lat": 34.9784292,
 		"lng": 136.957809,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "odn"
+		"id": "odn",
+		"govId": "234427"
 	},
 	"sos": {
 		"code": [
@@ -2567,9 +2413,8 @@
 		],
 		"lat": 35.0128505,
 		"lng": 136.9831248,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "sos"
+		"id": "sos",
+		"govId": "232238"
 	},
 	"usr": {
 		"code": [
@@ -2583,9 +2428,8 @@
 		],
 		"lat": 35.0190786,
 		"lng": 136.986605,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "usr"
+		"id": "usr",
+		"govId": "232238"
 	},
 	"udm": {
 		"code": [
@@ -2599,9 +2443,8 @@
 		],
 		"lat": 35.022692,
 		"lng": 136.9887668,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "udm"
+		"id": "udm",
+		"govId": "232238"
 	},
 	"ksd": {
 		"code": [
@@ -2617,9 +2460,8 @@
 		],
 		"lat": 35.0309155,
 		"lng": 136.9848894,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "ksd"
+		"id": "ksd",
+		"govId": "232238"
 	},
 	"ftk": {
 		"code": [
@@ -2633,9 +2475,8 @@
 		],
 		"lat": 35.02969,
 		"lng": 136.9775455,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "ftk"
+		"id": "ftk",
+		"govId": "232238"
 	},
 	"ktc": {
 		"code": [
@@ -2649,9 +2490,8 @@
 		],
 		"lat": 35.0348117,
 		"lng": 136.9651913,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "ktc"
+		"id": "ktc",
+		"govId": "232238"
 	},
 	"tsn": {
 		"code": [
@@ -2667,9 +2507,8 @@
 		],
 		"lat": 35.0386209,
 		"lng": 136.9594937,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "tsn"
+		"id": "tsn",
+		"govId": "232238"
 	},
 	"skj": {
 		"code": [
@@ -2683,9 +2522,8 @@
 		],
 		"lat": 35.0602714,
 		"lng": 136.9397807,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "skj"
+		"id": "skj",
+		"govId": "231002"
 	},
 	"kgn": {
 		"code": [
@@ -2699,9 +2537,8 @@
 		],
 		"lat": 35.0505343,
 		"lng": 136.9473298,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "kgn"
+		"id": "kgn",
+		"govId": "231002"
 	},
 	"cya": {
 		"code": [
@@ -2715,9 +2552,8 @@
 		],
 		"lat": 35.0416753,
 		"lng": 136.9496193,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "cya"
+		"id": "cya",
+		"govId": "232238"
 	},
 	"kw3": {
 		"code": [
@@ -2731,9 +2567,8 @@
 		],
 		"lat": 35.0335212,
 		"lng": 136.9513967,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "kw3"
+		"id": "kw3",
+		"govId": "232238"
 	},
 	"msh": {
 		"code": [
@@ -2749,9 +2584,8 @@
 		],
 		"lat": 35.0257231,
 		"lng": 136.9526537,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "msh"
+		"id": "msh",
+		"govId": "232238"
 	},
 	"hry": {
 		"code": [
@@ -2767,9 +2601,8 @@
 		],
 		"lat": 35.0183668,
 		"lng": 136.9528886,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "hry"
+		"id": "hry",
+		"govId": "232238"
 	},
 	"kne": {
 		"code": [
@@ -2783,9 +2616,8 @@
 		],
 		"lat": 35.0133452,
 		"lng": 136.9534395,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "kne"
+		"id": "kne",
+		"govId": "232238"
 	},
 	"ebc": {
 		"code": [
@@ -2799,9 +2631,8 @@
 		],
 		"lat": 35.0099467,
 		"lng": 136.954814,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "ebc"
+		"id": "ebc",
+		"govId": "232238"
 	},
 	"krn": {
 		"code": [
@@ -2817,9 +2648,8 @@
 		],
 		"lat": 35.0048493,
 		"lng": 136.9576976,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "krn"
+		"id": "krn",
+		"govId": "232238"
 	},
 	"owm": {
 		"code": [
@@ -2833,9 +2663,8 @@
 		],
 		"lat": 34.9945627,
 		"lng": 136.9690397,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "owm"
+		"id": "owm",
+		"govId": "234427"
 	},
 	"ows": {
 		"code": [
@@ -2849,9 +2678,8 @@
 		],
 		"lat": 34.9897725,
 		"lng": 136.9698981,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "ows"
+		"id": "ows",
+		"govId": "234427"
 	},
 	"myt": {
 		"code": [
@@ -2865,9 +2693,8 @@
 		],
 		"lat": 34.9862004,
 		"lng": 136.9705384,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "myt"
+		"id": "myt",
+		"govId": "234427"
 	},
 	"ogw": {
 		"code": [
@@ -2883,9 +2710,8 @@
 		],
 		"lat": 34.9812598,
 		"lng": 136.971778,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "ogw"
+		"id": "ogw",
+		"govId": "234427"
 	},
 	"ktm": {
 		"code": [
@@ -2899,9 +2725,8 @@
 		],
 		"lat": 35.0288414,
 		"lng": 136.968106,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "ktm"
+		"id": "ktm",
+		"govId": "232238"
 	},
 	"gnk": {
 		"code": [
@@ -2915,9 +2740,8 @@
 		],
 		"lat": 35.0271007,
 		"lng": 136.9634715,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "gnk"
+		"id": "gnk",
+		"govId": "232238"
 	},
 	"smn": {
 		"code": [
@@ -2931,9 +2755,8 @@
 		],
 		"lat": 35.0257571,
 		"lng": 136.9471598,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "smn"
+		"id": "smn",
+		"govId": "232238"
 	},
 	"nkt": {
 		"code": [
@@ -2947,9 +2770,8 @@
 		],
 		"lat": 35.0287612,
 		"lng": 136.9426424,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "nkt"
+		"id": "nkt",
+		"govId": "232238"
 	},
 	"srh": {
 		"code": [
@@ -2963,9 +2785,8 @@
 		],
 		"lat": 35.029751,
 		"lng": 136.9367987,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "srh"
+		"id": "srh",
+		"govId": "232238"
 	},
 	"isi": {
 		"code": [
@@ -2979,9 +2800,8 @@
 		],
 		"lat": 35.0297069,
 		"lng": 136.9322795,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "isi"
+		"id": "isi",
+		"govId": "232238"
 	},
 	"smo": {
 		"code": [
@@ -2995,9 +2815,8 @@
 		],
 		"lat": 35.030764,
 		"lng": 136.9257758,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "smo"
+		"id": "smo",
+		"govId": "232220"
 	},
 	"aru": {
 		"code": [
@@ -3011,9 +2830,8 @@
 		],
 		"lat": 35.0332345,
 		"lng": 136.91959,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "aru"
+		"id": "aru",
+		"govId": "232220"
 	},
 	"zgm": {
 		"code": [
@@ -3029,9 +2847,8 @@
 		],
 		"lat": 35.0366686,
 		"lng": 136.9158699,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "zgm"
+		"id": "zgm",
+		"govId": "232220"
 	},
 	"arw": {
 		"code": [
@@ -3045,9 +2862,8 @@
 		],
 		"lat": 35.0386535,
 		"lng": 136.9121438,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "arw"
+		"id": "arw",
+		"govId": "232220"
 	},
 	"aro": {
 		"code": [
@@ -3061,9 +2877,8 @@
 		],
 		"lat": 35.0398496,
 		"lng": 136.9071366,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "aro"
+		"id": "aro",
+		"govId": "232220"
 	},
 	"shr": {
 		"code": [
@@ -3077,9 +2892,8 @@
 		],
 		"lat": 35.0421499,
 		"lng": 136.902902,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "shr"
+		"id": "shr",
+		"govId": "232220"
 	},
 	"stm": {
 		"code": [
@@ -3096,9 +2910,8 @@
 		],
 		"lat": 35.0058341,
 		"lng": 137.0041137,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "stm"
+		"id": "stm",
+		"govId": "232106"
 	},
 	"sdn": {
 		"code": [
@@ -3114,9 +2927,8 @@
 		],
 		"lat": 35.0125722,
 		"lng": 137.0053426,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "sdn"
+		"id": "sdn",
+		"govId": "232106"
 	},
 	"krs": {
 		"code": [
@@ -3130,9 +2942,8 @@
 		],
 		"lat": 35.0175344,
 		"lng": 137.0062102,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "krs"
+		"id": "krs",
+		"govId": "232106"
 	},
 	"kwi": {
 		"code": [
@@ -3146,9 +2957,8 @@
 		],
 		"lat": 35.0226411,
 		"lng": 137.0077959,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "kwi"
+		"id": "kwi",
+		"govId": "232106"
 	},
 	"nfj": {
 		"code": [
@@ -3162,9 +2972,8 @@
 		],
 		"lat": 35.0283717,
 		"lng": 137.0113621,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "nfj"
+		"id": "nfj",
+		"govId": "232106"
 	},
 	"fjm": {
 		"code": [
@@ -3178,9 +2987,8 @@
 		],
 		"lat": 35.0303341,
 		"lng": 137.0161803,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "fjm"
+		"id": "fjm",
+		"govId": "232106"
 	},
 	"img": {
 		"code": [
@@ -3194,9 +3002,8 @@
 		],
 		"lat": 35.0325824,
 		"lng": 137.0201331,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "img"
+		"id": "img",
+		"govId": "232106"
 	},
 	"hzk": {
 		"code": [
@@ -3210,9 +3017,8 @@
 		],
 		"lat": 35.0367152,
 		"lng": 137.0269008,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "hzk"
+		"id": "hzk",
+		"govId": "232106"
 	},
 	"fjt": {
 		"code": [
@@ -3226,9 +3032,8 @@
 		],
 		"lat": 35.0417992,
 		"lng": 137.0352107,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "fjt"
+		"id": "fjt",
+		"govId": "232106"
 	},
 	"iwg": {
 		"code": [
@@ -3242,9 +3047,8 @@
 		],
 		"lat": 35.0441078,
 		"lng": 137.0377669,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "iwg"
+		"id": "iwg",
+		"govId": "232106"
 	},
 	"akd": {
 		"code": [
@@ -3258,9 +3062,8 @@
 		],
 		"lat": 35.0510169,
 		"lng": 137.0419344,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "akd"
+		"id": "akd",
+		"govId": "232106"
 	},
 	"igy": {
 		"code": [
@@ -3274,9 +3077,8 @@
 		],
 		"lat": 35.0585761,
 		"lng": 137.0466685,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "igy"
+		"id": "igy",
+		"govId": "232106"
 	},
 	"tmp": {
 		"code": [
@@ -3290,9 +3092,8 @@
 		],
 		"lat": 35.063925,
 		"lng": 137.0504228,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "tmp"
+		"id": "tmp",
+		"govId": "232106"
 	},
 	"fkt": {
 		"code": [
@@ -3306,9 +3107,8 @@
 		],
 		"lat": 35.068768,
 		"lng": 137.0524455,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "fkt"
+		"id": "fkt",
+		"govId": "232360"
 	},
 	"har": {
 		"code": [
@@ -3322,9 +3122,8 @@
 		],
 		"lat": 35.0756574,
 		"lng": 137.055306,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "har"
+		"id": "har",
+		"govId": "232360"
 	},
 	"hnk": {
 		"code": [
@@ -3338,9 +3137,8 @@
 		],
 		"lat": 35.0813586,
 		"lng": 137.0598086,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "hnk"
+		"id": "hnk",
+		"govId": "232360"
 	},
 	"mar": {
 		"code": [
@@ -3354,9 +3152,8 @@
 		],
 		"lat": 35.0866452,
 		"lng": 137.0649054,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "mar"
+		"id": "mar",
+		"govId": "232360"
 	},
 	"mms": {
 		"code": [
@@ -3370,9 +3167,8 @@
 		],
 		"lat": 35.089928,
 		"lng": 137.0669663,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "mms"
+		"id": "mms",
+		"govId": "232360"
 	},
 	"mys": {
 		"code": [
@@ -3386,9 +3182,8 @@
 		],
 		"lat": 35.0883108,
 		"lng": 137.0730037,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "mys"
+		"id": "mys",
+		"govId": "232360"
 	},
 	"med": {
 		"code": [
@@ -3402,9 +3197,8 @@
 		],
 		"lat": 35.0910486,
 		"lng": 137.0798628,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "med"
+		"id": "med",
+		"govId": "232360"
 	},
 	"mik": {
 		"code": [
@@ -3418,9 +3212,8 @@
 		],
 		"lat": 35.0943618,
 		"lng": 137.084811,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "mik"
+		"id": "mik",
+		"govId": "232360"
 	},
 	"azb": {
 		"code": [
@@ -3434,9 +3227,8 @@
 		],
 		"lat": 35.0979775,
 		"lng": 137.0889607,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "azb"
+		"id": "azb",
+		"govId": "232360"
 	},
 	"skg": {
 		"code": [
@@ -3450,9 +3242,8 @@
 		],
 		"lat": 35.1018202,
 		"lng": 137.0922892,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "skg"
+		"id": "skg",
+		"govId": "232360"
 	},
 	"ymg": {
 		"code": [
@@ -3466,9 +3257,8 @@
 		],
 		"lat": 35.1061778,
 		"lng": 137.0961707,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "ymg"
+		"id": "ymg",
+		"govId": "232360"
 	},
 	"ukg": {
 		"code": [
@@ -3482,9 +3272,8 @@
 		],
 		"lat": 35.1111232,
 		"lng": 137.1004149,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "ukg"
+		"id": "ukg",
+		"govId": "232360"
 	},
 	"htt": {
 		"code": [
@@ -3498,9 +3287,8 @@
 		],
 		"lat": 35.1167137,
 		"lng": 137.1052996,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "htt"
+		"id": "htt",
+		"govId": "232360"
 	},
 	"mym": {
 		"code": [
@@ -3514,9 +3302,8 @@
 		],
 		"lat": 35.1199742,
 		"lng": 137.1068179,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "mym"
+		"id": "mym",
+		"govId": "232360"
 	},
 	"mgs": {
 		"code": [
@@ -3530,9 +3317,8 @@
 		],
 		"lat": 35.12246,
 		"lng": 137.1102229,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "mgs"
+		"id": "mgs",
+		"govId": "232360"
 	},
 	"mgk": {
 		"code": [
@@ -3546,9 +3332,8 @@
 		],
 		"lat": 35.1272595,
 		"lng": 137.1103492,
-		"prefecture": "ai",
-		"city": "my",
-		"id": "mgk"
+		"id": "mgk",
+		"govId": "232360"
 	},
 	"unk": {
 		"code": [
@@ -3564,9 +3349,8 @@
 		],
 		"lat": 34.9745576,
 		"lng": 136.9365159,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "unk"
+		"id": "unk",
+		"govId": "234427"
 	},
 	"okd": {
 		"code": [
@@ -3580,9 +3364,8 @@
 		],
 		"lat": 34.9850957,
 		"lng": 136.9423595,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "okd"
+		"id": "okd",
+		"govId": "234427"
 	},
 	"kkn": {
 		"code": [
@@ -3596,9 +3379,8 @@
 		],
 		"lat": 34.9962115,
 		"lng": 136.9438425,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "kkn"
+		"id": "kkn",
+		"govId": "232238"
 	},
 	"hnt": {
 		"code": [
@@ -3615,9 +3397,8 @@
 		],
 		"lat": 35.0055952,
 		"lng": 136.9437882,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "hnt"
+		"id": "hnt",
+		"govId": "232238"
 	},
 	"udo": {
 		"code": [
@@ -3633,9 +3414,8 @@
 		],
 		"lat": 35.0101527,
 		"lng": 136.9422554,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "udo"
+		"id": "udo",
+		"govId": "232238"
 	},
 	"und": {
 		"code": [
@@ -3649,9 +3429,8 @@
 		],
 		"lat": 35.0115895,
 		"lng": 136.9346827,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "und"
+		"id": "und",
+		"govId": "232220"
 	},
 	"sin": {
 		"code": [
@@ -3665,9 +3444,8 @@
 		],
 		"lat": 35.0161939,
 		"lng": 136.9189024,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "sin"
+		"id": "sin",
+		"govId": "232220"
 	},
 	"fkc": {
 		"code": [
@@ -3683,9 +3461,8 @@
 		],
 		"lat": 35.0196955,
 		"lng": 136.9122995,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "fkc"
+		"id": "fkc",
+		"govId": "232220"
 	},
 	"trt": {
 		"code": [
@@ -3699,9 +3476,8 @@
 		],
 		"lat": 35.0211575,
 		"lng": 136.8999083,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "trt"
+		"id": "trt",
+		"govId": "232220"
 	},
 	"kmh": {
 		"code": [
@@ -3715,9 +3491,8 @@
 		],
 		"lat": 35.0247304,
 		"lng": 136.8936175,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "kmh"
+		"id": "kmh",
+		"govId": "232220"
 	},
 	"seh": {
 		"code": [
@@ -3733,9 +3508,8 @@
 		],
 		"lat": 35.0369811,
 		"lng": 136.9396663,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "seh"
+		"id": "seh",
+		"govId": "232238"
 	},
 	"ktw": {
 		"code": [
@@ -3749,9 +3523,8 @@
 		],
 		"lat": 35.0447647,
 		"lng": 136.9285416,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "ktw"
+		"id": "ktw",
+		"govId": "232220"
 	},
 	"hnn": {
 		"code": [
@@ -3765,9 +3538,8 @@
 		],
 		"lat": 35.0475536,
 		"lng": 136.915409,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "hnn"
+		"id": "hnn",
+		"govId": "232220"
 	},
 	"okm": {
 		"code": [
@@ -3781,9 +3553,8 @@
 		],
 		"lat": 35.0490617,
 		"lng": 136.9105798,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "okm"
+		"id": "okm",
+		"govId": "232220"
 	},
 	"smp": {
 		"code": [
@@ -3797,9 +3568,8 @@
 		],
 		"lat": 35.0517219,
 		"lng": 136.8977732,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "smp"
+		"id": "smp",
+		"govId": "232220"
 	},
 	"som": {
 		"code": [
@@ -3813,9 +3583,8 @@
 		],
 		"lat": 35.054297,
 		"lng": 136.8699545,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "som"
+		"id": "som",
+		"govId": "231002"
 	},
 	"knj": {
 		"code": [
@@ -3829,9 +3598,8 @@
 		],
 		"lat": 35.0494806,
 		"lng": 136.8472029,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "knj"
+		"id": "knj",
+		"govId": "231002"
 	},
 	"kmz": {
 		"code": [
@@ -3845,9 +3613,8 @@
 		],
 		"lat": 34.9246616,
 		"lng": 136.9624314,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "kmz"
+		"id": "kmz",
+		"govId": "232050"
 	},
 	"sns": {
 		"code": [
@@ -3861,9 +3628,8 @@
 		],
 		"lat": 34.9235339,
 		"lng": 136.9737382,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "sns"
+		"id": "sns",
+		"govId": "232050"
 	},
 	"tkh": {
 		"code": [
@@ -3877,9 +3643,8 @@
 		],
 		"lat": 34.9229321,
 		"lng": 136.9812816,
-		"prefecture": "ai",
-		"city": "th",
-		"id": "tkh"
+		"id": "tkh",
+		"govId": "232271"
 	},
 	"onn": {
 		"code": [
@@ -3893,9 +3658,8 @@
 		],
 		"lat": 34.9274115,
 		"lng": 136.9836817,
-		"prefecture": "ai",
-		"city": "th",
-		"id": "onn"
+		"id": "onn",
+		"govId": "232271"
 	},
 	"mtk": {
 		"code": [
@@ -3909,9 +3673,8 @@
 		],
 		"lat": 34.930251,
 		"lng": 136.9901365,
-		"prefecture": "ai",
-		"city": "th",
-		"id": "mtk"
+		"id": "mtk",
+		"govId": "232271"
 	},
 	"ywt": {
 		"code": [
@@ -3925,9 +3688,8 @@
 		],
 		"lat": 34.9733531,
 		"lng": 136.9124146,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "ywt"
+		"id": "ywt",
+		"govId": "232220"
 	},
 	"oue": {
 		"code": [
@@ -3947,9 +3709,8 @@
 		],
 		"lat": 34.9701345,
 		"lng": 136.9183676,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "oue"
+		"id": "oue",
+		"govId": "234427"
 	},
 	"ubk": {
 		"code": [
@@ -3965,9 +3726,8 @@
 		],
 		"lat": 34.9731162,
 		"lng": 136.9235763,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "ubk"
+		"id": "ubk",
+		"govId": "234427"
 	},
 	"kmd": {
 		"code": [
@@ -3981,9 +3741,8 @@
 		],
 		"lat": 34.9875287,
 		"lng": 136.9287788,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "kmd"
+		"id": "kmd",
+		"govId": "232238"
 	},
 	"umk": {
 		"code": [
@@ -3997,9 +3756,8 @@
 		],
 		"lat": 34.9932686,
 		"lng": 136.9299689,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "umk"
+		"id": "umk",
+		"govId": "232238"
 	},
 	"kty": {
 		"code": [
@@ -4013,9 +3771,8 @@
 		],
 		"lat": 35.0000062,
 		"lng": 136.9304065,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "kty"
+		"id": "kty",
+		"govId": "232238"
 	},
 	"myu": {
 		"code": [
@@ -4031,9 +3788,8 @@
 		],
 		"lat": 35.005275,
 		"lng": 136.9320259,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "myu"
+		"id": "myu",
+		"govId": "232238"
 	},
 	"msn": {
 		"code": [
@@ -4049,9 +3805,8 @@
 		],
 		"lat": 35.0212118,
 		"lng": 136.9422239,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "msn"
+		"id": "msn",
+		"govId": "232238"
 	},
 	"tmo": {
 		"code": [
@@ -4068,9 +3823,8 @@
 		],
 		"lat": 35.0291322,
 		"lng": 136.9447347,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "tmo"
+		"id": "tmo",
+		"govId": "232238"
 	},
 	"gdo": {
 		"code": [
@@ -4084,9 +3838,8 @@
 		],
 		"lat": 35.0470184,
 		"lng": 136.935985,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "gdo"
+		"id": "gdo",
+		"govId": "232238"
 	},
 	"syk": {
 		"code": [
@@ -4100,9 +3853,8 @@
 		],
 		"lat": 35.054094,
 		"lng": 136.9387471,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "syk"
+		"id": "syk",
+		"govId": "231002"
 	},
 	"khr": {
 		"code": [
@@ -4116,9 +3868,8 @@
 		],
 		"lat": 35.0668942,
 		"lng": 136.9483561,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "khr"
+		"id": "khr",
+		"govId": "231002"
 	},
 	"sim": {
 		"code": [
@@ -4132,9 +3883,8 @@
 		],
 		"lat": 35.0817324,
 		"lng": 136.9600884,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "sim"
+		"id": "sim",
+		"govId": "231002"
 	},
 	"sky": {
 		"code": [
@@ -4148,9 +3898,8 @@
 		],
 		"lat": 35.0881153,
 		"lng": 136.9637584,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "sky"
+		"id": "sky",
+		"govId": "231002"
 	},
 	"nmk": {
 		"code": [
@@ -4164,9 +3913,8 @@
 		],
 		"lat": 35.0916909,
 		"lng": 136.9631336,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "nmk"
+		"id": "nmk",
+		"govId": "231002"
 	},
 	"nkm": {
 		"code": [
@@ -4180,9 +3928,8 @@
 		],
 		"lat": 35.0951043,
 		"lng": 136.9673178,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "nkm"
+		"id": "nkm",
+		"govId": "231002"
 	},
 	"snn": {
 		"code": [
@@ -4196,9 +3943,8 @@
 		],
 		"lat": 35.0978146,
 		"lng": 136.9737492,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "snn"
+		"id": "snn",
+		"govId": "231002"
 	},
 	"akw": {
 		"code": [
@@ -4212,9 +3958,8 @@
 		],
 		"lat": 35.1025833,
 		"lng": 136.9740457,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "akw"
+		"id": "akw",
+		"govId": "231002"
 	},
 	"aoy": {
 		"code": [
@@ -4228,9 +3973,8 @@
 		],
 		"lat": 35.10772,
 		"lng": 136.9759148,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "aoy"
+		"id": "aoy",
+		"govId": "231002"
 	},
 	"hts": {
 		"code": [
@@ -4244,9 +3988,8 @@
 		],
 		"lat": 35.1132971,
 		"lng": 136.978303,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "hts"
+		"id": "hts",
+		"govId": "231002"
 	},
 	"smd": {
 		"code": [
@@ -4260,9 +4003,8 @@
 		],
 		"lat": 35.1192656,
 		"lng": 136.9777168,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "smd"
+		"id": "smd",
+		"govId": "231002"
 	},
 	"smb": {
 		"code": [
@@ -4276,9 +4018,8 @@
 		],
 		"lat": 35.123609,
 		"lng": 136.9709301,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "smb"
+		"id": "smb",
+		"govId": "231002"
 	},
 	"ikm": {
 		"code": [
@@ -4292,9 +4033,8 @@
 		],
 		"lat": 35.1279168,
 		"lng": 136.9690369,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ikm"
+		"id": "ikm",
+		"govId": "231002"
 	},
 	"omt": {
 		"code": [
@@ -4308,9 +4048,8 @@
 		],
 		"lat": 35.1312727,
 		"lng": 136.9664851,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "omt"
+		"id": "omt",
+		"govId": "231002"
 	},
 	"ygt": {
 		"code": [
@@ -4324,9 +4063,8 @@
 		],
 		"lat": 35.1367896,
 		"lng": 136.9642203,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ygt"
+		"id": "ygt",
+		"govId": "231002"
 	},
 	"chh": {
 		"code": [
@@ -4340,9 +4078,8 @@
 		],
 		"lat": 35.0036534,
 		"lng": 137.0383437,
-		"prefecture": "ai",
-		"city": "cr",
-		"id": "chh"
+		"id": "chh",
+		"govId": "232254"
 	},
 	"hks": {
 		"code": [
@@ -4356,9 +4093,8 @@
 		],
 		"lat": 35.0016838,
 		"lng": 137.034231,
-		"prefecture": "ai",
-		"city": "cr",
-		"id": "hks"
+		"id": "hks",
+		"govId": "232254"
 	},
 	"ksg": {
 		"code": [
@@ -4372,9 +4108,8 @@
 		],
 		"lat": 34.9990084,
 		"lng": 137.0297103,
-		"prefecture": "ai",
-		"city": "cr",
-		"id": "ksg"
+		"id": "ksg",
+		"govId": "232254"
 	},
 	"sgh": {
 		"code": [
@@ -4388,9 +4123,8 @@
 		],
 		"lat": 34.995287,
 		"lng": 137.0235133,
-		"prefecture": "ai",
-		"city": "cr",
-		"id": "sgh"
+		"id": "sgh",
+		"govId": "232254"
 	},
 	"isk": {
 		"code": [
@@ -4406,9 +4140,8 @@
 		],
 		"lat": 34.9922778,
 		"lng": 137.0173715,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "isk"
+		"id": "isk",
+		"govId": "232106"
 	},
 	"nky": {
 		"code": [
@@ -4422,9 +4155,8 @@
 		],
 		"lat": 34.9919613,
 		"lng": 137.0136665,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "nky"
+		"id": "nky",
+		"govId": "232106"
 	},
 	"tyo": {
 		"code": [
@@ -4438,9 +4170,8 @@
 		],
 		"lat": 34.9906588,
 		"lng": 137.0023342,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "tyo"
+		"id": "tyo",
+		"govId": "232106"
 	},
 	"ohm": {
 		"code": [
@@ -4454,9 +4185,8 @@
 		],
 		"lat": 34.9896698,
 		"lng": 136.9991122,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "ohm"
+		"id": "ohm",
+		"govId": "232106"
 	},
 	"kss": {
 		"code": [
@@ -4472,9 +4202,8 @@
 		],
 		"lat": 34.9874192,
 		"lng": 136.9954215,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "kss"
+		"id": "kss",
+		"govId": "232106"
 	},
 	"jnj": {
 		"code": [
@@ -4488,9 +4217,8 @@
 		],
 		"lat": 34.9858662,
 		"lng": 136.9922679,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "jnj"
+		"id": "jnj",
+		"govId": "232106"
 	},
 	"tkc": {
 		"code": [
@@ -4504,9 +4232,8 @@
 		],
 		"lat": 34.9840639,
 		"lng": 136.9837716,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "tkc"
+		"id": "tkc",
+		"govId": "232106"
 	},
 	"cty": {
 		"code": [
@@ -4520,9 +4247,8 @@
 		],
 		"lat": 34.9696768,
 		"lng": 136.9145429,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "cty"
+		"id": "cty",
+		"govId": "234427"
 	},
 	"nmg": {
 		"code": [
@@ -4536,9 +4262,8 @@
 		],
 		"lat": 34.9685197,
 		"lng": 136.9032402,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "nmg"
+		"id": "nmg",
+		"govId": "232246"
 	},
 	"sri": {
 		"code": [
@@ -4552,9 +4277,8 @@
 		],
 		"lat": 34.967965,
 		"lng": 136.88799,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "sri"
+		"id": "sri",
+		"govId": "232246"
 	},
 	"umg": {
 		"code": [
@@ -4568,9 +4292,8 @@
 		],
 		"lat": 34.9697142,
 		"lng": 136.8786357,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "umg"
+		"id": "umg",
+		"govId": "232246"
 	},
 	"gtn": {
 		"code": [
@@ -4584,9 +4307,8 @@
 		],
 		"lat": 34.9715337,
 		"lng": 136.8739751,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "gtn"
+		"id": "gtn",
+		"govId": "232246"
 	},
 	"ctc": {
 		"code": [
@@ -4600,9 +4322,8 @@
 		],
 		"lat": 34.973522,
 		"lng": 136.8706706,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "ctc"
+		"id": "ctc",
+		"govId": "232246"
 	},
 	"snc": {
 		"code": [
@@ -4616,9 +4337,8 @@
 		],
 		"lat": 34.9756684,
 		"lng": 136.8675084,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "snc"
+		"id": "snc",
+		"govId": "232246"
 	},
 	"cts": {
 		"code": [
@@ -4634,9 +4354,8 @@
 		],
 		"lat": 34.9808823,
 		"lng": 136.8630745,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "cts"
+		"id": "cts",
+		"govId": "232246"
 	},
 	"hmw": {
 		"code": [
@@ -4650,9 +4369,8 @@
 		],
 		"lat": 34.9859911,
 		"lng": 136.8605203,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "hmw"
+		"id": "hmw",
+		"govId": "232246"
 	},
 	"hgy": {
 		"code": [
@@ -4666,9 +4384,8 @@
 		],
 		"lat": 34.9902526,
 		"lng": 136.8627489,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "hgy"
+		"id": "hgy",
+		"govId": "232246"
 	},
 	"ask": {
 		"code": [
@@ -4682,9 +4399,8 @@
 		],
 		"lat": 34.9934817,
 		"lng": 136.8630707,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "ask"
+		"id": "ask",
+		"govId": "232246"
 	},
 	"hnm": {
 		"code": [
@@ -4698,9 +4414,8 @@
 		],
 		"lat": 34.8858857,
 		"lng": 136.9491574,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hnm"
+		"id": "hnm",
+		"govId": "232050"
 	},
 	"mzh": {
 		"code": [
@@ -4714,9 +4429,8 @@
 		],
 		"lat": 34.890999,
 		"lng": 136.947663,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "mzh"
+		"id": "mzh",
+		"govId": "232050"
 	},
 	"toy": {
 		"code": [
@@ -4730,9 +4444,8 @@
 		],
 		"lat": 34.8931535,
 		"lng": 136.9429776,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "toy"
+		"id": "toy",
+		"govId": "232050"
 	},
 	"hnd": {
 		"code": [
@@ -4748,9 +4461,8 @@
 		],
 		"lat": 34.8946364,
 		"lng": 136.9307949,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hnd"
+		"id": "hnd",
+		"govId": "232050"
 	},
 	"chn": {
 		"code": [
@@ -4764,9 +4476,8 @@
 		],
 		"lat": 34.8954269,
 		"lng": 136.9257586,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "chn"
+		"id": "chn",
+		"govId": "232050"
 	},
 	"krd": {
 		"code": [
@@ -4780,9 +4491,8 @@
 		],
 		"lat": 34.8962795,
 		"lng": 136.9192863,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "krd"
+		"id": "krd",
+		"govId": "232050"
 	},
 	"hrg": {
 		"code": [
@@ -4796,9 +4506,8 @@
 		],
 		"lat": 34.9030466,
 		"lng": 136.9146507,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hrg"
+		"id": "hrg",
+		"govId": "232050"
 	},
 	"hyc": {
 		"code": [
@@ -4812,9 +4521,8 @@
 		],
 		"lat": 34.9050796,
 		"lng": 136.9114779,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hyc"
+		"id": "hyc",
+		"govId": "232050"
 	},
 	"ynn": {
 		"code": [
@@ -4828,9 +4536,8 @@
 		],
 		"lat": 34.9083791,
 		"lng": 136.9067197,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "ynn"
+		"id": "ynn",
+		"govId": "232050"
 	},
 	"hri": {
 		"code": [
@@ -4844,9 +4551,8 @@
 		],
 		"lat": 34.908377,
 		"lng": 136.8982764,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hri"
+		"id": "hri",
+		"govId": "232050"
 	},
 	"sse": {
 		"code": [
@@ -4860,9 +4566,8 @@
 		],
 		"lat": 34.9077856,
 		"lng": 136.8923612,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "sse"
+		"id": "sse",
+		"govId": "232050"
 	},
 	"hor": {
 		"code": [
@@ -4876,9 +4581,8 @@
 		],
 		"lat": 34.9083335,
 		"lng": 136.8857186,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hor"
+		"id": "hor",
+		"govId": "232050"
 	},
 	"mti": {
 		"code": [
@@ -4892,9 +4596,8 @@
 		],
 		"lat": 34.9075112,
 		"lng": 136.8713356,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "mti"
+		"id": "mti",
+		"govId": "232050"
 	},
 	"kni": {
 		"code": [
@@ -4908,9 +4611,8 @@
 		],
 		"lat": 34.9025707,
 		"lng": 136.8633909,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "kni"
+		"id": "kni",
+		"govId": "232165"
 	},
 	"asd": {
 		"code": [
@@ -4924,9 +4626,8 @@
 		],
 		"lat": 34.8997288,
 		"lng": 136.8569642,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "asd"
+		"id": "asd",
+		"govId": "232165"
 	},
 	"stk": {
 		"code": [
@@ -4940,9 +4641,8 @@
 		],
 		"lat": 34.8983551,
 		"lng": 136.852005,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "stk"
+		"id": "stk",
+		"govId": "232165"
 	},
 	"ktj": {
 		"code": [
@@ -4956,9 +4656,8 @@
 		],
 		"lat": 34.8970102,
 		"lng": 136.8476933,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "ktj"
+		"id": "ktj",
+		"govId": "232165"
 	},
 	"hrm": {
 		"code": [
@@ -4972,9 +4671,8 @@
 		],
 		"lat": 34.8929823,
 		"lng": 136.8429469,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "hrm"
+		"id": "hrm",
+		"govId": "232165"
 	},
 	"mnd": {
 		"code": [
@@ -4988,9 +4686,8 @@
 		],
 		"lat": 34.8910009,
 		"lng": 136.8396583,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "mnd"
+		"id": "mnd",
+		"govId": "232165"
 	},
 	"tkn": {
 		"code": [
@@ -5004,9 +4701,8 @@
 		],
 		"lat": 34.8889637,
 		"lng": 136.8360588,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "tkn"
+		"id": "tkn",
+		"govId": "232165"
 	},
 	"tkk": {
 		"code": [
@@ -5020,9 +4716,8 @@
 		],
 		"lat": 34.8869876,
 		"lng": 136.8298349,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "tkk"
+		"id": "tkk",
+		"govId": "232165"
 	},
 	"rnk": {
 		"code": [
@@ -5036,9 +4731,8 @@
 		],
 		"lat": 34.8866576,
 		"lng": 136.8242291,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "rnk"
+		"id": "rnk",
+		"govId": "232165"
 	},
 	"rnt": {
 		"code": [
@@ -5052,9 +4746,8 @@
 		],
 		"lat": 34.8808454,
 		"lng": 136.8249055,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "rnt"
+		"id": "rnt",
+		"govId": "232165"
 	},
 	"ctk": {
 		"code": [
@@ -5068,9 +4761,8 @@
 		],
 		"lat": 34.8659242,
 		"lng": 136.8143014,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "ctk"
+		"id": "ctk",
+		"govId": "232165"
 	},
 	"ct1": {
 		"code": [
@@ -5084,9 +4776,8 @@
 		],
 		"lat": 34.8592489,
 		"lng": 136.8158145,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "ct1"
+		"id": "ct1",
+		"govId": "232165"
 	},
 	"ct2": {
 		"code": [
@@ -5100,9 +4791,8 @@
 		],
 		"lat": 34.8556312,
 		"lng": 136.8165717,
-		"prefecture": "ai",
-		"city": "tn",
-		"id": "ct2"
+		"id": "ct2",
+		"govId": "232165"
 	},
 	"hon": {
 		"code": [
@@ -5116,9 +4806,8 @@
 		],
 		"lat": 35.0473016,
 		"lng": 137.0714171,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "hon"
+		"id": "hon",
+		"govId": "232114"
 	},
 	"ttm": {
 		"code": [
@@ -5132,9 +4821,8 @@
 		],
 		"lat": 35.0501991,
 		"lng": 137.0777826,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "ttm"
+		"id": "ttm",
+		"govId": "232114"
 	},
 	"myg": {
 		"code": [
@@ -5148,9 +4836,8 @@
 		],
 		"lat": 35.0526023,
 		"lng": 137.0829714,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "myg"
+		"id": "myg",
+		"govId": "232114"
 	},
 	"hmt": {
 		"code": [
@@ -5164,9 +4851,8 @@
 		],
 		"lat": 35.0533903,
 		"lng": 137.0886263,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "hmt"
+		"id": "hmt",
+		"govId": "232114"
 	},
 	"tkr": {
 		"code": [
@@ -5180,9 +4866,8 @@
 		],
 		"lat": 35.0574778,
 		"lng": 137.0959122,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "tkr"
+		"id": "tkr",
+		"govId": "232114"
 	},
 	"otb": {
 		"code": [
@@ -5196,9 +4881,8 @@
 		],
 		"lat": 35.063689,
 		"lng": 137.1024654,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "otb"
+		"id": "otb",
+		"govId": "232114"
 	},
 	"tsr": {
 		"code": [
@@ -5212,9 +4896,8 @@
 		],
 		"lat": 35.0711925,
 		"lng": 137.1089004,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "tsr"
+		"id": "tsr",
+		"govId": "232114"
 	},
 	"hsn": {
 		"code": [
@@ -5228,9 +4911,8 @@
 		],
 		"lat": 35.0799434,
 		"lng": 137.1150411,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "hsn"
+		"id": "hsn",
+		"govId": "232114"
 	},
 	"tts": {
 		"code": [
@@ -5244,9 +4926,8 @@
 		],
 		"lat": 35.0790412,
 		"lng": 137.1214754,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "tts"
+		"id": "tts",
+		"govId": "232114"
 	},
 	"krg": {
 		"code": [
@@ -5260,9 +4941,8 @@
 		],
 		"lat": 35.0793765,
 		"lng": 137.1274358,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "krg"
+		"id": "krg",
+		"govId": "232114"
 	},
 	"hkt": {
 		"code": [
@@ -5276,9 +4956,8 @@
 		],
 		"lat": 35.081351,
 		"lng": 137.1326529,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "hkt"
+		"id": "hkt",
+		"govId": "232114"
 	},
 	"yts": {
 		"code": [
@@ -5292,9 +4971,8 @@
 		],
 		"lat": 35.0827395,
 		"lng": 137.1383947,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "yts"
+		"id": "yts",
+		"govId": "232114"
 	},
 	"kzk": {
 		"code": [
@@ -5308,9 +4986,8 @@
 		],
 		"lat": 35.0862606,
 		"lng": 137.1441821,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "kzk"
+		"id": "kzk",
+		"govId": "232114"
 	},
 	"tyt": {
 		"code": [
@@ -5324,9 +5001,8 @@
 		],
 		"lat": 35.0872396,
 		"lng": 137.1545102,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "tyt"
+		"id": "tyt",
+		"govId": "232114"
 	},
 	"yhg": {
 		"code": [
@@ -5340,9 +5016,8 @@
 		],
 		"lat": 35.0865616,
 		"lng": 137.1614666,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "yhg"
+		"id": "yhg",
+		"govId": "232114"
 	},
 	"tst": {
 		"code": [
@@ -5356,9 +5031,8 @@
 		],
 		"lat": 35.0858216,
 		"lng": 137.1713794,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "tst"
+		"id": "tst",
+		"govId": "232114"
 	},
 	"uen": {
 		"code": [
@@ -5372,9 +5046,8 @@
 		],
 		"lat": 35.0866309,
 		"lng": 137.1783024,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "uen"
+		"id": "uen",
+		"govId": "232114"
 	},
 	"kmg": {
 		"code": [
@@ -5388,9 +5061,8 @@
 		],
 		"lat": 35.086015,
 		"lng": 137.1848619,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "kmg"
+		"id": "kmg",
+		"govId": "232114"
 	},
 	"msb": {
 		"code": [
@@ -5404,9 +5076,8 @@
 		],
 		"lat": 35.0852682,
 		"lng": 137.1924994,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "msb"
+		"id": "msb",
+		"govId": "232114"
 	},
 	"hdk": {
 		"code": [
@@ -5422,9 +5093,8 @@
 		],
 		"lat": 35.0058622,
 		"lng": 136.9973772,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "hdk"
+		"id": "hdk",
+		"govId": "232106"
 	},
 	"kkr": {
 		"code": [
@@ -5438,9 +5108,8 @@
 		],
 		"lat": 34.9999713,
 		"lng": 136.9974806,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "kkr"
+		"id": "kkr",
+		"govId": "232106"
 	},
 	"skk": {
 		"code": [
@@ -5454,9 +5123,8 @@
 		],
 		"lat": 34.9928508,
 		"lng": 136.9950391,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "skk"
+		"id": "skk",
+		"govId": "232106"
 	},
 	"krt": {
 		"code": [
@@ -5470,9 +5138,8 @@
 		],
 		"lat": 34.9857098,
 		"lng": 137.0034994,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "krt"
+		"id": "krt",
+		"govId": "232106"
 	},
 	"ksm": {
 		"code": [
@@ -5486,9 +5153,8 @@
 		],
 		"lat": 34.9863464,
 		"lng": 137.0087296,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "ksm"
+		"id": "ksm",
+		"govId": "232106"
 	},
 	"krk": {
 		"code": [
@@ -5502,9 +5168,8 @@
 		],
 		"lat": 34.9866232,
 		"lng": 137.0141053,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "krk"
+		"id": "krk",
+		"govId": "232106"
 	},
 	"sms": {
 		"code": [
@@ -5518,9 +5183,8 @@
 		],
 		"lat": 34.9871817,
 		"lng": 137.017392,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "sms"
+		"id": "sms",
+		"govId": "232106"
 	},
 	"shw": {
 		"code": [
@@ -5534,9 +5198,8 @@
 		],
 		"lat": 34.9972269,
 		"lng": 137.0165168,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "shw"
+		"id": "shw",
+		"govId": "232106"
 	},
 	"ais": {
 		"code": [
@@ -5550,9 +5213,8 @@
 		],
 		"lat": 35.0001342,
 		"lng": 137.0161,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "ais"
+		"id": "ais",
+		"govId": "232106"
 	},
 	"ond": {
 		"code": [
@@ -5568,9 +5230,8 @@
 		],
 		"lat": 35.0059716,
 		"lng": 137.0149949,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "ond"
+		"id": "ond",
+		"govId": "232106"
 	},
 	"kra": {
 		"code": [
@@ -5584,9 +5245,8 @@
 		],
 		"lat": 35.0086306,
 		"lng": 137.0153193,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "kra"
+		"id": "kra",
+		"govId": "232106"
 	},
 	"aym": {
 		"code": [
@@ -5600,9 +5260,8 @@
 		],
 		"lat": 35.0112968,
 		"lng": 137.0111149,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "aym"
+		"id": "aym",
+		"govId": "232106"
 	},
 	"oym": {
 		"code": [
@@ -5616,9 +5275,8 @@
 		],
 		"lat": 35.0108313,
 		"lng": 136.9969627,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "oym"
+		"id": "oym",
+		"govId": "232106"
 	},
 	"ygh": {
 		"code": [
@@ -5634,9 +5292,8 @@
 		],
 		"lat": 35.0114341,
 		"lng": 136.8995344,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "ygh"
+		"id": "ygh",
+		"govId": "232220"
 	},
 	"yks": {
 		"code": [
@@ -5651,9 +5308,8 @@
 		],
 		"lat": 35.0082894,
 		"lng": 136.8957282,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "yks"
+		"id": "yks",
+		"govId": "232220"
 	},
 	"nzb": {
 		"code": [
@@ -5667,9 +5323,8 @@
 		],
 		"lat": 35.0030432,
 		"lng": 136.8886668,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "nzb"
+		"id": "nzb",
+		"govId": "232220"
 	},
 	"cth": {
 		"code": [
@@ -5683,9 +5338,8 @@
 		],
 		"lat": 34.9973331,
 		"lng": 136.8833012,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "cth"
+		"id": "cth",
+		"govId": "232246"
 	},
 	"chs": {
 		"code": [
@@ -5699,9 +5353,8 @@
 		],
 		"lat": 34.9928525,
 		"lng": 136.8774476,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "chs"
+		"id": "chs",
+		"govId": "232246"
 	},
 	"skd": {
 		"code": [
@@ -5715,9 +5368,8 @@
 		],
 		"lat": 34.9867041,
 		"lng": 136.8730273,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "skd"
+		"id": "skd",
+		"govId": "232246"
 	},
 	"ttj": {
 		"code": [
@@ -5731,9 +5383,8 @@
 		],
 		"lat": 34.9834891,
 		"lng": 136.8703317,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "ttj"
+		"id": "ttj",
+		"govId": "232246"
 	},
 	"scd": {
 		"code": [
@@ -5747,9 +5398,8 @@
 		],
 		"lat": 34.9813835,
 		"lng": 136.8683478,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "scd"
+		"id": "scd",
+		"govId": "232246"
 	},
 	"cht": {
 		"code": [
@@ -5763,9 +5413,8 @@
 		],
 		"lat": 34.9737696,
 		"lng": 136.8571451,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "cht"
+		"id": "cht",
+		"govId": "232246"
 	},
 	"mkg": {
 		"code": [
@@ -5779,9 +5428,8 @@
 		],
 		"lat": 34.9699132,
 		"lng": 136.8544131,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "mkg"
+		"id": "mkg",
+		"govId": "232246"
 	},
 	"okn": {
 		"code": [
@@ -5795,9 +5443,8 @@
 		],
 		"lat": 34.9684333,
 		"lng": 136.848552,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "okn"
+		"id": "okn",
+		"govId": "232246"
 	},
 	"hng": {
 		"code": [
@@ -5811,9 +5458,8 @@
 		],
 		"lat": 34.9639007,
 		"lng": 136.8400734,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "hng"
+		"id": "hng",
+		"govId": "232246"
 	},
 	"mdg": {
 		"code": [
@@ -5827,9 +5473,8 @@
 		],
 		"lat": 34.9599273,
 		"lng": 136.8370929,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "mdg"
+		"id": "mdg",
+		"govId": "232246"
 	},
 	"smk": {
 		"code": [
@@ -5843,9 +5488,8 @@
 		],
 		"lat": 34.9543823,
 		"lng": 136.8322923,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "smk"
+		"id": "smk",
+		"govId": "232246"
 	},
 	"smg": {
 		"code": [
@@ -5859,9 +5503,8 @@
 		],
 		"lat": 34.9500316,
 		"lng": 136.8326956,
-		"prefecture": "ai",
-		"city": "ct",
-		"id": "smg"
+		"id": "smg",
+		"govId": "232246"
 	},
 	"tgw": {
 		"code": [
@@ -5875,9 +5518,8 @@
 		],
 		"lat": 35.0200135,
 		"lng": 136.8907714,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "tgw"
+		"id": "tgw",
+		"govId": "232220"
 	},
 	"hsd": {
 		"code": [
@@ -5891,9 +5533,8 @@
 		],
 		"lat": 35.0170342,
 		"lng": 136.8993051,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "hsd"
+		"id": "hsd",
+		"govId": "232220"
 	},
 	"ktk": {
 		"code": [
@@ -5910,9 +5551,8 @@
 		],
 		"lat": 35.0080417,
 		"lng": 136.9086204,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "ktk"
+		"id": "ktk",
+		"govId": "232220"
 	},
 	"ysk": {
 		"code": [
@@ -5926,9 +5566,8 @@
 		],
 		"lat": 35.0051521,
 		"lng": 136.9232631,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "ysk"
+		"id": "ysk",
+		"govId": "232238"
 	},
 	"nkc": {
 		"code": [
@@ -5942,9 +5581,8 @@
 		],
 		"lat": 35.005876,
 		"lng": 136.9924228,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "nkc"
+		"id": "nkc",
+		"govId": "232106"
 	},
 	"mrt": {
 		"code": [
@@ -5958,9 +5596,8 @@
 		],
 		"lat": 34.9990596,
 		"lng": 137.00496,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "mrt"
+		"id": "mrt",
+		"govId": "232106"
 	},
 	"kik": {
 		"code": [
@@ -5974,9 +5611,8 @@
 		],
 		"lat": 35.0061363,
 		"lng": 137.0105825,
-		"prefecture": "ai",
-		"city": "kr",
-		"id": "kik"
+		"id": "kik",
+		"govId": "232106"
 	},
 	"kko": {
 		"code": [
@@ -5990,9 +5626,8 @@
 		],
 		"lat": 35.0051811,
 		"lng": 137.0229517,
-		"prefecture": "ai",
-		"city": "cr",
-		"id": "kko"
+		"id": "kko",
+		"govId": "232254"
 	},
 	"tri": {
 		"code": [
@@ -6006,9 +5641,8 @@
 		],
 		"lat": 35.0045437,
 		"lng": 137.0299258,
-		"prefecture": "ai",
-		"city": "cr",
-		"id": "tri"
+		"id": "tri",
+		"govId": "232254"
 	},
 	"ngn": {
 		"code": [
@@ -6025,9 +5659,8 @@
 		],
 		"lat": 35.0188646,
 		"lng": 136.9681358,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "ngn"
+		"id": "ngn",
+		"govId": "232238"
 	},
 	"kjt": {
 		"code": [
@@ -6041,9 +5674,8 @@
 		],
 		"lat": 35.0369782,
 		"lng": 136.9705605,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "kjt"
+		"id": "kjt",
+		"govId": "232238"
 	},
 	"alb": {
 		"code": [
@@ -6059,9 +5691,8 @@
 		],
 		"lat": 35.0193017,
 		"lng": 136.9478994,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "alb"
+		"id": "alb",
+		"govId": "232238"
 	},
 	"ebt": {
 		"code": [
@@ -6076,9 +5707,8 @@
 		],
 		"lat": 35.0123565,
 		"lng": 136.9503483,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "ebt"
+		"id": "ebt",
+		"govId": "232238"
 	},
 	"omn": {
 		"code": [
@@ -6092,9 +5722,8 @@
 		],
 		"lat": 35.0075487,
 		"lng": 136.9536522,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "omn"
+		"id": "omn",
+		"govId": "232238"
 	},
 	"mhc": {
 		"code": [
@@ -6108,9 +5737,8 @@
 		],
 		"lat": 34.8906102,
 		"lng": 136.9328219,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "mhc"
+		"id": "mhc",
+		"govId": "232050"
 	},
 	"mnt": {
 		"code": [
@@ -6124,9 +5752,8 @@
 		],
 		"lat": 34.8863605,
 		"lng": 136.9295545,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "mnt"
+		"id": "mnt",
+		"govId": "232050"
 	},
 	"nrw": {
 		"code": [
@@ -6140,9 +5767,8 @@
 		],
 		"lat": 34.8828401,
 		"lng": 136.9262085,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "nrw"
+		"id": "nrw",
+		"govId": "232050"
 	},
 	"gdg": {
 		"code": [
@@ -6156,9 +5782,8 @@
 		],
 		"lat": 34.8789254,
 		"lng": 136.9233095,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "gdg"
+		"id": "gdg",
+		"govId": "232050"
 	},
 	"asm": {
 		"code": [
@@ -6172,9 +5797,8 @@
 		],
 		"lat": 34.8743424,
 		"lng": 136.9207135,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "asm"
+		"id": "asm",
+		"govId": "232050"
 	},
 	"yrk": {
 		"code": [
@@ -6188,9 +5812,8 @@
 		],
 		"lat": 34.8701506,
 		"lng": 136.918548,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "yrk"
+		"id": "yrk",
+		"govId": "232050"
 	},
 	"ikb": {
 		"code": [
@@ -6204,9 +5827,8 @@
 		],
 		"lat": 34.8661045,
 		"lng": 136.9198307,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "ikb"
+		"id": "ikb",
+		"govId": "234478"
 	},
 	"tmn": {
 		"code": [
@@ -6220,9 +5842,8 @@
 		],
 		"lat": 34.8591771,
 		"lng": 136.9204451,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "tmn"
+		"id": "tmn",
+		"govId": "234478"
 	},
 	"tkt": {
 		"code": [
@@ -6236,9 +5857,8 @@
 		],
 		"lat": 34.8530458,
 		"lng": 136.9224424,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "tkt"
+		"id": "tkt",
+		"govId": "234478"
 	},
 	"stn": {
 		"code": [
@@ -6252,9 +5872,8 @@
 		],
 		"lat": 34.8456566,
 		"lng": 136.9238661,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "stn"
+		"id": "stn",
+		"govId": "234478"
 	},
 	"hzm": {
 		"code": [
@@ -6268,9 +5887,8 @@
 		],
 		"lat": 34.8395027,
 		"lng": 136.9210546,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "hzm"
+		"id": "hzm",
+		"govId": "234478"
 	},
 	"urn": {
 		"code": [
@@ -6284,9 +5902,8 @@
 		],
 		"lat": 34.8344866,
 		"lng": 136.9202433,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "urn"
+		"id": "urn",
+		"govId": "234478"
 	},
 	"sfk": {
 		"code": [
@@ -6302,9 +5919,8 @@
 		],
 		"lat": 34.8285761,
 		"lng": 136.9200409,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "sfk"
+		"id": "sfk",
+		"govId": "234478"
 	},
 	"kgt": {
 		"code": [
@@ -6318,9 +5934,8 @@
 		],
 		"lat": 34.8228998,
 		"lng": 136.9201665,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "kgt"
+		"id": "kgt",
+		"govId": "234478"
 	},
 	"snt": {
 		"code": [
@@ -6334,9 +5949,8 @@
 		],
 		"lat": 34.8175997,
 		"lng": 136.920369,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "snt"
+		"id": "snt",
+		"govId": "234478"
 	},
 	"umn": {
 		"code": [
@@ -6350,9 +5964,8 @@
 		],
 		"lat": 34.8096621,
 		"lng": 136.9188215,
-		"prefecture": "ai",
-		"city": "mh",
-		"id": "umn"
+		"id": "umn",
+		"govId": "234460"
 	},
 	"ftt": {
 		"code": [
@@ -6366,9 +5979,8 @@
 		],
 		"lat": 34.8040898,
 		"lng": 136.9185255,
-		"prefecture": "ai",
-		"city": "mh",
-		"id": "ftt"
+		"id": "ftt",
+		"govId": "234460"
 	},
 	"kwg": {
 		"code": [
@@ -6382,9 +5994,8 @@
 		],
 		"lat": 34.7981668,
 		"lng": 136.918889,
-		"prefecture": "ai",
-		"city": "mh",
-		"id": "kwg"
+		"id": "kwg",
+		"govId": "234460"
 	},
 	"tks": {
 		"code": [
@@ -6398,9 +6009,8 @@
 		],
 		"lat": 34.7935243,
 		"lng": 136.9206474,
-		"prefecture": "ai",
-		"city": "mh",
-		"id": "tks"
+		"id": "tks",
+		"govId": "234460"
 	},
 	"kwa": {
 		"code": [
@@ -6414,9 +6024,8 @@
 		],
 		"lat": 34.7772066,
 		"lng": 136.9129361,
-		"prefecture": "ai",
-		"city": "mh",
-		"id": "kwa"
+		"id": "kwa",
+		"govId": "234460"
 	},
 	"kwk": {
 		"code": [
@@ -6430,9 +6039,8 @@
 		],
 		"lat": 34.7697145,
 		"lng": 136.9140759,
-		"prefecture": "ai",
-		"city": "mh",
-		"id": "kwk"
+		"id": "kwk",
+		"govId": "234460"
 	},
 	"sur": {
 		"code": [
@@ -6446,9 +6054,8 @@
 		],
 		"lat": 34.7653225,
 		"lng": 136.9178678,
-		"prefecture": "ai",
-		"city": "mh",
-		"id": "sur"
+		"id": "sur",
+		"govId": "234460"
 	},
 	"koh": {
 		"code": [
@@ -6464,9 +6071,8 @@
 		],
 		"lat": 34.7608963,
 		"lng": 136.9205918,
-		"prefecture": "ai",
-		"city": "mh",
-		"id": "koh"
+		"id": "koh",
+		"govId": "234460"
 	},
 	"mnh": {
 		"code": [
@@ -6480,9 +6086,8 @@
 		],
 		"lat": 34.7550052,
 		"lng": 136.9287749,
-		"prefecture": "ai",
-		"city": "mh",
-		"id": "mnh"
+		"id": "mnh",
+		"govId": "234460"
 	},
 	"gjm": {
 		"code": [
@@ -6496,9 +6101,8 @@
 		],
 		"lat": 34.7512413,
 		"lng": 136.9348525,
-		"prefecture": "ai",
-		"city": "mh",
-		"id": "gjm"
+		"id": "gjm",
+		"govId": "234460"
 	},
 	"ymd": {
 		"code": [
@@ -6512,9 +6116,8 @@
 		],
 		"lat": 34.7414134,
 		"lng": 136.9472187,
-		"prefecture": "ai",
-		"city": "mn",
-		"id": "ymd"
+		"id": "ymd",
+		"govId": "234451"
 	},
 	"oik": {
 		"code": [
@@ -6528,9 +6131,8 @@
 		],
 		"lat": 34.7199687,
 		"lng": 136.9620954,
-		"prefecture": "ai",
-		"city": "mn",
-		"id": "oik"
+		"id": "oik",
+		"govId": "234451"
 	},
 	"ktn": {
 		"code": [
@@ -6544,9 +6146,8 @@
 		],
 		"lat": 34.7124762,
 		"lng": 136.9679273,
-		"prefecture": "ai",
-		"city": "mn",
-		"id": "ktn"
+		"id": "ktn",
+		"govId": "234451"
 	},
 	"smr": {
 		"code": [
@@ -6560,9 +6161,8 @@
 		],
 		"lat": 34.7074152,
 		"lng": 136.9684845,
-		"prefecture": "ai",
-		"city": "mn",
-		"id": "smr"
+		"id": "smr",
+		"govId": "234451"
 	},
 	"mrg": {
 		"code": [
@@ -6576,9 +6176,8 @@
 		],
 		"lat": 34.7042975,
 		"lng": 136.9734971,
-		"prefecture": "ai",
-		"city": "mn",
-		"id": "mrg"
+		"id": "mrg",
+		"govId": "234451"
 	},
 	"mrz": {
 		"code": [
@@ -6592,9 +6191,8 @@
 		],
 		"lat": 34.7001626,
 		"lng": 136.9719332,
-		"prefecture": "ai",
-		"city": "mn",
-		"id": "mrz"
+		"id": "mrz",
+		"govId": "234451"
 	},
 	"mzk": {
 		"code": [
@@ -6608,9 +6206,8 @@
 		],
 		"lat": 34.6977474,
 		"lng": 136.970839,
-		"prefecture": "ai",
-		"city": "mn",
-		"id": "mzk"
+		"id": "mzk",
+		"govId": "234451"
 	},
 	"rnw": {
 		"code": [
@@ -6624,9 +6221,8 @@
 		],
 		"lat": 35.0550405,
 		"lng": 136.9163057,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "rnw"
+		"id": "rnw",
+		"govId": "232220"
 	},
 	"mjd": {
 		"code": [
@@ -6640,9 +6236,8 @@
 		],
 		"lat": 35.0484904,
 		"lng": 136.9164127,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "mjd"
+		"id": "mjd",
+		"govId": "232220"
 	},
 	"jtk": {
 		"code": [
@@ -6656,9 +6251,8 @@
 		],
 		"lat": 35.0434321,
 		"lng": 136.9173906,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "jtk"
+		"id": "jtk",
+		"govId": "232220"
 	},
 	"wkn": {
 		"code": [
@@ -6672,9 +6266,8 @@
 		],
 		"lat": 35.0321634,
 		"lng": 136.9142714,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "wkn"
+		"id": "wkn",
+		"govId": "232220"
 	},
 	"amm": {
 		"code": [
@@ -6690,9 +6283,8 @@
 		],
 		"lat": 35.0253003,
 		"lng": 136.9140876,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "amm"
+		"id": "amm",
+		"govId": "232220"
 	},
 	"fsm": {
 		"code": [
@@ -6706,9 +6298,8 @@
 		],
 		"lat": 35.0148348,
 		"lng": 136.9107783,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "fsm"
+		"id": "fsm",
+		"govId": "232220"
 	},
 	"ust": {
 		"code": [
@@ -6722,9 +6313,8 @@
 		],
 		"lat": 34.9970203,
 		"lng": 136.9087513,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "ust"
+		"id": "ust",
+		"govId": "232220"
 	},
 	"mnk": {
 		"code": [
@@ -6738,9 +6328,8 @@
 		],
 		"lat": 34.9884189,
 		"lng": 136.9065651,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "mnk"
+		"id": "mnk",
+		"govId": "232220"
 	},
 	"nkh": {
 		"code": [
@@ -6754,9 +6343,8 @@
 		],
 		"lat": 34.9811396,
 		"lng": 136.90833,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "nkh"
+		"id": "nkh",
+		"govId": "232220"
 	},
 	"kjo": {
 		"code": [
@@ -6770,9 +6358,8 @@
 		],
 		"lat": 34.7524207,
 		"lng": 136.9112451,
-		"prefecture": "ai",
-		"city": "mh",
-		"id": "kjo"
+		"id": "kjo",
+		"govId": "234460"
 	},
 	"ucd": {
 		"code": [
@@ -6786,9 +6373,8 @@
 		],
 		"lat": 34.7466542,
 		"lng": 136.8995391,
-		"prefecture": "ai",
-		"city": "mn",
-		"id": "ucd"
+		"id": "ucd",
+		"govId": "234451"
 	},
 	"utm": {
 		"code": [
@@ -6802,9 +6388,8 @@
 		],
 		"lat": 34.7455306,
 		"lng": 136.8754645,
-		"prefecture": "ai",
-		"city": "mn",
-		"id": "utm"
+		"id": "utm",
+		"govId": "234451"
 	},
 	"wsk": {
 		"code": [
@@ -6818,9 +6403,8 @@
 		],
 		"lat": 34.7440812,
 		"lng": 136.8698746,
-		"prefecture": "ai",
-		"city": "mn",
-		"id": "wsk"
+		"id": "wsk",
+		"govId": "234451"
 	},
 	"utk": {
 		"code": [
@@ -6834,9 +6418,8 @@
 		],
 		"lat": 34.7393192,
 		"lng": 136.8680506,
-		"prefecture": "ai",
-		"city": "mn",
-		"id": "utk"
+		"id": "utk",
+		"govId": "234451"
 	},
 	"ars": {
 		"code": [
@@ -6850,9 +6433,8 @@
 		],
 		"lat": 35.0302011,
 		"lng": 136.896807,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "ars"
+		"id": "ars",
+		"govId": "232220"
 	},
 	"okk": {
 		"code": [
@@ -6866,9 +6448,8 @@
 		],
 		"lat": 35.0280607,
 		"lng": 136.9023454,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "okk"
+		"id": "okk",
+		"govId": "232220"
 	},
 	"kfn": {
 		"code": [
@@ -6882,9 +6463,8 @@
 		],
 		"lat": 35.0242822,
 		"lng": 136.9197713,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "kfn"
+		"id": "kfn",
+		"govId": "232220"
 	},
 	"gkt": {
 		"code": [
@@ -6898,9 +6478,8 @@
 		],
 		"lat": 35.0213468,
 		"lng": 136.9319019,
-		"prefecture": "ai",
-		"city": "to",
-		"id": "gkt"
+		"id": "gkt",
+		"govId": "232220"
 	},
 	"tti": {
 		"code": [
@@ -6914,9 +6493,8 @@
 		],
 		"lat": 35.0266095,
 		"lng": 136.983434,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "tti"
+		"id": "tti",
+		"govId": "232238"
 	},
 	"mdk": {
 		"code": [
@@ -6930,9 +6508,8 @@
 		],
 		"lat": 35.0380651,
 		"lng": 136.9857546,
-		"prefecture": "ai",
-		"city": "ob",
-		"id": "mdk"
+		"id": "mdk",
+		"govId": "232238"
 	},
 	"szy": {
 		"code": [
@@ -6946,9 +6523,8 @@
 		],
 		"lat": 35.0437001,
 		"lng": 136.9900041,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "szy"
+		"id": "szy",
+		"govId": "232297"
 	},
 	"zng": {
 		"code": [
@@ -6962,9 +6538,8 @@
 		],
 		"lat": 35.0517122,
 		"lng": 136.9963002,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "zng"
+		"id": "zng",
+		"govId": "232297"
 	},
 	"fmd": {
 		"code": [
@@ -6978,9 +6553,8 @@
 		],
 		"lat": 35.0632624,
 		"lng": 137.0073656,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "fmd"
+		"id": "fmd",
+		"govId": "232297"
 	},
 	"tyd": {
 		"code": [
@@ -6994,9 +6568,8 @@
 		],
 		"lat": 35.0649593,
 		"lng": 137.0114326,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "tyd"
+		"id": "tyd",
+		"govId": "232297"
 	},
 	"wkm": {
 		"code": [
@@ -7010,9 +6583,8 @@
 		],
 		"lat": 35.0667274,
 		"lng": 137.0151557,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "wkm"
+		"id": "wkm",
+		"govId": "232297"
 	},
 	"kkk": {
 		"code": [
@@ -7026,9 +6598,8 @@
 		],
 		"lat": 35.0720277,
 		"lng": 137.0217726,
-		"prefecture": "ai",
-		"city": "ta",
-		"id": "kkk"
+		"id": "kkk",
+		"govId": "232297"
 	},
 	"kmk": {
 		"code": [
@@ -7042,9 +6613,8 @@
 		],
 		"lat": 34.9641249,
 		"lng": 136.9187445,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "kmk"
+		"id": "kmk",
+		"govId": "234427"
 	},
 	"mri": {
 		"code": [
@@ -7058,9 +6628,8 @@
 		],
 		"lat": 34.961159,
 		"lng": 136.9218302,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "mri"
+		"id": "mri",
+		"govId": "234427"
 	},
 	"hgo": {
 		"code": [
@@ -7074,9 +6643,8 @@
 		],
 		"lat": 34.9584636,
 		"lng": 136.9249833,
-		"prefecture": "ai",
-		"city": "hg",
-		"id": "hgo"
+		"id": "hgo",
+		"govId": "234427"
 	},
 	"tkd": {
 		"code": [
@@ -7090,9 +6658,8 @@
 		],
 		"lat": 34.954559,
 		"lng": 136.924916,
-		"prefecture": "ai",
-		"city": "ag",
-		"id": "tkd"
+		"id": "tkd",
+		"govId": "234419"
 	},
 	"fks": {
 		"code": [
@@ -7106,9 +6673,8 @@
 		],
 		"lat": 34.9488173,
 		"lng": 136.9225936,
-		"prefecture": "ai",
-		"city": "ag",
-		"id": "fks"
+		"id": "fks",
+		"govId": "234419"
 	},
 	"ark": {
 		"code": [
@@ -7122,9 +6688,8 @@
 		],
 		"lat": 34.9435596,
 		"lng": 136.9218667,
-		"prefecture": "ai",
-		"city": "ag",
-		"id": "ark"
+		"id": "ark",
+		"govId": "234419"
 	},
 	"kth": {
 		"code": [
@@ -7138,9 +6703,8 @@
 		],
 		"lat": 34.9381172,
 		"lng": 136.9218267,
-		"prefecture": "ai",
-		"city": "ag",
-		"id": "kth"
+		"id": "kth",
+		"govId": "234419"
 	},
 	"myz": {
 		"code": [
@@ -7154,9 +6718,8 @@
 		],
 		"lat": 34.9328018,
 		"lng": 136.9223236,
-		"prefecture": "ai",
-		"city": "ag",
-		"id": "myz"
+		"id": "myz",
+		"govId": "234419"
 	},
 	"knd": {
 		"code": [
@@ -7170,9 +6733,8 @@
 		],
 		"lat": 34.9279844,
 		"lng": 136.9253645,
-		"prefecture": "ai",
-		"city": "ag",
-		"id": "knd"
+		"id": "knd",
+		"govId": "234419"
 	},
 	"hgi": {
 		"code": [
@@ -7186,9 +6748,8 @@
 		],
 		"lat": 34.9215108,
 		"lng": 136.9282675,
-		"prefecture": "ai",
-		"city": "ag",
-		"id": "hgi"
+		"id": "hgi",
+		"govId": "234419"
 	},
 	"ynh": {
 		"code": [
@@ -7202,9 +6763,8 @@
 		],
 		"lat": 34.9099368,
 		"lng": 136.9307503,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "ynh"
+		"id": "ynh",
+		"govId": "232050"
 	},
 	"hds": {
 		"code": [
@@ -7218,9 +6778,8 @@
 		],
 		"lat": 34.9057159,
 		"lng": 136.9307123,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hds"
+		"id": "hds",
+		"govId": "232050"
 	},
 	"hdn": {
 		"code": [
@@ -7234,9 +6793,8 @@
 		],
 		"lat": 34.8900651,
 		"lng": 136.9274512,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hdn"
+		"id": "hdn",
+		"govId": "232050"
 	},
 	"sk2": {
 		"code": [
@@ -7250,9 +6808,8 @@
 		],
 		"lat": 34.8867769,
 		"lng": 136.9248852,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "sk2"
+		"id": "sk2",
+		"govId": "232050"
 	},
 	"sk4": {
 		"code": [
@@ -7266,9 +6823,8 @@
 		],
 		"lat": 34.8829601,
 		"lng": 136.921902,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "sk4"
+		"id": "sk4",
+		"govId": "232050"
 	},
 	"say": {
 		"code": [
@@ -7282,9 +6838,8 @@
 		],
 		"lat": 34.878956,
 		"lng": 136.9187559,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "say"
+		"id": "say",
+		"govId": "232050"
 	},
 	"hnz": {
 		"code": [
@@ -7298,9 +6853,8 @@
 		],
 		"lat": 34.8751471,
 		"lng": 136.9137405,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hnz"
+		"id": "hnz",
+		"govId": "232050"
 	},
 	"hso": {
 		"code": [
@@ -7314,9 +6868,8 @@
 		],
 		"lat": 34.8703422,
 		"lng": 136.9117589,
-		"prefecture": "ai",
-		"city": "hn",
-		"id": "hso"
+		"id": "hso",
+		"govId": "232050"
 	},
 	"kgr": {
 		"code": [
@@ -7330,9 +6883,8 @@
 		],
 		"lat": 34.8655972,
 		"lng": 136.9115867,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "kgr"
+		"id": "kgr",
+		"govId": "234478"
 	},
 	"hbt": {
 		"code": [
@@ -7346,9 +6898,8 @@
 		],
 		"lat": 34.8596884,
 		"lng": 136.9114635,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "hbt"
+		"id": "hbt",
+		"govId": "234478"
 	},
 	"ttn": {
 		"code": [
@@ -7362,9 +6913,8 @@
 		],
 		"lat": 34.8523969,
 		"lng": 136.9114174,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "ttn"
+		"id": "ttn",
+		"govId": "234478"
 	},
 	"cky": {
 		"code": [
@@ -7378,9 +6928,8 @@
 		],
 		"lat": 34.8477808,
 		"lng": 136.9118694,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "cky"
+		"id": "cky",
+		"govId": "234478"
 	},
 	"dmn": {
 		"code": [
@@ -7394,9 +6943,8 @@
 		],
 		"lat": 34.8412773,
 		"lng": 136.9110291,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "dmn"
+		"id": "dmn",
+		"govId": "234478"
 	},
 	"ttc": {
 		"code": [
@@ -7410,9 +6958,8 @@
 		],
 		"lat": 34.8347721,
 		"lng": 136.9081713,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "ttc"
+		"id": "ttc",
+		"govId": "234478"
 	},
 	"fkm": {
 		"code": [
@@ -7426,9 +6973,8 @@
 		],
 		"lat": 34.8299544,
 		"lng": 136.9106299,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "fkm"
+		"id": "fkm",
+		"govId": "234478"
 	},
 	"fki": {
 		"code": [
@@ -7442,9 +6988,8 @@
 		],
 		"lat": 34.8301892,
 		"lng": 136.9167185,
-		"prefecture": "ai",
-		"city": "tk",
-		"id": "fki"
+		"id": "fki",
+		"govId": "234478"
 	},
 	"hrj": {
 		"code": [
@@ -7458,9 +7003,8 @@
 		],
 		"lat": 35.1401899,
 		"lng": 136.9592741,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "hrj"
+		"id": "hrj",
+		"govId": "231002"
 	},
 	"irn": {
 		"code": [
@@ -7474,9 +7018,8 @@
 		],
 		"lat": 35.1435054,
 		"lng": 136.9550516,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "irn"
+		"id": "irn",
+		"govId": "231002"
 	},
 	"kwn": {
 		"code": [
@@ -7490,9 +7033,8 @@
 		],
 		"lat": 35.1489173,
 		"lng": 136.9510707,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "kwn"
+		"id": "kwn",
+		"govId": "231002"
 	},
 	"ysd": {
 		"code": [
@@ -7506,9 +7048,8 @@
 		],
 		"lat": 35.1538106,
 		"lng": 136.9459494,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ysd"
+		"id": "ysd",
+		"govId": "231002"
 	},
 	"hro": {
 		"code": [
@@ -7522,9 +7063,8 @@
 		],
 		"lat": 35.1576148,
 		"lng": 136.9397606,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "hro"
+		"id": "hro",
+		"govId": "231002"
 	},
 	"fkg": {
 		"code": [
@@ -7538,9 +7078,8 @@
 		],
 		"lat": 35.1593502,
 		"lng": 136.9339301,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "fkg"
+		"id": "fkg",
+		"govId": "231002"
 	},
 	"mck": {
 		"code": [
@@ -7554,9 +7093,8 @@
 		],
 		"lat": 35.1628042,
 		"lng": 136.9299175,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "mck"
+		"id": "mck",
+		"govId": "231002"
 	},
 	"kkz": {
 		"code": [
@@ -7570,9 +7108,8 @@
 		],
 		"lat": 35.1658263,
 		"lng": 136.9254163,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "kkz"
+		"id": "kkz",
+		"govId": "231002"
 	},
 	"ssk": {
 		"code": [
@@ -7586,9 +7123,8 @@
 		],
 		"lat": 35.1696117,
 		"lng": 136.9177721,
-		"prefecture": "ai",
-		"city": "ng",
-		"id": "ssk"
+		"id": "ssk",
+		"govId": "231002"
 	},
 	"tbs": {
 		"code": [
@@ -7602,9 +7138,8 @@
 		],
 		"lat": 35.0518561,
 		"lng": 136.8177671,
-		"prefecture": "ai",
-		"city": "tb",
-		"id": "tbs"
+		"id": "tbs",
+		"govId": "234273"
 	},
 	"nkb": {
 		"code": [
@@ -7618,9 +7153,8 @@
 		],
 		"lat": 35.0494672,
 		"lng": 136.7806752,
-		"prefecture": "ai",
-		"city": "yt",
-		"id": "nkb"
+		"id": "nkb",
+		"govId": "232351"
 	},
 	"wng": {
 		"code": [
@@ -7634,9 +7168,8 @@
 		],
 		"lat": 35.0325205,
 		"lng": 136.7264469,
-		"prefecture": "me",
-		"city": "kw",
-		"id": "wng"
+		"id": "wng",
+		"govId": "242055"
 	},
 	"kmb": {
 		"code": [
@@ -7650,9 +7183,8 @@
 		],
 		"lat": 35.0190327,
 		"lng": 137.0553958,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "kmb"
+		"id": "kmb",
+		"govId": "232114"
 	},
 	"mgn": {
 		"code": [
@@ -7666,9 +7198,8 @@
 		],
 		"lat": 35.0178107,
 		"lng": 137.0643869,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "mgn"
+		"id": "mgn",
+		"govId": "232114"
 	},
 	"kmr": {
 		"code": [
@@ -7682,9 +7213,8 @@
 		],
 		"lat": 35.0161122,
 		"lng": 137.0767456,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "kmr"
+		"id": "kmr",
+		"govId": "232114"
 	},
 	"wkz": {
 		"code": [
@@ -7698,9 +7228,8 @@
 		],
 		"lat": 35.0145273,
 		"lng": 137.0846095,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "wkz"
+		"id": "wkz",
+		"govId": "232114"
 	},
 	"ysw": {
 		"code": [
@@ -7714,9 +7243,8 @@
 		],
 		"lat": 35.0107838,
 		"lng": 137.0919939,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "ysw"
+		"id": "ysw",
+		"govId": "232114"
 	},
 	"kug": {
 		"code": [
@@ -7730,9 +7258,8 @@
 		],
 		"lat": 35.004231,
 		"lng": 137.0994101,
-		"prefecture": "ai",
-		"city": "an",
-		"id": "kug"
+		"id": "kug",
+		"govId": "232122"
 	},
 	"fkj": {
 		"code": [
@@ -7746,9 +7273,8 @@
 		],
 		"lat": 34.9915647,
 		"lng": 137.1171649,
-		"prefecture": "ai",
-		"city": "ty",
-		"id": "fkj"
+		"id": "fkj",
+		"govId": "232114"
 	},
 	"kbr": {
 		"code": [
@@ -7762,9 +7288,8 @@
 		],
 		"lat": 34.98588,
 		"lng": 137.126683,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "kbr"
+		"id": "kbr",
+		"govId": "232025"
 	},
 	"hkb": {
 		"code": [
@@ -7778,9 +7303,8 @@
 		],
 		"lat": 34.9839358,
 		"lng": 137.1325482,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "hkb"
+		"id": "hkb",
+		"govId": "232025"
 	},
 	"ozk": {
 		"code": [
@@ -7794,9 +7318,8 @@
 		],
 		"lat": 34.9838324,
 		"lng": 137.1397575,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "ozk"
+		"id": "ozk",
+		"govId": "232025"
 	},
 	"ozo": {
 		"code": [
@@ -7810,9 +7333,8 @@
 		],
 		"lat": 34.9831446,
 		"lng": 137.1489232,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "ozo"
+		"id": "ozo",
+		"govId": "232025"
 	},
 	"dmo": {
 		"code": [
@@ -7826,9 +7348,8 @@
 		],
 		"lat": 34.9820439,
 		"lng": 137.1547255,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "dmo"
+		"id": "dmo",
+		"govId": "232025"
 	},
 	"djj": {
 		"code": [
@@ -7843,9 +7364,8 @@
 		],
 		"lat": 34.9806834,
 		"lng": 137.1617646,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "djj"
+		"id": "djj",
+		"govId": "232025"
 	},
 	"idr": {
 		"code": [
@@ -7859,9 +7379,8 @@
 		],
 		"lat": 34.9766657,
 		"lng": 137.1681103,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "idr"
+		"id": "idr",
+		"govId": "232025"
 	},
 	"igc": {
 		"code": [
@@ -7875,9 +7394,8 @@
 		],
 		"lat": 34.9720593,
 		"lng": 137.1669214,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "igc"
+		"id": "igc",
+		"govId": "232025"
 	},
 	"nom": {
 		"code": [
@@ -7891,9 +7409,8 @@
 		],
 		"lat": 34.9667177,
 		"lng": 137.1633011,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "nom"
+		"id": "nom",
+		"govId": "232025"
 	},
 	"hmd": {
 		"code": [
@@ -7907,9 +7424,8 @@
 		],
 		"lat": 34.961566,
 		"lng": 137.1630576,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "hmd"
+		"id": "hmd",
+		"govId": "232025"
 	},
 	"ozh": {
 		"code": [
@@ -7923,9 +7439,8 @@
 		],
 		"lat": 34.9570706,
 		"lng": 137.1639715,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "ozh"
+		"id": "ozh",
+		"govId": "232025"
 	},
 	"hoz": {
 		"code": [
@@ -7939,9 +7454,8 @@
 		],
 		"lat": 34.9524344,
 		"lng": 137.1640716,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "hoz"
+		"id": "hoz",
+		"govId": "232025"
 	},
 	"iks": {
 		"code": [
@@ -7955,9 +7469,8 @@
 		],
 		"lat": 34.9474308,
 		"lng": 137.1630369,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "iks"
+		"id": "iks",
+		"govId": "232025"
 	},
 	"znd": {
 		"code": [
@@ -7971,9 +7484,8 @@
 		],
 		"lat": 34.9411059,
 		"lng": 137.1623382,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "znd"
+		"id": "znd",
+		"govId": "232025"
 	},
 	"tsk": {
 		"code": [
@@ -7987,9 +7499,8 @@
 		],
 		"lat": 34.9365006,
 		"lng": 137.1613678,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "tsk"
+		"id": "tsk",
+		"govId": "232025"
 	},
 	"onk": {
 		"code": [
@@ -8003,9 +7514,8 @@
 		],
 		"lat": 34.9307836,
 		"lng": 137.1598413,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "onk"
+		"id": "onk",
+		"govId": "232025"
 	},
 	"okz": {
 		"code": [
@@ -8019,9 +7529,8 @@
 		],
 		"lat": 34.9256662,
 		"lng": 137.1580679,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "okz"
+		"id": "okz",
+		"govId": "232025"
 	},
 	"kmo": {
 		"code": [
@@ -8035,9 +7544,8 @@
 		],
 		"lat": 34.979199,
 		"lng": 137.1694874,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "kmo"
+		"id": "kmo",
+		"govId": "232025"
 	},
 	"ida": {
 		"code": [
@@ -8051,9 +7559,8 @@
 		],
 		"lat": 34.9776136,
 		"lng": 137.1749806,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "ida"
+		"id": "ida",
+		"govId": "232025"
 	},
 	"igs": {
 		"code": [
@@ -8067,9 +7574,8 @@
 		],
 		"lat": 34.9741342,
 		"lng": 137.1781431,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "igs"
+		"id": "igs",
+		"govId": "232025"
 	},
 	"ing": {
 		"code": [
@@ -8083,9 +7589,8 @@
 		],
 		"lat": 34.9682059,
 		"lng": 137.1817637,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "ing"
+		"id": "ing",
+		"govId": "232025"
 	},
 	"oro": {
 		"code": [
@@ -8099,9 +7604,8 @@
 		],
 		"lat": 34.9621107,
 		"lng": 137.1859532,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "oro"
+		"id": "oro",
+		"govId": "232025"
 	},
 	"mtd": {
 		"code": [
@@ -8115,9 +7619,8 @@
 		],
 		"lat": 34.9584685,
 		"lng": 137.1893873,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "mtd"
+		"id": "mtd",
+		"govId": "232025"
 	},
 	"hko": {
 		"code": [
@@ -8131,8 +7634,7 @@
 		],
 		"lat": 34.9534402,
 		"lng": 137.1899048,
-		"prefecture": "ai",
-		"city": "ok",
-		"id": "hko"
+		"id": "hko",
+		"govId": "232025"
 	}
 }

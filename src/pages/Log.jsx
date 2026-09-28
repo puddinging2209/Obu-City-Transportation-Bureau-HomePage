@@ -26,15 +26,15 @@ import { visuallyHidden } from '@mui/utils';
 
 import SaveDataImportButton from '../components/ImportLogButton';
 import giveTitle from '../utils/giveTitle.js';
+import { useLocalGov } from '../utils/govId.js';
 import { exportSaveData } from '../utils/logDataManager';
 import { id } from '../utils/Station.js';
 
 import lines from '../data/lines.json';
-import locations from '../data/locations.json';
 import stations from '../data/stations.json';
 
 const subwayLines = Object.values(lines).filter((line) => line.type === 'subway');
-const cities = Array.from(new Set(Object.values(stations).map((station) => station.city)));
+const govIds = Array.from(new Set(Object.values(stations).map((station) => station.govId)));
 const numOfStations = Object.keys(stations).length;
 
 function TabPanel(props) {
@@ -155,7 +155,27 @@ function StationGroupAccordion({ title, stationIds, logs }) {
 }
 
 export default function Log() {
+	const localGovClient = useLocalGov();
+	const [municipalityNames, setMunicipalityNames] = React.useState({});
 	const [mode, setMode] = React.useState(0);
+
+	React.useEffect(() => {
+		if (!localGovClient) return;
+		let active = true;
+		Promise.all(
+			govIds.map(async (govId) => {
+				const municipality = await localGovClient.getMunicipalityByCode(govId);
+				return [govId, municipality?.name ?? govId];
+			}),
+		)
+			.then((entries) => {
+				if (active) setMunicipalityNames(Object.fromEntries(entries));
+			})
+			.catch((error) => console.error('Failed to load municipality names', error));
+		return () => {
+			active = false;
+		};
+	}, [localGovClient]);
 
 	const logs = React.useMemo(() => JSON.parse(localStorage.getItem('visitedStations') || '[]').toReversed(), []);
 	const checkedStations = React.useMemo(() => {
@@ -241,23 +261,18 @@ export default function Log() {
 			</TabPanel>
 			<TabPanel value={mode} index={2}>
 				<Card sx={{ width: '100%', overflow: 'auto', mx: 'auto', my: 4, p: 2 }}>
-					{cities
+					{govIds
 						.sort(
 							(a, b) =>
-								Object.values(stations).filter((s) => s.city === b).length -
-								Object.values(stations).filter((s) => s.city === a).length,
+								Object.values(stations).filter((s) => s.govId === b).length -
+								Object.values(stations).filter((s) => s.govId === a).length,
 						)
-						.map((city) => {
+						.map((govId) => {
 							const innerStations = Object.values(stations)
-								.filter((station) => station.city === city)
+								.filter((station) => station.govId === govId)
 								.map((station) => station.id);
 							return (
-								<StationGroupAccordion
-									key={city}
-									title={Object.values(locations.cities).find((p) => p[city])[city]}
-									stationIds={innerStations}
-									logs={logs}
-								/>
+								<StationGroupAccordion key={govId} title={municipalityNames[govId] ?? govId} stationIds={innerStations} logs={logs} />
 							);
 						})}
 				</Card>

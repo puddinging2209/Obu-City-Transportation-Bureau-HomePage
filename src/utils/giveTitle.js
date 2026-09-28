@@ -2,8 +2,8 @@ import lines from '../data/lines.json';
 import stationsData from '../data/stations.json';
 import titlesData from '../data/titles.json';
 
-const prefectures = [...new Set(Object.values(stationsData).map((s) => s.prefecture))];
-const cities = [...new Set(Object.values(stationsData).map((s) => [s.prefecture, s.city]))];
+const prefectures = [...new Set(Object.values(stationsData).map((s) => s.govId.slice(0, 2)))];
+const govIds = [...new Set(Object.values(stationsData).map((s) => s.govId))];
 
 export default function giveTitle(visiteds) {
 	if (!visiteds?.length) visiteds = JSON.parse(window.localStorage.getItem('visitedStations') ?? '[]');
@@ -37,8 +37,8 @@ export default function giveTitle(visiteds) {
 	// 各県
 	prefectures.forEach((prefecture) => {
 		const ratio =
-			visitedIds.filter((v) => stationsData[v].prefecture === prefecture).length /
-			Object.values(stationsData).filter((s) => s.prefecture === prefecture).length;
+			visitedIds.filter((v) => stationsData[v].govId.slice(0, 2) === prefecture).length /
+			Object.values(stationsData).filter((s) => s.govId.slice(0, 2) === prefecture).length;
 		if (ratio === 0) return;
 		titlesData.eachPrefecture.ratio.forEach((t) => {
 			const id = t.id + prefecture;
@@ -48,14 +48,13 @@ export default function giveTitle(visiteds) {
 		});
 	});
 
-	// 各市町
-	cities.forEach((city) => {
+	// 各市区町村
+	govIds.forEach((govId) => {
 		const ratio =
-			visitedIds.filter((v) => stationsData[v].prefecture === city[0] && stationsData[v].city === city[1]).length /
-			Object.values(stationsData).filter((s) => s.prefecture === city[0] && s.city === city[1]).length;
+			visitedIds.filter((v) => stationsData[v].govId === govId).length / Object.values(stationsData).filter((s) => s.govId === govId).length;
 		if (ratio === 0) return;
 		titlesData.eachCity.ratio.forEach((t) => {
-			const id = t.id + city.join('');
+			const id = t.id + govId;
 			if (ratio >= t.ratio && !titles.includes(id)) {
 				titles.push(id);
 			}

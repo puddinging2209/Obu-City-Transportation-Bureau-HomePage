@@ -23,6 +23,8 @@
     },
     "homepage": "https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage#readme",
     "dependencies": {
+        "@b4moss/jp-local-gov-id": "^1.2.0",
+        "@b4moss/jp-local-gov-id-data": "^1.0.0",
         "@date-io/date-fns": "^3.2.1",
         "@deck.gl/core": "^9.3.7",
         "@deck.gl/layers": "^9.3.7",
