@@ -13,6 +13,7 @@ import {
 	Typography,
 } from '@mui/material';
 import { useAtom } from 'jotai';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ArticleIcon from '@mui/icons-material/Article';
@@ -36,6 +37,22 @@ function Drawer() {
 	const [isOpen, setIsOpen] = useAtom(isOpenDrawerAtom);
 
 	const titleId = window.localStorage.getItem('title');
+	const [titleName, setTitleName] = useState('');
+
+	useEffect(() => {
+		let active = true;
+		getTitle(titleId)
+			.then((name) => {
+				if (active) setTitleName(name ?? 'なし');
+			})
+			.catch((error) => {
+				console.error('Failed to load title name', error);
+				if (active) setTitleName('なし');
+			});
+		return () => {
+			active = false;
+		};
+	}, [titleId]);
 
 	const listItems = [
 		{ name: 'ホーム', icon: <HomeIcon />, path: '/home' },
@@ -95,7 +112,7 @@ function Drawer() {
 					>
 						<Stack direction='column'>
 							<Typography variant='h6'>現在の称号</Typography>
-							<Typography variant='body1'>{getTitle(titleId) ?? 'なし'}</Typography>
+							<Typography variant='body1'>{titleName || 'なし'}</Typography>
 						</Stack>
 					</Button>
 					<Link

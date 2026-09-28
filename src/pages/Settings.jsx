@@ -12,7 +12,20 @@ function Settings() {
 
 	const [tabValue, setTabValue] = useQueryState('tab', parseAsInteger.withDefault(0));
 	const [title, setTitle] = React.useState(window.localStorage.getItem('title') ?? '');
-	const titleIds = JSON.parse(window.localStorage.getItem('titles') ?? '[]');
+	const [titleIds] = React.useState(() => JSON.parse(window.localStorage.getItem('titles') ?? '[]'));
+	const [titleNames, setTitleNames] = React.useState({});
+
+	React.useEffect(() => {
+		let active = true;
+		Promise.all(titleIds.map(async (titleId) => [titleId, await getTitle(titleId)]))
+			.then((entries) => {
+				if (active) setTitleNames(Object.fromEntries(entries));
+			})
+			.catch((error) => console.error('Failed to load title names', error));
+		return () => {
+			active = false;
+		};
+	}, [titleIds]);
 
 	const theme = useTheme();
 
@@ -106,7 +119,7 @@ function Settings() {
 								>
 									{titleIds.map((title) => (
 										<MenuItem value={title} key={title}>
-											{getTitle(title)}
+											{titleNames[title] ?? '読み込み中…'}
 										</MenuItem>
 									))}
 								</Select>

@@ -1,42 +1,42 @@
 import linesData from '../data/lines.json';
-import locations from '../data/locations.json';
 import titlesData from '../data/titles.json';
+import { getLocalGovByCode } from './govId.js';
 
-export default function getTitles(classified = false) {
+export default async function getTitles(classified = false) {
 	const titleIds = JSON.parse(window.localStorage.getItem('titles') ?? '[]');
 	const titles = {};
-	titleIds.forEach((id) => {
-		if (typeof id !== 'string') return;
-		const title = getTitle(id);
-		if (!title) return;
+	for (const id of titleIds) {
+		if (typeof id !== 'string') continue;
+		const title = await getTitle(id);
+		if (!title) continue;
 		if (id.startsWith('0')) {
 			titles.all ??= [];
 			titles.all.push(title);
-			return;
+			continue;
 		}
 		if (id.startsWith('1')) {
 			titles.eachLine ??= [];
 			titles.eachLine.push(title);
-			return;
+			continue;
 		}
 		if (id.startsWith('2')) {
 			titles.eachPrefecture ??= [];
 			titles.eachPrefecture.push(title);
-			return;
+			continue;
 		}
 		if (id.startsWith('3')) {
 			titles.eachCity ??= [];
 			titles.eachCity.push(title);
-			return;
+			continue;
 		}
-	});
+	}
 
 	if (classified) return titles;
 	console.log(titles);
 	return Object.values(titles).flat();
 }
 
-export function getTitle(id) {
+export async function getTitle(id) {
 	if (!id) return;
 	if (id.startsWith('0')) {
 		return titlesData.all.ratio.find((t) => t.id === id)?.title;
@@ -49,12 +49,13 @@ export function getTitle(id) {
 	if (id.startsWith('2')) {
 		const titleId = id.slice(0, 4);
 		const prefectureId = id.slice(4);
-		return titlesData.eachPrefecture.ratio.find((t) => t.id === titleId)?.title?.replace('_PREFECTURE_', locations.prefectures[prefectureId]);
+		const prefecture = await getLocalGovByCode(prefectureId);
+		return titlesData.eachPrefecture.ratio.find((t) => t.id === titleId)?.title?.replace('_PREFECTURE_', prefecture?.name ?? '');
 	}
 	if (id.startsWith('3')) {
 		const titleId = id.slice(0, 4);
-		const prefectureId = id.slice(4, 6);
-		const cityId = id.slice(6);
-		return titlesData.eachCity.ratio.find((t) => t.id === titleId)?.title?.replace('_CITY_', locations.cities[prefectureId][cityId]);
+		const govId = id.slice(4);
+		const municipality = await getLocalGovByCode(govId);
+		return titlesData.eachCity.ratio.find((t) => t.id === titleId)?.title?.replace('_CITY_', municipality?.name ?? '');
 	}
 }
