@@ -52,6 +52,7 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 	const theme = useTheme();
 	return (
 		<Popup
+			className='train-popup'
 			longitude={position[0]}
 			latitude={position[1]}
 			anchor='bottom'
@@ -62,6 +63,9 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 		>
 			{/* MapLibreの標準CSSをMUIのテーマカラーに上書きするグローバルstyle */}
 			<style>{`
+				.maplibregl-popup.train-popup {
+					z-index: 10 !important;
+				}
 				.maplibregl-popup-content {
 					background-color: ${theme.palette.background.paper} !important;
 					box-shadow: ${theme.shadows[4]} !important;

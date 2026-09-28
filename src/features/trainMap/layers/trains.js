@@ -27,6 +27,7 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 	const isMobile = checkIsMobile();
 
 	const worker = new TrainMapWorker();
+	let calculationPending = false;
 	const ouds = await Promise.all(
 		new Set(
 			Object.values(linesData)
@@ -44,7 +45,7 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 	});
 
 	const trainOverlay = new MapboxOverlay({
-		interleaved: true,
+		interleaved: false,
 		layers: [],
 	});
 	map.addControl(trainOverlay);
@@ -54,6 +55,7 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 	worker.addEventListener('message', ({ data }) => {
 		switch (data.type) {
 			case 'calcPositionResult': {
+				calculationPending = false;
 				const trains = data.data;
 				const points = trains
 					.filter((t) => t.coordinate)
@@ -140,7 +142,8 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 			trainOverlay.setProps({ layers: [] });
 		},
 		update(sec) {
-			if (!visible) return;
+			if (!visible || calculationPending) return;
+			calculationPending = true;
 			worker.postMessage({
 				type: 'calcPosition',
 				sec,

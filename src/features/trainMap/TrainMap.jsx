@@ -2,7 +2,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LayersIcon from '@mui/icons-material/Layers';
 import { Box, CircularProgress, Fab, Stack } from '@mui/material';
 import { useAtomValue, useSetAtom, useStore } from 'jotai';
-import maplibregl from 'maplibre-gl';
+import { AttributionControl, NavigationControl } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import React from 'react';
 import Map from 'react-map-gl/maplibre';
@@ -46,6 +46,7 @@ function TrainMap() {
 	const clearBottomSheet = useSetAtom(clearBottomSheetAtom);
 
 	const { updateInterval } = useAtomValue(settingsAtom).map;
+	const effectiveUpdateInterval = true ? updateInterval : 100;
 
 	// ★ 追従ポップアップ用のState
 	const [activeTrain, setActiveTrain] = React.useState(null); // { id, position: [lng, lat], type, rawTrainData }
@@ -82,8 +83,8 @@ function TrainMap() {
 		mapRef.current = mapEl;
 		mapEl.on('load', async () => {
 			const map = mapEl.getMap();
-			map.addControl(new maplibregl.NavigationControl());
-			map.addControl(new maplibregl.AttributionControl({ compact: true }), 'top-left');
+			map.addControl(new NavigationControl());
+			map.addControl(new AttributionControl({ compact: true }), 'top-left');
 
 			for (const l of layers.toReversed()) {
 				try {
@@ -166,7 +167,7 @@ function TrainMap() {
 		let id;
 		let latestUpdatedAt = 0;
 		const tick = (now) => {
-			if (now - latestUpdatedAt >= updateInterval) {
+			if (now - latestUpdatedAt >= effectiveUpdateInterval) {
 				const sec = (timeState.baseSimulationTime + ((performance.now() - timeState.startAt) * timeState.speedRate) / 1000) % (60 * 60 * 24);
 				layersRef.current.forEach((l) => {
 					if (layersEnabled[l.id]) l.update(sec);
@@ -177,7 +178,7 @@ function TrainMap() {
 		};
 		id = requestAnimationFrame(tick);
 		return () => cancelAnimationFrame(id);
-	}, [layersRef, timeState, layersEnabled]);
+	}, [layersRef, timeState, layersEnabled, effectiveUpdateInterval]);
 
 	React.useEffect(() => {
 		if (!containerRef.current) return;
