@@ -2,7 +2,8 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LayersIcon from '@mui/icons-material/Layers';
 import { Box, CircularProgress, Fab, Stack } from '@mui/material';
 import { useAtomValue, useSetAtom, useStore } from 'jotai';
-import { AttributionControl, NavigationControl } from 'maplibre-gl';
+import { AttributionControl, NavigationControl, setWorkerUrl } from 'maplibre-gl';
+import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import React from 'react';
 import Map from 'react-map-gl/maplibre';
@@ -16,6 +17,8 @@ import TrainPopup from './components/TrainPopup';
 import { layers, layersEnabledAtom, updateLayerEnabledAtom } from './states/layers';
 import { clearBottomSheetAtom, setBottomSheetComponentAtom, setBottomSheetTitleAtom } from './states/sheet';
 import { timeAtom } from './states/time';
+
+setWorkerUrl(maplibreWorkerUrl);
 
 function getStoppedTrains(trains, stoppingSta, stoppedTrainIndicesByStation, previousStoppedTrains = []) {
 	if (!stoppingSta) return [];
