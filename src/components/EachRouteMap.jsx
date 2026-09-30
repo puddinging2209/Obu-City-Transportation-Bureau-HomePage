@@ -52,15 +52,17 @@ function EachRouteMap({ line, onClick }) {
 					mx: 'auto',
 					borderRadius: 2,
 					bgcolor: 'background.paper',
-					overflowX: 'auto',
 				}}
 			>
 				<Stack
 					alignItems='left'
 					direction='row'
 					sx={{
-						position: 'relative',
+						position: 'sticky',
+						top: { xs: '56px', sm: '64px' },
+						zIndex: 5,
 						pl: '8px',
+						bgcolor: 'background.paper',
 					}}
 				>
 					{types.map((type, i) => (
@@ -86,11 +88,20 @@ function EachRouteMap({ line, onClick }) {
 						</Box>
 					))}
 				</Stack>
-				<Box sx={{ position: 'relative', minWidth: types.length * 30 + 48 + 160 }}>
-					{stations.map((station, index) => (
-						<RouteStationRow key={station.id || index} line={line} index={index} stations={stations} lines={types} onClick={onClick} />
-					))}
-					{isLoop && <RouteStationRow line={line} index={stations.length} stations={stations} lines={types} onClick={onClick} />}
+				<Box sx={{ overflowX: 'auto', overflowY: 'clip' }}>
+					<Box sx={{ position: 'relative', minWidth: types.length * 30 + 48 + 160 }}>
+						{stations.map((station, index) => (
+							<RouteStationRow
+								key={station.id || index}
+								line={line}
+								index={index}
+								stations={stations}
+								lines={types}
+								onClick={onClick}
+							/>
+						))}
+						{isLoop && <RouteStationRow line={line} index={stations.length} stations={stations} lines={types} onClick={onClick} />}
+					</Box>
 				</Box>
 			</Box>
 		</Stack>

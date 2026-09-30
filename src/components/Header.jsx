@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import MenuIcon from '@mui/icons-material/Menu';
 
-import { isOpenDrawerAtom } from '../utils/Atom';
+import { isOpenDrawerAtom } from '../atom/atom.js';
 
 function Header() {
 	const navigate = useNavigate();

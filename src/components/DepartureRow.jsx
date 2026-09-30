@@ -7,7 +7,7 @@ import { useAtomValue } from 'jotai';
 import OverflowMarquee from './OverflowMarquee.jsx';
 import TrainStopsDialog from './TrainStopsDialog.jsx';
 
-import { settingsAtom } from '../utils/Atom.js';
+import { settingsAtom } from '../atom/atom.js';
 import { label } from '../utils/Station.js';
 import { toTimeString } from '../utils/Time.js';
 

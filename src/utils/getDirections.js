@@ -36,8 +36,8 @@ export default function getDirections(station) {
 		.flat()
 		.filter((d) => d && d !== station);
 
-	if (station === 'hnt') result.push({ line: '刈田川急行線', id: 'obu' });
-	if (station === 'sos') result.push({ line: '刈田川急行線', id: 'obu' });
+	if (station === 'hnt') result.push({ line: 'ktr', id: 'obu' });
+	if (station === 'sos') result.push({ line: 'ktr', id: 'obu' });
 
 	return result;
 }

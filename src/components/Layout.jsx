@@ -15,19 +15,20 @@ import {
 	Typography,
 } from '@mui/material';
 import { NuqsAdapter } from '@offlegacy/nuqs-hash-router';
-import { useAtom } from 'jotai';
+import { useAtomValue } from 'jotai';
 import { Outlet, Link as RouterLink } from 'react-router-dom';
 
-import { settingsAtom } from '../utils/Atom.js';
 import Drawer from './Drawer.jsx';
 import Header from './Header.jsx';
 import MobileBottomNavigation from './MobileBottomNavigation.jsx';
 import UpdateButton from './UpdateButton.jsx';
 
+import { settingsAtom } from '../atom/atom.js';
+
 function Layout() {
 	const [isWarnOpen, setIsWarnOpen] = React.useState(false);
 	const [isShowWarn, setIsShowWarn] = React.useState(localStorage.getItem('isShowWarn') ? JSON.parse(localStorage.getItem('isShowWarn')) : true);
-	const [settings, setSettings] = useAtom(settingsAtom);
+	const settings = useAtomValue(settingsAtom);
 
 	const theme = createTheme({
 		palette: {

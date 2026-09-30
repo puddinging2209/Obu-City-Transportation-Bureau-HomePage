@@ -5,7 +5,7 @@ import { useAtom } from 'jotai';
 import TransferInput from '../components/TransferInput.jsx';
 import TransferOutput from '../components/TransferOutput.jsx';
 
-import { resultAtom } from '../utils/Atom.js';
+import { resultAtom } from '../atom/atom.js';
 import { dijkstra } from '../utils/findRoute.js';
 import getFare from '../utils/getFare.js';
 import { adjustTime, toTime } from '../utils/Time.js';
@@ -24,7 +24,6 @@ function Transfer() {
 		if (!from || !to) return;
 		setLoading(true);
 		let segments = [];
-		console.log(heuristicMode);
 		try {
 			if (!enableViaStations || viaStations.length === 0) {
 				segments = [await dijkstra(from, to, adjustTime(baseTime), mode, transferTime - 1, tokkyu, heuristicMode, allowOuterTransfer)];

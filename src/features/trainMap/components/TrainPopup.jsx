@@ -1,7 +1,10 @@
 import CloseIcon from '@mui/icons-material/Close';
-import { Box, Button, IconButton, Typography, useTheme } from '@mui/material';
+import LocationPinIcon from '@mui/icons-material/LocationPin';
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import { Box, Button, Dialog, DialogTitle, IconButton, List, ListItemButton, ListItemText, Stack, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import { Popup } from 'react-map-gl/maplibre';
+import linesData from '../../../data/lines.json';
 import { label } from '../../../utils/Station';
 import { toTimeString } from '../../../utils/Time';
 
@@ -16,8 +19,10 @@ function normalizePopupPosition(position) {
 	return [first, second];
 }
 
-export default function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet }) {
+export default function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet, handleSwitchTrain, isTracking, setIsTracking }) {
 	const position = React.useMemo(() => normalizePopupPosition(train.position), [train.position]);
+	const otherStoppedTrains = train.stoppedTrains?.filter((stoppedTrain) => stoppedTrain.number !== train.rawTrainData.number) ?? [];
+	const [isStoppedTrainDialogOpen, setIsStoppedTrainDialogOpen] = React.useState(false);
 	const sec = train.sec < 10800 ? train.sec + 86400 : train.sec;
 	const type = train.rawTrainData.type;
 	const terminal = React.useMemo(
@@ -39,9 +44,15 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 			})()
 		);
 
+	React.useEffect(() => {
+		if (!currentStop) {
+			setIsStoppedTrainDialogOpen(false);
+		}
+	}, [currentStop]);
 	const theme = useTheme();
 	return (
 		<Popup
+			className='train-popup'
 			longitude={position[0]}
 			latitude={position[1]}
 			anchor='bottom'
@@ -52,6 +63,9 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 		>
 			{/* MapLibreの標準CSSをMUIのテーマカラーに上書きするグローバルstyle */}
 			<style>{`
+				.maplibregl-popup.train-popup {
+					z-index: 10 !important;
+				}
 				.maplibregl-popup-content {
 					background-color: ${theme.palette.background.paper} !important;
 					box-shadow: ${theme.shadows[4]} !important;
@@ -66,6 +80,21 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 					p: 0.5,
 				}}
 			>
+				<IconButton
+					size='medium'
+					onClick={() => {
+						setIsTracking((prev) => !prev);
+					}}
+					sx={{
+						position: 'absolute',
+						top: 0,
+						left: 0,
+						color: isTracking ? '#36f' : '#0a0',
+						p: 1,
+					}}
+				>
+					<LocationPinIcon />
+				</IconButton>
 				<IconButton
 					size='medium'
 					onClick={() => setActiveTrain(null)}
@@ -108,15 +137,66 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 						>{`${toTimeString(currentSegment[0].dep)} > ${toTimeString(currentSegment[1].arr)}`}</Typography>
 					</>
 				}
-				<Button
-					variant='contained'
-					size='small'
-					sx={{ fontSize: '11px', py: 0.2, mt: 0.5 }}
-					onClick={() => handleOpenBottomSheet(train.rawTrainData)}
-				>
-					詳細を見る
-				</Button>
+				<Stack direction='column' spacing={1} sx={{ mt: 0.5 }}>
+					<Button
+						variant='contained'
+						size='small'
+						sx={{ fontSize: '11px', py: 0.2, mt: 0.5 }}
+						onClick={() => handleOpenBottomSheet(train.rawTrainData)}
+					>
+						詳細を見る
+					</Button>
+					{currentStop && (
+						<Button
+							variant='outlined'
+							size='small'
+							startIcon={<SwapHorizIcon />}
+							sx={{ fontSize: '11px', py: 0.2, mt: 0.5 }}
+							onClick={() => setIsStoppedTrainDialogOpen(true)}
+							disabled={otherStoppedTrains.length === 0}
+						>
+							他の停車列車
+						</Button>
+					)}
+				</Stack>
 			</Box>
+			<Dialog open={isStoppedTrainDialogOpen} onClose={() => setIsStoppedTrainDialogOpen(false)} fullWidth maxWidth='xs'>
+				<DialogTitle>{label(currentStop?.id)}に停車中の列車</DialogTitle>
+				<List disablePadding>
+					{train.stoppedTrains
+						?.sort((a, b) => a.stops.find((s) => s.id === currentStop?.id).dep - b.stops.find((s) => s.id === currentStop?.id).dep)
+						.map((stoppedTrain) => {
+							const stoppedTrainTerminal =
+								stoppedTrain.stops.at(-1).id !== 'ct2' ? label(stoppedTrain.stops.at(-1).id) : '中部国際空港';
+							const isSelected = stoppedTrain.number === train.rawTrainData.number;
+							const currentIndex = stoppedTrain.stops.findIndex((s) => s.arr && s.dep && s.arr <= sec && sec < s.dep) ?? null;
+							const currentStop = currentIndex !== -1 ? stoppedTrain.stops[currentIndex] : null;
+							const lineName = (() => {
+								for (let i = currentIndex + 1; i < stoppedTrain.stops.length; i++) {
+									const stop = stoppedTrain.stops[i];
+									if (stop.stopType === 'stop') return stop.lineName;
+								}
+								return '';
+							})();
+
+							return (
+								<ListItemButton
+									key={stoppedTrain.number}
+									disabled={isSelected}
+									onClick={() => {
+										setIsStoppedTrainDialogOpen(false);
+										handleSwitchTrain(stoppedTrain, train.stoppedTrains);
+									}}
+								>
+									<ListItemText
+										primary={`${toTimeString(currentStop?.dep)}発 ${stoppedTrain.type} ${stoppedTrainTerminal}行${isSelected ? '（選択中）' : ''}`}
+										secondary={`${linesData[lineName].show} ${stoppedTrain.number}`}
+									/>
+								</ListItemButton>
+							);
+						})}
+				</List>
+			</Dialog>
 		</Popup>
 	);
 }

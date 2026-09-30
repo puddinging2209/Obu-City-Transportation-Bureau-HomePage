@@ -2,11 +2,12 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LayersIcon from '@mui/icons-material/Layers';
 import { Box, CircularProgress, Fab, Stack } from '@mui/material';
 import { useAtomValue, useSetAtom, useStore } from 'jotai';
-import maplibregl from 'maplibre-gl';
+import { AttributionControl, NavigationControl, setWorkerUrl } from 'maplibre-gl';
+import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import React from 'react';
 import Map from 'react-map-gl/maplibre';
-import { settingsAtom } from '../../utils/Atom';
+import { settingsAtom } from '../../atom/atom.js';
 import { BottomSheet } from './components/BottomSheet';
 import { LayersControl } from './components/LayersControl';
 import { LoginButton } from './components/LoginButton';
@@ -17,10 +18,27 @@ import { layers, layersEnabledAtom, updateLayerEnabledAtom } from './states/laye
 import { clearBottomSheetAtom, setBottomSheetComponentAtom, setBottomSheetTitleAtom } from './states/sheet';
 import { timeAtom } from './states/time';
 
+setWorkerUrl(maplibreWorkerUrl);
+
+function getStoppedTrains(trains, stoppingSta, stoppedTrainIndicesByStation, previousStoppedTrains = []) {
+	if (!stoppingSta) return [];
+
+	const stoppedTrains = (stoppedTrainIndicesByStation?.[stoppingSta] ?? []).map((index) => trains[index]);
+	if (
+		stoppedTrains.length === previousStoppedTrains.length &&
+		stoppedTrains.every((train, index) => train.number === previousStoppedTrains[index].number)
+	) {
+		return previousStoppedTrains;
+	}
+
+	return stoppedTrains.map((train) => ({ ...train, position: [...train.coordinate].reverse() }));
+}
+
 function TrainMap() {
 	const date = new Date();
 	const store = useStore();
 	const containerRef = React.useRef();
+	const mapRef = React.useRef(null);
 	const layersRef = React.useRef([]);
 	const [isLoading, setIsLoading] = React.useState(true);
 	const layersEnabled = useAtomValue(layersEnabledAtom);
@@ -31,9 +49,15 @@ function TrainMap() {
 	const clearBottomSheet = useSetAtom(clearBottomSheetAtom);
 
 	const { updateInterval } = useAtomValue(settingsAtom).map;
+	const effectiveUpdateInterval = true ? updateInterval : 100;
 
 	// ★ 追従ポップアップ用のState
 	const [activeTrain, setActiveTrain] = React.useState(null); // { id, position: [lng, lat], type, rawTrainData }
+	const [isTracking, setIsTracking] = React.useState(false);
+	const isTrackingRef = React.useRef(isTracking);
+	isTrackingRef.current = isTracking;
+	const isPointerDownRef = React.useRef(false);
+	const pointerStartRef = React.useRef(null);
 
 	// ★ イベントリスナー内で常に最新の activeTrain.id を参照できるようにするためのRef
 	const activeTrainIdRef = React.useRef(null);
@@ -45,14 +69,25 @@ function TrainMap() {
 		setBottomSheetTitle('列車情報');
 	};
 
+	const handleSwitchTrain = (nextTrain, stoppedTrains) => {
+		setActiveTrain((prev) => ({
+			...prev,
+			id: nextTrain.number,
+			position: nextTrain.position,
+			rawTrainData: nextTrain,
+			stoppedTrains,
+		}));
+	};
+
 	const mapHandle = (mapEl) => {
 		if (!mapEl) {
 			return;
 		}
+		mapRef.current = mapEl;
 		mapEl.on('load', async () => {
 			const map = mapEl.getMap();
-			map.addControl(new maplibregl.NavigationControl());
-			map.addControl(new maplibregl.AttributionControl({ compact: true }), 'top-left');
+			map.addControl(new NavigationControl());
+			map.addControl(new AttributionControl({ compact: true }), 'top-left');
 
 			for (const l of layers.toReversed()) {
 				try {
@@ -63,18 +98,28 @@ function TrainMap() {
 						onSelectTrain: (trainInfo) => {
 							setActiveTrain(trainInfo);
 						},
-						onUpdateActiveTrain: ({ points, trains, sec }) => {
+						onUpdateActiveTrain: ({ points, trains, stoppedTrainIndicesByStation, sec }) => {
 							if (!activeTrainIdRef.current) return;
 
 							const currentTrain = points.find((p) => p.id === activeTrainIdRef.current);
 							if (currentTrain) {
 								setActiveTrain((prev) => {
 									if (!prev) return null;
+									const currentTrainData = trains.find((train) => train.number === activeTrainIdRef.current);
+									const stoppedTrains = getStoppedTrains(
+										trains,
+										currentTrainData?.stoppingSta,
+										stoppedTrainIndicesByStation,
+										prev.stoppedTrains,
+									);
 									if (prev.position[0] === currentTrain.position[0] && prev.position[1] === currentTrain.position[1]) {
-										return { ...prev, sec };
+										return { ...prev, sec, stoppedTrains };
 									}
-									return { ...prev, sec, position: currentTrain.position };
+									return { ...prev, sec, position: currentTrain.position, stoppedTrains };
 								});
+								if (isTrackingRef.current && !isPointerDownRef.current) {
+									jumpToPos(currentTrain.position);
+								}
 								return;
 							}
 
@@ -88,6 +133,10 @@ function TrainMap() {
 								const nextTrain = trains?.find((t) => String(t.number) === String(nextTrainNumber));
 								if (!nextTrain) {
 									return null;
+								}
+
+								if (isTrackingRef.current && !isPointerDownRef.current) {
+									jumpToPos(nextTrain.coordinate);
 								}
 
 								return {
@@ -121,7 +170,7 @@ function TrainMap() {
 		let id;
 		let latestUpdatedAt = 0;
 		const tick = (now) => {
-			if (now - latestUpdatedAt >= updateInterval) {
+			if (now - latestUpdatedAt >= effectiveUpdateInterval) {
 				const sec = (timeState.baseSimulationTime + ((performance.now() - timeState.startAt) * timeState.speedRate) / 1000) % (60 * 60 * 24);
 				layersRef.current.forEach((l) => {
 					if (layersEnabled[l.id]) l.update(sec);
@@ -132,7 +181,7 @@ function TrainMap() {
 		};
 		id = requestAnimationFrame(tick);
 		return () => cancelAnimationFrame(id);
-	}, [layersRef, timeState, layersEnabled]);
+	}, [layersRef, timeState, layersEnabled, effectiveUpdateInterval]);
 
 	React.useEffect(() => {
 		if (!containerRef.current) return;
@@ -146,6 +195,34 @@ function TrainMap() {
 			clearBottomSheet();
 		};
 	}, [containerRef]);
+
+	function jumpToPos(pos) {
+		if (!pos) return;
+		mapRef.current?.getMap().jumpTo({ center: pos, essential: true });
+	}
+
+	function startPointerInteraction(event) {
+		isPointerDownRef.current = true;
+		pointerStartRef.current = event.point;
+	}
+
+	function updatePointerInteraction(event) {
+		if (!isPointerDownRef.current || !pointerStartRef.current) return;
+		if (!isTrackingRef.current) return;
+
+		const dx = event.point.x - pointerStartRef.current.x;
+		const dy = event.point.y - pointerStartRef.current.y;
+		if (dx * dx + dy * dy >= 16) {
+			isPointerDownRef.current = false;
+			pointerStartRef.current = null;
+			setIsTracking(false);
+		}
+	}
+
+	function endPointerInteraction() {
+		isPointerDownRef.current = false;
+		pointerStartRef.current = null;
+	}
 
 	return (
 		<Box ref={containerRef} sx={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
@@ -174,10 +251,25 @@ function TrainMap() {
 				}}
 				attributionControl={false}
 				mapStyle='https://tile.openstreetmap.jp/styles/maptiler-basic-ja/style.json'
+				onMouseDown={startPointerInteraction}
+				onMouseMove={updatePointerInteraction}
+				onMouseUp={endPointerInteraction}
+				onMouseLeave={endPointerInteraction}
+				onTouchStart={startPointerInteraction}
+				onTouchMove={updatePointerInteraction}
+				onTouchEnd={endPointerInteraction}
+				onDragStart={() => setIsTracking(false)}
 			>
 				{/* ★ activeTrainが存在するときだけポップアップを表示 */}
 				{activeTrain && (
-					<TrainPopup train={activeTrain} setActiveTrain={setActiveTrain} handleOpenBottomSheet={handleOpenBottomSheet}></TrainPopup>
+					<TrainPopup
+						train={activeTrain}
+						setActiveTrain={setActiveTrain}
+						handleOpenBottomSheet={handleOpenBottomSheet}
+						handleSwitchTrain={handleSwitchTrain}
+						isTracking={isTracking}
+						setIsTracking={setIsTracking}
+					></TrainPopup>
 				)}
 			</Map>
 			<Stack

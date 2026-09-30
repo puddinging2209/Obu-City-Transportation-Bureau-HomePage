@@ -1,5 +1,19 @@
-import { Box, Divider, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, SwipeableDrawer, Typography } from '@mui/material';
+import {
+	Box,
+	Button,
+	Divider,
+	Link,
+	List,
+	ListItem,
+	ListItemButton,
+	ListItemIcon,
+	ListItemText,
+	Stack,
+	SwipeableDrawer,
+	Typography,
+} from '@mui/material';
 import { useAtom } from 'jotai';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ArticleIcon from '@mui/icons-material/Article';
@@ -13,12 +27,32 @@ import TrainIcon from '@mui/icons-material/Train';
 
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
-import { isOpenDrawerAtom } from '../utils/Atom';
+import { isOpenDrawerAtom } from '../atom/atom.js';
+import { getTitle } from '../utils/getTitles.js';
+import giveTitle from '../utils/giveTitle.js';
 
 function Drawer() {
 	const navigate = useNavigate();
 
 	const [isOpen, setIsOpen] = useAtom(isOpenDrawerAtom);
+
+	const titleId = window.localStorage.getItem('title');
+	const [titleName, setTitleName] = useState('');
+
+	useEffect(() => {
+		let active = true;
+		getTitle(titleId)
+			.then((name) => {
+				if (active) setTitleName(name ?? 'なし');
+			})
+			.catch((error) => {
+				console.error('Failed to load title name', error);
+				if (active) setTitleName('なし');
+			});
+		return () => {
+			active = false;
+		};
+	}, [titleId]);
 
 	const listItems = [
 		{ name: 'ホーム', icon: <HomeIcon />, path: '/home' },
@@ -68,7 +102,19 @@ function Drawer() {
 						</ListItem>
 					))}
 				</List>
-				<Stack sx={{ position: 'absolute', bottom: 0, pb: 2 }}>
+				<Stack direction='column' gap={1} sx={{ position: 'absolute', bottom: 0, pb: 2 }}>
+					<Button
+						onClick={() => {
+							giveTitle();
+							navigate('/settings?tab=2');
+						}}
+						sx={{ pl: 2, pt: 1, color: 'text.primary', textAlign: 'left' }}
+					>
+						<Stack direction='column'>
+							<Typography variant='h6'>現在の称号</Typography>
+							<Typography variant='body1'>{titleName || 'なし'}</Typography>
+						</Stack>
+					</Button>
 					<Link
 						href='https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage'
 						target='_blank'
