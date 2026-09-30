@@ -1,9 +1,10 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	viewBox="0 0 1200 100"
+	viewBox="0 0 1200 200"
 	width="1200"
-	height="100"
+	height="200"
 >
+	<g transform="translate(0 5)">
 	<path
 		d="M50 10 L80 90 L20 90 Z"
 		fill="#000"
@@ -76,4 +77,17 @@
 		stroke="white"
 		stroke-width="10"
 	/>
+	<path d="M50 110 L80 190 L20 190 Z" fill="#fff" stroke="#444" stroke-width="10" />
+	<path d="M150 110 L180 190 L120 190 Z" fill="#fff" stroke="#444" stroke-width="10" />
+	<path d="M250 110 L280 190 L220 190 Z" fill="#fff" stroke="#444" stroke-width="10" />
+	<path d="M350 110 L380 190 L320 190 Z" fill="#7C9CFF" stroke="#444" stroke-width="10" />
+	<path d="M450 110 L480 190 L420 190 Z" fill="#A5D77A" stroke="#444" stroke-width="10" />
+	<path d="M550 110 L580 190 L520 190 Z" fill="#A5D77A" stroke="#444" stroke-width="10" />
+	<path d="M650 110 L680 190 L620 190 Z" fill="#4CAF50" stroke="#444" stroke-width="10" />
+	<path d="M750 110 L780 190 L720 190 Z" fill="#43DDE5" stroke="#444" stroke-width="10" />
+	<path d="M850 110 L880 190 L820 190 Z" fill="#FF6666" stroke="#444" stroke-width="10" />
+	<path d="M950 110 L980 190 L920 190 Z" fill="#FFE66D" stroke="#444" stroke-width="10" />
+	<path d="M1050 110 L1080 190 L1020 190 Z" fill="#ff7a7a" stroke="#444" stroke-width="10" />
+	<path d="M1150 110 L1180 190 L1120 190 Z" fill="#ff7a7a" stroke="#444" stroke-width="10" />
+	</g>
 </svg>

@@ -3,7 +3,7 @@ import linesData from '../../../data/lines.json';
 import stationsData from '../../../data/stations.json';
 import getDirections from '../../../utils/getDirections';
 
-export async function initializeStationsLayer({ map, store }) {
+export async function initializeStationsLayer({ map, store, mapTheme }) {
 	const getStationPriority = (stationData) => {
 		// 表示優先度 = 停車種別数 * 路線数 + 10(終点の場合)
 		return (
@@ -52,7 +52,22 @@ export async function initializeStationsLayer({ map, store }) {
 		subwayVisitedIcon.onerror = resolve;
 		subwayVisitedIcon.src = './icons/subway_visited.png';
 	});
-	map.addImage('subway', subwayIcon);
+	if (mapTheme === 'dark') {
+		const canvas = document.createElement('canvas');
+		canvas.width = subwayIcon.width;
+		canvas.height = subwayIcon.height;
+		const context = canvas.getContext('2d');
+		context.drawImage(subwayIcon, 0, 0);
+		const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+		for (let i = 0; i < imageData.data.length; i += 4) {
+			imageData.data[i] = 255 - imageData.data[i];
+			imageData.data[i + 1] = 255 - imageData.data[i + 1];
+			imageData.data[i + 2] = 255 - imageData.data[i + 2];
+		}
+		map.addImage('subway', imageData);
+	} else {
+		map.addImage('subway', subwayIcon);
+	}
 	map.addImage('subway_visited', subwayVisitedIcon);
 	map.addLayer({
 		id: 'stations',

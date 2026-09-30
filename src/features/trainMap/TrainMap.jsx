@@ -34,7 +34,7 @@ function getStoppedTrains(trains, stoppingSta, stoppedTrainIndicesByStation, pre
 	return stoppedTrains.map((train) => ({ ...train, position: [...train.coordinate].reverse() }));
 }
 
-function TrainMap() {
+function TrainMapContent({ mapTheme }) {
 	const date = new Date();
 	const store = useStore();
 	const containerRef = React.useRef();
@@ -95,6 +95,7 @@ function TrainMap() {
 					const layer = await l({
 						map,
 						store,
+						mapTheme,
 						onSelectTrain: (trainInfo) => {
 							setActiveTrain(trainInfo);
 						},
@@ -243,6 +244,7 @@ function TrainMap() {
 				</Box>
 			:	<></>}
 			<Map
+				key={mapTheme}
 				ref={mapHandle}
 				initialViewState={{
 					latitude: 35.008614536,
@@ -250,7 +252,11 @@ function TrainMap() {
 					zoom: 10,
 				}}
 				attributionControl={false}
-				mapStyle='https://tile.openstreetmap.jp/styles/maptiler-basic-ja/style.json'
+				mapStyle={
+					mapTheme === 'dark' ?
+						'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json'
+					:	'https://tile.openstreetmap.jp/styles/maptiler-basic-ja/style.json'
+				}
 				onMouseDown={startPointerInteraction}
 				onMouseMove={updatePointerInteraction}
 				onMouseUp={endPointerInteraction}
@@ -301,6 +307,18 @@ function TrainMap() {
 			<LoginButton></LoginButton>
 		</Box>
 	);
+}
+
+function TrainMap() {
+	const theme = useAtomValue(settingsAtom).general.theme;
+	const mapTheme =
+		theme === 'system' ?
+			window.matchMedia('(prefers-color-scheme: dark)').matches ?
+				'dark'
+			:	'light'
+		:	theme;
+
+	return <TrainMapContent key={mapTheme} mapTheme={mapTheme} />;
 }
 
 export default TrainMap;
