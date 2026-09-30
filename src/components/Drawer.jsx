@@ -66,6 +66,7 @@ function Drawer() {
 		{ name: '駅ログ！', icon: <PlaceIcon />, path: '/log' },
 		{ name: '地図', icon: <MapIcon />, path: '/map' },
 		{ name: 'お知らせ一覧', icon: <ArticleIcon />, path: '/news' },
+		{ name: '旅客営業規則', icon: <ArticleIcon />, path: '/passenger-regulations' },
 		{ name: '大府市営地下鉄とは', icon: <HelpOutlineIcon />, path: '/about' },
 		{ name: '設定', icon: <SettingsIcon />, path: '/settings' },
 	];
