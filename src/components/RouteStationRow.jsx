@@ -69,7 +69,7 @@ function RouteStationRow({ index, line, stations, lines, onClick }) {
 										bottom: '50%',
 										width: 4,
 										height: 32,
-										bgcolor: type?.color || '#999',
+										bgcolor: type?.color[theme.palette.mode] || '#999',
 										zIndex: 3,
 									}}
 								/>
@@ -91,8 +91,8 @@ function RouteStationRow({ index, line, stations, lines, onClick }) {
 												theme.palette.mode === 'light' ?
 													'#fff'
 												:	'#333'
-											:	type?.color || '#999',
-										border: `3px solid ${type?.color || '#999'}`,
+											:	type?.color[theme.palette.mode] || '#999',
+										border: `3px solid ${type?.color[theme.palette.mode] || '#999'}`,
 										zIndex: 4,
 									}}
 								/>
@@ -107,7 +107,7 @@ function RouteStationRow({ index, line, stations, lines, onClick }) {
 										top: '50%',
 										width: 4,
 										height: 32,
-										bgcolor: type?.color || '#999',
+										bgcolor: type?.color[theme.palette.mode] || '#999',
 										zIndex: 3,
 									}}
 								/>

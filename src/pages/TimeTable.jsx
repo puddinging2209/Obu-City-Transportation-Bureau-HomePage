@@ -248,16 +248,22 @@ function TimeTable() {
 														>
 															<Box
 																sx={{
-																	background: strong ? typesData[dep.typeName]?.color : '',
-																	border: frame ? `1px solid ${typesData[dep.typeName]?.color}` : '',
+																	background: strong ? typesData[dep.typeName]?.color[theme.palette.mode] : '',
+																	border:
+																		frame ?
+																			`1px solid ${typesData[dep.typeName]?.color[theme.palette.mode]}`
+																		:	'',
 																}}
 															>
-																<Typography color={strong ? 'white' : typesData[dep.typeName]?.color} variant='h6'>
+																<Typography
+																	color={strong ? 'white' : typesData[dep.typeName]?.color[theme.palette.mode]}
+																	variant='h6'
+																>
 																	{String(dep.min).padStart(2, '0')}
 																</Typography>
 															</Box>
 															<Typography
-																color={typesData[dep.typeName]?.color}
+																color={typesData[dep.typeName]?.color[theme.palette.mode]}
 																sx={{ whiteSpace: 'nowrap' }}
 																variant='body6'
 															>
