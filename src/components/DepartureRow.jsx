@@ -40,8 +40,8 @@ function DepartureRow({ dep, needId = false, station }) {
 							label={dep.typeName}
 							size='small'
 							sx={{
-								background: types[dep.typeName].color,
-								color: '#fff',
+								background: types[dep.typeName].color[theme.palette.mode],
+								color: theme.palette.getContrastText(types[dep.typeName].color[theme.palette.mode]),
 								fontSize: '0.75em',
 								minWidth: '8.5em',
 								px: 0.8,

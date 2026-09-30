@@ -3,72 +3,108 @@
 		"name": "各駅停車",
 		"roma": "local",
 		"code": "all",
-		"color": "#000"
+		"color": {
+			"light": "#000",
+			"dark": "#fff"
+		}
 	},
 	"普通": {
 		"name": "普通",
 		"roma": "local",
 		"code": "loc",
-		"color": "#000"
+		"color": {
+			"light": "#000",
+			"dark": "#fff"
+		}
 	},
 	"環状運転": {
 		"name": "環状運転",
 		"roma": "local",
 		"code": "-",
-		"color": "#000"
+		"color": {
+			"light": "#000",
+			"dark": "#fff"
+		}
 	},
 	"快速": {
 		"name": "快速",
 		"roma": "rapid",
 		"code": "rap",
-		"color": "#0000DC"
+		"color": {
+			"light": "#0000DC",
+			"dark": "#7C9CFF"
+		}
 	},
 	"通勤準急": {
 		"name": "通勤準急",
 		"roma": "commuter-semi-express",
 		"code": "com-sem-exp",
-		"color": "#84C255"
+		"color": {
+			"light": "#84C255",
+			"dark": "#A5D77A"
+		}
 	},
 	"準急": {
 		"name": "準急",
 		"roma": "semi-rapid",
 		"code": "sem-exp",
-		"color": "#84C255"
+		"color": {
+			"light": "#84C255",
+			"dark": "#A5D77A"
+		}
 	},
 	"区間急行": {
 		"name": "区間急行",
 		"roma": "suburban-express",
 		"code": "sub-exp",
-		"color": "#008C00"
+		"color": {
+			"light": "#008C00",
+			"dark": "#4CAF50"
+		}
 	},
 	"急行": {
 		"name": "急行",
 		"roma": "express",
 		"code": "exp",
-		"color": "#00CBD5"
+		"color": {
+			"light": "#00CBD5",
+			"dark": "#43DDE5"
+		}
 	},
 	"快速急行": {
 		"name": "快速急行",
 		"roma": "rapid-express",
 		"code": "rap-exp",
-		"color": "#DC0000"
+		"color": {
+			"light": "#DC0000",
+			"dark": "#FF6666"
+		}
 	},
 	"通勤急行": {
 		"name": "通勤急行",
 		"roma": "commuter-express",
 		"code": "com-exp",
-		"color": "#FFDC00"
+		"color": {
+			"light": "#FFDC00",
+			"dark": "#FFE66D"
+		}
 	},
 	"特急": {
 		"name": "特急",
 		"roma": "limited-express",
 		"code": "lim-exp",
-		"color": "#FF0000"
+		"color": {
+			"light": "#FF0000",
+			"dark": "#ff7a7a"
+		}
 	},
 	"ライナー": {
 		"name": "ライナー",
 		"roma": "liner",
 		"code": "lin",
-		"color": "#FF0000"
+		"color": {
+			"light": "#FF0000",
+			"dark": "#ff7a7a"
+		}
 	}
 }

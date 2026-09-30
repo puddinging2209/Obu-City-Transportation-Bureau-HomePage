@@ -1,12 +1,15 @@
 import React from 'react';
 
 import { Box, Stack, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 import RouteStationRow from './RouteStationRow';
 
 import typesData from '../data/types.json';
 
 function EachRouteMap({ line, onClick }) {
+	const theme = useTheme();
+
 	if (!line) {
 		return <Typography sx={{ mt: 2 }}>路線を選択してください。</Typography>;
 	}
@@ -80,7 +83,7 @@ function EachRouteMap({ line, onClick }) {
 								sx={{
 									writingMode: 'vertical-rl',
 									fontWeight: 'bold',
-									color: Object.values(typesData).find((t) => t.code === type)?.color || '#999',
+									color: Object.values(typesData).find((t) => t.code === type)?.color[theme.palette.mode] || '#999',
 								}}
 							>
 								{Object.values(typesData).find((t) => t.code === type)?.name || type}

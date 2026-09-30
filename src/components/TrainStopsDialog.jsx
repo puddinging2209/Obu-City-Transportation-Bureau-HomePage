@@ -60,7 +60,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 		<Dialog open={isShowDialog} onClose={onClose} TransitionProps={{ onEntered: scrollToDep }} scroll='paper' fullWidth>
 			<DialogTitle sx={{ pb: dep.multilayer ? 0 : '' }}>
 				{isShowDialog && (
-					<Box sx={{ borderBottom: `3px solid ${types[dep.typeName].color}` }}>
+					<Box sx={{ borderBottom: `3px solid ${types[dep.typeName].color[theme.palette.mode]}` }}>
 						<Typography variant='h6' sx={{ wordBreak: 'keep-all', overflowWrap: 'anywhere' }}>
 							{!dep.multilayer ?
 								`${dep.typeName}${dep.train.name.replace(dep.typeName, '')} ${dep.train.count != '' ? `${dep.train.count}号` : ''} ${label(dep.terminal)}行`
