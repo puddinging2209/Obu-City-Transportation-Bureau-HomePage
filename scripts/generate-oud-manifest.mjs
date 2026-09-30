@@ -4,13 +4,11 @@ import path from 'path';
 
 const OUD_DIR = 'public/oud';
 const MANIFEST_PATH = path.join(OUD_DIR, 'manifest.json');
+const previousManifest = fs.existsSync(MANIFEST_PATH) ? JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8')) : null;
 
 const files = fs.readdirSync(OUD_DIR).filter((f) => f.endsWith('.json') && f !== 'manifest.json');
 
-const manifest = {
-	generatedAt: new Date().toISOString(),
-	files: {},
-};
+const manifestFiles = {};
 
 for (const file of files) {
 	const filePath = path.join(OUD_DIR, file);
@@ -21,11 +19,21 @@ for (const file of files) {
 	// 拡張子を取り除いた '路線コード' をキーにする
 	const code = path.basename(file, '.json');
 
-	manifest.files[code] = {
+	manifestFiles[code] = {
 		hash,
 		size: buffer.length,
 	};
 }
+
+const previousFiles = previousManifest?.files ?? {};
+const filesUnchanged =
+	Object.keys(manifestFiles).length === Object.keys(previousFiles).length &&
+	Object.entries(manifestFiles).every(([code, file]) => previousFiles[code]?.hash === file.hash && previousFiles[code]?.size === file.size);
+
+const manifest = {
+	generatedAt: filesUnchanged ? previousManifest.generatedAt : new Date().toISOString(),
+	files: manifestFiles,
+};
 
 fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
 console.log('✅ manifest.json generated successfully');
