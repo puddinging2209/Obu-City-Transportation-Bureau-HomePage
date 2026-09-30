@@ -71,7 +71,7 @@ function About() {
 					/>
 					<Stack spacing={1.5} sx={{ position: 'relative', maxWidth: 620 }}>
 						<Typography variant='overline' sx={{ fontWeight: 700, letterSpacing: 1.2 }}>
-							OBU CITY METRO / ABOUT
+							OBU CITY SUBWAY / ABOUT
 						</Typography>
 						<Typography variant='h4' component='h1' sx={{ fontWeight: 700 }}>
 							大府市営地下鉄とは
@@ -85,10 +85,10 @@ function About() {
 				<Box>
 					<Stack spacing={1.5}>
 						<Typography variant='h6' component='h2' sx={{ fontWeight: 700 }}>
-							大府市の、架空のの地下鉄
+							架空の地下鉄
 						</Typography>
 						<Typography color='text.secondary' sx={{ lineHeight: 1.9 }}>
-							大府市営地下鉄は、大府市を舞台に趣味で制作している架空の鉄道です。この架空の世界では、大府市民の皆さまの血税によって運営され、毎日の移動を支える市営地下鉄という設定です。路線図や時刻表、列車位置などを通して、その世界をお楽しみください。
+							大府市営地下鉄は、大府市とその周辺を舞台に趣味で制作している架空の鉄道です。この架空の世界では、大府市民の皆さまの血税によって運営され、毎日の移動を支える市営地下鉄という設定です。路線図や時刻表、列車位置などを通して、その世界をお楽しみください。
 						</Typography>
 					</Stack>
 				</Box>
@@ -154,7 +154,7 @@ function About() {
 
 				<Alert severity='info' variant='outlined' sx={{ borderRadius: 1 }}>
 					<AlertTitle sx={{ fontWeight: 700 }}>このウェブサイトについて</AlertTitle>
-					このウェブサイトは大府市公式のものではありません。税金で運営されているという説明を含め、大府市交通局・大府市営地下鉄や掲載情報はすべて架空の設定であり、実在の大府市とは一切関係ありません。
+					このウェブサイトは大府市公式のものではありません。大府市交通局・大府市営地下鉄や掲載情報はすべて架空の設定であり、実在の大府市やその他企業、団体とは一切関係ありません。
 				</Alert>
 			</Stack>
 		</Container>
