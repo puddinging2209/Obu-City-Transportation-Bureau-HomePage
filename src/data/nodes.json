@@ -1,2806 +1,2806 @@
 {
 	"NK01": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "kts"
 	},
 	"NK02": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "kto"
 	},
 	"NK03": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "owk"
 	},
 	"NK04": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "bwg"
 	},
 	"NK05": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "tkg"
 	},
 	"NK06": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "tyk"
 	},
 	"NK07": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "chk"
 	},
 	"NK08": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "jsd"
 	},
 	"NK09": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "kmm"
 	},
 	"NK10": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "wko"
 	},
 	"NK11": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "smz"
 	},
 	"NK12": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "hrd"
 	},
 	"NK13": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "nki"
 	},
 	"NK14": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "tgo"
 	},
 	"NK15": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "srt"
 	},
 	"NK16": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "nsn"
 	},
 	"NK17": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "ord"
 	},
 	"NK18": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "nsi"
 	},
 	"NK19": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "nss"
 	},
 	"NK20": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "nsa"
 	},
 	"NK21": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "iws"
 	},
 	"NK22": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "bnt"
 	},
 	"NK23": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "tky"
 	},
 	"NK24": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "aic"
 	},
 	"NK25": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "ngk"
 	},
 	"NK26": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "knr"
 	},
 	"NK27": {
-		"line": "長久手線",
+		"line": "nk",
 		"json": "NK",
 		"id": "nks"
 	},
 	"OD01": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "kry"
 	},
 	"OD02": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "krm"
 	},
 	"OD03": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "aiz"
 	},
 	"OD04": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "ash"
 	},
 	"OD05": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "wks"
 	},
 	"OD06": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "obs"
 	},
 	"OD07": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "chc"
 	},
 	"OD08": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "oiw"
 	},
 	"OD09": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "kyw"
 	},
 	"OD10": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "kkg"
 	},
 	"OD11": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "mod"
 	},
 	"OD12": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "ryn"
 	},
 	"OD13": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "odk"
 	},
 	"OD14": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "kso"
 	},
 	"OD15": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "mtn"
 	},
 	"OD16": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "hsh"
 	},
 	"OD17": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "mks"
 	},
 	"OD18": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "mky"
 	},
 	"OD19": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "sks"
 	},
 	"OD20": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "ybt"
 	},
 	"OD21": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "sod"
 	},
 	"OD22": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "mzn"
 	},
 	"OD23": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "hrt"
 	},
 	"OD24": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "snk"
 	},
 	"OD25": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "usm"
 	},
 	"OD26": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "tkj"
 	},
 	"OD27": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "srk"
 	},
 	"OD28": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "trm"
 	},
 	"OD29": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "chy"
 	},
 	"OD30": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "yba"
 	},
 	"OD31": {
-		"line": "大高線",
+		"line": "od",
 		"json": "OD",
 		"id": "ske"
 	},
 	"GK01": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "nwa"
 	},
 	"GK02": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "odm"
 	},
 	"GK03": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "odk"
 	},
 	"GK04": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "nrm"
 	},
 	"GK05": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "ryg"
 	},
 	"GK06": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "kmt"
 	},
 	"GK07": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "try"
 	},
 	"GK08": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "ubi"
 	},
 	"GK09": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "kkd"
 	},
 	"GK10": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "ckk"
 	},
 	"GK11": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "mgm"
 	},
 	"GK12": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "ftm"
 	},
 	"GK13": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "msk"
 	},
 	"GK14": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "tkg"
 	},
 	"GK15": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "tys"
 	},
 	"GK16": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "okt"
 	},
 	"GK17": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "nzk"
 	},
 	"GK18": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "igm"
 	},
 	"GK19": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "mro"
 	},
 	"GK20": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "nso"
 	},
 	"GK21": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "ish"
 	},
 	"GK22": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "ngd"
 	},
 	"GK23": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "osh"
 	},
 	"GK24": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "nkf"
 	},
 	"GK25": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "nkd"
 	},
 	"GK26": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "nkn"
 	},
 	"GK27": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "kms"
 	},
 	"GK28": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "mkk"
 	},
 	"GK29": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "kbn"
 	},
 	"GK30": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "kbb"
 	},
 	"GK31": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "myn"
 	},
 	"GK32": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "skr"
 	},
 	"GK33": {
-		"line": "外環線",
+		"line": "gk",
 		"json": "GK",
 		"id": "chr"
 	},
 	"HD01": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "obu"
 	},
 	"HD02": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "obm"
 	},
 	"HD03": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "knk"
 	},
 	"HD04": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "iry"
 	},
 	"HD05": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "knm"
 	},
 	"HD06": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "sik"
 	},
 	"HD07": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "oga"
 	},
 	"HD08": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "nis"
 	},
 	"HD09": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "fje"
 	},
 	"HD10": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "mdr"
 	},
 	"HD11": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "hem"
 	},
 	"HD12": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "kmi"
 	},
 	"HD13": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "sch"
 	},
 	"HD14": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "ksn"
 	},
 	"HD15": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "owh"
 	},
 	"HD16": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "owy"
 	},
 	"HD17": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "okw"
 	},
 	"HD18": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "hno"
 	},
 	"HD19": {
-		"line": "半田線",
+		"line": "hd",
 		"json": "HD",
 		"id": "hns"
 	},
 	"HD17a": {
-		"line": "半田線住吉支線",
+		"line": "hds",
 		"json": "HD",
 		"id": "okw"
 	},
 	"HD20": {
-		"line": "半田線住吉支線",
+		"line": "hds",
 		"json": "HD",
 		"id": "akr"
 	},
 	"HD21": {
-		"line": "半田線住吉支線",
+		"line": "hds",
 		"json": "HD",
 		"id": "smy"
 	},
 	"HD22": {
-		"line": "半田線住吉支線",
+		"line": "hds",
 		"json": "HD",
 		"id": "sis"
 	},
 	"OL04a": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "shg"
 	},
 	"MT01": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "bzy"
 	},
 	"MT02": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "nry"
 	},
 	"MT03": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "okh"
 	},
 	"MT04": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "cfk"
 	},
 	"MT05": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "ksk"
 	},
 	"MT06": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "ngt"
 	},
 	"MT07": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "arm"
 	},
 	"MT08": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "trs"
 	},
 	"MT09": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "ogg"
 	},
 	"MT10": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "tkm"
 	},
 	"MT11": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "nrk"
 	},
 	"MT12": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "tsg"
 	},
 	"MT13": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "kmn"
 	},
 	"MT14": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "hbd"
 	},
 	"MT15": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "hbj"
 	},
 	"MT16": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "mki"
 	},
 	"MT17": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "hbm"
 	},
 	"MT18": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "hrb"
 	},
 	"MT19": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "doj"
 	},
 	"MT20": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "mmn"
 	},
 	"MT21": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "mmd"
 	},
 	"MT22": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "udk"
 	},
 	"MT23": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "hnb"
 	},
 	"MT24": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "mmz"
 	},
 	"MT25": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "mkn"
 	},
 	"MT26": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "gkr"
 	},
 	"MT27": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "tbd"
 	},
 	"MT28": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "skb"
 	},
 	"MT29": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "ysh"
 	},
 	"MT30": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "hmk"
 	},
 	"MT31": {
-		"line": "名東線",
+		"line": "mt",
 		"json": "MT",
 		"id": "fjg"
 	},
 	"FT01": {
-		"line": "二ツ池線",
+		"line": "ft",
 		"json": "FT",
 		"id": "shg"
 	},
 	"FT02": {
-		"line": "二ツ池線",
+		"line": "ft",
 		"json": "FT",
 		"id": "fts"
 	},
 	"FT03": {
-		"line": "二ツ池線",
+		"line": "ft",
 		"json": "FT",
 		"id": "hrk"
 	},
 	"FT04": {
-		"line": "二ツ池線",
+		"line": "ft",
 		"json": "FT",
 		"id": "mds"
 	},
 	"FT05": {
-		"line": "二ツ池線",
+		"line": "ft",
 		"json": "FT",
 		"id": "dtc"
 	},
 	"FT06": {
-		"line": "二ツ池線",
+		"line": "ft",
 		"json": "FT",
 		"id": "ash"
 	},
 	"FT07": {
-		"line": "二ツ池線",
+		"line": "ft",
 		"json": "FT",
 		"id": "mrk"
 	},
 	"FT08": {
-		"line": "二ツ池線",
+		"line": "ft",
 		"json": "FT",
 		"id": "hog"
 	},
 	"FT05a": {
-		"line": "二ツ池線森岡支線",
+		"line": "ftm",
 		"json": "FT",
 		"id": "dtc"
 	},
 	"FT09": {
-		"line": "二ツ池線森岡支線",
+		"line": "ftm",
 		"json": "FT",
 		"id": "smt"
 	},
 	"FT10": {
-		"line": "二ツ池線森岡支線",
+		"line": "ftm",
 		"json": "FT",
 		"id": "yng"
 	},
 	"FT11": {
-		"line": "二ツ池線森岡支線",
+		"line": "ftm",
 		"json": "FT",
 		"id": "mrn"
 	},
 	"FT12": {
-		"line": "二ツ池線森岡支線",
+		"line": "ftm",
 		"json": "FT",
 		"id": "ktb"
 	},
 	"FT13": {
-		"line": "二ツ池線森岡支線",
+		"line": "ftm",
 		"json": "FT",
 		"id": "odn"
 	},
 	"UD01": {
-		"line": "内田面線",
+		"line": "ud",
 		"json": "UD",
 		"id": "sos"
 	},
 	"UD02": {
-		"line": "内田面線",
+		"line": "ud",
 		"json": "UD",
 		"id": "usr"
 	},
 	"UD03": {
-		"line": "内田面線",
+		"line": "ud",
 		"json": "UD",
 		"id": "udm"
 	},
 	"UD04": {
-		"line": "内田面線",
+		"line": "ud",
 		"json": "UD",
 		"id": "kts"
 	},
 	"UD05": {
-		"line": "内田面線",
+		"line": "ud",
 		"json": "UD",
 		"id": "ksd"
 	},
 	"UD06": {
-		"line": "内田面線",
+		"line": "ud",
 		"json": "UD",
 		"id": "ftk"
 	},
 	"UD07": {
-		"line": "内田面線",
+		"line": "ud",
 		"json": "UD",
 		"id": "shg"
 	},
 	"UD08": {
-		"line": "内田面線",
+		"line": "ud",
 		"json": "UD",
 		"id": "ktc"
 	},
 	"UD09": {
-		"line": "内田面線",
+		"line": "ud",
 		"json": "UD",
 		"id": "tsn"
 	},
 	"NB01": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "odk"
 	},
 	"NB02": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "skj"
 	},
 	"NB03": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "kgn"
 	},
 	"NB04": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "cya"
 	},
 	"NB05": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "kw3"
 	},
 	"NB06": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "msh"
 	},
 	"NB07": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "hry"
 	},
 	"NB08": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "kne"
 	},
 	"NB09": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "ebc"
 	},
 	"NB10": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "krn"
 	},
 	"NB11": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "yng"
 	},
 	"NB12": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "owm"
 	},
 	"NB13": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "ows"
 	},
 	"NB14": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "myt"
 	},
 	"NB15": {
-		"line": "南北線",
+		"line": "nb",
 		"json": "NB",
 		"id": "ogw"
 	},
 	"MY01": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "stm"
 	},
 	"MY02": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "sdn"
 	},
 	"MY03": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "krs"
 	},
 	"MY04": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "kwi"
 	},
 	"MY05": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "nfj"
 	},
 	"MY06": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "fjm"
 	},
 	"MY07": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "img"
 	},
 	"MY08": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "hzk"
 	},
 	"MY09": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "fjt"
 	},
 	"MY10": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "iwg"
 	},
 	"MY11": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "akd"
 	},
 	"MY12": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "igy"
 	},
 	"MY13": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "tmp"
 	},
 	"MY14": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "fkt"
 	},
 	"MY15": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "har"
 	},
 	"MY16": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "hnk"
 	},
 	"MY17": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "mar"
 	},
 	"MY18": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "mms"
 	},
 	"MY19": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "mys"
 	},
 	"MY20": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "med"
 	},
 	"MY21": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "mik"
 	},
 	"MY22": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "azb"
 	},
 	"MY23": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "skg"
 	},
 	"MY24": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "ymg"
 	},
 	"MY25": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "ukg"
 	},
 	"MY26": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "htt"
 	},
 	"MY27": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "mym"
 	},
 	"MY28": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "mgs"
 	},
 	"MY29": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "mgk"
 	},
 	"KM01": {
-		"line": "健康の森線",
+		"line": "km",
 		"json": "KM",
 		"id": "unk"
 	},
 	"KM02": {
-		"line": "健康の森線",
+		"line": "km",
 		"json": "KM",
 		"id": "okd"
 	},
 	"KM03": {
-		"line": "健康の森線",
+		"line": "km",
 		"json": "KM",
 		"id": "kkn"
 	},
 	"KM04": {
-		"line": "健康の森線",
+		"line": "km",
 		"json": "KM",
 		"id": "hnt"
 	},
 	"KM05": {
-		"line": "健康の森線",
+		"line": "km",
 		"json": "KM",
 		"id": "udo"
 	},
 	"KM06": {
-		"line": "健康の森線",
+		"line": "km",
 		"json": "KM",
 		"id": "und"
 	},
 	"KM07": {
-		"line": "健康の森線",
+		"line": "km",
 		"json": "KM",
 		"id": "sin"
 	},
 	"KM08": {
-		"line": "健康の森線",
+		"line": "km",
 		"json": "KM",
 		"id": "fkc"
 	},
 	"KM09": {
-		"line": "健康の森線",
+		"line": "km",
 		"json": "KM",
 		"id": "trt"
 	},
 	"KM10": {
-		"line": "健康の森線",
+		"line": "km",
 		"json": "KM",
 		"id": "kmh"
 	},
 	"TR01": {
-		"line": "南港線(名港トリトンライン)",
+		"line": "tr",
 		"json": "TR",
 		"id": "seh"
 	},
 	"TR02": {
-		"line": "南港線(名港トリトンライン)",
+		"line": "tr",
 		"json": "TR",
 		"id": "ktw"
 	},
 	"TR03": {
-		"line": "南港線(名港トリトンライン)",
+		"line": "tr",
 		"json": "TR",
 		"id": "hnn"
 	},
 	"TR04": {
-		"line": "南港線(名港トリトンライン)",
+		"line": "tr",
 		"json": "TR",
 		"id": "okm"
 	},
 	"TR05": {
-		"line": "南港線(名港トリトンライン)",
+		"line": "tr",
 		"json": "TR",
 		"id": "smp"
 	},
 	"TR06": {
-		"line": "南港線(名港トリトンライン)",
+		"line": "tr",
 		"json": "TR",
 		"id": "som"
 	},
 	"TR07": {
-		"line": "南港線(名港トリトンライン)",
+		"line": "tr",
 		"json": "TR",
 		"id": "knj"
 	},
 	"TM01": {
-		"line": "高浜線",
+		"line": "tm",
 		"json": "TM",
 		"id": "hem"
 	},
 	"TM02": {
-		"line": "高浜線",
+		"line": "tm",
 		"json": "TM",
 		"id": "kmz"
 	},
 	"TM03": {
-		"line": "高浜線",
+		"line": "tm",
 		"json": "TM",
 		"id": "sns"
 	},
 	"TM04": {
-		"line": "高浜線",
+		"line": "tm",
 		"json": "TM",
 		"id": "tkh"
 	},
 	"TM05": {
-		"line": "高浜線",
+		"line": "tm",
 		"json": "TM",
 		"id": "onn"
 	},
 	"TM06": {
-		"line": "高浜線",
+		"line": "tm",
 		"json": "TM",
 		"id": "mtk"
 	},
 	"NW15": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "oue"
 	},
 	"ON02": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "oue"
 	},
 	"ON03": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "ubk"
 	},
 	"ON04": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "kmd"
 	},
 	"ON05": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "umk"
 	},
 	"ON06": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "kty"
 	},
 	"ON07": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "myu"
 	},
 	"ON08": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "udo"
 	},
 	"ON09": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "msn"
 	},
 	"ON10": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "tmo"
 	},
 	"ON11": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "seh"
 	},
 	"ON12": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "gdo"
 	},
 	"ON13": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "syk"
 	},
 	"ON14": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "ryn"
 	},
 	"ON15": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "khr"
 	},
 	"ON16": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "ryg"
 	},
 	"ON17": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "sim"
 	},
 	"ON18": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "sky"
 	},
 	"ON19": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "nmk"
 	},
 	"ON20": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "nkm"
 	},
 	"ON21": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "snn"
 	},
 	"ON22": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "akw"
 	},
 	"ON23": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "aoy"
 	},
 	"ON24": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "hts"
 	},
 	"ON25": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "smd"
 	},
 	"ON26": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "smb"
 	},
 	"ON27": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "ikm"
 	},
 	"ON28": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "omt"
 	},
 	"ON29": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "ygt"
 	},
 	"ON30": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "hrj"
 	},
 	"ON31": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "irn"
 	},
 	"ON32": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "kwn"
 	},
 	"ON33": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "ysd"
 	},
 	"ON34": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "hro"
 	},
 	"ON35": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "fkg"
 	},
 	"ON36": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "mck"
 	},
 	"ON37": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "kkz"
 	},
 	"ON38": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "ssk"
 	},
 	"ON39": {
-		"line": "大府西線・八事線",
+		"line": "on",
 		"json": "ON",
 		"id": "ske"
 	},
 	"OG01": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "chr"
 	},
 	"OG02": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "chh"
 	},
 	"OG03": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "hks"
 	},
 	"OG04": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "ksg"
 	},
 	"OG05": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "sgh"
 	},
 	"OG06": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "isk"
 	},
 	"OG07": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "nky"
 	},
 	"OG08": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "kry"
 	},
 	"OG09": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "tyo"
 	},
 	"OG10": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "ohm"
 	},
 	"OG11": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "kss"
 	},
 	"OG12": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "jnj"
 	},
 	"OG13": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "tkc"
 	},
 	"OG14": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "hog"
 	},
 	"OG15": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "ogw"
 	},
 	"OG16": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "odn"
 	},
 	"OG17": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "oga"
 	},
 	"OG18": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "unk"
 	},
 	"OG19": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "ubk"
 	},
 	"OG20": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "oue"
 	},
 	"OG21": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "cty"
 	},
 	"OG22": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "nmg"
 	},
 	"OG23": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "sri"
 	},
 	"OG24": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "umg"
 	},
 	"OG25": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "gtn"
 	},
 	"OG26": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "ctc"
 	},
 	"OG27": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "snc"
 	},
 	"OG28": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "cts"
 	},
 	"OG29": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "hmw"
 	},
 	"OG30": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "hgy"
 	},
 	"OG31": {
-		"line": "緒川線",
+		"line": "og",
 		"json": "OG",
 		"id": "ask"
 	},
 	"HK01": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "hnm"
 	},
 	"HK02": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "mzh"
 	},
 	"HK03": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "toy"
 	},
 	"HK04": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "hns"
 	},
 	"HK05": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "hnd"
 	},
 	"HK06": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "chn"
 	},
 	"HK07": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "krd"
 	},
 	"HK08": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "sis"
 	},
 	"HK09": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "hrg"
 	},
 	"HK10": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "hyc"
 	},
 	"HK11": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "ynn"
 	},
 	"HK12": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "hri"
 	},
 	"HK13": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "sse"
 	},
 	"HK14": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "hor"
 	},
 	"HK15": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "mti"
 	},
 	"HK16": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "kni"
 	},
 	"HK17": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "asd"
 	},
 	"HK18": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "stk"
 	},
 	"HK19": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "ktj"
 	},
 	"HK20": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "hrm"
 	},
 	"HK21": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "mnd"
 	},
 	"HK22": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "tkn"
 	},
 	"HK23": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "tkk"
 	},
 	"HK24": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "rnk"
 	},
 	"HK25": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "rnt"
 	},
 	"HK26": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "ctk"
 	},
 	"HK27": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "ct1"
 	},
 	"HK28": {
-		"line": "半滑線・空港線",
+		"line": "hk",
 		"json": "HK",
 		"id": "ct2"
 	},
 	"TY01": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "ngd"
 	},
 	"TY02": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "hon"
 	},
 	"TY03": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "ttm"
 	},
 	"TY04": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "myg"
 	},
 	"TY05": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "hmt"
 	},
 	"TY06": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "tkr"
 	},
 	"TY07": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "otb"
 	},
 	"TY08": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "tsr"
 	},
 	"TY09": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "hsn"
 	},
 	"TY10": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "tts"
 	},
 	"TY11": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "krg"
 	},
 	"TY12": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "hkt"
 	},
 	"TY13": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "yts"
 	},
 	"TY14": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "kzk"
 	},
 	"TY15": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "tyt"
 	},
 	"TY16": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "yhg"
 	},
 	"TY17": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "tst"
 	},
 	"TY18": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "uen"
 	},
 	"TY19": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "kmg"
 	},
 	"TY20": {
-		"line": "豊田線",
+		"line": "ty",
 		"json": "TY",
 		"id": "msb"
 	},
 	"KL01": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "hdk"
 	},
 	"KL02": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "kkr"
 	},
 	"KL03": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "krm"
 	},
 	"KL04": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "skk"
 	},
 	"KL05": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "kss"
 	},
 	"KL06": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "krt"
 	},
 	"KL07": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "ksm"
 	},
 	"KL08": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "krk"
 	},
 	"KL09": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "sms"
 	},
 	"KL10": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "isk"
 	},
 	"KL11": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "shw"
 	},
 	"KL12": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "ais"
 	},
 	"KL13": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "ond"
 	},
 	"KL14": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "kra"
 	},
 	"KL15": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "aym"
 	},
 	"KL16": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "sdn"
 	},
 	"KL17": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "oym"
 	},
 	"KL01a": {
-		"line": "刈谷環状線",
+		"line": "kl",
 		"json": "KL",
 		"id": "hdk"
 	},
 	"TT01": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "ygh"
 	},
 	"TT02": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "yks"
 	},
 	"TT03": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "nzb"
 	},
 	"TT04": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "cth"
 	},
 	"TT05": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "chs"
 	},
 	"TT06": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "skd"
 	},
 	"TT07": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "ttj"
 	},
 	"TT08": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "scd"
 	},
 	"TT09": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "cts"
 	},
 	"TT10": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "cht"
 	},
 	"TT11": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "mkg"
 	},
 	"TT12": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "okn"
 	},
 	"TT13": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "hng"
 	},
 	"TT14": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "mdg"
 	},
 	"TT15": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "smk"
 	},
 	"TT16": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "smg"
 	},
 	"KT01": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "tgw"
 	},
 	"KT02": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "hsd"
 	},
 	"KT03": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "ygh"
 	},
 	"KT04": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "ktk"
 	},
 	"KT05": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "ysk"
 	},
 	"KT06": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "myu"
 	},
 	"KT07": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "hnt"
 	},
 	"KT08": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "obm"
 	},
 	"KT09": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "krn"
 	},
 	"KT10": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "wks"
 	},
 	"KT11": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "dtc"
 	},
 	"KT12": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "sos"
 	},
 	"KT13": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "nkc"
 	},
 	"KT14": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "hdk"
 	},
 	"KT15": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "stm"
 	},
 	"KT16": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "mrt"
 	},
 	"KT17": {
-		"line": "刈田川線",
+		"line": "kt",
 		"json": "KT",
 		"id": "kry"
 	},
 	"KT00": {
-		"line": "刈田川急行線",
+		"line": "ktr",
 		"json": "KT",
 		"id": "obu"
 	},
 	"KT15a": {
-		"line": "刈田川線知立支線",
+		"line": "ktc",
 		"json": "KTa",
 		"id": "stm"
 	},
 	"KT18": {
-		"line": "刈田川線知立支線",
+		"line": "ktc",
 		"json": "KTa",
 		"id": "kik"
 	},
 	"KT19": {
-		"line": "刈田川線知立支線",
+		"line": "ktc",
 		"json": "KTa",
 		"id": "ond"
 	},
 	"KT20": {
-		"line": "刈田川線知立支線",
+		"line": "ktc",
 		"json": "KTa",
 		"id": "kko"
 	},
 	"KT21": {
-		"line": "刈田川線知立支線",
+		"line": "ktc",
 		"json": "KTa",
 		"id": "tri"
 	},
 	"KT22": {
-		"line": "刈田川線知立支線",
+		"line": "ktc",
 		"json": "KTa",
 		"id": "chr"
 	},
 	"OL01": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "obu"
 	},
 	"OL02": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "obs"
 	},
 	"OL03": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "ngn"
 	},
 	"OL04": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "shg"
 	},
 	"OL05": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "kjt"
 	},
 	"OL06": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "bzy"
 	},
 	"OL07": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "tsn"
 	},
 	"OL08": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "kyw"
 	},
 	"OL09": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "tmo"
 	},
 	"OL10": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "alb"
 	},
 	"OL11": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "ebt"
 	},
 	"OL12": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "omn"
 	},
 	"OL01a": {
-		"line": "大府環状線",
+		"line": "ol",
 		"json": "OL",
 		"id": "obu"
 	},
 	"MR01": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "hns"
 	},
 	"MR02": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "mhc"
 	},
 	"MR03": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "mnt"
 	},
 	"MR04": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "nrw"
 	},
 	"MR05": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "gdg"
 	},
 	"MR06": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "asm"
 	},
 	"MR07": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "yrk"
 	},
 	"MR08": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "ikb"
 	},
 	"MR09": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "tmn"
 	},
 	"MR10": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "tkt"
 	},
 	"MR11": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "stn"
 	},
 	"MR12": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "hzm"
 	},
 	"MR13": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "urn"
 	},
 	"MR14": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "sfk"
 	},
 	"MR15": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "kgt"
 	},
 	"MR16": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "snt"
 	},
 	"MR17": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "umn"
 	},
 	"MR18": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "ftt"
 	},
 	"MR19": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "kwg"
 	},
 	"MR20": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "tks"
 	},
 	"MR21": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "kwa"
 	},
 	"MR22": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "kwk"
 	},
 	"MR23": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "sur"
 	},
 	"MR24": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "koh"
 	},
 	"MR25": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "mnh"
 	},
 	"MR26": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "gjm"
 	},
 	"MR27": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "ymd"
 	},
 	"MR28": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "oik"
 	},
 	"MR29": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "ktn"
 	},
 	"MR30": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "smr"
 	},
 	"MR31": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "mrg"
 	},
 	"MR32": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "mrz"
 	},
 	"MR33": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "mzk"
 	},
 	"NW01": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "nwa"
 	},
 	"NW02": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "rnw"
 	},
 	"NW03": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "mjd"
 	},
 	"NW04": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "jtk"
 	},
 	"NW05": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "zgm"
 	},
 	"NW06": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "wkn"
 	},
 	"NW07": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "amm"
 	},
 	"NW08": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "fkc"
 	},
 	"NW09": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "fsm"
 	},
 	"NW10": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "ktk"
 	},
 	"NW11": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "ust"
 	},
 	"NW12": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "mnk"
 	},
 	"NW13": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "nkh"
 	},
 	"NW14": {
-		"line": "名和線",
+		"line": "nw",
 		"json": "NW",
 		"id": "ywt"
 	},
 	"UM01": {
-		"line": "内海線",
+		"line": "um",
 		"json": "UM",
 		"id": "koh"
 	},
 	"UM02": {
-		"line": "内海線",
+		"line": "um",
 		"json": "UM",
 		"id": "kjo"
 	},
 	"UM03": {
-		"line": "内海線",
+		"line": "um",
 		"json": "UM",
 		"id": "ucd"
 	},
 	"UM04": {
-		"line": "内海線",
+		"line": "um",
 		"json": "UM",
 		"id": "utm"
 	},
 	"UM05": {
-		"line": "内海線",
+		"line": "um",
 		"json": "UM",
 		"id": "wsk"
 	},
 	"UM06": {
-		"line": "内海線",
+		"line": "um",
 		"json": "UM",
 		"id": "utk"
 	},
 	"TZ01": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "ars"
 	},
 	"TZ02": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "okk"
 	},
 	"TZ03": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "amm"
 	},
 	"TZ04": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "kfn"
 	},
 	"TZ05": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "gkt"
 	},
 	"TZ06": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "msn"
 	},
 	"TZ07": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "alb"
 	},
 	"TZ08": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "hry"
 	},
 	"TZ09": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "chc"
 	},
 	"TZ10": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "ngn"
 	},
 	"TZ11": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "hrk"
 	},
 	"TZ12": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "tti"
 	},
 	"TZ13": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "ksd"
 	},
 	"TZ14": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "mdk"
 	},
 	"TZ15": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "szy"
 	},
 	"TZ16": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "zng"
 	},
 	"TZ17": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "ftm"
 	},
 	"TZ18": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "fmd"
 	},
 	"TZ19": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "tyd"
 	},
 	"TZ20": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "wkm"
 	},
 	"TZ21": {
-		"line": "東西線",
+		"line": "tz",
 		"json": "TZ",
 		"id": "kkk"
 	},
 	"TZ00": {
-		"line": "惣作直通線",
+		"line": "sos",
 		"json": "TZ",
 		"id": "sos"
 	},
 	"TZ10a": {
-		"line": "惣作直通線",
+		"line": "sos",
 		"json": "TZ",
 		"id": "ngn"
 	},
 	"KT04a": {
-		"line": "与五八デルタ線",
+		"line": "ygh",
 		"json": "TT",
 		"id": "ktk"
 	},
 	"TT02a": {
-		"line": "与五八デルタ線",
+		"line": "ygh",
 		"json": "TT",
 		"id": "yks"
 	},
 	"GK04a": {
-		"line": "鳴海連絡線",
+		"line": "nrm",
 		"json": "GK",
 		"id": "nrm"
 	},
 	"OD14a": {
-		"line": "鳴海連絡線",
+		"line": "nrm",
 		"json": "GK",
 		"id": "kso"
 	},
 	"OL11a": {
-		"line": "大峯連絡線",
+		"line": "omn",
 		"json": "HD",
 		"id": "ebt"
 	},
 	"HD02a": {
-		"line": "大峯連絡線",
+		"line": "omn",
 		"json": "HD",
 		"id": "obm"
 	},
 	"KT01a": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "tgw"
 	},
 	"KT02a": {
-		"line": "つつじが丘線",
+		"line": "tt",
 		"json": "TT",
 		"id": "hsd"
 	},
 	"HD17b": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "okw"
 	},
 	"HD18a": {
-		"line": "師崎線",
+		"line": "mr",
 		"json": "MR",
 		"id": "hno"
 	},
 	"KT17a": {
-		"line": "みよし線",
+		"line": "my",
 		"json": "MY",
 		"id": "kry"
 	},
 	"AR01": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "shg"
 	},
 	"AR02": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "ktm"
 	},
 	"AR03": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "gnk"
 	},
 	"AR04": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "oiw"
 	},
 	"AR05": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "msh"
 	},
 	"AR06": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "smn"
 	},
 	"AR07": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "nkt"
 	},
 	"AR08": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "srh"
 	},
 	"AR09": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "isi"
 	},
 	"AR10": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "smo"
 	},
 	"AR11": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "aru"
 	},
 	"AR12": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "zgm"
 	},
 	"AR13": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "arw"
 	},
 	"AR14": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "aro"
 	},
 	"AR15": {
-		"line": "荒尾線",
+		"line": "ar",
 		"json": "AR",
 		"id": "shr"
 	},
 	"ON10a": {
-		"line": "南港線(名港トリトンライン)",
+		"line": "tr",
 		"json": "TR",
 		"id": "tmo"
 	},
 	"AG01": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "oue"
 	},
 	"AG02": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "kmk"
 	},
 	"AG03": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "mri"
 	},
 	"AG04": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "hgo"
 	},
 	"AG05": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "tkd"
 	},
 	"AG06": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "fks"
 	},
 	"AG07": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "ark"
 	},
 	"AG08": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "kth"
 	},
 	"AG09": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "myz"
 	},
 	"AG10": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "knd"
 	},
 	"AG11": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "hgi"
 	},
 	"AG12": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "ynh"
 	},
 	"AG13": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "hds"
 	},
 	"AG14": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "akr"
 	},
 	"AG15": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "hnd"
 	},
 	"AG16": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "hdn"
 	},
 	"AG17": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "sk2"
 	},
 	"AG18": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "sk4"
 	},
 	"AG19": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "say"
 	},
 	"AG20": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "hnz"
 	},
 	"AG21": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "hso"
 	},
 	"AG22": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "kgr"
 	},
 	"AG23": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "hbt"
 	},
 	"AG24": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "ttn"
 	},
 	"AG25": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "cky"
 	},
 	"AG26": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "dmn"
 	},
 	"AG27": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "ttc"
 	},
 	"AG28": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "fkm"
 	},
 	"AG29": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "fki"
 	},
 	"AG30": {
-		"line": "阿久比線",
+		"line": "ag",
 		"json": "AG",
 		"id": "sfk"
 	},
 	"TR08": {
-		"line": "南港線(名港トリトンライン)",
+		"line": "tr",
 		"json": "TR",
 		"id": "tbs"
 	},
 	"TR09": {
-		"line": "南港線(名港トリトンライン)",
+		"line": "tr",
 		"json": "TR",
 		"id": "nkb"
 	},
 	"TR10": {
-		"line": "南港線(名港トリトンライン)",
+		"line": "tr",
 		"json": "TR",
 		"id": "wng"
 	},
@@ -2855,167 +2855,167 @@
 		"id": "tmo"
 	},
 	"OZ01": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "kbn"
 	},
 	"OZ02": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "kmb"
 	},
 	"OZ03": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "mgn"
 	},
 	"OZ04": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "kmr"
 	},
 	"OZ05": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "wkz"
 	},
 	"OZ06": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "ysw"
 	},
 	"OZ07": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "kug"
 	},
 	"OZ08": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "fkj"
 	},
 	"OZ09": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "kbr"
 	},
 	"OZ10": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "hkb"
 	},
 	"OZ11": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "ozk"
 	},
 	"OZ12": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "ozo"
 	},
 	"OZ13": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "dmo"
 	},
 	"OZ14": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "djj"
 	},
 	"OZ15": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "idr"
 	},
 	"OZ16": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "igc"
 	},
 	"OZ17": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "nom"
 	},
 	"OZ18": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "hmd"
 	},
 	"OZ19": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "ozh"
 	},
 	"OZ20": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "hoz"
 	},
 	"OZ21": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "iks"
 	},
 	"OZ22": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "znd"
 	},
 	"OZ23": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "tsk"
 	},
 	"OZ24": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "onk"
 	},
 	"OZ25": {
-		"line": "岡崎線",
+		"line": "oz",
 		"json": "OZ",
 		"id": "okz"
 	},
 	"OZ14a": {
-		"line": "岡崎線東公園支線",
+		"line": "ozh",
 		"json": "OZa",
 		"id": "djj"
 	},
 	"OZ51": {
-		"line": "岡崎線東公園支線",
+		"line": "ozh",
 		"json": "OZa",
 		"id": "kmo"
 	},
 	"OZ52": {
-		"line": "岡崎線東公園支線",
+		"line": "ozh",
 		"json": "OZa",
 		"id": "ida"
 	},
 	"OZ53": {
-		"line": "岡崎線東公園支線",
+		"line": "ozh",
 		"json": "OZa",
 		"id": "igs"
 	},
 	"OZ54": {
-		"line": "岡崎線東公園支線",
+		"line": "ozh",
 		"json": "OZa",
 		"id": "ing"
 	},
 	"OZ55": {
-		"line": "岡崎線東公園支線",
+		"line": "ozh",
 		"json": "OZa",
 		"id": "oro"
 	},
 	"OZ56": {
-		"line": "岡崎線東公園支線",
+		"line": "ozh",
 		"json": "OZa",
 		"id": "mtd"
 	},
 	"OZ57": {
-		"line": "岡崎線東公園支線",
+		"line": "ozh",
 		"json": "OZa",
 		"id": "hko"
 	}

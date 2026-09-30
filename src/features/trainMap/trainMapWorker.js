@@ -15,7 +15,7 @@ const stations = Object.values(stationsData);
 const lineCodeNameMap = Object.fromEntries(
 	Object.values(linesData)
 		.reverse()
-		.map((l) => [l.code, l.name]),
+		.map((l) => [l.code, l.id]),
 );
 
 let trains = null;
@@ -60,7 +60,7 @@ function searchStops(train, lineCode, prevArr, index) {
 			if (lineCode == 'KT' && stationId === 'chr') return null;
 			if (lineCode == 'MR' && (stationId === 'okw' || stationId === 'hno')) return null;
 			if (lineCode == 'NK' && (stationId === 'kyw' || stationId === 'tmo')) return null;
-			if (lineCode == 'TT' && (stationId === 'tgw' || stationId === 'hsd')) return null;
+			if (lineCode == 'TT' && (stationId === 'tgw' || stationId === 'hsd' || (stationId === 'ktk' && sta.stopType === 2))) return null;
 			if (lineCode == 'MY' && stationId === 'kry') return null;
 			if (![1, 2].includes(sta.stopType)) return null;
 			const nextTrainNum = i === train.timetable._data.length - 1 && train.note?.includes('次') ? train.note.replace('次', '') : null;
@@ -192,9 +192,11 @@ function calcPositions(sec) {
 			if (stop.arr <= sec && sec < stop.dep) {
 				segmentData.length = 0;
 				segmentData.push(stop);
+				train.stoppingSta = stop.id;
 				break;
 			}
 			if (sec < stop.arr) {
+				train.stoppingSta = null;
 				break;
 			}
 			if (stop.dep <= sec) {
@@ -275,6 +277,15 @@ function calcPositions(sec) {
 	return results;
 }
 
+function getStoppedTrainIndicesByStation(trains) {
+	const indicesByStation = {};
+	for (const [index, train] of trains.entries()) {
+		if (!train.stoppingSta) continue;
+		(indicesByStation[train.stoppingSta] ??= []).push(index);
+	}
+	return indicesByStation;
+}
+
 self.addEventListener('message', ({ data }) => {
 	switch (data.type) {
 		case 'setOuds': {
@@ -285,9 +296,11 @@ self.addEventListener('message', ({ data }) => {
 			break;
 		}
 		case 'calcPosition': {
+			const trains = calcPositions(normalizeSec(data.sec));
 			self.postMessage({
 				type: 'calcPositionResult',
-				data: calcPositions(normalizeSec(data.sec)),
+				data: trains,
+				stoppedTrainIndicesByStation: getStoppedTrainIndicesByStation(trains),
 				sec: data.sec,
 			});
 		}

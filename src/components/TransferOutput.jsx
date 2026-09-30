@@ -4,7 +4,7 @@ import { Box, Button, Card, CardContent, Stack, Typography } from '@mui/material
 import { useTheme } from '@mui/material/styles';
 import { useAtomValue, useSetAtom } from 'jotai';
 
-import { addMyStationAtom, myStationsAtom, settingsAtom } from '../utils/Atom.js';
+import { addMyStationAtom, myStationsAtom, settingsAtom } from '../atom/atom.js';
 import { label } from '../utils/Station.js';
 import { toTimeString } from '../utils/Time.js';
 import TrainStopsDialog from './TrainStopsDialog.jsx';

@@ -8,14 +8,13 @@
 		"kana": "きたさき",
 		"roma": "Kitasaki",
 		"routes": [
-			"長久手線",
-			"内田面線"
+			"nk",
+			"ud"
 		],
 		"lat": 35.0277166,
 		"lng": 136.9922993,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "kts"
+		"id": "kts",
+		"govId": "232238"
 	},
 	"kto": {
 		"code": [
@@ -25,13 +24,12 @@
 		"kana": "きたさきおおしま",
 		"roma": "Kitasaki-ōshima",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.0341029,
 		"lng": 136.9941701,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "kto"
+		"id": "kto",
+		"govId": "232238"
 	},
 	"owk": {
 		"code": [
@@ -41,13 +39,12 @@
 		"kana": "おおわき",
 		"roma": "Ōwaki",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.0409185,
 		"lng": 136.9993983,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "owk"
+		"id": "owk",
+		"govId": "232297"
 	},
 	"bwg": {
 		"code": [
@@ -57,13 +54,12 @@
 		"kana": "びわがいけ",
 		"roma": "Biwagaike",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.0469206,
 		"lng": 137.0045878,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "bwg"
+		"id": "bwg",
+		"govId": "232297"
 	},
 	"tkg": {
 		"code": [
@@ -74,14 +70,13 @@
 		"kana": "たかがも",
 		"roma": "Takagamo",
 		"routes": [
-			"長久手線",
-			"外環線"
+			"nk",
+			"gk"
 		],
 		"lat": 35.05224,
 		"lng": 137.009732,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "tkg"
+		"id": "tkg",
+		"govId": "232297"
 	},
 	"tyk": {
 		"code": [
@@ -91,13 +86,12 @@
 		"kana": "とよあけし",
 		"roma": "Toyoake-shi",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.0545475,
 		"lng": 137.0131163,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "tyk"
+		"id": "tyk",
+		"govId": "232297"
 	},
 	"chk": {
 		"code": [
@@ -107,13 +101,12 @@
 		"kana": "ちゅうおうこうえん",
 		"roma": "Chūōkōen",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.0568163,
 		"lng": 137.0162392,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "chk"
+		"id": "chk",
+		"govId": "232297"
 	},
 	"jsd": {
 		"code": [
@@ -123,13 +116,12 @@
 		"kana": "じゅうさんづか",
 		"roma": "Jūsanzuka",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.0601059,
 		"lng": 137.0207363,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "jsd"
+		"id": "jsd",
+		"govId": "232297"
 	},
 	"kmm": {
 		"code": [
@@ -139,13 +131,12 @@
 		"kana": "くつかけちょうもりまえ",
 		"roma": "Kutsukake-chō-morimae",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.0666313,
 		"lng": 137.0296582,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "kmm"
+		"id": "kmm",
+		"govId": "232297"
 	},
 	"wko": {
 		"code": [
@@ -155,13 +146,12 @@
 		"kana": "わかおうじがわ",
 		"roma": "Wakaōjigawa",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.0734472,
 		"lng": 137.0349998,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "wko"
+		"id": "wko",
+		"govId": "232297"
 	},
 	"smz": {
 		"code": [
@@ -171,13 +161,12 @@
 		"kana": "しみずがね",
 		"roma": "Shimizugane",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.0832576,
 		"lng": 137.0402219,
-		"prefecture": "愛知県",
-		"city": "東郷町",
-		"id": "smz"
+		"id": "smz",
+		"govId": "233021"
 	},
 	"hrd": {
 		"code": [
@@ -187,13 +176,12 @@
 		"kana": "はるきだい",
 		"roma": "Harukidai",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.0889271,
 		"lng": 137.0429267,
-		"prefecture": "愛知県",
-		"city": "東郷町",
-		"id": "hrd"
+		"id": "hrd",
+		"govId": "233021"
 	},
 	"nki": {
 		"code": [
@@ -203,13 +191,12 @@
 		"kana": "ねこいけ",
 		"roma": "Nekoike",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.0972572,
 		"lng": 137.0480292,
-		"prefecture": "愛知県",
-		"city": "東郷町",
-		"id": "nki"
+		"id": "nki",
+		"govId": "233021"
 	},
 	"tgo": {
 		"code": [
@@ -219,13 +206,12 @@
 		"kana": "とうごう",
 		"roma": "Tōgō",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1041743,
 		"lng": 137.0521408,
-		"prefecture": "愛知県",
-		"city": "東郷町",
-		"id": "tgo"
+		"id": "tgo",
+		"govId": "233021"
 	},
 	"srt": {
 		"code": [
@@ -235,13 +221,12 @@
 		"kana": "しらとり",
 		"roma": "Shiratori",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1093469,
 		"lng": 137.0517144,
-		"prefecture": "愛知県",
-		"city": "東郷町",
-		"id": "srt"
+		"id": "srt",
+		"govId": "233021"
 	},
 	"nsn": {
 		"code": [
@@ -251,13 +236,12 @@
 		"kana": "にっしん",
 		"roma": "Nisshin",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1182368,
 		"lng": 137.0478033,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "nsn"
+		"id": "nsn",
+		"govId": "232301"
 	},
 	"ord": {
 		"code": [
@@ -267,13 +251,12 @@
 		"kana": "おりどてらわき",
 		"roma": "Orido-terawaki",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1228768,
 		"lng": 137.0464401,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "ord"
+		"id": "ord",
+		"govId": "232301"
 	},
 	"nsi": {
 		"code": [
@@ -283,13 +266,12 @@
 		"kana": "にっしんひがしやま",
 		"roma": "Nisshin-higashiyama",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1263244,
 		"lng": 137.0456298,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "nsi"
+		"id": "nsi",
+		"govId": "232301"
 	},
 	"nss": {
 		"code": [
@@ -299,13 +281,12 @@
 		"kana": "にっしんし",
 		"roma": "Nisshin-shi",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1313632,
 		"lng": 137.0448707,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "nss"
+		"id": "nss",
+		"govId": "232301"
 	},
 	"nsa": {
 		"code": [
@@ -315,13 +296,12 @@
 		"kana": "にっしんはくさん",
 		"roma": "Nisshin-hakusan",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1408261,
 		"lng": 137.0435245,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "nsa"
+		"id": "nsa",
+		"govId": "232301"
 	},
 	"iws": {
 		"code": [
@@ -331,13 +311,12 @@
 		"kana": "いわさきじょう",
 		"roma": "Iwasakijō",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1441797,
 		"lng": 137.0414654,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "iws"
+		"id": "iws",
+		"govId": "232301"
 	},
 	"bnt": {
 		"code": [
@@ -347,13 +326,12 @@
 		"kana": "べんてんいけ",
 		"roma": "Benten'ike",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1486149,
 		"lng": 137.0396896,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "bnt"
+		"id": "bnt",
+		"govId": "232301"
 	},
 	"tky": {
 		"code": [
@@ -363,13 +341,12 @@
 		"kana": "たけのやま",
 		"roma": "Takenoyama",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1555734,
 		"lng": 137.0385093,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "tky"
+		"id": "tky",
+		"govId": "232301"
 	},
 	"aic": {
 		"code": [
@@ -379,13 +356,12 @@
 		"kana": "あいちがくいんだいがくまえ",
 		"roma": "Aichigakuindaigaku-mae",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1615267,
 		"lng": 137.0420353,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "aic"
+		"id": "aic",
+		"govId": "232301"
 	},
 	"ngk": {
 		"code": [
@@ -395,13 +371,12 @@
 		"kana": "ながくて",
 		"roma": "Nagakute",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1713946,
 		"lng": 137.0485215,
-		"prefecture": "愛知県",
-		"city": "長久手市",
-		"id": "ngk"
+		"id": "ngk",
+		"govId": "232386"
 	},
 	"knr": {
 		"code": [
@@ -411,13 +386,12 @@
 		"kana": "かなれがわ",
 		"roma": "Kanaregawa",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1780178,
 		"lng": 137.0494509,
-		"prefecture": "愛知県",
-		"city": "長久手市",
-		"id": "knr"
+		"id": "knr",
+		"govId": "232386"
 	},
 	"nks": {
 		"code": [
@@ -427,13 +401,12 @@
 		"kana": "ながくてし",
 		"roma": "Nagakute-shi",
 		"routes": [
-			"長久手線"
+			"nk"
 		],
 		"lat": 35.1836169,
 		"lng": 137.0494643,
-		"prefecture": "愛知県",
-		"city": "長久手市",
-		"id": "nks"
+		"id": "nks",
+		"govId": "232386"
 	},
 	"kry": {
 		"code": [
@@ -445,15 +418,14 @@
 		"kana": "かりや",
 		"roma": "Kariya",
 		"routes": [
-			"大高線",
-			"緒川線",
-			"刈田川線"
+			"od",
+			"og",
+			"kt"
 		],
 		"lat": 34.9911639,
 		"lng": 137.0086782,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "kry"
+		"id": "kry",
+		"govId": "232106"
 	},
 	"krm": {
 		"code": [
@@ -464,14 +436,13 @@
 		"kana": "たからまち",
 		"roma": "Takara-machi",
 		"routes": [
-			"大高線",
-			"刈谷環状線"
+			"od",
+			"kl"
 		],
 		"lat": 34.9963712,
 		"lng": 136.9958806,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "krm"
+		"id": "krm",
+		"govId": "232106"
 	},
 	"aiz": {
 		"code": [
@@ -481,13 +452,12 @@
 		"kana": "あいづま",
 		"roma": "Aizuma",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 34.99861,
 		"lng": 136.9899765,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "aiz"
+		"id": "aiz",
+		"govId": "232106"
 	},
 	"ash": {
 		"code": [
@@ -498,14 +468,13 @@
 		"kana": "あさひちょう",
 		"roma": "Asahi-chō",
 		"routes": [
-			"大高線",
-			"二ツ池線"
+			"od",
+			"ft"
 		],
 		"lat": 35.0017679,
 		"lng": 136.9771789,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "ash"
+		"id": "ash",
+		"govId": "232238"
 	},
 	"wks": {
 		"code": [
@@ -516,14 +485,13 @@
 		"kana": "わかくさ",
 		"roma": "Wakakusa",
 		"routes": [
-			"大高線",
-			"刈田川線"
+			"od",
+			"kt"
 		],
 		"lat": 35.0086361,
 		"lng": 136.9682572,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "wks"
+		"id": "wks",
+		"govId": "232238"
 	},
 	"obs": {
 		"code": [
@@ -534,14 +502,13 @@
 		"kana": "おおぶしやくしょまえ",
 		"roma": "Ōbushiyakusho-mae",
 		"routes": [
-			"大高線",
-			"大府環状線"
+			"od",
+			"ol"
 		],
 		"lat": 35.0110266,
 		"lng": 136.9655609,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "obs"
+		"id": "obs",
+		"govId": "232238"
 	},
 	"chc": {
 		"code": [
@@ -552,14 +519,13 @@
 		"kana": "ちゅうおうちょう",
 		"roma": "Chūō-chō",
 		"routes": [
-			"大高線",
-			"東西線"
+			"od",
+			"tz"
 		],
 		"lat": 35.017017,
 		"lng": 136.9597174,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "chc"
+		"id": "chc",
+		"govId": "232238"
 	},
 	"oiw": {
 		"code": [
@@ -570,14 +536,13 @@
 		"kana": "おいわけちょう",
 		"roma": "Oiwake-chō",
 		"routes": [
-			"大高線",
-			"荒尾線"
+			"od",
+			"ar"
 		],
 		"lat": 35.0262074,
 		"lng": 136.9578545,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "oiw"
+		"id": "oiw",
+		"govId": "232238"
 	},
 	"kyw": {
 		"code": [
@@ -588,14 +553,13 @@
 		"kana": "きょうわ",
 		"roma": "Kyōwa",
 		"routes": [
-			"大高線",
-			"大府環状線"
+			"od",
+			"ol"
 		],
 		"lat": 35.0371056,
 		"lng": 136.954714,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "kyw"
+		"id": "kyw",
+		"govId": "232238"
 	},
 	"kkg": {
 		"code": [
@@ -605,13 +569,12 @@
 		"kana": "かこがいけ",
 		"roma": "Kakogaike",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.0488696,
 		"lng": 136.9519587,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "kkg"
+		"id": "kkg",
+		"govId": "231002"
 	},
 	"mod": {
 		"code": [
@@ -621,13 +584,12 @@
 		"kana": "みなみおおだか",
 		"roma": "Minami-ōdaka",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.0554939,
 		"lng": 136.9485147,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "mod"
+		"id": "mod",
+		"govId": "231002"
 	},
 	"ryn": {
 		"code": [
@@ -638,14 +600,13 @@
 		"kana": "おおだかりょくちにし",
 		"roma": "Ōdakaryokuchi-nishi",
 		"routes": [
-			"大高線",
-			"大府西線・八事線"
+			"od",
+			"on"
 		],
 		"lat": 35.0621452,
 		"lng": 136.9450887,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ryn"
+		"id": "ryn",
+		"govId": "231002"
 	},
 	"odk": {
 		"code": [
@@ -657,15 +618,14 @@
 		"kana": "おおだか",
 		"roma": "Ōdaka",
 		"routes": [
-			"大高線",
-			"外環線",
-			"南北線"
+			"od",
+			"gk",
+			"nb"
 		],
 		"lat": 35.0696572,
 		"lng": 136.9399931,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "odk"
+		"id": "odk",
+		"govId": "231002"
 	},
 	"kso": {
 		"code": [
@@ -675,14 +635,13 @@
 		"kana": "かみしおた",
 		"roma": "Kamishiota",
 		"routes": [
-			"大高線",
-			"鳴海連絡線"
+			"od",
+			"nrm"
 		],
 		"lat": 35.07846,
 		"lng": 136.9445203,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "kso"
+		"id": "kso",
+		"govId": "231002"
 	},
 	"mtn": {
 		"code": [
@@ -692,13 +651,12 @@
 		"kana": "もとなるお",
 		"roma": "Motonaruo",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.0808722,
 		"lng": 136.9395267,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "mtn"
+		"id": "mtn",
+		"govId": "231002"
 	},
 	"hsh": {
 		"code": [
@@ -708,13 +666,12 @@
 		"kana": "ほしざき",
 		"roma": "Hoshizaki",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.0845785,
 		"lng": 136.9345294,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "hsh"
+		"id": "hsh",
+		"govId": "231002"
 	},
 	"mks": {
 		"code": [
@@ -724,13 +681,12 @@
 		"kana": "みなみかさでら",
 		"roma": "Minami-kasadera",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.090946,
 		"lng": 136.9310528,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "mks"
+		"id": "mks",
+		"govId": "231002"
 	},
 	"mky": {
 		"code": [
@@ -740,13 +696,12 @@
 		"kana": "みなみくやくしょまえ",
 		"roma": "Minamikuyakusho-mae",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.0939479,
 		"lng": 136.9294534,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "mky"
+		"id": "mky",
+		"govId": "231002"
 	},
 	"sks": {
 		"code": [
@@ -756,13 +711,12 @@
 		"kana": "しんかさでら",
 		"roma": "Shin-kasadera",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.0978847,
 		"lng": 136.9273372,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "sks"
+		"id": "sks",
+		"govId": "231002"
 	},
 	"ybt": {
 		"code": [
@@ -772,13 +726,12 @@
 		"kana": "よびつぎ",
 		"roma": "Yobitsugi",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.1038027,
 		"lng": 136.9241992,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ybt"
+		"id": "ybt",
+		"govId": "231002"
 	},
 	"sod": {
 		"code": [
@@ -788,13 +741,12 @@
 		"kana": "しおだ",
 		"roma": "Shioda",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.1080351,
 		"lng": 136.9230921,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "sod"
+		"id": "sod",
+		"govId": "231002"
 	},
 	"mzn": {
 		"code": [
@@ -804,13 +756,12 @@
 		"kana": "めいぜんちょう",
 		"roma": "Meizen-chō",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.1130587,
 		"lng": 136.9222818,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "mzn"
+		"id": "mzn",
+		"govId": "231002"
 	},
 	"hrt": {
 		"code": [
@@ -820,13 +771,12 @@
 		"kana": "ほりた",
 		"roma": "Horita",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.1185567,
 		"lng": 136.9213906,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "hrt"
+		"id": "hrt",
+		"govId": "231002"
 	},
 	"snk": {
 		"code": [
@@ -836,13 +786,12 @@
 		"kana": "しんかいちょう",
 		"roma": "Shinkai-chō",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.1237627,
 		"lng": 136.9205538,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "snk"
+		"id": "snk",
+		"govId": "231002"
 	},
 	"usm": {
 		"code": [
@@ -852,13 +801,12 @@
 		"kana": "うしまき",
 		"roma": "Ushimaki",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.1304902,
 		"lng": 136.9194847,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "usm"
+		"id": "usm",
+		"govId": "231002"
 	},
 	"tkj": {
 		"code": [
@@ -868,13 +816,12 @@
 		"kana": "たかつじ",
 		"roma": "Takatsuji",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.1400461,
 		"lng": 136.9182758,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "tkj"
+		"id": "tkj",
+		"govId": "231002"
 	},
 	"srk": {
 		"code": [
@@ -884,13 +831,12 @@
 		"kana": "しらかね",
 		"roma": "Shirakane",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.14713,
 		"lng": 136.9175478,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "srk"
+		"id": "srk",
+		"govId": "231002"
 	},
 	"trm": {
 		"code": [
@@ -900,13 +846,12 @@
 		"kana": "つるまい",
 		"roma": "Tsurumai",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.1560191,
 		"lng": 136.9162088,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "trm"
+		"id": "trm",
+		"govId": "231002"
 	},
 	"chy": {
 		"code": [
@@ -916,13 +861,12 @@
 		"kana": "ちよだ",
 		"roma": "Chiyoda",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.1613609,
 		"lng": 136.9154938,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "chy"
+		"id": "chy",
+		"govId": "231002"
 	},
 	"yba": {
 		"code": [
@@ -932,13 +876,12 @@
 		"kana": "やばちょう",
 		"roma": "Yaba-chō",
 		"routes": [
-			"大高線"
+			"od"
 		],
 		"lat": 35.1638044,
 		"lng": 136.9095093,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "yba"
+		"id": "yba",
+		"govId": "231002"
 	},
 	"ske": {
 		"code": [
@@ -949,14 +892,13 @@
 		"kana": "さかえまち",
 		"roma": "Sakae-machi",
 		"routes": [
-			"大高線",
-			"大府西線・八事線"
+			"od",
+			"on"
 		],
 		"lat": 35.1708285,
 		"lng": 136.9089085,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ske"
+		"id": "ske",
+		"govId": "231002"
 	},
 	"nwa": {
 		"code": [
@@ -967,14 +909,13 @@
 		"kana": "なわ",
 		"roma": "Nawa",
 		"routes": [
-			"外環線",
-			"名和線"
+			"gk",
+			"nw"
 		],
 		"lat": 35.0607441,
 		"lng": 136.9130319,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "nwa"
+		"id": "nwa",
+		"govId": "232220"
 	},
 	"odm": {
 		"code": [
@@ -984,13 +925,12 @@
 		"kana": "おおだかまるのうち",
 		"roma": "Ōdaka-marunouchi",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0680507,
 		"lng": 136.9279034,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "odm"
+		"id": "odm",
+		"govId": "231002"
 	},
 	"nrm": {
 		"code": [
@@ -1000,14 +940,13 @@
 		"kana": "なるみ",
 		"roma": "Narumi",
 		"routes": [
-			"外環線",
-			"鳴海連絡線"
+			"gk",
+			"nrm"
 		],
 		"lat": 35.0768376,
 		"lng": 136.9482506,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "nrm"
+		"id": "nrm",
+		"govId": "231002"
 	},
 	"ryg": {
 		"code": [
@@ -1018,14 +957,13 @@
 		"kana": "おおだかりょくちぐち",
 		"roma": "Ōdakaryokuchi-guchi",
 		"routes": [
-			"外環線",
-			"大府西線・八事線"
+			"gk",
+			"on"
 		],
 		"lat": 35.0719997,
 		"lng": 136.95548,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ryg"
+		"id": "ryg",
+		"govId": "231002"
 	},
 	"kmt": {
 		"code": [
@@ -1035,13 +973,12 @@
 		"kana": "かまとぎ",
 		"roma": "Kamatogi",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0693428,
 		"lng": 136.966145,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "kmt"
+		"id": "kmt",
+		"govId": "231002"
 	},
 	"try": {
 		"code": [
@@ -1051,13 +988,12 @@
 		"kana": "とうりょう",
 		"roma": "Tōryō",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0701073,
 		"lng": 136.9718577,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "try"
+		"id": "try",
+		"govId": "231002"
 	},
 	"ubi": {
 		"code": [
@@ -1067,13 +1003,12 @@
 		"kana": "うばこやま",
 		"roma": "Ubakoyama",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0708354,
 		"lng": 136.9777154,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ubi"
+		"id": "ubi",
+		"govId": "231002"
 	},
 	"kkd": {
 		"code": [
@@ -1083,13 +1018,12 @@
 		"kana": "かまくらだい",
 		"roma": "Kamakuradai",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0709101,
 		"lng": 136.9842997,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "kkd"
+		"id": "kkd",
+		"govId": "231002"
 	},
 	"ckk": {
 		"code": [
@@ -1099,13 +1033,12 @@
 		"kana": "ちゅうきょうけいばきた",
 		"roma": "Chūkyōkeiba-kita",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.06976,
 		"lng": 136.9929327,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "ckk"
+		"id": "ckk",
+		"govId": "232297"
 	},
 	"mgm": {
 		"code": [
@@ -1115,13 +1048,12 @@
 		"kana": "まごめちょう",
 		"roma": "Magome-chō",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0645849,
 		"lng": 137.0007728,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "mgm"
+		"id": "mgm",
+		"govId": "232297"
 	},
 	"ftm": {
 		"code": [
@@ -1132,14 +1064,13 @@
 		"kana": "ふたむらだいみなみ",
 		"roma": "Futamuradai-minami",
 		"routes": [
-			"外環線",
-			"東西線"
+			"gk",
+			"tz"
 		],
 		"lat": 35.0583455,
 		"lng": 137.0041537,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "ftm"
+		"id": "ftm",
+		"govId": "232297"
 	},
 	"msk": {
 		"code": [
@@ -1149,13 +1080,12 @@
 		"kana": "みさきちょう",
 		"roma": "Misaki-chō",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0548811,
 		"lng": 137.0061732,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "msk"
+		"id": "msk",
+		"govId": "232297"
 	},
 	"tys": {
 		"code": [
@@ -1165,13 +1095,12 @@
 		"kana": "とよあけしんでん",
 		"roma": "Toyoake-shinden",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0512044,
 		"lng": 137.0152579,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "tys"
+		"id": "tys",
+		"govId": "232297"
 	},
 	"okt": {
 		"code": [
@@ -1181,13 +1110,12 @@
 		"kana": "おおくてちょう",
 		"roma": "Ōkute-chō",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0509909,
 		"lng": 137.0201758,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "okt"
+		"id": "okt",
+		"govId": "232297"
 	},
 	"nzk": {
 		"code": [
@@ -1197,13 +1125,12 @@
 		"kana": "にしざかいほんごう",
 		"roma": "Nishizakai-hongō",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.049772,
 		"lng": 137.029424,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "nzk"
+		"id": "nzk",
+		"govId": "232106"
 	},
 	"igm": {
 		"code": [
@@ -1213,13 +1140,12 @@
 		"kana": "いがやちょうみなみ",
 		"roma": "Igaya-chō-minami",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0492387,
 		"lng": 137.0438994,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "igm"
+		"id": "igm",
+		"govId": "232106"
 	},
 	"mro": {
 		"code": [
@@ -1229,13 +1155,12 @@
 		"kana": "まるおか",
 		"roma": "Maruoka",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0484512,
 		"lng": 137.0553738,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "mro"
+		"id": "mro",
+		"govId": "232106"
 	},
 	"nso": {
 		"code": [
@@ -1245,13 +1170,12 @@
 		"kana": "にしおかちょう",
 		"roma": "Nishioka-chō",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0466968,
 		"lng": 137.0604657,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "nso"
+		"id": "nso",
+		"govId": "232114"
 	},
 	"ish": {
 		"code": [
@@ -1261,13 +1185,12 @@
 		"kana": "いしはた",
 		"roma": "Ishihata",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0447584,
 		"lng": 137.0634687,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "ish"
+		"id": "ish",
+		"govId": "232114"
 	},
 	"ngd": {
 		"code": [
@@ -1278,14 +1201,13 @@
 		"kana": "ながどい",
 		"roma": "Nagadoi",
 		"routes": [
-			"外環線",
-			"豊田線"
+			"gk",
+			"ty"
 		],
 		"lat": 35.0425696,
 		"lng": 137.0668162,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "ngd"
+		"id": "ngd",
+		"govId": "232114"
 	},
 	"osh": {
 		"code": [
@@ -1295,13 +1217,12 @@
 		"kana": "おおしまちょう",
 		"roma": "Ōshima-chō",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0387053,
 		"lng": 137.0631041,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "osh"
+		"id": "osh",
+		"govId": "232114"
 	},
 	"nkf": {
 		"code": [
@@ -1311,13 +1232,12 @@
 		"kana": "なかだふるやしき",
 		"roma": "Nakada-huruyashiki",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.032601,
 		"lng": 137.0571271,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "nkf"
+		"id": "nkf",
+		"govId": "232114"
 	},
 	"nkd": {
 		"code": [
@@ -1327,13 +1247,12 @@
 		"kana": "なかだちょう",
 		"roma": "Nakada-chō",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.029353,
 		"lng": 137.0538775,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "nkd"
+		"id": "nkd",
+		"govId": "232114"
 	},
 	"nkn": {
 		"code": [
@@ -1343,13 +1262,12 @@
 		"kana": "なかだにっしん",
 		"roma": "Nakada-nisshin",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0257539,
 		"lng": 137.0523181,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "nkn"
+		"id": "nkn",
+		"govId": "232114"
 	},
 	"kms": {
 		"code": [
@@ -1359,13 +1277,12 @@
 		"kana": "こましんちょう",
 		"roma": "Komashin-chō",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0219092,
 		"lng": 137.0496649,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "kms"
+		"id": "kms",
+		"govId": "232114"
 	},
 	"mkk": {
 		"code": [
@@ -1375,13 +1292,12 @@
 		"kana": "みかわかなやま",
 		"roma": "Mikawa-kanayama",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0198618,
 		"lng": 137.0480971,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "mkk"
+		"id": "mkk",
+		"govId": "232114"
 	},
 	"kbn": {
 		"code": [
@@ -1392,14 +1308,13 @@
 		"kana": "こまばちょうにし",
 		"roma": "Komaba-chō-nishi",
 		"routes": [
-			"外環線",
-			"岡崎線"
+			"gk",
+			"oz"
 		],
 		"lat": 35.0166399,
 		"lng": 137.0502475,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "kbn"
+		"id": "kbn",
+		"govId": "232114"
 	},
 	"kbb": {
 		"code": [
@@ -1409,13 +1324,12 @@
 		"kana": "こまばばし",
 		"roma": "Komababashi",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.014778,
 		"lng": 137.0463517,
-		"prefecture": "愛知県",
-		"city": "知立市",
-		"id": "kbb"
+		"id": "kbb",
+		"govId": "232254"
 	},
 	"myn": {
 		"code": [
@@ -1425,13 +1339,12 @@
 		"kana": "みやのこし",
 		"roma": "Miyanokoshi",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0114752,
 		"lng": 137.0450064,
-		"prefecture": "愛知県",
-		"city": "知立市",
-		"id": "myn"
+		"id": "myn",
+		"govId": "232254"
 	},
 	"skr": {
 		"code": [
@@ -1441,13 +1354,12 @@
 		"kana": "さくらぎ",
 		"roma": "Sakuragi",
 		"routes": [
-			"外環線"
+			"gk"
 		],
 		"lat": 35.0089851,
 		"lng": 137.0427332,
-		"prefecture": "愛知県",
-		"city": "知立市",
-		"id": "skr"
+		"id": "skr",
+		"govId": "232254"
 	},
 	"chr": {
 		"code": [
@@ -1459,15 +1371,14 @@
 		"kana": "ちりゅう",
 		"roma": "Chiryū",
 		"routes": [
-			"外環線",
-			"緒川線",
-			"刈田川線知立支線"
+			"gk",
+			"og",
+			"ktc"
 		],
 		"lat": 35.0060185,
 		"lng": 137.0412611,
-		"prefecture": "愛知県",
-		"city": "知立市",
-		"id": "chr"
+		"id": "chr",
+		"govId": "232254"
 	},
 	"obu": {
 		"code": [
@@ -1479,15 +1390,14 @@
 		"kana": "おおぶ",
 		"roma": "Ōbu",
 		"routes": [
-			"半田線",
-			"刈田川急行線",
-			"大府環状線"
+			"hd",
+			"ktr",
+			"ol"
 		],
 		"lat": 35.0085837,
 		"lng": 136.9618472,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "obu"
+		"id": "obu",
+		"govId": "232238"
 	},
 	"obm": {
 		"code": [
@@ -1498,15 +1408,14 @@
 		"kana": "おおぶもりおか",
 		"roma": "Ōbu-morioka",
 		"routes": [
-			"半田線",
-			"刈田川線",
-			"大峯連絡線"
+			"hd",
+			"kt",
+			"omn"
 		],
 		"lat": 35.0057094,
 		"lng": 136.952523,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "obm"
+		"id": "obm",
+		"govId": "232238"
 	},
 	"knk": {
 		"code": [
@@ -1516,13 +1425,12 @@
 		"kana": "こうえんきた",
 		"roma": "Kōen-kita",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 35.0030276,
 		"lng": 136.9502712,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "knk"
+		"id": "knk",
+		"govId": "232238"
 	},
 	"iry": {
 		"code": [
@@ -1532,13 +1440,12 @@
 		"kana": "いりょうせんたー",
 		"roma": "Iryō-center",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 34.9990336,
 		"lng": 136.9496892,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "iry"
+		"id": "iry",
+		"govId": "232238"
 	},
 	"knm": {
 		"code": [
@@ -1548,13 +1455,12 @@
 		"kana": "こうえんみなみ",
 		"roma": "Kōen-minami",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 34.9921652,
 		"lng": 136.9515432,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "knm"
+		"id": "knm",
+		"govId": "234427"
 	},
 	"sik": {
 		"code": [
@@ -1564,13 +1470,12 @@
 		"kana": "しんいけ",
 		"roma": "Shin'ike",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 34.985137,
 		"lng": 136.9483538,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "sik"
+		"id": "sik",
+		"govId": "234427"
 	},
 	"oga": {
 		"code": [
@@ -1581,14 +1486,13 @@
 		"kana": "おがわあいおい",
 		"roma": "Ogawa-aioi",
 		"routes": [
-			"半田線",
-			"緒川線"
+			"hd",
+			"og"
 		],
 		"lat": 34.9791325,
 		"lng": 136.9461575,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "oga"
+		"id": "oga",
+		"govId": "234427"
 	},
 	"nis": {
 		"code": [
@@ -1598,13 +1502,12 @@
 		"kana": "にしいしはま",
 		"roma": "Nishi-ishihama",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 34.9591968,
 		"lng": 136.9483972,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "nis"
+		"id": "nis",
+		"govId": "234427"
 	},
 	"fje": {
 		"code": [
@@ -1614,13 +1517,12 @@
 		"kana": "ふじえ",
 		"roma": "Fujie",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 34.9478996,
 		"lng": 136.9517261,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "fje"
+		"id": "fje",
+		"govId": "234427"
 	},
 	"mdr": {
 		"code": [
@@ -1630,13 +1532,12 @@
 		"kana": "みどりがおか",
 		"roma": "Midorigaoka",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 34.9344973,
 		"lng": 136.9518556,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "mdr"
+		"id": "mdr",
+		"govId": "232050"
 	},
 	"hem": {
 		"code": [
@@ -1647,14 +1548,13 @@
 		"kana": "はえみちょう",
 		"roma": "Haemi-chō",
 		"routes": [
-			"半田線",
-			"高浜線"
+			"hd",
+			"tm"
 		],
 		"lat": 34.9283089,
 		"lng": 136.9545037,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hem"
+		"id": "hem",
+		"govId": "232050"
 	},
 	"kmi": {
 		"code": [
@@ -1664,13 +1564,12 @@
 		"kana": "かみいけ",
 		"roma": "Kamiike",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 34.9245788,
 		"lng": 136.9498835,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "kmi"
+		"id": "kmi",
+		"govId": "232050"
 	},
 	"sch": {
 		"code": [
@@ -1680,13 +1579,12 @@
 		"kana": "しちほんぎいけ",
 		"roma": "Shichihongiike",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 34.9189897,
 		"lng": 136.9484061,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "sch"
+		"id": "sch",
+		"govId": "232050"
 	},
 	"ksn": {
 		"code": [
@@ -1696,13 +1594,12 @@
 		"kana": "こうしんちょう",
 		"roma": "Kōshin-chō",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 34.9160115,
 		"lng": 136.945558,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "ksn"
+		"id": "ksn",
+		"govId": "232050"
 	},
 	"owh": {
 		"code": [
@@ -1712,13 +1609,12 @@
 		"kana": "おっかわはただ",
 		"roma": "Okkawa-hatada",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 34.9131088,
 		"lng": 136.9438477,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "owh"
+		"id": "owh",
+		"govId": "232050"
 	},
 	"owy": {
 		"code": [
@@ -1728,13 +1624,12 @@
 		"kana": "おっかわやくし",
 		"roma": "Okkawa-yakushi",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 34.9090926,
 		"lng": 136.9418647,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "owy"
+		"id": "owy",
+		"govId": "232050"
 	},
 	"okw": {
 		"code": [
@@ -1744,14 +1639,13 @@
 		"kana": "おっかわ",
 		"roma": "Okkawa",
 		"routes": [
-			"半田線",
-			"半田線住吉支線"
+			"hd",
+			"hds"
 		],
 		"lat": 34.904713,
 		"lng": 136.9395369,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "okw"
+		"id": "okw",
+		"govId": "232050"
 	},
 	"hno": {
 		"code": [
@@ -1761,13 +1655,12 @@
 		"kana": "はんだおおはし",
 		"roma": "Handa-ōhashi",
 		"routes": [
-			"半田線"
+			"hd"
 		],
 		"lat": 34.9010112,
 		"lng": 136.9364394,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hno"
+		"id": "hno",
+		"govId": "232050"
 	},
 	"hns": {
 		"code": [
@@ -1779,15 +1672,14 @@
 		"kana": "はんだし",
 		"roma": "Handa-shi",
 		"routes": [
-			"半田線",
-			"半滑線・空港線",
-			"師崎線"
+			"hd",
+			"hk",
+			"mr"
 		],
 		"lat": 34.8928538,
 		"lng": 136.9372533,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hns"
+		"id": "hns",
+		"govId": "232050"
 	},
 	"akr": {
 		"code": [
@@ -1798,14 +1690,13 @@
 		"kana": "はんだあかれんが",
 		"roma": "Handa-akarenga",
 		"routes": [
-			"半田線住吉支線",
-			"阿久比線"
+			"hds",
+			"ag"
 		],
 		"lat": 34.9011671,
 		"lng": 136.9306596,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "akr"
+		"id": "akr",
+		"govId": "232050"
 	},
 	"smy": {
 		"code": [
@@ -1815,13 +1706,12 @@
 		"kana": "すみよしちょう",
 		"roma": "Sumiyoshi-chō",
 		"routes": [
-			"半田線住吉支線"
+			"hds"
 		],
 		"lat": 34.9009824,
 		"lng": 136.9239905,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "smy"
+		"id": "smy",
+		"govId": "232050"
 	},
 	"sis": {
 		"code": [
@@ -1832,14 +1722,13 @@
 		"kana": "せいしろ",
 		"roma": "Seishiro",
 		"routes": [
-			"半田線住吉支線",
-			"半滑線・空港線"
+			"hds",
+			"hk"
 		],
 		"lat": 34.9001412,
 		"lng": 136.917242,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "sis"
+		"id": "sis",
+		"govId": "232050"
 	},
 	"shg": {
 		"code": [
@@ -1852,17 +1741,16 @@
 		"kana": "しがくかんだいがくまえ",
 		"roma": "Shigakukandaigaku-mae",
 		"routes": [
-			"名東線",
-			"二ツ池線",
-			"内田面線",
-			"荒尾線",
-			"大府環状線"
+			"mt",
+			"ft",
+			"ud",
+			"ar",
+			"ol"
 		],
 		"lat": 35.0329569,
 		"lng": 136.9706678,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "shg"
+		"id": "shg",
+		"govId": "232238"
 	},
 	"bzy": {
 		"code": [
@@ -1873,14 +1761,13 @@
 		"kana": "ぼうずやま",
 		"roma": "Bōzuyama",
 		"routes": [
-			"名東線",
-			"大府環状線"
+			"mt",
+			"ol"
 		],
 		"lat": 35.0411112,
 		"lng": 136.9677978,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "bzy"
+		"id": "bzy",
+		"govId": "232238"
 	},
 	"nry": {
 		"code": [
@@ -1890,13 +1777,12 @@
 		"kana": "なんりょう",
 		"roma": "Nanryō",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.0459006,
 		"lng": 136.9681412,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "nry"
+		"id": "nry",
+		"govId": "231002"
 	},
 	"okh": {
 		"code": [
@@ -1906,13 +1792,12 @@
 		"kana": "おけはざま",
 		"roma": "Okehazama",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.0495129,
 		"lng": 136.9698941,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "okh"
+		"id": "okh",
+		"govId": "231002"
 	},
 	"cfk": {
 		"code": [
@@ -1922,13 +1807,12 @@
 		"kana": "ちょうふくじ",
 		"roma": "Chōfukuji",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.0522743,
 		"lng": 136.970156,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "cfk"
+		"id": "cfk",
+		"govId": "231002"
 	},
 	"ksk": {
 		"code": [
@@ -1938,13 +1822,12 @@
 		"kana": "こせんじょうこうえんまえ",
 		"roma": "Kosenjōkōen-mae",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.0556841,
 		"lng": 136.9701823,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ksk"
+		"id": "ksk",
+		"govId": "231002"
 	},
 	"ngt": {
 		"code": [
@@ -1954,13 +1837,12 @@
 		"kana": "なごやたんだいまえ",
 		"roma": "Nagoyatandai-mae",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.0608183,
 		"lng": 136.9698992,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ngt"
+		"id": "ngt",
+		"govId": "231002"
 	},
 	"arm": {
 		"code": [
@@ -1970,13 +1852,12 @@
 		"kana": "ありまつ",
 		"roma": "Arimatsu",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.0674214,
 		"lng": 136.9715021,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "arm"
+		"id": "arm",
+		"govId": "231002"
 	},
 	"trs": {
 		"code": [
@@ -1986,13 +1867,12 @@
 		"kana": "とりすみ",
 		"roma": "Torisumi",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.07633,
 		"lng": 136.9704663,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "trs"
+		"id": "trs",
+		"govId": "231002"
 	},
 	"ogg": {
 		"code": [
@@ -2002,13 +1882,12 @@
 		"kana": "おうぎがわ",
 		"roma": "Ōgigawa",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.0797821,
 		"lng": 136.9739478,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ogg"
+		"id": "ogg",
+		"govId": "231002"
 	},
 	"tkm": {
 		"code": [
@@ -2018,13 +1897,12 @@
 		"kana": "たきのみず",
 		"roma": "Takinomizu",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.0860351,
 		"lng": 136.9803388,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "tkm"
+		"id": "tkm",
+		"govId": "231002"
 	},
 	"nrk": {
 		"code": [
@@ -2034,13 +1912,12 @@
 		"kana": "なるおか",
 		"roma": "Naruoka",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.0909791,
 		"lng": 136.9853973,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "nrk"
+		"id": "nrk",
+		"govId": "231002"
 	},
 	"tsg": {
 		"code": [
@@ -2050,13 +1927,12 @@
 		"kana": "とくしげ",
 		"roma": "Tokushige",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.0951152,
 		"lng": 136.9987105,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "tsg"
+		"id": "tsg",
+		"govId": "231002"
 	},
 	"kmn": {
 		"code": [
@@ -2066,13 +1942,12 @@
 		"kana": "かみのくら",
 		"roma": "Kaminokura",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.100516,
 		"lng": 137.0054551,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "kmn"
+		"id": "kmn",
+		"govId": "231002"
 	},
 	"hbd": {
 		"code": [
@@ -2082,13 +1957,12 @@
 		"kana": "ひらばりだい",
 		"roma": "Hirabaridai",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.1044012,
 		"lng": 137.0075194,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "hbd"
+		"id": "hbd",
+		"govId": "231002"
 	},
 	"hbj": {
 		"code": [
@@ -2098,13 +1972,12 @@
 		"kana": "ひらばりじゅうたく",
 		"roma": "Hirabarijūtaku",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.1108108,
 		"lng": 137.0035568,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "hbj"
+		"id": "hbj",
+		"govId": "231002"
 	},
 	"mki": {
 		"code": [
@@ -2114,13 +1987,12 @@
 		"kana": "むかいがおか",
 		"roma": "Mukaigaoka",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.1143641,
 		"lng": 137.0034178,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "mki"
+		"id": "mki",
+		"govId": "231002"
 	},
 	"hbm": {
 		"code": [
@@ -2130,13 +2002,12 @@
 		"kana": "ひらばりみなみ",
 		"roma": "Hirabari-minami",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.1192381,
 		"lng": 137.0057201,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "hbm"
+		"id": "hbm",
+		"govId": "231002"
 	},
 	"hrb": {
 		"code": [
@@ -2146,13 +2017,12 @@
 		"kana": "ひらばり",
 		"roma": "Hirabari",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.1226023,
 		"lng": 137.0074476,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "hrb"
+		"id": "hrb",
+		"govId": "231002"
 	},
 	"doj": {
 		"code": [
@@ -2162,13 +2032,12 @@
 		"kana": "だいおうじ",
 		"roma": "Daiōji",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.1274189,
 		"lng": 137.0094582,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "doj"
+		"id": "doj",
+		"govId": "232301"
 	},
 	"mmn": {
 		"code": [
@@ -2178,13 +2047,12 @@
 		"kana": "うめもりにし",
 		"roma": "Umemori-nishi",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.1310802,
 		"lng": 137.0129741,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "mmn"
+		"id": "mmn",
+		"govId": "232301"
 	},
 	"mmd": {
 		"code": [
@@ -2194,13 +2062,12 @@
 		"kana": "うめもりだい",
 		"roma": "Umemoridai",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.133683,
 		"lng": 137.0154665,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "mmd"
+		"id": "mmd",
+		"govId": "232301"
 	},
 	"udk": {
 		"code": [
@@ -2210,13 +2077,12 @@
 		"kana": "うめもりだいきた",
 		"roma": "Umemoridai-kita",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.137438,
 		"lng": 137.0149316,
-		"prefecture": "愛知県",
-		"city": "日進市",
-		"id": "udk"
+		"id": "udk",
+		"govId": "232301"
 	},
 	"hnb": {
 		"code": [
@@ -2226,13 +2092,12 @@
 		"kana": "ひがしなごやびょういん",
 		"roma": "Higashinagoyabyōin",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.1404668,
 		"lng": 137.0152283,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "hnb"
+		"id": "hnb",
+		"govId": "231002"
 	},
 	"mmz": {
 		"code": [
@@ -2242,13 +2107,12 @@
 		"kana": "うめもりざか",
 		"roma": "Umemorizaka",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.1434313,
 		"lng": 137.0147036,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "mmz"
+		"id": "mmz",
+		"govId": "231002"
 	},
 	"mkn": {
 		"code": [
@@ -2258,13 +2122,12 @@
 		"kana": "まきのがいけひがし",
 		"roma": "Makinogaike-higashi",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.149137,
 		"lng": 137.0144352,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "mkn"
+		"id": "mkn",
+		"govId": "231002"
 	},
 	"gkr": {
 		"code": [
@@ -2274,13 +2137,12 @@
 		"kana": "ごくらく",
 		"roma": "Gokuraku",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.154319,
 		"lng": 137.0185221,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "gkr"
+		"id": "gkr",
+		"govId": "231002"
 	},
 	"tbd": {
 		"code": [
@@ -2290,13 +2152,12 @@
 		"kana": "たかばりだい",
 		"roma": "Takabaridai",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.1598856,
 		"lng": 137.0195836,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "tbd"
+		"id": "tbd",
+		"govId": "231002"
 	},
 	"skb": {
 		"code": [
@@ -2306,13 +2167,12 @@
 		"kana": "せこぼう",
 		"roma": "Sekobō",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.1650431,
 		"lng": 137.0174233,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "skb"
+		"id": "skb",
+		"govId": "231002"
 	},
 	"ysh": {
 		"code": [
@@ -2322,13 +2182,12 @@
 		"kana": "やしろがおか",
 		"roma": "Yashirogaoka",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.169276,
 		"lng": 137.0173387,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ysh"
+		"id": "ysh",
+		"govId": "231002"
 	},
 	"hmk": {
 		"code": [
@@ -2338,13 +2197,12 @@
 		"kana": "ひめわかちょう",
 		"roma": "Himewaka-chō",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.174908,
 		"lng": 137.0204435,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "hmk"
+		"id": "hmk",
+		"govId": "231002"
 	},
 	"fjg": {
 		"code": [
@@ -2354,13 +2212,12 @@
 		"kana": "ふじがおか",
 		"roma": "Fujigaoka",
 		"routes": [
-			"名東線"
+			"mt"
 		],
 		"lat": 35.1819084,
 		"lng": 137.0210589,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "fjg"
+		"id": "fjg",
+		"govId": "231002"
 	},
 	"fts": {
 		"code": [
@@ -2370,13 +2227,12 @@
 		"kana": "ふたついけこうえんまえ",
 		"roma": "Futatsuikekōen-mae",
 		"routes": [
-			"二ツ池線"
+			"ft"
 		],
 		"lat": 35.0255245,
 		"lng": 136.9729088,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "fts"
+		"id": "fts",
+		"govId": "232238"
 	},
 	"hrk": {
 		"code": [
@@ -2387,14 +2243,13 @@
 		"kana": "ひらこ",
 		"roma": "Hirako",
 		"routes": [
-			"二ツ池線",
-			"東西線"
+			"ft",
+			"tz"
 		],
 		"lat": 35.0200068,
 		"lng": 136.975827,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "hrk"
+		"id": "hrk",
+		"govId": "232238"
 	},
 	"mds": {
 		"code": [
@@ -2404,13 +2259,12 @@
 		"kana": "めでぃあすたいいくかんまえ",
 		"roma": "Medias-taiikukan-mae",
 		"routes": [
-			"二ツ池線"
+			"ft"
 		],
 		"lat": 35.0134819,
 		"lng": 136.9739602,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "mds"
+		"id": "mds",
+		"govId": "232238"
 	},
 	"dtc": {
 		"code": [
@@ -2421,16 +2275,15 @@
 		"kana": "だいとうちょう",
 		"roma": "Daitō-chō",
 		"routes": [
-			"二ツ池線",
-			"二ツ池線森岡支線",
-			"刈田川線",
-			"刈田川急行線"
+			"ft",
+			"ftm",
+			"kt",
+			"ktr"
 		],
 		"lat": 35.0109116,
 		"lng": 136.9741343,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "dtc"
+		"id": "dtc",
+		"govId": "232238"
 	},
 	"mrk": {
 		"code": [
@@ -2440,13 +2293,12 @@
 		"kana": "もりおかこうぎょうだんちみなみ",
 		"roma": "Morioka-kōgyōdanchi-minami",
 		"routes": [
-			"二ツ池線"
+			"ft"
 		],
 		"lat": 34.9950113,
 		"lng": 136.9770356,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "mrk"
+		"id": "mrk",
+		"govId": "234427"
 	},
 	"hog": {
 		"code": [
@@ -2457,14 +2309,13 @@
 		"kana": "しんおがわ",
 		"roma": "Higashi-ogawa",
 		"routes": [
-			"二ツ池線",
-			"緒川線"
+			"ft",
+			"og"
 		],
 		"lat": 34.9835539,
 		"lng": 136.9756861,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "hog"
+		"id": "hog",
+		"govId": "234427"
 	},
 	"smt": {
 		"code": [
@@ -2474,13 +2325,12 @@
 		"kana": "すみともじゅうきまえ",
 		"roma": "Sumitomojūki-mae",
 		"routes": [
-			"二ツ池線森岡支線"
+			"ftm"
 		],
 		"lat": 35.0041655,
 		"lng": 136.9696131,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "smt"
+		"id": "smt",
+		"govId": "232238"
 	},
 	"yng": {
 		"code": [
@@ -2491,14 +2341,13 @@
 		"kana": "やながつぼ",
 		"roma": "Yanagatsubo",
 		"routes": [
-			"二ツ池線森岡支線",
-			"南北線"
+			"ftm",
+			"nb"
 		],
 		"lat": 34.9991963,
 		"lng": 136.9651203,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "yng"
+		"id": "yng",
+		"govId": "234427"
 	},
 	"mrn": {
 		"code": [
@@ -2508,13 +2357,12 @@
 		"kana": "もりおかなかまち",
 		"roma": "Morioka-nakamachi",
 		"routes": [
-			"二ツ池線森岡支線"
+			"ftm"
 		],
 		"lat": 34.9935876,
 		"lng": 136.9615249,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "mrn"
+		"id": "mrn",
+		"govId": "234427"
 	},
 	"ktb": {
 		"code": [
@@ -2524,13 +2372,12 @@
 		"kana": "ことぶきにく",
 		"roma": "Kotobukiniku",
 		"routes": [
-			"二ツ池線森岡支線"
+			"ftm"
 		],
 		"lat": 34.9855055,
 		"lng": 136.9609114,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "ktb"
+		"id": "ktb",
+		"govId": "234427"
 	},
 	"odn": {
 		"code": [
@@ -2541,14 +2388,13 @@
 		"kana": "おだいこうえんにし",
 		"roma": "Odaikōen-nishi",
 		"routes": [
-			"二ツ池線森岡支線",
-			"緒川線"
+			"ftm",
+			"og"
 		],
 		"lat": 34.9784292,
 		"lng": 136.957809,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "odn"
+		"id": "odn",
+		"govId": "234427"
 	},
 	"sos": {
 		"code": [
@@ -2560,16 +2406,15 @@
 		"kana": "そうさく",
 		"roma": "Sōsaku",
 		"routes": [
-			"内田面線",
-			"刈田川線",
-			"刈田川急行線",
-			"惣作直通線"
+			"ud",
+			"kt",
+			"ktr",
+			"sos"
 		],
 		"lat": 35.0128505,
 		"lng": 136.9831248,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "sos"
+		"id": "sos",
+		"govId": "232238"
 	},
 	"usr": {
 		"code": [
@@ -2579,13 +2424,12 @@
 		"kana": "うしろだ",
 		"roma": "Ushiroda",
 		"routes": [
-			"内田面線"
+			"ud"
 		],
 		"lat": 35.0190786,
 		"lng": 136.986605,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "usr"
+		"id": "usr",
+		"govId": "232238"
 	},
 	"udm": {
 		"code": [
@@ -2595,13 +2439,12 @@
 		"kana": "うちだめん",
 		"roma": "Uchidamen",
 		"routes": [
-			"内田面線"
+			"ud"
 		],
 		"lat": 35.022692,
 		"lng": 136.9887668,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "udm"
+		"id": "udm",
+		"govId": "232238"
 	},
 	"ksd": {
 		"code": [
@@ -2612,14 +2455,13 @@
 		"kana": "かしづか",
 		"roma": "Kashizuka",
 		"routes": [
-			"内田面線",
-			"東西線"
+			"ud",
+			"tz"
 		],
 		"lat": 35.0309155,
 		"lng": 136.9848894,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "ksd"
+		"id": "ksd",
+		"govId": "232238"
 	},
 	"ftk": {
 		"code": [
@@ -2629,13 +2471,12 @@
 		"kana": "ふたついけきた",
 		"roma": "Futatsuike-kita",
 		"routes": [
-			"内田面線"
+			"ud"
 		],
 		"lat": 35.02969,
 		"lng": 136.9775455,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "ftk"
+		"id": "ftk",
+		"govId": "232238"
 	},
 	"ktc": {
 		"code": [
@@ -2645,13 +2486,12 @@
 		"kana": "きたやまちょう",
 		"roma": "Kitayama-chō",
 		"routes": [
-			"内田面線"
+			"ud"
 		],
 		"lat": 35.0348117,
 		"lng": 136.9651913,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "ktc"
+		"id": "ktc",
+		"govId": "232238"
 	},
 	"tsn": {
 		"code": [
@@ -2662,14 +2502,13 @@
 		"kana": "とうしんちょう",
 		"roma": "Tōshin-chō",
 		"routes": [
-			"内田面線",
-			"大府環状線"
+			"ud",
+			"ol"
 		],
 		"lat": 35.0386209,
 		"lng": 136.9594937,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "tsn"
+		"id": "tsn",
+		"govId": "232238"
 	},
 	"skj": {
 		"code": [
@@ -2679,13 +2518,12 @@
 		"kana": "せいこうじ",
 		"roma": "Seikōji",
 		"routes": [
-			"南北線"
+			"nb"
 		],
 		"lat": 35.0602714,
 		"lng": 136.9397807,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "skj"
+		"id": "skj",
+		"govId": "231002"
 	},
 	"kgn": {
 		"code": [
@@ -2695,13 +2533,12 @@
 		"kana": "かこがいけにし",
 		"roma": "Kakogaike-nishi",
 		"routes": [
-			"南北線"
+			"nb"
 		],
 		"lat": 35.0505343,
 		"lng": 136.9473298,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "kgn"
+		"id": "kgn",
+		"govId": "231002"
 	},
 	"cya": {
 		"code": [
@@ -2711,13 +2548,12 @@
 		"kana": "ちゃや",
 		"roma": "Chaya",
 		"routes": [
-			"南北線"
+			"nb"
 		],
 		"lat": 35.0416753,
 		"lng": 136.9496193,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "cya"
+		"id": "cya",
+		"govId": "232238"
 	},
 	"kw3": {
 		"code": [
@@ -2727,13 +2563,12 @@
 		"kana": "きょうわさんちょうめ",
 		"roma": "kyōwa-sanchōme",
 		"routes": [
-			"南北線"
+			"nb"
 		],
 		"lat": 35.0335212,
 		"lng": 136.9513967,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "kw3"
+		"id": "kw3",
+		"govId": "232238"
 	},
 	"msh": {
 		"code": [
@@ -2744,14 +2579,13 @@
 		"kana": "めいせいひとつや",
 		"roma": "Meisei-hitotsuya",
 		"routes": [
-			"南北線",
-			"荒尾線"
+			"nb",
+			"ar"
 		],
 		"lat": 35.0257231,
 		"lng": 136.9526537,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "msh"
+		"id": "msh",
+		"govId": "232238"
 	},
 	"hry": {
 		"code": [
@@ -2762,14 +2596,13 @@
 		"kana": "ひいらぎやま",
 		"roma": "Hiiragiyama",
 		"routes": [
-			"南北線",
-			"東西線"
+			"nb",
+			"tz"
 		],
 		"lat": 35.0183668,
 		"lng": 136.9528886,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "hry"
+		"id": "hry",
+		"govId": "232238"
 	},
 	"kne": {
 		"code": [
@@ -2779,13 +2612,12 @@
 		"kana": "けんえいおおぶじゅうたく",
 		"roma": "Ken'ei-ōbujūtaku",
 		"routes": [
-			"南北線"
+			"nb"
 		],
 		"lat": 35.0133452,
 		"lng": 136.9534395,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "kne"
+		"id": "kne",
+		"govId": "232238"
 	},
 	"ebc": {
 		"code": [
@@ -2795,13 +2627,12 @@
 		"kana": "えばたちゅうおう",
 		"roma": "Ebata-chūō",
 		"routes": [
-			"南北線"
+			"nb"
 		],
 		"lat": 35.0099467,
 		"lng": 136.954814,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "ebc"
+		"id": "ebc",
+		"govId": "232238"
 	},
 	"krn": {
 		"code": [
@@ -2812,14 +2643,13 @@
 		"kana": "くらながせがわ",
 		"roma": "Kuranagasegawa",
 		"routes": [
-			"南北線",
-			"刈田川線"
+			"nb",
+			"kt"
 		],
 		"lat": 35.0048493,
 		"lng": 136.9576976,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "krn"
+		"id": "krn",
+		"govId": "232238"
 	},
 	"owm": {
 		"code": [
@@ -2829,13 +2659,12 @@
 		"kana": "おわりもりおか",
 		"roma": "Owari-morioka",
 		"routes": [
-			"南北線"
+			"nb"
 		],
 		"lat": 34.9945627,
 		"lng": 136.9690397,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "owm"
+		"id": "owm",
+		"govId": "234427"
 	},
 	"ows": {
 		"code": [
@@ -2845,13 +2674,12 @@
 		"kana": "おがわしおた",
 		"roma": "Ogawa-shiota",
 		"routes": [
-			"南北線"
+			"nb"
 		],
 		"lat": 34.9897725,
 		"lng": 136.9698981,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "ows"
+		"id": "ows",
+		"govId": "234427"
 	},
 	"myt": {
 		"code": [
@@ -2861,13 +2689,12 @@
 		"kana": "みやとばし",
 		"roma": "Miyatobashi",
 		"routes": [
-			"南北線"
+			"nb"
 		],
 		"lat": 34.9862004,
 		"lng": 136.9705384,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "myt"
+		"id": "myt",
+		"govId": "234427"
 	},
 	"ogw": {
 		"code": [
@@ -2878,14 +2705,13 @@
 		"kana": "おがわ",
 		"roma": "Ogawa",
 		"routes": [
-			"南北線",
-			"緒川線"
+			"nb",
+			"og"
 		],
 		"lat": 34.9812598,
 		"lng": 136.971778,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "ogw"
+		"id": "ogw",
+		"govId": "234427"
 	},
 	"ktm": {
 		"code": [
@@ -2895,13 +2721,12 @@
 		"kana": "きたやま",
 		"roma": "Kitayama",
 		"routes": [
-			"荒尾線"
+			"ar"
 		],
 		"lat": 35.0288414,
 		"lng": 136.968106,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "ktm"
+		"id": "ktm",
+		"govId": "232238"
 	},
 	"gnk": {
 		"code": [
@@ -2911,13 +2736,12 @@
 		"kana": "ながねきた",
 		"roma": "Nagane-kita",
 		"routes": [
-			"荒尾線"
+			"ar"
 		],
 		"lat": 35.0271007,
 		"lng": 136.9634715,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "gnk"
+		"id": "gnk",
+		"govId": "232238"
 	},
 	"smn": {
 		"code": [
@@ -2927,13 +2751,12 @@
 		"kana": "しもだのまつ",
 		"roma": "Shimodanomatsu",
 		"routes": [
-			"荒尾線"
+			"ar"
 		],
 		"lat": 35.0257571,
 		"lng": 136.9471598,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "smn"
+		"id": "smn",
+		"govId": "232238"
 	},
 	"nkt": {
 		"code": [
@@ -2943,13 +2766,12 @@
 		"kana": "ながくさてんじんしゃ",
 		"roma": "Nagakusatenjinsha",
 		"routes": [
-			"荒尾線"
+			"ar"
 		],
 		"lat": 35.0287612,
 		"lng": 136.9426424,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "nkt"
+		"id": "nkt",
+		"govId": "232238"
 	},
 	"srh": {
 		"code": [
@@ -2959,13 +2781,12 @@
 		"kana": "しらはいけ",
 		"roma": "Shirahaike",
 		"routes": [
-			"荒尾線"
+			"ar"
 		],
 		"lat": 35.029751,
 		"lng": 136.9367987,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "srh"
+		"id": "srh",
+		"govId": "232238"
 	},
 	"isi": {
 		"code": [
@@ -2975,13 +2796,12 @@
 		"kana": "いしはら",
 		"roma": "Ishihara",
 		"routes": [
-			"荒尾線"
+			"ar"
 		],
 		"lat": 35.0297069,
 		"lng": 136.9322795,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "isi"
+		"id": "isi",
+		"govId": "232238"
 	},
 	"smo": {
 		"code": [
@@ -2991,13 +2811,12 @@
 		"kana": "しもおおわき",
 		"roma": "Shimoōwaki",
 		"routes": [
-			"荒尾線"
+			"ar"
 		],
 		"lat": 35.030764,
 		"lng": 136.9257758,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "smo"
+		"id": "smo",
+		"govId": "232220"
 	},
 	"aru": {
 		"code": [
@@ -3007,13 +2826,12 @@
 		"kana": "あらおうしろやま",
 		"roma": "Arao-Ushiroyama",
 		"routes": [
-			"荒尾線"
+			"ar"
 		],
 		"lat": 35.0332345,
 		"lng": 136.91959,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "aru"
+		"id": "aru",
+		"govId": "232220"
 	},
 	"zgm": {
 		"code": [
@@ -3024,14 +2842,13 @@
 		"kana": "ずがま",
 		"roma": "Zugama",
 		"routes": [
-			"荒尾線",
-			"名和線"
+			"ar",
+			"nw"
 		],
 		"lat": 35.0366686,
 		"lng": 136.9158699,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "zgm"
+		"id": "zgm",
+		"govId": "232220"
 	},
 	"arw": {
 		"code": [
@@ -3041,13 +2858,12 @@
 		"kana": "あらおわかみや",
 		"roma": "Arao-wakamiya",
 		"routes": [
-			"荒尾線"
+			"ar"
 		],
 		"lat": 35.0386535,
 		"lng": 136.9121438,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "arw"
+		"id": "arw",
+		"govId": "232220"
 	},
 	"aro": {
 		"code": [
@@ -3057,13 +2873,12 @@
 		"kana": "あらおおおしろ",
 		"roma": "Arao-ōshiro",
 		"routes": [
-			"荒尾線"
+			"ar"
 		],
 		"lat": 35.0398496,
 		"lng": 136.9071366,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "aro"
+		"id": "aro",
+		"govId": "232220"
 	},
 	"shr": {
 		"code": [
@@ -3073,13 +2888,12 @@
 		"kana": "しゅうらくえん",
 		"roma": "Shūrakuen",
 		"routes": [
-			"荒尾線"
+			"ar"
 		],
 		"lat": 35.0421499,
 		"lng": 136.902902,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "shr"
+		"id": "shr",
+		"govId": "232220"
 	},
 	"stm": {
 		"code": [
@@ -3090,15 +2904,14 @@
 		"kana": "しんとみちょう",
 		"roma": "Shintomi-chō",
 		"routes": [
-			"みよし線",
-			"刈田川線",
-			"刈田川線知立支線"
+			"my",
+			"kt",
+			"ktc"
 		],
 		"lat": 35.0058341,
 		"lng": 137.0041137,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "stm"
+		"id": "stm",
+		"govId": "232106"
 	},
 	"sdn": {
 		"code": [
@@ -3109,14 +2922,13 @@
 		"kana": "しんでんちょう",
 		"roma": "Shinden-chō",
 		"routes": [
-			"みよし線",
-			"刈谷環状線"
+			"my",
+			"kl"
 		],
 		"lat": 35.0125722,
 		"lng": 137.0053426,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "sdn"
+		"id": "sdn",
+		"govId": "232106"
 	},
 	"krs": {
 		"code": [
@@ -3126,13 +2938,12 @@
 		"kana": "かりやしそうごううんどうこうえん",
 		"roma": "Kariyashisōgōundōkōen",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0175344,
 		"lng": 137.0062102,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "krs"
+		"id": "krs",
+		"govId": "232106"
 	},
 	"kwi": {
 		"code": [
@@ -3142,13 +2953,12 @@
 		"kana": "こわい",
 		"roma": "Kowai",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0226411,
 		"lng": 137.0077959,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "kwi"
+		"id": "kwi",
+		"govId": "232106"
 	},
 	"nfj": {
 		"code": [
@@ -3158,13 +2968,12 @@
 		"kana": "にしふじまつ",
 		"roma": "Nishi-fujimatsu",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0283717,
 		"lng": 137.0113621,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "nfj"
+		"id": "nfj",
+		"govId": "232106"
 	},
 	"fjm": {
 		"code": [
@@ -3174,13 +2983,12 @@
 		"kana": "ふじまつ",
 		"roma": "Fujimatsu",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0303341,
 		"lng": 137.0161803,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "fjm"
+		"id": "fjm",
+		"govId": "232106"
 	},
 	"img": {
 		"code": [
@@ -3190,13 +2998,12 @@
 		"kana": "いまがわちょう",
 		"roma": "Imagawa-chō",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0325824,
 		"lng": 137.0201331,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "img"
+		"id": "img",
+		"govId": "232106"
 	},
 	"hzk": {
 		"code": [
@@ -3206,13 +3013,12 @@
 		"kana": "ひがしざかいまつもと",
 		"roma": "Higashizakai-matsumoto",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0367152,
 		"lng": 137.0269008,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "hzk"
+		"id": "hzk",
+		"govId": "232106"
 	},
 	"fjt": {
 		"code": [
@@ -3222,13 +3028,12 @@
 		"kana": "ふじまつとしょかんまえ",
 		"roma": "Fujimatsutoshokan-mae",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0417992,
 		"lng": 137.0352107,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "fjt"
+		"id": "fjt",
+		"govId": "232106"
 	},
 	"iwg": {
 		"code": [
@@ -3238,13 +3043,12 @@
 		"kana": "いわがいけ",
 		"roma": "Iwagaike",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0441078,
 		"lng": 137.0377669,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "iwg"
+		"id": "iwg",
+		"govId": "232106"
 	},
 	"akd": {
 		"code": [
@@ -3254,13 +3058,12 @@
 		"kana": "あいきょうだいまえ",
 		"roma": "Aikyōdai-mae",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0510169,
 		"lng": 137.0419344,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "akd"
+		"id": "akd",
+		"govId": "232106"
 	},
 	"igy": {
 		"code": [
@@ -3270,13 +3073,12 @@
 		"kana": "いがや",
 		"roma": "Igaya",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0585761,
 		"lng": 137.0466685,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "igy"
+		"id": "igy",
+		"govId": "232106"
 	},
 	"tmp": {
 		"code": [
@@ -3286,13 +3088,12 @@
 		"kana": "てんぱく",
 		"roma": "Tempaku",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.063925,
 		"lng": 137.0504228,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "tmp"
+		"id": "tmp",
+		"govId": "232106"
 	},
 	"fkt": {
 		"code": [
@@ -3302,13 +3103,12 @@
 		"kana": "ふくた",
 		"roma": "Fukuta",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.068768,
 		"lng": 137.0524455,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "fkt"
+		"id": "fkt",
+		"govId": "232360"
 	},
 	"har": {
 		"code": [
@@ -3318,13 +3118,12 @@
 		"kana": "ひがしあらた",
 		"roma": "Higashiarata",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0756574,
 		"lng": 137.055306,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "har"
+		"id": "har",
+		"govId": "232360"
 	},
 	"hnk": {
 		"code": [
@@ -3334,13 +3133,12 @@
 		"kana": "はんのき",
 		"roma": "Hannoki",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0813586,
 		"lng": 137.0598086,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "hnk"
+		"id": "hnk",
+		"govId": "232360"
 	},
 	"mar": {
 		"code": [
@@ -3350,13 +3148,12 @@
 		"kana": "みよしあらいけ",
 		"roma": "Miyoshi-araike",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0866452,
 		"lng": 137.0649054,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "mar"
+		"id": "mar",
+		"govId": "232360"
 	},
 	"mms": {
 		"code": [
@@ -3366,13 +3163,12 @@
 		"kana": "みよしもりした",
 		"roma": "Miyoshi-morishita",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.089928,
 		"lng": 137.0669663,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "mms"
+		"id": "mms",
+		"govId": "232360"
 	},
 	"mys": {
 		"code": [
@@ -3382,13 +3178,12 @@
 		"kana": "みよしし",
 		"roma": "Miyoshi-shi",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0883108,
 		"lng": 137.0730037,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "mys"
+		"id": "mys",
+		"govId": "232360"
 	},
 	"med": {
 		"code": [
@@ -3398,13 +3193,12 @@
 		"kana": "まえだ",
 		"roma": "Maeda",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0910486,
 		"lng": 137.0798628,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "med"
+		"id": "med",
+		"govId": "232360"
 	},
 	"mik": {
 		"code": [
@@ -3414,13 +3208,12 @@
 		"kana": "みよしいけ",
 		"roma": "Miyoshiike",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0943618,
 		"lng": 137.084811,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "mik"
+		"id": "mik",
+		"govId": "232360"
 	},
 	"azb": {
 		"code": [
@@ -3430,13 +3223,12 @@
 		"kana": "あざぶちょう",
 		"roma": "Azabu-chō",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.0979775,
 		"lng": 137.0889607,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "azb"
+		"id": "azb",
+		"govId": "232360"
 	},
 	"skg": {
 		"code": [
@@ -3446,13 +3238,12 @@
 		"kana": "さかいがわ",
 		"roma": "Sakaigawa",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.1018202,
 		"lng": 137.0922892,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "skg"
+		"id": "skg",
+		"govId": "232360"
 	},
 	"ymg": {
 		"code": [
@@ -3462,13 +3253,12 @@
 		"kana": "よもぎひらち",
 		"roma": "Yomogihirachi",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.1061778,
 		"lng": 137.0961707,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "ymg"
+		"id": "ymg",
+		"govId": "232360"
 	},
 	"ukg": {
 		"code": [
@@ -3478,13 +3268,12 @@
 		"kana": "うきがい",
 		"roma": "Ukigai",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.1111232,
 		"lng": 137.1004149,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "ukg"
+		"id": "ukg",
+		"govId": "232360"
 	},
 	"htt": {
 		"code": [
@@ -3494,13 +3283,12 @@
 		"kana": "はなたて",
 		"roma": "Hanatate",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.1167137,
 		"lng": 137.1052996,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "htt"
+		"id": "htt",
+		"govId": "232360"
 	},
 	"mym": {
 		"code": [
@@ -3510,13 +3298,12 @@
 		"kana": "みやのまえ",
 		"roma": "Miyanomae",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.1199742,
 		"lng": 137.1068179,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "mym"
+		"id": "mym",
+		"govId": "232360"
 	},
 	"mgs": {
 		"code": [
@@ -3526,13 +3313,12 @@
 		"kana": "みよしがおかさんちょうめ",
 		"roma": "Miyoshigaoka-sanchōme",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.12246,
 		"lng": 137.1102229,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "mgs"
+		"id": "mgs",
+		"govId": "232360"
 	},
 	"mgk": {
 		"code": [
@@ -3542,13 +3328,12 @@
 		"kana": "みよしがおか",
 		"roma": "Miyoshigaoka",
 		"routes": [
-			"みよし線"
+			"my"
 		],
 		"lat": 35.1272595,
 		"lng": 137.1103492,
-		"prefecture": "愛知県",
-		"city": "みよし市",
-		"id": "mgk"
+		"id": "mgk",
+		"govId": "232360"
 	},
 	"unk": {
 		"code": [
@@ -3559,14 +3344,13 @@
 		"kana": "うなぎいけ",
 		"roma": "Unagiike",
 		"routes": [
-			"健康の森線",
-			"緒川線"
+			"km",
+			"og"
 		],
 		"lat": 34.9745576,
 		"lng": 136.9365159,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "unk"
+		"id": "unk",
+		"govId": "234427"
 	},
 	"okd": {
 		"code": [
@@ -3576,13 +3360,12 @@
 		"kana": "おかだがわ",
 		"roma": "Okadagawa",
 		"routes": [
-			"健康の森線"
+			"km"
 		],
 		"lat": 34.9850957,
 		"lng": 136.9423595,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "okd"
+		"id": "okd",
+		"govId": "234427"
 	},
 	"kkn": {
 		"code": [
@@ -3592,13 +3375,12 @@
 		"kana": "けんこうのもりにしぐち",
 		"roma": "Kenkōnomori-nishiguchi",
 		"routes": [
-			"健康の森線"
+			"km"
 		],
 		"lat": 34.9962115,
 		"lng": 136.9438425,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "kkn"
+		"id": "kkn",
+		"govId": "232238"
 	},
 	"hnt": {
 		"code": [
@@ -3609,15 +3391,14 @@
 		"kana": "はんつきちょう",
 		"roma": "Hantsuki-chō",
 		"routes": [
-			"健康の森線",
-			"刈田川線",
-			"刈田川急行線"
+			"km",
+			"kt",
+			"ktr"
 		],
 		"lat": 35.0055952,
 		"lng": 136.9437882,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "hnt"
+		"id": "hnt",
+		"govId": "232238"
 	},
 	"udo": {
 		"code": [
@@ -3628,14 +3409,13 @@
 		"kana": "うど",
 		"roma": "Udo",
 		"routes": [
-			"健康の森線",
-			"大府西線・八事線"
+			"km",
+			"on"
 		],
 		"lat": 35.0101527,
 		"lng": 136.9422554,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "udo"
+		"id": "udo",
+		"govId": "232238"
 	},
 	"und": {
 		"code": [
@@ -3645,13 +3425,12 @@
 		"kana": "うえのだい",
 		"roma": "Uenodai",
 		"routes": [
-			"健康の森線"
+			"km"
 		],
 		"lat": 35.0115895,
 		"lng": 136.9346827,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "und"
+		"id": "und",
+		"govId": "232220"
 	},
 	"sin": {
 		"code": [
@@ -3661,13 +3440,12 @@
 		"kana": "しんいしね",
 		"roma": "Shin'ishine",
 		"routes": [
-			"健康の森線"
+			"km"
 		],
 		"lat": 35.0161939,
 		"lng": 136.9189024,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "sin"
+		"id": "sin",
+		"govId": "232220"
 	},
 	"fkc": {
 		"code": [
@@ -3678,14 +3456,13 @@
 		"kana": "ふきしまちゅうおう",
 		"roma": "Fukishima-chūō",
 		"routes": [
-			"健康の森線",
-			"名和線"
+			"km",
+			"nw"
 		],
 		"lat": 35.0196955,
 		"lng": 136.9122995,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "fkc"
+		"id": "fkc",
+		"govId": "232220"
 	},
 	"trt": {
 		"code": [
@@ -3695,13 +3472,12 @@
 		"kana": "てらした",
 		"roma": "Terashita",
 		"routes": [
-			"健康の森線"
+			"km"
 		],
 		"lat": 35.0211575,
 		"lng": 136.8999083,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "trt"
+		"id": "trt",
+		"govId": "232220"
 	},
 	"kmh": {
 		"code": [
@@ -3711,13 +3487,12 @@
 		"kana": "かみはまだ",
 		"roma": "Kamihamada",
 		"routes": [
-			"健康の森線"
+			"km"
 		],
 		"lat": 35.0247304,
 		"lng": 136.8936175,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "kmh"
+		"id": "kmh",
+		"govId": "232220"
 	},
 	"seh": {
 		"code": [
@@ -3728,14 +3503,13 @@
 		"kana": "すえひろ",
 		"roma": "Suehiro",
 		"routes": [
-			"南港線(名港トリトンライン)",
-			"大府西線・八事線"
+			"tr",
+			"on"
 		],
 		"lat": 35.0369811,
 		"lng": 136.9396663,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "seh"
+		"id": "seh",
+		"govId": "232238"
 	},
 	"ktw": {
 		"code": [
@@ -3745,13 +3519,12 @@
 		"kana": "きたわらび",
 		"roma": "Kitawarabi",
 		"routes": [
-			"南港線(名港トリトンライン)"
+			"tr"
 		],
 		"lat": 35.0447647,
 		"lng": 136.9285416,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "ktw"
+		"id": "ktw",
+		"govId": "232220"
 	},
 	"hnn": {
 		"code": [
@@ -3761,13 +3534,12 @@
 		"kana": "ひなたね",
 		"roma": "Hinatane",
 		"routes": [
-			"南港線(名港トリトンライン)"
+			"tr"
 		],
 		"lat": 35.0475536,
 		"lng": 136.915409,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "hnn"
+		"id": "hnn",
+		"govId": "232220"
 	},
 	"okm": {
 		"code": [
@@ -3777,13 +3549,12 @@
 		"kana": "おかまえ",
 		"roma": "Okamae",
 		"routes": [
-			"南港線(名港トリトンライン)"
+			"tr"
 		],
 		"lat": 35.0490617,
 		"lng": 136.9105798,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "okm"
+		"id": "okm",
+		"govId": "232220"
 	},
 	"smp": {
 		"code": [
@@ -3793,13 +3564,12 @@
 		"kana": "しんぽう",
 		"roma": "Shimpō",
 		"routes": [
-			"南港線(名港トリトンライン)"
+			"tr"
 		],
 		"lat": 35.0517219,
 		"lng": 136.8977732,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "smp"
+		"id": "smp",
+		"govId": "232220"
 	},
 	"som": {
 		"code": [
@@ -3809,13 +3579,12 @@
 		"kana": "しおみ",
 		"roma": "Shiomi",
 		"routes": [
-			"南港線(名港トリトンライン)"
+			"tr"
 		],
 		"lat": 35.054297,
 		"lng": 136.8699545,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "som"
+		"id": "som",
+		"govId": "231002"
 	},
 	"knj": {
 		"code": [
@@ -3825,13 +3594,12 @@
 		"kana": "きんじょうふとう",
 		"roma": "Kinjō-hutō",
 		"routes": [
-			"南港線(名港トリトンライン)"
+			"tr"
 		],
 		"lat": 35.0494806,
 		"lng": 136.8472029,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "knj"
+		"id": "knj",
+		"govId": "231002"
 	},
 	"kmz": {
 		"code": [
@@ -3841,13 +3609,12 @@
 		"kana": "かめざききたうら",
 		"roma": "Kamezaki-kitaura",
 		"routes": [
-			"高浜線"
+			"tm"
 		],
 		"lat": 34.9246616,
 		"lng": 136.9624314,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "kmz"
+		"id": "kmz",
+		"govId": "232050"
 	},
 	"sns": {
 		"code": [
@@ -3857,13 +3624,12 @@
 		"kana": "すのさき",
 		"roma": "Sunosaki",
 		"routes": [
-			"高浜線"
+			"tm"
 		],
 		"lat": 34.9235339,
 		"lng": 136.9737382,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "sns"
+		"id": "sns",
+		"govId": "232050"
 	},
 	"tkh": {
 		"code": [
@@ -3873,13 +3639,12 @@
 		"kana": "たかはまへきかい",
 		"roma": "Takahama-hekikai",
 		"routes": [
-			"高浜線"
+			"tm"
 		],
 		"lat": 34.9229321,
 		"lng": 136.9812816,
-		"prefecture": "愛知県",
-		"city": "高浜市",
-		"id": "tkh"
+		"id": "tkh",
+		"govId": "232271"
 	},
 	"onn": {
 		"code": [
@@ -3889,13 +3654,12 @@
 		"kana": "おんにんじ",
 		"roma": "Onninji",
 		"routes": [
-			"高浜線"
+			"tm"
 		],
 		"lat": 34.9274115,
 		"lng": 136.9836817,
-		"prefecture": "愛知県",
-		"city": "高浜市",
-		"id": "onn"
+		"id": "onn",
+		"govId": "232271"
 	},
 	"mtk": {
 		"code": [
@@ -3905,13 +3669,12 @@
 		"kana": "みかわたかはま",
 		"roma": "Mikawa-takahama",
 		"routes": [
-			"高浜線"
+			"tm"
 		],
 		"lat": 34.930251,
 		"lng": 136.9901365,
-		"prefecture": "愛知県",
-		"city": "高浜市",
-		"id": "mtk"
+		"id": "mtk",
+		"govId": "232271"
 	},
 	"ywt": {
 		"code": [
@@ -3921,13 +3684,12 @@
 		"kana": "やわたしんでん",
 		"roma": "Yawata-shinden",
 		"routes": [
-			"名和線"
+			"nw"
 		],
 		"lat": 34.9733531,
 		"lng": 136.9124146,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "ywt"
+		"id": "ywt",
+		"govId": "232220"
 	},
 	"oue": {
 		"code": [
@@ -3940,16 +3702,15 @@
 		"kana": "おがわうえやま",
 		"roma": "Ogawa-ueyama",
 		"routes": [
-			"大府西線・八事線",
-			"緒川線",
-			"阿久比線",
-			"名和線"
+			"on",
+			"og",
+			"ag",
+			"nw"
 		],
 		"lat": 34.9701345,
 		"lng": 136.9183676,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "oue"
+		"id": "oue",
+		"govId": "234427"
 	},
 	"ubk": {
 		"code": [
@@ -3960,14 +3721,13 @@
 		"kana": "うばいけ",
 		"roma": "Ubaike",
 		"routes": [
-			"大府西線・八事線",
-			"緒川線"
+			"on",
+			"og"
 		],
 		"lat": 34.9731162,
 		"lng": 136.9235763,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "ubk"
+		"id": "ubk",
+		"govId": "234427"
 	},
 	"kmd": {
 		"code": [
@@ -3977,13 +3737,12 @@
 		"kana": "こめだちょう",
 		"roma": "Komeda-chō",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 34.9875287,
 		"lng": 136.9287788,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "kmd"
+		"id": "kmd",
+		"govId": "232238"
 	},
 	"umk": {
 		"code": [
@@ -3993,13 +3752,12 @@
 		"kana": "うまいけちょう",
 		"roma": "Umaike-chō",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 34.9932686,
 		"lng": 136.9299689,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "umk"
+		"id": "umk",
+		"govId": "232238"
 	},
 	"kty": {
 		"code": [
@@ -4009,13 +3767,12 @@
 		"kana": "きたやしき",
 		"roma": "Kitayashiki",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.0000062,
 		"lng": 136.9304065,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "kty"
+		"id": "kty",
+		"govId": "232238"
 	},
 	"myu": {
 		"code": [
@@ -4026,14 +3783,13 @@
 		"kana": "みやうちちょう",
 		"roma": "Miyauchi-chō",
 		"routes": [
-			"大府西線・八事線",
-			"刈田川線"
+			"on",
+			"kt"
 		],
 		"lat": 35.005275,
 		"lng": 136.9320259,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "myu"
+		"id": "myu",
+		"govId": "232238"
 	},
 	"msn": {
 		"code": [
@@ -4044,14 +3800,13 @@
 		"kana": "まえしんきり",
 		"roma": "Maeshinkiri",
 		"routes": [
-			"大府西線・八事線",
-			"東西線"
+			"on",
+			"tz"
 		],
 		"lat": 35.0212118,
 		"lng": 136.9422239,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "msn"
+		"id": "msn",
+		"govId": "232238"
 	},
 	"tmo": {
 		"code": [
@@ -4062,15 +3817,14 @@
 		"kana": "とうも",
 		"roma": "Tōmo",
 		"routes": [
-			"大府西線・八事線",
-			"大府環状線",
-			"南港線(名港トリトンライン)"
+			"on",
+			"ol",
+			"tr"
 		],
 		"lat": 35.0291322,
 		"lng": 136.9447347,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "tmo"
+		"id": "tmo",
+		"govId": "232238"
 	},
 	"gdo": {
 		"code": [
@@ -4080,29 +3834,27 @@
 		"kana": "ごうど",
 		"roma": "Gōdo",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.0470184,
 		"lng": 136.935985,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "gdo"
+		"id": "gdo",
+		"govId": "232238"
 	},
 	"syk": {
 		"code": [
 			"ON13"
 		],
 		"name": "炭焼",
-		"kana": "すみやき",
+		"kana": "すみやけ",
 		"roma": "Sumiyake",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.054094,
 		"lng": 136.9387471,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "syk"
+		"id": "syk",
+		"govId": "231002"
 	},
 	"khr": {
 		"code": [
@@ -4112,13 +3864,12 @@
 		"kana": "かめはら",
 		"roma": "Kamehara",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.0668942,
 		"lng": 136.9483561,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "khr"
+		"id": "khr",
+		"govId": "231002"
 	},
 	"sim": {
 		"code": [
@@ -4128,13 +3879,12 @@
 		"kana": "しおみがおか",
 		"roma": "Shiomigaoka",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.0817324,
 		"lng": 136.9600884,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "sim"
+		"id": "sim",
+		"govId": "231002"
 	},
 	"sky": {
 		"code": [
@@ -4144,13 +3894,12 @@
 		"kana": "しかやま",
 		"roma": "Shikayama",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.0881153,
 		"lng": 136.9637584,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "sky"
+		"id": "sky",
+		"govId": "231002"
 	},
 	"nmk": {
 		"code": [
@@ -4160,13 +3909,12 @@
 		"kana": "にいのみいけ",
 		"roma": "Niinomiike",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.0916909,
 		"lng": 136.9631336,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "nmk"
+		"id": "nmk",
+		"govId": "231002"
 	},
 	"nkm": {
 		"code": [
@@ -4176,13 +3924,12 @@
 		"kana": "なるこみなみ",
 		"roma": "Naruko-minami",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.0951043,
 		"lng": 136.9673178,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "nkm"
+		"id": "nkm",
+		"govId": "231002"
 	},
 	"snn": {
 		"code": [
@@ -4192,13 +3939,12 @@
 		"kana": "しののかぜ",
 		"roma": "Shinonokaze",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.0978146,
 		"lng": 136.9737492,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "snn"
+		"id": "snn",
+		"govId": "231002"
 	},
 	"akw": {
 		"code": [
@@ -4208,13 +3954,12 @@
 		"kana": "あいかわ",
 		"roma": "Aikawa",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1025833,
 		"lng": 136.9740457,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "akw"
+		"id": "akw",
+		"govId": "231002"
 	},
 	"aoy": {
 		"code": [
@@ -4224,13 +3969,12 @@
 		"kana": "あいおいやまひがし",
 		"roma": "Aioiyama-higashi",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.10772,
 		"lng": 136.9759148,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "aoy"
+		"id": "aoy",
+		"govId": "231002"
 	},
 	"hts": {
 		"code": [
@@ -4240,13 +3984,12 @@
 		"kana": "ひとつやまじゅうたく",
 		"roma": "Hitotsuyamajūtaku",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1132971,
 		"lng": 136.978303,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "hts"
+		"id": "hts",
+		"govId": "231002"
 	},
 	"smd": {
 		"code": [
@@ -4256,13 +3999,12 @@
 		"kana": "しまだ",
 		"roma": "Shimada",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1192656,
 		"lng": 136.9777168,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "smd"
+		"id": "smd",
+		"govId": "231002"
 	},
 	"smb": {
 		"code": [
@@ -4272,13 +4014,12 @@
 		"kana": "しまだばし",
 		"roma": "Shimadabashi",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.123609,
 		"lng": 136.9709301,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "smb"
+		"id": "smb",
+		"govId": "231002"
 	},
 	"ikm": {
 		"code": [
@@ -4288,13 +4029,12 @@
 		"kana": "いけみ",
 		"roma": "Ikemi",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1279168,
 		"lng": 136.9690369,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ikm"
+		"id": "ikm",
+		"govId": "231002"
 	},
 	"omt": {
 		"code": [
@@ -4304,13 +4044,12 @@
 		"kana": "おもてやま",
 		"roma": "Omoteyama",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1312727,
 		"lng": 136.9664851,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "omt"
+		"id": "omt",
+		"govId": "231002"
 	},
 	"ygt": {
 		"code": [
@@ -4320,13 +4059,12 @@
 		"kana": "やごと",
 		"roma": "Yagoto",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1367896,
 		"lng": 136.9642203,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ygt"
+		"id": "ygt",
+		"govId": "231002"
 	},
 	"chh": {
 		"code": [
@@ -4336,13 +4074,12 @@
 		"kana": "ちりゅうほりきり",
 		"roma": "Chiryū-horikiri",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 35.0036534,
 		"lng": 137.0383437,
-		"prefecture": "愛知県",
-		"city": "知立市",
-		"id": "chh"
+		"id": "chh",
+		"govId": "232254"
 	},
 	"hks": {
 		"code": [
@@ -4352,13 +4089,12 @@
 		"kana": "ひがしかみしげはら",
 		"roma": "Higashikamishigehara",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 35.0016838,
 		"lng": 137.034231,
-		"prefecture": "愛知県",
-		"city": "知立市",
-		"id": "hks"
+		"id": "hks",
+		"govId": "232254"
 	},
 	"ksg": {
 		"code": [
@@ -4368,13 +4104,12 @@
 		"kana": "かみしげはら",
 		"roma": "Kamishigehara",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9990084,
 		"lng": 137.0297103,
-		"prefecture": "愛知県",
-		"city": "知立市",
-		"id": "ksg"
+		"id": "ksg",
+		"govId": "232254"
 	},
 	"sgh": {
 		"code": [
@@ -4384,13 +4119,12 @@
 		"kana": "しげはら",
 		"roma": "Shigehara",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.995287,
 		"lng": 137.0235133,
-		"prefecture": "愛知県",
-		"city": "知立市",
-		"id": "sgh"
+		"id": "sgh",
+		"govId": "232254"
 	},
 	"isk": {
 		"code": [
@@ -4401,14 +4135,13 @@
 		"kana": "いしきちょう",
 		"roma": "Ishiki-chō",
 		"routes": [
-			"緒川線",
-			"刈谷環状線"
+			"og",
+			"kl"
 		],
 		"lat": 34.9922778,
 		"lng": 137.0173715,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "isk"
+		"id": "isk",
+		"govId": "232106"
 	},
 	"nky": {
 		"code": [
@@ -4418,13 +4151,12 @@
 		"kana": "なかやまちょう",
 		"roma": "Nakayama-chō",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9919613,
 		"lng": 137.0136665,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "nky"
+		"id": "nky",
+		"govId": "232106"
 	},
 	"tyo": {
 		"code": [
@@ -4434,13 +4166,12 @@
 		"kana": "とうようちょう",
 		"roma": "Tōyō-chō",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9906588,
 		"lng": 137.0023342,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "tyo"
+		"id": "tyo",
+		"govId": "232106"
 	},
 	"ohm": {
 		"code": [
@@ -4450,13 +4181,12 @@
 		"kana": "おおはまかいどう",
 		"roma": "Ōhamakaidō",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9896698,
 		"lng": 136.9991122,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "ohm"
+		"id": "ohm",
+		"govId": "232106"
 	},
 	"kss": {
 		"code": [
@@ -4467,14 +4197,13 @@
 		"kana": "かりやしんさかえまち",
 		"roma": "Kariya-shinsakae-machi",
 		"routes": [
-			"緒川線",
-			"刈谷環状線"
+			"og",
+			"kl"
 		],
 		"lat": 34.9874192,
 		"lng": 136.9954215,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "kss"
+		"id": "kss",
+		"govId": "232106"
 	},
 	"jnj": {
 		"code": [
@@ -4484,13 +4213,12 @@
 		"kana": "じゅうねんじ",
 		"roma": "Jūnenji",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9858662,
 		"lng": 136.9922679,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "jnj"
+		"id": "jnj",
+		"govId": "232106"
 	},
 	"tkc": {
 		"code": [
@@ -4500,13 +4228,12 @@
 		"kana": "つかさちょう",
 		"roma": "Tsukasa-chō",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9840639,
 		"lng": 136.9837716,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "tkc"
+		"id": "tkc",
+		"govId": "232106"
 	},
 	"cty": {
 		"code": [
@@ -4516,13 +4243,12 @@
 		"kana": "ちたやわた",
 		"roma": "Chita-yawata",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9696768,
 		"lng": 136.9145429,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "cty"
+		"id": "cty",
+		"govId": "234427"
 	},
 	"nmg": {
 		"code": [
@@ -4532,13 +4258,12 @@
 		"kana": "ななまがりこうえん",
 		"roma": "Nanamagarikōen",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9685197,
 		"lng": 136.9032402,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "nmg"
+		"id": "nmg",
+		"govId": "232246"
 	},
 	"sri": {
 		"code": [
@@ -4548,13 +4273,12 @@
 		"kana": "そうりいけ",
 		"roma": "Sōriike",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.967965,
 		"lng": 136.88799,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "sri"
+		"id": "sri",
+		"govId": "232246"
 	},
 	"umg": {
 		"code": [
@@ -4564,13 +4288,12 @@
 		"kana": "うめがおか",
 		"roma": "Umegaoka",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9697142,
 		"lng": 136.8786357,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "umg"
+		"id": "umg",
+		"govId": "232246"
 	},
 	"gtn": {
 		"code": [
@@ -4580,13 +4303,12 @@
 		"kana": "ごたんだ",
 		"roma": "Gotanda",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9715337,
 		"lng": 136.8739751,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "gtn"
+		"id": "gtn",
+		"govId": "232246"
 	},
 	"ctc": {
 		"code": [
@@ -4596,13 +4318,12 @@
 		"kana": "ちたしんち",
 		"roma": "Chita-shinchi",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.973522,
 		"lng": 136.8706706,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "ctc"
+		"id": "ctc",
+		"govId": "232246"
 	},
 	"snc": {
 		"code": [
@@ -4612,13 +4333,12 @@
 		"kana": "しんちひがしまち",
 		"roma": "Shinchihigashi-machi",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9756684,
 		"lng": 136.8675084,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "snc"
+		"id": "snc",
+		"govId": "232246"
 	},
 	"cts": {
 		"code": [
@@ -4629,14 +4349,13 @@
 		"kana": "ちたし",
 		"roma": "Chita-shi",
 		"routes": [
-			"緒川線",
-			"つつじが丘線"
+			"og",
+			"tt"
 		],
 		"lat": 34.9808823,
 		"lng": 136.8630745,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "cts"
+		"id": "cts",
+		"govId": "232246"
 	},
 	"hmw": {
 		"code": [
@@ -4646,13 +4365,12 @@
 		"kana": "はまわき",
 		"roma": "Hamawaki",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9859911,
 		"lng": 136.8605203,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "hmw"
+		"id": "hmw",
+		"govId": "232246"
 	},
 	"hgy": {
 		"code": [
@@ -4662,13 +4380,12 @@
 		"kana": "ひがしやしき",
 		"roma": "Higashiyashiki",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9902526,
 		"lng": 136.8627489,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "hgy"
+		"id": "hgy",
+		"govId": "232246"
 	},
 	"ask": {
 		"code": [
@@ -4678,13 +4395,12 @@
 		"kana": "あさくら",
 		"roma": "Asakura",
 		"routes": [
-			"緒川線"
+			"og"
 		],
 		"lat": 34.9934817,
 		"lng": 136.8630707,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "ask"
+		"id": "ask",
+		"govId": "232246"
 	},
 	"hnm": {
 		"code": [
@@ -4694,13 +4410,12 @@
 		"kana": "はんだみなと",
 		"roma": "Handa-minato",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8858857,
 		"lng": 136.9491574,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hnm"
+		"id": "hnm",
+		"govId": "232050"
 	},
 	"mzh": {
 		"code": [
@@ -4710,13 +4425,12 @@
 		"kana": "みずほちょう",
 		"roma": "Mizuho-chō",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.890999,
 		"lng": 136.947663,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "mzh"
+		"id": "mzh",
+		"govId": "232050"
 	},
 	"toy": {
 		"code": [
@@ -4726,13 +4440,12 @@
 		"kana": "とうようちょう",
 		"roma": "Tōyō-chō",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8931535,
 		"lng": 136.9429776,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "toy"
+		"id": "toy",
+		"govId": "232050"
 	},
 	"hnd": {
 		"code": [
@@ -4743,14 +4456,13 @@
 		"kana": "はんだ",
 		"roma": "Handa",
 		"routes": [
-			"半滑線・空港線",
-			"阿久比線"
+			"hk",
+			"ag"
 		],
 		"lat": 34.8946364,
 		"lng": 136.9307949,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hnd"
+		"id": "hnd",
+		"govId": "232050"
 	},
 	"chn": {
 		"code": [
@@ -4760,13 +4472,12 @@
 		"kana": "ちたはんだ",
 		"roma": "Chita-handa",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8954269,
 		"lng": 136.9257586,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "chn"
+		"id": "chn",
+		"govId": "232050"
 	},
 	"krd": {
 		"code": [
@@ -4776,13 +4487,12 @@
 		"kana": "かりやどこうえん",
 		"roma": "Kariyado-kōen",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8962795,
 		"lng": 136.9192863,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "krd"
+		"id": "krd",
+		"govId": "232050"
 	},
 	"hrg": {
 		"code": [
@@ -4792,13 +4502,12 @@
 		"kana": "ひいらぎちょう",
 		"roma": "Hiiragi-chō",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.9030466,
 		"lng": 136.9146507,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hrg"
+		"id": "hrg",
+		"govId": "232050"
 	},
 	"hyc": {
 		"code": [
@@ -4808,13 +4517,12 @@
 		"kana": "ひいらぎよんちょうめ",
 		"roma": "Hiiragi-yonchōme",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.9050796,
 		"lng": 136.9114779,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hyc"
+		"id": "hyc",
+		"govId": "232050"
 	},
 	"ynn": {
 		"code": [
@@ -4824,13 +4532,12 @@
 		"kana": "やなべにし",
 		"roma": "Yanabe-nishi",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.9083791,
 		"lng": 136.9067197,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "ynn"
+		"id": "ynn",
+		"govId": "232050"
 	},
 	"hri": {
 		"code": [
@@ -4840,13 +4547,12 @@
 		"kana": "ひらいちょう",
 		"roma": "Hirai-chō",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.908377,
 		"lng": 136.8982764,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hri"
+		"id": "hri",
+		"govId": "232050"
 	},
 	"sse": {
 		"code": [
@@ -4856,13 +4562,12 @@
 		"kana": "しんせいちょう",
 		"roma": "Shinsei-chō",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.9077856,
 		"lng": 136.8923612,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "sse"
+		"id": "sse",
+		"govId": "232050"
 	},
 	"hor": {
 		"code": [
@@ -4872,13 +4577,12 @@
 		"kana": "ほうらいちょう",
 		"roma": "Hōrai-chō",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.9083335,
 		"lng": 136.8857186,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hor"
+		"id": "hor",
+		"govId": "232050"
 	},
 	"mti": {
 		"code": [
@@ -4888,13 +4592,12 @@
 		"kana": "みついけ",
 		"roma": "Mitsuike",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.9075112,
 		"lng": 136.8713356,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "mti"
+		"id": "mti",
+		"govId": "232050"
 	},
 	"kni": {
 		"code": [
@@ -4904,13 +4607,12 @@
 		"kana": "かないろ",
 		"roma": "Kanairo",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.9025707,
 		"lng": 136.8633909,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "kni"
+		"id": "kni",
+		"govId": "232165"
 	},
 	"asd": {
 		"code": [
@@ -4920,13 +4622,12 @@
 		"kana": "あすかだいひがし",
 		"roma": "Asukadai-higashi",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8997288,
 		"lng": 136.8569642,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "asd"
+		"id": "asd",
+		"govId": "232165"
 	},
 	"stk": {
 		"code": [
@@ -4936,13 +4637,12 @@
 		"kana": "しんとこなめ",
 		"roma": "Shin-tokoname",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8983551,
 		"lng": 136.852005,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "stk"
+		"id": "stk",
+		"govId": "232165"
 	},
 	"ktj": {
 		"code": [
@@ -4952,13 +4652,12 @@
 		"kana": "きたじょうこうえん",
 		"roma": "Kitajō-kōen",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8970102,
 		"lng": 136.8476933,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "ktj"
+		"id": "ktj",
+		"govId": "232165"
 	},
 	"hrm": {
 		"code": [
@@ -4968,13 +4667,12 @@
 		"kana": "はらまつちょう",
 		"roma": "Haramatsu-chō",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8929823,
 		"lng": 136.8429469,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "hrm"
+		"id": "hrm",
+		"govId": "232165"
 	},
 	"mnd": {
 		"code": [
@@ -4984,13 +4682,12 @@
 		"kana": "まねきねこどおり",
 		"roma": "Manekinekodōri",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8910009,
 		"lng": 136.8396583,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "mnd"
+		"id": "mnd",
+		"govId": "232165"
 	},
 	"tkn": {
 		"code": [
@@ -5000,13 +4697,12 @@
 		"kana": "とこなめ",
 		"roma": "Tokoname",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8889637,
 		"lng": 136.8360588,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "tkn"
+		"id": "tkn",
+		"govId": "232165"
 	},
 	"tkk": {
 		"code": [
@@ -5016,13 +4712,12 @@
 		"kana": "とこなめきょうてい",
 		"roma": "Tokoname-kyōtei",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8869876,
 		"lng": 136.8298349,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "tkk"
+		"id": "tkk",
+		"govId": "232165"
 	},
 	"rnk": {
 		"code": [
@@ -5032,13 +4727,12 @@
 		"kana": "りんくうびーち",
 		"roma": "Rinkū-beach",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8866576,
 		"lng": 136.8242291,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "rnk"
+		"id": "rnk",
+		"govId": "232165"
 	},
 	"rnt": {
 		"code": [
@@ -5048,13 +4742,12 @@
 		"kana": "りんくうとこなめ",
 		"roma": "Rinkū-tokoname",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8808454,
 		"lng": 136.8249055,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "rnt"
+		"id": "rnt",
+		"govId": "232165"
 	},
 	"ctk": {
 		"code": [
@@ -5064,13 +4757,12 @@
 		"kana": "せんとれあきた",
 		"roma": "Centrair-kita",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8659242,
 		"lng": 136.8143014,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "ctk"
+		"id": "ctk",
+		"govId": "232165"
 	},
 	"ct1": {
 		"code": [
@@ -5080,13 +4772,12 @@
 		"kana": "せんとれあだいいちたーみなる",
 		"roma": "Centrair-terminal1",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8592489,
 		"lng": 136.8158145,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "ct1"
+		"id": "ct1",
+		"govId": "232165"
 	},
 	"ct2": {
 		"code": [
@@ -5096,13 +4787,12 @@
 		"kana": "せんとれあだいにたーみなる",
 		"roma": "Centrair-terminal2",
 		"routes": [
-			"半滑線・空港線"
+			"hk"
 		],
 		"lat": 34.8556312,
 		"lng": 136.8165717,
-		"prefecture": "愛知県",
-		"city": "常滑市",
-		"id": "ct2"
+		"id": "ct2",
+		"govId": "232165"
 	},
 	"hon": {
 		"code": [
@@ -5112,13 +4802,12 @@
 		"kana": "ほんだ",
 		"roma": "Honda",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0473016,
 		"lng": 137.0714171,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "hon"
+		"id": "hon",
+		"govId": "232114"
 	},
 	"ttm": {
 		"code": [
@@ -5128,13 +4817,12 @@
 		"kana": "つつみほんまち",
 		"roma": "Tsutsumi-hommachi",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0501991,
 		"lng": 137.0777826,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "ttm"
+		"id": "ttm",
+		"govId": "232114"
 	},
 	"myg": {
 		"code": [
@@ -5144,13 +4832,12 @@
 		"kana": "みやぐろ",
 		"roma": "Miyaguro",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0526023,
 		"lng": 137.0829714,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "myg"
+		"id": "myg",
+		"govId": "232114"
 	},
 	"hmt": {
 		"code": [
@@ -5160,13 +4847,12 @@
 		"kana": "ひらまつ",
 		"roma": "Hiramachi",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0533903,
 		"lng": 137.0886263,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "hmt"
+		"id": "hmt",
+		"govId": "232114"
 	},
 	"tkr": {
 		"code": [
@@ -5176,13 +4862,12 @@
 		"kana": "たから",
 		"roma": "Takara",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0574778,
 		"lng": 137.0959122,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "tkr"
+		"id": "tkr",
+		"govId": "232114"
 	},
 	"otb": {
 		"code": [
@@ -5192,13 +4877,12 @@
 		"kana": "おおつぼ",
 		"roma": "Ōtsubo",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.063689,
 		"lng": 137.1024654,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "otb"
+		"id": "otb",
+		"govId": "232114"
 	},
 	"tsr": {
 		"code": [
@@ -5208,13 +4892,12 @@
 		"kana": "たしろちょう",
 		"roma": "Tashiro-chō",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0711925,
 		"lng": 137.1089004,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "tsr"
+		"id": "tsr",
+		"govId": "232114"
 	},
 	"hsn": {
 		"code": [
@@ -5224,13 +4907,12 @@
 		"kana": "ほんしんちょう",
 		"roma": "Honshin-chō",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0799434,
 		"lng": 137.1150411,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "hsn"
+		"id": "hsn",
+		"govId": "232114"
 	},
 	"tts": {
 		"code": [
@@ -5240,13 +4922,12 @@
 		"kana": "とよたとうしんちょう",
 		"roma": "Toyota-tōshin-chō",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0790412,
 		"lng": 137.1214754,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "tts"
+		"id": "tts",
+		"govId": "232114"
 	},
 	"krg": {
 		"code": [
@@ -5256,13 +4937,12 @@
 		"kana": "ころもがはら",
 		"roma": "Koromogahara",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0793765,
 		"lng": 137.1274358,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "krg"
+		"id": "krg",
+		"govId": "232114"
 	},
 	"hkt": {
 		"code": [
@@ -5272,13 +4952,12 @@
 		"kana": "ひろくてちょう",
 		"roma": "Hirokute-chō",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.081351,
 		"lng": 137.1326529,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "hkt"
+		"id": "hkt",
+		"govId": "232114"
 	},
 	"yts": {
 		"code": [
@@ -5288,13 +4967,12 @@
 		"kana": "やつばさん",
 		"roma": "Yatsubasan",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0827395,
 		"lng": 137.1383947,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "yts"
+		"id": "yts",
+		"govId": "232114"
 	},
 	"kzk": {
 		"code": [
@@ -5304,13 +4982,12 @@
 		"kana": "こざかちょう",
 		"roma": "Kozaka-chō",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0862606,
 		"lng": 137.1441821,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "kzk"
+		"id": "kzk",
+		"govId": "232114"
 	},
 	"tyt": {
 		"code": [
@@ -5320,13 +4997,12 @@
 		"kana": "とよたし",
 		"roma": "Toyota-shi",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0872396,
 		"lng": 137.1545102,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "tyt"
+		"id": "tyt",
+		"govId": "232114"
 	},
 	"yhg": {
 		"code": [
@@ -5336,13 +5012,12 @@
 		"kana": "やはぎがわ",
 		"roma": "Yahagigawa",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0865616,
 		"lng": 137.1614666,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "yhg"
+		"id": "yhg",
+		"govId": "232114"
 	},
 	"tst": {
 		"code": [
@@ -5352,13 +5027,12 @@
 		"kana": "とよたすたじあむまえ",
 		"roma": "Toyota-stadium-mae",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0858216,
 		"lng": 137.1713794,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "tst"
+		"id": "tst",
+		"govId": "232114"
 	},
 	"uen": {
 		"code": [
@@ -5368,13 +5042,12 @@
 		"kana": "うえのちょう",
 		"roma": "Ueno-chō",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0866309,
 		"lng": 137.1783024,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "uen"
+		"id": "uen",
+		"govId": "232114"
 	},
 	"kmg": {
 		"code": [
@@ -5384,13 +5057,12 @@
 		"kana": "かもがわこうえん",
 		"roma": "Kamogawa-kōen",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.086015,
 		"lng": 137.1848619,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "kmg"
+		"id": "kmg",
+		"govId": "232114"
 	},
 	"msb": {
 		"code": [
@@ -5400,13 +5072,12 @@
 		"kana": "みかわしぶや",
 		"roma": "Mikawa-shibuya",
 		"routes": [
-			"豊田線"
+			"ty"
 		],
 		"lat": 35.0852682,
 		"lng": 137.1924994,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "msb"
+		"id": "msb",
+		"govId": "232114"
 	},
 	"hdk": {
 		"code": [
@@ -5417,14 +5088,13 @@
 		"kana": "ひだか",
 		"roma": "Hidaka",
 		"routes": [
-			"刈谷環状線",
-			"刈田川線"
+			"kl",
+			"kt"
 		],
 		"lat": 35.0058622,
 		"lng": 136.9973772,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "hdk"
+		"id": "hdk",
+		"govId": "232106"
 	},
 	"kkr": {
 		"code": [
@@ -5434,13 +5104,12 @@
 		"kana": "たかくら",
 		"roma": "Takakura",
 		"routes": [
-			"刈谷環状線"
+			"kl"
 		],
 		"lat": 34.9999713,
 		"lng": 136.9974806,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "kkr"
+		"id": "kkr",
+		"govId": "232106"
 	},
 	"skk": {
 		"code": [
@@ -5450,13 +5119,12 @@
 		"kana": "しょっきほんしゃまえ",
 		"roma": "Shokkihonsha-mae",
 		"routes": [
-			"刈谷環状線"
+			"kl"
 		],
 		"lat": 34.9928508,
 		"lng": 136.9950391,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "skk"
+		"id": "skk",
+		"govId": "232106"
 	},
 	"krt": {
 		"code": [
@@ -5466,13 +5134,12 @@
 		"kana": "かりやたかまつ",
 		"roma": "Kariya-takamatsu",
 		"routes": [
-			"刈谷環状線"
+			"kl"
 		],
 		"lat": 34.9857098,
 		"lng": 137.0034994,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "krt"
+		"id": "krt",
+		"govId": "232106"
 	},
 	"ksm": {
 		"code": [
@@ -5482,13 +5149,12 @@
 		"kana": "かりやすみよし",
 		"roma": "Kariya-sumiyoshi",
 		"routes": [
-			"刈谷環状線"
+			"kl"
 		],
 		"lat": 34.9863464,
 		"lng": 137.0087296,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "ksm"
+		"id": "ksm",
+		"govId": "232106"
 	},
 	"krk": {
 		"code": [
@@ -5498,13 +5164,12 @@
 		"kana": "かりやこうつうゆうえんまえ",
 		"roma": "Kariyakōtsūyūen-mae",
 		"routes": [
-			"刈谷環状線"
+			"kl"
 		],
 		"lat": 34.9866232,
 		"lng": 137.0141053,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "krk"
+		"id": "krk",
+		"govId": "232106"
 	},
 	"sms": {
 		"code": [
@@ -5514,13 +5179,12 @@
 		"kana": "しもしげはら",
 		"roma": "Shimoshigehara",
 		"routes": [
-			"刈谷環状線"
+			"kl"
 		],
 		"lat": 34.9871817,
 		"lng": 137.017392,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "sms"
+		"id": "sms",
+		"govId": "232106"
 	},
 	"shw": {
 		"code": [
@@ -5530,13 +5194,12 @@
 		"kana": "しょうわちょう",
 		"roma": "Shōwa-chō",
 		"routes": [
-			"刈谷環状線"
+			"kl"
 		],
 		"lat": 34.9972269,
 		"lng": 137.0165168,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "shw"
+		"id": "shw",
+		"govId": "232106"
 	},
 	"ais": {
 		"code": [
@@ -5546,13 +5209,12 @@
 		"kana": "あいしんほんしゃまえ",
 		"roma": "Aishinhonsha-mae",
 		"routes": [
-			"刈谷環状線"
+			"kl"
 		],
 		"lat": 35.0001342,
 		"lng": 137.0161,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "ais"
+		"id": "ais",
+		"govId": "232106"
 	},
 	"ond": {
 		"code": [
@@ -5563,14 +5225,13 @@
 		"kana": "おんだ",
 		"roma": "Onda",
 		"routes": [
-			"刈谷環状線",
-			"刈田川線知立支線"
+			"kl",
+			"ktc"
 		],
 		"lat": 35.0059716,
 		"lng": 137.0149949,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "ond"
+		"id": "ond",
+		"govId": "232106"
 	},
 	"kra": {
 		"code": [
@@ -5580,13 +5241,12 @@
 		"kana": "かりやあおやま",
 		"roma": "Kariya-aoyama",
 		"routes": [
-			"刈谷環状線"
+			"kl"
 		],
 		"lat": 35.0086306,
 		"lng": 137.0153193,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "kra"
+		"id": "kra",
+		"govId": "232106"
 	},
 	"aym": {
 		"code": [
@@ -5596,13 +5256,12 @@
 		"kana": "あおやまこうえんにし",
 		"roma": "Aoyamakōen-nishi",
 		"routes": [
-			"刈谷環状線"
+			"kl"
 		],
 		"lat": 35.0112968,
 		"lng": 137.0111149,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "aym"
+		"id": "aym",
+		"govId": "232106"
 	},
 	"oym": {
 		"code": [
@@ -5612,13 +5271,12 @@
 		"kana": "おやま",
 		"roma": "Oyama",
 		"routes": [
-			"刈谷環状線"
+			"kl"
 		],
 		"lat": 35.0108313,
 		"lng": 136.9969627,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "oym"
+		"id": "oym",
+		"govId": "232106"
 	},
 	"ygh": {
 		"code": [
@@ -5629,14 +5287,13 @@
 		"kana": "よごはち",
 		"roma": "Yogohachi",
 		"routes": [
-			"つつじが丘線",
-			"刈田川線"
+			"tt",
+			"kt"
 		],
 		"lat": 35.0114341,
 		"lng": 136.8995344,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "ygh"
+		"id": "ygh",
+		"govId": "232220"
 	},
 	"yks": {
 		"code": [
@@ -5646,14 +5303,13 @@
 		"kana": "よこすかこうこうまえ",
 		"roma": "Yokosukakōkō-mae",
 		"routes": [
-			"つつじが丘線",
-			"与五八デルタ線"
+			"tt",
+			"ygh"
 		],
 		"lat": 35.0082894,
 		"lng": 136.8957282,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "yks"
+		"id": "yks",
+		"govId": "232220"
 	},
 	"nzb": {
 		"code": [
@@ -5663,13 +5319,12 @@
 		"kana": "のざきばし",
 		"roma": "Nozakibashi",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 35.0030432,
 		"lng": 136.8886668,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "nzb"
+		"id": "nzb",
+		"govId": "232220"
 	},
 	"cth": {
 		"code": [
@@ -5679,13 +5334,12 @@
 		"kana": "ちたひらの",
 		"roma": "Chita-hirano",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 34.9973331,
 		"lng": 136.8833012,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "cth"
+		"id": "cth",
+		"govId": "232246"
 	},
 	"chs": {
 		"code": [
@@ -5695,13 +5349,12 @@
 		"kana": "ちょうそばし",
 		"roma": "Chōso-bashi",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 34.9928525,
 		"lng": 136.8774476,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "chs"
+		"id": "chs",
+		"govId": "232246"
 	},
 	"skd": {
 		"code": [
@@ -5711,13 +5364,12 @@
 		"kana": "あさくらだんち",
 		"roma": "Asakuradanchi",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 34.9867041,
 		"lng": 136.8730273,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "skd"
+		"id": "skd",
+		"govId": "232246"
 	},
 	"ttj": {
 		"code": [
@@ -5727,13 +5379,12 @@
 		"kana": "つつじがおか",
 		"roma": "Tsutsujigaoka",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 34.9834891,
 		"lng": 136.8703317,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "ttj"
+		"id": "ttj",
+		"govId": "232246"
 	},
 	"scd": {
 		"code": [
@@ -5743,13 +5394,12 @@
 		"kana": "しんちだい",
 		"roma": "Shinchidai",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 34.9813835,
 		"lng": 136.8683478,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "scd"
+		"id": "scd",
+		"govId": "232246"
 	},
 	"cht": {
 		"code": [
@@ -5759,13 +5409,12 @@
 		"kana": "ちゅうおうとしょかんまえ",
 		"roma": "Chūōtoshokan-mae",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 34.9737696,
 		"lng": 136.8571451,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "cht"
+		"id": "cht",
+		"govId": "232246"
 	},
 	"mkg": {
 		"code": [
@@ -5775,13 +5424,12 @@
 		"kana": "みきがね",
 		"roma": "Mikigane",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 34.9699132,
 		"lng": 136.8544131,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "mkg"
+		"id": "mkg",
+		"govId": "232246"
 	},
 	"okn": {
 		"code": [
@@ -5791,13 +5439,12 @@
 		"kana": "おきのた",
 		"roma": "Okinota",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 34.9684333,
 		"lng": 136.848552,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "okn"
+		"id": "okn",
+		"govId": "232246"
 	},
 	"hng": {
 		"code": [
@@ -5807,13 +5454,12 @@
 		"kana": "ひながほりた",
 		"roma": "Hinaga-horita",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 34.9639007,
 		"lng": 136.8400734,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "hng"
+		"id": "hng",
+		"govId": "232246"
 	},
 	"mdg": {
 		"code": [
@@ -5823,13 +5469,12 @@
 		"kana": "まえだぐち",
 		"roma": "Maedaguchi",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 34.9599273,
 		"lng": 136.8370929,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "mdg"
+		"id": "mdg",
+		"govId": "232246"
 	},
 	"smk": {
 		"code": [
@@ -5839,13 +5484,12 @@
 		"kana": "しんまいこきた",
 		"roma": "Shinmaiko-kita",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 34.9543823,
 		"lng": 136.8322923,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "smk"
+		"id": "smk",
+		"govId": "232246"
 	},
 	"smg": {
 		"code": [
@@ -5855,13 +5499,12 @@
 		"kana": "しんまいこぐち",
 		"roma": "Shinmaiko-guchi",
 		"routes": [
-			"つつじが丘線"
+			"tt"
 		],
 		"lat": 34.9500316,
 		"lng": 136.8326956,
-		"prefecture": "愛知県",
-		"city": "知多市",
-		"id": "smg"
+		"id": "smg",
+		"govId": "232246"
 	},
 	"tgw": {
 		"code": [
@@ -5871,13 +5514,12 @@
 		"kana": "おおたがわ",
 		"roma": "Ōtagawa",
 		"routes": [
-			"刈田川線"
+			"kt"
 		],
 		"lat": 35.0200135,
 		"lng": 136.8907714,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "tgw"
+		"id": "tgw",
+		"govId": "232220"
 	},
 	"hsd": {
 		"code": [
@@ -5887,13 +5529,12 @@
 		"kana": "ほそだ",
 		"roma": "Hosoda",
 		"routes": [
-			"刈田川線"
+			"kt"
 		],
 		"lat": 35.0170342,
 		"lng": 136.8993051,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "hsd"
+		"id": "hsd",
+		"govId": "232220"
 	},
 	"ktk": {
 		"code": [
@@ -5904,15 +5545,14 @@
 		"kana": "きたかぎや",
 		"roma": "Kita-kagiya",
 		"routes": [
-			"刈田川線",
-			"名和線",
-			"与五八デルタ線"
+			"kt",
+			"nw",
+			"ygh"
 		],
 		"lat": 35.0080417,
 		"lng": 136.9086204,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "ktk"
+		"id": "ktk",
+		"govId": "232220"
 	},
 	"ysk": {
 		"code": [
@@ -5922,13 +5562,12 @@
 		"kana": "よしかわ",
 		"roma": "Yoshikawa",
 		"routes": [
-			"刈田川線"
+			"kt"
 		],
 		"lat": 35.0051521,
 		"lng": 136.9232631,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "ysk"
+		"id": "ysk",
+		"govId": "232238"
 	},
 	"nkc": {
 		"code": [
@@ -5938,13 +5577,12 @@
 		"kana": "なかてちょう",
 		"roma": "Nakate-chō",
 		"routes": [
-			"刈田川線"
+			"kt"
 		],
 		"lat": 35.005876,
 		"lng": 136.9924228,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "nkc"
+		"id": "nkc",
+		"govId": "232106"
 	},
 	"mrt": {
 		"code": [
@@ -5954,13 +5592,12 @@
 		"kana": "まるたちょう",
 		"roma": "Maruta-chō",
 		"routes": [
-			"刈田川線"
+			"kt"
 		],
 		"lat": 34.9990596,
 		"lng": 137.00496,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "mrt"
+		"id": "mrt",
+		"govId": "232106"
 	},
 	"kik": {
 		"code": [
@@ -5970,13 +5607,12 @@
 		"kana": "かりやいけだ",
 		"roma": "Kariya-ikeda",
 		"routes": [
-			"刈田川線知立支線"
+			"ktc"
 		],
 		"lat": 35.0061363,
 		"lng": 137.0105825,
-		"prefecture": "愛知県",
-		"city": "刈谷市",
-		"id": "kik"
+		"id": "kik",
+		"govId": "232106"
 	},
 	"kko": {
 		"code": [
@@ -5986,13 +5622,12 @@
 		"kana": "かりのこうえん",
 		"roma": "Karinokōen",
 		"routes": [
-			"刈田川線知立支線"
+			"ktc"
 		],
 		"lat": 35.0051811,
 		"lng": 137.0229517,
-		"prefecture": "愛知県",
-		"city": "知立市",
-		"id": "kko"
+		"id": "kko",
+		"govId": "232254"
 	},
 	"tri": {
 		"code": [
@@ -6002,13 +5637,12 @@
 		"kana": "とりい",
 		"roma": "Torii",
 		"routes": [
-			"刈田川線知立支線"
+			"ktc"
 		],
 		"lat": 35.0045437,
 		"lng": 137.0299258,
-		"prefecture": "愛知県",
-		"city": "知立市",
-		"id": "tri"
+		"id": "tri",
+		"govId": "232254"
 	},
 	"ngn": {
 		"code": [
@@ -6019,15 +5653,14 @@
 		"kana": "ながね",
 		"roma": "Nagane",
 		"routes": [
-			"大府環状線",
-			"東西線",
-			"惣作直通線"
+			"ol",
+			"tz",
+			"sos"
 		],
 		"lat": 35.0188646,
 		"lng": 136.9681358,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "ngn"
+		"id": "ngn",
+		"govId": "232238"
 	},
 	"kjt": {
 		"code": [
@@ -6037,13 +5670,12 @@
 		"kana": "かじたちょう",
 		"roma": "Kajita-chō",
 		"routes": [
-			"大府環状線"
+			"ol"
 		],
 		"lat": 35.0369782,
 		"lng": 136.9705605,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "kjt"
+		"id": "kjt",
+		"govId": "232238"
 	},
 	"alb": {
 		"code": [
@@ -6054,14 +5686,13 @@
 		"kana": "あろーぶまえ",
 		"roma": "Allobu-mae",
 		"routes": [
-			"大府環状線",
-			"東西線"
+			"ol",
+			"tz"
 		],
 		"lat": 35.0193017,
 		"lng": 136.9478994,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "alb"
+		"id": "alb",
+		"govId": "232238"
 	},
 	"ebt": {
 		"code": [
@@ -6071,14 +5702,13 @@
 		"kana": "えばたちょう",
 		"roma": "Ebata-chō",
 		"routes": [
-			"大府環状線",
-			"大峯連絡線"
+			"ol",
+			"omn"
 		],
 		"lat": 35.0123565,
 		"lng": 136.9503483,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "ebt"
+		"id": "ebt",
+		"govId": "232238"
 	},
 	"omn": {
 		"code": [
@@ -6088,13 +5718,12 @@
 		"kana": "おおみね",
 		"roma": "Ōmine",
 		"routes": [
-			"大府環状線"
+			"ol"
 		],
 		"lat": 35.0075487,
 		"lng": 136.9536522,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "omn"
+		"id": "omn",
+		"govId": "232238"
 	},
 	"mhc": {
 		"code": [
@@ -6104,13 +5733,12 @@
 		"kana": "みなみほんまち",
 		"roma": "Minami-hommachi",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8906102,
 		"lng": 136.9328219,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "mhc"
+		"id": "mhc",
+		"govId": "232050"
 	},
 	"mnt": {
 		"code": [
@@ -6120,13 +5748,12 @@
 		"kana": "みなとほんまち",
 		"roma": "Minato-hommachi",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8863605,
 		"lng": 136.9295545,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "mnt"
+		"id": "mnt",
+		"govId": "232050"
 	},
 	"nrw": {
 		"code": [
@@ -6136,13 +5763,12 @@
 		"kana": "ならわほんまち",
 		"roma": "Narawa-hommachi",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8828401,
 		"lng": 136.9262085,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "nrw"
+		"id": "nrw",
+		"govId": "232050"
 	},
 	"gdg": {
 		"code": [
@@ -6152,13 +5778,12 @@
 		"kana": "ごうどがわ",
 		"roma": "Gōdo-gawa",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8789254,
 		"lng": 136.9233095,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "gdg"
+		"id": "gdg",
+		"govId": "232050"
 	},
 	"asm": {
 		"code": [
@@ -6168,13 +5793,12 @@
 		"kana": "あさひまち",
 		"roma": "Asahi-machi",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8743424,
 		"lng": 136.9207135,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "asm"
+		"id": "asm",
+		"govId": "232050"
 	},
 	"yrk": {
 		"code": [
@@ -6184,13 +5808,12 @@
 		"kana": "ゆうらくちょう",
 		"roma": "Yūraku-chō",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8701506,
 		"lng": 136.918548,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "yrk"
+		"id": "yrk",
+		"govId": "232050"
 	},
 	"ikb": {
 		"code": [
@@ -6200,13 +5823,12 @@
 		"kana": "いしかわばし",
 		"roma": "Ishikawabashi",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8661045,
 		"lng": 136.9198307,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "ikb"
+		"id": "ikb",
+		"govId": "234478"
 	},
 	"tmn": {
 		"code": [
@@ -6216,13 +5838,12 @@
 		"kana": "したもん",
 		"roma": "Shitamon",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8591771,
 		"lng": 136.9204451,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "tmn"
+		"id": "tmn",
+		"govId": "234478"
 	},
 	"tkt": {
 		"code": [
@@ -6232,13 +5853,12 @@
 		"kana": "たけとよ",
 		"roma": "Taketoyo",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8530458,
 		"lng": 136.9224424,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "tkt"
+		"id": "tkt",
+		"govId": "234478"
 	},
 	"stn": {
 		"code": [
@@ -6248,13 +5868,12 @@
 		"kana": "さとなか",
 		"roma": "Satonaka",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8456566,
 		"lng": 136.9238661,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "stn"
+		"id": "stn",
+		"govId": "234478"
 	},
 	"hzm": {
 		"code": [
@@ -6264,13 +5883,12 @@
 		"kana": "はざま",
 		"roma": "Hazama",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8395027,
 		"lng": 136.9210546,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "hzm"
+		"id": "hzm",
+		"govId": "234478"
 	},
 	"urn": {
 		"code": [
@@ -6280,13 +5898,12 @@
 		"kana": "うらのしま",
 		"roma": "Uranoshima",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8344866,
 		"lng": 136.9202433,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "urn"
+		"id": "urn",
+		"govId": "234478"
 	},
 	"sfk": {
 		"code": [
@@ -6297,14 +5914,13 @@
 		"kana": "しんふき",
 		"roma": "Shin-fuki",
 		"routes": [
-			"師崎線",
-			"阿久比線"
+			"mr",
+			"ag"
 		],
 		"lat": 34.8285761,
 		"lng": 136.9200409,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "sfk"
+		"id": "sfk",
+		"govId": "234478"
 	},
 	"kgt": {
 		"code": [
@@ -6314,13 +5930,12 @@
 		"kana": "かごた",
 		"roma": "Kagota",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8228998,
 		"lng": 136.9201665,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "kgt"
+		"id": "kgt",
+		"govId": "234478"
 	},
 	"snt": {
 		"code": [
@@ -6330,13 +5945,12 @@
 		"kana": "さんたんだ",
 		"roma": "Santanda",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8175997,
 		"lng": 136.920369,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "snt"
+		"id": "snt",
+		"govId": "234478"
 	},
 	"umn": {
 		"code": [
@@ -6346,13 +5960,12 @@
 		"kana": "うめのき",
 		"roma": "Umenoki",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8096621,
 		"lng": 136.9188215,
-		"prefecture": "愛知県",
-		"city": "美浜町",
-		"id": "umn"
+		"id": "umn",
+		"govId": "234460"
 	},
 	"ftt": {
 		"code": [
@@ -6362,13 +5975,12 @@
 		"kana": "ふっと",
 		"roma": "Futto",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.8040898,
 		"lng": 136.9185255,
-		"prefecture": "愛知県",
-		"city": "美浜町",
-		"id": "ftt"
+		"id": "ftt",
+		"govId": "234460"
 	},
 	"kwg": {
 		"code": [
@@ -6378,13 +5990,12 @@
 		"kana": "こうわぐち",
 		"roma": "Kōwa-guchi",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7981668,
 		"lng": 136.918889,
-		"prefecture": "愛知県",
-		"city": "美浜町",
-		"id": "kwg"
+		"id": "kwg",
+		"govId": "234460"
 	},
 	"tks": {
 		"code": [
@@ -6394,13 +6005,12 @@
 		"kana": "ときし",
 		"roma": "Tokishi",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7935243,
 		"lng": 136.9206474,
-		"prefecture": "愛知県",
-		"city": "美浜町",
-		"id": "tks"
+		"id": "tks",
+		"govId": "234460"
 	},
 	"kwa": {
 		"code": [
@@ -6410,13 +6020,12 @@
 		"kana": "こうわ",
 		"roma": "Kōwa",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7772066,
 		"lng": 136.9129361,
-		"prefecture": "愛知県",
-		"city": "美浜町",
-		"id": "kwa"
+		"id": "kwa",
+		"govId": "234460"
 	},
 	"kwk": {
 		"code": [
@@ -6426,13 +6035,12 @@
 		"kana": "こうわかみまえだ",
 		"roma": "Kōwa-kamimaeda",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7697145,
 		"lng": 136.9140759,
-		"prefecture": "愛知県",
-		"city": "美浜町",
-		"id": "kwk"
+		"id": "kwk",
+		"govId": "234460"
 	},
 	"sur": {
 		"code": [
@@ -6442,13 +6050,12 @@
 		"kana": "しんうらと",
 		"roma": "Shin'urato",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7653225,
 		"lng": 136.9178678,
-		"prefecture": "愛知県",
-		"city": "美浜町",
-		"id": "sur"
+		"id": "sur",
+		"govId": "234460"
 	},
 	"koh": {
 		"code": [
@@ -6459,14 +6066,13 @@
 		"kana": "こう",
 		"roma": "Kō",
 		"routes": [
-			"師崎線",
-			"内海線"
+			"mr",
+			"um"
 		],
 		"lat": 34.7608963,
 		"lng": 136.9205918,
-		"prefecture": "愛知県",
-		"city": "美浜町",
-		"id": "koh"
+		"id": "koh",
+		"govId": "234460"
 	},
 	"mnh": {
 		"code": [
@@ -6476,13 +6082,12 @@
 		"kana": "みはまなかひらい",
 		"roma": "Mihama-nakahirai",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7550052,
 		"lng": 136.9287749,
-		"prefecture": "愛知県",
-		"city": "美浜町",
-		"id": "mnh"
+		"id": "mnh",
+		"govId": "234460"
 	},
 	"gjm": {
 		"code": [
@@ -6492,13 +6097,12 @@
 		"kana": "ごうじま",
 		"roma": "Gōjima",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7512413,
 		"lng": 136.9348525,
-		"prefecture": "愛知県",
-		"city": "美浜町",
-		"id": "gjm"
+		"id": "gjm",
+		"govId": "234460"
 	},
 	"ymd": {
 		"code": [
@@ -6508,13 +6112,12 @@
 		"kana": "やまだかいがん",
 		"roma": "Yamadakaigan(Minamichitabyōin-mae)",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7414134,
 		"lng": 136.9472187,
-		"prefecture": "愛知県",
-		"city": "南知多町",
-		"id": "ymd"
+		"id": "ymd",
+		"govId": "234451"
 	},
 	"oik": {
 		"code": [
@@ -6524,13 +6127,12 @@
 		"kana": "おおいこう",
 		"roma": "Ōikō",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7199687,
 		"lng": 136.9620954,
-		"prefecture": "愛知県",
-		"city": "南知多町",
-		"id": "oik"
+		"id": "oik",
+		"govId": "234451"
 	},
 	"ktn": {
 		"code": [
@@ -6540,13 +6142,12 @@
 		"kana": "かたな",
 		"roma": "Katana",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7124762,
 		"lng": 136.9679273,
-		"prefecture": "愛知県",
-		"city": "南知多町",
-		"id": "ktn"
+		"id": "ktn",
+		"govId": "234451"
 	},
 	"smr": {
 		"code": [
@@ -6556,13 +6157,12 @@
 		"kana": "しんもろざき",
 		"roma": "Shinmorozaki",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7074152,
 		"lng": 136.9684845,
-		"prefecture": "愛知県",
-		"city": "南知多町",
-		"id": "smr"
+		"id": "smr",
+		"govId": "234451"
 	},
 	"mrg": {
 		"code": [
@@ -6572,13 +6172,12 @@
 		"kana": "もろざきぎょこう",
 		"roma": "Morozakigyokō",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7042975,
 		"lng": 136.9734971,
-		"prefecture": "愛知県",
-		"city": "南知多町",
-		"id": "mrg"
+		"id": "mrg",
+		"govId": "234451"
 	},
 	"mrz": {
 		"code": [
@@ -6588,13 +6187,12 @@
 		"kana": "もろざき",
 		"roma": "Morozaki",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.7001626,
 		"lng": 136.9719332,
-		"prefecture": "愛知県",
-		"city": "南知多町",
-		"id": "mrz"
+		"id": "mrz",
+		"govId": "234451"
 	},
 	"mzk": {
 		"code": [
@@ -6604,13 +6202,12 @@
 		"kana": "もろざきこう",
 		"roma": "Morozakikō",
 		"routes": [
-			"師崎線"
+			"mr"
 		],
 		"lat": 34.6977474,
 		"lng": 136.970839,
-		"prefecture": "愛知県",
-		"city": "南知多町",
-		"id": "mzk"
+		"id": "mzk",
+		"govId": "234451"
 	},
 	"rnw": {
 		"code": [
@@ -6620,13 +6217,12 @@
 		"kana": "りゅうのわき",
 		"roma": "Ryūnowaki",
 		"routes": [
-			"名和線"
+			"nw"
 		],
 		"lat": 35.0550405,
 		"lng": 136.9163057,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "rnw"
+		"id": "rnw",
+		"govId": "232220"
 	},
 	"mjd": {
 		"code": [
@@ -6636,13 +6232,12 @@
 		"kana": "みなみじんでん",
 		"roma": "Minami-jinden",
 		"routes": [
-			"名和線"
+			"nw"
 		],
 		"lat": 35.0484904,
 		"lng": 136.9164127,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "mjd"
+		"id": "mjd",
+		"govId": "232220"
 	},
 	"jtk": {
 		"code": [
@@ -6652,13 +6247,12 @@
 		"kana": "じとく",
 		"roma": "Jitoku",
 		"routes": [
-			"名和線"
+			"nw"
 		],
 		"lat": 35.0434321,
 		"lng": 136.9173906,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "jtk"
+		"id": "jtk",
+		"govId": "232220"
 	},
 	"wkn": {
 		"code": [
@@ -6668,13 +6262,12 @@
 		"kana": "わきのた",
 		"roma": "Wakinota",
 		"routes": [
-			"名和線"
+			"nw"
 		],
 		"lat": 35.0321634,
 		"lng": 136.9142714,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "wkn"
+		"id": "wkn",
+		"govId": "232220"
 	},
 	"amm": {
 		"code": [
@@ -6685,14 +6278,13 @@
 		"kana": "あらおまちみなみ",
 		"roma": "Arao-machi-minami",
 		"routes": [
-			"名和線",
-			"東西線"
+			"nw",
+			"tz"
 		],
 		"lat": 35.0253003,
 		"lng": 136.9140876,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "amm"
+		"id": "amm",
+		"govId": "232220"
 	},
 	"fsm": {
 		"code": [
@@ -6702,13 +6294,12 @@
 		"kana": "ふしみばし",
 		"roma": "Fushimibashi",
 		"routes": [
-			"名和線"
+			"nw"
 		],
 		"lat": 35.0148348,
 		"lng": 136.9107783,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "fsm"
+		"id": "fsm",
+		"govId": "232220"
 	},
 	"ust": {
 		"code": [
@@ -6718,13 +6309,12 @@
 		"kana": "うしとらかいと",
 		"roma": "Ushitorakaito",
 		"routes": [
-			"名和線"
+			"nw"
 		],
 		"lat": 34.9970203,
 		"lng": 136.9087513,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "ust"
+		"id": "ust",
+		"govId": "232220"
 	},
 	"mnk": {
 		"code": [
@@ -6734,13 +6324,12 @@
 		"kana": "みなみかぎや",
 		"roma": "Minami-kagiya",
 		"routes": [
-			"名和線"
+			"nw"
 		],
 		"lat": 34.9884189,
 		"lng": 136.9065651,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "mnk"
+		"id": "mnk",
+		"govId": "232220"
 	},
 	"nkh": {
 		"code": [
@@ -6750,13 +6339,12 @@
 		"kana": "なかひらち",
 		"roma": "Nakahirachi",
 		"routes": [
-			"名和線"
+			"nw"
 		],
 		"lat": 34.9811396,
 		"lng": 136.90833,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "nkh"
+		"id": "nkh",
+		"govId": "232220"
 	},
 	"kjo": {
 		"code": [
@@ -6766,13 +6354,12 @@
 		"kana": "こうくじょう",
 		"roma": "Kō-kujō",
 		"routes": [
-			"内海線"
+			"um"
 		],
 		"lat": 34.7524207,
 		"lng": 136.9112451,
-		"prefecture": "愛知県",
-		"city": "美浜町",
-		"id": "kjo"
+		"id": "kjo",
+		"govId": "234460"
 	},
 	"ucd": {
 		"code": [
@@ -6782,13 +6369,12 @@
 		"kana": "うちだ",
 		"roma": "Uchida",
 		"routes": [
-			"内海線"
+			"um"
 		],
 		"lat": 34.7466542,
 		"lng": 136.8995391,
-		"prefecture": "愛知県",
-		"city": "南知多町",
-		"id": "ucd"
+		"id": "ucd",
+		"govId": "234451"
 	},
 	"utm": {
 		"code": [
@@ -6798,13 +6384,12 @@
 		"kana": "うつみ",
 		"roma": "Utsumi",
 		"routes": [
-			"内海線"
+			"um"
 		],
 		"lat": 34.7455306,
 		"lng": 136.8754645,
-		"prefecture": "愛知県",
-		"city": "南知多町",
-		"id": "utm"
+		"id": "utm",
+		"govId": "234451"
 	},
 	"wsk": {
 		"code": [
@@ -6814,13 +6399,12 @@
 		"kana": "わせくら",
 		"roma": "Wasekura",
 		"routes": [
-			"内海線"
+			"um"
 		],
 		"lat": 34.7440812,
 		"lng": 136.8698746,
-		"prefecture": "愛知県",
-		"city": "南知多町",
-		"id": "wsk"
+		"id": "wsk",
+		"govId": "234451"
 	},
 	"utk": {
 		"code": [
@@ -6830,13 +6414,12 @@
 		"kana": "うつみかいがん",
 		"roma": "Utsumi-kaigan",
 		"routes": [
-			"内海線"
+			"um"
 		],
 		"lat": 34.7393192,
 		"lng": 136.8680506,
-		"prefecture": "愛知県",
-		"city": "南知多町",
-		"id": "utk"
+		"id": "utk",
+		"govId": "234451"
 	},
 	"ars": {
 		"code": [
@@ -6846,13 +6429,12 @@
 		"kana": "あらおしもはた",
 		"roma": "Arao-shimohata",
 		"routes": [
-			"東西線"
+			"tz"
 		],
 		"lat": 35.0302011,
 		"lng": 136.896807,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "ars"
+		"id": "ars",
+		"govId": "232220"
 	},
 	"okk": {
 		"code": [
@@ -6862,13 +6444,12 @@
 		"kana": "おおいけこうえん",
 		"roma": "Ōikekōen",
 		"routes": [
-			"東西線"
+			"tz"
 		],
 		"lat": 35.0280607,
 		"lng": 136.9023454,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "okk"
+		"id": "okk",
+		"govId": "232220"
 	},
 	"kfn": {
 		"code": [
@@ -6878,13 +6459,12 @@
 		"kana": "きふね",
 		"roma": "Kifune",
 		"routes": [
-			"東西線"
+			"tz"
 		],
 		"lat": 35.0242822,
 		"lng": 136.9197713,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "kfn"
+		"id": "kfn",
+		"govId": "232220"
 	},
 	"gkt": {
 		"code": [
@@ -6894,13 +6474,12 @@
 		"kana": "ながくち",
 		"roma": "Nagakuchi",
 		"routes": [
-			"東西線"
+			"tz"
 		],
 		"lat": 35.0213468,
 		"lng": 136.9319019,
-		"prefecture": "愛知県",
-		"city": "東海市",
-		"id": "gkt"
+		"id": "gkt",
+		"govId": "232220"
 	},
 	"tti": {
 		"code": [
@@ -6910,13 +6489,12 @@
 		"kana": "たついけ",
 		"roma": "Tatsuike",
 		"routes": [
-			"東西線"
+			"tz"
 		],
 		"lat": 35.0266095,
 		"lng": 136.983434,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "tti"
+		"id": "tti",
+		"govId": "232238"
 	},
 	"mdk": {
 		"code": [
@@ -6926,13 +6504,12 @@
 		"kana": "みどりこうえん",
 		"roma": "Midorikōen",
 		"routes": [
-			"東西線"
+			"tz"
 		],
 		"lat": 35.0380651,
 		"lng": 136.9857546,
-		"prefecture": "愛知県",
-		"city": "大府市",
-		"id": "mdk"
+		"id": "mdk",
+		"govId": "232238"
 	},
 	"szy": {
 		"code": [
@@ -6942,13 +6519,12 @@
 		"kana": "しんざやま",
 		"roma": "Shinzayama",
 		"routes": [
-			"東西線"
+			"tz"
 		],
 		"lat": 35.0437001,
 		"lng": 136.9900041,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "szy"
+		"id": "szy",
+		"govId": "232297"
 	},
 	"zng": {
 		"code": [
@@ -6958,13 +6534,12 @@
 		"kana": "ぜんご",
 		"roma": "Zengo",
 		"routes": [
-			"東西線"
+			"tz"
 		],
 		"lat": 35.0517122,
 		"lng": 136.9963002,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "zng"
+		"id": "zng",
+		"govId": "232297"
 	},
 	"fmd": {
 		"code": [
@@ -6974,13 +6549,12 @@
 		"kana": "ふたむらだい",
 		"roma": "Futamuradai",
 		"routes": [
-			"東西線"
+			"tz"
 		],
 		"lat": 35.0632624,
 		"lng": 137.0073656,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "fmd"
+		"id": "fmd",
+		"govId": "232297"
 	},
 	"tyd": {
 		"code": [
@@ -6990,13 +6564,12 @@
 		"kana": "とよあけだんち",
 		"roma": "Toyoakedanchi",
 		"routes": [
-			"東西線"
+			"tz"
 		],
 		"lat": 35.0649593,
 		"lng": 137.0114326,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "tyd"
+		"id": "tyd",
+		"govId": "232297"
 	},
 	"wkm": {
 		"code": [
@@ -7006,13 +6579,12 @@
 		"kana": "わかみや",
 		"roma": "Wakamiya",
 		"routes": [
-			"東西線"
+			"tz"
 		],
 		"lat": 35.0667274,
 		"lng": 137.0151557,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "wkm"
+		"id": "wkm",
+		"govId": "232297"
 	},
 	"kkk": {
 		"code": [
@@ -7022,13 +6594,12 @@
 		"kana": "くつかけ",
 		"roma": "Kutsukake",
 		"routes": [
-			"東西線"
+			"tz"
 		],
 		"lat": 35.0720277,
 		"lng": 137.0217726,
-		"prefecture": "愛知県",
-		"city": "豊明市",
-		"id": "kkk"
+		"id": "kkk",
+		"govId": "232297"
 	},
 	"kmk": {
 		"code": [
@@ -7038,13 +6609,12 @@
 		"kana": "かまいけ",
 		"roma": "Kamaike",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.9641249,
 		"lng": 136.9187445,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "kmk"
+		"id": "kmk",
+		"govId": "234427"
 	},
 	"mri": {
 		"code": [
@@ -7054,13 +6624,12 @@
 		"kana": "まるいけだい",
 		"roma": "Maruikedai",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.961159,
 		"lng": 136.9218302,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "mri"
+		"id": "mri",
+		"govId": "234427"
 	},
 	"hgo": {
 		"code": [
@@ -7070,13 +6639,12 @@
 		"kana": "ひがしがおか",
 		"roma": "Higashigaoka",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.9584636,
 		"lng": 136.9249833,
-		"prefecture": "愛知県",
-		"city": "東浦町",
-		"id": "hgo"
+		"id": "hgo",
+		"govId": "234427"
 	},
 	"tkd": {
 		"code": [
@@ -7086,13 +6654,12 @@
 		"kana": "たかねだい",
 		"roma": "Takanedai",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.954559,
 		"lng": 136.924916,
-		"prefecture": "愛知県",
-		"city": "阿久比町",
-		"id": "tkd"
+		"id": "tkd",
+		"govId": "234419"
 	},
 	"fks": {
 		"code": [
@@ -7102,13 +6669,12 @@
 		"kana": "ふくすみ",
 		"roma": "Fukusumi",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.9488173,
 		"lng": 136.9225936,
-		"prefecture": "愛知県",
-		"city": "阿久比町",
-		"id": "fks"
+		"id": "fks",
+		"govId": "234419"
 	},
 	"ark": {
 		"code": [
@@ -7118,13 +6684,12 @@
 		"kana": "あらこ",
 		"roma": "Arako",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.9435596,
 		"lng": 136.9218667,
-		"prefecture": "愛知県",
-		"city": "阿久比町",
-		"id": "ark"
+		"id": "ark",
+		"govId": "234419"
 	},
 	"kth": {
 		"code": [
@@ -7134,13 +6699,12 @@
 		"kana": "きつねひらい",
 		"roma": "Kitsunehirai",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.9381172,
 		"lng": 136.9218267,
-		"prefecture": "愛知県",
-		"city": "阿久比町",
-		"id": "kth"
+		"id": "kth",
+		"govId": "234419"
 	},
 	"myz": {
 		"code": [
@@ -7150,13 +6714,12 @@
 		"kana": "みやづ",
 		"roma": "Miyazu",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.9328018,
 		"lng": 136.9223236,
-		"prefecture": "愛知県",
-		"city": "阿久比町",
-		"id": "myz"
+		"id": "myz",
+		"govId": "234419"
 	},
 	"knd": {
 		"code": [
@@ -7166,13 +6729,12 @@
 		"kana": "かにだばし",
 		"roma": "Kanidabashi",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.9279844,
 		"lng": 136.9253645,
-		"prefecture": "愛知県",
-		"city": "阿久比町",
-		"id": "knd"
+		"id": "knd",
+		"govId": "234419"
 	},
 	"hgi": {
 		"code": [
@@ -7182,13 +6744,12 @@
 		"kana": "はぎ",
 		"roma": "Hagi",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.9215108,
 		"lng": 136.9282675,
-		"prefecture": "愛知県",
-		"city": "阿久比町",
-		"id": "hgi"
+		"id": "hgi",
+		"govId": "234419"
 	},
 	"ynh": {
 		"code": [
@@ -7198,13 +6759,12 @@
 		"kana": "やなべひがし",
 		"roma": "Yanabe-higashi",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.9099368,
 		"lng": 136.9307503,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "ynh"
+		"id": "ynh",
+		"govId": "232050"
 	},
 	"hds": {
 		"code": [
@@ -7214,13 +6774,12 @@
 		"kana": "はんだすみよし",
 		"roma": "Handa-sumiyoshi",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.9057159,
 		"lng": 136.9307123,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hds"
+		"id": "hds",
+		"govId": "232050"
 	},
 	"hdn": {
 		"code": [
@@ -7230,13 +6789,12 @@
 		"kana": "はんだなかまち",
 		"roma": "Handa-nakamachi",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8900651,
 		"lng": 136.9274512,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hdn"
+		"id": "hdn",
+		"govId": "232050"
 	},
 	"sk2": {
 		"code": [
@@ -7246,13 +6804,12 @@
 		"kana": "さかえまちにちょうめ",
 		"roma": "Sakae-machi-nichōme",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8867769,
 		"lng": 136.9248852,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "sk2"
+		"id": "sk2",
+		"govId": "232050"
 	},
 	"sk4": {
 		"code": [
@@ -7262,13 +6819,12 @@
 		"kana": "さかえまちよんちょうめ",
 		"roma": "Sakae-machi-yonchōme",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8829601,
 		"lng": 136.921902,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "sk4"
+		"id": "sk4",
+		"govId": "232050"
 	},
 	"say": {
 		"code": [
@@ -7278,13 +6834,12 @@
 		"kana": "しんあおやま",
 		"roma": "Shin-aoyama",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.878956,
 		"lng": 136.9187559,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "say"
+		"id": "say",
+		"govId": "232050"
 	},
 	"hnz": {
 		"code": [
@@ -7294,13 +6849,12 @@
 		"kana": "はなぞのちょう",
 		"roma": "Hanazono-chō",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8751471,
 		"lng": 136.9137405,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hnz"
+		"id": "hnz",
+		"govId": "232050"
 	},
 	"hso": {
 		"code": [
@@ -7310,13 +6864,12 @@
 		"kana": "ほうせい",
 		"roma": "Hōsei",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8703422,
 		"lng": 136.9117589,
-		"prefecture": "愛知県",
-		"city": "半田市",
-		"id": "hso"
+		"id": "hso",
+		"govId": "232050"
 	},
 	"kgr": {
 		"code": [
@@ -7326,13 +6879,12 @@
 		"kana": "かがりいけ",
 		"roma": "Kagariike",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8655972,
 		"lng": 136.9115867,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "kgr"
+		"id": "kgr",
+		"govId": "234478"
 	},
 	"hbt": {
 		"code": [
@@ -7342,13 +6894,12 @@
 		"kana": "ひらいばた",
 		"roma": "Hiraibata",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8596884,
 		"lng": 136.9114635,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "hbt"
+		"id": "hbt",
+		"govId": "234478"
 	},
 	"ttn": {
 		"code": [
@@ -7358,13 +6909,12 @@
 		"kana": "たけとよなかね",
 		"roma": "Taketoyo-nakane",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8523969,
 		"lng": 136.9114174,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "ttn"
+		"id": "ttn",
+		"govId": "234478"
 	},
 	"cky": {
 		"code": [
@@ -7374,13 +6924,12 @@
 		"kana": "ちたこうよう",
 		"roma": "Chita-kōyō",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8477808,
 		"lng": 136.9118694,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "cky"
+		"id": "cky",
+		"govId": "234478"
 	},
 	"dmn": {
 		"code": [
@@ -7390,13 +6939,12 @@
 		"kana": "だいもんだ",
 		"roma": "Daimonda",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8412773,
 		"lng": 136.9110291,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "dmn"
+		"id": "dmn",
+		"govId": "234478"
 	},
 	"ttc": {
 		"code": [
@@ -7406,13 +6954,12 @@
 		"kana": "たけとよちんじゅ",
 		"roma": "Taketoyo-chinju",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8347721,
 		"lng": 136.9081713,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "ttc"
+		"id": "ttc",
+		"govId": "234478"
 	},
 	"fkm": {
 		"code": [
@@ -7422,13 +6969,12 @@
 		"kana": "ふきみやまえ",
 		"roma": "Fuki-miyamae",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8299544,
 		"lng": 136.9106299,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "fkm"
+		"id": "fkm",
+		"govId": "234478"
 	},
 	"fki": {
 		"code": [
@@ -7438,13 +6984,12 @@
 		"kana": "ふき",
 		"roma": "Fuki",
 		"routes": [
-			"阿久比線"
+			"ag"
 		],
 		"lat": 34.8301892,
 		"lng": 136.9167185,
-		"prefecture": "愛知県",
-		"city": "武豊町",
-		"id": "fki"
+		"id": "fki",
+		"govId": "234478"
 	},
 	"hrj": {
 		"code": [
@@ -7454,13 +6999,12 @@
 		"kana": "ひろじちょう",
 		"roma": "Hiroji-chō",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1401899,
 		"lng": 136.9592741,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "hrj"
+		"id": "hrj",
+		"govId": "231002"
 	},
 	"irn": {
 		"code": [
@@ -7470,13 +7014,12 @@
 		"kana": "いりなか",
 		"roma": "Irinaka",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1435054,
 		"lng": 136.9550516,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "irn"
+		"id": "irn",
+		"govId": "231002"
 	},
 	"kwn": {
 		"code": [
@@ -7486,13 +7029,12 @@
 		"kana": "かわなこうえん",
 		"roma": "Kawanakōen",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1489173,
 		"lng": 136.9510707,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "kwn"
+		"id": "kwn",
+		"govId": "231002"
 	},
 	"ysd": {
 		"code": [
@@ -7502,13 +7044,12 @@
 		"kana": "やすだとおり",
 		"roma": "Yasudatōri",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1538106,
 		"lng": 136.9459494,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ysd"
+		"id": "ysd",
+		"govId": "231002"
 	},
 	"hro": {
 		"code": [
@@ -7518,13 +7059,12 @@
 		"kana": "はるおか",
 		"roma": "Haruoka",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1576148,
 		"lng": 136.9397606,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "hro"
+		"id": "hro",
+		"govId": "231002"
 	},
 	"fkg": {
 		"code": [
@@ -7534,13 +7074,12 @@
 		"kana": "ふきあげ",
 		"roma": "Fukiage",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1593502,
 		"lng": 136.9339301,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "fkg"
+		"id": "fkg",
+		"govId": "231002"
 	},
 	"mck": {
 		"code": [
@@ -7550,13 +7089,12 @@
 		"kana": "みなみちくさ",
 		"roma": "Minami-chikusa",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1628042,
 		"lng": 136.9299175,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "mck"
+		"id": "mck",
+		"govId": "231002"
 	},
 	"kkz": {
 		"code": [
@@ -7566,13 +7104,12 @@
 		"kana": "きくざと",
 		"roma": "Kikuzato",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1658263,
 		"lng": 136.9254163,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "kkz"
+		"id": "kkz",
+		"govId": "231002"
 	},
 	"ssk": {
 		"code": [
@@ -7582,13 +7119,12 @@
 		"kana": "しんさかえまち",
 		"roma": "Shinsakae-machi",
 		"routes": [
-			"大府西線・八事線"
+			"on"
 		],
 		"lat": 35.1696117,
 		"lng": 136.9177721,
-		"prefecture": "愛知県",
-		"city": "名古屋市",
-		"id": "ssk"
+		"id": "ssk",
+		"govId": "231002"
 	},
 	"tbs": {
 		"code": [
@@ -7598,13 +7134,12 @@
 		"kana": "とびしまふとう",
 		"roma": "Tobishima-futō",
 		"routes": [
-			"南港線(名港トリトンライン)"
+			"tr"
 		],
 		"lat": 35.0518561,
 		"lng": 136.8177671,
-		"prefecture": "愛知県",
-		"city": "飛島村",
-		"id": "tbs"
+		"id": "tbs",
+		"govId": "234273"
 	},
 	"nkb": {
 		"code": [
@@ -7614,13 +7149,12 @@
 		"kana": "なごやけいばじょう",
 		"roma": "Nagoyakeibajō",
 		"routes": [
-			"南港線(名港トリトンライン)"
+			"tr"
 		],
 		"lat": 35.0494672,
 		"lng": 136.7806752,
-		"prefecture": "愛知県",
-		"city": "弥富市",
-		"id": "nkb"
+		"id": "nkb",
+		"govId": "232351"
 	},
 	"wng": {
 		"code": [
@@ -7630,13 +7164,12 @@
 		"kana": "わんがんながしま",
 		"roma": "Wangan-nagashima",
 		"routes": [
-			"南港線(名港トリトンライン)"
+			"tr"
 		],
 		"lat": 35.0325205,
 		"lng": 136.7264469,
-		"prefecture": "三重県",
-		"city": "桑名市",
-		"id": "wng"
+		"id": "wng",
+		"govId": "242055"
 	},
 	"kmb": {
 		"code": [
@@ -7646,13 +7179,12 @@
 		"kana": "こまばちょう",
 		"roma": "Komaba-chō",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 35.0190327,
 		"lng": 137.0553958,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "kmb"
+		"id": "kmb",
+		"govId": "232114"
 	},
 	"mgn": {
 		"code": [
@@ -7662,13 +7194,12 @@
 		"kana": "むかいがね",
 		"roma": "Mukaigane",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 35.0178107,
 		"lng": 137.0643869,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "mgn"
+		"id": "mgn",
+		"govId": "232114"
 	},
 	"kmr": {
 		"code": [
@@ -7678,13 +7209,12 @@
 		"kana": "こまつばら",
 		"roma": "Komatsubara",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 35.0161122,
 		"lng": 137.0767456,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "kmr"
+		"id": "kmr",
+		"govId": "232114"
 	},
 	"wkz": {
 		"code": [
@@ -7694,13 +7224,12 @@
 		"kana": "わかぞの",
 		"roma": "Wakazono",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 35.0145273,
 		"lng": 137.0846095,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "wkz"
+		"id": "wkz",
+		"govId": "232114"
 	},
 	"ysw": {
 		"code": [
@@ -7710,13 +7239,12 @@
 		"kana": "よしわらちょう",
 		"roma": "Yoshiwara-chō",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 35.0107838,
 		"lng": 137.0919939,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "ysw"
+		"id": "ysw",
+		"govId": "232114"
 	},
 	"kug": {
 		"code": [
@@ -7726,13 +7254,12 @@
 		"kana": "きたうたぐち",
 		"roma": "Kitautaguchi",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 35.004231,
 		"lng": 137.0994101,
-		"prefecture": "愛知県",
-		"city": "安城市",
-		"id": "kug"
+		"id": "kug",
+		"govId": "232122"
 	},
 	"fkj": {
 		"code": [
@@ -7742,13 +7269,12 @@
 		"kana": "ふくじゅちょう",
 		"roma": "Fukuju-chō",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9915647,
 		"lng": 137.1171649,
-		"prefecture": "愛知県",
-		"city": "豊田市",
-		"id": "fkj"
+		"id": "fkj",
+		"govId": "232114"
 	},
 	"kbr": {
 		"code": [
@@ -7758,13 +7284,12 @@
 		"kana": "こばり",
 		"roma": "Kobari",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.98588,
 		"lng": 137.126683,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "kbr"
+		"id": "kbr",
+		"govId": "232025"
 	},
 	"hkb": {
 		"code": [
@@ -7774,13 +7299,12 @@
 		"kana": "ひがしこばり",
 		"roma": "Higashi-kobari",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9839358,
 		"lng": 137.1325482,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "hkb"
+		"id": "hkb",
+		"govId": "232025"
 	},
 	"ozk": {
 		"code": [
@@ -7790,13 +7314,12 @@
 		"kana": "おかざききたの",
 		"roma": "Okazaki-kitano",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9838324,
 		"lng": 137.1397575,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "ozk"
+		"id": "ozk",
+		"govId": "232025"
 	},
 	"ozo": {
 		"code": [
@@ -7806,13 +7329,12 @@
 		"kana": "おかざきおおはし",
 		"roma": "Okazaki-ōhashi",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9831446,
 		"lng": 137.1489232,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "ozo"
+		"id": "ozo",
+		"govId": "232025"
 	},
 	"dmo": {
 		"code": [
@@ -7822,13 +7344,12 @@
 		"kana": "だいもん",
 		"roma": "Daimon",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9820439,
 		"lng": 137.1547255,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "dmo"
+		"id": "dmo",
+		"govId": "232025"
 	},
 	"djj": {
 		"code": [
@@ -7838,14 +7359,13 @@
 		"kana": "だいじゅうじ",
 		"roma": "Daijūji",
 		"routes": [
-			"岡崎線",
-			"岡崎線東公園支線"
+			"oz",
+			"ozh"
 		],
 		"lat": 34.9806834,
 		"lng": 137.1617646,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "djj"
+		"id": "djj",
+		"govId": "232025"
 	},
 	"idr": {
 		"code": [
@@ -7855,13 +7375,12 @@
 		"kana": "いだあらい",
 		"roma": "Ida-arai",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9766657,
 		"lng": 137.1681103,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "idr"
+		"id": "idr",
+		"govId": "232025"
 	},
 	"igc": {
 		"code": [
@@ -7871,13 +7390,12 @@
 		"kana": "いがちょう",
 		"roma": "Iga-chō",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9720593,
 		"lng": 137.1669214,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "igc"
+		"id": "igc",
+		"govId": "232025"
 	},
 	"nom": {
 		"code": [
@@ -7887,13 +7405,12 @@
 		"kana": "のみ",
 		"roma": "Nomi",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9667177,
 		"lng": 137.1633011,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "nom"
+		"id": "nom",
+		"govId": "232025"
 	},
 	"hmd": {
 		"code": [
@@ -7903,13 +7420,12 @@
 		"kana": "ほんまちどおり",
 		"roma": "Hommachidōri",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.961566,
 		"lng": 137.1630576,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "hmd"
+		"id": "hmd",
+		"govId": "232025"
 	},
 	"ozh": {
 		"code": [
@@ -7919,13 +7435,12 @@
 		"kana": "おかざきこうえんひがし",
 		"roma": "Okazakikōen-higashi",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9570706,
 		"lng": 137.1639715,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "ozh"
+		"id": "ozh",
+		"govId": "232025"
 	},
 	"hoz": {
 		"code": [
@@ -7935,13 +7450,12 @@
 		"kana": "ひがしおかざき",
 		"roma": "Hikashi-okazaki",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9524344,
 		"lng": 137.1640716,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "hoz"
+		"id": "hoz",
+		"govId": "232025"
 	},
 	"iks": {
 		"code": [
@@ -7951,13 +7465,12 @@
 		"kana": "いけした",
 		"roma": "Ikeshita",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9474308,
 		"lng": 137.1630369,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "iks"
+		"id": "iks",
+		"govId": "232025"
 	},
 	"znd": {
 		"code": [
@@ -7967,13 +7480,12 @@
 		"kana": "ぜにづつみ",
 		"roma": "Zenizutsumi",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9411059,
 		"lng": 137.1623382,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "znd"
+		"id": "znd",
+		"govId": "232025"
 	},
 	"tsk": {
 		"code": [
@@ -7983,13 +7495,12 @@
 		"kana": "とさき",
 		"roma": "Tosaki",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9365006,
 		"lng": 137.1613678,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "tsk"
+		"id": "tsk",
+		"govId": "232025"
 	},
 	"onk": {
 		"code": [
@@ -7999,13 +7510,12 @@
 		"kana": "おかざきなかだ",
 		"roma": "Okazaki-nakada",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9307836,
 		"lng": 137.1598413,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "onk"
+		"id": "onk",
+		"govId": "232025"
 	},
 	"okz": {
 		"code": [
@@ -8015,13 +7525,12 @@
 		"kana": "おかざき",
 		"roma": "Okazaki",
 		"routes": [
-			"岡崎線"
+			"oz"
 		],
 		"lat": 34.9256662,
 		"lng": 137.1580679,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "okz"
+		"id": "okz",
+		"govId": "232025"
 	},
 	"kmo": {
 		"code": [
@@ -8031,13 +7540,12 @@
 		"kana": "かもだ",
 		"roma": "Kamoda",
 		"routes": [
-			"岡崎線東公園支線"
+			"ozh"
 		],
 		"lat": 34.979199,
 		"lng": 137.1694874,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "kmo"
+		"id": "kmo",
+		"govId": "232025"
 	},
 	"ida": {
 		"code": [
@@ -8047,13 +7555,12 @@
 		"kana": "いだ",
 		"roma": "Ida",
 		"routes": [
-			"岡崎線東公園支線"
+			"ozh"
 		],
 		"lat": 34.9776136,
 		"lng": 137.1749806,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "ida"
+		"id": "ida",
+		"govId": "232025"
 	},
 	"igs": {
 		"code": [
@@ -8063,13 +7570,12 @@
 		"kana": "いがしんまち",
 		"roma": "Igashimmachi",
 		"routes": [
-			"岡崎線東公園支線"
+			"ozh"
 		],
 		"lat": 34.9741342,
 		"lng": 137.1781431,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "igs"
+		"id": "igs",
+		"govId": "232025"
 	},
 	"ing": {
 		"code": [
@@ -8079,13 +7585,12 @@
 		"kana": "いなぐま",
 		"roma": "Inaguma",
 		"routes": [
-			"岡崎線東公園支線"
+			"ozh"
 		],
 		"lat": 34.9682059,
 		"lng": 137.1817637,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "ing"
+		"id": "ing",
+		"govId": "232025"
 	},
 	"oro": {
 		"code": [
@@ -8095,13 +7600,12 @@
 		"kana": "おろ",
 		"roma": "Oro",
 		"routes": [
-			"岡崎線東公園支線"
+			"ozh"
 		],
 		"lat": 34.9621107,
 		"lng": 137.1859532,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "oro"
+		"id": "oro",
+		"govId": "232025"
 	},
 	"mtd": {
 		"code": [
@@ -8111,13 +7615,12 @@
 		"kana": "みただ",
 		"roma": "Mitada",
 		"routes": [
-			"岡崎線東公園支線"
+			"ozh"
 		],
 		"lat": 34.9584685,
 		"lng": 137.1893873,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "mtd"
+		"id": "mtd",
+		"govId": "232025"
 	},
 	"hko": {
 		"code": [
@@ -8127,12 +7630,11 @@
 		"kana": "ひがしこうえん",
 		"roma": "Higashikōen",
 		"routes": [
-			"岡崎線東公園支線"
+			"ozh"
 		],
 		"lat": 34.9534402,
 		"lng": 137.1899048,
-		"prefecture": "愛知県",
-		"city": "岡崎市",
-		"id": "hko"
+		"id": "hko",
+		"govId": "232025"
 	}
 }

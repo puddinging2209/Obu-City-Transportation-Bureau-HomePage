@@ -26,6 +26,9 @@ const cacheVersion = getOudCacheVersion();
 // https://vitejs.dev/config/
 export default defineConfig({
 	base: '/Obu-City-Transportation-Bureau-HomePage/',
+	optimizeDeps: {
+		exclude: ['maplibre-gl'],
+	},
 	build: {
 		outDir: 'docs',
 	},

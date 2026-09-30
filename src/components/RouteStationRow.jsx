@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import getDirections from '../utils/getDirections.js';
 
+import linesData from '../data/lines.json';
 import stationData from '../data/stations.json';
 import types from '../data/types.json';
 
@@ -115,15 +116,15 @@ function RouteStationRow({ index, line, stations, lines, onClick }) {
 					);
 				})}
 			</Box>
-			<Stack sx={{ ml: 1 }}>
-				<Stack sx={{ flex: 1, minWidth: 0 }}>
+			<Stack direction='row' justifyContent='space-between' sx={{ flex: 1, minWidth: 0, width: '100%' }} maxWidth>
+				<Stack direction='column' sx={{ flex: 1, minWidth: 0, width: '100%' }}>
 					<Box
 						onClick={() => linkTo(station.id, line.name)}
 						sx={{
 							cursor: 'pointer',
 							display: 'flex',
 							alignItems: 'center',
-							minWidth: 0,
+							width: 'fit-content',
 						}}
 					>
 						<Typography
@@ -138,47 +139,57 @@ function RouteStationRow({ index, line, stations, lines, onClick }) {
 							{stationData[station.id].name}
 						</Typography>
 					</Box>
-				</Stack>
-				{stationData[station.id].routes.filter((route) => route !== line.name).length > 0 && (
-					<Stack direction='row' sx={{ mt: 0, alignItems: 'center' }}>
-						<Typography
-							variant='body2'
-							sx={{
-								color: 'text.secondary',
-								height: '100%',
-								display: 'flex',
-								alignItems: 'center',
-								whiteSpace: 'nowrap',
-								overflow: 'hidden',
-								textOverflow: 'ellipsis',
-							}}
-						>
-							乗換：
-						</Typography>
-						<Stack direction='row'>
-							{stationData[station.id].routes
-								.filter((route) => route !== line.name)
-								.map((route) => (
-									<Box key={route} size='small' sx={{ ml: 1, cursor: 'pointer' }} onClick={() => onClick(route)}>
-										<Typography
-											variant='body2'
-											sx={{
-												color: 'text.secondary',
-												height: '100%',
-												display: 'flex',
-												alignItems: 'center',
-												whiteSpace: 'nowrap',
-												overflow: 'hidden',
-												textOverflow: 'ellipsis',
-											}}
-										>
-											{route}
-										</Typography>
-									</Box>
-								))}
+					{stationData[station.id].routes.filter((route) => route !== line.id).length > 0 && (
+						<Stack direction='row' sx={{ mt: 0, alignItems: 'center' }}>
+							<Typography
+								variant='body2'
+								sx={{
+									color: 'text.secondary',
+									height: '100%',
+									display: 'flex',
+									alignItems: 'center',
+									whiteSpace: 'nowrap',
+									overflow: 'hidden',
+									textOverflow: 'ellipsis',
+								}}
+							>
+								乗換：
+							</Typography>
+							<Stack direction='row'>
+								{stationData[station.id].routes
+									.filter((route) => route !== line.id)
+									.map((route) => (
+										<Box key={route} size='small' sx={{ ml: 1, cursor: 'pointer' }} onClick={() => onClick(route)}>
+											<Typography
+												variant='body2'
+												sx={{
+													color: 'text.secondary',
+													height: '100%',
+													display: 'flex',
+													alignItems: 'center',
+													whiteSpace: 'nowrap',
+													overflow: 'hidden',
+													textOverflow: 'ellipsis',
+												}}
+											>
+												{linesData[route].name}
+											</Typography>
+										</Box>
+									))}
+							</Stack>
 						</Stack>
-					</Stack>
-				)}
+					)}
+				</Stack>
+				<Stack
+					sx={{
+						color: 'text.secondary',
+						height: '100%',
+						display: { xs: 'none', md: 'block' },
+						my: 'auto',
+					}}
+				>
+					<Typography variant='body2'>{stationData[station.id].kana}</Typography>
+				</Stack>
 			</Stack>
 		</Box>
 	);

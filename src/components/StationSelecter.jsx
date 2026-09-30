@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material/styles';
 import { useAtomValue } from 'jotai';
 import Select from 'react-select';
 
-import { myStationsAtom, nearestStationAtom } from '../utils/Atom.js';
+import { myStationsAtom, nearestStationAtom } from '../atom/atom.js';
 import { id } from '../utils/Station.js';
 
 import stations from '../data/stations.json';
@@ -30,8 +30,8 @@ export default function StationSelecter({ ref, value, placeholder, onChange, aut
 	const onSelect = (option) => {
 		const history = JSON.parse(window.localStorage.getItem('stationHistory'))?.toReversed() || [];
 		let newHistory;
-		if (!stations[history[0]]) newHistory = history.map(id).filter((id) => id !== option.value);
-		else newHistory = history.filter((id) => id !== option.value);
+		if (!stations[history[0]]) newHistory = history.map(id).filter((id) => id !== option.value && stations[id]);
+		else newHistory = history.filter((id) => id !== option.value && stations[id]);
 		newHistory.unshift(option.value);
 		window.localStorage.setItem('stationHistory', JSON.stringify(newHistory.toReversed()));
 		onChange(option);

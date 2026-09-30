@@ -1,6 +1,18 @@
 import { atom } from 'jotai';
 
-import { id } from './Station.js';
+import { id } from '../utils/Station.js';
+
+const isLegacyTitleId = (titleId) => /^2\d{3}[a-z]{2}$/i.test(titleId) || /^3\d{3}[a-z]{4}$/i.test(titleId);
+const savedTitles = JSON.parse(localStorage.getItem('titles') ?? '[]');
+const currentTitles = savedTitles.filter((titleId) => !isLegacyTitleId(titleId));
+
+if (currentTitles.length !== savedTitles.length) {
+	localStorage.setItem('titles', JSON.stringify(currentTitles));
+}
+
+if (isLegacyTitleId(localStorage.getItem('title'))) {
+	localStorage.removeItem('title');
+}
 
 export const settingsAtom = atom(
 	{
@@ -44,3 +56,14 @@ export const nearestStationAtom = atom(null);
 export const isOpenDrawerAtom = atom(false);
 
 export const resultAtom = atom([]);
+
+export const titlesAtom = atom(currentTitles);
+
+export const addTitleAtom = atom(null, (get, set, title) => {
+	const prev = get(titlesAtom);
+	if (prev.includes(title)) return;
+	const after = [...prev, title];
+
+	set(titlesAtom, after);
+	localStorage.setItem('titles', JSON.stringify(after));
+});

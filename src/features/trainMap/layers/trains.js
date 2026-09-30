@@ -27,6 +27,7 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 	const isMobile = checkIsMobile();
 
 	const worker = new TrainMapWorker();
+	let calculationPending = false;
 	const ouds = await Promise.all(
 		new Set(
 			Object.values(linesData)
@@ -44,7 +45,7 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 	});
 
 	const trainOverlay = new MapboxOverlay({
-		interleaved: true,
+		interleaved: false,
 		layers: [],
 	});
 	map.addControl(trainOverlay);
@@ -54,17 +55,20 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 	worker.addEventListener('message', ({ data }) => {
 		switch (data.type) {
 			case 'calcPositionResult': {
-				const trains = data.data.filter((t) => t.coordinate);
-				const points = trains.map((t) => ({
-					id: t.number,
-					type: t.type,
-					position: t.coordinate.reverse(),
-					angle: t.angle,
-				}));
+				calculationPending = false;
+				const trains = data.data;
+				const points = trains
+					.filter((t) => t.coordinate)
+					.map((t) => ({
+						id: t.number,
+						type: t.type,
+						position: t.coordinate.reverse(),
+						angle: t.angle,
+					}));
 
 				// ★【追加】現在ポップアップ表示対象の列車があれば、最新の座標をReact側に通知する
 				if (onUpdateActiveTrain) {
-					onUpdateActiveTrain({ points, trains, sec: data.sec });
+					onUpdateActiveTrain({ points, trains, stoppedTrainIndicesByStation: data.stoppedTrainIndicesByStation, sec: data.sec });
 				}
 
 				const layer = new IconLayer({
@@ -97,6 +101,13 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 					onClick: (e) => {
 						const train = data.data.find((t) => t.number === e.object?.id);
 						if (train) {
+							const stoppedTrains =
+								train.stoppingSta ?
+									(data.stoppedTrainIndicesByStation?.[train.stoppingSta] ?? [])
+										.map((index) => data.data[index])
+										.map((t) => ({ ...t, position: [...t.coordinate].reverse() }))
+								:	[];
+
 							// showTrainInfo(train);
 
 							// ★【追加】クリックされた列車の情報をReactのStateへ渡す
@@ -105,6 +116,7 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 								id: e.object.id,
 								position: e.object.position,
 								rawTrainData: train, // ★ ボタンを押した時にボトムシートへ渡せるよう、元データを保持
+								stoppedTrains,
 							});
 							console.log(train);
 						}
@@ -130,7 +142,8 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 			trainOverlay.setProps({ layers: [] });
 		},
 		update(sec) {
-			if (!visible) return;
+			if (!visible || calculationPending) return;
+			calculationPending = true;
 			worker.postMessage({
 				type: 'calcPosition',
 				sec,
