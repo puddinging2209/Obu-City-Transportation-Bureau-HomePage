@@ -18,7 +18,7 @@ function checkIsMobile() {
 	return window.matchMedia(query.replace(/^@media\s*/, '')).matches;
 }
 
-export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdateActiveTrain }) {
+export async function initializeTrainsLayer({ map, store, mapTheme, onSelectTrain, onUpdateActiveTrain }) {
 	const showTrainInfo = (train) => {
 		store.set(setBottomSheetComponentAtom, TrainInfo, { train });
 		store.set(setBottomSheetTitleAtom, '列車情報');
@@ -82,7 +82,7 @@ export async function initializeTrainsLayer({ map, store, onSelectTrain, onUpdat
 							t.name,
 							{
 								x: i * 100,
-								y: 0,
+								y: mapTheme === 'dark' ? 100 : 0,
 								width: 100,
 								height: 100,
 							},
