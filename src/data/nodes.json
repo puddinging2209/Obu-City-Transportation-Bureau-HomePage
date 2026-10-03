@@ -2031,32 +2031,32 @@
 	},
 	"KT15a": {
 		"line": "ktc",
-		"json": "KTa",
+		"json": "KTc",
 		"id": "stm"
 	},
 	"KT18": {
 		"line": "ktc",
-		"json": "KTa",
+		"json": "KTc",
 		"id": "kik"
 	},
 	"KT19": {
 		"line": "ktc",
-		"json": "KTa",
+		"json": "KTc",
 		"id": "ond"
 	},
 	"KT20": {
 		"line": "ktc",
-		"json": "KTa",
+		"json": "KTc",
 		"id": "kko"
 	},
 	"KT21": {
 		"line": "ktc",
-		"json": "KTa",
+		"json": "KTc",
 		"id": "tri"
 	},
 	"KT22": {
 		"line": "ktc",
-		"json": "KTa",
+		"json": "KTc",
 		"id": "chr"
 	},
 	"OL01": {
@@ -2981,42 +2981,42 @@
 	},
 	"OZ14a": {
 		"line": "ozh",
-		"json": "OZa",
+		"json": "OZh",
 		"id": "djj"
 	},
 	"OZ51": {
 		"line": "ozh",
-		"json": "OZa",
+		"json": "OZh",
 		"id": "kmo"
 	},
 	"OZ52": {
 		"line": "ozh",
-		"json": "OZa",
+		"json": "OZh",
 		"id": "ida"
 	},
 	"OZ53": {
 		"line": "ozh",
-		"json": "OZa",
+		"json": "OZh",
 		"id": "igs"
 	},
 	"OZ54": {
 		"line": "ozh",
-		"json": "OZa",
+		"json": "OZh",
 		"id": "ing"
 	},
 	"OZ55": {
 		"line": "ozh",
-		"json": "OZa",
+		"json": "OZh",
 		"id": "oro"
 	},
 	"OZ56": {
 		"line": "ozh",
-		"json": "OZa",
+		"json": "OZh",
 		"id": "mtd"
 	},
 	"OZ57": {
 		"line": "ozh",
-		"json": "OZa",
+		"json": "OZh",
 		"id": "hko"
 	}
 }

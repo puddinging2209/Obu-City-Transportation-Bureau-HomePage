@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button, Card, CardContent, Stack, Typography } from '@mui/material';
+import { Box, Button, Card, CardContent, Dialog, DialogContent, DialogTitle, MenuItem, Select, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useAtomValue, useSetAtom } from 'jotai';
 
@@ -28,6 +28,8 @@ export default function TransferOutput({ result }) {
 
 	const [showDialog, setShowDialog] = React.useState(false);
 	const [pushed, setPushed] = React.useState(null);
+
+	const [showFareDialog, setShowFareDialog] = React.useState(false);
 
 	const settings = useAtomValue(settingsAtom);
 
@@ -76,7 +78,7 @@ export default function TransferOutput({ result }) {
 									(settings.general.showSeconds ? ` ${requiredTime.s}秒` : '')}
 							</Typography>
 						</Box>
-						<Stack direction='column' gap={0.5} alignItems='flex-end'>
+						<Stack direction='column' gap={0.5} alignItems='flex-end' sx={{ cursor: 'pointer' }} onClick={() => setShowFareDialog(true)}>
 							<Typography variant='bpdy1'>{fare.regular ? `運賃: ${fare.regular}円` : '運賃情報なし'}</Typography>
 							<Typography variant='body1'>{fare.ic ? `IC運賃: ${fare.ic}円` : '運賃情報なし'}</Typography>
 						</Stack>
@@ -154,6 +156,7 @@ export default function TransferOutput({ result }) {
 					emphasized={[`${pushed?.from},${pushed?.depTime}`, `${pushed?.to},${pushed?.arrTime}`]}
 				/>
 			</Card>
+			<FareDialog open={showFareDialog} onClose={() => setShowFareDialog(false)} distance={header.distance} fare={fare.regular} />
 		</>
 	);
 }
@@ -196,5 +199,45 @@ function StationBox({ arrTime, depTime, StationId, disableArrTime = false, disab
 				マイ駅に追加
 			</Button>
 		</Box>
+	);
+}
+
+function FareDialog({ open, onClose, distance, fare }) {
+	const [term, setTerm] = React.useState(1);
+	return (
+		<Dialog open={open} onClose={onClose}>
+			<DialogTitle>定期券の料金</DialogTitle>
+			<DialogContent>
+				<Select value={term} onChange={(e) => setTerm(e.target.value)}>
+					{Array.from({ length: 3 }, (_, i) => Array.from({ length: 12 }, (_, j) => [i, j + 1]))
+						.flat()
+						.map(([year, month]) => {
+							const [y, m] = [year + Math.floor(month / 12), month % 12];
+							return (
+								<MenuItem key={`${y}-${m}`} value={y * 12 + m}>
+									{y > 0 ?
+										m > 0 ?
+											`${y}年${m}か月`
+										:	`${y}年`
+									:	`${m}か月`}
+								</MenuItem>
+							);
+						})}
+				</Select>
+				<Stack direction='column' gap={1} sx={{ mt: 2 }}>
+					<Stack direction='row' gap={1}>
+						<Typography variant='body1'>通勤定期券:</Typography>
+						<Typography variant='body1'>{`${(18 * term + 12) * fare}円`}</Typography>
+					</Stack>
+					<Stack direction='row' gap={1}>
+						<Typography variant='body1'>通学定期券:</Typography>
+						<Typography variant='body1'>{`${(12 * term + 8) * fare}円`}</Typography>
+					</Stack>
+					<Typography variant='body2' color='text.secondary'>
+						(いずれも最短経路の場合)
+					</Typography>
+				</Stack>
+			</DialogContent>
+		</Dialog>
 	);
 }
