@@ -138,5 +138,5 @@ export function dijkstra(start, goal, via = []) {
  */
 export default function getDistance(start, goal, via = []) {
 	const result = dijkstra(start, goal, via);
-	return result.distance ?? 0;
+	return Number(result.distance.toFixed(2)) ?? 0;
 }
