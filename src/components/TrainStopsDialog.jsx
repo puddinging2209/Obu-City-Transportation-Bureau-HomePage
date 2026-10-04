@@ -113,11 +113,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 					</Grid>
 				</Grid>
 				{stops?.map((stop) => {
-					const isEmphasized =
-						emphasized.map((s) => s.split(',')[0]).includes(stop.id) &&
-						(emphasized.some((s) => s.split(',')[1] === '') ||
-							emphasized.map((s) => Number(s.split(',')[1])).includes(stop.dep) ||
-							emphasized.map((s) => Number(s.split(',')[1])).includes(stop.arr));
+					const isEmphasized = emphasized.some((s) => [`${stop.id}`, `${stop.id},${stop.arr}`, `${stop.id},${stop.dep}`].includes(s));
 					return (
 						<StopRow
 							key={`${stop.name}${stop.dep ?? 'pass'}`}
