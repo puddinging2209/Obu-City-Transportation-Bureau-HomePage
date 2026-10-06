@@ -8,7 +8,7 @@ const typesData = JSON.parse(fs.readFileSync('./../../src/data/types.json'));
 const lineCodeNameMap = Object.fromEntries(
 	Object.values(linesData)
 		.reverse()
-		.map((l) => [l.code, l.id]),
+		.map((l) => [l.json, l.id]),
 );
 
 const typeExceptions = {
@@ -102,7 +102,7 @@ function formatStops(trains) {
 		} else if (timetables[i].id === 'obu' && timetables[i].stopType === 'pass') {
 			continue;
 		} else if (
-			linesData[timetables[i].lineName]?.code === 'KT' &&
+			timetables[i].lineName === 'kt' &&
 			((timetables.some((sta) => sta.id === 'obu' && sta.stopType === 'stop') &&
 				['obm', 'krn', 'wks'].includes(timetables[i].id) &&
 				timetables[i].stopType === 'pass') ||

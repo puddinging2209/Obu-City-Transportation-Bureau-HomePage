@@ -4,6 +4,8 @@ import routesData from '../../data/routes.json';
 import stationsData from '../../data/stations.json';
 import typesData from '../../data/types.json';
 
+let ii = 0;
+
 const typeExceptions = {
 	'普通 ': '普通',
 	たこつぼ: '特急',
@@ -15,7 +17,7 @@ const stations = Object.values(stationsData);
 const lineCodeNameMap = Object.fromEntries(
 	Object.values(linesData)
 		.reverse()
-		.map((l) => [l.code, l.id]),
+		.map((l) => [l.json, l.id]),
 );
 
 let trains = null;
@@ -57,6 +59,10 @@ function searchStops(train, lineCode, prevArr, index) {
 		.map((sta, i) => {
 			const stationId = sta?.stationId;
 			if (!sta || !stationId) return null;
+			if (ii === 0 && !sta.lineName) {
+				console.log(sta);
+				ii++;
+			}
 			if (lineCode == 'KT' && stationId === 'chr') return null;
 			if (lineCode == 'MR' && (stationId === 'okw' || stationId === 'hno')) return null;
 			if (lineCode == 'NK' && (stationId === 'kyw' || stationId === 'tmo')) return null;
@@ -99,7 +105,7 @@ function formatStops(trains) {
 		} else if (timetables[i].id === 'obu' && timetables[i].stopType === 'pass') {
 			continue;
 		} else if (
-			linesData[timetables[i].lineName]?.code === 'KT' &&
+			timetables[i].lineName === 'kt' &&
 			((timetables.some((sta) => sta.id === 'obu' && sta.stopType === 'stop') &&
 				['obm', 'krn', 'wks'].includes(timetables[i].id) &&
 				timetables[i].stopType === 'pass') ||
