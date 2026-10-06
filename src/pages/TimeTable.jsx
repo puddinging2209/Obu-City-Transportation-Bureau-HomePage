@@ -17,8 +17,10 @@ import {
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import '@offlegacy/nuqs-hash-router';
+import { useAtomValue } from 'jotai';
 import { parseAsInteger, useQueryState } from 'nuqs';
 
+import { settingsAtom } from '../atom/atom.js';
 import StationSelecter, { StationSelectButtons } from '../components/StationSelecter.jsx';
 import TrainStopsDialog from '../components/TrainStopsDialog.jsx';
 import getDirections from '../utils/getDirections.js';
@@ -40,6 +42,8 @@ function TimeTable() {
 	const [isShowDialog, setIsShowDialog] = React.useState(false);
 
 	const theme = useTheme();
+	const typeColorMode =
+		theme.palette.mode === 'dark' && useAtomValue(settingsAtom).general.changeTypeColorInDarkToLight ? 'light' : theme.palette.mode;
 
 	const directionOptions = React.useMemo(() => getDirections(station), [station]);
 
@@ -248,22 +252,19 @@ function TimeTable() {
 														>
 															<Box
 																sx={{
-																	background: strong ? typesData[dep.typeName]?.color[theme.palette.mode] : '',
-																	border:
-																		frame ?
-																			`1px solid ${typesData[dep.typeName]?.color[theme.palette.mode]}`
-																		:	'',
+																	background: strong ? typesData[dep.typeName]?.color[typeColorMode] : '',
+																	border: frame ? `1px solid ${typesData[dep.typeName]?.color[typeColorMode]}` : '',
 																}}
 															>
 																<Typography
-																	color={strong ? 'white' : typesData[dep.typeName]?.color[theme.palette.mode]}
+																	color={strong ? 'white' : typesData[dep.typeName]?.color[typeColorMode]}
 																	variant='h6'
 																>
 																	{String(dep.min).padStart(2, '0')}
 																</Typography>
 															</Box>
 															<Typography
-																color={typesData[dep.typeName]?.color[theme.palette.mode]}
+																color={typesData[dep.typeName]?.color[typeColorMode]}
 																sx={{ whiteSpace: 'nowrap' }}
 																variant='body6'
 															>

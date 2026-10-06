@@ -75,6 +75,16 @@ function Settings() {
 							</ToggleButtonGroup>
 						</Stack>
 						<Stack direction='row' justifyContent='space-between' alignItems='center'>
+							ダークモード時に種別色をライトモードの色に変更する
+							<Checkbox
+								checked={settings.general.changeTypeColorInDarkToLight}
+								disabled={settings.general.theme !== 'dark'}
+								onChange={(e) =>
+									setSettings({ ...settings, general: { ...settings.general, changeTypeColorInDarkToLight: e.target.checked } })
+								}
+							/>
+						</Stack>
+						<Stack direction='row' justifyContent='space-between' alignItems='center'>
 							時刻に秒を表示する
 							<Checkbox
 								checked={settings.general.showSeconds}

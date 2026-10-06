@@ -18,6 +18,7 @@ export const settingsAtom = atom(
 	{
 		general: {
 			theme: 'light',
+			changeTypeColorInDarkToLight: false,
 			showSeconds: false,
 		},
 		map: {
