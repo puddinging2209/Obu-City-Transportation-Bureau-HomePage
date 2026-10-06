@@ -18,6 +18,9 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 	const [multilayer, setMultilayer] = React.useState(0);
 	const theme = useTheme();
 
+	const typeColorMode =
+		theme.palette.mode === 'dark' && useAtomValue(settingsAtom).general.changeTypeColorInDarkToLight ? 'light' : theme.palette.mode;
+
 	const showSeconds = useAtomValue(settingsAtom).general.showSeconds;
 	const timeWidth = 42 * (!showSeconds ? 1 : 1.6);
 
@@ -60,7 +63,7 @@ export default function TrainStopsDialog({ dep, line, isShowDialog, onClose, emp
 		<Dialog open={isShowDialog} onClose={onClose} TransitionProps={{ onEntered: scrollToDep }} scroll='paper' fullWidth>
 			<DialogTitle sx={{ pb: dep.multilayer ? 0 : '' }}>
 				{isShowDialog && (
-					<Box sx={{ borderBottom: `3px solid ${types[dep.typeName].color[theme.palette.mode]}` }}>
+					<Box sx={{ borderBottom: `3px solid ${types[dep.typeName].color[typeColorMode]}` }}>
 						<Typography variant='h6' sx={{ wordBreak: 'keep-all', overflowWrap: 'anywhere' }}>
 							{!dep.multilayer ?
 								`${dep.typeName}${dep.train.name.replace(dep.typeName, '')} ${dep.train.count != '' ? `${dep.train.count}号` : ''} ${label(dep.terminal)}行`

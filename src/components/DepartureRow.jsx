@@ -18,6 +18,8 @@ function DepartureRow({ dep, needId = false, station }) {
 
 	const [isShowDialog, setIsShowDialog] = React.useState(false);
 	const showSeconds = useAtomValue(settingsAtom).general.showSeconds;
+	const typeColorMode =
+		theme.palette.mode === 'dark' && useAtomValue(settingsAtom).general.changeTypeColorInDarkToLight ? 'light' : theme.palette.mode;
 	const timeWidth = 42 * (!showSeconds ? 1 : 1.6);
 
 	return (
@@ -40,8 +42,8 @@ function DepartureRow({ dep, needId = false, station }) {
 							label={dep.typeName}
 							size='small'
 							sx={{
-								background: types[dep.typeName].color[theme.palette.mode],
-								color: theme.palette.mode === 'light' ? '#FFF' : '#000',
+								background: types[dep.typeName].color[typeColorMode],
+								color: typeColorMode === 'light' ? '#FFF' : '#000',
 								fontSize: '0.75em',
 								minWidth: '8.5em',
 								px: 0.8,

@@ -1,7 +1,9 @@
 import { Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { useAtomValue } from 'jotai';
 import { useNavigate } from 'react-router-dom';
 
+import { settingsAtom } from '../atom/atom.js';
 import getDirections from '../utils/getDirections.js';
 
 import linesData from '../data/lines.json';
@@ -11,6 +13,9 @@ import types from '../data/types.json';
 function RouteStationRow({ index, line, stations, lines, onClick }) {
 	const navigate = useNavigate();
 	const theme = useTheme();
+
+	const settings = useAtomValue(settingsAtom);
+	const typeColorMode = theme.palette.mode === 'dark' && settings.general.changeTypeColorInDarkToLight ? 'light' : theme.palette.mode;
 
 	const i = index % stations.length;
 	const station = stations[i];
@@ -69,7 +74,7 @@ function RouteStationRow({ index, line, stations, lines, onClick }) {
 										bottom: '50%',
 										width: 4,
 										height: 32,
-										bgcolor: type?.color[theme.palette.mode] || '#999',
+										bgcolor: type?.color[typeColorMode] || '#999',
 										zIndex: 3,
 									}}
 								/>
@@ -91,8 +96,8 @@ function RouteStationRow({ index, line, stations, lines, onClick }) {
 												theme.palette.mode === 'light' ?
 													'#fff'
 												:	'#333'
-											:	type?.color[theme.palette.mode] || '#999',
-										border: `3px solid ${type?.color[theme.palette.mode] || '#999'}`,
+											:	type?.color[typeColorMode] || '#999',
+										border: `3px solid ${type?.color[typeColorMode] || '#999'}`,
 										zIndex: 4,
 									}}
 								/>
@@ -107,7 +112,7 @@ function RouteStationRow({ index, line, stations, lines, onClick }) {
 										top: '50%',
 										width: 4,
 										height: 32,
-										bgcolor: type?.color[theme.palette.mode] || '#999',
+										bgcolor: type?.color[typeColorMode] || '#999',
 										zIndex: 3,
 									}}
 								/>

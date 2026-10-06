@@ -2,6 +2,9 @@ import React from 'react';
 
 import { Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { useAtomValue } from 'jotai';
+
+import { settingsAtom } from '../atom/atom.js';
 
 import RouteStationRow from './RouteStationRow';
 
@@ -9,15 +12,20 @@ import typesData from '../data/types.json';
 
 function EachRouteMap({ line, onClick }) {
 	const theme = useTheme();
+	const settings = useAtomValue(settingsAtom);
 
-	if (!line) {
-		return <Typography sx={{ mt: 2 }}>路線を選択してください。</Typography>;
-	}
-
-	const { isLoop, stations } = line;
 	const [types, setTypes] = React.useState([]);
 
+	const typeColorMode =
+		theme.palette.mode === 'dark' && settings.general.changeTypeColorInDarkToLight ? 'light' : theme.palette.mode;
+
 	React.useEffect(() => {
+		if (!line) {
+			setTypes([]);
+			return;
+		}
+
+		const { stations } = line;
 		const typeSet = new Set();
 
 		stations.forEach((station) => {
@@ -37,7 +45,12 @@ function EachRouteMap({ line, onClick }) {
 				(a, b) => Object.values(typesData).findIndex((t) => t.code === a) - Object.values(typesData).findIndex((t) => t.code === b),
 			),
 		);
-	}, [stations]);
+	}, [line]);
+
+	if (!line) {
+		return <Typography sx={{ mt: 2 }}>路線を選択してください。</Typography>;
+	}
+	const { isLoop, stations } = line;
 
 	return (
 		<Stack
@@ -83,7 +96,7 @@ function EachRouteMap({ line, onClick }) {
 								sx={{
 									writingMode: 'vertical-rl',
 									fontWeight: 'bold',
-									color: Object.values(typesData).find((t) => t.code === type)?.color[theme.palette.mode] || '#999',
+									color: Object.values(typesData).find((t) => t.code === type)?.color[typeColorMode] || '#999',
 								}}
 							>
 								{Object.values(typesData).find((t) => t.code === type)?.name || type}

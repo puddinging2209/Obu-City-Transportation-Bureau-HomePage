@@ -1,6 +1,7 @@
 import { IconLayer } from '@deck.gl/layers';
 import { MapboxOverlay } from '@deck.gl/mapbox';
 import { createTheme } from '@mui/material';
+import { settingsAtom } from '../../../atom/atom.js';
 import linesData from '../../../data/lines.json';
 import typesData from '../../../data/types.json';
 import { dia } from '../.././../utils/readOud';
@@ -23,6 +24,8 @@ export async function initializeTrainsLayer({ map, store, mapTheme, onSelectTrai
 		store.set(setBottomSheetComponentAtom, TrainInfo, { train });
 		store.set(setBottomSheetTitleAtom, '列車情報');
 	};
+
+	const typeColorMode = mapTheme === 'dark' && store.get(settingsAtom).general.changeTypeColorInDarkToLight ? 'light' : mapTheme;
 
 	const isMobile = checkIsMobile();
 
@@ -82,7 +85,7 @@ export async function initializeTrainsLayer({ map, store, mapTheme, onSelectTrai
 							t.name,
 							{
 								x: i * 100,
-								y: mapTheme === 'dark' ? 100 : 0,
+								y: typeColorMode === 'dark' ? 100 : 0,
 								width: 100,
 								height: 100,
 							},
