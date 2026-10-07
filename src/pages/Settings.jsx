@@ -12,7 +12,7 @@ function Settings() {
 
 	const [tabValue, setTabValue] = useQueryState('tab', parseAsInteger.withDefault(0));
 	const [title, setTitle] = React.useState(window.localStorage.getItem('title') ?? '');
-	const [titleIds] = React.useState(() => JSON.parse(window.localStorage.getItem('titles') ?? '[]'));
+	const [titleIds, _] = React.useState(() => JSON.parse(window.localStorage.getItem('titles') ?? '[]'));
 	const [titleNames, setTitleNames] = React.useState({});
 
 	React.useEffect(() => {
@@ -78,7 +78,7 @@ function Settings() {
 							ダークモード時に種別色をライトモードの色に変更する
 							<Checkbox
 								checked={settings.general.changeTypeColorInDarkToLight}
-								disabled={settings.general.theme !== 'dark'}
+								disabled={settings.general.theme !== 'dark' || settings.general.theme === 'system'}
 								onChange={(e) =>
 									setSettings({ ...settings, general: { ...settings.general, changeTypeColorInDarkToLight: e.target.checked } })
 								}
