@@ -78,7 +78,7 @@ function Settings() {
 							ダークモード時に種別色をライトモードの色に変更する
 							<Checkbox
 								checked={settings.general.changeTypeColorInDarkToLight}
-								disabled={settings.general.theme !== 'dark' || settings.general.theme === 'system'}
+								disabled={settings.general.theme !== 'dark' && settings.general.theme !== 'system'}
 								onChange={(e) =>
 									setSettings({ ...settings, general: { ...settings.general, changeTypeColorInDarkToLight: e.target.checked } })
 								}
