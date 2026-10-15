@@ -110,6 +110,7 @@ def main(data_dir="test_data", out_path="output/routes.json", verbose=True):
             lines_str = ", ".join(f"{ln}@{r:.4f}" for ln, r in jn["lines"].items())
             print(f"  J{i}: ({lat:.5f},{lng:.5f})  {lines_str}")
 
+    train_extra_station_routes = collect_extra_station_routes(trains, stations)
     extra_station_routes = collect_extra_station_routes(trains, stations, station_route_exceptions)
     graph, station_node_map, junction_ids, excluded = build_full_graph(
         lines, junction_nodes, stations,
@@ -120,9 +121,16 @@ def main(data_dir="test_data", out_path="output/routes.json", verbose=True):
     if verbose:
         print(f"\nグラフノード数: {len(graph.node_xy)}, 駅ノード: {sum(len(v) for v in station_node_map.values())}")
         if extra_station_routes:
-            n_pairs = sum(len(v) for v in extra_station_routes.values())
-            print(f"trains.jsonのlineNameから補完した(駅,路線)組み合わせ: {n_pairs}件"
-                  f"(stations.jsonのroutesに無かったもの)")
+            train_pairs = sum(len(v) for v in train_extra_station_routes.values())
+            exception_pairs = sum(
+                len(line_names - train_extra_station_routes.get(sid, set()))
+                for sid, line_names in extra_station_routes.items()
+            )
+            print(
+                f"駅所属路線の補完: trains.jsonのlineNameから{train_pairs}件、"
+                f"stationRouteExceptions.jsonから{exception_pairs}件"
+                f"(stations.jsonのroutesに無かったもの)"
+            )
         if excluded:
             print(f"\n除外された駅所属路線: {len(excluded)}件(距離基準を超えたためそのroutesを無視)")
             for sid, line_name, d, is_edge in excluded:
@@ -149,7 +157,7 @@ def main(data_dir="test_data", out_path="output/routes.json", verbose=True):
     if errors:
         output["errors"] = errors
 
-    with open(out_path, "w", encoding="utf-8") as f:
+    with open(out_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
     if verbose:
