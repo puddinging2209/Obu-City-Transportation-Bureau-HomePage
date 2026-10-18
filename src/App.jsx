@@ -14,6 +14,7 @@ const Transfer = React.lazy(() => import('./pages/Transfer.jsx'));
 const Settings = React.lazy(() => import('./pages/Settings.jsx'));
 const TrainMap = React.lazy(() => import('./pages/TrainMap.jsx'));
 const PassengerRegulations = React.lazy(() => import('./pages/PassengerRegulations.jsx'));
+const StationQuiz = React.lazy(() => import('./pages/StationQuiz.jsx'));
 
 function App() {
 	return (
@@ -33,6 +34,7 @@ function App() {
 						<Route path='/about' element={<About />}></Route>
 						<Route path='/passenger-regulations' element={<PassengerRegulations />}></Route>
 						<Route path='/settings' element={<Settings />}></Route>
+						<Route path='/station-quiz' element={<StationQuiz />}></Route>
 					</Route>
 				</Routes>
 			</HashRouter>
