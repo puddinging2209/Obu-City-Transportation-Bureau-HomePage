@@ -22,6 +22,7 @@ import MapIcon from '@mui/icons-material/Map';
 import PlaceIcon from '@mui/icons-material/Place';
 import ScheduleIcon from '@mui/icons-material/Schedule';
 import SettingsIcon from '@mui/icons-material/Settings';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import TrainIcon from '@mui/icons-material/Train';
 
@@ -65,6 +66,7 @@ function Drawer() {
 	const subListItems = [
 		{ name: '駅ログ！', icon: <PlaceIcon />, path: '/log' },
 		{ name: '地図', icon: <MapIcon />, path: '/map' },
+		{ name: '駅名言えるかな', icon: <SportsEsportsIcon />, path: '/station-quiz' },
 		{ name: 'お知らせ一覧', icon: <ArticleIcon />, path: '/news' },
 		{ name: '旅客営業規則', icon: <ArticleIcon />, path: '/passenger-regulations' },
 		{ name: '大府市営地下鉄とは', icon: <HelpOutlineIcon />, path: '/about' },
