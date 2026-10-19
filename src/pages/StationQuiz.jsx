@@ -14,7 +14,10 @@ import {
 	Button,
 	ButtonGroup,
 	Chip,
-	Divider,
+	Dialog,
+	DialogActions,
+	DialogContent,
+	DialogTitle,
 	Paper,
 	Stack,
 	TextField,
@@ -106,6 +109,8 @@ function StationProgressMap({ guessedIds }) {
 	const mapViewportRef = React.useRef(null);
 	const mapSvgRef = React.useRef(null);
 	const dragStart = React.useRef(null);
+	const activePointers = React.useRef(new Map());
+	const pinchState = React.useRef(null);
 	const zoomRef = React.useRef(zoom);
 	const activeZoomAnchor = React.useRef(null);
 	const pendingZoomAnchor = React.useRef(null);
@@ -199,6 +204,17 @@ function StationProgressMap({ guessedIds }) {
 	function handlePointerDown(event) {
 		if (event.button !== 0) return;
 
+		if (event.pointerType === 'touch') {
+			activePointers.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+			event.currentTarget.setPointerCapture(event.pointerId);
+			if (activePointers.current.size === 2) {
+				dragStart.current = null;
+				pinchState.current = getPinchState();
+				setIsDragging(false);
+				return;
+			}
+		}
+
 		dragStart.current = {
 			pointerId: event.pointerId,
 			x: event.clientX,
@@ -210,7 +226,55 @@ function StationProgressMap({ guessedIds }) {
 		setIsDragging(true);
 	}
 
+	function getPinchState() {
+		const [first, second] = [...activePointers.current.entries()];
+		if (!first || !second) return null;
+		const dx = second[1].x - first[1].x;
+		const dy = second[1].y - first[1].y;
+		return {
+			pointerIds: [first[0], second[0]],
+			distance: Math.hypot(dx, dy),
+			center: { x: (first[1].x + second[1].x) / 2, y: (first[1].y + second[1].y) / 2 },
+		};
+	}
+
 	function handlePointerMove(event) {
+		if (event.pointerType === 'touch' && activePointers.current.has(event.pointerId)) {
+			activePointers.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+			const pinch = pinchState.current;
+			if (pinch && pinch.pointerIds.every((pointerId) => activePointers.current.has(pointerId))) {
+				const first = activePointers.current.get(pinch.pointerIds[0]);
+				const second = activePointers.current.get(pinch.pointerIds[1]);
+				const dx = second.x - first.x;
+				const dy = second.y - first.y;
+				const distance = Math.hypot(dx, dy);
+				const center = { x: (first.x + second.x) / 2, y: (first.y + second.y) / 2 };
+				if (pinch.distance > 0) {
+					changeZoom(zoomRef.current * (distance / pinch.distance), pinch.center);
+				}
+
+				const movementX = center.x - pinch.center.x;
+				const movementY = center.y - pinch.center.y;
+				const viewport = mapViewportRef.current;
+				viewport.scrollLeft -= movementX;
+				viewport.scrollTop -= movementY;
+				if (pendingZoomAnchor.current) {
+					pendingZoomAnchor.current.x = center.x;
+					pendingZoomAnchor.current.y = center.y;
+				}
+				if (activeZoomAnchor.current) {
+					activeZoomAnchor.current.x = center.x;
+					activeZoomAnchor.current.y = center.y;
+				}
+				pinchState.current = { ...pinch, distance, center };
+			} else if (dragStart.current?.pointerId === event.pointerId) {
+				activeZoomAnchor.current = null;
+				event.currentTarget.scrollLeft = dragStart.current.scrollLeft + dragStart.current.x - event.clientX;
+				event.currentTarget.scrollTop = dragStart.current.scrollTop + dragStart.current.y - event.clientY;
+			}
+			return;
+		}
+
 		if (!dragStart.current || dragStart.current.pointerId !== event.pointerId) return;
 
 		activeZoomAnchor.current = null;
@@ -219,6 +283,26 @@ function StationProgressMap({ guessedIds }) {
 	}
 
 	function handlePointerUp(event) {
+		if (event.pointerType === 'touch') {
+			activePointers.current.delete(event.pointerId);
+			pinchState.current = null;
+			dragStart.current = null;
+			const remainingPointer = activePointers.current.entries().next().value;
+			if (remainingPointer) {
+				dragStart.current = {
+					pointerId: remainingPointer[0],
+					x: remainingPointer[1].x,
+					y: remainingPointer[1].y,
+					scrollLeft: event.currentTarget.scrollLeft,
+					scrollTop: event.currentTarget.scrollTop,
+				};
+				setIsDragging(true);
+			} else {
+				setIsDragging(false);
+			}
+			return;
+		}
+
 		if (!dragStart.current || dragStart.current.pointerId !== event.pointerId) return;
 
 		dragStart.current = null;
@@ -249,7 +333,7 @@ function StationProgressMap({ guessedIds }) {
 					{Math.round(zoom * 100)}%
 				</Typography>
 				<Typography variant='body2' color='text.secondary'>
-					ドラッグで移動
+					ドラッグで移動・2本指で拡大縮小
 				</Typography>
 				<ButtonGroup size='small' variant='outlined' aria-label='地図の拡大縮小'>
 					<Button aria-label='地図を縮小' disabled={zoom <= MIN_MAP_ZOOM} onClick={() => changeZoom(zoomRef.current - 0.25)}>
@@ -347,6 +431,29 @@ function StationProgressMap({ guessedIds }) {
 							/>
 						);
 					})}
+					{allStations
+						.filter((station) => guessedIds.has(station.id))
+						.map((station) => {
+							const [x, y] = plot(station).split(',').map(Number);
+							return (
+								<text
+									key={`label-${station.id}`}
+									x={x + 9 / zoom}
+									y={y}
+									fontSize={12 / zoom}
+									fontWeight='600'
+									dominantBaseline='middle'
+									fill={theme.palette.text.primary}
+									stroke={theme.palette.background.paper}
+									strokeWidth={3 / zoom}
+									strokeLinejoin='round'
+									paintOrder='stroke'
+									vectorEffect='non-scaling-stroke'
+								>
+									{station.name}
+								</text>
+							);
+						})}
 				</svg>
 			</Box>
 		</Box>
@@ -357,6 +464,7 @@ function StationQuiz() {
 	const [guessedIds, setGuessedIds] = React.useState(() => new Set());
 	const [guess, setGuess] = React.useState('');
 	const [message, setMessage] = React.useState('');
+	const [isHistoryOpen, setIsHistoryOpen] = React.useState(false);
 	const [historyState] = React.useState(readHistory);
 	const { records: history } = historyState;
 	const gameStartedAt = React.useRef(Date.now());
@@ -404,7 +512,6 @@ function StationQuiz() {
 		const station = matches.find((candidate) => !guessedIds.has(candidate.id));
 		if (!station) {
 			setMessage('その駅はすでに入力済みです。');
-			setGuess('');
 			return;
 		}
 
@@ -429,9 +536,14 @@ function StationQuiz() {
 
 	return (
 		<Box sx={{ maxWidth: 1100, mx: 'auto' }}>
-			<Typography variant='h5' component='h1' sx={{ mb: 1 }}>
-				駅名を思い出そう
-			</Typography>
+			<Stack direction='row' justifyContent='space-between' alignItems='center' spacing={1} sx={{ mb: 1 }}>
+				<Typography variant='h5' component='h1'>
+					駅名を思い出そう
+				</Typography>
+				<Button variant='outlined' size='small' onClick={() => setIsHistoryOpen(true)}>
+					保存した記録（{history.length}）
+				</Button>
+			</Stack>
 			<Typography color='text.secondary' sx={{ mb: 2 }}>
 				大府市営地下鉄の駅名を入力してください。
 			</Typography>
@@ -551,31 +663,39 @@ function StationQuiz() {
 					);
 				})}
 
-			{history.length > 0 && (
-				<Paper variant='outlined' sx={{ p: 2, mt: 3 }}>
-					<Typography variant='h6' component='h2' sx={{ mb: 1 }}>
-						保存した記録
-					</Typography>
-					<Divider sx={{ mb: 1 }} />
-					<Stack spacing={1}>
-						{history.map((result, index) => (
-							<Stack key={`${result.savedAt}-${index}`} direction='row' justifyContent='space-between' spacing={1}>
-								<Typography variant='body2'>{new Date(result.savedAt).toLocaleString('ja-JP')}</Typography>
-								<Typography variant='body2' fontWeight={600}>
-									{result.count} / {result.total ?? allStations.length} 駅
-									{Number.isFinite(result.durationSec) &&
-										`・${Math.floor(result.durationSec / 60)}分${String(result.durationSec % 60).padStart(2, '0')}秒`}
-								</Typography>
-							</Stack>
-						))}
-					</Stack>
-				</Paper>
-			)}
-			{historyState.error && (
-				<Alert severity='warning' sx={{ mt: 2 }}>
-					前回の記録を読み込めませんでした。今回のプレイ結果は新しい記録として保存されます。
-				</Alert>
-			)}
+			<Dialog open={isHistoryOpen} onClose={() => setIsHistoryOpen(false)} fullWidth maxWidth='sm'>
+				<DialogTitle>保存した記録</DialogTitle>
+				<DialogContent dividers>
+					{historyState.error && (
+						<Alert severity='warning' sx={{ mb: history.length ? 2 : 0 }}>
+							前回の記録を読み込めませんでした。今回のプレイ結果は新しい記録として保存されます。
+						</Alert>
+					)}
+					{history.length > 0 ?
+						<Stack spacing={1}>
+							{history.map((result, index) => (
+								<Stack
+									key={`${result.savedAt}-${index}`}
+									direction={{ xs: 'column', sm: 'row' }}
+									justifyContent='space-between'
+									spacing={0.5}
+								>
+									<Typography variant='body2'>{new Date(result.savedAt).toLocaleString('ja-JP')}</Typography>
+									<Typography variant='body2' fontWeight={600}>
+										{result.count} / {result.total ?? allStations.length} 駅
+										{Number.isFinite(result.durationSec) &&
+											`・${Math.floor(result.durationSec / 60)}分${String(result.durationSec % 60).padStart(2, '0')}秒`}
+									</Typography>
+								</Stack>
+							))}
+						</Stack>
+					:	<Typography color='text.secondary'>保存された記録はありません。</Typography>
+					}
+				</DialogContent>
+				<DialogActions>
+					<Button onClick={() => setIsHistoryOpen(false)}>閉じる</Button>
+				</DialogActions>
+			</Dialog>
 		</Box>
 	);
 }
