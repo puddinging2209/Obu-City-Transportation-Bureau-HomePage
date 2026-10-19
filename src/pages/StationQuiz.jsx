@@ -102,6 +102,10 @@ function readHistory() {
 	}
 }
 
+function formatDuration(durationSec) {
+	return `${Math.floor(durationSec / 60)}分${String(durationSec % 60).padStart(2, '0')}秒`;
+}
+
 function StationProgressMap({ guessedIds }) {
 	const theme = useTheme();
 	const [zoom, setZoom] = React.useState(1);
@@ -332,9 +336,6 @@ function StationProgressMap({ guessedIds }) {
 				<Typography variant='body2' color='text.secondary' aria-live='polite'>
 					{Math.round(zoom * 100)}%
 				</Typography>
-				<Typography variant='body2' color='text.secondary'>
-					ドラッグで移動・2本指で拡大縮小
-				</Typography>
 				<ButtonGroup size='small' variant='outlined' aria-label='地図の拡大縮小'>
 					<Button aria-label='地図を縮小' disabled={zoom <= MIN_MAP_ZOOM} onClick={() => changeZoom(zoomRef.current - 0.25)}>
 						<ZoomOutIcon />
@@ -342,9 +343,9 @@ function StationProgressMap({ guessedIds }) {
 					<Button aria-label='地図を拡大' disabled={zoom >= MAX_MAP_ZOOM} onClick={() => changeZoom(zoomRef.current + 0.25)}>
 						<ZoomInIcon />
 					</Button>
-					<Button aria-label='地図の倍率をリセット' disabled={zoom === 1} onClick={() => changeZoom(1)}>
+					{/* <Button aria-label='地図の倍率をリセット' disabled={zoom === 1} onClick={() => changeZoom(1)}>
 						100%
-					</Button>
+					</Button> */}
 				</ButtonGroup>
 			</Stack>
 			<Box
@@ -356,7 +357,7 @@ function StationProgressMap({ guessedIds }) {
 				sx={{
 					width: '100%',
 					overflow: 'auto',
-					maxHeight: '70vh',
+					height: 'min(70vh, 100vw)',
 					cursor: isDragging ? 'grabbing' : 'grab',
 					touchAction: 'none',
 					userSelect: 'none',
@@ -465,44 +466,77 @@ function StationQuiz() {
 	const [guess, setGuess] = React.useState('');
 	const [message, setMessage] = React.useState('');
 	const [isHistoryOpen, setIsHistoryOpen] = React.useState(false);
-	const [historyState] = React.useState(readHistory);
+	const [historyState, setHistoryState] = React.useState(readHistory);
+	const [giveUpResult, setGiveUpResult] = React.useState(null);
+	const [isResultOpen, setIsResultOpen] = React.useState(false);
+	const [timerStartedAt, setTimerStartedAt] = React.useState(null);
+	const [elapsedSeconds, setElapsedSeconds] = React.useState(0);
 	const { records: history } = historyState;
-	const gameStartedAt = React.useRef(Date.now());
-	const gameSnapshot = React.useRef({ count: 0 });
+	const gameSnapshot = React.useRef({ count: 0, startedAt: null });
 	const lastSavedCount = React.useRef(0);
+	const saveResultRef = React.useRef(null);
 	const isComposingGuess = React.useRef(false);
 
 	React.useEffect(() => {
-		gameSnapshot.current = { count: guessedIds.size };
-	}, [guessedIds]);
+		if (timerStartedAt === null) return undefined;
+		const updateElapsed = () => setElapsedSeconds(Math.floor((Date.now() - timerStartedAt) / 1000));
+		updateElapsed();
+		const interval = window.setInterval(updateElapsed, 1000);
+		return () => window.clearInterval(interval);
+	}, [timerStartedAt]);
 
-	React.useEffect(() => {
-		const saveResult = () => {
+	const saveResult = React.useCallback(
+		(force = false) => {
 			const { count } = gameSnapshot.current;
-			if (count <= lastSavedCount.current) return;
+			if (!force && count <= lastSavedCount.current) return null;
 
 			const result = {
 				count,
 				total: allStations.length,
-				durationSec: Math.max(0, Math.floor((Date.now() - gameStartedAt.current) / 1000)),
+				durationSec: gameSnapshot.current.startedAt ? Math.max(0, Math.floor((Date.now() - gameSnapshot.current.startedAt) / 1000)) : 0,
 				savedAt: new Date().toISOString(),
 			};
 			try {
 				const previous = readHistory();
+				if (result.count === 0 && result.durationSec === 0) {
+					return { result, previousRecords: previous.records, saveError: false, skipped: true };
+				}
 				const next = [result, ...previous.records].slice(0, HISTORY_LIMIT);
 				localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
 				lastSavedCount.current = count;
+				setHistoryState({ records: next, error: false });
+				return { result, previousRecords: previous.records, saveError: false };
 			} catch (error) {
 				console.error('Failed to save station quiz result', error);
+				return { result, previousRecords: historyState.records, saveError: true };
 			}
-		};
+		},
+		[historyState.records],
+	);
+	saveResultRef.current = saveResult;
 
-		window.addEventListener('pagehide', saveResult);
+	React.useEffect(() => {
+		const handlePageHide = () => saveResultRef.current?.();
+		window.addEventListener('pagehide', handlePageHide);
 		return () => {
-			window.removeEventListener('pagehide', saveResult);
-			saveResult();
+			window.removeEventListener('pagehide', handlePageHide);
+			saveResultRef.current?.();
 		};
 	}, []);
+
+	function handleGiveUp() {
+		const savedResult = saveResultRef.current?.(true);
+		if (!savedResult) return;
+		setGiveUpResult(savedResult);
+		setIsResultOpen(true);
+		gameSnapshot.current = { count: 0, startedAt: null };
+		lastSavedCount.current = 0;
+		setGuessedIds(new Set());
+		setGuess('');
+		setMessage('');
+		setTimerStartedAt(null);
+		setElapsedSeconds(0);
+	}
 
 	function handleGuessValue(value) {
 		setGuess(value);
@@ -515,7 +549,9 @@ function StationQuiz() {
 			return;
 		}
 
-		gameSnapshot.current = { count: guessedIds.size + 1 };
+		const startedAt = gameSnapshot.current.startedAt ?? Date.now();
+		gameSnapshot.current = { count: guessedIds.size + 1, startedAt };
+		if (timerStartedAt === null) setTimerStartedAt(startedAt);
 		setGuessedIds((current) => new Set(current).add(station.id));
 		setGuess('');
 		setMessage(`「${station.name}」を入力済みにしました。`);
@@ -562,13 +598,21 @@ function StationQuiz() {
 						autoComplete='off'
 						inputProps={{ 'aria-label': '駅名' }}
 					/>
-					<Chip
-						icon={<CheckCircleIcon />}
-						label={`${guessedIds.size} / ${allStations.length} 駅`}
-						color='success'
-						variant='outlined'
-						sx={{ alignSelf: { xs: 'flex-start', sm: 'center' }, fontSize: '1rem', height: 40 }}
-					/>
+					<Stack direction='row' spacing={1} alignItems='center' sx={{ flexShrink: 0 }}>
+						<Chip
+							icon={<CheckCircleIcon />}
+							label={`${guessedIds.size} / ${allStations.length} 駅`}
+							color='success'
+							variant='outlined'
+							sx={{ alignSelf: { xs: 'flex-start', sm: 'center' }, fontSize: '1rem', height: 40 }}
+						/>
+						<Button variant='contained' color='warning' onClick={handleGiveUp} sx={{ whiteSpace: 'nowrap' }}>
+							ギブアップ
+						</Button>
+						<Typography variant='body2' color='text.secondary' aria-live='off' sx={{ whiteSpace: 'nowrap' }}>
+							{formatDuration(elapsedSeconds)}
+						</Typography>
+					</Stack>
 				</Stack>
 				{message && (
 					<Alert severity={message.includes('すでに') ? 'info' : 'success'} onClose={() => setMessage('')} sx={{ mb: 2 }}>
@@ -590,9 +634,6 @@ function StationQuiz() {
 						<RadioButtonUncheckedIcon color='error' fontSize='small' />
 						<Typography variant='body2'>未入力</Typography>
 					</Stack>
-					<Typography variant='body2' color='text.secondary'>
-						駅の位置と各路線のおおよその経路
-					</Typography>
 				</Stack>
 				<StationProgressMap guessedIds={guessedIds} />
 			</Paper>
@@ -689,11 +730,79 @@ function StationQuiz() {
 								</Stack>
 							))}
 						</Stack>
-					:	<Typography color='text.secondary'>保存された記録はありません。</Typography>
-					}
+					:	<Typography color='text.secondary'>保存された記録はありません。</Typography>}
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={() => setIsHistoryOpen(false)}>閉じる</Button>
+				</DialogActions>
+			</Dialog>
+
+			<Dialog open={isResultOpen} onClose={() => setIsResultOpen(false)} fullWidth maxWidth='sm'>
+				<DialogTitle>ギブアップ結果</DialogTitle>
+				<DialogContent dividers>
+					{giveUpResult?.skipped && (
+						<Alert severity='info' sx={{ mb: 2 }}>
+							駅数と時間がどちらも0のため、この結果は保存していません。
+						</Alert>
+					)}
+					{giveUpResult?.saveError && (
+						<Alert severity='error' sx={{ mb: 2 }}>
+							記録を保存できませんでした。この結果はこの画面を離れると失われる可能性があります。
+						</Alert>
+					)}
+					{giveUpResult && (
+						<Stack spacing={2}>
+							<Paper variant='outlined' sx={{ p: 2 }}>
+								<Typography variant='subtitle1' fontWeight={600}>
+									今回の結果
+								</Typography>
+								<Typography>
+									駅数：{giveUpResult.result.count} / {giveUpResult.result.total} 駅
+								</Typography>
+								<Typography>時間：{formatDuration(giveUpResult.result.durationSec)}</Typography>
+							</Paper>
+							{giveUpResult.skipped ? null
+							: giveUpResult.previousRecords.length > 0 ?
+								<Paper variant='outlined' sx={{ p: 2 }}>
+									<Typography variant='subtitle1' fontWeight={600} sx={{ mb: 1 }}>
+										過去の記録との比較
+									</Typography>
+									{(() => {
+										const previousBestCount = Math.max(...giveUpResult.previousRecords.map((record) => record.count));
+										const previousFastestTime = giveUpResult.previousRecords
+											.map((record) => record.durationSec)
+											.filter(Number.isFinite)
+											.reduce((fastest, duration) => Math.min(fastest, duration), Infinity);
+										const countDifference = giveUpResult.result.count - previousBestCount;
+										const timeDifference =
+											Number.isFinite(previousFastestTime) ? giveUpResult.result.durationSec - previousFastestTime : null;
+										const timeComparison =
+											timeDifference === null ? ''
+											: timeDifference === 0 ? '同じ'
+											: `${formatDuration(Math.abs(timeDifference))}${timeDifference < 0 ? '短縮' : '増加'}`;
+										return (
+											<Stack spacing={0.5}>
+												<Typography>
+													駅数：過去最高 {previousBestCount} 駅 → 今回 {giveUpResult.result.count} 駅（
+													{countDifference > 0 ? '+' : ''}
+													{countDifference} 駅）
+												</Typography>
+												<Typography>
+													時間：
+													{Number.isFinite(previousFastestTime) ?
+														`過去最短 ${formatDuration(previousFastestTime)} → 今回 ${formatDuration(giveUpResult.result.durationSec)}（${timeComparison}）`
+													:	`過去記録なし → 今回 ${formatDuration(giveUpResult.result.durationSec)}`}
+												</Typography>
+											</Stack>
+										);
+									})()}
+								</Paper>
+							:	<Typography color='text.secondary'>比較できる過去の記録はありません。</Typography>}
+						</Stack>
+					)}
+				</DialogContent>
+				<DialogActions>
+					<Button onClick={() => setIsResultOpen(false)}>閉じる</Button>
 				</DialogActions>
 			</Dialog>
 		</Box>

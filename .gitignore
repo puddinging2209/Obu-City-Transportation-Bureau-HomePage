@@ -5,3 +5,4 @@ temp/
 __pycache__/
 *.kml
 trains.json
+.venv/
