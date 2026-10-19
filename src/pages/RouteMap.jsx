@@ -18,7 +18,7 @@ function RouteMap() {
 	React.useEffect(() => {
 		const fetchImageSize = async () => {
 			try {
-				const response = await fetch(import.meta.env.BASE_URL + 'routeMap/202609.png', { method: 'HEAD' });
+				const response = await fetch(import.meta.env.BASE_URL + 'routeMap/202609re.png', { method: 'HEAD' });
 				const size = response.headers.get('content-length');
 				if (size) {
 					const sizeInMB = (parseInt(size) / (1024 * 1024)).toFixed(1);
@@ -47,7 +47,7 @@ function RouteMap() {
 					size='large'
 					onClick={() => {
 						const link = document.createElement('a');
-						link.href = import.meta.env.BASE_URL + 'routeMap/202609.png';
+						link.href = import.meta.env.BASE_URL + 'routeMap/202609re.png';
 						link.download = '大府市営地下鉄全線.png';
 						link.click();
 					}}
@@ -59,7 +59,7 @@ function RouteMap() {
 			<Lightbox
 				open={isOpenLightbox}
 				close={() => setIsOpenLightbox(false)}
-				slides={[{ src: import.meta.env.BASE_URL + 'routeMap/202609.png' }]}
+				slides={[{ src: import.meta.env.BASE_URL + 'routeMap/202609re.png' }]}
 				plugins={[Zoom]}
 				carousel={{ finite: true }}
 				render={{

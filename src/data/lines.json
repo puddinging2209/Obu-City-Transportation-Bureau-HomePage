@@ -9386,6 +9386,22 @@
 				}
 			},
 			{
+				"id": "idr",
+				"types": {
+					"all": null,
+					"loc": true,
+					"rap": false,
+					"com-sem-exp": null,
+					"sem-exp": false,
+					"sub-exp": true,
+					"exp": false,
+					"rap-exp": false,
+					"com-exp": false,
+					"lim-exp": null,
+					"lin": null
+				}
+			},
+			{
 				"id": "igc",
 				"types": {
 					"all": null,
