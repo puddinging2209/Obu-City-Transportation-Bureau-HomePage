@@ -63,7 +63,7 @@ export function TrainInfo({ train }) {
 					return (
 						<Box key={i}>
 							<Box
-								gridTemplateColumns={`24px ${showSeconds ? '4' : '3'}rem 1fr`}
+								gridTemplateColumns={`${showSeconds ? '4' : '3'}rem 24px 1fr`}
 								gap='6px'
 								sx={{
 									display: 'grid',
@@ -71,6 +71,14 @@ export function TrainInfo({ train }) {
 									alignContent: 'center',
 								}}
 							>
+								<Stack direction='column'>
+									{s.arr ?
+										<Typography>{getTime(s.arr)}</Typography>
+										: <></>}
+									{s.dep ?
+										<Typography>{getTime(s.dep)}</Typography>
+										: <></>}
+								</Stack>
 								<Box
 									sx={{
 										display: 'flex',
@@ -89,14 +97,6 @@ export function TrainInfo({ train }) {
 										}}
 									></Box>
 								</Box>
-								<Stack direction='column'>
-									{s.arr ?
-										<Typography>{getTime(s.arr)}</Typography>
-									:	<></>}
-									{s.dep ?
-										<Typography>{getTime(s.dep)}</Typography>
-									:	<></>}
-								</Stack>
 								<Box
 									sx={{
 										display: 'flex',
@@ -108,13 +108,14 @@ export function TrainInfo({ train }) {
 							</Box>
 							{stops[i + 1] ?
 								<Grid
-									gridTemplateColumns='24px 1fr'
-									gap='36px'
+									gridTemplateColumns={`${showSeconds ? '4' : '3'}rem 24px 1fr`}
+									gap='6px'
 									sx={{
 										display: 'grid',
 										height: '128px',
 									}}
 								>
+									<Box></Box>
 									<Box
 										sx={{
 											height: '100%',
@@ -149,7 +150,7 @@ export function TrainInfo({ train }) {
 										</Typography>
 									</Box>
 								</Grid>
-							:	<></>}
+								: <></>}
 						</Box>
 					);
 				})}
