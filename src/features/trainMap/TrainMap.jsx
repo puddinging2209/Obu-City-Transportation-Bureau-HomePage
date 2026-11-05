@@ -16,7 +16,7 @@ import { TrainInfo } from './components/TrainInfo';
 import TrainPopup from './components/TrainPopup';
 import { layers, layersEnabledAtom, updateLayerEnabledAtom } from './states/layers';
 import { clearBottomSheetAtom, setBottomSheetComponentAtom, setBottomSheetTitleAtom } from './states/sheet';
-import { timeAtom } from './states/time';
+import { simulationTimeGetterAtom, timeAtom } from './states/time';
 
 setWorkerUrl(maplibreWorkerUrl);
 
@@ -44,6 +44,7 @@ function TrainMapContent({ mapTheme }) {
 	const layersEnabled = useAtomValue(layersEnabledAtom);
 	const updateLayerEnabled = useSetAtom(updateLayerEnabledAtom);
 	const timeState = useAtomValue(timeAtom);
+	const getSimulationTime = useAtomValue(simulationTimeGetterAtom);
 	const setBottomSheetContent = useSetAtom(setBottomSheetComponentAtom);
 	const setBottomSheetTitle = useSetAtom(setBottomSheetTitleAtom);
 	const clearBottomSheet = useSetAtom(clearBottomSheetAtom);
@@ -172,7 +173,7 @@ function TrainMapContent({ mapTheme }) {
 		let latestUpdatedAt = 0;
 		const tick = (now) => {
 			if (now - latestUpdatedAt >= effectiveUpdateInterval) {
-				const sec = (timeState.baseSimulationTime + ((performance.now() - timeState.startAt) * timeState.speedRate) / 1000) % (60 * 60 * 24);
+				const sec = getSimulationTime();
 				layersRef.current.forEach((l) => {
 					if (layersEnabled[l.id]) l.update(sec);
 				});

@@ -1,12 +1,15 @@
 import CloseIcon from '@mui/icons-material/Close';
 import LocationPinIcon from '@mui/icons-material/LocationPin';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
-import { Box, Button, Dialog, DialogTitle, IconButton, List, ListItemButton, ListItemText, Stack, Typography, useTheme } from '@mui/material';
+import { Box, Button, Dialog, DialogTitle, IconButton, List, ListItemButton, ListItemText, Stack, Tooltip, Typography, useTheme } from '@mui/material';
+import { useSetAtom } from 'jotai';
 import React from 'react';
 import { Popup } from 'react-map-gl/maplibre';
 import linesData from '../../../data/lines.json';
 import { label } from '../../../utils/Station';
 import { toTimeString } from '../../../utils/Time';
+import { setSecondAtom } from '../states/time';
 
 function normalizePopupPosition(position) {
 	if (!Array.isArray(position) || position.length < 2) {
@@ -20,6 +23,7 @@ function normalizePopupPosition(position) {
 }
 
 export default function TrainPopup({ train, setActiveTrain, handleOpenBottomSheet, handleSwitchTrain, isTracking, setIsTracking }) {
+	const setSecond = useSetAtom(setSecondAtom);
 	const position = React.useMemo(() => normalizePopupPosition(train.position), [train.position]);
 	const otherStoppedTrains = train.stoppedTrains?.filter((stoppedTrain) => stoppedTrain.number !== train.rawTrainData.number) ?? [];
 	const [isStoppedTrainDialogOpen, setIsStoppedTrainDialogOpen] = React.useState(false);
@@ -120,12 +124,19 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 						<Typography sx={{ fontSize: '14px' }} noWrap>
 							{label(currentStop.id)} 停車中
 						</Typography>
-						<Typography
-							sx={{ fontSize: '13px' }}
-							noWrap
-						>{`${toTimeString(currentStop.arr)} > ${toTimeString(currentStop.dep)}`}</Typography>
+						<Stack direction='row' alignItems='center' gap={0.5} display='inline-flex'>
+							<Typography
+								sx={{ fontSize: '13px' }}
+								noWrap
+							>{`${toTimeString(currentStop.arr)} > ${toTimeString(currentStop.dep)}`}</Typography>
+							<Tooltip title='発車までスキップ'>
+								<IconButton size='small' onClick={() => setSecond(currentStop.dep)}>
+									<SkipNextIcon></SkipNextIcon>
+								</IconButton>
+							</Tooltip>
+						</Stack>
 					</>
-				:	<>
+					: <>
 						<Typography sx={{ fontSize: '14px', wordBreak: 'keep-all' }}>
 							{`${label(currentSegment[0].id)} > `}
 							<wbr />
