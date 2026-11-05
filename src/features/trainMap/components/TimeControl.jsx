@@ -4,10 +4,10 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import dayjs from 'dayjs';
-import { useAtom, useSetAtom } from 'jotai';
+import { useAtom, useAtomValue, useSetAtom } from 'jotai';
 import React from 'react';
 import { CompactButton, CompactInput } from '../../../components/Compact';
-import { setSecondAtom, setSpeedAtom, syncRealTimeAtom, timeAtom } from '../states/time';
+import { setSecondAtom, setSpeedAtom, simulationTimeGetterAtom, syncRealTimeAtom, timeAtom } from '../states/time';
 
 const MemorizedTimePicker = React.memo(({ setSecond }) => {
 	return (
@@ -38,6 +38,7 @@ const MemorizedTimePicker = React.memo(({ setSecond }) => {
 
 export function TimeControl() {
 	const [timeState, setTimeState] = useAtom(timeAtom);
+	const getSimulationTime = useAtomValue(simulationTimeGetterAtom);
 	const setSecond = useSetAtom(setSecondAtom);
 	const setSpeed = useSetAtom(setSpeedAtom);
 	const syncRealTime = useSetAtom(syncRealTimeAtom);
@@ -48,7 +49,7 @@ export function TimeControl() {
 		let id;
 		const tick = () => {
 			setDisplayTime(
-				Math.floor((timeState.baseSimulationTime + ((performance.now() - timeState.startAt) * timeState.speedRate) / 1000) % (60 * 60 * 24)),
+				Math.floor(getSimulationTime()),
 			);
 			id = requestAnimationFrame(tick);
 		};
