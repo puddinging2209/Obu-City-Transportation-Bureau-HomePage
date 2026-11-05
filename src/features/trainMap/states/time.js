@@ -1,4 +1,5 @@
 import { atom } from 'jotai'
+import { mod } from '../../../utils/mod'
 
 function getNowSecond() {
 	const date = new Date()
@@ -9,6 +10,11 @@ export const timeAtom = atom({
 	startAt: performance.now(),
 	baseSimulationTime: getNowSecond(),
 	speedRate: 1
+})
+
+export const simulationTimeGetterAtom = atom((get) => () => {
+	const timeState = get(timeAtom)
+	return mod(timeState.baseSimulationTime + ((performance.now() - timeState.startAt) * timeState.speedRate) / 1000, 60 * 60 * 24)
 })
 
 export const syncRealTimeAtom = atom(null, (get, set) => {
