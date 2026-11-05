@@ -3,7 +3,6 @@ import { Box, IconButton, Slider, Stack, Tooltip, Typography } from '@mui/materi
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
-import dayjs from 'dayjs';
 import { useAtom, useAtomValue, useSetAtom } from 'jotai';
 import React from 'react';
 import { CompactButton, CompactInput } from '../../../components/Compact';
@@ -43,7 +42,6 @@ export function TimeControl() {
 	const setSpeed = useSetAtom(setSpeedAtom);
 	const syncRealTime = useSetAtom(syncRealTimeAtom);
 	const [displayTime, setDisplayTime] = React.useState(0);
-	const [timePickerValue, setTimePickerValue] = React.useState(dayjs());
 
 	React.useEffect(() => {
 		let id;
