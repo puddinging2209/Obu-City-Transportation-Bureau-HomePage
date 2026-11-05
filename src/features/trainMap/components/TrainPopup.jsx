@@ -2,7 +2,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import LocationPinIcon from '@mui/icons-material/LocationPin';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
-import { Box, Button, Dialog, DialogTitle, IconButton, List, ListItemButton, ListItemText, Stack, Typography, useTheme } from '@mui/material';
+import { Box, Button, Dialog, DialogTitle, IconButton, List, ListItemButton, ListItemText, Stack, Tooltip, Typography, useTheme } from '@mui/material';
 import { useSetAtom } from 'jotai';
 import React from 'react';
 import { Popup } from 'react-map-gl/maplibre';
@@ -129,9 +129,11 @@ export default function TrainPopup({ train, setActiveTrain, handleOpenBottomShee
 								sx={{ fontSize: '13px' }}
 								noWrap
 							>{`${toTimeString(currentStop.arr)} > ${toTimeString(currentStop.dep)}`}</Typography>
-							<IconButton size='small' title='発車までスキップ' onClick={() => setSecond(currentStop.dep)}>
-								<SkipNextIcon></SkipNextIcon>
-							</IconButton>
+							<Tooltip title='発車までスキップ'>
+								<IconButton size='small' onClick={() => setSecond(currentStop.dep)}>
+									<SkipNextIcon></SkipNextIcon>
+								</IconButton>
+							</Tooltip>
 						</Stack>
 					</>
 					: <>

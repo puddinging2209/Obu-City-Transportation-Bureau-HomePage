@@ -1,3 +1,7 @@
+import Forward5Icon from '@mui/icons-material/Forward5';
+import PauseIcon from '@mui/icons-material/Pause';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import Replay5Icon from '@mui/icons-material/Replay5';
 import SyncIcon from '@mui/icons-material/Sync';
 import { Box, IconButton, Slider, Stack, Tooltip, Typography } from '@mui/material';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -6,7 +10,7 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { useAtom, useAtomValue, useSetAtom } from 'jotai';
 import React from 'react';
 import { CompactButton, CompactInput } from '../../../components/Compact';
-import { setSecondAtom, setSpeedAtom, simulationTimeGetterAtom, syncRealTimeAtom, timeAtom } from '../states/time';
+import { setPausedAtom, setSecondAtom, setSpeedAtom, simulationTimeGetterAtom, syncRealTimeAtom, timeAtom } from '../states/time';
 
 const MemorizedTimePicker = React.memo(({ setSecond }) => {
 	return (
@@ -39,6 +43,7 @@ export function TimeControl() {
 	const [timeState, setTimeState] = useAtom(timeAtom);
 	const getSimulationTime = useAtomValue(simulationTimeGetterAtom);
 	const setSecond = useSetAtom(setSecondAtom);
+	const setPaused = useSetAtom(setPausedAtom);
 	const setSpeed = useSetAtom(setSpeedAtom);
 	const syncRealTime = useSetAtom(syncRealTimeAtom);
 	const [displayTime, setDisplayTime] = React.useState(0);
@@ -56,7 +61,7 @@ export function TimeControl() {
 	}, [timeState]);
 
 	return (
-		<Stack spacing={1}>
+		<Stack spacing={0.5}>
 			<Box spacing={1} gridTemplateColumns='40px 1fr 40px' sx={{ display: 'grid', alignItems: 'center' }}>
 				<Tooltip title='現実時間と同期'>
 					<IconButton onClick={syncRealTime}>
@@ -69,6 +74,23 @@ export function TimeControl() {
 				</Typography>
 				<MemorizedTimePicker setSecond={setSecond}></MemorizedTimePicker>
 			</Box>
+			<Stack direction='row' justifyContent='center' gap={2}>
+				<Tooltip title={`5秒分(${timeState.speedRate * 5}秒)戻す`}>
+					<IconButton onClick={() => setSecond(getSimulationTime() - timeState.speedRate * 5)}>
+						<Replay5Icon></Replay5Icon>
+					</IconButton>
+				</Tooltip>
+				<Tooltip title={timeState.paused ? '再生' : '停止'}>
+					<IconButton onClick={() => setPaused(!timeState.paused)}>
+						{timeState.paused ? <PlayArrowIcon></PlayArrowIcon> : <PauseIcon></PauseIcon>}
+					</IconButton>
+				</Tooltip>
+				<Tooltip title={`5秒分(${timeState.speedRate * 5}秒)進む`}>
+					<IconButton onClick={() => setSecond(getSimulationTime() + timeState.speedRate * 5)}>
+						<Forward5Icon></Forward5Icon>
+					</IconButton>
+				</Tooltip>
+			</Stack>
 			<Slider
 				size='small'
 				valueLabelDisplay='off'
