@@ -8,6 +8,8 @@ import {
 	ListItemButton,
 	ListItemIcon,
 	ListItemText,
+	Menu,
+	MenuItem,
 	Stack,
 	SwipeableDrawer,
 	Typography,
@@ -66,9 +68,13 @@ function Drawer() {
 	const subListItems = [
 		{ name: '駅ログ！', icon: <PlaceIcon />, path: '/log' },
 		{ name: '地図', icon: <MapIcon />, path: '/map' },
-		{ name: '駅名言えるかな', icon: <SportsEsportsIcon />, path: '/station-quiz' },
 		{ name: 'お知らせ一覧', icon: <ArticleIcon />, path: '/news' },
 		{ name: '旅客営業規則', icon: <ArticleIcon />, path: '/passenger-regulations' },
+	];
+
+	const games = [{ name: '駅名言えるかな', icon: <SportsEsportsIcon />, path: '/station-quiz' }];
+
+	const systemItems = [
 		{ name: '大府市営地下鉄とは', icon: <HelpOutlineIcon />, path: '/about' },
 		{ name: '設定', icon: <SettingsIcon />, path: '/settings' },
 	];
@@ -82,6 +88,8 @@ function Drawer() {
 	}
 
 	function DrawerMenu() {
+		const [menuAnchorEl, setMenuAnchorEl] = useState(null);
+		const isMenuOpen = Boolean(menuAnchorEl);
 		return (
 			<Box sx={{ width: 250 }} onClick={() => setIsOpen(false)} onKeyDown={() => setIsOpen(false)}>
 				<List>
@@ -97,6 +105,48 @@ function Drawer() {
 				<Divider />
 				<List>
 					{subListItems.map(({ name, icon, path }) => (
+						<ListItem key={name} disablePadding>
+							<ListItemButton onClick={() => handleNavigate(path)}>
+								<ListItemIcon>{icon}</ListItemIcon>
+								<ListItemText primary={name} />
+							</ListItemButton>
+						</ListItem>
+					))}
+					<ListItem disablePadding>
+						<ListItemButton
+							onClick={(e) => {
+								e.stopPropagation();
+								setMenuAnchorEl((prev) => (prev ? null : e.currentTarget));
+							}}
+						>
+							<ListItemIcon>
+								<SportsEsportsIcon />
+							</ListItemIcon>
+							<ListItemText primary='ゲーム' />
+						</ListItemButton>
+					</ListItem>
+					<Menu
+						anchorEl={menuAnchorEl}
+						open={isMenuOpen}
+						onClose={() => setMenuAnchorEl(null)}
+						anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+					>
+						{games.map(({ name, path }) => (
+							<MenuItem
+								key={name}
+								onClick={() => {
+									handleNavigate(path);
+									setMenuAnchorEl(null);
+								}}
+							>
+								{name}
+							</MenuItem>
+						))}
+					</Menu>
+				</List>
+				<Divider />
+				<List>
+					{systemItems.map(({ name, icon, path }) => (
 						<ListItem key={name} disablePadding>
 							<ListItemButton onClick={() => handleNavigate(path)}>
 								<ListItemIcon>{icon}</ListItemIcon>
