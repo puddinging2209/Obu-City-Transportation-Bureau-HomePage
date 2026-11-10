@@ -66,6 +66,7 @@ function DepartureCard({ station, addButton = false, removeButton = false }) {
 							minHeight: 240,
 							position: 'relative',
 							flexShrink: 0,
+							borderRadius: 0.5,
 						}}
 					>
 						<CardContent>

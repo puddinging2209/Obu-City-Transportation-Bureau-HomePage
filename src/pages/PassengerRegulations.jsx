@@ -412,7 +412,7 @@ function PassengerRegulations() {
 						variant='outlined'
 						sx={{
 							p: 2,
-							borderRadius: 1,
+							borderRadius: 0.5,
 							position: { md: 'sticky' },
 							top: { md: 88 },
 							maxHeight: { md: 'calc(100vh - 112px)' },
@@ -478,7 +478,7 @@ function PassengerRegulations() {
 														key={article.title}
 														id={`article-${chapterIndex}-${articleIndex}`}
 														variant='outlined'
-														sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: 1, scrollMarginTop: 88 }}
+														sx={{ p: { xs: 2, sm: 2.5 }, borderRadius: 0.5, scrollMarginTop: 88 }}
 													>
 														<Typography variant='subtitle1' component='h3' sx={{ fontWeight: 700, mb: 1 }}>
 															第{getArticleNumber(chapterIndex, articleIndex)}条　{article.title}

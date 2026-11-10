@@ -119,7 +119,7 @@ function StationGroupAccordion({ title, stationIds, logs }) {
 						alignItems: 'center',
 					}}
 				>
-					<Typography variant='subtitle1'>{title}</Typography>
+					<Typography variant='subtitle1'>{`${visitedStationIds.size === stationList.length ? '☆' : ''}${title}`}</Typography>
 					<Typography variant='body1'>{`訪問済: ${visitedStationIds.size} 駅 / ${stationList.length} 駅`}</Typography>
 				</Box>
 			</AccordionSummary>
