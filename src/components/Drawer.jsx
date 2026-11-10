@@ -164,7 +164,9 @@ function Drawer() {
 						sx={{ pl: 2, pt: 1, color: 'text.primary', textAlign: 'left' }}
 					>
 						<Stack direction='column'>
-							<Typography variant='h6'>現在の称号</Typography>
+							<Typography variant='subtitle1' fontWeight='bold'>
+								現在の称号
+							</Typography>
 							<Typography variant='body1'>{titleName || 'なし'}</Typography>
 						</Stack>
 					</Button>

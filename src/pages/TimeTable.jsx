@@ -188,7 +188,7 @@ function TimeTable() {
 				</Stack>
 			</Stack>
 
-			<TableContainer sx={{ mt: 2 }} component={Paper}>
+			<TableContainer sx={{ mt: 2, borderRadius: 0 }} component={Paper}>
 				<Table>
 					<colgroup>
 						<col style={{ width: '5%' }} />
@@ -213,7 +213,7 @@ function TimeTable() {
 											i % 2 === 0 ? theme.palette.background.default
 											: theme.palette.mode === 'light' ? '#DDD'
 											: '#333',
-										display: i < 3 ? 'none' : '',
+										display: i < 3 || deps.length === 0 ? 'none' : '',
 									}}
 								>
 									<TableCell
@@ -242,14 +242,16 @@ function TimeTable() {
 															setPushed(dep);
 															setIsShowDialog(true);
 														}}
+														sx={{
+															p: 0,
+															mx: 0.4,
+															borderRadius: 0,
+															width: 42,
+															minWidth: 42,
+														}}
 														key={`${i}-${j}`}
 													>
-														<Box
-															sx={{
-																flex: '0 0 42px',
-																textAlign: 'center',
-															}}
-														>
+														<Box sx={{ flex: '0 0 39px' }}>
 															<Box
 																sx={{
 																	background: strong ? typesData[dep.typeName]?.color[typeColorMode] : '',
@@ -282,7 +284,7 @@ function TimeTable() {
 					</TableBody>
 				</Table>
 			</TableContainer>
-			{!loading && (
+			{!loading && departures.length !== 0 && (
 				<Stack sx={{ mt: 2 }} gap={1} direction='row'>
 					<Typography variant='body1' sx={{ flex: '0 0 auto' }} noWrap>
 						凡例：

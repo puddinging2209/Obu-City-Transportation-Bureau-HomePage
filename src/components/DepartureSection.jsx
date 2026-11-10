@@ -130,6 +130,7 @@ export default function DepartureSection() {
 										minHeight: 240,
 										position: 'relative',
 										flexShrink: 0,
+										borderRadius: 0.5,
 									}}
 								>
 									<Typography variant='body2' sx={{ mt: 2 }}>
@@ -166,6 +167,7 @@ export default function DepartureSection() {
 											minHeight: 240,
 											position: 'relative',
 											flexShrink: 0,
+											borderRadius: 0.5,
 										}}
 									>
 										<Typography variant='body2' sx={{ mt: 2 }}>
