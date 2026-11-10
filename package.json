@@ -57,7 +57,7 @@
 		"react-select": "^5.10.2",
 		"remark-gfm": "^4.0.1",
 		"vite-plugin-open-graph": "^2.0.6",
-		"vite-plugin-pwa": "^1.1.0",
+		"vite-plugin-pwa": "^2.0.0",
 		"yet-another-react-lightbox": "^3.28.0"
 	},
 	"allowScripts": {
