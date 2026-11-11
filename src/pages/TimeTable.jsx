@@ -203,18 +203,22 @@ function TimeTable() {
 					.map(([typeName, { color }], i) => (
 						<Chip
 							label={typeName}
-							onClick={() => {
+							onClick={(e) => {
 								if (filteredTypes.length === 0) {
 									setFilteredTypes(containedTypes.filter((t) => t !== typeName));
 								} else if (filteredTypes.includes(typeName)) {
 									setFilteredTypes(filteredTypes.filter((t) => t !== typeName));
-								} else if (filteredTypes.length === containedTypes.length - 1) {
-									setFilteredTypes([]);
+								} else {
+									if (filteredTypes.length === containedTypes.length - 1) {
+										setFilteredTypes([]);
+									} else {
+										setFilteredTypes([...filteredTypes, typeName]);
+									}
 								}
 							}}
-							onDoubleClick={() => {
+							onDoubleClick={(e) => {
 								if (filteredTypes.length === 0) {
-									setFilteredTypes([...filteredTypes, typeName]);
+									setFilteredTypes([typeName]);
 								} else {
 									setFilteredTypes([]);
 								}
@@ -222,6 +226,9 @@ function TimeTable() {
 							sx={{
 								color: typeColorMode === 'light' ? '#fff' : '#000',
 								backgroundColor: filteredTypes.includes(typeName) ? 'gray' : color[theme.palette.mode],
+								'&:focus': {
+									backgroundColor: filteredTypes.includes(typeName) ? 'gray' : color[theme.palette.mode],
+								},
 							}}
 							key={i}
 						/>
