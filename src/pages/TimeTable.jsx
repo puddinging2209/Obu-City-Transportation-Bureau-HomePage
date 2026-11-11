@@ -3,6 +3,7 @@ import React from 'react';
 import {
 	Box,
 	Button,
+	Chip,
 	CircularProgress,
 	Paper,
 	Stack,
@@ -35,8 +36,10 @@ function TimeTable() {
 	const [station, setStation] = useQueryState('station');
 	const [direction, setDirection] = useQueryState('direction', parseAsInteger.withDefault(0));
 
-	const [departures, setDepartures] = React.useState(Array.from({ length: 24 }, () => []));
+	const [departures, setDepartures] = React.useState([]);
 	const [loading, setLoading] = React.useState(false);
+
+	const [filteredTypes, setFilteredTypes] = React.useState([]);
 
 	const [pushed, setPushed] = React.useState(null);
 	const [isShowDialog, setIsShowDialog] = React.useState(false);
@@ -48,11 +51,13 @@ function TimeTable() {
 	const directionOptions = React.useMemo(() => getDirections(station), [station]);
 
 	function divideDeps(deps) {
-		let result = Array.from({ length: 27 }, () => []);
+		let result = [];
 		for (const dep of deps) {
-			const hour = Math.floor(dep.time / 3600) % 24;
+			let hour = Math.floor(dep.time / 3600) % 24;
+			if (hour < 3) hour += 24;
 			const min = Math.floor((dep.time % 3600) / 60);
-			result[hour < 3 ? hour + 24 : hour].push({ ...dep, min });
+			result[hour] ??= [];
+			result[hour].push({ ...dep, min });
 		}
 		result.forEach((deps) => deps.sort((a, b) => a.time - b.time));
 		return result;
@@ -77,14 +82,14 @@ function TimeTable() {
 			getDeparture(station, directionOptions[direction])
 				.then((deps) => setDepartures(divideDeps(deps)))
 				.catch(() => {
-					setDepartures(Array.from({ length: 27 }, () => []));
+					setDepartures([]);
 					alert('エラーが発生しました\nもう一度お試しください');
 				})
 				.finally(() => setLoading(false));
 		}
 	}, [direction]);
 
-	const { terminalLabels, terminalEntries } = React.useMemo(() => {
+	const { terminalLabels, terminalEntries, containedTypes } = React.useMemo(() => {
 		const terminalCounts = {};
 		const getTerminalParts = (terminal) => {
 			if (terminal.includes('・')) return terminal.split('・');
@@ -98,8 +103,11 @@ function TimeTable() {
 			return letters;
 		};
 
+		let containedTypes = new Set();
 		for (const deps of departures) {
+			if (!deps) continue;
 			for (const dep of deps) {
+				containedTypes.add(dep.typeName);
 				for (const terminal of getTerminalParts(dep.terminal)) {
 					terminalCounts[terminal] = (terminalCounts[terminal] ?? 0) + 1;
 				}
@@ -144,6 +152,7 @@ function TimeTable() {
 		return {
 			terminalLabels: labels,
 			terminalEntries: Object.entries(terminalMap),
+			containedTypes: Array.from(containedTypes),
 		};
 	}, [departures]);
 
@@ -186,6 +195,37 @@ function TimeTable() {
 						))}
 					</Tabs>
 				</Stack>
+			</Stack>
+
+			<Stack sx={{ mt: 2 }} direction='row' justifyContent='left' gap={1} flexWrap='wrap' useFlexGap>
+				{Object.entries(typesData)
+					.filter(([typeName]) => containedTypes.includes(typeName))
+					.map(([typeName, { color }], i) => (
+						<Chip
+							label={typeName}
+							onClick={() => {
+								if (filteredTypes.length === 0) {
+									setFilteredTypes(containedTypes.filter((t) => t !== typeName));
+								} else if (filteredTypes.includes(typeName)) {
+									setFilteredTypes(filteredTypes.filter((t) => t !== typeName));
+								} else if (filteredTypes.length === containedTypes.length - 1) {
+									setFilteredTypes([]);
+								}
+							}}
+							onDoubleClick={() => {
+								if (filteredTypes.length === 0) {
+									setFilteredTypes([...filteredTypes, typeName]);
+								} else {
+									setFilteredTypes([]);
+								}
+							}}
+							sx={{
+								color: typeColorMode === 'light' ? '#fff' : '#000',
+								backgroundColor: filteredTypes.includes(typeName) ? 'gray' : color[theme.palette.mode],
+							}}
+							key={i}
+						/>
+					))}
 			</Stack>
 
 			<TableContainer sx={{ mt: 2, borderRadius: 0 }} component={Paper}>
@@ -236,6 +276,7 @@ function TimeTable() {
 											{deps.map((dep, j) => {
 												const strong = dep.typeName === '特急';
 												const frame = dep.typeName === 'ライナー' || dep.typeName === '各駅停車';
+												if (filteredTypes.includes(dep.typeName)) return null;
 												return (
 													<Button
 														onClick={() => {
@@ -285,17 +326,12 @@ function TimeTable() {
 				</Table>
 			</TableContainer>
 			{!loading && departures.length !== 0 && (
-				<Stack sx={{ mt: 2 }} gap={1} direction='row'>
-					<Typography variant='body1' sx={{ flex: '0 0 auto' }} noWrap>
-						凡例：
-					</Typography>
-					<Stack direction='row' justifyContent='left' gap={2} flexWrap='wrap' useFlexGap>
-						{terminalEntries.map(([letter, { label: terminal }], i) => (
-							<Typography variant='body1' key={i}>
-								{letter}: {terminal}
-							</Typography>
-						))}
-					</Stack>
+				<Stack sx={{ mt: 2 }} direction='row' justifyContent='left' gap={2} flexWrap='wrap' useFlexGap>
+					{terminalEntries.map(([letter, { label: terminal }], i) => (
+						<Typography variant='body1' key={i}>
+							{letter}: {terminal}
+						</Typography>
+					))}
 				</Stack>
 			)}
 
