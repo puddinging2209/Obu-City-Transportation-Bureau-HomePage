@@ -1,6 +1,8 @@
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import CloseIcon from '@mui/icons-material/Close';
 import LayersIcon from '@mui/icons-material/Layers';
-import { Box, CircularProgress, Fab, Stack } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Box, CircularProgress, Fab, Stack, Zoom } from '@mui/material';
 import { useAtomValue, useSetAtom, useStore } from 'jotai';
 import { AttributionControl, NavigationControl, setWorkerUrl } from 'maplibre-gl';
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
@@ -43,6 +45,7 @@ function TrainMapContent({ mapTheme }) {
 	const [isLoading, setIsLoading] = React.useState(true);
 	const layersEnabled = useAtomValue(layersEnabledAtom);
 	const updateLayerEnabled = useSetAtom(updateLayerEnabledAtom);
+	const [isFabsOpen, setIsFabsOpen] = React.useState(false);
 	const timeState = useAtomValue(timeAtom);
 	const getSimulationTime = useAtomValue(simulationTimeGetterAtom);
 	const setBottomSheetContent = useSetAtom(setBottomSheetComponentAtom);
@@ -287,21 +290,35 @@ function TrainMapContent({ mapTheme }) {
 				}}
 				spacing={2}
 			>
+				<Zoom in={isFabsOpen} unmountOnExit style={{ transitionDelay: isFabsOpen ? '100ms' : '0ms' }}>
+					<Fab
+						onClick={() => {
+							setBottomSheetContent(LayersControl, { layers: layersRef.current });
+							setBottomSheetTitle('レイヤー表示');
+						}}
+					>
+						<LayersIcon />
+					</Fab>
+				</Zoom>
+
+				<Zoom in={isFabsOpen} unmountOnExit>
+					<Fab
+						onClick={() => {
+							setBottomSheetContent(TimeControl);
+							setBottomSheetTitle('時間操作');
+						}}
+					>
+						<AccessTimeIcon />
+					</Fab>
+				</Zoom>
 				<Fab
 					onClick={() => {
-						setBottomSheetContent(LayersControl, { layers: layersRef.current });
-						setBottomSheetTitle('レイヤー表示');
+						setIsFabsOpen((prev) => !prev);
 					}}
 				>
-					<LayersIcon></LayersIcon>
-				</Fab>
-				<Fab
-					onClick={() => {
-						setBottomSheetContent(TimeControl);
-						setBottomSheetTitle('時間操作');
-					}}
-				>
-					<AccessTimeIcon></AccessTimeIcon>
+					{isFabsOpen ?
+						<CloseIcon />
+					:	<MenuIcon />}
 				</Fab>
 			</Stack>
 			<BottomSheet></BottomSheet>
