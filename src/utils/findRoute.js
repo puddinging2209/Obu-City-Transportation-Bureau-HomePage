@@ -19,29 +19,90 @@ const heuristicWeights = {
 	normal: 1.1,
 };
 
+const EMPTY = [];
+
+// ============================================================
+// 起動時に一度だけ作る索引
+// ============================================================
+
+// ==== 距離キャッシュ ====
 const distanceCache = new Map();
 
-function getDistanceCacheKey(couple) {
-	return couple.map(id).sort().join(',');
-}
-
 function getDistance(s1, s2) {
-	const key = getDistanceCacheKey([s1, s2]);
-	if (distanceCache.has(key)) return distanceCache.get(key);
-	const result = getD(s1, s2);
-	distanceCache.set(key, result);
+	const a = id(s1);
+	const b = id(s2);
+	const key = a < b ? `${a},${b}` : `${b},${a}`;
+	let result = distanceCache.get(key);
+	if (result === undefined) {
+		result = getD(s1, s2);
+		distanceCache.set(key, result);
+	}
 	return result;
 }
 
 // ==== 隣接リスト作成 ====
-const graph = {};
-const seenEdges = new Set();
-for (const e of edges) {
-	const key = `${e.from}-${e.to}`;
-	if (seenEdges.has(key)) continue;
-	seenEdges.add(key);
-	if (!graph[e.from]) graph[e.from] = [];
-	graph[e.from].push({ node: e.to });
+const graph = new Map();
+{
+	const seenEdges = new Set();
+	for (const e of edges) {
+		const key = `${e.from}-${e.to}`;
+		if (seenEdges.has(key)) continue;
+		seenEdges.add(key);
+		let list = graph.get(e.from);
+		if (!list) graph.set(e.from, (list = []));
+		list.push({ node: e.to, id: id(e.to) });
+	}
+}
+
+// ==== 駅ID → そのIDを持つノード(コード)一覧 ====
+const codesById = new Map();
+for (const [c, n] of Object.entries(nodes)) {
+	const key = String(n.id);
+	let list = codesById.get(key);
+	if (!list) codesById.set(key, (list = []));
+	list.push(c);
+}
+
+// ==== 徒歩経路: from → path ====
+const walkPathByFrom = new Map();
+for (const p of walkPath) {
+	if (!walkPathByFrom.has(p.from)) walkPathByFrom.set(p.from, p);
+}
+
+// ==== 重複乗車の例外ルール（ID は前計算） ====
+const duplicateRules = allowDuplicateSections
+	.map((rule) => ({ fromId: id(rule.fromSta), toId: id(rule.toSta), lines: rule.lines ?? [] }))
+	.filter((r) => r.fromId && r.toId);
+
+// ==== 訪問済み集合のハッシュ（Zobrist 方式。XOR で差分更新できる） ====
+function hash32(str, seed) {
+	let h = seed >>> 0;
+	for (let i = 0; i < str.length; i++) {
+		h ^= str.charCodeAt(i);
+		h = Math.imul(h, 16777619);
+	}
+	h ^= h >>> 16;
+	h = Math.imul(h, 0x85ebca6b);
+	h ^= h >>> 13;
+	h = Math.imul(h, 0xc2b2ae35);
+	h ^= h >>> 16;
+	return h >>> 0;
+}
+
+const zobristCache = new Map();
+function zobrist(item) {
+	let z = zobristCache.get(item);
+	if (!z) {
+		const s = String(item);
+		z = [hash32(s, 0x811c9dc5), hash32(s, 0x9747b28c)];
+		zobristCache.set(item, z);
+	}
+	return z;
+}
+
+/** 2つの32bitハッシュから 53bit の数値キーを作る */
+function visitedKey(h1, h2) {
+	return h1 * 2097152 + (h2 >>> 11);
 }
 
 // ==== 優先度付きキュー（最小ヒープ） ====
@@ -104,14 +165,18 @@ class MinHeap {
 }
 
 // A*関係
-function haversine(a, b) {
-	const R = 6371e3; // m
-	const toRad = (d) => (d * Math.PI) / 180;
+const toRad = (d) => (d * Math.PI) / 180;
 
-	const lon1 = toRad(stations[id(a)].lng);
-	const lat1 = toRad(stations[id(a)].lat);
-	const lon2 = toRad(stations[id(b)].lng);
-	const lat2 = toRad(stations[id(b)].lat);
+/** 駅ID同士の距離(m) */
+function haversineById(idA, idB) {
+	const R = 6371e3; // m
+	const a = stations[idA];
+	const b = stations[idB];
+
+	const lon1 = toRad(a.lng);
+	const lat1 = toRad(a.lat);
+	const lon2 = toRad(b.lng);
+	const lat2 = toRad(b.lat);
 
 	const dLat = lat2 - lat1;
 	const dLon = lon2 - lon1;
@@ -121,52 +186,31 @@ function haversine(a, b) {
 	return 2 * R * Math.asin(Math.sqrt(h));
 }
 
-function heuristic(sta, goal) {
-	if (!nodes[code(sta)] || !nodes[code(goal)]) return 0;
-	return haversine(sta, goal) / MAX_SPEED;
+function makeStateId(staId, phase, visitedIndex) {
+	return `${staId}@${phase}@${visitedIndex}`;
 }
 
-function isForward(current, next, goal, border = 10000) {
-	const d1 = haversine(current, goal);
-	const d2 = haversine(next, goal);
-	return d2 < d1 + border; // 少し余裕を持たせる
-}
+/**
+ * 重複乗車を許す区間ルールを探す（訪問済み Set の中に from → to の順で入っていて、路線が一致するもの）
+ */
+function findAllowedDuplicateRule(station, nextStation, nextId, visited) {
+	if (duplicateRules.length === 0 || !nextId) return null;
 
-function isFar(start, current, goal, d) {
-	const d1 = haversine(start, current);
-	const d2 = haversine(current, goal);
-	return d1 + d2 > d * 1000 * 1.3;
-}
-
-function makeStateId(sta, phase, visitedIndex) {
-	return `${id(sta)}@${phase}@${visitedIndex}`;
-}
-
-function setKey(sta, set) {
-	return `${id(sta)}@${[...set].sort().join(',')}`;
-}
-
-function findAllowedDuplicateRule(station, nextStation, visitedArray) {
-	const nextStationId = id(nextStation);
-	if (!nextStationId) return null;
-
-	const visitedIds = (visitedArray ?? []).map((s) => id(s)).filter(Boolean);
 	const currentLine = nodes[station]?.json;
 	const targetLine = nodes[nextStation]?.json;
 
-	return (
-		allowDuplicateSections.find((rule) => {
-			const fromId = id(rule.fromSta);
-			const toId = id(rule.toSta);
-			if (!fromId || !toId) return false;
+	let order = null;
+	for (const rule of duplicateRules) {
+		if (!visited.has(rule.fromId) || !visited.has(rule.toId)) continue;
 
-			const fromIndex = visitedIds.lastIndexOf(fromId);
-			const toIndex = visitedIds.lastIndexOf(toId);
-			if (fromIndex === -1 || toIndex === -1 || toIndex <= fromIndex) return false;
+		order ??= [...visited];
+		const fromIndex = order.lastIndexOf(rule.fromId);
+		const toIndex = order.lastIndexOf(rule.toId);
+		if (toIndex <= fromIndex) continue;
 
-			return [currentLine, targetLine].some((line) => rule.lines.includes(line));
-		}) ?? null
-	);
+		if (rule.lines.includes(currentLine) || rule.lines.includes(targetLine)) return rule;
+	}
+	return null;
 }
 
 function containsInOrder(parent, sub) {
@@ -186,41 +230,44 @@ function containsInOrder(parent, sub) {
  * @param {string} goal 到着駅（ナンバリング）
  * @param {number} baseTime 出発時刻（mode=0）または到着時刻（mode=1）
  * @param {number} mode 出発時刻から検索(0) or 到着時刻から検索(1)
+ * @param {number} transferTime 乗換にかかる時間（秒）
  * @param {boolean} tokkyu 有料列車（特急 or ライナー）を許可するかどうか
  * @param {string} heuristicMode ヒューリスティックの重み (light, medium, normal)
  * @param {boolean} allowOuterTransfer 改札外乗り換えを許可するかどうか
  * @defaultValue allowOuterTransfer = false
- * @returns {[{train: string, from: string, to: string, depTime: number, arrTime: number, terminal: string, typeName: string, line: string}, ...]} 経路の詳細情報の配列
+ * @param {Array<string>} passStations 必ず通過する駅（順序あり）
+ * @returns 経路の詳細情報（reconstructByState の戻り値）。見つからなければ null
  */
-
 export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu, heuristicMode, allowOuterTransfer = false, passStations = []) {
 	const pq = new MinHeap();
 
-	const bestTime = {};
-	const bestTransfer = {};
+	const bestTime = new Map();
+	const bestTransfer = new Map();
+	const rideVer = new Map(); // ride 状態の更新回数（古い push を捨てるため）
 	const previous = {};
 	const used = {};
-	const visiteds = {};
+
+	// 訪問済み集合は (ハッシュ) → 通し番号 で共有する
+	const visitedStore = []; // { set, h1, h2 }
 	const visitedPool = new Map();
-
-	const getVisitedIndex = (sta, set) => {
-		const key = setKey(sta, set);
-
-		if (visitedPool.has(key)) {
-			return visitedPool.get(key);
+	const internVisited = (h1, h2, build) => {
+		const key = visitedKey(h1, h2);
+		let idx = visitedPool.get(key);
+		if (idx === undefined) {
+			idx = visitedStore.length;
+			visitedStore.push({ set: build(), h1, h2 });
+			visitedPool.set(key, idx);
 		}
-
-		visiteds[sta] ??= [];
-		const index = visiteds[sta].length;
-		visiteds[sta].push(set);
-		visitedPool.set(key, index);
-		return index;
+		return idx;
 	};
 
 	const startStation = mode === 0 ? code(start) : code(goal);
 	const goalStation = mode === 0 ? code(goal) : code(start);
+	const startId = id(startStation);
+	const goalId = id(goalStation);
 
 	const distance = getDistance(id(start), id(goal));
+	const farLimit = distance * 1000 * 1.3;
 
 	const header = {
 		from: id(start),
@@ -229,59 +276,96 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 		fare: getFare(distance),
 	};
 
-	const makePriority = (time, station, transfer) => {
-		const h = heuristic(station, goalStation);
-		let heuristicWeight = heuristicWeights[heuristicMode];
-
-		return {
-			priority: Math.abs(time - baseTime) + h * heuristicWeight,
-			tie: transfer,
-		};
+	// ---- 探索中は出発・到着が固定なので、駅ごとの距離は一度だけ計算する ----
+	const toGoalCache = new Map();
+	const fromStartCache = new Map();
+	const distToGoal = (staId) => {
+		let v = toGoalCache.get(staId);
+		if (v === undefined) {
+			v = haversineById(staId, goalId);
+			toGoalCache.set(staId, v);
+		}
+		return v;
+	};
+	const distFromStart = (staId) => {
+		let v = fromStartCache.get(staId);
+		if (v === undefined) {
+			v = haversineById(startId, staId);
+			fromStartCache.set(staId, v);
+		}
+		return v;
 	};
 
-	Object.keys(nodes)
-		.filter((code) => id(code) === id(startStation))
-		.forEach((code) => {
-			const staId = id(code);
+	const goalNodeExists = !!nodes[code(goalStation)];
+	const heuristicWeight = heuristicWeights[heuristicMode];
+	const hCache = new Map();
+	const heuristicOf = (station) => {
+		let v = hCache.get(station);
+		if (v === undefined) {
+			v = goalNodeExists && nodes[code(station)] ? distToGoal(id(station)) / MAX_SPEED : 0;
+			hCache.set(station, v);
+		}
+		return v;
+	};
 
-			const startVisited = new Set([staId]);
-			const visitedIndex = getVisitedIndex(staId, startVisited);
+	const makePriority = (time, station, transfer) => ({
+		priority: Math.abs(time - baseTime) + heuristicOf(station) * heuristicWeight,
+		tie: transfer,
+	});
 
-			const startStateId = makeStateId(code, 'transfer', visitedIndex);
+	// 駅ごとの「各駅間で残す列車の最大数」
+	const sliceCache = new Map();
+	const sliceLimitOf = (staId) => {
+		let v = sliceCache.get(staId);
+		if (v === undefined) {
+			v = Math.max(3, Math.ceil(getDistance(staId, goalId) / 12));
+			sliceCache.set(staId, v);
+		}
+		return v;
+	};
 
-			bestTime[startStateId] = baseTime;
-			bestTransfer[startStateId] = 0;
+	const passIds = passStations.map((s) => id(s));
 
-			pq.push({
-				station: code,
-				time: baseTime,
-				phase: 'transfer',
-				visitedIndex,
-				transfer: 0,
-				...makePriority(baseTime, code, 0),
-			});
+	// ---- 開始状態 ----
+	for (const c of Object.keys(nodes)) {
+		if (id(c) !== startId) continue;
+
+		const staId = id(c);
+		const z = zobrist(staId);
+		const visitedIndex = internVisited(z[0], z[1], () => new Set([staId]));
+		const startStateId = makeStateId(staId, 'transfer', visitedIndex);
+
+		bestTime.set(startStateId, baseTime);
+		bestTransfer.set(startStateId, 0);
+
+		pq.push({
+			station: c,
+			time: baseTime,
+			phase: 'transfer',
+			visitedIndex,
+			transfer: 0,
+			...makePriority(baseTime, c, 0),
 		});
+	}
 
 	let goalStateId = null;
 
 	while (true) {
 		const cur = pq.pop();
-		if (!cur) {
-			break;
-		}
+		if (!cur) break;
 
 		const { station, time, phase, visitedIndex, transfer } = cur;
-		const visited = visiteds[id(station)][visitedIndex];
-		const curStateId = makeStateId(station, phase, visitedIndex);
+		const stationId = id(station);
+		const curStateId = makeStateId(stationId, phase, visitedIndex);
+
+		// より良い状態で上書きされた古いエントリは捨てる
+		if (phase === 'ride' && rideVer.get(curStateId) !== cur.ver) continue;
+
+		const { set: visited, h1: vh1, h2: vh2 } = visitedStore[visitedIndex];
 
 		// === ゴール ===
-		if (id(station) === id(goalStation) && phase === 'ride') {
-			if (
-				containsInOrder(
-					[...visited],
-					passStations.map((s) => id(s)),
-				)
-			) {
+		if (stationId === goalId && phase === 'ride') {
+			if (passIds.length === 0 || containsInOrder([...visited], passIds)) {
 				goalStateId = curStateId;
 				header.visited = [...visited].map((s) => id(s));
 				break;
@@ -291,7 +375,7 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 		}
 
 		// === 枝切り(?) ===
-		if (isFar(startStation, station, goalStation, distance)) {
+		if (distFromStart(stationId) + distToGoal(stationId) > farLimit) {
 			continue;
 		}
 
@@ -299,33 +383,34 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 		if (phase === 'ride') {
 			const nextTime = time;
 
-			const codes = Object.entries(nodes)
-				.filter((sta) => sta[1].id == id(station))
-				.map((sta) => sta[0]);
+			const codes = codesById.get(String(stationId)) ?? EMPTY;
 			for (const nextCode of codes) {
 				if (nodes[nextCode].line === '徒歩経路' && !allowOuterTransfer) continue;
 				const staId = id(nextCode);
-				const nextVisited = new Set(visited);
-				nextVisited.add(staId);
 
-				const visitedIndex = getVisitedIndex(staId, nextVisited);
+				let nextIndex = visitedIndex;
+				if (!visited.has(staId)) {
+					const z = zobrist(staId);
+					nextIndex = internVisited((vh1 ^ z[0]) >>> 0, (vh2 ^ z[1]) >>> 0, () => {
+						const s = new Set(visited);
+						s.add(staId);
+						return s;
+					});
+				}
 
-				const nextStateId = makeStateId(nextCode, 'transfer', visitedIndex);
+				const nextStateId = makeStateId(staId, 'transfer', nextIndex);
+				const best = bestTime.get(nextStateId);
 
-				if (
-					bestTime[nextStateId] === undefined ||
-					(mode === 0 && nextTime <= bestTime[nextStateId]) ||
-					(mode === 1 && nextTime >= bestTime[nextStateId])
-				) {
-					bestTime[nextStateId] = nextTime;
-					bestTransfer[nextStateId] = transfer;
+				if (best === undefined || (mode === 0 && nextTime <= best) || (mode === 1 && nextTime >= best)) {
+					bestTime.set(nextStateId, nextTime);
+					bestTransfer.set(nextStateId, transfer);
 					previous[nextStateId] = curStateId;
 
 					pq.push({
 						station: nextCode,
 						time: nextTime,
 						phase: 'transfer',
-						visitedIndex,
+						visitedIndex: nextIndex,
 						transfer: transfer,
 						...makePriority(nextTime, nextCode, transfer),
 					});
@@ -337,115 +422,198 @@ export async function dijkstra(start, goal, baseTime, mode, transferTime, tokkyu
 		if (phase === 'transfer') {
 			if (nodes[station].line === '徒歩経路') {
 				if (!allowOuterTransfer) continue;
-				const path = walkPath.find((path) => path.from === station);
-				if ([...visited].some((s) => id(s) === id(path.to))) continue;
+				const path = walkPathByFrom.get(station);
+				if (!path) continue;
 
-				const staId = id(path.to);
-				const nextTime = time + path.time;
+				const toId = id(path.to);
+				if ([...visited].some((s) => id(s) === toId)) continue;
+
+				// 乗換時間は ride の push 時ではなく、ここ（次の乗車/徒歩の開始時）で見込む
+				const walkStart = previous[curStateId] === undefined ? time : time + transferTime;
+				const nextTime = walkStart + path.time;
 				const nextTransfer = transfer + 1;
-				const nextVisited = new Set([...visited, staId]);
 
-				const visitedIndex = getVisitedIndex(staId, nextVisited);
+				const z = zobrist(toId);
+				const nextIndex = internVisited((vh1 ^ z[0]) >>> 0, (vh2 ^ z[1]) >>> 0, () => {
+					const s = new Set(visited);
+					s.add(toId);
+					return s;
+				});
 
-				const nextStateId = makeStateId(path.to, 'ride', visitedIndex);
+				const nextStateId = makeStateId(toId, 'ride', nextIndex);
 
-				bestTime[nextStateId] = nextTime;
-				bestTransfer[nextStateId] = nextTransfer;
+				bestTime.set(nextStateId, nextTime);
+				bestTransfer.set(nextStateId, nextTransfer);
 				previous[nextStateId] = curStateId;
 				used[nextStateId] = {
 					train: 'walking',
 					arr: nextTime,
-					dep: time,
+					dep: walkStart,
 					from: station,
 					to: path.to,
 					viaRosen: ['徒歩経路'],
 					meter: path.meter,
 				};
+				const ver = (rideVer.get(nextStateId) ?? 0) + 1;
+				rideVer.set(nextStateId, ver);
 
 				pq.push({
 					station: path.to,
-					time: nextTime + transferTime,
+					time: nextTime,
 					phase: 'ride',
-					visitedIndex,
+					visitedIndex: nextIndex,
 					transfer: nextTransfer,
+					ver,
 					...makePriority(nextTime, path.to, nextTransfer),
 				});
 			} else {
-				for (const { node: nextStation } of graph[station] ?? []) {
-					// 不正乗車、ダメゼッタイ
-					const visitedArray = [...visited];
-					const duplicateRule = findAllowedDuplicateRule(station, nextStation, visitedArray);
-					if (visitedArray.includes(id(nextStation)) && !duplicateRule) continue;
+				const sliceLimit = sliceLimitOf(stationId);
 
-					const searchVisited = visitedArray;
+				// 直前に乗っていた列車（この transfer 状態に至る ride 状態の used）
+				const prevRide = previous[curStateId];
+				const hasPrev = prevRide !== undefined;
+				const prevNumber = hasPrev ? used[prevRide]?.train?.number : undefined;
+				// 列車番号が同じ列車への継続は乗換ではない（番号が空/未定義なら継続とみなさない）
+				const canContinue = prevNumber != null && prevNumber !== '';
+				const isContinuation = (result) => canContinue && result.train?.number === prevNumber;
+				// 乗換が必要な列車は「到着 + 乗換時間」以降、継続なら到着直後から乗れる
+				const searchTime = hasPrev ? time + transferTime : time;
 
-					const results = await searchFastestTrain(
-						time,
-						mode === 0 ? station : nextStation,
-						mode === 0 ? nextStation : station,
-						mode,
-						tokkyu,
-						searchVisited,
-						duplicateRule ? [id(duplicateRule.fromSta)] : [],
-					).then((res) => res.slice(0, Math.max(3, Math.ceil(getDistance(id(station), id(goalStation)) / 12))));
+				// --- 隣接駅ごとの検索対象を決める（不正乗車、ダメゼッタイ） ---
+				const jobs = [];
+				for (const nb of graph.get(station) ?? EMPTY) {
+					const duplicateRule = findAllowedDuplicateRule(station, nb.node, nb.id, visited);
+					if (visited.has(nb.id) && !duplicateRule) continue;
+					jobs.push({
+						nb,
+						allowed: duplicateRule ? [duplicateRule.fromId] : EMPTY,
+						// 路線をまたぐ辺だけ「同一列車の継続」を別検索する
+						// （同一路線内の継続は searchOtherStops が1回の乗車として列挙済みのため不要）
+						crossLine: canContinue && nodes[station].json !== nodes[nb.node]?.json,
+					});
+				}
 
-					for (const result of results) {
-						if (!result?.train) continue;
+				// --- 時刻表検索は並列に実行（結果の処理順は元の順序のまま） ---
+				const resolved = await Promise.all(
+					jobs.map(async ({ nb, allowed, crossLine }) => {
+						const fromSta = mode === 0 ? station : nb.node;
+						const toSta = mode === 0 ? nb.node : station;
 
-						const other = await searchOtherStops(
-							mode === 0 ? station : nextStation,
-							mode === 0 ? result.dep : result.arr,
-							result.train,
-							searchVisited,
-							mode,
-							duplicateRule ? [id(duplicateRule.fromSta)] : [],
+						const [fromTransferTrains, continuingTrains] = await Promise.all([
+							searchFastestTrain(searchTime, fromSta, toSta, mode, tokkyu, visited, allowed, sliceLimit),
+							crossLine
+								? searchFastestTrain(time, fromSta, toSta, mode, tokkyu, visited, allowed, sliceLimit, prevNumber)
+								: EMPTY,
+						]);
+
+						const results = [...fromTransferTrains];
+						for (const r of continuingTrains) {
+							if (!results.some((a) => a.train === r.train && a.dep === r.dep)) results.push(r);
+						}
+
+						return Promise.all(
+							results
+								.filter((result) => result?.train)
+								.map(async (result) => ({
+									result,
+									other: await searchOtherStops(
+										mode === 0 ? station : nb.node,
+										mode === 0 ? result.dep : result.arr,
+										result.train,
+										visited,
+										mode,
+										allowed,
+									),
+								})),
 						);
+					}),
+				);
 
-						for (const { to, arr, dep, newVisited: visited, viaRosen } of other) {
+				for (const runs of resolved) {
+					for (const { result, other } of runs) {
+						const newTransfer = !isContinuation(result);
+						const nextTransfer = transfer + Number(newTransfer);
+
+						// 同じ列車の結果は trail を共有しているので、ハッシュは差分で伸ばす
+						let runTrail = null;
+						let runK = 0;
+						let runH1 = 0;
+						let runH2 = 0;
+						let runSeen = null;
+
+						for (const o of other) {
+							const { to, arr, dep, trail, trailLen, viaRosen } = o;
 							const nextTime = mode === 0 ? arr : dep;
 
-							const nextVisited = new Set(visited);
-
-							const staId = id(to);
-							const visitedIndex = getVisitedIndex(staId, nextVisited);
-
-							const nextStateId = makeStateId(to, 'ride', visitedIndex);
-
-							const newTransfer =
-								used[curStateId]?.train?.number !== result.train?.number ||
-								used[curStateId]?.train?.number === '' ||
-								result?.train?.number === '';
-							const nextTransfer = transfer + Number(newTransfer);
-
-							if (
-								(bestTime[nextStateId] === undefined ||
-									(mode === 0 && nextTime < bestTime[nextStateId]) ||
-									(mode === 1 && nextTime > bestTime[nextStateId]) ||
-									(nextTime === bestTime[nextStateId] && bestTransfer[nextStateId] > nextTransfer)) &&
-								isForward(station, to, goalStation, 10000)
-							) {
-								bestTime[nextStateId] = nextTime;
-								bestTransfer[nextStateId] = nextTransfer;
-								previous[nextStateId] = curStateId;
-								used[nextStateId] = {
-									...result,
-									arr: mode === 0 ? arr : result.arr,
-									dep: mode === 1 ? dep : result.dep,
-									from: station,
-									to: to,
-									viaRosen,
-									lastRosen: result.lastRosen,
-								};
-
-								pq.push({
-									station: to,
-									time: nextTime + Number(newTransfer) * transferTime,
-									phase: 'ride',
-									visitedIndex,
-									transfer: nextTransfer,
-									...makePriority(nextTime, to, nextTransfer),
-								});
+							if (trail !== runTrail) {
+								runTrail = trail;
+								runK = 0;
+								runH1 = vh1;
+								runH2 = vh2;
+								runSeen = null;
 							}
+							for (; runK < trailLen; runK++) {
+								const item = trail[runK];
+								if (visited.has(item) || runSeen?.has(item)) continue;
+								(runSeen ??= new Set()).add(item);
+								const z = zobrist(item);
+								runH1 = (runH1 ^ z[0]) >>> 0;
+								runH2 = (runH2 ^ z[1]) >>> 0;
+							}
+
+							const toId = id(to);
+							const key = visitedKey(runH1, runH2);
+							let nextIndex = visitedPool.get(key);
+
+							let best;
+							let nextStateId = null;
+							if (nextIndex !== undefined) {
+								nextStateId = makeStateId(toId, 'ride', nextIndex);
+								best = bestTime.get(nextStateId);
+							}
+
+							const better =
+								best === undefined ||
+								(mode === 0 && nextTime < best) ||
+								(mode === 1 && nextTime > best) ||
+								(nextTime === best && bestTransfer.get(nextStateId) > nextTransfer);
+							if (!better) continue;
+							if (!(distToGoal(toId) < distToGoal(stationId) + 10000)) continue; // isForward
+
+							// 採用する状態だけ訪問済み集合を実体化する
+							if (nextIndex === undefined) {
+								const set = new Set(visited);
+								for (let k = 0; k < trailLen; k++) set.add(trail[k]);
+								nextIndex = visitedStore.length;
+								visitedStore.push({ set, h1: runH1, h2: runH2 });
+								visitedPool.set(key, nextIndex);
+								nextStateId = makeStateId(toId, 'ride', nextIndex);
+							}
+
+							bestTime.set(nextStateId, nextTime);
+							bestTransfer.set(nextStateId, nextTransfer);
+							previous[nextStateId] = curStateId;
+							used[nextStateId] = {
+								...result,
+								arr: mode === 0 ? arr : result.arr,
+								dep: mode === 1 ? dep : result.dep,
+								from: station,
+								to: to,
+								viaRosen,
+								lastRosen: result.lastRosen,
+							};
+							const ver = (rideVer.get(nextStateId) ?? 0) + 1;
+							rideVer.set(nextStateId, ver);
+
+							pq.push({
+								station: to,
+								time: nextTime,
+								phase: 'ride',
+								visitedIndex: nextIndex,
+								transfer: nextTransfer,
+								ver,
+								...makePriority(nextTime, to, nextTransfer),
+							});
 						}
 					}
 				}
