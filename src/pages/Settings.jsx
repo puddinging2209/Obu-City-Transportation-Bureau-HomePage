@@ -116,27 +116,25 @@ function Settings() {
 			<TabPanel value={tabValue} index={2}>
 				<Card sx={{ borderRadius: `0 0 ${theme.shape.borderRadius}px ${theme.shape.borderRadius}px` }}>
 					<CardContent>
-						<Stack direction='row' justifyContent='space-between' alignItems='center' nowrap>
-							{titleIds.length > 0 ?
-								<Stack direction='row' justifyContent='space-between' alignItems='center' nowrap>
-									称号の変更
-									<Select
-										value={title}
-										onChange={(e) => {
-											setTitle(e.target.value);
-											window.localStorage.setItem('title', e.target.value);
-										}}
-										size='small'
-									>
-										{titleIds.map((title) => (
-											<MenuItem value={title} key={title}>
-												{titleNames[title] ?? '読み込み中…'}
-											</MenuItem>
-										))}
-									</Select>
-								</Stack>
-							:	<Typography>称号がまだありません</Typography>}
-						</Stack>
+						{titleIds.length > 0 ?
+							<Stack direction='row' justifyContent='space-between' alignItems='center' nowrap>
+								称号の変更
+								<Select
+									value={title}
+									onChange={(e) => {
+										setTitle(e.target.value);
+										window.localStorage.setItem('title', e.target.value);
+									}}
+									size='small'
+								>
+									{titleIds.map((title) => (
+										<MenuItem value={title} key={title}>
+											{titleNames[title] ?? '読み込み中…'}
+										</MenuItem>
+									))}
+								</Select>
+							</Stack>
+						:	<Typography>称号がまだありません</Typography>}
 					</CardContent>
 				</Card>
 			</TabPanel>

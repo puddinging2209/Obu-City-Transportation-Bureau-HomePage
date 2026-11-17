@@ -1,6 +1,5 @@
 import {
 	Box,
-	Button,
 	Divider,
 	Link,
 	List,
@@ -91,7 +90,12 @@ function Drawer() {
 		const [menuAnchorEl, setMenuAnchorEl] = useState(null);
 		const isMenuOpen = Boolean(menuAnchorEl);
 		return (
-			<Box sx={{ width: 250 }} onClick={() => setIsOpen(false)} onKeyDown={() => setIsOpen(false)}>
+			<Stack
+				direction='column'
+				sx={{ width: 250, height: '100%', boxsizing: 'border-box' }}
+				onClick={() => setIsOpen(false)}
+				onKeyDown={() => setIsOpen(false)}
+			>
 				<List>
 					{listItems.map(({ name, icon, path }) => (
 						<ListItem key={name} disablePadding>
@@ -155,13 +159,14 @@ function Drawer() {
 						</ListItem>
 					))}
 				</List>
-				<Stack direction='column' gap={1} sx={{ position: 'absolute', bottom: 0, pb: 2 }}>
-					<Button
+				<Box sx={{ flexGrow: 1 }} />
+				<Stack direction='column' gap={1} sx={{ pb: 2 }}>
+					<Box
+						sx={{ height: 1, ml: 2, color: 'text.primary', cursor: 'pointer' }}
 						onClick={() => {
 							giveTitle();
 							navigate('/settings?tab=2');
 						}}
-						sx={{ pl: 2, pt: 1, color: 'text.primary', textAlign: 'left' }}
 					>
 						<Stack direction='column'>
 							<Typography variant='subtitle1' fontWeight='bold'>
@@ -169,7 +174,7 @@ function Drawer() {
 							</Typography>
 							<Typography variant='body1'>{titleName || 'なし'}</Typography>
 						</Stack>
-					</Button>
+					</Box>
 					<Link
 						href='https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage'
 						target='_blank'
@@ -181,7 +186,7 @@ function Drawer() {
 						</Typography>
 					</Link>
 				</Stack>
-			</Box>
+			</Stack>
 		);
 	}
 
