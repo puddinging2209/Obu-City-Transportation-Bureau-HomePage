@@ -24,6 +24,9 @@ export const settingsAtom = atom(
 		map: {
 			updateInterval: 0,
 		},
+		title: {
+			showTitle: false,
+		},
 		...(localStorage.getItem('settings') ?
 			localStorage.getItem('settings')?.includes('general') ?
 				JSON.parse(localStorage.getItem('settings'))

@@ -117,23 +117,32 @@ function Settings() {
 				<Card sx={{ borderRadius: `0 0 ${theme.shape.borderRadius}px ${theme.shape.borderRadius}px` }}>
 					<CardContent>
 						{titleIds.length > 0 ?
-							<Stack direction='row' justifyContent='space-between' alignItems='center' nowrap>
-								称号の変更
-								<Select
-									value={title}
-									onChange={(e) => {
-										setTitle(e.target.value);
-										window.localStorage.setItem('title', e.target.value);
-									}}
-									size='small'
-								>
-									{titleIds.map((title) => (
-										<MenuItem value={title} key={title}>
-											{titleNames[title] ?? '読み込み中…'}
-										</MenuItem>
-									))}
-								</Select>
-							</Stack>
+							<>
+								<Stack direction='row' justifyContent='space-between' alignItems='center' nowrap>
+									現在の称号を表示する
+									<Checkbox
+										checked={settings.title.showTitle}
+										onChange={(e) => setSettings({ ...settings, title: { ...settings.title, showTitle: e.target.checked } })}
+									/>
+								</Stack>
+								<Stack direction='row' justifyContent='space-between' alignItems='center' nowrap>
+									称号の変更
+									<Select
+										value={title}
+										onChange={(e) => {
+											setTitle(e.target.value);
+											window.localStorage.setItem('title', e.target.value);
+										}}
+										size='small'
+									>
+										{titleIds.map((title) => (
+											<MenuItem value={title} key={title}>
+												{titleNames[title] ?? '読み込み中...'}
+											</MenuItem>
+										))}
+									</Select>
+								</Stack>
+							</>
 						:	<Typography>称号がまだありません</Typography>}
 					</CardContent>
 				</Card>

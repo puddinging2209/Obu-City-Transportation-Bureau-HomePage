@@ -13,7 +13,7 @@ import {
 	SwipeableDrawer,
 	Typography,
 } from '@mui/material';
-import { useAtom } from 'jotai';
+import { useAtom, useAtomValue } from 'jotai';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,7 +29,7 @@ import TrainIcon from '@mui/icons-material/Train';
 
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
-import { isOpenDrawerAtom } from '../atom/atom.js';
+import { isOpenDrawerAtom, settingsAtom } from '../atom/atom.js';
 import { getTitle } from '../utils/getTitles.js';
 import giveTitle from '../utils/giveTitle.js';
 
@@ -38,6 +38,9 @@ function Drawer() {
 
 	const [isOpen, setIsOpen] = useAtom(isOpenDrawerAtom);
 
+	const settings = useAtomValue(settingsAtom);
+
+	const showTitle = settings?.title?.showTitle ?? false;
 	const titleId = window.localStorage.getItem('title');
 	const [titleName, setTitleName] = useState('');
 
@@ -161,20 +164,22 @@ function Drawer() {
 				</List>
 				<Box sx={{ flexGrow: 1 }} />
 				<Stack direction='column' gap={1} sx={{ pb: 2 }}>
-					<Box
-						sx={{ height: 1, ml: 2, color: 'text.primary', cursor: 'pointer' }}
-						onClick={() => {
-							giveTitle();
-							navigate('/settings?tab=2');
-						}}
-					>
-						<Stack direction='column'>
-							<Typography variant='subtitle1' fontWeight='bold'>
-								現在の称号
-							</Typography>
-							<Typography variant='body1'>{titleName || 'なし'}</Typography>
-						</Stack>
-					</Box>
+					{showTitle && (
+						<Box
+							sx={{ height: 1, ml: 2, color: 'text.primary', cursor: 'pointer' }}
+							onClick={() => {
+								giveTitle();
+								navigate('/settings?tab=2');
+							}}
+						>
+							<Stack direction='column'>
+								<Typography variant='subtitle1' fontWeight='bold'>
+									現在の称号
+								</Typography>
+								<Typography variant='body1'>{titleName || 'なし'}</Typography>
+							</Stack>
+						</Box>
+					)}
 					<Link
 						href='https://github.com/puddinging2209/Obu-City-Transportation-Bureau-HomePage'
 						target='_blank'
